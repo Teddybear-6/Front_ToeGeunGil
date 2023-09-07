@@ -1,7 +1,7 @@
 
 function App() {
   return (
-   <h1>메롱</h1>
+   <h1>프로젝트 퇴근길</h1>
   );
 }
 
