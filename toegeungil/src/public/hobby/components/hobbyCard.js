@@ -18,6 +18,7 @@ function HobbyCard(hobbys){
         .then(blob => {
             const objectURL = URL.createObjectURL(blob)
             setMainImage(objectURL)
+        
         }
         )
 
