@@ -1,7 +1,7 @@
 
 // import MainRouter from "./router/MainRouter";
 
-import AllHobby from "./public/components/hobbu/AllHobby";
+import AllHobby from "./public/components/hobby/AllHobby";
 
 function App() {
   return (
