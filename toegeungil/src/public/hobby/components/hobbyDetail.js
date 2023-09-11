@@ -11,6 +11,8 @@ function HobbyDetail(){
     useEffect(()=>{
         fetch(`http://localhost:8001/hobbys/${1}`).then(res=> res.json()).then(data=>console.log(data))
     })
+
+    
 }
 
 
