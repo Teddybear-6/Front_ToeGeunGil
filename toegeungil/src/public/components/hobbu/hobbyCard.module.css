@@ -30,6 +30,9 @@
     color: #41A487;
     font-size: 18px;
     text-align: left;
+  
+    font-weight: bold;
+    font-style: italic;
 }
 
 
@@ -77,6 +80,9 @@
     text-align: right;
     color: #655853;
     font-size: 12px;
+   
+    
+    font-weight: bold;
     font-style: italic;
     margin-right: 20px;
 }
