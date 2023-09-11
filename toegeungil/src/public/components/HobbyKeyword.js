@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import CardStyle from './hobbyCard.module.css';
 
 function HobbyKeyword({keyword}){
     const [keywordName, setKeywordName] = useState("");
@@ -9,7 +10,7 @@ function HobbyKeyword({keyword}){
     },[])
     return(
         <>
-        <h1>{keywordName.keywordName}</h1>
+        <p className={CardStyle.keywordName}>{keywordName.keywordName}</p>
         </>
     )
 }
