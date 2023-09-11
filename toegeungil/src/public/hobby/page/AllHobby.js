@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import HobbyMain from './hobbyMain';
+import HobbyMain from '../components/hobbyMain'
 import AllHobbyCss from './AllHobby.module.css'
 function AllHobby(){
     const [hobby, setHobby] = useState([]);
