@@ -1,11 +1,13 @@
-import MainRouter from "./router/MainRouter";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import MainRouter from "./router/MainRouter";
+import CommunityMain from "./public/community/pages/CommunityMain";
+
 
 function App() {
   return (
     <>
-   <h1>프로젝트 퇴근길</h1>
-    <MainRouter/>
-    
+    {/* <Main Router/> */}
+    <CommunityMain/>
     </>
   );
 }
