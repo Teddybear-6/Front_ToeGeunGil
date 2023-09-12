@@ -1,30 +1,29 @@
 import { useState, useEffect } from "react";
+import ImageStyle from "./hobbyDetail.module.css"
 
 
 
-function HobyTest({detail}){
-    const [image, setImage] = useState();
-
+function HobbyImages({detail}){
+    const [images, setImages] = useState();
+   
     useEffect(()=>{
-        
-            console.log(detail)
-        // fetch(`http://localhost:8001/hobbys/image/${detail.id}`)
-        //     .then(r => r.blob())
-        //     .then(data => {
-        //         const objectURL = URL.createObjectURL(data)
-        //         setImage(objectURL);
-        //     });
-    },[]);
+     
+            fetch(`http://localhost:8001/hobbys/image/${detail.id}`)
+            .then(r => r.blob())
+            .then(data => {
+                const objectURL = URL.createObjectURL(data)
+                setImages(objectURL);
+            });
+         
+    },[detail]);
 
 
     return(
         <>
-            <picture>
-                {/* <img src={image} /> */}
-            </picture>
+                <div>
+                    <img className={ImageStyle.smallImage} src={images}></img>
+                </div>
         </>
     )
 }
-
-
-export default HobyTest;
+export default HobbyImages;

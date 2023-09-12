@@ -4,17 +4,23 @@ import CardStyle from './hobbyCard.module.css';
 import HobbyKeyword from './HobbyKeyword';
 import HobbyStyle from './HobbyDetailTitle.module.css'
 
-function HobbyDetailTitle({detail,category}){
+function HobbyDetailTitle({detail}){
     const[hobby, setHobby]= useState({});
     const[categoryName, setCategoryName] =useState([])
     const[keyword ,setKeyword] =useState([]);
     
 
     useEffect(()=>{
-       
+
+
+        fetch(`http://localhost:8001/category/${detail.categoryCode}`).then(res=>res.json()).then(data=>{
+            setCategoryName(data)
+        })
+
+
+
         setHobby(detail);
         setKeyword(detail.keywordDTOList)
-        setCategoryName(category);
        
     },[detail])
 
@@ -35,7 +41,9 @@ function HobbyDetailTitle({detail,category}){
                 <h1 className={HobbyStyle.hobbyTitle}>{hobby.hobbyTitle}</h1>
                 <div >
                 <div className={HobbyStyle.keywordCard}>
-                <p className={CardStyle.keywordName}>{categoryName.categoryName}</p>
+                    {
+                !categoryName.categoryName ? "카테고리." : <p className={CardStyle.keywordName}>{categoryName.categoryName}</p>
+                    }
                 </div>
                 {keywordArr()}
                 </div>

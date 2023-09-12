@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
+import ImageStyle from "./hobbyDetail.module.css"
 
 
-function HobyTest({detail}){
+function HobbyMainImages({detail}){
     const [images, setImages] = useState();
    
     useEffect(()=>{
@@ -19,11 +20,9 @@ function HobyTest({detail}){
     return(
         <>
                 <div>
-                    <img src={images}></img>
+                    <img className={ImageStyle.mainImage} src={images}></img>
                 </div>
         </>
     )
 }
-
-
-export default HobyTest;
+export default HobbyMainImages;
