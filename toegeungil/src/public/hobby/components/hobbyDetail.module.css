@@ -1,0 +1,21 @@
+
+
+.smallImage{
+    width: 180px;
+    height: 120px;
+    border-radius: 50px;
+}
+
+.mainImage{
+    
+    width: 590px;
+    height: 490px;
+    border-radius: 50px;
+    margin-right: 20px;
+}
+
+
+.mainImageDiv{
+    margin-left: 50px;
+    display: inline-flex;
+}

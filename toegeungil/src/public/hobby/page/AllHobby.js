@@ -7,6 +7,7 @@ function AllHobby(){
     useEffect(()=>{
         fetch(`http://localhost:8001/hobbys?page=${hobbySize}&size=12`).then((response)=> response.json()).then((data)=> 
             setHobby(data))
+            console.log(hobby)
            
     },[])
     
