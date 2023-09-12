@@ -1,25 +1,17 @@
-import { useEffect, useState } from "react";
+import React, { useState } from 'react';
+import axios from 'axios';
 
 function SocialMain() {
-    //DB로 구축된 게시물 데이터를 json-server에 연결하고,
-    //API주소를 fetch함수에 연결하여 통신 가능하도록 한다.
-    const [socials, setSocials] = useState([{}]);
-
-    useEffect(
-        () => {
-            fetch("http://localhost:8001/socials")
-            .then(response => response.json())
-            .then(data => setSocials(data));
-            console.log(socials)
-        },[]
+    /*
+    Social 메인 페이지
     
-    )
-    return(
-        <>
-            { 
-                socials == null? null : socials.map(r => <p key={r.socialNum}>${r.socialName}</p>)
-            }
-        </>
-    )
+    1.지역필터 - localName
+    2.카테고리 - categoryName
+    3.게시글카드 - imageName, socialName, keywordName
+    4.게시글 작성 버튼 - 페이지 변경
+    5.페이징 
+    */
+    
 }
+
 export default SocialMain;
