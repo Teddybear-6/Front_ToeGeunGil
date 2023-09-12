@@ -1,12 +1,10 @@
 import { useEffect, useState, useCallback } from "react";
-import ChildeSocial from "./ChildeSocia";
+import SocialKeyword from "./SocialKeyword";
 
 
 function SocialMainCard() {
 
     const [socials, setSocials] = useState([{}]);
-    const [keyword, setKeyword] = useState({});
-
 
     useEffect(() => {
         fetch("http://localhost:8001/socials")
@@ -22,7 +20,7 @@ function SocialMainCard() {
                         <div>
                             {/* <img key={r.socialNum}>{r.fileNum}</img> */}
                             <p key={r.socialNum}>{r.socialName}</p>
-                            <ChildeSocial code={r.keywordCode}></ChildeSocial>
+                            <SocialKeyword code={r.keywordCode}></SocialKeyword>
                         </div>
                     )
                 }

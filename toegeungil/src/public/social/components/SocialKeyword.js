@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 
-function ChildeSocial({code}){
+function SocialKeyword({code}){
     const [keyworld, setKeyworld] = useState({});
 
     useEffect(()=>{
@@ -21,4 +21,4 @@ function ChildeSocial({code}){
 }
 
 
-export default ChildeSocial;
+export default SocialKeyword;
