@@ -1,20 +1,25 @@
 import { useEffect, useState } from "react";
 
 function SocialMain() {
+    //DB로 구축된 게시물 데이터를 json-server에 연결하고,
+    //API주소를 fetch함수에 연결하여 통신 가능하도록 한다.
+    const [socials, setSocials] = useState([{}]);
 
-    const [social, setSocial] = useState([]);
-
-    /*get 호출 -> fetch() 함수는 디폴트로 GET방식으로 작동*/
-    useEffect(() => {
-        fetch("http://localhost:8001/socials/2").then((response) => response.json()).then((date) => setSocial(date))
-    }, []);
-
-    return (
-        <div className="">
-            <h1>dfsf</h1>
-        </div>
+    useEffect(
+        () => {
+            fetch("http://localhost:8001/socials")
+            .then(response => response.json())
+            .then(data => setSocials(data));
+            console.log(socials)
+        },[]
+    
     )
-
+    return(
+        <>
+            { 
+                socials == null? null : socials.map(r => <p key={r.socialNum}>${r.socialName}</p>)
+            }
+        </>
+    )
 }
-
 export default SocialMain;
