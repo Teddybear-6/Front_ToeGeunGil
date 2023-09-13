@@ -1,16 +1,13 @@
-import CommunityList from '../pages/CommunityList';
-
-function CommunityMain({communitys}){
+// import CommunityKeyword from "../components/CommunityKeyword";
 
 
-    return(
-        <div>
-            {communitys.map((community, index) => (
-                <CommunityList communitys={community} key = {index}/>
-            ))}
-        </div>
-    );
+
+function CommunityMain({  }) { // 
+return (
+    <>
+    
+    </>
+);
 }
 
 export default CommunityMain;
-

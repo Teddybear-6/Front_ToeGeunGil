@@ -1,13 +1,13 @@
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import MainRouter from "./router/MainRouter";
 import CommunityMain from "./public/community/pages/CommunityMain";
-
+import AllCommunity from "./public/community/components/AllCoummunity";
+import CommunityList from "./public/community/components/CommunityList";
 
 function App() {
   return (
     <>
-    {/* <Main Router/> */}
-    <CommunityMain/>
+      <CommunityMain/>
+      <AllCommunity/>
+      <CommunityList/>
     </>
   );
 }
