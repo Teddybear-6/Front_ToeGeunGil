@@ -7,7 +7,7 @@ function SocialKeyword({code}){
         fetch(`http://localhost:8001/keyword/${code}`)
             .then(response => response.json())
             .then(data => setkeyword(data));
-    },[])
+    },[]);
 
     return (
         <>

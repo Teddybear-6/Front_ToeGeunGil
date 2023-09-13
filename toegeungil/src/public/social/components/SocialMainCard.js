@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import SocialKeyword from "./SocialKeyword";
-import SocialImage from "./SocialImage";
 import SocialCategory from "./SocialCategory";
-
+import SocialImage from "./SocialImage";
 
 function SocialMainCard() {
 
@@ -20,12 +19,11 @@ function SocialMainCard() {
                 {
                     (Object.keys(socials[0]) <= 0)? null:socials.map((r,i) =>
                         <div key={i}>
-                            {/* <img key={r.socialNum}>{r.fileNum}</img> */}
                             <p key={i}>{r.socialNum}</p>
-                            {/* <SocialImage key={i} imgcode={r.fileNum}></SocialImage> */}
+                            <SocialImage key={i} imgcode={r.fileNum}></SocialImage>
                             <p key={i}>{r.socialName}</p>
-                            <SocialCategory key={i} code={r.categoryCode}></SocialCategory>
-                            <SocialKeyword key={i} code={r.keywordCode}></SocialKeyword>
+                            <p><SocialCategory key={i} cateCode={r.categoryCode}></SocialCategory></p>
+                            <p><SocialKeyword key={i} code={r.keywordCode}></SocialKeyword></p>
                         </div>
                     )
                 }

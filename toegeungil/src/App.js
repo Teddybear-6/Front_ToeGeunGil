@@ -1,6 +1,4 @@
 // import MainRouter from "./router/MainRouter";
-import SocialMain from "./public/social/page/SocialMain";
-import SocialList from "./public/social/components/SocialList";
 import SocialMainCard from "./public/social/components/SocialMainCard";
 
 function App() {
@@ -12,7 +10,6 @@ function App() {
       <h1>프로젝트 퇴근길</h1>
       {/* <MainRouter/> */}
       <SocialMainCard/>
-      {/* <SocialList/> */}
     </>
   );
 }
