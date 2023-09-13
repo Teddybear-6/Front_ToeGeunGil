@@ -16,7 +16,7 @@ function SocialImage({ imgcode }) {
 
     return (
         <>
-            <img src={image} />
+            <img className={MainStyle.socialMainImg} src={image}/>
         </>
     )
 }
