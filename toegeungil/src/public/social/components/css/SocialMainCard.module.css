@@ -1,0 +1,21 @@
+.socialMainCard {
+    width: 345px;
+    height: 365px;
+    border-radius: 50px;
+    background-color: #CCE2DB;
+    /* padding: 25px 23px 25px 23px; */
+}
+
+.socialMainImg {
+    width: 300px;
+    height: 200px;
+    border-radius: 50px;
+    display: flex;
+} 
+
+.socialMainTitle {
+    font-size: 18px;
+    font-style: italic;
+    font-weight: bold;
+    color: #41A487;
+}

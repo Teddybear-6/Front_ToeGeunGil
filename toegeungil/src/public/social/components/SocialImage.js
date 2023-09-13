@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import MainStyle from './css/SocialMainCard.module.css';
+
 function SocialImage({ imgcode }) {
     const [image, setImage] = useState();
 
@@ -12,11 +14,10 @@ function SocialImage({ imgcode }) {
             });
     }, []);
 
-    return(
+    return (
         <>
-            <div>
-                <img src={image}/>
-            </div>
+            {/* <img src={image} /> */}
+            <p>{image}</p>
         </>
     )
 }
