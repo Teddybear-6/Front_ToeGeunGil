@@ -1,6 +1,5 @@
 // import MainRouter from "./router/MainRouter";
-
-import NoticeMain from "./public/pages/NoticeMain";
+import NoticeMain from "./public/notice/pages/NoticeMain";
 
 function App() {
   return (
@@ -8,10 +7,8 @@ function App() {
       <h1>프로젝트 퇴근길</h1>
       {/* <MainRouter/> */}
       <NoticeMain />
-      
     </>
   );
 }
 
 export default App;
-
