@@ -1,29 +1,38 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect ,useCallback} from 'react';
 import HobbyMain from '../components/hobbyMain'
 import AllHobbyCss from './AllHobby.module.css'
 import Paging from '../components/Paging';
 function AllHobby(){
     const [hobby, setHobby] = useState([]);
-    const [hobbySize , setHobbySize] =useState(0);
+    const [page , setPages] =useState(1);
+    const [pageCount ,setPageCount] =useState();
     useEffect(()=>{
-        fetch(`http://localhost:8001/hobbys?page=${hobbySize}&size=12`).then((response)=> response.json()).then((data)=> 
+        
+        fetch(`http://localhost:8001/hobbys?page=${page-1}&size=12`).then((response)=> response.json()).then((data)=> 
             setHobby(data))
-            console.log(hobby)
+            
+        fetch(`http://localhost:8001/hobbys/size`).then(res=> res.json()).then(res=> setPageCount(res))
+
+        
+        
            
-    },[])
+    },[page])
+
+    const setPage = useCallback(
+        (page) =>{
+            setPages(page)
+        }
+    )
     
     return(
         <>      
            
             <div className={AllHobbyCss.main}>
-      
             <HobbyMain hobbys={hobby}></HobbyMain>
-          
             </div>
       
             <div className={AllHobbyCss.paging}>
-            <Paging/>
-      
+            <Paging count={pageCount} setPage={setPage} page={page}/>
             </div>
            
         </>
