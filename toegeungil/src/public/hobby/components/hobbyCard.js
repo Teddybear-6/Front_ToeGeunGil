@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import CardStyle from './hobbyCard.module.css';
-import {useNavigate} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import HobbyKeyword from './HobbyKeyword';
 
 
@@ -46,15 +46,10 @@ function HobbyCard(hobbys){
     return newArr;
   }
 
-  const onClickHandler = () =>{
-    alert("클릭확인")
-    // navigate(`/hobby/${hobbys.hobbys.hobbyCode}`);
-   
-}
-
     return(
         <>
-        <div className={CardStyle.hobbyCard} onClick={onClickHandler}>
+        <Link to={`/hobby/${hobbys.hobbys.hobbyCode}`}>
+        <div className={CardStyle.hobbyCard}>
             <img className={CardStyle.hobbyImage} src={mainImage}></img>
             <p className={CardStyle.hobbyTitle}>{hobbys.hobbys.hobbyTitle}</p>
            
@@ -70,6 +65,7 @@ function HobbyCard(hobbys){
                </div>
             <p className={CardStyle.hobbyPrice}> {hobbys.hobbys.hobbyPrice}원</p>
         </div>
+        </Link>
         </>
     )
 }

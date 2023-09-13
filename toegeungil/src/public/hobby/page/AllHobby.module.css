@@ -3,6 +3,18 @@
     display: "grid";
     text-align : center;
     justify-content: center;
+   
+
 }
 
+.pagingFrame{
+    display: block;
+    
+    
+}
+.paging{
 
+    display: flex;
+ 
+    
+}

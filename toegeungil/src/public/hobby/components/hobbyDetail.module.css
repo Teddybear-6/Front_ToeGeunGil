@@ -1,98 +1,340 @@
-
-
-.smallImage{
-    width: 180px;
-    height: 120px;
-    border-radius: 50px;
-    display: flex;
-}
-
-.mainImage{
-    display: flex;
-    width: 590px;
-    height: 490px;
-    border-radius: 50px;
+@media all and (min-width:1900px) and (max-width:1920px) { 
     
+    .smallImage{
+        width: 180px;
+        height: 120px;
+        border-radius: 50px;
+        display: flex;
+    }
+    
+    .mainImage{
+        display: flex;
+        width: 590px;
+        height: 490px;
+        border-radius: 50px;
+        
+    }
+    
+    
+    .mainImageDiv{
+        position: relative;
+        display:flex;
+        margin-left: 30px;
+    }
+    
+    .imageLine{
+        margin-right: 50px;
+        display: grid;
+    }
+    
+    
+    .schedule{
+        float:left;
+        border: 2px solid #8FC4B3;
+        border-radius: 50px;
+        height: 700px;
+        width: 570px;
+        margin-left: 20px;
+        
+        
+      
+    }
+    
+    
+    .details{
+        float:left;
+       
+       
+    }
+    
+    .scheduleTitle{
+        text-align: center;
+        color: #8FC4B3;
+        font-weight: bold;
+    }
+    
+    .scheduleContent{
+       margin-left: 50px;
+       padding: 10px;
+        color: #8FC4B3;
+        font-weight: bold;
+    }
+    
+    .frame{
+        margin-left: 200px;
+        align-items: center;
+        /* min-height: 100dvh; */
+    
+        /* height: 75vh; */
+    
+       
+    }
+    
+    .likeBtn{
+        margin-right: 50px;
+        float: right;
+        border-radius: 50px;
+        width: 120px;
+        height: 50px;
+        background-color: #8FC4B3;
+        color: #096249;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    
+    .likeBtn:hover{
+        margin-right: 50px;
+        border-radius: 50px;
+        width: 140px;
+        height: 60px;
+        background-color: #8FC4B3;
+        position: relative;
+        border: none;
+        display: inline-block;
+        padding: 15px 30px;
+        font-family: "paybooc-Light", sans-serif;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.25s;
+        font-weight: bold;
+    }
+    
+    
+    .joinframe{
+       margin-top: 10px;
+        border: 2px solid #8FC4B3;
+        height: 230px;
+       width: 1400px;
+        border-radius: 50px;
+        
+    }
+    
+    .joinTitle{
+        font-size: 24px;
+        color: #655853;
+        margin-left: 50px;
+    }
+    
+    .joinBtn{
+        margin-right: 50px;
+        float: right;
+        border-radius: 50px;
+        width: 150px;
+        height: 75px;
+        background-color: #8FC4B3;
+        color: #096249;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .joinBtn:hover{
+        margin-right: 50px;
+        border-radius: 50px;
+        width: 180px;
+        height: 90px;
+        background-color: #8FC4B3;
+        position: relative;
+        border: none;
+        display: inline-block;
+        padding: 15px 30px;
+        font-family: "paybooc-Light", sans-serif;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.25s;
+        font-weight: bold;
+    }
+    
+    .frame2{
+        display: flex;
+    }
+    
+    .intro{
+        margin-top: 10px;
+        border: 2px solid #8FC4B3;
+        height: 450px;
+        width: 1400px;
+        border-radius: 50px;
+    }
+    
+    .introContent{
+        margin-left: 50px;
+        color: #8FC4B3;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    
+
 }
 
 
-.mainImageDiv{
-    position: relative;
-    display:flex;
-    margin-left: 30px;
+@media all and (min-width:768px) and (max-width:1440px) { 
+    .smallImage{
+        width: 131px;
+        height: 87px;
+        border-radius: 50px;
+        display: flex;
+    }
+    
+    .mainImage{
+        display: flex;
+        width: 430px;
+        height: 370px;
+        border-radius: 50px;
+        
+    }
+    
+    
+    .mainImageDiv{
+        position: relative;
+        display:flex;
+        margin-left: 30px;
+    }
+    
+    .imageLine{
+        margin-right: 50px;
+        display: grid;
+    }
+    
+    
+    .schedule{
+        float:left;
+        border: 2px solid #8FC4B3;
+        border-radius: 50px;
+        height: 511px;
+        width: 406px;
+        margin-left: 20px;
+        
+        
+      
+    }
+    
+    
+    .details{
+        float:left;
+       
+       
+    }
+    
+    .scheduleTitle{
+        text-align: center;
+        color: #8FC4B3;
+        font-weight: bold;
+    }
+    
+    .scheduleContent{
+       margin-left: 50px;
+       padding: 10px;
+        color: #8FC4B3;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    
+    .frame{
+        margin-left: 146px;
+        align-items: center;
+        /* min-height: 100dvh; */
+    
+        /* height: 75vh; */
+    
+       
+    }
+    
+    .likeBtn{
+        margin-right: 50px;
+        float: right;
+        border-radius: 50px;
+        width: 120px;
+        height: 50px;
+        background-color: #8FC4B3;
+        color: #096249;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    
+    .likeBtn:hover{
+        margin-right: 50px;
+        border-radius: 50px;
+        width: 140px;
+        height: 60px;
+        background-color: #8FC4B3;
+        position: relative;
+        border: none;
+        display: inline-block;
+        padding: 15px 30px;
+        font-family: "paybooc-Light", sans-serif;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.25s;
+        font-weight: bold;
+    }
+    
+    
+    .joinframe{
+       margin-top: 10px;
+        border: 2px solid #8FC4B3;
+        height: 167px;
+       width: 1022px;
+        border-radius: 50px;
+        
+    }
+    
+    .joinTitle{
+        font-size: 24px;
+        color: #655853;
+        margin-left: 50px;
+    }
+    
+    .joinBtn{
+        margin-right: 50px;
+        float: right;
+        border-radius: 50px;
+        width: 150px;
+        height: 75px;
+        background-color: #8FC4B3;
+        color: #096249;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .joinBtn:hover{
+        margin-right: 50px;
+        border-radius: 50px;
+        width: 180px;
+        height: 90px;
+        background-color: #8FC4B3;
+        position: relative;
+        border: none;
+        display: inline-block;
+        padding: 15px 30px;
+        font-family: "paybooc-Light", sans-serif;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.25s;
+        font-weight: bold;
+    }
+    
+    .frame2{
+        display: flex;
+    }
+    
+    .intro{
+        margin-top: 10px;
+        border: 2px solid #8FC4B3;
+        height: 167px;
+        width: 1022px;
+        border-radius: 50px;
+    }
+    
+    .introContent{
+        margin-left: 50px;
+        color: #8FC4B3;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    
+
 }
 
-.imageLine{
-    margin-right: 50px;
-    display: grid;
-}
-
-
-.schedule{
-    float:left;
-    border: 2px solid #8FC4B3;
-    border-radius: 50px;
-    height: 700px;
-    width: 570px;
-    margin-left: 20px;
-  
-}
-
-
-.details{
-    float:left;
-   
-   
-}
-
-.scheduleTitle{
-    text-align: center;
-    color: #8FC4B3;
-    font-weight: bold;
-}
-
-.scheduleContent{
-   margin-left: 50px;
-   padding: 10px;
-    color: #8FC4B3;
-    font-weight: bold;
-}
-
-.frame{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100dvh;
-   
-}
-
-.likeBtn{
-    float: right;
-    border-radius: 50px;
-    width: 120px;
-    height: 50px;
-    background-color: #8FC4B3;
-    color: #096249;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.likeBtn:hover{
-    border-radius: 50px;
-    width: 130px;
-    height: 60px;
-    background-color: #8FC4B3;
-    position: relative;
-    border: none;
-    display: inline-block;
-    padding: 15px 30px;
-    font-family: "paybooc-Light", sans-serif;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.25s;
-    font-weight: bold;
-   
-
-}
 

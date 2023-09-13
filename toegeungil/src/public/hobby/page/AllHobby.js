@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import HobbyMain from '../components/hobbyMain'
 import AllHobbyCss from './AllHobby.module.css'
+import Paging from '../components/Paging';
 function AllHobby(){
     const [hobby, setHobby] = useState([]);
     const [hobbySize , setHobbySize] =useState(0);
@@ -12,10 +13,19 @@ function AllHobby(){
     },[])
     
     return(
-        <>
+        <>      
+           
             <div className={AllHobbyCss.main}>
+      
             <HobbyMain hobbys={hobby}></HobbyMain>
+          
             </div>
+      
+            <div className={AllHobbyCss.paging}>
+            <Paging/>
+      
+            </div>
+           
         </>
     )
 }

@@ -42,7 +42,7 @@ function HobbyDetailTitle({detail}){
                 <div >
                 <div className={HobbyStyle.keywordCard}>
                     {
-                !categoryName.categoryName ? "카테고리." : <p className={CardStyle.keywordName}>{categoryName.categoryName}</p>
+                !categoryName.categoryName ? "" : <p className={CardStyle.keywordName}>{categoryName.categoryName}</p>
                     }
                 </div>
                 {keywordArr()}
