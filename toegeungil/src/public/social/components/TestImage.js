@@ -12,7 +12,7 @@ function TestImage({ imgcode }) {
     return (
         <>
             {/* <img src={image} /> */}
-            <p>{`http://localhost:8001/socials/image/${image.imageId}`}</p>
+            {image.imageId}
         </>
     )
 }

@@ -16,8 +16,7 @@ function SocialImage({ imgcode }) {
 
     return (
         <>
-            {/* <img src={image} /> */}
-            <p>{image}</p>
+            <img src={image} />
         </>
     )
 }
