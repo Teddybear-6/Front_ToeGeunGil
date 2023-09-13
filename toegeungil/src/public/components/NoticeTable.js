@@ -1,33 +1,35 @@
-import React, { useEffect } from "react";
+import React from "react";
 import './NoticeTable.css';
 import NoticeTableRow from "./NoticeTableRow";
-import NoticeTableColumn from "./NoticeTableColumn";
 
 const NoticeTable = props => {
     const { noticeHeadersName, children } = props;
 
     return (
-        <table className="notice-table">
-            <thead>
-                <tr>
-                    {
+        <table className="notice-table" >
+            <thead className="notice-table-column" style={{fontSize:20,fontWeight:"bold",marginBottom:"32px"}}>
+                    <td className="notice-header-col1">번호</td>
+                    <td className="notice-header-col2">제목</td>
+                    <td className="notice-header-col3">작성일</td> 
+                    {/* {
                         noticeHeadersName.map((item, index) => {
                             return (
-                                <td className="notice-table-header-column" key={index}>{item}</td>
+                                <td key={index}>
+                                    {item}
+                                </td>
                             )
                         })
-                    }
-                </tr>
+                    } */}
             </thead>
             <tbody>
-            {
-                children?.map( (m, index) =>{
-                    return(
-                        <NoticeTableRow key={index}  notice={m} />
-                    )    
+                {
+                    children?.map((m, index) => {
+                        return (
+                            <NoticeTableRow key={index} notice={m} />
+                        )
+                    }
+                    )
                 }
-                )
-            }
             </tbody>
         </table>
     )
