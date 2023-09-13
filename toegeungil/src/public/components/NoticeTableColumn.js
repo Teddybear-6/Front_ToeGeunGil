@@ -5,7 +5,7 @@ const NoticeTableColumn = ({children}) => {
     return (
         <>
             <td>
-                {children.notiNum}
+                {children.noticeNum}
             </td>
             <td>
                 {children.noticeTitle}
