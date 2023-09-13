@@ -12,6 +12,7 @@ function SocialMain() {
     5.페이징 
     */
     
+    return null;
 }
 
 export default SocialMain;

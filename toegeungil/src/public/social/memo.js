@@ -34,3 +34,18 @@
 //         </div>
 //     );
 // }
+
+
+
+//map 알기
+// const array = [1,2,3,4,6];
+
+// for (let index = 0; index < array.length; index++) {
+
+//     test(array[index], index)
+// }
+
+// const test = (r, i) => {
+//     console.log("객체  : ", r) //객체 1
+//     console.log("인덱스 : " , i) // 0
+// }

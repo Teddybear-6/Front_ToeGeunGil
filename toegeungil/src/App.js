@@ -12,6 +12,7 @@ function App() {
       <h1>프로젝트 퇴근길</h1>
       {/* <MainRouter/> */}
       <SocialMainCard/>
+      {/* <SocialList/> */}
     </>
   );
 }
