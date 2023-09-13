@@ -10,15 +10,11 @@ import HobbyTutor from "./hobbyTutor";
 
 function HobbyDetail() {
     const{hobbyCode} = useParams();
-    // const [hobbyCode, setHobbyCode] = useState(4);
     const [detail, setDetail] = useState({});
     const [imageNum, setImageNum] = useState(0);
 
   
-        const handleResize=() =>{
-            console.log(`${window.innerWidth}, y : ${window.innerHeight}`)
-        }
- 
+    
 
 
     useEffect(() => {
@@ -50,7 +46,7 @@ function HobbyDetail() {
                     <div className={detailSytle.mainImage}>
                         {
                             !detail.imageId ? "이미지가 없습니다." : <HobbyMainImages detail={detail?.imageId[imageNum]} />
-                            // !urls? "dd" : <HobbyMainImages detail={detail?.imageId[imageNum]}/>
+                            
                         }
                         <div className={detailSytle.mainImageDiv} >
 
@@ -85,7 +81,7 @@ function HobbyDetail() {
 
                             <HobbyTutor tutorIntro={detail.tutorIntro} tutorCode={detail.tutorCode}></HobbyTutor>
 
-                                <div>{window.innerWidth}, y : {window.innerHeight}</div>
+                                
             </div>
         </>
     )
