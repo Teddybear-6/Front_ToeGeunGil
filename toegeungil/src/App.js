@@ -1,5 +1,5 @@
 // import MainRouter from "./router/MainRouter";
-import SocialDetailsTitle from "./public/social/components/detailsPage/SocialDetailsTitle";
+import SocialDetailsTitle from "./public/social/components/SocialDetails";
 import SocialMainCard from "./public/social/components/SocialMainCard";
 
 
