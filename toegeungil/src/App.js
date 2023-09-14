@@ -5,19 +5,17 @@ import NoticeView from './public/pages/NoticeView';
 
 function App() {
   return (
-    <>
-      <h1>프로젝트 퇴근길</h1>
-      <NoticeView/>
-      <BrowserRouter>
-      <Routes>
-        <Route path='notice'>
-          <Route index element={<NoticeMain/>}/>
-          <Route path=':noticeNum' element={<NoticeView/>}/>
-        </Route>
-      </Routes>
-      </BrowserRouter>
-      {/* <MainRouter/> */}
-    </>
+    <BrowserRouter>
+      <>
+        <h1>프로젝트 퇴근길</h1>
+        <Routes>
+          <Route path='/notice' element={<NoticeMain/>}/>
+          <Route path='/notice/:noticeNum' element={<NoticeView/>}/>
+        </Routes>
+      </>
+      {/* <MainRouter/> */ }
+    </BrowserRouter>
+
   );
 }
 
