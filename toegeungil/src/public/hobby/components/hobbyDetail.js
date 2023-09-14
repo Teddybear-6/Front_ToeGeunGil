@@ -128,7 +128,7 @@ function HobbyDetail() {
 
                             <HobbyTutor tutorIntro={detail.tutorIntro} tutorCode={detail.tutorCode}></HobbyTutor>
 
-                            <RevieWrite/>
+                            <RevieWrite hobbyCode={hobbyCode}/>
             </div>
         </>
     )
