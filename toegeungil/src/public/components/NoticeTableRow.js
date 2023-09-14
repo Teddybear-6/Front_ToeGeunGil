@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 const NoticeTableRow = ({notice}) => {
 
     return (
-        <Link to={`/notice/${notice.noticeNum}`}>
+        <Link to={`/notice/${notice.noticeNum}`} style={{textDecoration:"none"}}>
         <tr className="notice-table-row">
             <NoticeTableColumn  state={notice.noticeNum}/>
             <NoticeTableColumn state={notice.noticeContent}/>
