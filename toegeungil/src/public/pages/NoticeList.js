@@ -15,7 +15,7 @@ const NoticeList = () => {
     return (
         <>
             <div>
-                <NoticeTable noticeHeadersName={['번호', '제목', '작성일']} children={notice} />
+                <NoticeTable noticeHeadersName={['번호', '제목', '작성일']} children={notice}/>
             </div>
         </>
     )

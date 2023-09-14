@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-// import '../components/NoticeView.css';
+import { Link } from "react-router-dom";
 import '../components/NoticeView.css';
 
 const NoticeView = () => {
@@ -14,9 +14,9 @@ const NoticeView = () => {
                 .then(data => setDetail(data))
         }, [])
 
-    const goMain = () => {
-        window.location.href = "/notice";
-    }
+    // const goMain = () => {
+    //     window.location.href = "/notice";
+    // }
 
     return (
         <div className="view-wrapper">
@@ -32,10 +32,13 @@ const NoticeView = () => {
                         <div className="view-content">
                             <label>{detail.noticeContent}</label>
                         </div>
+                        <Link to="/notice">
+                            <button className="view-button">목록으로</button>
+                        </Link>
                     </>
                 ) : "공지사항이 없습니다"
             }
-            <button className="view-button" onClick={goMain} >목록으로</button>
+            {/* <button className="view-button" onClick={goMain}>목록으로</button> */}
         </div>
     )
 }

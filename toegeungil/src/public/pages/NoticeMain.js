@@ -1,7 +1,7 @@
 import React from "react";
 import NoticeList from "./NoticeList";
 
-const NoticeMain = props => {
+const NoticeMain = () => {
     return (
         <>
             <NoticeList />
