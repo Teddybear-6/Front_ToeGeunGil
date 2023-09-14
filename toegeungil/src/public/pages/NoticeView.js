@@ -38,7 +38,6 @@ const NoticeView = () => {
                     </>
                 ) : "공지사항이 없습니다"
             }
-            {/* <button className="view-button" onClick={goMain}>목록으로</button> */}
         </div>
     )
 }
