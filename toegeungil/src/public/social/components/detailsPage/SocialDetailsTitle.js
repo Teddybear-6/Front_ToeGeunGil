@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import SocialKeyword from "../componentAPI/SocialKeyword";
 import UserNicname from "../componentAPI/UserNicname";
 import SocialDetailsImage from "../componentAPI/SocialDetailsImage";
+import SocialLocal from "../componentAPI/SocialLocal";
 
 import DetailsStyle from '../css/SocialDetails.module.css';
 
@@ -58,7 +59,18 @@ function SocialDetailsTitle() {
                 <SocialDetailsImage imgcode={socials.fileNum} />
             </div>
             <div>
-                
+                {/* 모임일시 */}
+                <div>{socials.socialDate}</div>
+                {/* 장소(지역, 상세주소) */}
+                <div>
+                    <label><SocialLocal code={socials.localCode}/></label>
+                    <label>{socials.localDetails}</label>
+                </div>
+                {/* 시간(시작시간, ~종료시간) */}
+                <div>{socials.socialStartTime}</div>
+                <div>{socials.socialEndTime}</div>
+                {/* 정원(명) */}
+                <div>{socials.socialFixedNum}<label>명</label></div>
             </div>
         </>
     )
