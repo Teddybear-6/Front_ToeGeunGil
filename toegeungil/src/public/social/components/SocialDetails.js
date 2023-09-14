@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import SocialKeyword from "./componentAPI/SocialKeyword";
+import UserNicname from "./componentAPI/UserNicname";
 
-function SocialDetails() {
+import DetailsStyle from './css/SocialDetails.module.css';
+
+function SocialDetails_Title() {
     /*
     소셜 제목
     키워드
@@ -20,7 +23,7 @@ function SocialDetails() {
     const [socials, setSocials] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:8001/socials/3`)
+        fetch(`http://localhost:8001/socials/1`)
             .then(response => response.json())
             .then(data => setSocials(data));
     }, []);
@@ -28,19 +31,23 @@ function SocialDetails() {
 
     return (
         <>
-            <div>
-                <p>게시글 번호 : {socials.socialNum}</p>
-                <p>게시글 제목 : {socials.socialName}</p>
-                <p>게시글 키워드(리스트) : {socials.keywordDTOList?.map((m, index) =>{
-                        return(
-                            <SocialKeyword key={index} code={m}/>
+            <div className={DetailsStyle.socialDetailsTitleBoard}>
+                <div className={DetailsStyle.socialDetailsTitle}>{socials.socialName}</div>
+                <div className={DetailsStyle.flexStyleKeywordAndUser}>
+                    <div className={DetailsStyle.flexStyle}>{socials.keywordDTOList?.map((m, index) => {
+                        return (
+                            <SocialKeyword key={index} code={m} />
                         )
                     })
-                }</p>
-                <p>작성자 : {socials.userNum}</p>
+                    }</div>
+                    <div className={DetailsStyle.socialDetailsWriter}>
+                        <label>작성자 : </label>
+                        <UserNicname userNo={socials.userNum}/>
+                    </div>
+                </div>
             </div>
         </>
     )
 }
 
-export default SocialDetails;
+export default SocialDetails_Title;

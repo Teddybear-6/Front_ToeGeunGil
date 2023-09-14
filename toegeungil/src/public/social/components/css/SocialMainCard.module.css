@@ -52,6 +52,7 @@
     justify-content: center;
     align-items: center;
     margin-right: 5px;
+    color: #87746B;
 }
 
 .container {
@@ -62,4 +63,10 @@
     /*줄넘김 처리 설정*/
     justify-content: flex-start;
     /*메인축 방향 설정*/
+}
+
+.flexStyle {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
 }

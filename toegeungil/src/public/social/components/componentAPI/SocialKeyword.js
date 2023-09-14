@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+
 import MainStyle from '../css/SocialMainCard.module.css';
 
 function SocialKeyword({code}){
