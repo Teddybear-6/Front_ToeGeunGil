@@ -18,7 +18,7 @@
     height: 200px;
     border-radius: 50px;
     margin: 25px 22.5px 25px 22.5px;
-} 
+}
 
 .socialMainTitle {
     width: 300px;
@@ -28,6 +28,7 @@
     font-weight: bold;
     color: #41A487;
     margin: 0px 23px 20px 23px;
+    /*23, 43*/
 }
 
 .socialMainKeyword {
@@ -55,7 +56,10 @@
 
 .container {
     display: flex;
-    flex-direction: row; /*가로정렬*/
-    flex-wrap: wrap; /*줄넘김 처리 설정*/
-    justify-content: flex-start; /*메인축 방향 설정*/
+    flex-direction: row;
+    /*가로정렬*/
+    flex-wrap: wrap;
+    /*줄넘김 처리 설정*/
+    justify-content: flex-start;
+    /*메인축 방향 설정*/
 }

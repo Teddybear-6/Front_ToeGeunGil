@@ -1,4 +1,5 @@
 // import MainRouter from "./router/MainRouter";
+import SocialDetails from "./public/social/components/SocialDetails";
 import SocialMainCard from "./public/social/components/SocialMainCard";
 
 function App() {
@@ -9,7 +10,8 @@ function App() {
     <>
       <h1>프로젝트 퇴근길</h1>
       {/* <MainRouter/> */}
-      <SocialMainCard/>
+      {/* <SocialMainCard/> */}
+      <SocialDetails/>
     </>
   );
 }

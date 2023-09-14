@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import MainStyle from './css/SocialMainCard.module.css';
+import MainStyle from '../css/SocialMainCard.module.css';
 
 function SocialImage({ imgcode }) {
     const [image, setImage] = useState();

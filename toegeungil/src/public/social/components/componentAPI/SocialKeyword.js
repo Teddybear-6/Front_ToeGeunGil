@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
 
-import MainStyle from './css/SocialMainCard.module.css';
+import MainStyle from '../css/SocialMainCard.module.css';
 
 function SocialKeyword({code}){
     const [keyword, setkeyword] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:8001/keyword/${code}`)
+        console.log()
+        fetch(`http://localhost:8001/keyword/${code.keywordCode}`)
             .then(response => response.json())
             .then(data => setkeyword(data));
     },[]);
+
 
     return (
         <>

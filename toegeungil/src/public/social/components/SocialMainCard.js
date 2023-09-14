@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
-import SocialKeyword from "./SocialKeyword";
-import SocialCategory from "./SocialCategory";
-import SocialImage from "./SocialImage";
-import TestImage from "./TestImage";
+import SocialKeyword from "./componentAPI/SocialKeyword";
+// import SocialCategory from "./componentAPI/SocialCategory";
+import SocialImage from "./componentAPI/SocialImage";
+// import TestImage from "./TestImage";
 
-import { Grid, Box } from "@material-ui/core";
+// import { Grid, Box } from "@material-ui/core";
 import MainStyle from './css/SocialMainCard.module.css';
 
 function SocialMainCard() {
+
+    /*할일
+    - 키워드 뿌리기
+    - 눌렀을 때 링크 이동*/
 
     const [socials, setSocials] = useState([{}]);
 
