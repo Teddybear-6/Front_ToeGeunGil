@@ -15,13 +15,8 @@ function App() {
           <Route path=':noticeNum' element={<NoticeView/>}/>
         </Route>
       </Routes>
-
       </BrowserRouter>
-            {/* <Route exact path='/noticeView/:number' Component={NoticeView}/>
-      <Route exact path='/' Component={NoticeMain}/> */}
       {/* <MainRouter/> */}
-      {/* <NoticeMain/>
-      <NoticeView/> */}
     </>
   );
 }

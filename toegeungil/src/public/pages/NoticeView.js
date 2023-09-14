@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 // import '../components/NoticeView.css';
-import detailCss from '../components/NoticeView.css';
+import '../components/NoticeView.css';
 
-
-const NoticeView = ({history}) => {
+const NoticeView = () => {
     const { noticeNum } = useParams();
     const [detail, setDetail] = useState({});
 
@@ -15,10 +14,14 @@ const NoticeView = ({history}) => {
                 .then(data => setDetail(data))
         }, [])
 
+    const goMain = () => {
+        window.location.href = "/notice";
+    }
+
     return (
         <div className="view-wrapper">
             {
-                detail? (
+                detail ? (
                     <>
                         <div className="view-name">
                             <label>{detail.noticeTitle}</label>
@@ -32,7 +35,7 @@ const NoticeView = ({history}) => {
                     </>
                 ) : "공지사항이 없습니다"
             }
-            <button className="view-button" onClick={(history)}>목록</button>
+            <button className="view-button" onClick={goMain} >목록으로</button>
         </div>
     )
 }
