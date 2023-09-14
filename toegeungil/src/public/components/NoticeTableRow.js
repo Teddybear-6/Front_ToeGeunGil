@@ -1,15 +1,17 @@
 import React from "react";
 import NoticeTableColumn from "./NoticeTableColumn";
+import {Link} from "react-router-dom";
 
 const NoticeTableRow = ({notice}) => {
 
-
     return (
+        <Link to={`/notice/${notice.noticeNum}`}>
         <tr className="notice-table-row">
-            <NoticeTableColumn>
-                {notice}
-            </NoticeTableColumn>
+            <NoticeTableColumn  state={notice.noticeNum}/>
+            <NoticeTableColumn state={notice.noticeContent}/>
+            <NoticeTableColumn state={notice.noticeDate}/>
         </tr>
+        </Link>
     )
 }
 

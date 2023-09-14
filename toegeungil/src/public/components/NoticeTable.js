@@ -7,19 +7,12 @@ const NoticeTable = props => {
 
     return (
         <table className="notice-table" >
-            <thead className="notice-table-column" style={{fontSize:20,fontWeight:"bold",marginBottom:"32px"}}>
-                    <td className="notice-header-col1">번호</td>
-                    <td className="notice-header-col2">제목</td>
-                    <td className="notice-header-col3">작성일</td> 
-                    {/* {
-                        noticeHeadersName.map((item, index) => {
-                            return (
-                                <td key={index}>
-                                    {item}
-                                </td>
-                            )
-                        })
-                    } */}
+            <thead className="notice-table-header-column" style={{ fontSize: 20, fontWeight: "bold", marginBottom: "17px", marginTop: "60px" }}>
+                <tr>
+                    <th className="notice-header-col1">{noticeHeadersName[0]}</th>
+                    <th className="notice-header-col2">{noticeHeadersName[1]}</th>
+                    <th className="notice-header-col3">{noticeHeadersName[2]}</th>
+                </tr>
             </thead>
             <tbody>
                 {
