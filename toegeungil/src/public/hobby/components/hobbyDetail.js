@@ -7,6 +7,7 @@ import HobbyImages from "./hobbyDetailImages";
 import HobbyMainImages from "./hobbyDetailMainImages";
 import HobbyTutor from "./hobbyTutor";
 import jwt_decode from "jwt-decode";
+import RevieWrite from "./hobbyReview";
 
 import TestLogin from "./testLogin";
 
@@ -14,23 +15,24 @@ function HobbyDetail() {
     const{hobbyCode} = useParams();
     const [detail, setDetail] = useState({});
     const [imageNum, setImageNum] = useState(0);
-    const [user , setUser] =useState(jwt_decode(sessionStorage.getItem("Authorizaton")));
+    const [user , setUser] =useState();
     const [join , setJoin] =useState();
     
 
 
     useEffect(() => {
+       if(sessionStorage.getItem("Authorizaton")){
         setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
+       }
         fetch(`http://localhost:8001/hobbys/${hobbyCode}`)
             .then((response) => response.json()).then(data => {
                 setDetail(data);
             })
-
+        if(user)
          fetch(`http://localhost:8001/hobbys/join/${hobbyCode}/${user.no}`).then(res => res.json()).then(res=>{
             setJoin(res)
          })  
             
-        console.log(user)
     }, [join])
 
     const onClickHandler = index => {
@@ -40,23 +42,39 @@ function HobbyDetail() {
     const joinClickHandler = () =>{
         if(!user){
             alert("회원만 참여가능합니다.")
-        }else{
-            
-            fetch(`http://localhost:8001/hobbys/join/${hobbyCode}/${user.no}`,{
+        }else if(join){
+            if(window.confirm("참여 취소하시겠습니까")){
+                fetch(`http://localhost:8001/hobbys/join/${hobbyCode}/${user.no}`,{
                 method: "POST",
             }).then(res=>res.text()).then(res=> {
                 alert(res)
                 if(res == "참가 취소 되었습니다."){
                     setJoin(false)
-                }else{
-                    setJoin(true)
                 }
             
             }).catch(r=>console.log(r))
+            }
+        }else if(!join){
+            if(window.confirm("참여하시겠습니까")){
+                fetch(`http://localhost:8001/hobbys/join/${hobbyCode}/${user.no}`,{
+                method: "POST",
+            }).then(res=>res.text()).then(res=> {
+                alert(res)
+                if(res == "참가 완료되었습니다."){
+                    setJoin(true)
+                
+                }
+            
+            }).catch(r=>console.log(r))
+            }
+            
+        }
+
+        
+
          
         }
         
-    }
     return (
         <>
             <div className={detailSytle.frame}>
@@ -95,7 +113,12 @@ function HobbyDetail() {
                 </div>
                             <div className={detailSytle.joinframe}>
                                 <p className={detailSytle.joinTitle}>참가자</p>
-                               { join ? <button onClick={joinClickHandler} className={detailSytle.joinBtn}>취소하기</button> : <button onClick={joinClickHandler}  className={detailSytle.joinBtn}>참여하기</button>}
+                               { detail.close =="N" ? 
+                               (join ? <button onClick={joinClickHandler} className={detailSytle.joinBtn}>취소하기</button> 
+                               : <button onClick={joinClickHandler}  className={detailSytle.joinBtn}>참여하기</button>) 
+                               :<button disabled="disabled" className={detailSytle.cBtn}>마감되었습니다.</button>
+                            
+                             }
                                 
                             </div>
 
@@ -105,7 +128,7 @@ function HobbyDetail() {
 
                             <HobbyTutor tutorIntro={detail.tutorIntro} tutorCode={detail.tutorCode}></HobbyTutor>
 
-                                
+                            <RevieWrite/>
             </div>
         </>
     )

@@ -148,6 +148,18 @@
     .frame2{
         display: flex;
     }
+    .cBtn{
+        margin-right: 50px;
+        float: right;
+        border-radius: 50px;
+        width: 190px;
+        height: 75px;
+        background-color: #8FC4B3;
+        color: #096249;
+        font-size: 20px;
+        font-weight: bold;
+        disabled : disabled
+    }
     
     .intro{
         margin-top: 10px;
@@ -271,6 +283,8 @@
     }
     
     
+
+    
     .joinframe{
        margin-top: 10px;
         border: 2px solid #8FC4B3;
@@ -314,7 +328,25 @@
         transition: 0.25s;
         font-weight: bold;
     }
-    
+
+
+
+    .cBtn{
+        margin-right: 50px;
+        float: right;
+        border-radius: 50px;
+        width: 150px;
+        height: 75px;
+        background-color: #8FC4B3;
+        color: #096249;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+
+
+
+
     .frame2{
         display: flex;
     }
