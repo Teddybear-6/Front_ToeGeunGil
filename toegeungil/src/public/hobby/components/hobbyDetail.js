@@ -6,34 +6,57 @@ import HobbyDetailTitle from "./hobbyDetailTitle";
 import HobbyImages from "./hobbyDetailImages";
 import HobbyMainImages from "./hobbyDetailMainImages";
 import HobbyTutor from "./hobbyTutor";
+import jwt_decode from "jwt-decode";
 
+import TestLogin from "./testLogin";
 
 function HobbyDetail() {
     const{hobbyCode} = useParams();
     const [detail, setDetail] = useState({});
     const [imageNum, setImageNum] = useState(0);
-
-  
+    const [user , setUser] =useState(jwt_decode(sessionStorage.getItem("Authorizaton")));
+    const [join , setJoin] =useState();
     
 
 
     useEffect(() => {
+        setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
         fetch(`http://localhost:8001/hobbys/${hobbyCode}`)
             .then((response) => response.json()).then(data => {
                 setDetail(data);
-
             })
 
-            window.addEventListener('resize', handleResize);
-            return() =>{
-                window.removeEventListener('resize' ,handleResize);
-            }
-    }, [])
+         fetch(`http://localhost:8001/hobbys/join/${hobbyCode}/${user.no}`).then(res => res.json()).then(res=>{
+            setJoin(res)
+         })  
+            
+        console.log(user)
+    }, [join])
 
     const onClickHandler = index => {
         setImageNum(index);
     }
 
+    const joinClickHandler = () =>{
+        if(!user){
+            alert("회원만 참여가능합니다.")
+        }else{
+            
+            fetch(`http://localhost:8001/hobbys/join/${hobbyCode}/${user.no}`,{
+                method: "POST",
+            }).then(res=>res.text()).then(res=> {
+                alert(res)
+                if(res == "참가 취소 되었습니다."){
+                    setJoin(false)
+                }else{
+                    setJoin(true)
+                }
+            
+            }).catch(r=>console.log(r))
+         
+        }
+        
+    }
     return (
         <>
             <div className={detailSytle.frame}>
@@ -72,7 +95,8 @@ function HobbyDetail() {
                 </div>
                             <div className={detailSytle.joinframe}>
                                 <p className={detailSytle.joinTitle}>참가자</p>
-                                <button className={detailSytle.joinBtn}>참여하기</button>
+                               { join ? <button onClick={joinClickHandler} className={detailSytle.joinBtn}>취소하기</button> : <button onClick={joinClickHandler}  className={detailSytle.joinBtn}>참여하기</button>}
+                                
                             </div>
 
                             <div className={detailSytle.intro}>
