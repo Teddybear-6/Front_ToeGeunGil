@@ -1,6 +1,7 @@
 // import MainRouter from "./router/MainRouter";
-import SocialDetails from "./public/social/components/SocialDetails";
+import SocialDetailsTitle from "./public/social/components/detailsPage/SocialDetailsTitle";
 import SocialMainCard from "./public/social/components/SocialMainCard";
+
 
 function App() {
   /* 라우팅
@@ -11,7 +12,7 @@ function App() {
       <h1>프로젝트 퇴근길</h1>
       {/* <MainRouter/> */}
       {/* <SocialMainCard/> */}
-      <SocialDetails/>
+      <SocialDetailsTitle/>
     </>
   );
 }

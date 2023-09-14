@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-import MainStyle from '../css/SocialMainCard.module.css';
+import DetailsStyle from '../css/SocialDetails.module.css';
 
-function SocialImage({ imgcode }) {
+function SocialDetailsImage({imgcode}) {
     const [image, setImage] = useState();
 
     useEffect(() => {
@@ -16,9 +16,9 @@ function SocialImage({ imgcode }) {
 
     return (
         <>
-            <img className={MainStyle.socialMainImg} src={image}/>
+            <img className={DetailsStyle.socialDetailsImage} src={image}/>
         </>
     )
 }
 
-export default SocialImage;
+export default SocialDetailsImage;
