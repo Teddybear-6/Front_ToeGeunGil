@@ -4,10 +4,11 @@ import SocialKeyword from "./componentAPI/SocialKeyword";
 import UserNicname from "./componentAPI/UserNicname";
 import SocialDetailsImage from "./componentAPI/SocialDetailsImage";
 import SocialLocal from "./componentAPI/SocialLocal";
+import SocialParticipateList from "./componentAPI/SocialParticipateList";
 
 import DetailsStyle from './css/SocialDetails.module.css';
 
-function SocialDetailsTitle() {
+function SocialDetails() {
     /*
     <SocialDetailsTitle>
     - 소셜 제목, 키워드, 작성자
@@ -89,22 +90,7 @@ function SocialDetailsTitle() {
                     </div>
                 </div>
             </div>
-            {/* 참여자 */}
-            <div className={DetailsStyle.socialDetailsParticipate}>
-                {/* 사이즈로 인원수 체크하고 사이즈만큼 for문 돌려서 사진 넣어보기 */}
-                <div className={DetailsStyle.socialDetailsParticipateBoard}>
-                    <div className={DetailsStyle.socialDetailsParticipateN}>참여자 ( N / {socials.socialFixedNum} )</div>
-                    <div className={DetailsStyle.flexStyle2}>
-                        <div>
-                            <img className={DetailsStyle.socialDetailsParticipateImg} src="participate.png" />
-                            <img className={DetailsStyle.socialDetailsParticipateImg} src="participate.png" />
-                            <img className={DetailsStyle.socialDetailsParticipateImg} src="participate.png" />
-                            <img className={DetailsStyle.socialDetailsParticipateImg} src="participate.png" />
-                        </div>
-                        <button className={DetailsStyle.buttonStyle}>참여하기</button>
-                    </div>
-                </div>
-            </div>
+            {/* <SocialParticipateList postNum={socials.socialNum}/> */}
             {/* 소셜 소개 */}
             <div className={DetailsStyle.socialDetailsIntro}>
                 <div className={DetailsStyle.socialDetailsMargin50Layout}>
@@ -121,4 +107,4 @@ function SocialDetailsTitle() {
     )
 }
 
-export default SocialDetailsTitle;
+export default SocialDetails;

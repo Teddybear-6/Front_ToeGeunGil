@@ -1,8 +1,7 @@
 // import MainRouter from "./router/MainRouter";
-import SocialDetailsTitle from "./public/social/components/SocialDetails";
 import SocialMainCard from "./public/social/components/SocialMainCard";
-import SocialParticipate from "./public/social/components/componentAPI/SocialParticipate";
 import SocialParticipateList from "./public/social/components/componentAPI/SocialParticipateList";
+import SocialDetails from "./public/social/components/SocialDetails";
 
 
 function App() {
@@ -14,9 +13,8 @@ function App() {
       <h1>프로젝트 퇴근길</h1>
       {/* <MainRouter/> */}
       {/* <SocialMainCard/> */}
-      {/* <SocialParticipate/> */}
       <SocialParticipateList/>
-      <SocialDetailsTitle/>
+      {/* <SocialDetails/> */}
     </>
   );
 }
