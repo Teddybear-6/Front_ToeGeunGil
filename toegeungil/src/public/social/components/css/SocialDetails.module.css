@@ -148,3 +148,17 @@
     justify-content: center;
     align-items: center;
 }
+
+.buttonStyle2 {
+    width: 150px;
+    height: 75px;
+    border-radius: 50px;
+    color: #41A487;
+    background-color: #CCE2DB;
+    border-color: #CCE2DB;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

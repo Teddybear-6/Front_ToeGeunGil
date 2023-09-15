@@ -24,8 +24,8 @@ function SocialDetailsTitle() {
     const [socials, setSocials] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:8001/socials/2`)
-            .then(response => response.json())
+        fetch(`http://localhost:8001/socials/2`, {method : "GET"})
+            .then(response => response.json()) //json으로 받는다
             .then(data => setSocials(data));
     }, []);
 
@@ -91,6 +91,7 @@ function SocialDetailsTitle() {
             </div>
             {/* 참여자 */}
             <div className={DetailsStyle.socialDetailsParticipate}>
+                {/* 사이즈로 인원수 체크하고 사이즈만큼 for문 돌려서 사진 넣어보기 */}
                 <div className={DetailsStyle.socialDetailsParticipateBoard}>
                     <div className={DetailsStyle.socialDetailsParticipateN}>참여자 ( N / {socials.socialFixedNum} )</div>
                     <div className={DetailsStyle.flexStyle2}>
