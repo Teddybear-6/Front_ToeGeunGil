@@ -5,14 +5,14 @@ function CommunityKeyword({keywordCode}){
 
     useEffect(() => {
         console.log(keywordCode)
-        fetch(`http://localhost:8001/keyword/${keywordCode}`).then((response) => response.json()).then((data) => setKeywordName(data.keywordName)).catch((error) => {
+        fetch(`http://localhost:8001/keyword/${keywordCode}`).then((response) => response.json()).then((data) => setKeywordName(data.keywordName || '')).catch((error) => {
             console.log(error);
         })
         console.log(keywordCode)
     }, []);
     
     return(
-        <td className={keywordName}>{keywordName}</td>
+        <span>{keywordName}</span>
     )
 }
 

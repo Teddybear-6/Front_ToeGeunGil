@@ -1,16 +1,17 @@
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CommunityMain from "./public/community/pages/CommunityMain";
-import AllCommunity from "./public/community/components/AllCoummunity";
-import CommunityList from "./public/community/components/CommunityList";
+import CommunityView from "./public/community/pages/CommunityView";
 
 function App() {
   return (
-    <>
-      <CommunityMain/>
-      <AllCommunity/>
-      <CommunityList/>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/communitys" element={<CommunityMain />} />
+        <Route path="/communitys/:communityNum" element={<CommunityView />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
 export default App;
-

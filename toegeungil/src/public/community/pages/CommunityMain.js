@@ -1,11 +1,11 @@
-// import CommunityKeyword from "../components/CommunityKeyword";
+
+import CommunityList from "../components/CommunityList";
 
 
-
-function CommunityMain({  }) { // 
+function CommunityMain({ }) { 
 return (
     <>
-    
+        <CommunityList/>
     </>
 );
 }
