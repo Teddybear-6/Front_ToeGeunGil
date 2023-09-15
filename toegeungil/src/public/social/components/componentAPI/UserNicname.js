@@ -7,7 +7,7 @@ function UserNicname({ userNo }) {
         fetch(`http://localhost:8001/user/${userNo}`)
             .then(response => response.json())
             .then(data => setUserNic(data));
-    }, []);
+    }, [userNo]);
 
     return(
         <>

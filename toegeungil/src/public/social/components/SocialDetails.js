@@ -90,7 +90,8 @@ function SocialDetails() {
                     </div>
                 </div>
             </div>
-            {/* <SocialParticipateList postNum={socials.socialNum}/> */}
+            <SocialParticipateList postNum={socials.socialNum}/>
+                
             {/* 소셜 소개 */}
             <div className={DetailsStyle.socialDetailsIntro}>
                 <div className={DetailsStyle.socialDetailsMargin50Layout}>

@@ -12,7 +12,7 @@ function SocialDetailsImage({imgcode}) {
                 const objectUrlImg = URL.createObjectURL(data)
                 setImage(objectUrlImg);
             });
-    }, []);
+    }, [imgcode]);
 
     return (
         <>

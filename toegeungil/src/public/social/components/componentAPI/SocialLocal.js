@@ -7,7 +7,7 @@ function SocialLocal({code}) {
         fetch(`http://localhost:8001/local/${code}`)
             .then(response => response.json())
             .then(data => setLocalName(data));
-    },[]);
+    },[code]);
 
     return(
         <>
