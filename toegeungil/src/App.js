@@ -13,7 +13,6 @@ function App() {
           <Route path='/notice/:noticeNum' element={<NoticeView/>}/>
         </Routes>
       </>
-      {/* <MainRouter/> */ }
     </BrowserRouter>
 
   );

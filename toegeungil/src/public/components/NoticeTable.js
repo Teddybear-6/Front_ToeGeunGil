@@ -6,12 +6,12 @@ const NoticeTable = props => {
     const { noticeHeadersName, children } = props;
 
     return (
-        <table className="notice-table" >
-            <thead style={{ fontSize: 20, fontWeight: "bold"}}>
+        <table className="notice-wrapper" >
+            <thead className="notice-head" >
                 <tr>
-                    <th className="notice-header-col1">{noticeHeadersName[0]}</th>
-                    <th className="notice-header-col2">{noticeHeadersName[1]}</th>
-                    <th className="notice-header-col3">{noticeHeadersName[2]}</th>
+                    <th className="notice-th1">{noticeHeadersName[0]}</th>
+                    <th className="notice-th2">{noticeHeadersName[1]}</th>
+                    <th className="notice-th3">{noticeHeadersName[2]}</th>
                 </tr>
             </thead>
             <tbody>

@@ -1,114 +1,55 @@
-.notice-table {
-    width: 70%; /*  테이블 길이 */
-    margin: 0px auto;
-    text-align: center;
-    border-spacing: 10;
-    border-collapse: separate;
-    border-spacing: 0;
-    
+.notice-wrapper{
+    width: 1000px;
+    margin: auto;
+    margin-top: 60px;
 }
 
 th{
-    width: 1500px;
+    /* width: 500px; */
     height: 70px;
     border: 1px solid #B9A49B;
     color: #87746B;
+    font-size: 20px;
     font-weight: bold;
-
 }
 
-th:first-child{
+.notice-th1{
+    width: 140px;
     border-radius: 50px 0 0 50px;
     border-right: 0px;
 }
-th:nth-child(2){
+
+.notice-th2{
+    width: 600px;
     border-right: 0px;
     border-left: 0px;
 }
-th:last-child{
+.notice-th3{
+    width: 260px;
     border-radius: 0 50px 50px 0;
     border-left: 0px ;
 }
 
-
-/* .notice-table-header-column {
-    width: 1500px;
+.notice-title-box{
+    width: 1000px;
     height: 70px;
-    color: #87746B ;
-    font-size: 20px;
-    padding: 10px 5px;
-    font-weight: bold;
-    border-radius: 10%;
-} */
-
-.notice-table-column  {
-    width: 1500px;
-    height: 70px;
-    border: 1px solid #B9A49B;
+    border: 1px solid #B9A49B ;
     border-radius: 50px;
-    color: #87746B ;
-    font-size: 16px;
-    font-weight: normal;
-    display: flex;
+    margin-top: 32px;
 }
 
-/* .notice-table-row {
-    
-    background-color: #E9E0DD;
-    cursor: pointer;
-
+/* .notice-title{
+    background-color: pink;
 } */
 
-.notice-table-row:hover {
-    background-color: #E9E0DD;
-    margin-top: 15px;
-    cursor: pointer;
+.notice-title-col1{
+
 }
 
+.notice-title-col2{
 
-
-.notice-col1 {
-    width: 140px;
-    height: 70px;
-    margin-left: 50px;
-    margin-top: 25px;
-    text-align: center;
 }
 
-.notice-col2 {
-    width: 1000px;
-    height: 70px;
-    margin-top: 25px;
-    text-align: center;
-}
+..notice-title-col3{
 
-.notice-col3 {
-    width: 260px;
-    height: 70px;
-    margin-top: 25px;
-    margin-right: 50px;
-    text-align: center;
-}
-
-.notice-header-col1 {
-    width: 140px;
-    height: 70px;
-    margin-left: 50px;
-    margin-top: 20px;
-    text-align: center;
-}
-
-.notice-header-col2 {
-    width: 1000px;
-    height: 70px;
-    margin-top: 20px;
-    text-align: center;
-}
-
-.notice-header-col3 {
-    width: 260px;
-    height: 70px;
-    margin-top: 20px;
-    margin-right: 50px;
-    text-align: center;
 }
