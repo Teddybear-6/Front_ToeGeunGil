@@ -16,6 +16,12 @@ import email_icon from '../imgs/email.png';
 const Signup =()=>{
     const[action, setAction] = useState("Signup");
 
+    const navigate = useNavigate();
+    
+    const onClickHandler = () =>{
+        navigate(`/login`);
+        /*navigate location.href 새로고침이 일어나지 않음*/
+    }
     
 
     return(
@@ -54,16 +60,11 @@ const Signup =()=>{
             </div> 
 
             <div className="submit-container">
-            <div className={action === "Signup"?"submit gray":"submit"} onClick={()=>{setAction("Signup")}}>이전</div>
-            <div className={action === "Back"?"submit gray":"submit"} onClick={()=>{setAction("Back")}}>회원가입</div>
-                
+            <div className={action === "Signup"?"submit gray":"submit"} onClick={onClickHandler}>이전</div>
+            <div className={action === "Back"?"submit gray":"submit"} onClick={()=>{setAction("Success")}}>회원가입</div>
+            
             </div>
             
-
-
-
-
-
         </div>
         </>
     );
