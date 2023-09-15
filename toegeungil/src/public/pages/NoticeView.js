@@ -26,15 +26,21 @@ const NoticeView = () => {
                         <div className="view-name">
                             <label>{detail.noticeTitle}</label>
                         </div>
-                        <div className="view-date">
-                            <label>{detail.noticeDate}</label>
-                        </div>
                         <div className="view-content">
-                            <label>{detail.noticeContent}</label>
+                            <div className="view-date">
+                                <label>{detail.noticeDate}</label>
+                            </div>
+                            <div className="view-text-box">
+                                <div className="view-text">
+                                    <label>{detail.noticeContent}</label>
+                                </div>
+                            </div>
                         </div>
-                        <Link to="/notice">
-                            <button className="view-button">목록으로</button>
-                        </Link>
+                        <div className="view-button-box" >
+                            <Link to="/notice">
+                                <button className="view-button">목록으로</button>
+                            </Link>
+                        </div>
                     </>
                 ) : "공지사항이 없습니다"
             }
