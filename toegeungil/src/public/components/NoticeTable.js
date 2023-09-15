@@ -7,7 +7,7 @@ const NoticeTable = props => {
 
     return (
         <table className="notice-table" >
-            <thead className="notice-table-header-column" style={{ fontSize: 20, fontWeight: "bold", marginBottom: "17px", marginTop: "60px" }}>
+            <thead style={{ fontSize: 20, fontWeight: "bold"}}>
                 <tr>
                     <th className="notice-header-col1">{noticeHeadersName[0]}</th>
                     <th className="notice-header-col2">{noticeHeadersName[1]}</th>
