@@ -24,7 +24,7 @@ function SocialDetailsTitle() {
     const [socials, setSocials] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:8001/socials/1`)
+        fetch(`http://localhost:8001/socials/2`)
             .then(response => response.json())
             .then(data => setSocials(data));
     }, []);
@@ -91,7 +91,18 @@ function SocialDetailsTitle() {
             </div>
             {/* 참여자 */}
             <div className={DetailsStyle.socialDetailsParticipate}>
-                
+                <div className={DetailsStyle.socialDetailsParticipateBoard}>
+                    <div className={DetailsStyle.socialDetailsParticipateN}>참여자 ( N / {socials.socialFixedNum} )</div>
+                    <div className={DetailsStyle.flexStyle2}>
+                        <div>
+                            <img className={DetailsStyle.socialDetailsParticipateImg} src="participate.png" />
+                            <img className={DetailsStyle.socialDetailsParticipateImg} src="participate.png" />
+                            <img className={DetailsStyle.socialDetailsParticipateImg} src="participate.png" />
+                            <img className={DetailsStyle.socialDetailsParticipateImg} src="participate.png" />
+                        </div>
+                        <button className={DetailsStyle.buttonStyle}>참여하기</button>
+                    </div>
+                </div>
             </div>
             {/* 소셜 소개 */}
             <div className={DetailsStyle.socialDetailsIntro}>
