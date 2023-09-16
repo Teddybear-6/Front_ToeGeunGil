@@ -1,10 +1,10 @@
 import React from "react";
-import NoticeList from "./NoticeList";
+import NoticeList from "../pages/NoticeList";
 
-const NoticeMain = () => {
-    return (
+function NoticeMain({}){
+    return(
         <>
-            <NoticeList />
+        <NoticeList/>
         </>
     )
 }
