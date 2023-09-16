@@ -1,8 +1,7 @@
-
 import CommunityList from "../components/CommunityList";
 
 
-function CommunityMain({ }) { 
+function CommunityMain({}) { 
 return (
     <>
         <CommunityList/>

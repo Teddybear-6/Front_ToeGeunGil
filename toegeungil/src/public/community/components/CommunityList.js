@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import CommunityLocation from "./CommunityLocation";
 import CommunityKeyword from "./CommunityKeyword";
-import '../pages/CommunityMain.css';
+import '../components/css/CommunityMain.css';
+import { Link } from "react-router-dom";
 
 const CommunityList = () => {
     const [communityList, setCommunityList] = useState([]);
@@ -41,7 +42,7 @@ const CommunityList = () => {
                             key={community.communityNum}
                             onClick={() => viewCommunity(community.communityNum)}
                         >   
-                            <td class = "table-space">{community.communityNum}</td>
+                            <td>{community.communityNum}</td>
                             <td>{community.communityTitle}</td>
                             <td>{community.userNum}</td>
                             <td>
@@ -54,7 +55,9 @@ const CommunityList = () => {
                     ))}
                 </tbody>
             </table>
+            <Link to={"/communitys"}>
                 <button className="community-regist-button">커뮤니티 글 작성</button>
+            </Link>
         </div>
     );
 }
