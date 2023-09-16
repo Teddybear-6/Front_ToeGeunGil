@@ -36,13 +36,13 @@ function SocialMainCard() {
                                 {/* <img src={`http://localhost:8001/keyword/${<TestImage key={i} imgcode={r.fileNum}/>}`}/> */}
                                 {/* 소셜 제목 */}
                                 <div className={MainStyle.socialMainTitle} key={i}>{r.socialName}</div>
-                                {/* <p><SocialCategory key={i} cateCode={r.categoryCode}></SocialCategory></p> */}
+                                {/* <p><SocialCategory key={i} cateCode={r.castegoryCode}></SocialCategory></p> */}
                                 {/* 키워드 */}
                                 <div className={MainStyle.socialMainKeyword}>
                                     <div className={DetailsStyle.flexStyle} key={i}>
-                                        {r.keywordDTOList?.map((m, index) => {
+                                        {r.keywordDTOList?.map((index) => {
                                             return (
-                                                <SocialKeyword key={index} code={m}/>
+                                                <SocialKeyword key={index} code={r.keywordCode}/>
                                             )
                                         })}
                                     </div>

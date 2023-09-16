@@ -25,7 +25,7 @@ function SocialDetails() {
     const [socials, setSocials] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:8001/socials/2`, {method : "GET"})
+        fetch(`http://localhost:8001/socials/1`, {method : "GET"})
             .then(response => response.json()) //json으로 받는다
             .then(data => setSocials(data));
     }, []);
