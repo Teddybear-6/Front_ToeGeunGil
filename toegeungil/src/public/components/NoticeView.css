@@ -1,0 +1,66 @@
+.view-wrapper { /* 전체 */
+    color: #87746B;
+    font-weight: bold;
+    width: 1000px;
+    margin: auto;
+}
+
+.view-name {
+    text-align: center;
+    font-size: 30px;
+    height: 100px;
+    display: flex;
+    justify-content: flex-start;   
+    align-items: center;         
+    margin-top: 60px;
+}
+
+/* 날짜, 내용 감싸는 컴포넌트*/
+.view-content {
+    display: flex;
+    flex-direction: column;        
+    align-items: flex-start;      
+}
+
+.view-date {
+    font-size: 18px;
+    width: 1000px;
+    height: 50px;
+    border-bottom: 3px solid #B9A49B;
+}
+
+.view-text-box{
+    width: 1000px;
+    height: 500px;
+    border: 3px solid #B9A49B;
+    border-radius: 50px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.view-text {
+    width: 900px;
+    height: 700px;
+    font-size: 16px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.view-button-box{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 50px;
+}
+
+.view-button {
+    color: #096249;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #8FC4B3;
+    border: 1px;
+    border-radius: 50px;
+    width: 120px;
+    height: 50px;
+}
