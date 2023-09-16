@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import '../components/NoticeTable.css';
-import { Link } from "react-router-dom";
+import '../components/NoticeMain.css';
 
 const NoticeList = () => {
     const [list, setList] = useState([]);
@@ -17,25 +16,27 @@ const NoticeList = () => {
         }
     )
 
+    const goMain = (noticeNum) => {
+        window.location.href = `/notice/${noticeNum}`;
+    }
+
     return (
         <div>
             <table className="notice-wrapper">
                 <thead>
                     <tr>
-                        <th>번호</th>
-                        <th>제목</th>
-                        <th>작성일</th>
+                        <th className="notice-header">번호</th>
+                        <th className="notice-header">제목</th>
+                        <th className="notice-header">작성일</th>
                     </tr>
                 </thead>
                 <tbody>
                     {
                         list.map((notice) => (
-                            <tr className="notice-box" key={notice.noticeNum}>
-                                <Link to={`/notice/${notice.noticeNum}`}>
-                                    <td className="notice-number">{notice.noticeNum}</td>
-                                    <td className="notice-number">{notice.noticeContent}</td>
-                                    <td className="notice-number">{notice.noticeDate}</td>
-                                </Link>
+                            <tr className="notice-box" key={notice.noticeNum} onClick={() => goMain(notice.noticeNum)}>
+                                <td className="notice-content">{notice.noticeNum}</td>
+                                <td className="notice-content">{notice.noticeContent}</td>
+                                <td className="notice-content">{notice.noticeDate}</td>
                             </tr>
                         ))
                     }
