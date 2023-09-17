@@ -1,0 +1,61 @@
+.image{
+    width: 312px;
+    height: 279px;
+    margin-left: 10px;
+    border-radius: 50px;
+    border: 2px solid #8FC4B3; 
+}
+
+
+.title{
+    border-radius: 50px;
+    border: 2px solid #8FC4B3; 
+    margin-left: 20px;
+    width: 911px;
+    height: 58px
+}
+
+
+.titleframe{
+    display: flex;
+}
+
+.mainIntroFrame{
+    display: flex;
+    margin-top: 20px;
+}
+
+
+.intro{
+    border-radius: 50px;
+    border: 2px solid #8FC4B3; 
+    width: 460px;
+    height: 278px;
+    margin-left: 40px;
+}
+
+.introTitle{
+    margin-left: 50px;
+}
+
+
+.dateframe{
+   display: flex;
+}
+
+.dateTitle{
+  
+}
+
+.date{
+    border-radius: 50px;
+    border: 2px solid #8FC4B3; 
+    width: 325px;
+    height: 58px;
+
+}
+
+.time{
+    border-radius: 50px;
+    border: 2px solid #8FC4B3; 
+}

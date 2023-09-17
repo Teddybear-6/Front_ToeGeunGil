@@ -6,6 +6,7 @@ import HobbyDetail from "./public/hobby/page/hobbyDetail";
 import TestLogin from './public/hobby/components/testLogin';
 import TutorNavber from './public/tutor/components/tutorHobbyNav';
 import HobbyWrite from './public/tutor/page/hobbyWrite';
+import Images from './public/tutor/page/imageTest';
 function App() {
   return (
     <>

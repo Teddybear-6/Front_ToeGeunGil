@@ -10,7 +10,7 @@ function HobbyTutor({tutorIntro, tutorCode}){
             data=>setTutor(data.userName)
         )
 
-        // console.log(tutor)
+   
     })
 
     return(
