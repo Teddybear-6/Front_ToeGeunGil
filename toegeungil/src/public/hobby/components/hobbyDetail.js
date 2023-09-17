@@ -28,11 +28,12 @@ function HobbyDetail() {
             .then((response) => response.json()).then(data => {
                 setDetail(data);
             })
+          
         if(user)
          fetch(`http://localhost:8001/hobbys/join/${hobbyCode}/${user.no}`).then(res => res.json()).then(res=>{
             setJoin(res)
          })  
-            
+         console.log(detail)
     }, [join])
 
     const onClickHandler = index => {

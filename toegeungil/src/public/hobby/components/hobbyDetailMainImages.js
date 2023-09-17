@@ -7,20 +7,14 @@ function HobbyMainImages({detail}){
    
     useEffect(()=>{
      
-            fetch(`http://localhost:8001/hobbys/image/${detail.id}`)
-            .then(r => r.blob())
-            .then(data => {
-                const objectURL = URL.createObjectURL(data)
-                setImages(objectURL);
-            });
-         
+        console.log(detail)
     },[detail]);
 
 
     return(
         <>
                 <div>
-                    <img className={ImageStyle.mainImage} src={images}></img>
+                    <img className={ImageStyle.mainImage} src={`http://106.250.199.126:9000/image/${detail.path}`}></img>
                 </div>
         </>
     )
