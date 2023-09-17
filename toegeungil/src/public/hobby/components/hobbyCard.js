@@ -10,17 +10,12 @@ import HobbyKeyword from './HobbyKeyword';
 function HobbyCard(hobbys){
     const[mainImage, setMainImage] = useState();
     const[category, setCategery] = useState([]);
-    // const navigate = useNavigate();
+    
   
 
     useEffect(()=>{
-        fetch(`http://localhost:8001/hobbys/mainimages/${hobbys.hobbys.hobbyCode}`).then(res => res.blob())
-        .then(blob => {
-            const objectURL = URL.createObjectURL(blob)
-            setMainImage(objectURL)
-        
-        }
-        )
+        fetch(`http://localhost:8001/hobbys/mainimages/${hobbys.hobbys.hobbyCode}`).then(res => res.json())
+        .then(res => setMainImage(res))
 
         fetch(`http://localhost:8001/category/${hobbys.hobbys.categoryCode}`).then(res=>res.json()).then(data=>{
             setCategery(data)
@@ -28,6 +23,7 @@ function HobbyCard(hobbys){
         })
 
       
+        console.log(mainImage)
 
 
     },[])
@@ -50,9 +46,11 @@ function HobbyCard(hobbys){
         <>
         <Link to={`/hobby/${hobbys.hobbys.hobbyCode}`}>
         <div className={CardStyle.hobbyCard}>
-            <img className={CardStyle.hobbyImage} src={mainImage}></img>
+            {
+        !mainImage ? null :  <img className={CardStyle.hobbyImage} src={`http://106.250.199.126:9000/image/${mainImage.path}`}/>
+            }
             <p className={CardStyle.hobbyTitle}>{hobbys.hobbys.hobbyTitle}</p>
-           
+          
            <div>
                 <div className={CardStyle.keywordCard}>
                 <p className={CardStyle.keywordName}>{category.categoryName}</p>

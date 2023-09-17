@@ -1,15 +1,15 @@
 
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import detailSytle from "./hobbyDetail.module.css"
-import HobbyDetailTitle from "./hobbyDetailTitle";
-import HobbyImages from "./hobbyDetailImages";
-import HobbyMainImages from "./hobbyDetailMainImages";
-import HobbyTutor from "./hobbyTutor";
+import detailSytle from "../components/hobbyDetail.module.css"
+import HobbyDetailTitle from "../components/hobbyDetailTitle";
+import HobbyImages from "../components/hobbyDetailImages";
+import HobbyMainImages from "../components/hobbyDetailMainImages";
+import HobbyTutor from "../components/hobbyTutor";
 import jwt_decode from "jwt-decode";
-import RevieWrite from "./hobbyReview";
+import RevieWrite from "../components/hobbyReview";
 
-import TestLogin from "./testLogin";
+import TestLogin from "../components/testLogin";
 
 function HobbyDetail() {
     const{hobbyCode} = useParams();
@@ -33,7 +33,6 @@ function HobbyDetail() {
          fetch(`http://localhost:8001/hobbys/join/${hobbyCode}/${user.no}`).then(res => res.json()).then(res=>{
             setJoin(res)
          })  
-         console.log(detail)
     }, [join])
 
     const onClickHandler = index => {
