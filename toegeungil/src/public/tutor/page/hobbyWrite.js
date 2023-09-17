@@ -16,27 +16,39 @@ function HobbyWrite(){
   
     // 이미지 상대경로 저장
     const handleAddImages = (event) => {
+        console.log(event.target.files.length)
+        console.log( hobbyImage.length)
+        if(event.target.files.length>4 || hobbyImage.length>3){
+            alert("이미지는 4장까지 업로드 가능합니다.");
+        }else{
         
-            
-     
       const imageLists = event.target.files;
       let imageUrlLists = [...showImages];
   
       for (let i = 0; i < imageLists.length; i++) {
         const currentImageUrl = URL.createObjectURL(imageLists[i]);
         imageUrlLists.push(currentImageUrl);
-        setHobbyImage([...imageLists])
+        
       }
   
-      if (imageUrlLists.length > 4) {
-        imageUrlLists = imageUrlLists.slice(0, 4);
-      }
-  
+    //   if (imageUrlLists.length > 4) {
+    //     imageUrlLists = imageUrlLists.slice(0, 4);
+    //     for(let i= 0; i< 4;i++){
+    //         setHobbyImage([...imageLists[i]]);
+    //     }
+        
+    //   }
+      setHobbyImage([...hobbyImage,imageLists ])
       setShowImages(imageUrlLists);
+        }
     };
+
+
+
+
       const handleDeleteImage = (id) => {
         setShowImages(showImages.filter((_, index) => index !== id));
-        setHobbyImage(setHobbyImage.file((_, index) => index !== id));
+        setHobbyImage(hobbyImage.filter((_, index) => index !== id));
       };
 
 
@@ -56,8 +68,7 @@ function HobbyWrite(){
         <input className="title" type="text" name="hobbyTitle" onChange={onChangeHandler} />
         </div>
         <div className="mainIntroFrame">
-     
-      
+
         <p className="introTitle">소개글</p>
         <input  className="intro"type="text" name="intro" onChange={onChangeHandler}  />
         </div>
