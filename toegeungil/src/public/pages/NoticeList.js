@@ -16,7 +16,7 @@ const NoticeList = () => {
         }
     )
 
-    const goMain = (noticeNum) => {
+    const goView = (noticeNum) => {
         window.location.href = `/notice/${noticeNum}`;
     }
 
@@ -25,18 +25,18 @@ const NoticeList = () => {
             <table className="notice-wrapper">
                 <thead>
                     <tr>
-                        <th className="notice-header">번호</th>
-                        <th className="notice-header">제목</th>
-                        <th className="notice-header">작성일</th>
+                        <th>번호</th>
+                        <th>제목</th>
+                        <th>작성일</th>
                     </tr>
                 </thead>
                 <tbody>
                     {
                         list.map((notice) => (
-                            <tr className="notice-box" key={notice.noticeNum} onClick={() => goMain(notice.noticeNum)}>
-                                <td className="notice-content">{notice.noticeNum}</td>
-                                <td className="notice-content">{notice.noticeContent}</td>
-                                <td className="notice-content">{notice.noticeDate}</td>
+                            <tr key={notice.noticeNum} onClick={() => goView(notice.noticeNum)}>
+                                <td>{notice.noticeNum}</td>
+                                <td>{notice.noticeContent}</td>
+                                <td>{notice.noticeDate}</td>
                             </tr>
                         ))
                     }
