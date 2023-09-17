@@ -14,10 +14,6 @@ const NoticeView = () => {
                 .then(data => setDetail(data))
         }, [])
 
-    // const goMain = () => {
-    //     window.location.href = "/notice";
-    // }
-
     return (
         <div className="view-wrapper">
             {
