@@ -5,15 +5,14 @@ import AllHobby from "./public/hobby/page/AllHobby";
 import HobbyDetail from "./public/hobby/page/hobbyDetail";
 import TestLogin from './public/hobby/components/testLogin';
 import TutorNavber from './public/tutor/components/tutorHobbyNav';
+import HobbyWrite from './public/tutor/page/hobbyWrite';
 function App() {
   return (
     <>
    <h1>프로젝트 퇴근길</h1>
   
  
-   <BrowserRouter>
-   
-   {/* <TutorNavber></TutorNavber> */}
+   {/* <BrowserRouter>
     <Routes>
       <Route index element={<TestLogin/>}></Route>
 
@@ -23,10 +22,9 @@ function App() {
 
       </Route>
     </Routes>
-    
     </BrowserRouter>
-   
-   
+    */}
+   <HobbyWrite/>
 
     </>
   );
