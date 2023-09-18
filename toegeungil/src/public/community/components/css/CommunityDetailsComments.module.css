@@ -1,0 +1,54 @@
+
+
+.CommentDetail{
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 175px;
+    margin-left: 250px;
+}
+
+.CommentBar{
+    width: 1500px;
+    margin-right: 320px;
+    margin-bottom: 40px;
+    border: 1px solid #E9E0DD;
+}
+
+.CommentsBox{
+    width: 1400px;
+    height: 150px;
+    border: 3px solid #E9E0DD;
+    margin-bottom: 30px;
+    border-radius: 50px;
+}
+
+.CommentDetailsView{
+    display: flex;
+    margin-top: 30px;
+}
+
+.CommentWriterBox{
+    width: 193px;
+    height: 50px;
+    margin-left: 160px;
+
+}
+
+.CommentWriter{
+    font-size: 18px;
+    font-weight: bold;
+    color: #655853;
+}
+
+.CommentWriterDate{
+    font-size: 14px;
+    color: #655853;
+}
+
+.CommentWriterDetail{
+    font-size: 14px;
+    font-weight: bold;
+    color: #655853;
+    width: 988px;
+    height: 84px;
+}
