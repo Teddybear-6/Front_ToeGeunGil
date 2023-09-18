@@ -12,34 +12,34 @@ const CommunityDetails = () => {
 
     const getCommunitys = () => {
         fetch(`http://localhost:8001/communitys/${communityNum}`)
-        .then((response) => response.json())
-        .then((data) => {
-            setCommunitys(data);
-            setUserNum(data.userNum);
-        });
+            .then((response) => response.json())
+            .then((data) => {
+                setCommunitys(data);
+                setUserNum(data.userNum);
+            });
     };
 
     useEffect(() => {
         getCommunitys();
-    },[communityNum]);
+    }, [communityNum]);
 
-    return(
+    return (
         <>
             <div className={DetailsStyle.Details}>
                 <div className={DetailsStyle.CommunityDetailsWriter}>
                     <div className={DetailsStyle.CommunityDetailsNick}>
-                        {userNum !== null && <UserNickName userNo={userNum}/>}
+                        {userNum !== null && <UserNickName userNo={userNum} />}
                     </div>
                     <div className={DetailsStyle.CommunityDetailsIntroBox}>
                         <div className={DetailsStyle.CommunityDetailsIntro}>{community.communityIntro}</div>
+                    </div>
                 </div>
-                </div>
-                </div>
+            </div>
         </>
     )
 
 
 
-}    
+}
 
 export default CommunityDetails;

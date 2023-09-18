@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function UserNickName({userNo}){
+function UserNickName({ userNo }) {
     const [nickName, setNickName] = useState('');
 
     useEffect(() => {
@@ -10,11 +10,11 @@ function UserNickName({userNo}){
         })
         console.log(userNo)
     }, [userNo]);
-    
-    return(
+
+    return (
         <span>{nickName}</span>
     )
-    
+
 }
 
 export default UserNickName;

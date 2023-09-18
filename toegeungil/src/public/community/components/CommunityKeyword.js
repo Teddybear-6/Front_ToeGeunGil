@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function CommunityKeyword({keywordCode}){
+function CommunityKeyword({ keywordCode }) {
     const [keywordName, setKeywordName] = useState();
 
     useEffect(() => {
@@ -10,8 +10,8 @@ function CommunityKeyword({keywordCode}){
         })
         console.log(keywordCode)
     }, []);
-    
-    return(
+
+    return (
         <span>{keywordName}</span>
     )
 }

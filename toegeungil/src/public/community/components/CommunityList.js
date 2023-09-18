@@ -10,21 +10,21 @@ const CommunityList = () => {
 
     const getCommunityList = () => {
         fetch('http://localhost:8001/communitys')
-        .then((response) => response.json())
-        .then((data) => {
-            setCommunityList(data);
-        });
+            .then((response) => response.json())
+            .then((data) => {
+                setCommunityList(data);
+            });
     };
 
     useEffect(() => {
         getCommunityList();
-    },[]);
+    }, []);
 
     const viewCommunity = (communityNum) => {
         window.location.href = `/communitys/${communityNum}`;
     };
 
-    return(
+    return (
         <div>
             <table className="community-main">
                 <thead>
@@ -37,25 +37,25 @@ const CommunityList = () => {
                     </tr>
                 </thead>
                 <tbody>
-                {communityList.length > 0 &&
-                    communityList.map((community) => (
-                        <tr className="community-list-row"
-                            key={community.communityNum}
-                            onClick={() => viewCommunity(community.communityNum)}
-                        >   
-                            <td>{community.communityNum}</td>
-                            <td>{community.communityTitle}</td>
-                            <td>
-                                <UserNickName userNo={community.userNum}/>
-                            </td>
-                            <td>
-                                <CommunityLocation localCode={community.locationNum} />
-                            </td>
-                            <td>
-                                <CommunityKeyword keywordCode={community.CommunityKeywordDTOList}/>
-                            </td>
-                        </tr>
-                    ))}
+                    {communityList.length > 0 &&
+                        communityList.map((community) => (
+                            <tr className="community-list-row"
+                                key={community.communityNum}
+                                onClick={() => viewCommunity(community.communityNum)}
+                            >
+                                <td>{community.communityNum}</td>
+                                <td>{community.communityTitle}</td>
+                                <td>
+                                    <UserNickName userNo={community.userNum} />
+                                </td>
+                                <td>
+                                    <CommunityLocation localCode={community.locationNum} />
+                                </td>
+                                <td>
+                                    <CommunityKeyword keywordCode={community.CommunityKeywordDTOList} />
+                                </td>
+                            </tr>
+                        ))}
                 </tbody>
             </table>
             <Link to={"/communitys"}>

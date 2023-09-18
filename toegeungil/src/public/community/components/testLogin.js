@@ -1,44 +1,44 @@
-import { useState ,useEffect } from "react";
+import { useState, useEffect } from "react";
 
 
-function TestLogin(){
+function TestLogin() {
 
-    const [userEmail , setUserEmail] = useState("testUser2@gmail.com");
-    const [userPassword , setUserPassword] = useState("jhs0508");
+    const [userEmail, setUserEmail] = useState("testUser2@gmail.com");
+    const [userPassword, setUserPassword] = useState("jhs0508");
 
-    const onclickLoginHandeler = () =>{
+    const onclickLoginHandeler = () => {
         console.log(userEmail)
         console.log(userPassword)
-        fetch(`http://localhost:8001/login`,{
-            method : "POST",
-            headers :{
-                "Content-Type" : "applcation/json"
+        fetch(`http://localhost:8001/login`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "applcation/json"
             },
             body: JSON.stringify({
                 userId: userEmail,
                 userPass: userPassword,
             }),
-        }).then(response=> response.headers.get("authorization"))
-        .then(response =>{
-        sessionStorage.setItem("Authorizaton",response)
-        }).catch(()=>{
-            console.log("아이디 비번 확인해주세요")
-        })
+        }).then(response => response.headers.get("authorization"))
+            .then(response => {
+                sessionStorage.setItem("Authorizaton", response)
+            }).catch(() => {
+                console.log("아이디 비번 확인해주세요")
+            })
     }
 
 
-    const onClickLogoutHandler=() =>{
+    const onClickLogoutHandler = () => {
         sessionStorage.removeItem("Authorizaton");
     }
 
-    return(
+    return (
         <>
-        <h1>아이디 :{userEmail}</h1>
-        <input type="email" name="userEmail" onChange={e=> setUserEmail(e.target.value)} />
-        <h1>비밀번호 :{userPassword}</h1>
-        <input type="password" name="userEmail" onChange={e=> setUserPassword(e.target.value)} />
-        <button onClick={onclickLoginHandeler}>로그인</button>
-        <button onClick={onClickLogoutHandler}>로그아웃</button>
+            <h1>아이디 :{userEmail}</h1>
+            <input type="email" name="userEmail" onChange={e => setUserEmail(e.target.value)} />
+            <h1>비밀번호 :{userPassword}</h1>
+            <input type="password" name="userEmail" onChange={e => setUserPassword(e.target.value)} />
+            <button onClick={onclickLoginHandeler}>로그인</button>
+            <button onClick={onClickLogoutHandler}>로그아웃</button>
         </>
     )
 
