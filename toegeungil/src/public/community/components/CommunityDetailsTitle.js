@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import DetailsTitleStyle from './css/CommunityDetailsTitle.module.css';
 import CommunityLocation from "./CommunityLocation";
 
 const CommunityDetailsTitle = () => {
+    const { communityNum } = useParams();
     const [community, setCommunity] = useState({}); 
     // 더 이상 배열이 아닌 객체로 상태 설정
     const [locationNum, setLocationNum] = useState(null);
     // 초기값을 null로 설정 
 
     const getCommunity = () => {
-        fetch(`http://localhost:8001/communitys/2`)
+        fetch(`http://localhost:8001/communitys/${communityNum}`)
         .then((response) => response.json())
         .then((data) => {
             setCommunity(data);
@@ -20,7 +22,7 @@ const CommunityDetailsTitle = () => {
 
     useEffect(() => {
         getCommunity();
-    },[]);
+    },[communityNum]);
 
     return(
         <>

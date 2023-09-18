@@ -9,7 +9,7 @@ function UserNickName({userNo}){
             console.log(error);
         })
         console.log(userNo)
-    }, []);
+    }, [userNo]);
     
     return(
         <span>{nickName}</span>

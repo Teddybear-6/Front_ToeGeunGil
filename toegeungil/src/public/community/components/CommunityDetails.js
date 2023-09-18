@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 // import CommunityLocation from "./CommunityLocation";
 import DetailsStyle from './css/CommunityDetails.module.css';
 import UserNickName from "./UserNickName";
 
+
 const CommunityDetails = () => {
+    const { communityNum } = useParams();
     const [community, setCommunitys] = useState([]);
     const [userNum, setUserNum] = useState(null);
 
     const getCommunitys = () => {
-        fetch(`http://localhost:8001/communitys/9`)
+        fetch(`http://localhost:8001/communitys/${communityNum}`)
         .then((response) => response.json())
         .then((data) => {
             setCommunitys(data);
@@ -18,7 +21,7 @@ const CommunityDetails = () => {
 
     useEffect(() => {
         getCommunitys();
-    },[]);
+    },[communityNum]);
 
     return(
         <>
