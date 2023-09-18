@@ -13,18 +13,18 @@ function App() {
    <h1>프로젝트 퇴근길</h1>
   
  
-   {/* <BrowserRouter>
+   <BrowserRouter>
     <Routes>
       <Route index element={<TestLogin/>}></Route>
       <Route path='hobby'>
         <Route index element={<AllHobby/>}/>
         <Route path=':hobbyCode' element={<HobbyDetail/>}/>
-
+        <Route path='write' element={<HobbyWrite/>}></Route>
       </Route>
     </Routes>
     </BrowserRouter>
-    */}
-   <HobbyWrite/>
+   
+  
 
     </>
   );

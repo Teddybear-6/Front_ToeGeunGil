@@ -7,8 +7,8 @@ import HobbyImages from "../components/hobbyDetailImages";
 import HobbyMainImages from "../components/hobbyDetailMainImages";
 import HobbyTutor from "../components/hobbyTutor";
 import jwt_decode from "jwt-decode";
-import RevieWrite from "./hobbyReview";
-
+import RevieWrite from "../components/hobbyReview";
+import HobbyReview from "../components/HobbyReviewView";
 
 function HobbyDetail() {
     const{hobbyCode} = useParams();
@@ -32,6 +32,9 @@ function HobbyDetail() {
          fetch(`http://localhost:8001/hobbys/join/${hobbyCode}/${user.no}`).then(res => res.json()).then(res=>{
             setJoin(res)
          })  
+
+
+         
     }, [join])
 
     const onClickHandler = index => {
@@ -73,7 +76,7 @@ function HobbyDetail() {
 
          
         }
-        
+        console.log(detail)
     return (
         <>
             <div className={detailSytle.frame}>

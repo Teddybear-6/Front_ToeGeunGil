@@ -15,7 +15,7 @@ function ReviewAnswer({answer}){
   
         </div>
            <div className="answerContentBox">
-            <p className="answerContent">{answer.content} 튜터</p>
+            <p className="answerContent">{answer.content} </p>
             </div>
         
         </div>
