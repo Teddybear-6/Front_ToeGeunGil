@@ -27,7 +27,9 @@ const CommunityDetailsTitle = () => {
             <div className={DetailsTitleStyle.title}>
                 <div>
                     <div className={DetailsTitleStyle.communityTitleBoard}>
-                        <div className={DetailsTitleStyle.communityTitleName}>{community.communityTitle}</div>
+                        <div 
+                            className={DetailsTitleStyle.communityTitleName}>{community.communityTitle}
+                        </div>
                         <div className={DetailsTitleStyle.keyword}></div>
                         <div className={DetailsTitleStyle.communityLocal}>
                             {locationNum !== null && <CommunityLocation localCode={locationNum}/>}

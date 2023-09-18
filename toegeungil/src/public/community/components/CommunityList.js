@@ -3,6 +3,7 @@ import CommunityLocation from "./CommunityLocation";
 import CommunityKeyword from "./CommunityKeyword";
 import '../components/css/CommunityMain.css';
 import { Link } from "react-router-dom";
+import UserNickName from "./UserNickName";
 
 const CommunityList = () => {
     const [communityList, setCommunityList] = useState([]);
@@ -44,7 +45,9 @@ const CommunityList = () => {
                         >   
                             <td>{community.communityNum}</td>
                             <td>{community.communityTitle}</td>
-                            <td>{community.userNum}</td>
+                            <td>
+                                <UserNickName userNo={community.userNum}/>
+                            </td>
                             <td>
                                 <CommunityLocation localCode={community.locationNum} />
                             </td>
