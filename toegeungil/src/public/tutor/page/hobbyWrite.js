@@ -10,8 +10,9 @@ function HobbyWrite() {
   const [keyword, setKeyword] = useState([]);
   const [hobby, setHobby] = useState({})
   const [keywordDTOList, setKeywordDTOList] = useState([])
-  let [newkeyword, setNewkeyword] = useState({});
+  const [newkeyword, setNewkeyword] = useState({});
   const [hobbyImage, setHobbyImage] = useState([])
+  const [local, setLocal]  = useState([{}]);
 
   useEffect(() => {
     if (sessionStorage.getItem("Authorizaton")) {
@@ -21,17 +22,15 @@ function HobbyWrite() {
 
     fetch("http://localhost:8001/category").then(res => res.json()).then(res => setCategory(res))
     fetch("http://localhost:8001/keyword").then(res => res.json()).then(res => setKeyword(res))
+    fetch("http://localhost:8001/local").then(res => res.json()).then(res => setLocal(res))
 
   }, [])
 
 
 
-
-
   // 이미지 상대경로 저장
   const handleAddImages = (event) => {
-    console.log(event.target.files.length)
-    console.log(hobbyImage.length)
+ 
     if (event.target.files.length > 4 || hobbyImage.length > 3) {
       alert("이미지는 4장까지 업로드 가능합니다.");
     } else {
@@ -67,14 +66,13 @@ function HobbyWrite() {
 
 
   const onChangeHandler = (e) => {
-    console.log(e.target.name)
-    console.log(e.target.value)
+   
     if (e.target.name !== "keywordCode") {
       setHobby({ ...hobby, [e.target.name]: e.target.value });
     } else {
       keywordDTOList.push({ "keywordCode": Number(e.target.value) })
 
-      console.log(keywordDTOList)
+     
       setHobby({ ...hobby, keywordDTOList });
     }
 
@@ -98,13 +96,35 @@ function HobbyWrite() {
 
 
 
-  const onClickHandler = () => {
-    console.log(hobby)
-    console.log(hobbyImage)
+  const onClickHandler =  () => {
+   
     if (!(user === undefined) && !(user === null) && user.auth[0] === 'ADMIN' || user.auth[0] === 'TUTOR') {
+      setHobby({...hobby, ["tutorCode"]: user.no})
+      console.log(hobby)
+      const formData = new FormData()
+      const blob = new Blob([JSON.stringify(hobby)], {
+        type: 'application/json',
+      });
+      formData.append('hobby', blob);
+      for (let i = 0; i < hobbyImage[0].length; i++) {
+        formData.append('hobbyImage', hobbyImage[0][i]);
+      }
+     
+      console.log(formData)
+      console.log(hobbyImage[0][2])
+      fetch("http://localhost:8001/hobbys",{
+        method : "POST",
+        body:formData ,
+        headers :{
+          "Authorization" :  sessionStorage.getItem("Authorizaton")
+      },
+ 
+      
 
+      })
     } else {
       alert("강사만 작성할 수 있습니다.")
+    
     }
 
   }
@@ -159,8 +179,12 @@ function HobbyWrite() {
         <div className="localframe">
           <label for="local">지역선택</label>
           <div className="local">
-            <select name="local" id="local" className="textAll">
-
+            <select name="localCode" id="local" className="textAll" onChange={onChangeHandler}>
+                {
+                  local?.map((m,index)=>(
+                    <option value={m.localName} key={index}>{m.localName}</option>
+                  ))
+                }
             </select>
           </div>
 
