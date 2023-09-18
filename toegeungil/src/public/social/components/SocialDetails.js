@@ -21,11 +21,12 @@ function SocialDetails() {
     - 특이사항
     */
 
+    //<Route path=':socialNum' element={<SocialDetails/>}/> 에서 socialNum을 받아온 것...
     const { socialNum } = useParams();
     const [socials, setSocials] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:8001/socials/18`, {method : "GET"})
+        fetch(`http://localhost:8001/socials/${socialNum}`)
             .then(response => response.json()) //json으로 받는다
             .then(data => setSocials(data));
     }, []);

@@ -5,6 +5,8 @@ import SocialMainImage from "./componentAPI/SocialMainImage";
 // import { Grid, Box } from "@material-ui/core";
 import MainStyle from './css/SocialMainCard.module.css';
 import DetailsStyle from './css/SocialDetails.module.css';
+import { Link } from "react-router-dom";
+import SocialDetails from "./SocialDetails";
 
 function SocialMainCard() {
 
@@ -27,23 +29,26 @@ function SocialMainCard() {
                     {
                         (Object.keys(socials[0]) <= 0) ? null : socials.map((r, i) =>
                             <div key={i} className={MainStyle.socialMainCard}>
-                                {/* <p key={i}>{r.socialNum}</p> */}
-                                {/* 이미지 */}
-                                <SocialMainImage key={i} socialNum={r.socialNum}/>
-                                {/* <SocialMainImage key={i} imgcode={r.fileNum} /> */}
-                                {/* 소셜 제목 */}
-                                <div className={MainStyle.socialMainTitle} key={i}>{r.socialName}</div>
-                                {/* <p><SocialCategory key={i} cateCode={r.castegoryCode}></SocialCategory></p> */}
-                                {/* 키워드 */}
-                                <div className={MainStyle.socialMainKeyword}>
-                                    <div className={DetailsStyle.flexStyle} key={i}>
-                                        {r.keywordDTOList?.map((index) => {
-                                            return (
-                                                <SocialKeyword key={index} code={r.keywordCode}/>
-                                            )
-                                        })}
+                                <Link to={`/${r.socialNum}`} className={MainStyle.socialLink}>
+                                {/* to={<SocialDetails socialNum={r.socialNum}/>} */}
+                                    {/* <p key={i}>{r.socialNum}</p> */}
+                                    {/* 이미지 */}
+                                    <SocialMainImage key={i} socialNum={r.socialNum} />
+                                    {/* <SocialMainImage key={i} imgcode={r.fileNum} /> */}
+                                    {/* 소셜 제목 */}
+                                    <div className={MainStyle.socialMainTitle} key={i}>{r.socialName}</div>
+                                    {/* <p><SocialCategory key={i} cateCode={r.castegoryCode}></SocialCategory></p> */}
+                                    {/* 키워드 */}
+                                    <div className={MainStyle.socialMainKeyword}>
+                                        <div className={DetailsStyle.flexStyle} key={i} code={r.keywordDTOList}>
+                                            {r.keywordDTOList?.map((index) => {
+                                                return (
+                                                    <SocialKeyword key={index} code={r.keywordCode} />
+                                                )
+                                            })}
+                                        </div>
                                     </div>
-                                </div>
+                                </Link>
                             </div>
                         )
                     }

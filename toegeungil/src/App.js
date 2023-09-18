@@ -1,4 +1,5 @@
 // import MainRouter from "./router/MainRouter";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import SocialMainCard from "./public/social/components/SocialMainCard";
 import SocialParticipateList from "./public/social/components/componentAPI/SocialParticipateList";
 import SocialDetails from "./public/social/components/SocialDetails";
@@ -11,10 +12,19 @@ function App() {
   return (
     <>
       <h1>프로젝트 퇴근길</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/'>
+            <Route index element={<SocialMainCard/>} />
+            <Route path=':socialNum' element={<SocialDetails/>} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+
       {/* <MainRouter/> */}
-      {/* <SocialMainCard/> */}
+      {/* <SocialMainCard /> */}
       {/* <SocialParticipateList/> */}
-      <SocialDetails/>
+      {/* <SocialDetails/> */}
     </>
   );
 }

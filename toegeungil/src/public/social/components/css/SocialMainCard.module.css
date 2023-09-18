@@ -3,6 +3,10 @@
     height: 1235px;
 }
 
+.socialLink {
+    text-decoration-line: none;
+}
+
 .socialMainCard {
     width: 345px;
     height: 365px;
