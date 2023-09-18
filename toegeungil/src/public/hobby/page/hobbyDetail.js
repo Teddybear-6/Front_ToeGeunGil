@@ -7,8 +7,7 @@ import HobbyImages from "../components/hobbyDetailImages";
 import HobbyMainImages from "../components/hobbyDetailMainImages";
 import HobbyTutor from "../components/hobbyTutor";
 import jwt_decode from "jwt-decode";
-import RevieWrite from "../components/hobbyReview";
-import HobbyReview from "../components/HobbyReviewView";
+import RevieWrite from "./hobbyReview";
 
 
 function HobbyDetail() {
@@ -28,11 +27,11 @@ function HobbyDetail() {
             .then((response) => response.json()).then(data => {
                 setDetail(data);
             })
+          
         if(user)
          fetch(`http://localhost:8001/hobbys/join/${hobbyCode}/${user.no}`).then(res => res.json()).then(res=>{
             setJoin(res)
          })  
-            
     }, [join])
 
     const onClickHandler = index => {
