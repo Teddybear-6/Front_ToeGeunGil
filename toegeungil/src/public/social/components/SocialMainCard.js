@@ -22,6 +22,8 @@ function SocialMainCard() {
             .then(data => setSocials(data));
     }, []);
 
+
+
     return (
         <>
             <div className={MainStyle.socialMainCardBoard}>
@@ -30,7 +32,7 @@ function SocialMainCard() {
                         (Object.keys(socials[0]) <= 0) ? null : socials.map((r, i) =>
                             <div key={i} className={MainStyle.socialMainCard}>
                                 <Link to={`/${r.socialNum}`} className={MainStyle.socialLink}>
-                                {/* to={<SocialDetails socialNum={r.socialNum}/>} */}
+                                    {/* to={<SocialDetails socialNum={r.socialNum}/>} */}
                                     {/* <p key={i}>{r.socialNum}</p> */}
                                     {/* 이미지 */}
                                     <SocialMainImage key={i} socialNum={r.socialNum} />
@@ -40,12 +42,10 @@ function SocialMainCard() {
                                     {/* <p><SocialCategory key={i} cateCode={r.castegoryCode}></SocialCategory></p> */}
                                     {/* 키워드 */}
                                     <div className={MainStyle.socialMainKeyword}>
-                                        <div className={DetailsStyle.flexStyle} key={i} code={r.keywordDTOList}>
-                                            {r.keywordDTOList?.map((index) => {
-                                                return (
-                                                    <SocialKeyword key={index} code={r.keywordCode} />
-                                                )
-                                            })}
+                                        <div className={DetailsStyle.flexStyle} key={i}>
+                                            {r.keywordDTOList?.map((m, index) => (
+                                                    <SocialKeyword key={index} code={m} />
+                                            ))}
                                         </div>
                                     </div>
                                 </Link>

@@ -31,7 +31,7 @@ function SocialDetails() {
             .then(data => setSocials(data));
     }, []);
 
-
+    console.log(socials)
     return (
         <>
             {/* SocialDetailsTitle (참여하기 전까지) */}

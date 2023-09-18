@@ -11,9 +11,10 @@ function SocialKeyword({code}){
         fetch(`http://localhost:8001/keyword/${code.keywordCode}`)
             .then(response => response.json())
             .then(data => setkeyword(data));
-    },[]);
+            console.log(keyword)
+    },[code]);
 
-
+    console.log(keyword)
     return (
         <>
             <div className={MainStyle.socialMainKeywordDiv}>
