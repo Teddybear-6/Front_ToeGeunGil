@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import '../components/NoticeMain.css';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const NoticeList = () => {
     const [list, setList] = useState([]);
+    const navigate = useNavigate();
+    // const [admin, setAdmin] = useState(false); // 관리자 여부 상태
 
     const getList = () => {
         fetch("http://localhost:8001/notices")
@@ -16,8 +18,16 @@ const NoticeList = () => {
             getList();
         }, [])
 
+        // const goWrite=()=>{
+        //     navigate("/notice/write")
+        // }
+
+        const noticeClick=()=>{
+            alert("공지사항을 작성하시겠습니까?")
+        }
+
     return (
-        <div>
+        <div className="notice-wrapper">
             <table className="table-wrapper">
                 <thead>
                     <tr>
@@ -40,13 +50,12 @@ const NoticeList = () => {
                         ))
                     }
                 </tbody>
-            </table>
-            {/* 관리자일 경우 */}
-            {/* <div className="main-button-box" >
-                <Link to="/notice">
-                    <button className="main-button">게시글 작성 버튼</button>
+                {/* 관리자일 경우 */}
+                <Link to={"/notice/write"}>
+                    <button className="main-button" onClick={noticeClick}>공지사항 작성</button>
                 </Link>
-            </div> */}
+            </table>
+
         </div >
     )
 }
