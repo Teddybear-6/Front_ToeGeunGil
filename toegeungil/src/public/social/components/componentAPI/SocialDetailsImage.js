@@ -2,21 +2,20 @@ import { useEffect, useState } from "react";
 
 import DetailsStyle from '../css/SocialDetails.module.css';
 
-function SocialDetailsImage({imgcode}) {
+function SocialDetailsImage({ socialNum }) {
     const [image, setImage] = useState();
 
     useEffect(() => {
-        fetch(`http://localhost:8001/socials/image/${imgcode}`)
-            .then(response => response.blob())
-            .then(data => {
-                const objectUrlImg = URL.createObjectURL(data)
-                setImage(objectUrlImg);
-            });
-    }, [imgcode]);
+        fetch(`http://localhost:8001/socials/img/${socialNum}`)
+            .then(response => response.json())
+            .then(data => setImage(data));
+    }, [socialNum]);
 
     return (
         <>
-            <img className={DetailsStyle.socialDetailsImage} src={image}/>
+            {
+                !image ? null : <img className={DetailsStyle.socialDetailsImage} src={`http://106.250.199.126:9000/image/${image.path}`} />
+            }
         </>
     )
 }

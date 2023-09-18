@@ -25,7 +25,7 @@ function SocialDetails() {
     const [socials, setSocials] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:8001/socials/1`, {method : "GET"})
+        fetch(`http://localhost:8001/socials/18`, {method : "GET"})
             .then(response => response.json()) //json으로 받는다
             .then(data => setSocials(data));
     }, []);
@@ -57,7 +57,7 @@ function SocialDetails() {
                         </div>
                     </div>
                     {/* 사진 */}
-                    <SocialDetailsImage imgcode={socials.fileNum} />
+                    <SocialDetailsImage socialNum={socials.socialNum}/>
                 </div>
                 <div className={DetailsStyle.socialDetailsScheduleBoard}>
                     <div className={DetailsStyle.socialDetailsMargin50Layout}>
