@@ -1,15 +1,15 @@
 
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import detailSytle from "./hobbyDetail.module.css"
-import HobbyDetailTitle from "./hobbyDetailTitle";
-import HobbyImages from "./hobbyDetailImages";
-import HobbyMainImages from "./hobbyDetailMainImages";
-import HobbyTutor from "./hobbyTutor";
+import detailSytle from "../components/hobbyDetail.module.css"
+import HobbyDetailTitle from "../components/hobbyDetailTitle";
+import HobbyImages from "../components/hobbyDetailImages";
+import HobbyMainImages from "../components/hobbyDetailMainImages";
+import HobbyTutor from "../components/hobbyTutor";
 import jwt_decode from "jwt-decode";
-import RevieWrite from "./hobbyReview";
+import RevieWrite from "../components/hobbyReview";
+import HobbyReview from "../components/HobbyReviewView";
 
-import TestLogin from "./testLogin";
 
 function HobbyDetail() {
     const{hobbyCode} = useParams();
@@ -128,7 +128,16 @@ function HobbyDetail() {
 
                             <HobbyTutor tutorIntro={detail.tutorIntro} tutorCode={detail.tutorCode}></HobbyTutor>
 
-                            <RevieWrite hobbyCode={hobbyCode}/>
+                            {
+                                 detail.close=='Y' && <HobbyReview hobbyCode={hobbyCode}/> 
+                            }
+                            {
+                                
+                                detail.close=='Y' && <RevieWrite hobbyCode={hobbyCode}/> 
+                            }
+                               
+                          
+                           
             </div>
         </>
     )

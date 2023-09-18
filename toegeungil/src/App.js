@@ -2,7 +2,7 @@
 // import MainRouter from "./router/MainRouter";
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import AllHobby from "./public/hobby/page/AllHobby";
-import HobbyDetail from "./public/hobby/components/hobbyDetail";
+import HobbyDetail from "./public/hobby/page/hobbyDetail";
 import TestLogin from './public/hobby/components/testLogin';
 function App() {
   return (
@@ -13,7 +13,6 @@ function App() {
    <BrowserRouter>
     <Routes>
       <Route index element={<TestLogin/>}></Route>
-
       <Route path='hobby'>
         <Route index element={<AllHobby/>}/>
         <Route path=':hobbyCode' element={<HobbyDetail/>}/>

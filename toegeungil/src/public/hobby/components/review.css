@@ -2,14 +2,79 @@
 border-radius: 50px;
 margin-top: 10px;
 border: 2px solid #8FC4B3;
-height: 200px;
+height: auto;
 width: 1400px;
 border-radius: 50px;
 
 }
 
 
+.RreviewFrameRegist{
+  border-radius: 50px;
+  margin-top: 10px;
+  border: 2px solid #8FC4B3;
+  height: 200px;
+  width: 1400px;
+  border-radius: 50px;
 
+}
+.reviewViewsBox{
+  
+  margin-left: 50px;
+
+  .yellowStar {
+    color: #fcc419;
+  }
+}
+
+.reciewAnswer{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 100px;
+  border-radius: 50px;
+  width: 1200px;
+  height: auto;
+  border: 2px solid #8FC4B3;
+  display: flex;
+}
+.view{
+  display: flex;
+}
+.reviewContentBox{
+  margin-top: 40px;
+  margin-left: 400px;
+  text-align: right;
+  float: right;
+}
+
+.NickName{
+  font-size: 18px;
+  font-weight: bold;
+  color: #655853;
+}
+.content{
+  
+  font-weight: bold;
+  color: #655853;
+}
+.answerContentBox{
+margin-left: 60px;
+}
+
+.answerContent{
+  font-weight: bold;
+  color: #655853;
+}
+
+.reviewViews{
+  margin-top: 20px;
+  margin-left: 50px;
+  border-radius: 50px;
+  width: 1300px;
+  height: auto;
+  border: 2px solid #8FC4B3;
+  display: flex;
+}
 
 
 

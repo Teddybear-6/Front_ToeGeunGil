@@ -1,10 +1,10 @@
 import { useState ,useEffect } from "react";
-
+import jwt_decode from "jwt-decode";
 
 function TestLogin(){
 
     const [userEmail , setUserEmail] = useState("testUser2@gmail.com");
-    const [userPassword , setUserPassword] = useState("jhs0508");
+    const [userPassword , setUserPassword] = useState("jhs123");
 
     const onclickLoginHandeler = () =>{
         console.log(userEmail)
@@ -18,11 +18,19 @@ function TestLogin(){
                 userId: userEmail,
                 userPass: userPassword,
               }),
-        }).then(response=> response.headers.get("authorization"))
+        }).then(response=> {
+            console.log(response.status)
+            if (!response.ok){
+                throw new Error('400 or 500 에러 발생')
+           }
+         
+           return response.headers.get("Authorization")
+        })
           .then(response =>{
            sessionStorage.setItem("Authorizaton",response)
+          
           }).catch(()=>{
-            console.log("아이디 비번 확인해주세요")
+            alert("아이디 비번 확인해주세요")
           })
     }
 

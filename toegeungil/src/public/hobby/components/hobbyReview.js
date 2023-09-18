@@ -11,7 +11,7 @@ function RevieWrite ({hobbyCode}){
     const [content ,setContent] = useState(3);
     const [clicked, setClicked] = useState([true, true, true, false, false]);
 
-   console.log(sessionStorage.getItem("Authorizaton"))
+ 
     
       useEffect(() => {
         sendReview();
@@ -30,17 +30,28 @@ function RevieWrite ({hobbyCode}){
       const onClickHandler =()=>{
         fetch(`http://localhost:8001/hobbys/review/${hobbyCode}`,{
             method : "POST",
-            headers :{
-                "Content-Type" : "applcation/json; charset=UTF-8",
+           
+            body: JSON.stringify({
+              
+               "content" : content,
+                "score" : score,
+
+              }),
+              headers :{
+                "Content-Type" : "application/json",
                 "Authorization" :  sessionStorage.getItem("Authorizaton"),
                 
             },
-            body: JSON.stringify({
-                "userNo" : 2,
-                "content": content,
-                "score": score,
-
-              }),
+        }).then(res=>{
+            if(res.ok){
+             alert("후기 등록 되었습니다.")
+            }else if(res.status == 404){
+              throw new Error("404")
+            }
+           
+       
+        }).catch((e)=>{
+          alert("후기를 작성할 수 없습니다.")
         })
 
       }
@@ -54,8 +65,9 @@ function RevieWrite ({hobbyCode}){
       };
 
       return (
+
         <div className="Wrap">
-            <div className="RreviewFrame"> 
+            <div className="RreviewFrameRegist"> 
         
           <div className="Stars">
           <div className="RatingText">별점</div>
