@@ -55,7 +55,8 @@ function SocialPosting() {
         socialEndTime: '', //종료시간
         localDetails: '', //지역상세
         socialIntro: '', //모임소개
-        socialOther: '기타 사항 없음' //기타사항
+        socialOther: '기타 사항 없음', //기타사항
+        categoryCode: category
     });
 
     useEffect(() => {
@@ -99,7 +100,7 @@ function SocialPosting() {
     }
 
     const checkOnlyOne = (checkThis) => {
-        const checkboxes = document.getElementsByName("categoryCode")
+        const checkboxes = document.getElementsByName("category")
         for (let i = 0; i < checkboxes.length; i++) {
             if (checkboxes[i] !== checkThis) {
                 checkboxes[i].checked = false

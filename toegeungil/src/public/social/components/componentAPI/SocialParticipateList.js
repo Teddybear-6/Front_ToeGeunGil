@@ -44,7 +44,7 @@ function SocialParticipateList({ postNum }) {
 
                             {
                                 participate.map && participate?.map((i) =>
-                                    <img key={i} className={DetailsStyle.socialDetailsParticipateImg} src="participate.png" />
+                                    <img key={i} className={DetailsStyle.socialDetailsParticipateImg} src="/participate.png" />
                                 )
                             }
                             {/* {Object.keys(participate[0]) <=0 ? null : "sdsd"} */}

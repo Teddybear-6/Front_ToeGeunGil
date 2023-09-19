@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import SocialMainCard from '../components/SocialMainCard';
+import '../../layout/layout.css';
 
 function SocialMain() {
     /*
@@ -11,8 +13,15 @@ function SocialMain() {
     4.게시글 작성 버튼 - 페이지 변경
     5.페이징 
     */
-    
-    return null;
+
+
+    return (
+        <>
+            <div className='layout'>
+                <SocialMainCard />
+            </div>
+        </>
+    );
 }
 
 export default SocialMain;
