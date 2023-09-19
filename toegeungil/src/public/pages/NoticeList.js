@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import '../components/NoticeMain.css';
-import { Link, useNavigate } from "react-router-dom";
+import '../components/NoticeBanner.css';
+import { Link } from "react-router-dom";
 
 const NoticeList = () => {
     const [list, setList] = useState([]);
-    const navigate = useNavigate();
     // const [admin, setAdmin] = useState(false); // 관리자 여부 상태
 
     const getList = () => {
@@ -18,16 +18,19 @@ const NoticeList = () => {
             getList();
         }, [])
 
-        // const goWrite=()=>{
-        //     navigate("/notice/write")
-        // }
 
-        const noticeClick=()=>{
-            alert("공지사항을 작성하시겠습니까?")
-        }
+
+    const noticeClick = () => {
+        alert("공지사항을 작성하시겠습니까?")
+    }
 
     return (
         <div className="notice-wrapper">
+            <div className="customerService-banner">
+                <button className="notice-button">공지사항</button>
+                <button className="qna-button">문의하기</button>
+                <button className="report-button">신고하기</button>
+            </div>
             <table className="table-wrapper">
                 <thead>
                     <tr>
@@ -43,7 +46,7 @@ const NoticeList = () => {
                                 <td>{notice.noticeNum}</td>
                                 <td>
                                     <Link to={`/notice/${notice.noticeNum}`}
-                                        style={{ textDecoration: "none", color: "#87746B"}} className="title-link">{notice.noticeTitle}</Link>
+                                        style={{ textDecoration: "none", color: "#87746B" }} className="title-link">{notice.noticeTitle}</Link>
                                 </td>
                                 <td>{notice.noticeDate}</td>
                             </tr>
