@@ -2,6 +2,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import NoticeMain from "./public/pages/NoticeMain";
 import NoticeView from './public/pages/NoticeView';
+import NoticeWrite from "./public/pages/NoticeWrite";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path='/notice' element={<NoticeMain/>}/>
           <Route path='/notice/:noticeNum' element={<NoticeView/>}/>
+          <Route path='/notice/write' element={<NoticeWrite/>}/>
         </Routes>
       </>
     </BrowserRouter>

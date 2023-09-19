@@ -35,8 +35,6 @@ const NoticeWrite = () => {
             .then(response => {
                 if (response.ok) {
                     alert("공지사항이 등록 되었습니다");
-                    console.log("너야너")
-
                 } else {
                     alert("공지사항 등록에 실패했습니다");
                 }
@@ -50,22 +48,28 @@ const NoticeWrite = () => {
     return (
         <div className="wrapper" >
             <h1 className="write-header">공지사항 작성</h1>
-            <div className="write-wrapper">
+            <div className="write-wrapper textarea">
                 <div className="write-col1">
-                    <label className="write-title">공지 제목</label>
-                    <input className="write-text1"
+                    <label>공지 제목</label>
+                    <div className="write-text1 textarea">
+                    <input className="text-box"
                         type="text"
                         value={noticeTitle}
                         onChange={handleTitleChange}
                     />
+                    </div>
                 </div>
-                <div className="write-col2">
+                <div className="write-col2 flexsty">
                     <label className="write-content">공지 내용</label>
-                    <textarea className="write-text2"
+                    <div  className="write-text2 textarea">
+                    <textarea className="text-box2"
                         value={noticeContent}
-                        onChange={handleContentChange}
+                        onChange={handleContentChange} 
                     />
-                    <div className="button">
+                    </div>
+                </div>
+            </div>
+            <div className="button">
                         <Link to="/notice">
                             <button className="cancel-button" onClick={cancelClick}>취소</button>
                         </Link>
@@ -73,8 +77,6 @@ const NoticeWrite = () => {
                             <button className="write-button" onClick={writeClick}>등록</button>
                         </Link>
                     </div>
-                </div>
-            </div>
         </div>
     )
 }
