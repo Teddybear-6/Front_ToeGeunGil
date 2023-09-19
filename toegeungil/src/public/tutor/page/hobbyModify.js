@@ -23,7 +23,7 @@ function HobbyModify({ hobbyCode }) {
       setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
     }
 
-    fetch(`http://localhost:8001/hobbys/${hobbyCode}`).then(res => res.json()).then(res => setHobby(res))
+    fetch(`http://localhost:8001/hobbys/2`).then(res => res.json()).then(res => setHobby(res))
     fetch("http://localhost:8001/category").then(res => res.json()).then(res => setCategory(res))
     fetch("http://localhost:8001/keyword").then(res => res.json()).then(res => setKeyword(res))
     fetch("http://localhost:8001/local").then(res => res.json()).then(res => setLocal(res))
