@@ -1,0 +1,137 @@
+/* 공지사항 전체 틀 */
+.wrapper {
+    width: 1000px;
+    height: 700px;
+    margin: auto;
+    margin-top: 60px;
+}
+
+/* 공지사항 헤더 */
+.write-header {
+    border-bottom: 3px solid #B9A49B;
+    font-size: 30px;
+    color: #655853;
+    width: 1000px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+/* 공지 제목, 내용 전체 틀 */
+.write-wrapper {
+    margin-left: 50px;
+    font-size: 18px;
+    color: #655853;
+    font-weight: bold;
+}
+
+.textarea:focus {
+    outline: none;
+    line-height: normal;
+}
+
+/* 공지 제목 전체 틀 */
+.write-col1 {
+    color: #655853;
+    width: 950px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+/* 공지 제목 작성 틀 */
+.write-text1 {
+    color: #655853;
+    font-weight: bold;
+    border: 2px solid #8FC4B3;
+    border-radius: 50px;
+    width: 800px;
+    height: 50px;
+    margin-left: 30px;
+    font-size: 1.0em;
+}
+
+/* 공지 제목 작성 칸 */
+.text-box {
+    color: #655853;
+    margin: 15px 30px 30px 15px;
+    border: none;
+    resize: none;
+    font-size: 1.0em;
+    outline: none;
+    width: 750px;
+}
+
+/* 공지 내용 전체 틀 */
+.write-col2 {
+    font-size: 18px;
+    color: #655853;
+    font-weight: bold;
+    width: 950px;
+    margin-top: 30px;
+}
+
+.flexsty {
+    display: flex;
+}
+
+/* 공지 내용 제목 틀 */
+.write-content {
+    margin-top: 30px;
+}
+
+/* 공지 내용 작성 틀 */
+.write-text2 {
+    border: 2px solid #8FC4B3;
+    border-radius: 50px;
+    width: 800px;
+    height: 400px;
+    margin-left: 30px;
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+
+/* 공지 내용 작성 칸*/
+.text-box2 {
+    color: #655853;
+    font-weight: bold;
+    margin: 30px 30px 30px 20px;
+    border: none;
+    resize: none;
+    font-size: 0.9em;
+    outline: none;
+    width: 700px;
+    height: 350px;
+}
+
+/* 버튼 전체 틀 */
+.button {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 50px;
+}
+
+/* 공지 등록 버튼 */
+.write-button {
+    color: #096249;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #8FC4B3;
+    border: 1px;
+    border-radius: 50px;
+    width: 120px;
+    height: 50px;
+    margin-left: 30px;
+}
+
+/* 공지 취소 버튼 */
+.cancel-button {
+    color: #096249;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #CCE2DB;
+    border: 1px;
+    border-radius: 50px;
+    width: 120px;
+    height: 50px;
+}
