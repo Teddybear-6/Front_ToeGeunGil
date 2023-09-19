@@ -21,6 +21,7 @@ const NoticeWrite = () => {
     }
 
     const writeClick = () => {
+        console.log(noticeTitle);
         fetch(`http://localhost:8001/notices`,
             {
                 method: "POST",
