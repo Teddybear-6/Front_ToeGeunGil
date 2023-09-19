@@ -1,0 +1,111 @@
+thead {
+    font-weight: bold;
+    color: #87746B;
+    background: #fff;
+    font-size: 20px;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0px 30px;
+    width: 1500px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+tbody {
+    font-size: 18px;
+    color: #B9A49B;
+    text-align: center;
+}
+
+th, td {
+    border: 2px solid #B9A49B;
+    width: 1500px;
+    height: 70px;
+    border-radius: 50px;
+}
+
+th{
+    width: 1500px;
+    height: 70px;
+    color: #87746B;
+    font-weight: bold;
+}
+
+th:first-child{
+    border-radius: 50px 0 0 50px;
+    border-right: 0px;
+}
+
+th:nth-child(2){
+    border-right: 0px;
+    border-left: 0px;
+    border-radius: 0 0 0 0
+}
+
+th:nth-child(3){
+    border-right: 0px;
+    border-left: 0px;
+    border-radius: 0 0 0 0
+}
+
+th:nth-child(4){
+    border-right: 0px;
+    border-left: 0px;
+    border-radius: 0 0 0 0
+}
+
+th:last-child{
+    border-radius: 0 50px 50px 0;
+    border-left: 0px ;
+}
+
+td:first-child{
+    border-radius: 50px 0 0 50px;
+    border-right: 0px;
+}
+
+td:nth-child(2){
+    border-right: 0px;
+    border-left: 0px;
+    border-radius: 0 0 0 0;
+}
+
+td:nth-child(3){
+    border-right: 0px;
+    border-left: 0px;
+    border-radius: 0 0 0 0;
+}
+
+td:nth-child(4){
+    border-right: 0px;
+    border-left: 0px;
+    border-radius: 0 0 0 0;
+}
+
+td:last-child{
+    border-radius: 0 50px 50px 0;
+    border-left: 0px ;
+}
+
+.community-list-row{
+    cursor: pointer;
+}
+
+
+.community-regist-button {
+    background-color: #fff;
+    color: #41A487;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 250px;
+    height: 75px;
+    border: 2px solid #41A487;
+    margin-left: 193px;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 60px;
+}
+
+

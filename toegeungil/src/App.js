@@ -1,9 +1,19 @@
-// 
 // import MainRouter from "./router/MainRouter";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import NoticeMain from "./public/pages/NoticeMain";
+import NoticeView from './public/pages/NoticeView';
+import NoticeWrite from "./public/pages/NoticeWrite";
+import TestLogin from './public/components/testLogin';
+import SocialMainCard from "./public/social/components/SocialMainCard";
+import SocialParticipateList from "./public/social/components/componentAPI/SocialParticipateList";
+import SocialPosting from './public/social/components/SocialPosting';
 import SocialMain from './public/social/page/SocialMain';
 import Layout from './public/layout/Layout';
 import SocialDetail from './public/social/page/SocialDetail';
+import CommunityDetail from './public/community/pages/CommunityDetail';
+import CommunityMain from './public/community/pages/CommunityMain';
+import CommunityRegist from './public/community/pages/CommunityRegist';
+
 
 import AllHobby from "./public/hobby/page/AllHobby";
 import HobbyDetail from "./public/hobby/page/hobbyDetail";
@@ -22,8 +32,9 @@ function App() {
         <Routes>
           <Route path='/' element={<Layout />}>
             {/* 로그인 */}
-            <Route path='login'>
-            </Route>
+            <Route path='login' element={<LoginSignup/>} />
+            <Route path='findpass' element={<Findpass/>} />
+            <Route path='signup' element={<Signup/>} />
             {/* 마이페이지 */}
             <Route path='mypage'>
             </Route>
@@ -33,7 +44,6 @@ function App() {
             <Route path=':hobbyCode' element={<HobbyDetail />} />
             <Route path='write' element={<HobbyWrite />} />
             <Route path='modify' element={<HobbyModify />} />
-
             </Route>
             {/* 소셜 */}
             <Route path='social'>
@@ -41,16 +51,24 @@ function App() {
               <Route path=':socialNum' element={<SocialDetail />} />
             </Route>
             {/* 커뮤니티 */}
-            <Route path='community'>
-            </Route>
+            <Route path="/communitys" element={<CommunityMain/>}/>
+            <Route path="/communitys/:communityNum" element={<CommunityDetail/>} />
+            <Route path="/communitys" element={<CommunityRegist/>}/>
             {/* 고객센터 */}
-            <Route path='service'>
+            <Route path='notice'>
+              {/* <Route path='/' element={<TestLogin />} /> */}
+              <Route index element={<NoticeMain />} />
+              {/* <Route path='/notice' element={<NoticeMain />} /> */}
+              <Route path='/notice/:noticeNum' element={<NoticeView />} />
+              {/* <Route path='/notice/write' element={<NoticeView/>}/> */}
+              <Route path='/notice/write' element={<NoticeWrite />} />
             </Route>
           </Route>
         </Routes>
       </BrowserRouter>
     </>
   );
+  
 }
 
 export default App;
