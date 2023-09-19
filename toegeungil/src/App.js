@@ -4,11 +4,9 @@ import NoticeMain from "./public/pages/NoticeMain";
 import NoticeView from './public/pages/NoticeView';
 import NoticeWrite from "./public/pages/NoticeWrite";
 import TestLogin from './public/components/testLogin';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import SocialMainCard from "./public/social/components/SocialMainCard";
 import SocialParticipateList from "./public/social/components/componentAPI/SocialParticipateList";
 import SocialPosting from './public/social/components/SocialPosting';
-import TestLogin from './public/social/components/TestLogin';
 import SocialMain from './public/social/page/SocialMain';
 import Layout from './public/layout/Layout';
 import SocialDetail from './public/social/page/SocialDetail';
@@ -30,19 +28,20 @@ function App() {
             </Route>
             {/* 소셜 */}
             <Route path='social'>
-              <Route index element={<SocialMain/>} />
+              <Route index element={<SocialMain />} />
               <Route path=':socialNum' element={<SocialDetail />} />
             </Route>
             {/* 커뮤니티 */}
             <Route path='community'>
             </Route>
             {/* 고객센터 */}
-            <Route path='service'>
-            <Route path='/' element={<TestLogin/>}/>
-          <Route path='/notice' element={<NoticeMain/>}/>
-          <Route path='/notice/:noticeNum' element={<NoticeView/>}/>
-          {/* <Route path='/notice/write' element={<NoticeView/>}/> */}
-          <Route path='/notice/write' element={<NoticeWrite/>}/>
+            <Route path='notice'>
+              {/* <Route path='/' element={<TestLogin />} /> */}
+              <Route index element={<NoticeMain />} />
+              {/* <Route path='/notice' element={<NoticeMain />} /> */}
+              <Route path='/notice/:noticeNum' element={<NoticeView />} />
+              {/* <Route path='/notice/write' element={<NoticeView/>}/> */}
+              <Route path='/notice/write' element={<NoticeWrite />} />
             </Route>
           </Route>
         </Routes>
