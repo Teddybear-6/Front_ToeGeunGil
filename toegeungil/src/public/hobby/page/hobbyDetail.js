@@ -81,7 +81,7 @@ function HobbyDetail() {
      
     return (
         <>
-            <div className={detailSytle.frame}>
+            <div className="layout">
                 <div className={detailSytle.frame2}>
                    <div className={detailSytle.details}>
                      <div>
@@ -127,9 +127,10 @@ function HobbyDetail() {
                             </div>
 
                             <div className={detailSytle.intro}>
+                            <div className={detailSytle.introName}>소셜 소개</div>
                             <p className={detailSytle.introContent}>{detail.intro}</p>
                             </div>
-
+                            
                             <HobbyTutor tutorIntro={detail.tutorIntro} tutorCode={detail.tutorCode}></HobbyTutor>
 
                             {

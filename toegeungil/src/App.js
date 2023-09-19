@@ -35,6 +35,9 @@ function App() {
             <Route path='hobby'>
             <Route index  element={<AllHobby/>} />
             <Route path=':hobbyCode' element={<HobbyDetail />} />
+            <Route path='write' element={<HobbyWrite />} />
+            <Route path='modify' element={<HobbyModify />} />
+
             </Route>
             {/* 소셜 */}
             <Route path='social'>

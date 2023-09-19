@@ -8,22 +8,38 @@
         height: 200px;
         width: 1400px;
         border-radius: 50px;
-    }
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: flex-start;
     
+    }
+    .introName{
+        margin: 00px 50px 50px 50px;
+        width: 1280px;
+        height: 24px;
+        font-size: 24px;
+        color: #8FC4B3;
+        font-weight: bold;
+    }
     
     .tutor{
     margin-left: 90px;
-    margin-top: 80px;
+
      font-size: 21px;
-     color: #655853;
+
+     color: #8FC4B3;
+        font-weight: bold;
+        font-size: 18px;
     
     }
     
     .intorContent{
     margin-left: 500px;
-    margin-top: 80px;
-     font-size: 16px;
-     color: #655853;
+    font-weight: bold;
+    font-size: 18px;
+
+     color: #8FC4B3;
     }
 
 
@@ -42,6 +58,7 @@
         height: 167px;
         width: 1022px;
         border-radius: 50px;
+        
     }
     
     

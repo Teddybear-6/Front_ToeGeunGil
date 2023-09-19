@@ -14,11 +14,16 @@ function HobbyTutor({tutorIntro, tutorCode}){
     })
 
     return(
+        <>
+        
         <div className={TutorStyle.tutorintro}>
+        <div className={TutorStyle.introName}>강사 소개</div>
+    
             <p className={TutorStyle.tutor}> {tutor} 튜터</p> 
               <p className={TutorStyle.intorContent} >{tutorIntro}</p>
-         
+
         </div>
+        </>
     )
 }
 
