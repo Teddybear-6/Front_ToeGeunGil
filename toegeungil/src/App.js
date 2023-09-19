@@ -14,6 +14,7 @@ function App() {
           <Route path='/' element={<TestLogin/>}/>
           <Route path='/notice' element={<NoticeMain/>}/>
           <Route path='/notice/:noticeNum' element={<NoticeView/>}/>
+          {/* <Route path='/notice/write' element={<NoticeView/>}/> */}
           <Route path='/notice/write' element={<NoticeWrite/>}/>
         </Routes>
       </>

@@ -6,9 +6,7 @@ import { Link } from "react-router-dom";
 
 const NoticeList = () => {
     const [list, setList] = useState([]);
-    const [admin, setAdmin] = useState(false); // 관리자 여부 상태
 
-    console.log("admin : " + admin);
 
     const getList = () => {
         fetch("http://localhost:8001/notices")
@@ -20,12 +18,6 @@ const NoticeList = () => {
         () => {
             getList();
 
-            fetch("http://localhost:8001/notices")
-                .then(response => response.json())
-                .then(data => setAdmin(data.admin))
-                .catch(error=>{
-                    console.error("API 요청 중 오류 발생 : ", error);
-                })
         }, [])
 
 
@@ -64,11 +56,9 @@ const NoticeList = () => {
                     }
                 </tbody>
                 {/* 관리자일 경우 */}
-                {admin && (
                     <Link to={"/notice/write"}>
                         <button className="main-button" onClick={noticeClick}>공지사항 작성</button>
                     </Link>
-                )}
             </table>
         </div >
     )

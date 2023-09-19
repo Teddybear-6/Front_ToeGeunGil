@@ -60,6 +60,9 @@
     font-size: 1.0em;
     outline: none;
     width: 750px;
+    font-size: 18px;
+    color: #655853;
+    font-weight: bold;
 }
 
 /* 공지 내용 전체 틀 */
