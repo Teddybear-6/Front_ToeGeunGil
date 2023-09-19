@@ -12,9 +12,9 @@ function Navbar() {
                 </NavLink>
                 {/* Navbar */}
                 <div className="navbarFlex mar50">
-                    <NavLink to="/hobby" className="navbarFont navbarLine">Hobby</NavLink>
-                    <NavLink to="/social" className="navbarFont navbarLine">Social</NavLink>
-                    <NavLink to="/community" className="navbarFont navbarLine">Community</NavLink>
+                    <NavLink to="/hobby" className={({isActive})=> isActive? "navbarOn navbarLine":"navbarFont navbarLine"}>Hobby</NavLink>
+                    <NavLink to="/social" className={({isActive})=> isActive? "navbarOn navbarLine":"navbarFont navbarLine"}>Social</NavLink>
+                    <NavLink to="/community" className={({isActive})=> isActive? "navbarOn navbarLine":"navbarFont navbarLine"}>Community</NavLink>
                 </div>
                 {/* 검생창 */}
                 <div className="searchBar searchFlex">
