@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-// import { Link } from "react-router-dom";
 import '../components/NoticeView.css';
 import '../components/NoticeBanner.css';
 
@@ -44,9 +43,18 @@ const NoticeView = () => {
                                         <label>{detail.noticeContent}</label>
                                     </div>
                                 </div>
-                                <div className="view-button-box" >
+                                <div className="user-button-box" >
                                     <Link to="/notice">
-                                        <button className="view-button">목록으로</button>
+                                        <button className="user-button">목록으로</button>
+                                    </Link>
+                                </div>
+                                {/* 관리자일 경우 */}
+                                <div className="admin-button-box">
+                                    <Link to="/notice">
+                                        <button className="admin-button1">삭제</button>
+                                    </Link>
+                                    <Link to="/notice">
+                                        <button className="admin-button2">수정</button>
                                     </Link>
                                 </div>
                             </div>
