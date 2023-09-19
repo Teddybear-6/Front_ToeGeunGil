@@ -6,7 +6,8 @@ import HobbyDetail from "./public/hobby/page/hobbyDetail";
 import TestLogin from './public/hobby/components/testLogin';
 import TutorNavber from './public/tutor/components/tutorHobbyNav';
 import HobbyWrite from './public/tutor/page/hobbyWrite';
-import Images from './public/tutor/page/imageTest';
+import HobbyModify from './public/tutor/page/hobbyModify';
+import Tutor from './public/tutor/page/tutor';
 function App() {
   return (
     <>
@@ -20,6 +21,7 @@ function App() {
         <Route index element={<AllHobby/>}/>
         <Route path=':hobbyCode' element={<HobbyDetail/>}/>
         <Route path='write' element={<HobbyWrite/>}></Route>
+        <Route path='modify' element={<Tutor/>}></Route>
       </Route>
     </Routes>
     </BrowserRouter>

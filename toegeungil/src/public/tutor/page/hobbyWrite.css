@@ -61,6 +61,8 @@
     resize: none;
     font-size: 1.2em;
     outline: none;
+    width: 500px;
+    height: 300px;
 }
 
 
@@ -121,7 +123,7 @@
 
 .localframe {
     display: flex;
-    margin-top: 10px;
+    margin-top: 20px;
 
     .localName {
         margin-left: 20px;
@@ -158,7 +160,7 @@
 
 .timeframe {
     display: flex;
-    margin-top: 10px;
+    margin-top: 20px;
 
     .endTimeName {
         margin-left: 20px;
@@ -189,7 +191,7 @@
 
 .MaxNumFrame {
     display: flex;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-left: 10px;
 
     .maxNum {
@@ -302,5 +304,31 @@
         outline: none;
         width: 1200px;
 
+    }
+}
+
+.buttonFrame{
+
+    display: flex;
+    float: right;
+    margin-top: 20px;
+    width: 800px;
+
+    .createBtn{
+        border-radius: 50px;
+        background-color: #8FC4B3;
+        width: 150px;
+        height: 75px;
+        color: #096249;
+    }
+
+
+    .cancelBtn{
+        border-radius: 50px;
+        background-color: #CCE2DB;
+        width: 150px;
+        height: 75px;
+        color: #41A487;
+        
     }
 }

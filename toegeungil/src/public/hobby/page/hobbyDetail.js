@@ -41,6 +41,8 @@ function HobbyDetail() {
         setImageNum(index);
     }
 
+    console.log(detail)
+
     const joinClickHandler = () =>{
         if(!user){
             alert("회원만 참여가능합니다.")
@@ -76,7 +78,7 @@ function HobbyDetail() {
 
          
         }
-        console.log(detail)
+     
     return (
         <>
             <div className={detailSytle.frame}>
