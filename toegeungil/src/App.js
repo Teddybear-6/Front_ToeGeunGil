@@ -1,9 +1,18 @@
+import LoginSignup from "./public/user/login/LoginSignup";
+import { BrowserRouter,Routes, Route } from "react-router-dom";
+import Signup from "./public/user/Signup/Signup";
+// import Findpass from "./public/user/findpassword/Findpass";
 // import MainRouter from "./router/MainRouter";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import TestLogin from "./public/user/login/TestLogin";
+import Findpass from "./public/user/findpassword/Findpass";
+import Main from "./public/user/main/Main";
+import Mypage from "./public/user/mypage/Mypage";
+
+
 import SocialMainCard from "./public/social/components/SocialMainCard";
 import SocialParticipateList from "./public/social/components/componentAPI/SocialParticipateList";
 import SocialPosting from './public/social/components/SocialPosting';
-import TestLogin from './public/social/components/TestLogin';
+
 import SocialMain from './public/social/page/SocialMain';
 import Layout from './public/layout/Layout';
 import SocialDetail from './public/social/page/SocialDetail';
@@ -18,8 +27,10 @@ function App() {
         <Routes>
           <Route path='/' element={<Layout />}>
             {/* 로그인 */}
-            <Route path='login'>
-            </Route>
+            <Route path='login' element={<LoginSignup/>} />
+            <Route path='findpass' element={<Findpass/>} />
+            <Route path='signup' element={<Signup/>} />
+        
             {/* 마이페이지 */}
             <Route path='mypage'>
             </Route>
@@ -42,6 +53,7 @@ function App() {
       </BrowserRouter>
     </>
   );
+  
 }
 
 export default App;
