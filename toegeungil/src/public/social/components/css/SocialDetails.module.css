@@ -1,0 +1,180 @@
+.flexStyle {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.flexStyle2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.flexStyleKeywordAndUser {
+    width: 700px;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /*끝과 끝*/
+    margin: 0px 50px 0px 50px;
+}
+
+.socialDetailsTitleBoard {
+    width: 800px;
+    height: 150px;
+    border-radius: 50px;
+    background-color: white;
+    border: 3px solid #CCE2DB;
+    margin-bottom: 30px;
+}
+
+.socialDetailsTitle {
+    width: 700px;
+    height: 36px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #41A487;
+    margin: 30px 0px 30px 50px;
+    text-align: start;
+}
+
+.socialDetailsWriter {
+    width: 265px;
+    height: 30px;
+    font-size: 18px;
+    color: #87746B;
+    font-weight: 600;
+    text-align: right;
+}
+
+.socialDetailsImage {
+    width: 800px;
+    height: 320px;
+    border-radius: 50px;
+}
+
+.socialDetailsScheduleBoard {
+    width: 570px;
+    height: 500px;
+    border-radius: 50px;
+    border: 3px solid #CCE2DB;
+    margin-left: 30px;
+}
+
+.socialDetailsMargin50Layout {
+    margin: 50px 50px 50px 50px;
+}
+
+.socialDetailsMargin050Layout {
+    margin: 30px 50px 50px 50px;
+    color: #87746B;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.socialDetailsOthersty {
+    margin: 50px 50px 0px 50px;
+    width: 1280px;
+    height: 24px;
+    font-size: 24px;
+    color: #8FC4B3;
+    font-weight: bold;
+}
+
+.socialDetailsScheduleTitle {
+    width: 470px;
+    height: 24px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #8FC4B3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 106px;
+}
+
+.socialDetailsScheduleContent {
+    width: 470px;
+    height: 18px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #87746B;
+    margin-bottom: 30px;
+}
+
+.socialDetailsParticipate {
+    width: 1400px;
+    height: 230px;
+    border-radius: 50px;
+    border: 3px solid #E9E0DD;
+    margin-top: 30px;
+}
+
+.socialDetailsIntro {
+    width: 1400px;
+    height: 450px;
+    border-radius: 50px;
+    border: 3px solid #CCE2DB;
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #655853;
+}
+
+.socialDetailsOther {
+    width: 1400px;
+    height: 200px;
+    border-radius: 50px;
+    border: 3px solid #CCE2DB;
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #655853;
+}
+
+.socialDetailsParticipateBoard {
+    margin: 40px 70px 0px 50px;
+}
+
+.socialDetailsParticipateN {
+    width: 1280;
+    height: 24px;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #87746B;
+}
+
+.socialDetailsParticipateImg {
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+}
+
+.buttonStyle {
+    width: 150px;
+    height: 75px;
+    border-radius: 50px;
+    color: #096249;
+    background-color: #8FC4B3;
+    border-color: #8FC4B3;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonStyle2 {
+    width: 150px;
+    height: 75px;
+    border-radius: 50px;
+    color: #41A487;
+    background-color: #CCE2DB;
+    border-color: #CCE2DB;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
