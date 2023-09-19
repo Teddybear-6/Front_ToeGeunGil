@@ -13,7 +13,10 @@ import SocialDetail from './public/social/page/SocialDetail';
 import CommunityDetail from './public/community/pages/CommunityDetail';
 import CommunityMain from './public/community/pages/CommunityMain';
 import CommunityRegist from './public/community/pages/CommunityRegist';
-
+import LoginSignup from './public/user/login/LoginSignup';
+import Findpass from './public/user/findpassword/Findpass';
+import Signup from './public/user/Signup/Signup';
+import Mypage from './public/user/mypage/Mypage';
 
 import AllHobby from "./public/hobby/page/AllHobby";
 import HobbyDetail from "./public/hobby/page/hobbyDetail";
@@ -36,7 +39,7 @@ function App() {
             <Route path='findpass' element={<Findpass/>} />
             <Route path='signup' element={<Signup/>} />
             {/* 마이페이지 */}
-            <Route path='mypage'>
+            <Route path='mypage' element={<Mypage/>}>
             </Route>
             {/* 취미 */}
             <Route path='hobby'>

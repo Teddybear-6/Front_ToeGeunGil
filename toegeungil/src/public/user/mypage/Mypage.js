@@ -1,9 +1,9 @@
-
+import React, { useState } from "react";
 const Mypage =()=>{
     
     return(
         <>
-            <h1>dfdfdfdf</h1>
+            <h1>마이페이지</h1>
         </>
     ) 
 }

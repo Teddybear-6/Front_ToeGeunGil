@@ -110,10 +110,10 @@ const Signup =()=>{
                 <img src={password_icon} alt="" />
                 <input type="text" placeholder="password" />
             </div> 
-            <div className="input">
+            {/* <div className="input">
                 <img src={birth_icon} alt="" />
                 <input type="text" placeholder="Birth" />
-            </div> 
+            </div>  */}
             <div className="input">
                 <img src={email_icon} alt="" />
                 <input type="text" placeholder="Email" />
