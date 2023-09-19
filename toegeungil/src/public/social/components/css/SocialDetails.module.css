@@ -33,7 +33,7 @@
     height: 36px;
     font-size: 36px;
     font-weight: bold;
-    color: #655853;
+    color: #41A487;
     margin: 30px 0px 30px 50px;
     text-align: start;
 }
@@ -42,8 +42,8 @@
     width: 265px;
     height: 30px;
     font-size: 18px;
-    color: #655853;
-    font-weight: 500;
+    color: #87746B;
+    font-weight: 600;
     text-align: right;
 }
 
@@ -65,12 +65,28 @@
     margin: 50px 50px 50px 50px;
 }
 
+.socialDetailsMargin050Layout {
+    margin: 30px 50px 50px 50px;
+    color: #87746B;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.socialDetailsOthersty {
+    margin: 50px 50px 0px 50px;
+    width: 1280px;
+    height: 24px;
+    font-size: 24px;
+    color: #8FC4B3;
+    font-weight: bold;
+}
+
 .socialDetailsScheduleTitle {
     width: 470px;
     height: 24px;
     font-size: 24px;
     font-weight: bold;
-    color: #655853;
+    color: #8FC4B3;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,7 +98,7 @@
     height: 18px;
     font-size: 18px;
     font-weight: bold;
-    color: #655853;
+    color: #87746B;
     margin-bottom: 30px;
 }
 
@@ -126,7 +142,7 @@
     margin-bottom: 30px;
     font-size: 24px;
     font-weight: bold;
-    color: #655853;
+    color: #87746B;
 }
 
 .socialDetailsParticipateImg {

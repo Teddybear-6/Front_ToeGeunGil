@@ -41,8 +41,8 @@ function SocialDetails() {
                     <div className={DetailsStyle.socialDetailsTitleBoard}>
                         {/* 소셜 제목 */}
                         <div className={DetailsStyle.socialDetailsTitle}>{socials.socialName}</div>
+                        {/* 키워드 */}
                         <div className={DetailsStyle.flexStyleKeywordAndUser}>
-                            {/* 키워드 */}
                             <div className={DetailsStyle.flexStyle}>
                                 {socials.keywordDTOList?.map((m, index) => {
                                     return (
@@ -58,7 +58,7 @@ function SocialDetails() {
                         </div>
                     </div>
                     {/* 사진 */}
-                    <SocialDetailsImage socialNum={socials.socialNum}/>
+                    <SocialDetailsImage socialNum={socials.socialNum} />
                 </div>
                 <div className={DetailsStyle.socialDetailsScheduleBoard}>
                     <div className={DetailsStyle.socialDetailsMargin50Layout}>
@@ -91,17 +91,19 @@ function SocialDetails() {
                     </div>
                 </div>
             </div>
-            <SocialParticipateList postNum={socials.socialNum}/>
-                
+            <SocialParticipateList postNum={socials.socialNum} />
+
             {/* 소셜 소개 */}
             <div className={DetailsStyle.socialDetailsIntro}>
-                <div className={DetailsStyle.socialDetailsMargin50Layout}>
+                <div className={DetailsStyle.socialDetailsOthersty}>소셜 소개</div>
+                <div className={DetailsStyle.socialDetailsMargin050Layout}>
                     {socials.socialIntro}
                 </div>
             </div>
             {/* 특이사항 */}
             <div className={DetailsStyle.socialDetailsOther}>
-                <div className={DetailsStyle.socialDetailsMargin50Layout}>
+                <div className={DetailsStyle.socialDetailsOthersty}>기타 사항</div>
+                <div className={DetailsStyle.socialDetailsMargin050Layout}>
                     {socials.socialOther}
                 </div>
             </div>

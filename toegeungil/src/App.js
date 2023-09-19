@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import SocialMainCard from "./public/social/components/SocialMainCard";
 import SocialParticipateList from "./public/social/components/componentAPI/SocialParticipateList";
 import SocialDetails from "./public/social/components/SocialDetails";
-
+import SocialPosting from './public/social/components/SocialPosting';
+import TestLogin from './public/social/components/TestLogin';
 
 function App() {
   /* 라우팅
@@ -12,19 +13,17 @@ function App() {
   return (
     <>
       <h1>프로젝트 퇴근길</h1>
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Routes>
           <Route path='/'>
             <Route index element={<SocialMainCard/>} />
             <Route path=':socialNum' element={<SocialDetails/>} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
 
-      {/* <MainRouter/> */}
-      {/* <SocialMainCard /> */}
-      {/* <SocialParticipateList/> */}
-      {/* <SocialDetails/> */}
+      {/* <TestLogin/> */}
+      <SocialPosting/>
     </>
   );
 }
