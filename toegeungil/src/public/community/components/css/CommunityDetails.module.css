@@ -1,38 +1,37 @@
 @media all and (min-width:1900px) and (max-width:1920px) {
 
-    .Details{
+    .Details {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
     }
 
-    .CommunityDetailsWriter{
+    .CommunityDetailsWriter {
         margin-left: auto;
         margin-right: auto;
         margin-top: 30px;
         font-weight: bold;
     }
 
-    .CommunityDetailsNick{
+    .CommunityDetailsNick {
         font-size: 21px;
         margin-left: 150px;
         margin-bottom: 5px;
         color: #655853;
     }
-    
-    .CommunityDetailsIntroBox{
+
+    .CommunityDetailsIntroBox {
         width: 1400px;
         height: 400px;
         border: 3px solid #CCE2DB;
         border-radius: 50px;
     }
 
-    .CommunityDetailsIntro{
+    .CommunityDetailsIntro {
         font-size: 18px;
         color: #655853;
         margin-top: 70px;
         margin-left: 50px;
     }
-    
 
-    }
+}
