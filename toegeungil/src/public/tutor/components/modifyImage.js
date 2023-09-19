@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function Imageset({ image, setShowImages, showImages, setHobbyImage, hobbyImage }) {
+function Imageset({ image, setShowImages, showImages, setHobbyImage, hobbyImage ,setHobby ,hobby }) {
     const [url, setUrl] = useState(image);
 
     useEffect(() => {
@@ -34,13 +34,18 @@ function Imageset({ image, setShowImages, showImages, setHobbyImage, hobbyImage 
 
 
     const handleDeleteImage1 = (id) => {
-        setShowImages(url.filter((_, index) => index !== id));
+        console.log(hobby)
         setUrl(url.filter((_, index) => index !== id));
+        console.log(url+ "확인");
+
+        setHobby({...hobby , url})
+        console.log(hobby)
+
     };
 
     const handleDeleteImage2 = (id) => {
         setShowImages(url.filter((_, index) => index !== id));
-        
+
     };
 
 

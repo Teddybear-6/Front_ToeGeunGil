@@ -159,7 +159,7 @@ function HobbyModify({ hobbyCode }) {
           <div>
             <Imageset image={hobby.imageId}
               setShowImages={setShowImages} showImages={showImages}
-              setHobbyImage={setHobbyImage} hobbyImage={hobbyImage} ></Imageset>
+              setHobbyImage={setHobbyImage} hobbyImage={hobbyImage} setHobby={setHobby} hobby={hobby} ></Imageset>
           </div>
           <div>
 
