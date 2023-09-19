@@ -1,3 +1,6 @@
+
+import MainRouter from "./router/MainRouter";
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import LoginSignup from "./public/user/login/LoginSignup";
@@ -12,6 +15,13 @@ import CommunityMain from './public/community/pages/CommunityMain';
 import CommunityRegist from './public/community/pages/CommunityRegist';
 
 
+import AllHobby from "./public/hobby/page/AllHobby";
+import HobbyDetail from "./public/hobby/page/hobbyDetail";
+
+import TutorNavber from './public/tutor/components/tutorHobbyNav';
+import HobbyWrite from './public/tutor/page/hobbyWrite';
+import HobbyModify from './public/tutor/page/hobbyModify';
+import Tutor from './public/tutor/page/tutor';
 function App() {
   /* 라우팅
       : 어떤 요청(URL)을 어디로 안내 및 매핑 할 것인지를 정해놓고 진행하는 것
@@ -30,8 +40,10 @@ function App() {
             </Route>
             {/* 취미 */}
             <Route path='hobby'>
-            {/* <Route index  element={<AllHobby/>} />
-            <Route path=':hobbyCode' element={<HobbyDetail />} /> */}
+            <Route index  element={<AllHobby/>} />
+            <Route path=':hobbyCode' element={<HobbyDetail />} />
+            <Route path='write' element={<HobbyWrite />} />
+            <Route path='modify' element={<HobbyModify />} />
             </Route>
             {/* 소셜 */}
             <Route path='social'>

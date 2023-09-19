@@ -7,6 +7,7 @@ import Findpass from "../public/user/findpassword/Findpass";
 
 function MainRouter(){
     return(
+
         <>
             {/* <Routes>
                 <Route path="/admin/*" element={<AdminRouter/>}/>
@@ -18,6 +19,7 @@ function MainRouter(){
             <LoginSignup/>
             <Findpass/>
         </>
+
     )
 }
 export default MainRouter;

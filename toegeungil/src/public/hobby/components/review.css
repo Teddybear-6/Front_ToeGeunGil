@@ -1,0 +1,160 @@
+.RreviewFrame {
+border-radius: 50px;
+margin-top: 10px;
+border: 2px solid #8FC4B3;
+height: auto;
+width: 1400px;
+border-radius: 50px;
+
+}
+
+
+.RreviewFrameRegist{
+  border-radius: 50px;
+  margin-top: 10px;
+  border: 2px solid #8FC4B3;
+  height: 200px;
+  width: 1400px;
+  border-radius: 50px;
+
+}
+.reviewViewsBox{
+  
+  margin-left: 50px;
+
+  .yellowStar {
+    color: #fcc419;
+  }
+}
+
+.reciewAnswer{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 100px;
+  border-radius: 50px;
+  width: 1200px;
+  height: auto;
+  border: 2px solid #8FC4B3;
+  display: flex;
+}
+.view{
+  display: flex;
+}
+.reviewContentBox{
+  margin-top: 40px;
+  margin-left: 400px;
+  text-align: right;
+  float: right;
+}
+
+.NickName{
+  font-size: 18px;
+  font-weight: bold;
+  color: #655853;
+}
+.content{
+  
+  font-weight: bold;
+  color: #655853;
+}
+.answerContentBox{
+margin-left: 60px;
+}
+
+.answerContent{
+  font-weight: bold;
+  color: #655853;
+}
+
+.reviewViews{
+  margin-top: 20px;
+  margin-left: 50px;
+  border-radius: 50px;
+  width: 1300px;
+  height: auto;
+  border: 2px solid #8FC4B3;
+  display: flex;
+}
+
+
+
+.reviewContent{
+  
+margin-left: 30px;
+margin-top: 20px;
+height: 75px;
+width: 1117px;
+border-radius: 50px;
+
+
+}
+
+.Wrap {
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px;
+}
+
+.RatingText {
+  color: #787878;
+  font-size: 20px;
+  font-weight: 400;
+  color: #655853;
+}
+
+.Stars{
+  display: flex;
+  padding-top: 5px;
+  margin-left: 50px;
+  margin-top: 20px;
+
+  & svg {
+    color: gray;
+    cursor: pointer;
+  }
+
+  :hover svg {
+    color: #fcc419;
+  }
+
+  & svg:hover ~ svg {
+    color: gray;
+  }
+
+  .yellowStar {
+    color: #fcc419;
+  }
+}
+
+
+.reviewBtn{
+    margin-top: 20px;
+    margin-right: 50px;
+    float: right;
+    border-radius: 50px;
+    width: 150px;
+    height: 75px;
+    background-color: #8FC4B3;
+    color: #096249;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+}
+.reviewBtn:hover{
+    margin-top: 20px;
+    margin-right: 50px;
+    border-radius: 50px;
+    width: 180px;
+    height: 90px;
+    background-color: #8FC4B3;
+    position: relative;
+    border: none;
+    display: inline-block;
+    padding: 15px 30px;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+    font-weight: bold;
+}
