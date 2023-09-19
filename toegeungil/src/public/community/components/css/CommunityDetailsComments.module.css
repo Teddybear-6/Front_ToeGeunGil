@@ -1,0 +1,80 @@
+
+
+.CommentDetail{
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 175px;
+}
+
+.CommentBar{
+    width: 1500px;
+    margin-bottom: 40px;
+    border: 1px solid #E9E0DD;
+}
+
+.CommentsBox{
+    width: 1400px;
+    height: 150px;
+    border: 3px solid #E9E0DD;
+    margin-bottom: 30px;
+    border-radius: 50px;
+}
+
+.CommentDetailsView{
+    display: flex;
+    margin-top: 30px;
+}
+
+.CommentWriterBox{
+    width: 193px;
+    height: 50px;
+}
+
+.CommentWriter{
+    font-size: 18px;
+    font-weight: bold;
+    color: #655853;
+}
+
+.CommentWriterDate{
+    font-size: 14px;
+    color: #655853;
+}
+
+.CommentWriterDetail{
+    font-size: 14px;
+    font-weight: bold;
+    color: #655853;
+    width: 988px;
+    height: 84px;
+}
+
+.NewCommentBox{
+    width: 1400px;
+    height: 170px;
+    border: 3px solid #E9E0DD;
+    border-radius: 50px;
+    margin-top: 100px;
+}
+
+.NewCommentInputBox{
+    width: 1117px;
+    height: 118px;
+    border: 3px solid #E9E0DD;
+    border-radius: 50px;
+    margin-left: 50px;
+    margin-top: 26px;
+    font-size: 14px;
+    color: #655853;
+}
+
+.NewCommentButton{
+    width: 150px;
+    height: 75px;
+    margin-left: 42px;
+    border-radius: 50px;
+    border: 1px solid #8FC4B3;
+    background-color: #8FC4B3;
+    color: #096249;
+    cursor: pointer;
+}

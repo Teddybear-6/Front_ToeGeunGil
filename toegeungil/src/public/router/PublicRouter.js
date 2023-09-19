@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Table from 'react-bootstrap/Table';
 
 function StripedRowExample() {
@@ -35,3 +36,16 @@ function StripedRowExample() {
 }
 
 export default StripedRowExample;
+=======
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Signup from "../user/Signup/Signup";
+
+function PublicRouter(){
+    return (
+        <>
+        </>
+    )
+}
+
+export default PublicRouter;
+>>>>>>> 8889048cbcc1733eb6cbb29ae7e509e96e45089f

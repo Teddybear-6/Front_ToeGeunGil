@@ -9,15 +9,15 @@ function MainRouter(){
     return(
 
         <>
-            <Routes>
+            {/* <Routes>
                 <Route path="/admin/*" element={<AdminRouter/>}/>
                 <Route path="/public/*" element={<PublicRouter/>}/>
-            </Routes>
+            </Routes> */}
 
-            {/* <PublicRouter/>
+            <PublicRouter/>
             <AdminRouter/>
             <LoginSignup/>
-            <Findpass/> */}
+            <Findpass/>
         </>
 
     )

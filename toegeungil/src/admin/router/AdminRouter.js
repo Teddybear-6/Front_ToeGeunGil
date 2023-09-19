@@ -8,9 +8,9 @@ import React from 'react'
 export const AdminRouter = () => {
   return (
     <div>
-      <AdminRouter/>
+      {/* <AdminRouter/>
       <AdminMain/>
-      <AdminAnswer/>
+      <AdminAnswer/> */}
     </div>
   );
 }
