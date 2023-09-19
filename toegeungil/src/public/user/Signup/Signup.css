@@ -71,3 +71,23 @@
     background: #EAEAEA;
     color: #676767;
 }
+
+.checkId{
+    border: 0;
+    outline: none;
+    margin-right: 5%;
+    width: 80px;
+    height: 30px;
+    background: #096249;
+    color: #eaeaee;
+    border-radius: 5px;
+    padding: auto;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+
+}
+.checkId:hover{
+    color: #676767;
+    background: #096249;
+}

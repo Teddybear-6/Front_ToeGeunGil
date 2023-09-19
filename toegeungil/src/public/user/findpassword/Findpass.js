@@ -1,82 +1,83 @@
 // /*비번찾기*/
-// import React, { useState } from "react";
-// import {json, useNavigate} from 'react-router-dom';
-// import './Findpass.css';
+import React, { useState } from "react";
+import {json, useNavigate} from 'react-router-dom';
+import './Findpass.css';
 
-// import name_icon from '../imgs/name.png';
-// import id_icon from '../imgs/id.png'; 
-// import email_icon from '../imgs/001.png';
+import name_icon from '../imgs/name.png';
+import id_icon from '../imgs/id.png'; 
+import email_icon from '../imgs/001.png';
 
-// const Findpass =()=>{
+const Findpass =()=>{
 
-//     const [action, setAction] = useState("Findpass");
-//     const [login, setFind] = useState({
-//         name : "",
-//         id : "",
-//         email: ""
-//     });
+    const [action, setAction] = useState("Findpass");
     
-//     const navigate = useNavigate();
+    const [login, setFindpass] = useState({
+        name : "",
+        id : "",
+        email: ""
+    });
     
-//     const onClickHandler = () =>{
-//         navigate(`/find`);
-//         /*navigate location.href 새로고침이 일어나지 않음*/
-//     }
+    const navigate = useNavigate();
+    
+    const onClickHandler = () =>{
+        navigate(`/signup`);
+        
+    }
 
-//     const onChange= (e) =>{
-//         setLogin({...login,
-//             [e.target.name] : e.target.value
-//         })
-//         console.log(Findpass);
-//     } 
+    // const onChange= (e) =>{
+    //     setLogin({...login,
+    //         [e.target.name] : e.target.value
+    //     })
+    //     console.log(Findpass);
+    // } 
 
-//     const loginApi = () =>{
-//         fetch(url,{
-//             method: 'post',
-//             headers : 'application/json',
-//             body : JSON.stringify(Findpass)
-//         });
-//     }
+    // const loginApi = () =>{
+    //     fetch(url,{
+    //         method: 'post',
+    //         headers : 'application/json',
+    //         body : JSON.stringify(Findpass)
+    //     });
+    // }
 
-//     return(
-//         <>
-//         <div className="container">
-//             <div className="header">
-//                 <div className="text">{action}</div>
-//                 <div className="underline"></div>
-//             </div>
-//         </div>
-//             <div className="inputs">
-//                 <div className="input">
-//                     <img src={name_icon} alt="" />
-//                     <input type="text" placeholder="Name" name="name" onChange={onChange}/>
-//                 </div>
-//                 <div className="input">
-//                     <img src={id_icon} alt="" />
-//                     <input type="email" placeholder="ID"  name="id" onChange={onChange}/>
-//                 </div>
-//                 <div className="input">
-//                     <img src={email_icon} alt="" />
-//                     <input type="password" placeholder="Email" name="email" onChange={onChange}/>
+    return(
+        <>
+        <div className="container">
+            <div className="header">
+                <div className="text">{action}</div>
+                <div className="underline"></div>
+            </div>
+        </div>
+            <div className="inputs">
+                <div className="input">
+                    <img src={name_icon} alt="" />
+                    <input type="text" placeholder="Name" name="name" />
+                </div>
+                <div className="input">
+                    <img src={id_icon} alt="" />
+                    <input type="email" placeholder="ID"  name="id" />
+                </div>
+                <div className="input">
+                    <img src={email_icon} alt="" />
+                    <input type="text" placeholder="Email" name="email" /*onChange={onChange}*//>
                     
-//                 </div>
+                </div>
             
                     
                 
-//                 <div className="submit-container">
-//                     <div className={action === "Login"?"submit gray":"submit"} onClick={onClickHandler}>이전</div>
-//                     <div className={action === "SignUp"?"submit gray":"submit"} onClick={()=>{setAction("findPass")}}>비밀번호찾기</div>
+                <div className="submit-container">
+                <div className={action === "Login"?"submit gray":"submit"} onClick={onClickHandler}>이전</div>
+                    <div className={action === "SignUp"?"submit gray":"submit"} onClick={()=>{setAction("findPass")}}>비밀번호찾기</div>
 
-//                 </div>
-//             </div>
+                </div>
+            </div>
             
         
-//             </>
-//         );
+            </>
+        );
         
-// };
+};
 
 
 
 
-// export default Findpass;
+export default Findpass;
