@@ -5,6 +5,7 @@ function Imageset({ image, setShowImages, showImages, setHobbyImage, hobbyImage 
 
     useEffect(() => {
         setUrl(image)
+        
     }, [image])
 
     const handleAddImages = (event) => {
@@ -25,21 +26,21 @@ function Imageset({ image, setShowImages, showImages, setHobbyImage, hobbyImage 
 
             setHobbyImage([...hobbyImage, imageLists])
             setShowImages(imageUrlLists);
+          
         }
     };
 
 
-    console.log(showImages)
 
 
     const handleDeleteImage1 = (id) => {
-
+        setShowImages(url.filter((_, index) => index !== id));
         setUrl(url.filter((_, index) => index !== id));
     };
 
     const handleDeleteImage2 = (id) => {
-        setShowImages(showImages.filter((_, index) => index !== id));
-
+        setShowImages(url.filter((_, index) => index !== id));
+        
     };
 
 
