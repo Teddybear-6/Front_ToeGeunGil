@@ -13,7 +13,9 @@ import SocialDetail from './public/social/page/SocialDetail';
 import CommunityDetail from './public/community/pages/CommunityDetail';
 import CommunityMain from './public/community/pages/CommunityMain';
 import CommunityRegist from './public/community/pages/CommunityRegist';
-
+import LoginSignup from './public/user/login/LoginSignup';
+import Findpass from './public/user/findpassword/Findpass';
+import Signup from './public/user/Signup/Signup';
 
 import AllHobby from "./public/hobby/page/AllHobby";
 import HobbyDetail from "./public/hobby/page/hobbyDetail";
