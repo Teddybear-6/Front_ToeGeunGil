@@ -14,7 +14,6 @@ th {
     color: #87746B;
     font-weight: bold;
     font-size: 20px;
-    text-align: center;
     border-radius: 50px;
 }
 
@@ -70,12 +69,11 @@ td:last-child {
     background-color: #E9E0DD;
 }
 
-/* .main-button-box {
-    border: 2px solid blue;
+.main-button-box {
     display: flex;
     justify-content: flex-start;
     margin-top: 50px;
-} */
+}
 
 .main-button {
     border: 2px solid #41A487;
@@ -85,6 +83,4 @@ td:last-child {
     font-size: 20px;
     width: 200px;
     height: 60px;
-    margin-top: 50px;
-
 }

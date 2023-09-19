@@ -56,13 +56,14 @@ const NoticeList = () => {
                     }
                 </tbody>
                 {/* 관리자일 경우 */}
+                <div className="main-button-box">
                     <Link to={"/notice/write"}>
                         <button className="main-button" onClick={noticeClick}>공지사항 작성</button>
                     </Link>
+                </div>
             </table>
         </div >
     )
 }
 
 export default NoticeList;
-
