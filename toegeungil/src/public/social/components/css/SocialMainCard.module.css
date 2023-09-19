@@ -1,0 +1,76 @@
+.socialMainCardBoard {
+    width: 1540px;
+    height: 1235px;
+}
+
+.socialLink {
+    text-decoration-line: none;
+}
+
+.socialMainCard {
+    width: 345px;
+    height: 365px;
+    border-radius: 50px;
+    background-color: #CCE2DB;
+    margin-bottom: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.socialMainImg {
+    width: 300px;
+    height: 200px;
+    border-radius: 50px;
+    margin: 25px 22.5px 25px 22.5px;
+}
+
+.socialMainTitle {
+    width: 300px;
+    height: 18px;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: bold;
+    color: #41A487;
+    margin: 0px 23px 20px 23px;
+    /*23, 43*/
+}
+
+.socialMainKeyword {
+    width: 300px;
+    height: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #87746B;
+    margin: 0px 23px 0px 23px;
+}
+
+.socialMainKeywordDiv {
+    width: 70px;
+    height: 30px;
+    font-weight: 600;
+    border-radius: 50px;
+    background-color: white;
+    border: 1px solid #B9A49B;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+    color: #87746B;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    /*가로정렬*/
+    flex-wrap: wrap;
+    /*줄넘김 처리 설정*/
+    justify-content: flex-start;
+    /*메인축 방향 설정*/
+}
+
+.flexStyle {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
