@@ -22,9 +22,7 @@ function HobbyCard(hobbys){
            
         })
 
-      
-        console.log(mainImage)
-
+    
 
     },[])
     
