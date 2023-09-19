@@ -1,24 +1,8 @@
-// 
-// import MainRouter from "./router/MainRouter";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-// import SocialMainCard from "./public/social/components/SocialMainCard";
-// import SocialParticipateList from "./public/social/components/componentAPI/SocialParticipateList";
-// import SocialPosting from './public/social/components/SocialPosting';
-// import TestLogin from './public/social/components/TestLogin';
 
 import LoginSignup from "./public/user/login/LoginSignup";
 import Signup from "./public/user/Signup/Signup";
-// import Findpass from "./public/user/findpassword/Findpass";
-// import MainRouter from "./router/MainRouter";
-// import TestLogin from "./public/user/login/TestLogin";
 import Findpass from "./public/user/findpassword/Findpass";
-// import Main from "./public/user/main/Main";
-// import Mypage from "./public/user/mypage/Mypage";
-
-
-// import SocialMainCard from "./public/social/components/SocialMainCard";
-// import SocialParticipateList from "./public/social/components/componentAPI/SocialParticipateList";
-// import SocialPosting from './public/social/components/SocialPosting';
 
 import SocialMain from './public/social/page/SocialMain';
 import Layout from './public/layout/Layout';
@@ -27,13 +11,7 @@ import CommunityDetail from './public/community/pages/CommunityDetail';
 import CommunityMain from './public/community/pages/CommunityMain';
 import CommunityRegist from './public/community/pages/CommunityRegist';
 
-// import AllHobby from "./public/hobby/page/AllHobby";
-// import HobbyDetail from "./public/hobby/page/hobbyDetail";
 
-// import TutorNavber from './public/tutor/components/tutorHobbyNav';
-// import HobbyWrite from './public/tutor/page/hobbyWrite';
-// import HobbyModify from './public/tutor/page/hobbyModify';
-// import Tutor from './public/tutor/page/tutor';
 function App() {
   /* 라우팅
       : 어떤 요청(URL)을 어디로 안내 및 매핑 할 것인지를 정해놓고 진행하는 것
@@ -47,7 +25,6 @@ function App() {
             <Route path='login' element={<LoginSignup/>} />
             <Route path='findpass' element={<Findpass/>} />
             <Route path='signup' element={<Signup/>} />
-        
             {/* 마이페이지 */}
             <Route path='mypage'>
             </Route>
