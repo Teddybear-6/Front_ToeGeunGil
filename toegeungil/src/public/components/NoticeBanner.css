@@ -1,0 +1,35 @@
+.customerService-banner {
+    border: 3px solid #8FC4B3;
+    border-radius: 50px;
+    width: 1200px;
+    height: 80px;
+    margin: auto;
+    margin-top: 120px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.notice-button {
+    color: #128865;
+    background-color: white;
+    font-weight: bold;
+    font-size: 24px;
+    border: none;
+
+}
+
+.qna-button {
+    color: #8FC4B3;
+    background-color: white;
+    font-weight: bold;
+    font-size: 24px;
+    border: none;
+}
+
+.report-button {
+    color: #8FC4B3;
+    background-color: white;
+    font-weight: bold;
+    font-size: 24px;
+    border: none;
+}

@@ -1,12 +1,12 @@
-
-import MainRouter from "./router/MainRouter";
-
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
-import LoginSignup from "./public/user/login/LoginSignup";
-import Signup from "./public/user/Signup/Signup";
-import Findpass from "./public/user/findpassword/Findpass";
-
+// import MainRouter from "./router/MainRouter";
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import NoticeMain from "./public/pages/NoticeMain";
+import NoticeView from './public/pages/NoticeView';
+import NoticeWrite from "./public/pages/NoticeWrite";
+import TestLogin from './public/components/testLogin';
+import SocialMainCard from "./public/social/components/SocialMainCard";
+import SocialParticipateList from "./public/social/components/componentAPI/SocialParticipateList";
+import SocialPosting from './public/social/components/SocialPosting';
 import SocialMain from './public/social/page/SocialMain';
 import Layout from './public/layout/Layout';
 import SocialDetail from './public/social/page/SocialDetail';
@@ -55,7 +55,13 @@ function App() {
             <Route path="/communitys/:communityNum" element={<CommunityDetail/>} />
             <Route path="/communitys" element={<CommunityRegist/>}/>
             {/* 고객센터 */}
-            <Route path='service'>
+            <Route path='notice'>
+              {/* <Route path='/' element={<TestLogin />} /> */}
+              <Route index element={<NoticeMain />} />
+              {/* <Route path='/notice' element={<NoticeMain />} /> */}
+              <Route path='/notice/:noticeNum' element={<NoticeView />} />
+              {/* <Route path='/notice/write' element={<NoticeView/>}/> */}
+              <Route path='/notice/write' element={<NoticeWrite />} />
             </Route>
           </Route>
         </Routes>
