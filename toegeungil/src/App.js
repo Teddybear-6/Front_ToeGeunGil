@@ -23,6 +23,9 @@ function App() {
             {/* 로그인 */}
             <Route path='login'>
             </Route>
+            {/* 마이페이지 */}
+            <Route path='mypage'>
+            </Route>
             {/* 취미 */}
             <Route path='hobby'>
             </Route>
