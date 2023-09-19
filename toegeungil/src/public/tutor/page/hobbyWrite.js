@@ -182,7 +182,7 @@ function HobbyWrite() {
             <select name="localCode" id="local" className="textAll" onChange={onChangeHandler}>
               {
                 local?.map((m, index) => (
-                  <option value={m.localName} key={index}>{m.localName}</option>
+                  <option value={m.localCode} key={index}>{m.localName}</option>
                 ))
               }
             </select>
