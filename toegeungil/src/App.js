@@ -1,9 +1,9 @@
 // import MainRouter from "./router/MainRouter";
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import NoticeMain from "./public/pages/NoticeMain";
-import NoticeView from './public/pages/NoticeView';
-import NoticeWrite from "./public/pages/NoticeWrite";
-import TestLogin from './public/components/testLogin';
+import NoticeMain from './public/notice/pages/NoticeMain';
+import NoticeView from './public/notice/pages/NoticeView';
+import NoticeWrite from './public/notice/pages/NoticeWrite';
+// import TestLogin from './public/components/testLogin';
 import SocialMainCard from "./public/social/components/SocialMainCard";
 import SocialParticipateList from "./public/social/components/componentAPI/SocialParticipateList";
 import SocialPosting from './public/social/components/SocialPosting';
@@ -14,6 +14,9 @@ import CommunityDetail from './public/community/pages/CommunityDetail';
 import CommunityMain from './public/community/pages/CommunityMain';
 import CommunityRegist from './public/community/pages/CommunityRegist';
 
+import LoginSignup from './public/user/login/LoginSignup';
+import Findpass from './public/user/findpassword/Findpass';
+import Signup from './public/user/Signup/Signup';
 
 import AllHobby from "./public/hobby/page/AllHobby";
 import HobbyDetail from "./public/hobby/page/hobbyDetail";
