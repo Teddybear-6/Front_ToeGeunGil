@@ -10,16 +10,24 @@ function getLoginDetails(){
 
     useEffect(
         ()=> {
-            fetch(`http://localhost:8081/login/${Signup}`)
-                        .then((response)=> response.json())
-                        .then(data=> {setDetail(data);
+            // fetch(`http://localhost:8081/login/${Signup}`, {
+            //     method: "POST",
+            //     headers : {
+            //         "Content-Type": "application/json"
+            //     },
+            //     body: JSON.stringify(data)
+            // })
+            //             .then((response)=> response.json())
+            //             .then(data=> {setDetail(data);
+            //https://developer.mozilla.org/ko/docs/Web/API/Fetch_API/Using_Fetch
         
-        })
+        // })
             },[]);
 
         
         return(
-            <div >
+            <div className="LginDetails" >
+
 
             </div>
         );
@@ -30,4 +38,4 @@ function getLoginDetails(){
 
 
 
-export default LoginDtails;
+export default getLoginDetails;

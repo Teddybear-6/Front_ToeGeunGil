@@ -1,0 +1,129 @@
+.layout {
+    width: 1500px;
+    margin: auto;
+    padding-bottom: 150px;
+}
+
+.w1650h388 {
+    width: 1650px;
+    height: 388px;
+    margin: auto;
+}
+
+.w1650h50 {
+    width: 1650px;
+    height: 50px;
+    margin: auto;
+}
+
+.rightFlex {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.headerFont {
+    width: 110px;
+    height: 18px;
+    color: #B9A49B;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.navbarLayout {
+    margin-top: 67px;
+    width: 1650px;
+    height: 133px;
+    margin-bottom: 120px;
+}
+
+.logo {
+    width: 400px;
+    height: 133px;
+}
+
+.navbarFlex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.searchBar {
+    width: 380px;
+    height: 40px;
+    border-radius: 30px;
+    border: 5px solid #8FC4B3;
+    background-color: white;
+    /* margin-bottom: 2px; */
+}
+
+.navbarFont {
+    width: 230px;
+    height: 30px;
+    color: #8FC4B3;
+    text-align: center;
+    font-style: italic;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+.mar50 {
+    margin-right: 50px;
+}
+
+.searchicon {
+    width: 28px;
+    height: 28px;
+    margin-right: 20px;
+}
+
+.searchFlex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.searchBox {
+    margin-left: 20px;
+    width: 290px;
+    height: 28px;
+    font-size: 18px;
+    border: none;
+    resize: none;
+    outline: none;
+    color: #128865;
+}
+
+.searchsum {
+    border: none;
+    resize: none;
+    outline: none;
+}
+
+.navbarLine {
+    text-decoration-line: none;
+}
+
+.navbarOn {
+    width: 230px;
+    height: 30px;
+    color: #128865;
+    text-align: center;
+    font-style: italic;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+.headerOn {
+    width: 110px;
+    height: 18px;
+    color: #655853;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: right;
+}

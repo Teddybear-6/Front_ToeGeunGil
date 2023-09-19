@@ -1,0 +1,334 @@
+.image {
+    width: 200px;
+    height: 150px;
+    margin-left: 10px;
+    border-radius: 50px;
+    border: 2px solid #8FC4B3;
+}
+
+
+
+
+.titleframe {
+    display: flex;
+    margin-left: 20px;
+    .title {
+        border-radius: 50px;
+        border: 2px solid #8FC4B3;
+        margin-left: 20px;
+        width: 1280px;
+        height: 58px
+    }
+
+    .hobbytitle {
+        font-size: 16px;
+        color: #655853;
+
+    }
+
+    .hobbytitleText {
+        margin-left: 30px;
+        margin-top: 15px;
+        border: none;
+        resize: none;
+        font-size: 1.2em;
+        outline: none;
+        width: 1000px;
+    }
+
+}
+
+.mainIntroFrame {
+    display: flex;
+    margin-top: 20px;
+}
+
+
+
+.intro {
+    margin-top: 20px;
+    border-radius: 50px;
+    border: 2px solid #8FC4B3;
+    width: 575px;
+    height: 350px;
+    resize: none;
+    margin-left: 20px;
+}
+
+.introin {
+    margin: 30px 30px 30px 30px;
+    border: none;
+    resize: none;
+    font-size: 1.2em;
+    outline: none;
+    width: 500px;
+    height: 300px;
+}
+
+
+.imageframe {
+
+    border-radius: 50px;
+    border: 2px solid #8FC4B3;
+    width: 575px;
+    height: 350px;
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+
+.introTitle {
+    margin-left: 50px;
+    font-size: 16px;
+    color: #655853;
+
+}
+
+
+.dateframe {
+    display: flex;
+
+    .dateTitle {
+        margin-top: 30px;
+    }
+
+    .enddateTitle {
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+
+    .date {
+        margin-top: 20px;
+        border-radius: 50px;
+        border: 2px solid #8FC4B3;
+        width: 575px;
+        height: 50px;
+        margin-left: 20px;
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.localframe {
+    display: flex;
+    margin-top: 20px;
+
+    .localName {
+        margin-left: 20px;
+    }
+
+    .local {
+        border-radius: 50px;
+        width: 575px;
+        height: 50px;
+        margin-left: 23px;
+        border: 2px solid #8FC4B3;
+    }
+
+    .localDetail {
+        border-radius: 50px;
+        width: 575px;
+        height: 50px;
+        margin-left: 40px;
+        border: 2px solid #8FC4B3;
+    }
+
+}
+
+.textAll {
+    border: none;
+    margin: 16px 20px 16px 20px;
+    resize: none;
+    font-size: 18px;
+    outline: none;
+    width: 520px;
+}
+
+
+
+.timeframe {
+    display: flex;
+    margin-top: 20px;
+
+    .endTimeName {
+        margin-left: 20px;
+    }
+
+    .endTime {
+        border-radius: 50px;
+        border: 2px solid #8FC4B3;
+        width: 575px;
+        height: 50px;
+        margin-left: 40px;
+    }
+
+    .startTime {
+        border-radius: 50px;
+        border: 2px solid #8FC4B3;
+        width: 575px;
+        height: 50px;
+        margin-left: 20px;
+    }
+
+}
+
+
+.labelCate {
+    display: flexbox;
+}
+
+.MaxNumFrame {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 10px;
+
+    .maxNum {
+        margin-left: 20px;
+        border-radius: 50px;
+        border: 2px solid #8FC4B3;
+        width: 575px;
+        height: 50px;
+    }
+
+    .maxPrice {
+        border-radius: 50px;
+        border: 2px solid #8FC4B3;
+        width: 575px;
+        height: 50px;
+        margin-left: 70px;
+    }
+
+    .priceName {
+        margin-left: 20px;
+    }
+
+}
+
+.categoryFrame {
+    display: flex;
+    margin-bottom: 10px;
+    /* .categoryName {} */
+
+    .categoryCheck {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        border: 1px solid #999;
+        appearance: none;
+        cursor: pointer;
+        margin-left: 60px;
+        margin-top: 20px;
+        position: relative;
+        top: 5px;
+        right: 5px;
+        ;
+
+    }
+
+    .categoryCheck:checked {
+        background: #096249;
+        border: none;
+    }
+
+}
+
+.keywordFrame {
+
+    display: flex;
+
+    .keyword {
+
+        border-radius: 50px;
+        border: 2px solid #8FC4B3;
+        margin-left: 40px;
+        width: 1290px;
+        height: auto;
+    }
+
+
+
+    .keywordCheck {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        border: 1px solid #999;
+        appearance: none;
+        cursor: pointer;
+        margin-left: 30px;
+
+
+        position: relative;
+        top: 5px;
+        right: 5px;
+        ;
+    }
+
+    .keywordCheck:checked {
+        background: #096249;
+        border: none;
+    }
+
+}
+
+
+.tutorframe {
+    display: flex;
+    margin-top: 10px;
+    .tutor {
+        border-radius: 50px;
+        border: 2px solid #8FC4B3;
+        margin-left: 20px;
+        width: 1300px;
+        height: 58px
+    }
+
+    .tutorInto {
+
+        margin-left: 30px;
+        margin-top: 15px;
+        border: none;
+        resize: none;
+        font-size: 1.2em;
+        outline: none;
+        width: 1200px;
+
+    }
+}
+
+.buttonFrame{
+
+    display: flex;
+    float: right;
+    margin-top: 20px;
+    width: 800px;
+
+    .createBtn{
+        border-radius: 50px;
+        background-color: #8FC4B3;
+        width: 150px;
+        height: 75px;
+        color: #096249;
+    }
+
+
+    .cancelBtn{
+        border-radius: 50px;
+        background-color: #CCE2DB;
+        width: 150px;
+        height: 75px;
+        color: #41A487;
+        
+    }
+}

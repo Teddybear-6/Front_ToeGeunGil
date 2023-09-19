@@ -1,0 +1,104 @@
+
+
+.hobbyCard {
+    padding: 1rem/* 24px */;
+    margin-left: 20px;
+    margin-right: 10px;
+    text-align: center;
+    border-radius: 50px;
+    display: inline-flex;
+    flex-direction: column;
+  
+    border: 2px solid #8FC4B3;
+ 
+    width: 345px;
+    height: 365px;
+    justify-content: space-between;
+    box-sizing: border-box;
+
+
+
+   
+    margin-bottom: 40px;
+   
+
+}
+
+
+.hobbyImage {
+    border-radius: 50px;
+    height: 60%;
+    
+}
+
+.hobbyTitle{
+    margin-left: 10px;
+    color: #41A487;
+    font-size: 18px;
+    text-align: left;
+  
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+
+.keywordCard{
+    border-radius: 50px;
+    width: 70px;
+    height: 30px;
+    display: inline-flex;
+    background-color: #E9E0DD;
+    flex-direction: column;
+    justify-content: space-between;
+    float:left;
+    margin-left: 2px;
+    margin-right: 1.5px;
+    
+}
+
+
+.keywordName{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    color: #87746B;
+    line-height: 40%;    
+    margin: auto;
+    
+}
+
+.keywordUnName{
+    border-radius: 50px;
+    width: 27.5px;
+    height: 30px;
+    display: inline-flex;
+    background-color: #E9E0DD;
+    flex-direction: column;
+    margin: auto;
+   
+}
+
+
+
+.hobbyPrice{
+    text-align: right;
+    color: #655853;
+    font-size: 12px;
+   
+    
+    font-weight: bold;
+    font-style: italic;
+    margin-right: 20px;
+}
+
+.CategoryName{
+    
+    text-align: center;
+    font-size: 14px;
+    color: #87746B;
+    line-height: 40%;    
+    
+}
+
