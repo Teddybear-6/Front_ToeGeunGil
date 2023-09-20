@@ -53,7 +53,7 @@ const NoticeView = () => {
                                     <Link to="/notice">
                                         <button className="admin-button1">삭제</button>
                                     </Link>
-                                    <Link to="/notice">
+                                    <Link to={`/notice/${noticeNum}/modify`}>
                                         <button className="admin-button2">수정</button>
                                     </Link>
                                 </div>

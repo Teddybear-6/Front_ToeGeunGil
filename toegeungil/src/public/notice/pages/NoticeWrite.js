@@ -47,7 +47,7 @@ const NoticeWrite = () => {
     }
 
     return (
-
+    
         <div className="wrapper" >
             <div className="customerService-banner">
                 <button className="notice-button">공지사항</button>
