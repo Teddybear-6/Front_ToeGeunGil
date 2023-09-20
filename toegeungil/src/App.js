@@ -3,10 +3,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import NoticeMain from "./public/pages/NoticeMain";
 import NoticeView from './public/pages/NoticeView';
 import NoticeWrite from "./public/pages/NoticeWrite";
-import TestLogin from './public/components/testLogin';
-import SocialMainCard from "./public/social/components/SocialMainCard";
-import SocialParticipateList from "./public/social/components/componentAPI/SocialParticipateList";
-import SocialPosting from './public/social/components/SocialPosting';
 import SocialMain from './public/social/page/SocialMain';
 import Layout from './public/layout/Layout';
 import SocialDetail from './public/social/page/SocialDetail';
@@ -14,11 +10,12 @@ import CommunityDetail from './public/community/pages/CommunityDetail';
 import CommunityMain from './public/community/pages/CommunityMain';
 import CommunityRegist from './public/community/pages/CommunityRegist';
 
-import Tutor from './public/tutor/page/tutor';
+
 import AllHobby from "./public/hobby/page/AllHobby";
 import HobbyDetail from "./public/hobby/page/hobbyDetail";
 import HobbyWrite from './public/tutor/page/hobbyWrite';
 import HobbyModify from './public/tutor/page/hobbyModify';
+import TutorHobbyList from './public/tutor/page/tutorHobbyList';
 import LoginSignup from './public/user/login/LoginSignup';
 import Findpass from './public/user/findpassword/Findpass';
 import Signup from './public/user/Signup/Signup';
@@ -42,9 +39,9 @@ function App() {
             <Route path='hobby'>
             <Route index  element={<AllHobby/>} />
             <Route path=':hobbyCode' element={<HobbyDetail />} />
-            <Route path='tutor' element={<Tutor/>}></Route>
             <Route path='write' element={<HobbyWrite />} />
             <Route path='modify' element={<HobbyModify />} />
+            <Route path='tutorlist' element={<TutorHobbyList />} />
             </Route>
             {/* 소셜 */}
             <Route path='social'>

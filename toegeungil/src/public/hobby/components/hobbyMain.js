@@ -5,7 +5,7 @@ function HobbyMain({hobbys}){
     return(
         <>  
             
-            {hobbys.map((hobby , index)=>(
+            {hobbys?.map((hobby , index)=>(
                 <HobbyCard hobbys={hobby} key={index}/>
             ))}
             
