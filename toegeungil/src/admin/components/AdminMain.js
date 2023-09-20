@@ -1,7 +1,7 @@
 import Header from '../../public/layout/Header';
 import React, { useEffect, useState } from 'react';
 import Navbar from '../../public/layout/Navbar';
-import Nav from '../../public/qna/component/Nav';
+import Nav from '../../public/qna/pages/Nav';
 
 
 export const AdminRouter = () => {
@@ -17,8 +17,8 @@ export const AdminRouter = () => {
 
   return (
     <>
+    {/* Question Admin Main페이지 */}
     <Header/>
-  
     <Nav/>
     
           <thead>

@@ -4,7 +4,7 @@ import Header from '../../public/layout/Header';
 
 import React, { useEffect, useState } from 'react';
 
-import Nav from '../../public/qna/component/Nav';
+import Nav from '../../public/qna/pages/Nav';
 
 //답변 게시판(멤버)
 
