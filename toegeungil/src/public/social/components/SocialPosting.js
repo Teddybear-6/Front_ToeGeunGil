@@ -167,7 +167,7 @@ function SocialPosting() {
                     <div className="posTitle">모임 정원</div>
                     <div className="posBoard w575h50 posFlex_Fix">
                         <input className="posContent_Fix w520h18_Fix textR" type="number" name="socialFixedNum" onChange={handleValueChange} />
-                        <div className="posContent maR50 maT">명</div>
+                        <div className="posContents maT14 maR35">명</div>
                     </div>
                 </div>
 
@@ -188,18 +188,18 @@ function SocialPosting() {
                 <div className="posFlex">
                     <div className="posTitle">대표 사진</div>
                     <div className="posBoard w575h350 maR50">
-                        <div htmlFor="input-file" onChange={handleAddImages}>
-                            <input type="file" id="input-file" name="image" />
-                        </div>
+                        <label>
+                            <div htmlFor="input-file" onChange={handleAddImages}>
+                                <input className="posimage" type="file" id="input-file" name="image" />
+                                <img className="posBoard_Img w575h350 maR50" src={showImage}></img>
+                            </div>
+                        </label>
                         {/* 사진 미리보기... */}
-                        <div>
-                            <img src={showImage} />
-                        </div>
                     </div>
 
                     <div className="posTitle">모임 소개</div>
                     <div className="posBoard w575h350">
-                        <input type="text" name="socialIntro" onChange={handleValueChange} />
+                        <textarea className="posContent_Intro w575h330" type="text" placeholder="소셜 제목을 입력해 주세요." name="socialIntro" onChange={handleValueChange} />
                     </div>
                 </div>
 
@@ -207,25 +207,38 @@ function SocialPosting() {
                 <div className="posFlex">
                     <div className="posTitle">카테고리</div>
                     <div className="posBoard w1300h50">
-                        {
-                            !category.map ? "카테고리가 없습니다." : category.map((m, index) => (
-                                <label htmlFor="categoryCode">
-                                    <input key={index} type="checkbox" name="categoryCode" value={m.categoryCode} onChange={(e) => checkOnlyOne(e.target)} />
-                                    {m.categoryName}
-                                </label>
-                            ))
-                        }
+                        <div className="posFlex_cate">
+                            {
+                                !category.map ? "카테고리가 없습니다." : category.map((m, index) => (
+                                    <label htmlFor="categoryCode">
+                                        <div className="w216h50 posFlex">
+                                            <input className="checkSy" key={index} type="checkbox" name="categoryCode" value={m.categoryCode} onChange={(e) => checkOnlyOne(e.target)} />
+                                            <div className="maL10 maT2">{m.categoryName}</div>
+                                        </div>
+                                    </label>
+                                ))
+                            }
+                        </div>
                     </div>
                 </div>
 
                 {/* 키워드 선택 */}
                 <div className="posFlex">
                     <div className="posTitle">키워드 선택</div>
-                    {
-                        !keyword.map ? "키워드가 없습니다." : keyword.map((m, index) => (
-                            <label htmlFor="keywordCode"><input className="keywordCheck" key={index} type="checkbox" name="keywordCode" value={m.keywordCode} onChange={onChangeHandler} />{m.keywordName}</label>
-                        ))
-                    }
+                    <div className="posBoard w1300h300">
+                        <div className="posFlex_key">
+                            {
+                                !keyword.map ? "키워드가 없습니다." : keyword.map((m, index) => (
+                                    <label htmlFor="keywordCode">
+                                        <div className="w216h50 posFlex">
+                                            <input className="checkSy" key={index} type="checkbox" name="keywordCode" value={m.keywordCode} onChange={onChangeHandler} />
+                                            <div className="maL10 maT2">{m.keywordName}</div>
+                                        </div>
+                                    </label>
+                                ))
+                            }
+                        </div>
+                    </div>
                 </div>
 
                 {/* 지역 선택, 지역 상세 */}
@@ -256,7 +269,7 @@ function SocialPosting() {
                 </div>
 
                 {/* 등록 버튼 */}
-                <button type="submit" className="buttonOn">등록하기</button>
+                <button type="submit" className="buttonOn rightItem marT30">등록하기</button>
             </form>
         </>
     )

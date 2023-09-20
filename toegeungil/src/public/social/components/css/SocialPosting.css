@@ -19,7 +19,7 @@
 
 .posBoard {
     border: 2px solid #8FC4B3;
-    color: 655853;
+    color: #655853;
     border-radius: 50px;
     background-color: white;
 }
@@ -28,16 +28,34 @@
     margin: 10px 20px 0px 20px;
     resize: none;
     outline: none;
-    /* border: none; */
-    font-size: 18px;
+    border: none;
+    font-size: 17px;
     color: #128865;
     font-weight: 600;
+}
+
+.posContent::placeholder {
+    font-size: 16px;
+    color: #8FC4B3;
+    font-weight: 500;
 }
 
 .w1300h50 {
     /* 한 줄 input 박스 */
     width: 1300px;
     height: 50px;
+}
+
+.w1300h300 {
+    /* 한 줄 input 박스 */
+    width: 1300px;
+    height: 300px;
+}
+
+.w1250h18 {
+    /* 한 줄 input text*/
+    width: 1250px;
+    height: 280px;
 }
 
 .w1250h18 {
@@ -64,16 +82,38 @@
     height: 350px;
 }
 
+.w575h330 {
+    /* 반 줄 넓은 input 박스 */
+    width: 500px;
+    height: 300px;
+}
+
+.maL10 {
+    margin-left: 10px;
+}
+
 .maR50 {
     margin-right: 50px;
+}
+
+.maR35 {
+    margin-right: 35px;
 }
 
 .textR {
     text-align: right;
 }
 
-.maT {
-    margin-top: 12px;
+.maT2 {
+    margin-top: 2px;
+}
+
+.maT14 {
+    margin-top: 14px;
+}
+
+.marT30 {
+    margin-top: 30px;
 }
 
 .posContent_Fix {
@@ -81,7 +121,7 @@
     resize: none;
     outline: none;
     border: none;
-    font-size: 18px;
+    font-size: 17px;
     color: #128865;
     font-weight: 600;
 }
@@ -99,7 +139,64 @@
 }
 
 .w216h50 {
-    width: 216px;
-    height: 50px;
+    /* 카테고리 선택 */
+    width: 156px;
+    height: 30px;
+    margin-top: 12px;
+    margin-bottom: 10px;
+    font-size: 17px;
+    margin-left: 20px;
 
+    font-size: 16px;
+    color: #128865;
+    font-weight: 700;
+}
+
+.posimage {
+    display: none;
+}
+
+.posContent_Intro {
+    margin: 20px 30px 20px 30px;
+    resize: none;
+    outline: none;
+    border: none;
+    font-size: 17px;
+    color: #128865;
+    font-weight: 600;
+}
+
+.posContent_Intro::placeholder {
+    font-size: 16px;
+    color: #8FC4B3;
+    font-weight: 500;
+}
+
+.posBoard_Img {
+    border: none;
+    border-radius: 50px;
+}
+
+.posFlex_cate {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.checkSy {
+    width: 20px;
+    height: 20px;
+    accent-color: #41A487;
+}
+
+.posFlex_key {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 32px;
+}
+
+.rightItem {
+    float: right;
 }
