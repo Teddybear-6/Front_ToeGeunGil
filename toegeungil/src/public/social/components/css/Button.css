@@ -78,10 +78,14 @@
 
 .writeButton:hover {
     background-color:#CCE2DB;
-    border: none;
+    border: 2px solid #CCE2DB;
     transition: 0.7s;
 }
 
 .writeButton:active {
     background-color: #8FC4B3;
+}
+
+.mar {
+    margin-left: 10px;
 }

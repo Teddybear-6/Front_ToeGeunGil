@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 // import jwt_decode from "jwt-decode";
 // import { Form } from "react-router-dom";
+import "../components/css/Button.css"
+import { Link } from "react-router-dom";
 
 function SocialPosting() {
 
@@ -77,10 +79,10 @@ function SocialPosting() {
             .then(res => res.json())
             .then(res => setLocal(res))
 
-    }, [social])
+    }, []);
 
     const handleValueChange = (e) => {
-        console.log(social.socialName)
+        // console.log(social.socialName)
         setSocial({
             ...social,
             [e.target.name]: e.target.value
@@ -89,13 +91,23 @@ function SocialPosting() {
 
     //POST 요청
     const handleSubmit = (e) => {
+
+        const formData = new FormData();
+        const blob = new Blob([JSON.stringify(social)], {
+            type: 'application/json'
+        });
+        formData.append('social', blob);
+        formData.append('image', image[0]);
+
+
         e.preventDefault(); // submit action을 안타도록 설정
         fetch(process.env.REACT_APP_URL + `/socials`, {
             method: "POST", //메소드 지정
             headers: { //데이터 타입 지정
-                "Content-Type": "application/json; charset=utf-8"
+                // "Content-Type": "application/json; charset=utf-8"
             },
-            body: JSON.stringify(social) //실제 데이터 파싱하여 body에 저장
+            body: formData
+            // body: JSON.stringify(social) //실제 데이터 파싱하여 body에 저장
         })
             .then(response => response.json()) //return 값에 맞는 req 지정
             .then(response => console.log(response)) //return 값에 대한 처리
@@ -130,16 +142,16 @@ function SocialPosting() {
         const currentImageUrl = URL.createObjectURL(img[0]);
         setShowImage(currentImageUrl);
         setImage(img);
-
     };
 
     console.log(showImage)
     return (
         <>
+        <form onSubmit={(e) => handleSubmit(e)}>
             <div>
-                <label>게시글 제목</label>
+                <label>모임 제목</label>
                 <input type="text" placeholder="소셜 제목을 입력해 주세요." name="socialName" onChange={handleValueChange} />
-                <label>{social.socialName}</label>
+                {/* <label>{social.socialName}</label> */}
             </div>
             <div>
                 <label>모임 일시</label>
@@ -165,7 +177,7 @@ function SocialPosting() {
             <div>
                 <label>대표 사진</label>
                 <label htmlFor="input-file" onChange={handleAddImages}>
-                    <input type="file" id="input-file" multiple />
+                    <input type="file" id="input-file" name="image" />
                 </label>
                 {/* 사진 미리보기... */}
                 <div>
@@ -218,6 +230,8 @@ function SocialPosting() {
                 <input type="text" placeholder={social.socialOther} name="socialOther" onChange={handleValueChange} />
                 <label>{social.socialOther}</label>
             </div>
+            <Link to="/social" type="submit" className="buttonOn">등록하기</Link>
+            </form>
         </>
     )
 

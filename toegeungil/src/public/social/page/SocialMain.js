@@ -21,7 +21,7 @@ function SocialMain() {
         <>
             <div className='layout'>
                 <SocialMainCard />
-                <Link to="write" type='button' className='writeButton'>게시글 작성</Link>
+                <Link to="write" type='button' className='writeButton mar'>게시글 작성</Link>
             </div>
         </>
     );
