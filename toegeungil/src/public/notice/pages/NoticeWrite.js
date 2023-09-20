@@ -22,7 +22,7 @@ const NoticeWrite = () => {
 
     const writeClick = () => {
         console.log(noticeTitle);
-        fetch(`http://localhost:8001/notices`,
+        fetch(process.env.REACT_APP_URL+`/notices`,
             {
                 method: "POST",
                 headers: {
@@ -47,7 +47,6 @@ const NoticeWrite = () => {
     }
 
     return (
-    
         <div className="wrapper" >
             <div className="customerService-banner">
                 <button className="notice-button">공지사항</button>

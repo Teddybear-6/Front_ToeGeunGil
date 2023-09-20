@@ -10,7 +10,7 @@ const NoticeModify = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch(process.env.REACT_APP_URL+`notices/${noticeNum}`)
+        fetch(process.env.REACT_APP_URL+`/notices/${noticeNum}`)
             .then(response => response.json())
             .then(data => {
                 setNotice(data);
