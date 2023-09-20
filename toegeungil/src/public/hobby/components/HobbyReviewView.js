@@ -8,7 +8,7 @@ function HobbyReview({hobbyCode}){
 
     useEffect(()=>{
         
-        fetch(`http://localhost:8001/hobbys/review/${hobbyCode}`).then(res=>res.json()).then(res => setReview(res));
+        fetch(process.env.REACT_APP_URL+`/hobbys/review/${hobbyCode}`).then(res=>res.json()).then(res => setReview(res));
 
 
    

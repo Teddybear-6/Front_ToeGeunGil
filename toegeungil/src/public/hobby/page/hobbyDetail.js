@@ -23,13 +23,13 @@ function HobbyDetail() {
        if(sessionStorage.getItem("Authorizaton")){
         setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
        }
-        fetch(`http://localhost:8001/hobbys/${hobbyCode}`)
+        fetch(process.env.REACT_APP_URL+`/hobbys/${hobbyCode}`)
             .then((response) => response.json()).then(data => {
                 setDetail(data);
             })
           
         if(user)
-         fetch(`http://localhost:8001/hobbys/join/${hobbyCode}/${user.no}`).then(res => res.json()).then(res=>{
+         fetch(process.env.REACT_APP_URL+`/hobbys/join/${hobbyCode}/${user.no}`).then(res => res.json()).then(res=>{
             setJoin(res)
          })  
 
@@ -48,7 +48,7 @@ function HobbyDetail() {
             alert("회원만 참여가능합니다.")
         }else if(join){
             if(window.confirm("참여 취소하시겠습니까")){
-                fetch(`http://localhost:8001/hobbys/join/${hobbyCode}/${user.no}`,{
+                fetch(process.env.REACT_APP_URL+`/hobbys/join/${hobbyCode}/${user.no}`,{
                 method: "POST",
             }).then(res=>res.text()).then(res=> {
                 alert(res)
@@ -60,7 +60,7 @@ function HobbyDetail() {
             }
         }else if(!join){
             if(window.confirm("참여하시겠습니까")){
-                fetch(`http://localhost:8001/hobbys/join/${hobbyCode}/${user.no}`,{
+                fetch(process.env.REACT_APP_URL+`/hobbys/join/${hobbyCode}/${user.no}`,{
                 method: "POST",
             }).then(res=>res.text()).then(res=> {
                 alert(res)

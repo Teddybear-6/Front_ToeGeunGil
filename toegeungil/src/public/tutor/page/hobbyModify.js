@@ -24,10 +24,10 @@ function HobbyModify({ hobbyCode }) {
       setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
     }
 
-    fetch(`http://localhost:8001/hobbys/2`).then(res => res.json()).then(res => setHobby(res))
-    fetch("http://localhost:8001/category").then(res => res.json()).then(res => setCategory(res))
-    fetch("http://localhost:8001/keyword").then(res => res.json()).then(res => setKeyword(res))
-    fetch("http://localhost:8001/local").then(res => res.json()).then(res => setLocal(res))
+    fetch(process.env.REACT_APP_URL+`/hobbys/2`).then(res => res.json()).then(res => setHobby(res))
+    fetch(process.env.REACT_APP_URL+"/category").then(res => res.json()).then(res => setCategory(res))
+    fetch(process.env.REACT_APP_URL+"/keyword").then(res => res.json()).then(res => setKeyword(res))
+    fetch(process.env.REACT_APP_URL+"/local").then(res => res.json()).then(res => setLocal(res))
 
 
 
@@ -129,7 +129,7 @@ function HobbyModify({ hobbyCode }) {
       }
       
 
-      fetch("http://localhost:8001/hobbys", {
+      fetch((process.env.REACT_APP_URL+"/hobbys", {
         method: "PUT",
         body: formData,
         headers: {
