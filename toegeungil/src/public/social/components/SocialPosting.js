@@ -147,90 +147,90 @@ function SocialPosting() {
     console.log(showImage)
     return (
         <>
-        <form onSubmit={(e) => handleSubmit(e)}>
-            <div>
-                <label>모임 제목</label>
-                <input type="text" placeholder="소셜 제목을 입력해 주세요." name="socialName" onChange={handleValueChange} />
-                {/* <label>{social.socialName}</label> */}
-            </div>
-            <div>
-                <label>모임 일시</label>
-                <input type="date" name="socialDate" onChange={handleValueChange} />
-                <label>{social.socialDate}</label>
-            </div>
-            <div>
-                <label>모임 정원</label>
-                <input type="number" name="socialFixedNum" onChange={handleValueChange} />
-                <label>명</label>
-                <label>{social.socialFixedNum}</label>
-            </div>
-            <div>
-                <label>시작 시간</label>
-                <input type="time" name="socialStartTime" onChange={handleValueChange} />
-                <label>{social.socialStartTime}</label>
-            </div>
-            <div>
-                <label>종료 시간</label>
-                <input type="time" name="socialEndTime" onChange={handleValueChange} />
-                <label>{social.socialEndTime}</label>
-            </div>
-            <div>
-                <label>대표 사진</label>
-                <label htmlFor="input-file" onChange={handleAddImages}>
-                    <input type="file" id="input-file" name="image" />
-                </label>
-                {/* 사진 미리보기... */}
+            <form onSubmit={(e) => handleSubmit(e)}>
                 <div>
-                    <img src={showImage} />
+                    <label>모임 제목</label>
+                    <input type="text" placeholder="소셜 제목을 입력해 주세요." name="socialName" onChange={handleValueChange} />
+                    {/* <label>{social.socialName}</label> */}
                 </div>
-            </div>
-            <div>
-                <label>모임 소개</label>
-                <input type="text" name="socialIntro" onChange={handleValueChange} />
-                <label>{social.socialIntro}</label>
-            </div>
-            <div>
-                <label>카테고리</label>
-                {
-                    !category.map ? "카테고리가 없습니다." : category.map((m, index) => (
-                        <label htmlFor="categoryCode">
-                            <input key={index} type="checkbox" name="categoryCode" value={m.categoryCode} onChange={(e) => checkOnlyOne(e.target)} />
-                            {m.categoryName}
-                        </label>
-                    ))
-                }
-                <label>{social.categoryCode}</label>
-            </div>
-            <div>
-                <label>키워드 선택</label>
-                {
-                    !keyword.map ? "키워드가 없습니다." : keyword.map((m, index) => (
-                        <label htmlFor="keywordCode"><input className="keywordCheck" key={index} type="checkbox" name="keywordCode" value={m.keywordCode} onChange={onChangeHandler} />{m.keywordName}</label>
-                    ))
-                }
-            </div>
-            <div>
-                <label>지역 선택</label>
-                <select name="localCode" id="local" onChange={onChangeHandler}>
+                <div>
+                    <label>모임 일시</label>
+                    <input type="date" name="socialDate" onChange={handleValueChange} />
+                    <label>{social.socialDate}</label>
+                </div>
+                <div>
+                    <label>모임 정원</label>
+                    <input type="number" name="socialFixedNum" onChange={handleValueChange} />
+                    <label>명</label>
+                    <label>{social.socialFixedNum}</label>
+                </div>
+                <div>
+                    <label>시작 시간</label>
+                    <input type="time" name="socialStartTime" onChange={handleValueChange} />
+                    <label>{social.socialStartTime}</label>
+                </div>
+                <div>
+                    <label>종료 시간</label>
+                    <input type="time" name="socialEndTime" onChange={handleValueChange} />
+                    <label>{social.socialEndTime}</label>
+                </div>
+                <div>
+                    <label>대표 사진</label>
+                    <label htmlFor="input-file" onChange={handleAddImages}>
+                        <input type="file" id="input-file" name="image" />
+                    </label>
+                    {/* 사진 미리보기... */}
+                    <div>
+                        <img src={showImage} />
+                    </div>
+                </div>
+                <div>
+                    <label>모임 소개</label>
+                    <input type="text" name="socialIntro" onChange={handleValueChange} />
+                    <label>{social.socialIntro}</label>
+                </div>
+                <div>
+                    <label>카테고리</label>
                     {
-                        local?.map((m, index) => (
-                            <option value={m.localCode} key={index}>{m.localName}</option>
+                        !category.map ? "카테고리가 없습니다." : category.map((m, index) => (
+                            <label htmlFor="categoryCode">
+                                <input key={index} type="checkbox" name="categoryCode" value={m.categoryCode} onChange={(e) => checkOnlyOne(e.target)} />
+                                {m.categoryName}
+                            </label>
                         ))
                     }
-                </select>
-                <label>{social.local}</label>
-            </div>
-            <div>
-                <label>지역 상세</label>
-                <input type="text" placeholder="모임 장소를 입력해 주세요." name="localDetails" onChange={handleValueChange} />
-                <label>{social.localDetails}</label>
-            </div>
-            <div>
-                <label>기타 사항</label>
-                <input type="text" placeholder={social.socialOther} name="socialOther" onChange={handleValueChange} />
-                <label>{social.socialOther}</label>
-            </div>
-            <Link to="/social" type="submit" className="buttonOn">등록하기</Link>
+                    <label>{social.categoryCode}</label>
+                </div>
+                <div>
+                    <label>키워드 선택</label>
+                    {
+                        !keyword.map ? "키워드가 없습니다." : keyword.map((m, index) => (
+                            <label htmlFor="keywordCode"><input className="keywordCheck" key={index} type="checkbox" name="keywordCode" value={m.keywordCode} onChange={onChangeHandler} />{m.keywordName}</label>
+                        ))
+                    }
+                </div>
+                <div>
+                    <label>지역 선택</label>
+                    <select name="localCode" id="local" onChange={onChangeHandler}>
+                        {
+                            local?.map((m, index) => (
+                                <option value={m.localCode} key={index}>{m.localName}</option>
+                            ))
+                        }
+                    </select>
+                    <label>{social.local}</label>
+                </div>
+                <div>
+                    <label>지역 상세</label>
+                    <input type="text" placeholder="모임 장소를 입력해 주세요." name="localDetails" onChange={handleValueChange} />
+                    <label>{social.localDetails}</label>
+                </div>
+                <div>
+                    <label>기타 사항</label>
+                    <input type="text" placeholder={social.socialOther} name="socialOther" onChange={handleValueChange} />
+                    <label>{social.socialOther}</label>
+                </div>
+                <button type="submit" className="buttonOn">등록하기</button>
             </form>
         </>
     )

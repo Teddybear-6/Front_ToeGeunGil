@@ -21,6 +21,7 @@ import LoginSignup from './public/user/login/LoginSignup';
 import Findpass from './public/user/findpassword/Findpass';
 import Signup from './public/user/Signup/Signup';
 import SocialWrite from './public/social/page/SocialWrite';
+import ScrollToTop from './public/layout/scroll/ScrollToTop';
 function App() {
   /* 라우팅
       : 어떤 요청(URL)을 어디로 안내 및 매핑 할 것인지를 정해놓고 진행하는 것
@@ -28,6 +29,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path='/' element={<Layout />}>
             {/* 로그인 */}
@@ -48,7 +50,7 @@ function App() {
             <Route path='social'>
               <Route index element={<SocialMain />} />
               <Route path=':socialNum' element={<SocialDetail />} />
-              <Route path='write' element={<SocialWrite/>}/>
+              <Route path='write' element={<SocialWrite />} />
             </Route>
             {/* 커뮤니티 */}
             <Route path="/communitys" element={<CommunityMain />} />
