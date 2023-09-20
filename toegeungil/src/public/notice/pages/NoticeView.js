@@ -10,7 +10,7 @@ const NoticeView = () => {
 
     useEffect(() => {
         setLoading(true);
-        fetch(`http://localhost:8001/notices/${noticeNum}`)
+    fetch(process.env.REACT_APP_URL+`/notices/${noticeNum}`)
             .then(response => response.json())
             .then(data => {
                 setDetail(data);
@@ -50,7 +50,7 @@ const NoticeView = () => {
                                 </div>
                                 {/* 관리자일 경우 */}
                                 <div className="admin-button-box">
-                                    <Link to="/notice">
+                                    <Link to={`/notice/${noticeNum}/delete`}>
                                         <button className="admin-button1">삭제</button>
                                     </Link>
                                     <Link to={`/notice/${noticeNum}/modify`}>

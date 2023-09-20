@@ -9,7 +9,7 @@ const NoticeList = () => {
 
 
     const getList = () => {
-        fetch("http://localhost:8001/notices")
+        fetch(process.env.REACT_APP_URL+`/notices`)
             .then(response => response.json())
             .then(data => setList(data))
     }
