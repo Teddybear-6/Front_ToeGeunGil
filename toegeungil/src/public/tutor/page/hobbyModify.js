@@ -14,6 +14,7 @@ function HobbyModify({ hobbyCode }) {
   const [keyword, setKeyword] = useState([]);
   const [hobby, setHobby] = useState({})
   const [keywordDTOList, setKeywordDTOList] = useState([])
+  const [urls , setUrls]= useState();
 
   const [hobbyImage, setHobbyImage] = useState([])
   const [local, setLocal] = useState([{}]);
@@ -23,7 +24,7 @@ function HobbyModify({ hobbyCode }) {
       setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
     }
 
-    fetch(`http://localhost:8001/hobbys/${hobbyCode}`).then(res => res.json()).then(res => setHobby(res))
+    fetch(`http://localhost:8001/hobbys/2`).then(res => res.json()).then(res => setHobby(res))
     fetch("http://localhost:8001/category").then(res => res.json()).then(res => setCategory(res))
     fetch("http://localhost:8001/keyword").then(res => res.json()).then(res => setKeyword(res))
     fetch("http://localhost:8001/local").then(res => res.json()).then(res => setLocal(res))
@@ -32,7 +33,6 @@ function HobbyModify({ hobbyCode }) {
 
   }, [])
 
-  console.log(showImages)
 
   const categoryHandler = () => {
     const checkboxes = document.getElementsByName("categoryCode")
@@ -42,7 +42,7 @@ function HobbyModify({ hobbyCode }) {
 
       }
     }
-
+    console.log(hobby.categoryCode)
   }
 
   const keywordHandler = () => {
@@ -53,7 +53,7 @@ function HobbyModify({ hobbyCode }) {
 
     }
 
-
+    console.log(hobby.keywordDTOList)
   }
 
 
@@ -104,17 +104,30 @@ function HobbyModify({ hobbyCode }) {
   const onClickHandler = () => {
 
     if (!(user === undefined) && !(user === null) && user.auth[0] === 'ADMIN' || user.auth[0] === 'TUTOR') {
+      if(user.no===hobby.tutorCode){
+
+     
       setHobby({ ...hobby, ["tutorCode"]: user.no })
-      console.log(hobby)
+    
+      
       const formData = new FormData()
       const blob = new Blob([JSON.stringify(hobby)], {
         type: 'application/json',
       });
-      formData.append('hobby', blob);
-      for (let i = 0; i < hobbyImage[0].length; i++) {
-        formData.append('hobbyImage', hobbyImage[0][i]);
-      }
 
+      const blob1 = new Blob([JSON.stringify(urls)], {
+        type: 'application/json',
+      });
+      formData.append('hobby', blob);
+      formData.append('urls', blob1);
+      if(!hobbyImage==null){
+        for (let i = 0; i < hobbyImage[0].length; i++) {
+          formData.append('hobbyImage', hobbyImage[0][i]);
+        }
+      }else{
+        formData.append('hobbyImage', null);
+      }
+      
 
       fetch("http://localhost:8001/hobbys", {
         method: "PUT",
@@ -127,6 +140,9 @@ function HobbyModify({ hobbyCode }) {
         alert(res['value'])
 
       }).catch((e) => alert(e))
+    }else{
+      alert("작성자만 수정할 수 있습니다.")
+    }
     } else {
       alert("강사만 작성할 수 있습니다.")
 
@@ -151,9 +167,9 @@ function HobbyModify({ hobbyCode }) {
         </div>
         <div className="mainIntroFrame">
           <div>
-            <Imageset image={hobby.imageId}
+            <Imageset image={hobby.imageId} setHobby={setHobby} hobby={hobby}
               setShowImages={setShowImages} showImages={showImages}
-              setHobbyImage={setHobbyImage} hobbyImage={hobbyImage} ></Imageset>
+              setHobbyImage={setHobbyImage} hobbyImage={hobbyImage} setUrls={setUrls} ></Imageset>
           </div>
           <div>
 
@@ -181,7 +197,7 @@ function HobbyModify({ hobbyCode }) {
             <select name="localCode" id="local" className="textAll" value={hobby.localCode} onChange={onChangeHandler}>
               {
                 local?.map((m, index) => (
-                  <option value={m.localName} key={index}>{m.localName}</option>
+                  <option value={m.localCode} key={index}>{m.localName}</option>
                 ))
               }
             </select>

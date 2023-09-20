@@ -21,9 +21,9 @@ function HobbyWrite() {
     }
 
 
-    fetch("http://localhost:8001/category").then(res => res.json()).then(res => setCategory(res))
-    fetch("http://localhost:8001/keyword").then(res => res.json()).then(res => setKeyword(res))
-    fetch("http://localhost:8001/local").then(res => res.json()).then(res => setLocal(res))
+    fetch(process.env.REACT_APP_URL+"/category").then(res => res.json()).then(res => setCategory(res))
+    fetch(process.env.REACT_APP_URL+"/keyword").then(res => res.json()).then(res => setKeyword(res))
+    fetch(process.env.REACT_APP_URL+"/local").then(res => res.json()).then(res => setLocal(res))
 
   }, [])
 
@@ -111,7 +111,7 @@ function HobbyWrite() {
       }
 
 
-      fetch("http://localhost:8001/hobbys", {
+      fetch(process.env.REACT_APP_URL+"/hobbys", {
         method: "POST",
         body: formData,
         headers: {
@@ -182,7 +182,7 @@ function HobbyWrite() {
             <select name="localCode" id="local" className="textAll" onChange={onChangeHandler}>
               {
                 local?.map((m, index) => (
-                  <option value={m.localName} key={index}>{m.localName}</option>
+                  <option value={m.localCode} key={index}>{m.localName}</option>
                 ))
               }
             </select>

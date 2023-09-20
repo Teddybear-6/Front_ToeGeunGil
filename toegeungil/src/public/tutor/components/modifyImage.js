@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 
-function Imageset({ image, setShowImages, showImages, setHobbyImage, hobbyImage }) {
-    const [url, setUrl] = useState(image);
+function Imageset({ image, setShowImages, showImages, setHobbyImage, hobbyImage, setUrls}) {
+    const [url, setUrl] = useState();
 
     useEffect(() => {
         setUrl(image)
+        setUrls(image)
+
     }, [image])
 
     const handleAddImages = (event) => {
@@ -25,23 +27,25 @@ function Imageset({ image, setShowImages, showImages, setHobbyImage, hobbyImage 
 
             setHobbyImage([...hobbyImage, imageLists])
             setShowImages(imageUrlLists);
+          
         }
     };
 
 
-    console.log(showImages)
 
-
+    // 기본 이미지 지우는 메소드
     const handleDeleteImage1 = (id) => {
-
+       
         setUrl(url.filter((_, index) => index !== id));
+        setUrls(url.filter((_, index) => index !== id));
+        
+       
     };
 
     const handleDeleteImage2 = (id) => {
         setShowImages(showImages.filter((_, index) => index !== id));
 
     };
-
 
 
     return (
