@@ -3,6 +3,7 @@ import axios from 'axios';
 import SocialMainCard from '../components/SocialMainCard';
 import '../../layout/layout.css';
 import '../components/css/Button.css';
+import { Link } from "react-router-dom";
 
 function SocialMain() {
     /*
@@ -20,9 +21,7 @@ function SocialMain() {
         <>
             <div className='layout'>
                 <SocialMainCard />
-                <button className='writeButton'>dfasfdsaf</button>
-                <button className='buttonOn'>dfasfdsaf</button>
-                <button className='buttonOff'>dfasfdsaf</button>
+                <Link to="write" type='button' className='writeButton'>게시글 작성</Link>
             </div>
         </>
     );

@@ -45,9 +45,11 @@ function SocialPosting() {
     const [keywordDTOList, setKeywordDTOList] = useState([]); //keywordDTOList
     const [local, setLocal] = useState([]); //localCode
     const [image, setImage] = useState({}); //image
+    const [showImage, setShowImage] = useState(); //show image
 
     //input으로 바로 값 입력
     const [social, setSocial] = useState({
+        userNum: 4, //유저 번호
         socialName: '', //제목
         socialDate: '', //모임일시
         socialFixedNum: '', //정원
@@ -56,23 +58,22 @@ function SocialPosting() {
         localDetails: '', //지역상세
         socialIntro: '', //모임소개
         socialOther: '기타 사항 없음', //기타사항
-        categoryCode: category
     });
 
     useEffect(() => {
 
         //카테고리
-        fetch(process.env.REACT_APP_URL+"/category")
+        fetch(process.env.REACT_APP_URL + "/category")
             .then(res => res.json())
             .then(res => setCategory(res))
 
         //키워드
-        fetch(process.env.REACT_APP_URL+"/keyword")
+        fetch(process.env.REACT_APP_URL + "/keyword")
             .then(res => res.json())
             .then(res => setKeyword(res))
 
         //지역
-        fetch(process.env.REACT_APP_URL+"/local")
+        fetch(process.env.REACT_APP_URL + "/local")
             .then(res => res.json())
             .then(res => setLocal(res))
 
@@ -86,9 +87,10 @@ function SocialPosting() {
         });
     }
 
+    //POST 요청
     const handleSubmit = (e) => {
         e.preventDefault(); // submit action을 안타도록 설정
-        fetch(process.env.REACT_APP_URL+`/socials`, {
+        fetch(process.env.REACT_APP_URL + `/socials`, {
             method: "POST", //메소드 지정
             headers: { //데이터 타입 지정
                 "Content-Type": "application/json; charset=utf-8"
@@ -97,19 +99,41 @@ function SocialPosting() {
         })
             .then(response => response.json()) //return 값에 맞는 req 지정
             .then(response => console.log(response)) //return 값에 대한 처리
-    }
+    };
 
+    //카테고리
     const checkOnlyOne = (checkThis) => {
-        const checkboxes = document.getElementsByName("category")
+        const checkboxes = document.getElementsByName("categoryCode")
         for (let i = 0; i < checkboxes.length; i++) {
             if (checkboxes[i] !== checkThis) {
                 checkboxes[i].checked = false
             }
-
         }
         setSocial({ ...social, [checkThis.name]: checkThis.value });
-    }
+    };
 
+    //키워드
+    const onChangeHandler = (e) => {
+        if (e.target.name !== "keywordCode") {
+            setSocial({ ...social, [e.target.name]: e.target.value });
+        } else {
+            keywordDTOList.push({ "keywordCode": Number(e.target.value) })
+            setSocial({ ...social, keywordDTOList });
+        }
+    };
+
+    //이미지 상대경로 저장
+    const handleAddImages = (event) => {
+        console.log(event)
+        const img = event.target.files;
+        console.log(img)
+        const currentImageUrl = URL.createObjectURL(img[0]);
+        setShowImage(currentImageUrl);
+        setImage(img);
+
+    };
+
+    console.log(showImage)
     return (
         <>
             <div>
@@ -140,8 +164,13 @@ function SocialPosting() {
             </div>
             <div>
                 <label>대표 사진</label>
-                <input type="file" name="" />
+                <label htmlFor="input-file" onChange={handleAddImages}>
+                    <input type="file" id="input-file" multiple />
+                </label>
                 {/* 사진 미리보기... */}
+                <div>
+                    <img src={showImage} />
+                </div>
             </div>
             <div>
                 <label>모임 소개</label>
@@ -152,14 +181,42 @@ function SocialPosting() {
                 <label>카테고리</label>
                 {
                     !category.map ? "카테고리가 없습니다." : category.map((m, index) => (
-                        <label htmlFor="categoryCode" className="labelCate">
-                            <input key={index} type="checkbox" name="category" value={m.categoryCode} onChange={(e) => checkOnlyOne(e.target)} />
+                        <label htmlFor="categoryCode">
+                            <input key={index} type="checkbox" name="categoryCode" value={m.categoryCode} onChange={(e) => checkOnlyOne(e.target)} />
                             {m.categoryName}
                         </label>
                     ))
                 }
-                <label>{social.category}</label>
-
+                <label>{social.categoryCode}</label>
+            </div>
+            <div>
+                <label>키워드 선택</label>
+                {
+                    !keyword.map ? "키워드가 없습니다." : keyword.map((m, index) => (
+                        <label htmlFor="keywordCode"><input className="keywordCheck" key={index} type="checkbox" name="keywordCode" value={m.keywordCode} onChange={onChangeHandler} />{m.keywordName}</label>
+                    ))
+                }
+            </div>
+            <div>
+                <label>지역 선택</label>
+                <select name="localCode" id="local" onChange={onChangeHandler}>
+                    {
+                        local?.map((m, index) => (
+                            <option value={m.localCode} key={index}>{m.localName}</option>
+                        ))
+                    }
+                </select>
+                <label>{social.local}</label>
+            </div>
+            <div>
+                <label>지역 상세</label>
+                <input type="text" placeholder="모임 장소를 입력해 주세요." name="localDetails" onChange={handleValueChange} />
+                <label>{social.localDetails}</label>
+            </div>
+            <div>
+                <label>기타 사항</label>
+                <input type="text" placeholder={social.socialOther} name="socialOther" onChange={handleValueChange} />
+                <label>{social.socialOther}</label>
             </div>
         </>
     )
