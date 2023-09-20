@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import SocialMainCard from '../components/SocialMainCard';
 import '../../layout/layout.css';
+import '../components/css/Button.css';
 
 function SocialMain() {
     /*
@@ -19,6 +20,9 @@ function SocialMain() {
         <>
             <div className='layout'>
                 <SocialMainCard />
+                <button className='writeButton'>dfasfdsaf</button>
+                <button className='buttonOn'>dfasfdsaf</button>
+                <button className='buttonOff'>dfasfdsaf</button>
             </div>
         </>
     );
