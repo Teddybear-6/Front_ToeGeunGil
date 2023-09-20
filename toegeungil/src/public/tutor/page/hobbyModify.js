@@ -107,7 +107,11 @@ function HobbyModify({ hobbyCode }) {
       formData.append('urls', blob1);
       formData.append('keywordDTOList', blob3);
 
-      if(!hobbyImage==null){
+      console.log(hobbyImage)
+     
+
+      if(hobbyImage.length !=0 ){
+        console.log("확인")
         for (let i = 0; i < hobbyImage[0].length; i++) {
           formData.append('hobbyImage', hobbyImage[0][i]);
         }
@@ -259,12 +263,12 @@ function HobbyModify({ hobbyCode }) {
 
 
         <div className="buttonFrame">
-          <Link to="/hobby">
+          {/* <Link to="/hobby"> */}
             <button className="cancelBtn">취소하기</button>
-          </Link>
-          <Link to="/hobby">
+          {/* </Link>
+          <Link to="/hobby"> */}
             <button onClick={onClickHandler} className="createBtn">작성하기</button>
-          </Link>
+          {/* </Link> */}
         </div>
       </div>
 
