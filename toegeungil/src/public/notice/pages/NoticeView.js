@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link,useNavigate } from "react-router-dom";
 import '../components/NoticeView.css';
 import '../components/NoticeBanner.css';
 
@@ -7,6 +7,7 @@ const NoticeView = () => {
     const { noticeNum } = useParams();
     const [detail, setDetail] = useState({});
     const [loading, setLoading] = useState(true); // 로딩 상태 관리
+    const navigate = useNavigate(); //useNavigate 훅을 사용해서 페이지 이동을 제어
 
     useEffect(() => {
         setLoading(true);
@@ -17,6 +18,23 @@ const NoticeView = () => {
                 setLoading(false);
             })
     }, [noticeNum])
+
+    /* 관리자인 경우 삭제 */
+    const deleteClick = () => {
+        fetch(process.env.REACT_APP_URL+`/notices/${noticeNum}`, {method: "DELETE"})
+        .then(response=>{
+            if(response.ok){
+                alert("공지사항이 삭제되었습니다")
+                navigate("/notice");
+            }else{
+                throw new Error("공지사항 삭제 실패하였습니다")
+            }
+        })
+        .catch(error=>{
+            console.error("공지사항 삭제 중 오류 발생 : ", error);
+            alert("공지사항 삭제 중 오류가 발생하였습니다");
+        })
+    }
 
     return (
         <div className="view-wrapper">
@@ -50,8 +68,8 @@ const NoticeView = () => {
                                 </div>
                                 {/* 관리자일 경우 */}
                                 <div className="admin-button-box">
-                                    <Link to={`/notice/${noticeNum}/delete`}>
-                                        <button className="admin-button1">삭제</button>
+                                    <Link to="/notice">
+                                        <button className="admin-button1" onClick={deleteClick}>삭제</button>
                                     </Link>
                                     <Link to={`/notice/${noticeNum}/modify`}>
                                         <button className="admin-button2">수정</button>
