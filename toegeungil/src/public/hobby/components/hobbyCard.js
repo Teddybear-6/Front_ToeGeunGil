@@ -14,10 +14,10 @@ function HobbyCard(hobbys){
   
 
     useEffect(()=>{
-        fetch(`http://localhost:8001/hobbys/mainimages/${hobbys.hobbys.hobbyCode}`).then(res => res.json())
+        fetch(process.env.REACT_APP_URL+`/hobbys/mainimages/${hobbys.hobbys.hobbyCode}`).then(res => res.json())
         .then(res => setMainImage(res))
 
-        fetch(`http://localhost:8001/category/${hobbys.hobbys.categoryCode}`).then(res=>res.json()).then(data=>{
+        fetch(process.env.REACT_APP_URL+`/category/${hobbys.hobbys.categoryCode}`).then(res=>res.json()).then(data=>{
             setCategery(data)
            
         })
