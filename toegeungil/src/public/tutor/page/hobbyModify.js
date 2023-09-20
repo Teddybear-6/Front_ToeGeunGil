@@ -23,7 +23,7 @@ function HobbyModify({ hobbyCode }) {
       setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
     }
 
-    fetch(`http://localhost:8001/hobbys/${hobbyCode}`).then(res => res.json()).then(res => setHobby(res))
+    fetch(`http://localhost:8001/hobbys/2`).then(res => res.json()).then(res => setHobby(res))
     fetch("http://localhost:8001/category").then(res => res.json()).then(res => setCategory(res))
     fetch("http://localhost:8001/keyword").then(res => res.json()).then(res => setKeyword(res))
     fetch("http://localhost:8001/local").then(res => res.json()).then(res => setLocal(res))
@@ -105,28 +105,34 @@ function HobbyModify({ hobbyCode }) {
 
     if (!(user === undefined) && !(user === null) && user.auth[0] === 'ADMIN' || user.auth[0] === 'TUTOR') {
       setHobby({ ...hobby, ["tutorCode"]: user.no })
+      setHobby({...hobby, showImages})
       console.log(hobby)
+      console.log(showImages)
+      
       const formData = new FormData()
       const blob = new Blob([JSON.stringify(hobby)], {
         type: 'application/json',
       });
       formData.append('hobby', blob);
-      for (let i = 0; i < hobbyImage[0].length; i++) {
-        formData.append('hobbyImage', hobbyImage[0][i]);
+      if(!hobbyImage==null){
+        for (let i = 0; i < hobbyImage[0].length; i++) {
+          formData.append('hobbyImage', hobbyImage[0][i]);
+        }
       }
+     
+      
 
+      // fetch("http://localhost:8001/hobbys", {
+      //   method: "PUT",
+      //   body: formData,
+      //   headers: {
+      //     "Authorization": sessionStorage.getItem("Authorizaton")
+      //   },
+      // }).then(res => res.json()).then(res => {
+      //   console.log(res['value']);
+      //   alert(res['value'])
 
-      fetch("http://localhost:8001/hobbys", {
-        method: "PUT",
-        body: formData,
-        headers: {
-          "Authorization": sessionStorage.getItem("Authorizaton")
-        },
-      }).then(res => res.json()).then(res => {
-        console.log(res['value']);
-        alert(res['value'])
-
-      }).catch((e) => alert(e))
+      // }).catch((e) => alert(e))
     } else {
       alert("강사만 작성할 수 있습니다.")
 
@@ -181,7 +187,7 @@ function HobbyModify({ hobbyCode }) {
             <select name="localCode" id="local" className="textAll" value={hobby.localCode} onChange={onChangeHandler}>
               {
                 local?.map((m, index) => (
-                  <option value={m.localName} key={index}>{m.localName}</option>
+                  <option value={m.localCode} key={index}>{m.localName}</option>
                 ))
               }
             </select>
