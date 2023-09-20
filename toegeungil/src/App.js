@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import NoticeMain from './public/notice/pages/NoticeMain';
 import NoticeView from './public/notice/pages/NoticeView';
 import NoticeWrite from './public/notice/pages/NoticeWrite';
+import NoticeModify from './public/notice/pages/NoticeModify';
 import SocialMainCard from "./public/social/components/SocialMainCard";
 import SocialParticipateList from "./public/social/components/componentAPI/SocialParticipateList";
 import SocialPosting from './public/social/components/SocialPosting';
@@ -57,6 +58,7 @@ function App() {
               <Route index element={<NoticeMain />} />
               <Route path='/notice/:noticeNum' element={<NoticeView />} />
               <Route path='/notice/write' element={<NoticeWrite />} />
+              <Route path='/notice/:noticeNum/modify' element={<NoticeModify/>}/>
             </Route>
             {/* <Route path="qna"/>
             <Route index  element={<AdminRouter />}/>
