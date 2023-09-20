@@ -21,8 +21,9 @@ import LoginSignup from './public/user/login/LoginSignup';
 import Findpass from './public/user/findpassword/Findpass';
 import Signup from './public/user/Signup/Signup';
 
+import PublicRouter from './public/qna/pages/QuestionMain';
+import QuestionMain from './public/qna/pages/QuestionMain';
 
-import PublicRouter from './public/qna/component/QuestionMain';
 function App() {
   /* 라우팅
       : 어떤 요청(URL)을 어디로 안내 및 매핑 할 것인지를 정해놓고 진행하는 것
@@ -61,12 +62,14 @@ function App() {
               <Route path='/notice/:noticeNum' element={<NoticeView />} />
               <Route path='/notice/write' element={<NoticeWrite />} />
             </Route>
+
             <Route path="qna"/>
-            {/* <Route index  element={<AdminRouter />}/>
+            <Route index  element={<AdminRouter />}/>
                 <Route path="admin" element={<AdminRouter />} />
-                <Route path="answer" element={<AdminAnswer/>}/> */}
+                <Route path="answer" element={<AdminAnswer/>}/>
                 <Route path="public/main" element={<PublicRouter />} />
-              {/* <Route path="qna" element={<QnaRouter />} /> */}
+              <Route path="qna" element={<QnaRouter />} />
+            
           </Route>
         </Routes>
       </BrowserRouter>

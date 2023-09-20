@@ -49,14 +49,14 @@ const NoticeView = () => {
                                     </Link>
                                 </div>
                                 {/* 관리자일 경우 */}
-                                {/* <div className="admin-button-box">
+                                <div className="admin-button-box">
                                     <Link to="/notice">
                                         <button className="admin-button1">삭제</button>
                                     </Link>
                                     <Link to="/notice">
                                         <button className="admin-button2">수정</button>
                                     </Link>
-                                </div> */}
+                                </div>
                             </div>
                         </>
                     ) : "공지사항이 없습니다"
