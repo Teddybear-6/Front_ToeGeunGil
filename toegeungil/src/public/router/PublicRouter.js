@@ -1,15 +1,11 @@
-import PublicRouter, { QuestionMain } from '../qna/pages/QuestionMain';
-import { Outlet } from 'react-router-dom';
-import QuestionMain from '../qna/pages/QuestionMain';
-import React from 'react'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Signup from "../user/Signup/Signup";
 
-export const PublicRouter = () => {
-  return (
-    <div>
-      <PublicRouter/>
-     <QuestionMain/>
-      
-    </div>
-  );
+function PublicRouter(){
+    return (
+        <>
+        </>
+    )
 }
-export default AdminRouter;
+
+export default PublicRouter;
