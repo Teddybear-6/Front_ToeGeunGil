@@ -61,18 +61,16 @@ const NoticeView = () => {
                                         <label>{detail.noticeContent}</label>
                                     </div>
                                 </div>
-                                <div className="user-button-box" >
+                                <div className="button-box" >
+                                    {/* 관리자인 경우 : 삭제, 수정 버튼 */}
                                     <Link to="/notice">
-                                        <button className="user-button">목록으로</button>
-                                    </Link>
-                                </div>
-                                {/* 관리자일 경우 */}
-                                <div className="admin-button-box">
-                                    <Link to="/notice">
-                                        <button className="admin-button1" onClick={deleteClick}>삭제</button>
+                                        <button className="button1" onClick={deleteClick}>삭제</button>
                                     </Link>
                                     <Link to={`/notice/${noticeNum}/modify`}>
-                                        <button className="admin-button2">수정</button>
+                                        <button className="button2">수정</button>
+                                    </Link>
+                                    <Link to="/notice">
+                                        <button className="button3">목록으로</button>
                                     </Link>
                                 </div>
                             </div>
