@@ -1,0 +1,105 @@
+.posFlex {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 40px;
+}
+
+.posTitle { 
+    /* 한 줄 제목 */
+    width: 100px;
+    height: 16px;
+    margin-top: 17px;
+    margin-bottom: 17px;
+
+    font-size: 16px;
+    color: #655853;
+    font-weight: 700;
+}
+
+.posBoard {
+    border: 2px solid #8FC4B3;
+    color: 655853;
+    border-radius: 50px;
+    background-color: white;
+}
+
+.posContent {
+    margin: 10px 20px 0px 20px;
+    resize: none;
+    outline: none;
+    /* border: none; */
+    font-size: 18px;
+    color: #128865;
+    font-weight: 600;
+}
+
+.w1300h50 {
+    /* 한 줄 input 박스 */
+    width: 1300px;
+    height: 50px;
+}
+
+.w1250h18 {
+    /* 한 줄 input text*/
+    width: 1250px;
+    height: 30px;
+}
+
+.w575h50 {
+    /* 반 줄 input 박스 */
+    width: 575px;
+    height: 50px;
+}
+
+.w520h18 {
+    /* 반 줄 input text*/
+    width: 520px;
+    height: 30px;
+}
+
+.w575h350 {
+    /* 반 줄 넓은 input 박스 */
+    width: 575px;
+    height: 350px;
+}
+
+.maR50 {
+    margin-right: 50px;
+}
+
+.textR {
+    text-align: right;
+}
+
+.maT {
+    margin-top: 12px;
+}
+
+.posContent_Fix {
+    margin: 10px 0px 0px 0px;
+    resize: none;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    color: #128865;
+    font-weight: 600;
+}
+
+.w520h18_Fix {
+    /* 반 줄 input text*/
+    width: 450px;
+    height: 30px;
+}
+
+.posFlex_Fix {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.w216h50 {
+    width: 216px;
+    height: 50px;
+
+}

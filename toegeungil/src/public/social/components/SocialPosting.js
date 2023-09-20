@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 // import { Form } from "react-router-dom";
 import "../components/css/Button.css"
 import { Link } from "react-router-dom";
+import "../components/css/SocialPosting.css"
 
 function SocialPosting() {
 
@@ -148,88 +149,113 @@ function SocialPosting() {
     return (
         <>
             <form onSubmit={(e) => handleSubmit(e)}>
-                <div>
-                    <label>모임 제목</label>
-                    <input type="text" placeholder="소셜 제목을 입력해 주세요." name="socialName" onChange={handleValueChange} />
-                    {/* <label>{social.socialName}</label> */}
-                </div>
-                <div>
-                    <label>모임 일시</label>
-                    <input type="date" name="socialDate" onChange={handleValueChange} />
-                    <label>{social.socialDate}</label>
-                </div>
-                <div>
-                    <label>모임 정원</label>
-                    <input type="number" name="socialFixedNum" onChange={handleValueChange} />
-                    <label>명</label>
-                    <label>{social.socialFixedNum}</label>
-                </div>
-                <div>
-                    <label>시작 시간</label>
-                    <input type="time" name="socialStartTime" onChange={handleValueChange} />
-                    <label>{social.socialStartTime}</label>
-                </div>
-                <div>
-                    <label>종료 시간</label>
-                    <input type="time" name="socialEndTime" onChange={handleValueChange} />
-                    <label>{social.socialEndTime}</label>
-                </div>
-                <div>
-                    <label>대표 사진</label>
-                    <label htmlFor="input-file" onChange={handleAddImages}>
-                        <input type="file" id="input-file" name="image" />
-                    </label>
-                    {/* 사진 미리보기... */}
-                    <div>
-                        <img src={showImage} />
+                {/* 모임 제목 */}
+                <div className="posFlex">
+                    <div className="posTitle">모임 제목</div>
+                    <div className="posBoard w1300h50">
+                        <input className="posContent w1250h18" type="text" placeholder="소셜 제목을 입력해 주세요." name="socialName" onChange={handleValueChange} />
                     </div>
                 </div>
-                <div>
-                    <label>모임 소개</label>
-                    <input type="text" name="socialIntro" onChange={handleValueChange} />
-                    <label>{social.socialIntro}</label>
+
+                {/* 모임 일시, 모임 정원 */}
+                <div className="posFlex">
+                    <div className="posTitle">모임 일시</div>
+                    <div className="posBoard w575h50 maR50">
+                        <input className="posContent w520h18" type="date" name="socialDate" onChange={handleValueChange} />
+                    </div>
+
+                    <div className="posTitle">모임 정원</div>
+                    <div className="posBoard w575h50 posFlex_Fix">
+                        <input className="posContent_Fix w520h18_Fix textR" type="number" name="socialFixedNum" onChange={handleValueChange} />
+                        <div className="posContent maR50 maT">명</div>
+                    </div>
                 </div>
-                <div>
-                    <label>카테고리</label>
-                    {
-                        !category.map ? "카테고리가 없습니다." : category.map((m, index) => (
-                            <label htmlFor="categoryCode">
-                                <input key={index} type="checkbox" name="categoryCode" value={m.categoryCode} onChange={(e) => checkOnlyOne(e.target)} />
-                                {m.categoryName}
-                            </label>
-                        ))
-                    }
-                    <label>{social.categoryCode}</label>
+
+                {/* 시작 시간, 종료 시간 */}
+                <div className="posFlex">
+                    <div className="posTitle">시작 시간</div>
+                    <div className="posBoard w575h50 maR50">
+                        <input className="posContent w520h18" type="time" name="socialStartTime" onChange={handleValueChange} />
+                    </div>
+
+                    <div className="posTitle">종료 시간</div>
+                    <div className="posBoard w575h50">
+                        <input className="posContent w520h18" type="time" name="socialEndTime" onChange={handleValueChange} />
+                    </div>
                 </div>
-                <div>
-                    <label>키워드 선택</label>
+
+                {/* 대표사진, 모임 소개 */}
+                <div className="posFlex">
+                    <div className="posTitle">대표 사진</div>
+                    <div className="posBoard w575h350 maR50">
+                        <div htmlFor="input-file" onChange={handleAddImages}>
+                            <input type="file" id="input-file" name="image" />
+                        </div>
+                        {/* 사진 미리보기... */}
+                        <div>
+                            <img src={showImage} />
+                        </div>
+                    </div>
+
+                    <div className="posTitle">모임 소개</div>
+                    <div className="posBoard w575h350">
+                        <input type="text" name="socialIntro" onChange={handleValueChange} />
+                    </div>
+                </div>
+
+                {/* 카테고리 선택 */}
+                <div className="posFlex">
+                    <div className="posTitle">카테고리</div>
+                    <div className="posBoard w1300h50">
+                        {
+                            !category.map ? "카테고리가 없습니다." : category.map((m, index) => (
+                                <label htmlFor="categoryCode">
+                                    <input key={index} type="checkbox" name="categoryCode" value={m.categoryCode} onChange={(e) => checkOnlyOne(e.target)} />
+                                    {m.categoryName}
+                                </label>
+                            ))
+                        }
+                    </div>
+                </div>
+
+                {/* 키워드 선택 */}
+                <div className="posFlex">
+                    <div className="posTitle">키워드 선택</div>
                     {
                         !keyword.map ? "키워드가 없습니다." : keyword.map((m, index) => (
                             <label htmlFor="keywordCode"><input className="keywordCheck" key={index} type="checkbox" name="keywordCode" value={m.keywordCode} onChange={onChangeHandler} />{m.keywordName}</label>
                         ))
                     }
                 </div>
-                <div>
-                    <label>지역 선택</label>
-                    <select name="localCode" id="local" onChange={onChangeHandler}>
-                        {
-                            local?.map((m, index) => (
-                                <option value={m.localCode} key={index}>{m.localName}</option>
-                            ))
-                        }
-                    </select>
-                    <label>{social.local}</label>
+
+                {/* 지역 선택, 지역 상세 */}
+                <div className="posFlex">
+                    <div className="posTitle">지역 선택</div>
+                    <div className="posBoard w575h50 maR50">
+                        <select className="posContent w520h18" name="localCode" id="local" onChange={onChangeHandler}>
+                            {
+                                local?.map((m, index) => (
+                                    <option value={m.localCode} key={index}>{m.localName}</option>
+                                ))
+                            }
+                        </select>
+                    </div>
+
+                    <div className="posTitle">지역 상세</div>
+                    <div className="posBoard w575h50">
+                        <input className="posContent w520h18" type="text" placeholder="모임 장소를 입력해 주세요." name="localDetails" onChange={handleValueChange} />
+                    </div>
                 </div>
-                <div>
-                    <label>지역 상세</label>
-                    <input type="text" placeholder="모임 장소를 입력해 주세요." name="localDetails" onChange={handleValueChange} />
-                    <label>{social.localDetails}</label>
+
+                {/* 기타사항 */}
+                <div className="posFlex">
+                    <div className="posTitle">기타 사항</div>
+                    <div className="posBoard w1300h50">
+                        <input className="posContent w1250h18" type="text" placeholder={social.socialOther} name="socialOther" onChange={handleValueChange} />
+                    </div>
                 </div>
-                <div>
-                    <label>기타 사항</label>
-                    <input type="text" placeholder={social.socialOther} name="socialOther" onChange={handleValueChange} />
-                    <label>{social.socialOther}</label>
-                </div>
+
+                {/* 등록 버튼 */}
                 <button type="submit" className="buttonOn">등록하기</button>
             </form>
         </>
