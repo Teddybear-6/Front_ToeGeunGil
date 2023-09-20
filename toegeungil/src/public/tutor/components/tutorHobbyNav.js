@@ -20,7 +20,7 @@ function TutorNavber(){
         <div  style={NavBox}>
             <ul>
                 <li>
-                    <NavLink  style={
+                    <NavLink to={"/write"} style={
                         (isActive)=>
                         isActive ? activeStyle : null
                     }> 취미생성 </NavLink>

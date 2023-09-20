@@ -271,7 +271,7 @@ function HobbyModify({ hobbyCode }) {
           {/* </Link> */}
         </div>
       </div>
-
+   
     </>
   )
 }

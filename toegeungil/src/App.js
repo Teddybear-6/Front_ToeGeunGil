@@ -14,7 +14,7 @@ import CommunityDetail from './public/community/pages/CommunityDetail';
 import CommunityMain from './public/community/pages/CommunityMain';
 import CommunityRegist from './public/community/pages/CommunityRegist';
 
-
+import Tutor from './public/tutor/page/tutor';
 import AllHobby from "./public/hobby/page/AllHobby";
 import HobbyDetail from "./public/hobby/page/hobbyDetail";
 import HobbyWrite from './public/tutor/page/hobbyWrite';
@@ -42,6 +42,7 @@ function App() {
             <Route path='hobby'>
             <Route index  element={<AllHobby/>} />
             <Route path=':hobbyCode' element={<HobbyDetail />} />
+            <Route path='tutor' element={<Tutor/>}></Route>
             <Route path='write' element={<HobbyWrite />} />
             <Route path='modify' element={<HobbyModify />} />
             </Route>
