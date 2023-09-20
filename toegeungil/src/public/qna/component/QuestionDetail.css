@@ -13,13 +13,14 @@
     justify-content: start;         
     margin-top: 60px;
     padding-left: 10%;
-    border-bottom: 3px solid #B9A49B;
+    
 }
 
-.view-date {
+.view-nick {
     font-size: 18px;
     width: 1200px;
     height: 50px;
+    padding-left: 10%;
     border-bottom: 3px solid #B9A49B;
 
 }
@@ -90,4 +91,24 @@
     width: 120px;
     height: 50px;
     margin-left: 30px;
+}
+.view-answer{
+    border-bottom: 3px solid #B9A49B;
+    font-size: 20px;
+    
+}
+
+.answer-box{
+    width: 1100px;
+    height: 100px;
+    font-size: 20px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 10px;
+    border: 2px solid #CCE2DB;
+    outline-color: #096249;
+
+
 }

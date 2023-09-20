@@ -24,6 +24,8 @@ import Signup from "./public/user/Signup/Signup";
 // import PublicRouter from './public/qna/pages/QuestionMain';
 import QuestionMain from "./public/qna/pages/QuestionMain";
 import QuestionDetail from "./public/qna/pages/QuestionDetail";
+import { AnswerMain } from "./public/qna/pages/AnswerMain";
+import AnswerDetail from "./public/qna/pages/AnswerDetail";
 
 function App() {
   /* 라우팅
@@ -71,9 +73,13 @@ function App() {
               <Route path=":questionNum" element={<QuestionDetail />} />
               {/* <Route index  element={<AdminRouter />}/> */}
               {/* <Route path="admin" element={<AdminRouter />} /> */}
-              {/* <Route path="answer" element={<AdminAnswer/>}/> */}
               {/* <Route path="public/main" element={<PublicRouter />} /> */}
             </Route>
+          <Route path="answer">
+              <Route index element={<AnswerMain/>}/>
+              <Route path=":answerNum" element={<AnswerDetail/>}/>
+
+          </Route>
           </Route>
         </Routes>
       </BrowserRouter>
