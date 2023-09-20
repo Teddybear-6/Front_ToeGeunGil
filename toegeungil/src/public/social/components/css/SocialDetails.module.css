@@ -10,6 +10,17 @@
     justify-content: space-between;
 }
 
+.SocialFont {
+    width: 1500px;
+    height: 26px;
+    margin-top: 34px;
+    margin-bottom: 40px;
+    color: #87746B;
+    font-style: italic;
+    font-size: 26px;
+    font-weight: bold;
+}
+
 .flexStyleKeywordAndUser {
     width: 700px;
     height: 30px;

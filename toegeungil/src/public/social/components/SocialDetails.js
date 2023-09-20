@@ -26,7 +26,7 @@ function SocialDetails() {
     const [socials, setSocials] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:8001/socials/${socialNum}`)
+        fetch(process.env.REACT_APP_URL+`/socials/${socialNum}`)
             .then(response => response.json()) //json으로 받는다
             .then(data => setSocials(data));
     }, []);
@@ -91,8 +91,8 @@ function SocialDetails() {
                     </div>
                 </div>
             </div>
+            {/* 참여하기 */}
             <SocialParticipateList postNum={socials.socialNum} />
-
             {/* 소셜 소개 */}
             <div className={DetailsStyle.socialDetailsIntro}>
                 <div className={DetailsStyle.socialDetailsOthersty}>소셜 소개</div>

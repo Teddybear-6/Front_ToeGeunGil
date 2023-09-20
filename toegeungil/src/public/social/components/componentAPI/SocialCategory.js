@@ -4,7 +4,7 @@ function SocialCategory({cateCode}) {
     const [category, setCategory] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:8001/category/${cateCode}`)
+        fetch(process.env.REACT_APP_URL+`/category/${cateCode}`)
             .then(response => response.json())
             .then(data => setCategory(data));
     },[]);

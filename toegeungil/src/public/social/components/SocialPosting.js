@@ -62,17 +62,17 @@ function SocialPosting() {
     useEffect(() => {
 
         //카테고리
-        fetch("http://localhost:8001/category")
+        fetch(process.env.REACT_APP_URL+"/category")
             .then(res => res.json())
             .then(res => setCategory(res))
 
         //키워드
-        fetch("http://localhost:8001/keyword")
+        fetch(process.env.REACT_APP_URL+"/keyword")
             .then(res => res.json())
             .then(res => setKeyword(res))
 
         //지역
-        fetch("http://localhost:8001/local")
+        fetch(process.env.REACT_APP_URL+"/local")
             .then(res => res.json())
             .then(res => setLocal(res))
 
@@ -88,7 +88,7 @@ function SocialPosting() {
 
     const handleSubmit = (e) => {
         e.preventDefault(); // submit action을 안타도록 설정
-        fetch(`http://localhost:8001/socials`, {
+        fetch(process.env.REACT_APP_URL+`/socials`, {
             method: "POST", //메소드 지정
             headers: { //데이터 타입 지정
                 "Content-Type": "application/json; charset=utf-8"
