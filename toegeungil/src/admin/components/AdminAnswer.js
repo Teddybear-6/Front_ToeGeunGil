@@ -1,8 +1,10 @@
 import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Nav from 'react-bootstrap/Nav';
+import Header from '../../public/layout/Header';
 
 import React, { useEffect, useState } from 'react';
+
+import Nav from '../../public/qna/component/Nav';
 
 //답변 게시판(멤버)
 
@@ -18,20 +20,9 @@ export const AdminAnswer = () => {
 
     return (
         <>
-            <div className='container-fruid'>
-                <Nav className='justify-content-center' activeKey="/home">
-                    <Nav.Item>
-                        <Nav.Link href="/home">공지사항</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link eventKey="link-1">문의하기</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link eventKey="link-2">신고하기</Nav.Link>
-                    </Nav.Item>
-                </Nav>
-                <p className="text-center mt-4 mb-4">질문게시판</p>
-
+        <Header/>
+       
+        <Nav/>
 
                 <Table striped bordered hover variant="primary">
                     <thead>
@@ -59,8 +50,7 @@ export const AdminAnswer = () => {
                         }
                     </tbody>
                 </Table>
-            </div>
-           
+      
 
         </>
     );
