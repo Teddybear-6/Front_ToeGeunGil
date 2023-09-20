@@ -4,26 +4,28 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 const NoticeModify = () => {
     const { noticeNum } = useParams(); // url에서 noticeNum 가져오기
     const [notice, setNotice] = useState({});
-    const [noticeTitle, setNoticeTitle] = useState('');
-    const [noticeContent, setNoticeContent] = useState('');
+    const [title, setTitle] = useState('');
+    const [content, setContent] = useState('');
+    const [modiDate, setModiDate] = useState('');
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch(`http://localhost:8001/notices/${noticeNum}`)
+        fetch(process.env.REACT_APP_URL+`notices/${noticeNum}`)
             .then(response => response.json())
             .then(data => {
                 setNotice(data);
-                setNoticeTitle(data.noticeTitle);
-                setNoticeContent(data.noticeContent);
+                setTitle(data.noticeTitle);
+                setContent(data.noticeContent);
+                setModiDate(data.noticeModiDate);
             })
     }, [noticeNum])
 
     const handleTitleChange = (e) => {
-        setNoticeTitle(e.target.value);
+        setTitle(e.target.value);
     }
 
     const handleContentChange = (e) => {
-        setNoticeContent(e.target.value);
+        setContent(e.target.value);
     }
 
     const cancelClick = () => {
@@ -31,14 +33,19 @@ const NoticeModify = () => {
     }
 
     const updateClick = () => {
-        fetch(`http://localhost:8001/notices/${noticeNum}`, {
+        const currentDate = new Date();
+        const noticeModiDate = currentDate.toLocaleDateString();
+        setModiDate (noticeModiDate);
+
+        fetch(process.env.REACT_APP_URL+`/notices/${noticeNum}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json; charset=UTF-8"
             },
             body: JSON.stringify({
-                "noticeTitle": noticeTitle,
-                "noticeContent": noticeContent,
+                "noticeTitle": title,
+                "noticeContent": content,
+                "noticeModiDate": modiDate, // 수정일 업데이트
             }),
         })
             .then(response => {
