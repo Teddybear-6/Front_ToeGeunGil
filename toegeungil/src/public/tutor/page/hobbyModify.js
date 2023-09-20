@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import jwt_decode from "jwt-decode";
 import Imageset from "../components/modifyImage";
+import KeywordList from "../components/keywordList";
 import "./hobbyWrite.css"
 import { Link } from "react-router-dom";
 
@@ -13,7 +14,7 @@ function HobbyModify({ hobbyCode }) {
   const [category, setCategory] = useState([]);
   const [keyword, setKeyword] = useState([]);
   const [hobby, setHobby] = useState({})
-  const [keywordDTOList, setKeywordDTOList] = useState([])
+  const [keywordDTOList, setKeywordDTOList] = useState({})
   const [urls , setUrls]= useState();
 
   const [hobbyImage, setHobbyImage] = useState([])
@@ -25,16 +26,15 @@ function HobbyModify({ hobbyCode }) {
     }
 
     fetch(process.env.REACT_APP_URL+`/hobbys/2`).then(res => res.json()).then(res => setHobby(res))
-    fetch(process.env.REACT_APP_URL+"/category").then(res => res.json()).then(res => setCategory(res))
+    fetch(process.env.REACT_APP_URL+"/category").then(res => res.json()).then(res =>setCategory(res))
     fetch(process.env.REACT_APP_URL+"/keyword").then(res => res.json()).then(res => setKeyword(res))
     fetch(process.env.REACT_APP_URL+"/local").then(res => res.json()).then(res => setLocal(res))
 
-
-
+    
   }, [])
 
-
-  const categoryHandler = () => {
+  
+  const  categoryHandler = () => {
     const checkboxes = document.getElementsByName("categoryCode")
     for (let i = 0; i < checkboxes?.length; i++) {
       if (checkboxes[i].value == hobby.categoryCode) {
@@ -42,44 +42,24 @@ function HobbyModify({ hobbyCode }) {
 
       }
     }
-    console.log(hobby.categoryCode)
+    
   }
-
-  const keywordHandler = () => {
-    const selectBox = document.getElementsByName("keywordCode")
-    for (let j = 0; j < hobby.keywordDTOList?.length; j++) {
-
-      selectBox[hobby.keywordDTOList[j].keywordCode].checked = true;
-
-    }
-
-    console.log(hobby.keywordDTOList)
-  }
-
-
-
-
-  // 이미지 상대경로 저장
-
-
-
-
-
+ 
 
 
   const onChangeHandler = (e) => {
 
-    if (e.target.name !== "keywordCode") {
+   
       setHobby({ ...hobby, [e.target.name]: e.target.value });
-    } else {
-      keywordDTOList.push({ "keywordCode": Number(e.target.value) })
-
-
-      setHobby({ ...hobby, keywordDTOList });
-    }
+  
+      // setKeywordDTOList({...keywordDTOList, [e.target.name]: Number(e.target.value) })
+      // setHobby({ ...hobby, keywordDTOList });
+     
+      // console.log(keywordDTOList)
 
 
   };
+
 
 
   const checkOnlyOne = (checkThis) => {
@@ -101,6 +81,7 @@ function HobbyModify({ hobbyCode }) {
 
 
 
+
   const onClickHandler = () => {
 
     if (!(user === undefined) && !(user === null) && user.auth[0] === 'ADMIN' || user.auth[0] === 'TUTOR') {
@@ -108,18 +89,24 @@ function HobbyModify({ hobbyCode }) {
 
      
       setHobby({ ...hobby, ["tutorCode"]: user.no })
-    
       
       const formData = new FormData()
       const blob = new Blob([JSON.stringify(hobby)], {
         type: 'application/json',
       });
-
+   
       const blob1 = new Blob([JSON.stringify(urls)], {
         type: 'application/json',
       });
+
+      const blob3 = new Blob([JSON.stringify(keywordDTOList)], {
+        type: 'application/json',
+      });
+
       formData.append('hobby', blob);
       formData.append('urls', blob1);
+      formData.append('keywordDTOList', blob3);
+
       if(!hobbyImage==null){
         for (let i = 0; i < hobbyImage[0].length; i++) {
           formData.append('hobbyImage', hobbyImage[0][i]);
@@ -129,7 +116,7 @@ function HobbyModify({ hobbyCode }) {
       }
       
 
-      fetch((process.env.REACT_APP_URL+"/hobbys", {
+      fetch(process.env.REACT_APP_URL+"/hobbys", {
         method: "PUT",
         body: formData,
         headers: {
@@ -250,13 +237,11 @@ function HobbyModify({ hobbyCode }) {
 
           <p className="categoryName">키워드</p>
           <div className="keyword">
-            {
-              !keyword.map ? "키워드가 없습니다." : keyword.map((m, index) => (
-                <label htmlFor="keywordCode"><input className="keywordCheck" key={index} type="checkbox" name="keywordCode" value={m.keywordCode} onChange={onChangeHandler} />{m.keywordName}</label>
-              ))
+             
+             <KeywordList keyword={keyword} hobby={hobby} setHobby={setHobby}  hobbyKeyword={hobby.keywordDTOList} setKeywordDTOList={setKeywordDTOList} keywordDTOList={keywordDTOList} />
 
-            }
-            {keywordHandler()}
+          
+         
           </div>
         </div>
 
