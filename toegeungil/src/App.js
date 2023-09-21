@@ -15,6 +15,8 @@ import CommunityRegist from "./public/community/pages/CommunityRegist";
 
 import AllHobby from "./public/hobby/page/AllHobby";
 import HobbyDetail from "./public/hobby/page/hobbyDetail";
+import SocialWrite from './public/social/page/SocialWrite';
+import ScrollToTop from './public/layout/scroll/ScrollToTop';
 import HobbyWrite from "./public/tutor/page/hobbyWrite";
 import HobbyModify from "./public/tutor/page/hobbyModify";
 import LoginSignup from "./public/user/login/LoginSignup";
@@ -34,6 +36,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Layout />}>
             {/* 로그인 */}
@@ -52,7 +55,8 @@ function App() {
             {/* 소셜 */}
             <Route path="social">
               <Route index element={<SocialMain />} />
-              <Route path=":socialNum" element={<SocialDetail />} />
+              <Route path=':socialNum' element={<SocialDetail />} />
+              <Route path='write' element={<SocialWrite />} />
             </Route>
             {/* 커뮤니티 */}
             <Route path="/communitys" element={<CommunityMain />} />
