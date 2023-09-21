@@ -72,10 +72,10 @@ const NoticeWrite = () => {
                     </div>
                 </div>
                 <div className="button">
-                    <Link to="/notice">
+                    <Link to="/service/notice">
                         <button className="cancel-button" onClick={cancelClick}>취소</button>
                     </Link>
-                    <Link to="/notice">
+                    <Link to="/service/notice">
                         <button className="write-button" onClick={writeClick}>등록</button>
                     </Link>
                 </div>

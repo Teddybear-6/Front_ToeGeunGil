@@ -20,11 +20,6 @@ export const QuestionMain = () => {
 
       <div className="layout">
      
-          <div className="customerService-banner">
-            <button className="notice-button">공지사항</button>
-            <button className="qna-button">문의하기</button>
-            <button className="report-button">신고하기</button>
-          </div>
           <table className="table-wrapper">
             <thead>
               <tr>

@@ -20,11 +20,7 @@ export const AnswerMain = () => {
 
       <div className="layout">
         <div className="notice-wrapper">
-          <div className="customerService-banner">
-            <button className="notice-button">공지사항</button>
-            <button className="qna-button">문의하기</button>
-            <button className="report-button">신고하기</button>
-          </div>
+         
           <table className="table-wrapper">
             <thead>
               <tr>
@@ -43,7 +39,7 @@ export const AnswerMain = () => {
                       <tr key={a.answerNum}>
                         <td>{a.answerNum}</td>
                         <td>
-                          <Link to={`/answer/${a.answerNum}`} style={{textDecoration:"none", color:"#87746B"}} 
+                          <Link to={`/service/answer/${a.answerNum}`} style={{textDecoration:"none", color:"#87746B"}} 
                           className="title-link">{a.answerTitle} </Link>
                         </td>
                         <td>{a.answerNick}</td>
