@@ -43,7 +43,7 @@ const NoticeList = () => {
                                 <tr key={notice.noticeNum}>
                                     <td>{notice.noticeNum}</td>
                                     <td>
-                                        <Link to={`/notice/${notice.noticeNum}`}
+                                        <Link to={`/service/notice/${notice.noticeNum}`}
                                             style={{ textDecoration: "none", color: "#87746B" }} className="title-link">{notice.noticeTitle}</Link>
                                     </td>
                                     <td>{notice.noticeDate}</td>

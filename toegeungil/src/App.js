@@ -70,12 +70,13 @@ function App() {
             <Route path="/communitys" element={<CommunityRegist />} />
             {/* 고객센터 */}
             <Route path="/service" element={<ServiceLayout />}>
+            {/* <Route index element={<NoticeMain />} /> */}
               {/* 공지사항 */}
               <Route path="/service/notice">
                 <Route index element={<NoticeMain />} />
-                <Route path='notice/:noticeNum' element={<NoticeView />} />
-                <Route path='notice/write' element={<NoticeWrite />} />
-                <Route path='notice/:noticeNum/modify' element={<NoticeModify />} />
+                <Route path='/service/notice/:noticeNum' element={<NoticeView />} />
+                <Route path='/service/notice/write' element={<NoticeWrite />} />
+                <Route path='/service/notice/:noticeNum/modify' element={<NoticeModify />} />
               </Route>
               <Route path="/service/qna">
                 <Route index element={<QuestionMain />} />

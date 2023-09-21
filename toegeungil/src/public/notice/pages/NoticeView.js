@@ -25,7 +25,7 @@ const NoticeView = () => {
             .then(response => {
                 if (response.ok) {
                     alert("공지사항이 삭제되었습니다")
-                    navigate("/notice");
+                    navigate("/service/notice");
                 } else {
                     throw new Error("공지사항 삭제 실패하였습니다")
                 }
@@ -62,10 +62,10 @@ const NoticeView = () => {
                                         <Link to="/notice">
                                             <button className="button1" onClick={deleteClick}>삭제</button>
                                         </Link>
-                                        <Link to={`/notice/${noticeNum}/modify`}>
+                                        <Link to={`/service/notice/${noticeNum}/modify`}>
                                             <button className="button2">수정</button>
                                         </Link>
-                                        <Link to="/notice">
+                                        <Link to="/service/notice">
                                             <button className="button3">목록으로</button>
                                         </Link>
                                     </div>

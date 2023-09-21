@@ -51,7 +51,7 @@ const NoticeModify = () => {
             .then(response => {
                 if (response.ok) {
                     alert("공지사항이 수정되었습니다");
-                    navigate("/notice"); // 수정 완료 후 공지사항 목록 페이지로 이동
+                    navigate("/service/notice"); // 수정 완료 후 공지사항 목록 페이지로 이동
                 } else {
                     throw new Error("공지사항 수정에 실패하였습니다");
                 }
@@ -87,10 +87,10 @@ const NoticeModify = () => {
                     </div>
                 </div>
                 <div className="button">
-                    <Link to="/notice">
+                    <Link to="/service/notice">
                         <button className="cancel-button" onClick={cancelClick}>취소</button>
                     </Link>
-                    <Link to="/notice">
+                    <Link to="/service/notice">
                         <button className="write-button" onClick={updateClick}>등록</button>
                     </Link>
                 </div>
