@@ -54,7 +54,7 @@ export const AnswerDetail = () => {
     
 
             <div className="user-button-box">
-            <Link to="/answer">
+            <Link to="/service/answer">
               <button className="user-button">목록으로</button>
             </Link>
           </div>

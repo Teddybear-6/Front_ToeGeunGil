@@ -69,14 +69,22 @@ function App() {
             />
             <Route path="/communitys" element={<CommunityRegist />} />
             {/* 고객센터 */}
-            <Route path="/service" element={<ServiceLayout />}>
+
+            <Route path="/service" element={<ServiceLayout />}></Route>
+
+            <Route path="/service/notice" element={<NoticeMain/>}>
               {/* 공지사항 */}
-              <Route path="/service/notice">
-                <Route index element={<NoticeMain />} />
+              <Route index element={<NoticeMain />} />
+                <Route path="notice" element={<NoticeMain/>}>
                 <Route path='notice/:noticeNum' element={<NoticeView />} />
                 <Route path='notice/write' element={<NoticeWrite />} />
                 <Route path='notice/:noticeNum/modify' element={<NoticeModify />} />
-              </Route>
+         
+
+
+            </Route>
+              
+
               <Route path="/service/qna">
                 <Route index element={<QuestionMain />} />
                 <Route path=":questionNum" element={<QuestionDetail />} />
@@ -84,7 +92,8 @@ function App() {
                 {/* <Route path="admin" element={<AdminRouter />} /> */}
                 {/* <Route path="public/main" element={<PublicRouter />} /> */}
               </Route>
-              <Route path="answer">
+
+              <Route path="/service/answer">
                 <Route index element={<AnswerMain />} />
                 <Route path=":answerNum" element={<AnswerDetail />} />
               </Route>

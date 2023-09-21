@@ -44,7 +44,8 @@ const NoticeList = () => {
                                     <td>{notice.noticeNum}</td>
                                     <td>
                                         <Link to={`/notice/${notice.noticeNum}`}
-                                            style={{ textDecoration: "none", color: "#87746B" }} className="title-link">{notice.noticeTitle}</Link>
+                                            style={{ textDecoration: "none", color: "#87746B" }} className="title-link">{notice.noticeTitle}
+                                        </Link>
                                     </td>
                                     <td>{notice.noticeDate}</td>
                                 </tr>
