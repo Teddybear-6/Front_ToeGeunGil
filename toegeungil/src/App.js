@@ -55,10 +55,10 @@ function App() {
             <Route path=':hobbyCode' element={<HobbyDetail />} />
             </Route>
 
-            <Route path="/tutor" element={<TutorLayout />}>
-            <Route index element={<TutorHobbyList />} />
-            <Route path='write'  element={<HobbyWrite />} />
-            <Route path='modify' element={<HobbyModify />} />
+            <Route element={<TutorLayout />}>
+            <Route path="/tutor" element={<TutorHobbyList />} />
+            <Route path='/hobbywrite'  element={<HobbyWrite />} />
+            <Route path='/hobbymodify' element={<HobbyModify />} />
            
            
             </Route>

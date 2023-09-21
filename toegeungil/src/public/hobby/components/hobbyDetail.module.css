@@ -1,7 +1,7 @@
-@media all and (min-width:1900px) and (max-width:9000px) { 
+
     
     .smallImage{
-        width: 180px;
+        width: 11.25Rem;
         height: 120px;
         border-radius: 50px;
         display: flex;
@@ -62,9 +62,15 @@
     
     .scheduleContent{
        margin-left: 50px;
-       padding: 10px;
-        color: #8FC4B3;
+     
+        
+
+        width: 470px;
+        height: 18px;
+        font-size: 18px;
         font-weight: bold;
+        color: #87746B;
+        margin-bottom: 30px;
     }
     
     .frame{
@@ -186,10 +192,9 @@
     }
     
 
-}
 
 
-
+/* 
 @media all and (min-width:1410px) and (max-width:1899px) { 
     
     .smallImage{
@@ -569,4 +574,4 @@
 
 }
 
-
+ */

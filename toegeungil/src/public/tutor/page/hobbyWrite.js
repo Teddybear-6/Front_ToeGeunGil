@@ -122,7 +122,7 @@ function HobbyWrite() {
       }).then(res => res.json()).then(res=> {
         
         alert(res['value'])
-        navigate("/hobby");
+        navigate("/tutor");
       }).catch((e)=>alert(e))
     }else{
       alert("모든 항목을 작성해주세요")
@@ -140,6 +140,7 @@ function HobbyWrite() {
   return (
     <>
           <div className='layout'>
+            { !user ? "로그인 해주세요" : !user?.auth[0]==="TUTOR" ? "강사가 아닙니다." :
       <div>
         <div>
           취미생성
@@ -273,7 +274,9 @@ function HobbyWrite() {
 
       
       </div>
+         }
       </div>
+   
     </>
   )
 }

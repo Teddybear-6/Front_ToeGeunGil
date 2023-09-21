@@ -10,7 +10,7 @@ function TutorNavber(){
   
         <div className="tutorNavwraper">
         <NavLink to={"/tutor"}  className={({isActive})=> isActive?"serviceOn":"serviceOff"}>취미 관리</NavLink>
-        <NavLink to={"/tutor/write"} className={({isActive})=> isActive ? "serviceOn":"serviceOff"}>취미 작성</NavLink>
+        <NavLink to={"/hobbywrite"} className={({isActive})=> isActive ? "serviceOn":"serviceOff"}>취미 작성</NavLink>
         
         </div>
       

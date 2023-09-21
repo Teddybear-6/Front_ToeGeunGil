@@ -3,12 +3,13 @@ import jwt_decode from "jwt-decode";
 import Imageset from "../components/modifyImage";
 import KeywordList from "../components/keywordList";
 import "./hobbyWrite.css"
-import { Link } from "react-router-dom";
+
+import { useLocation } from "react-router-dom"
 
 
 
 
-function HobbyModify({ hobbyCode }) {
+function HobbyModify() {
   const [showImages, setShowImages] = useState([]);
   const [user, setUser] = useState();
   const [category, setCategory] = useState([]);
@@ -19,13 +20,15 @@ function HobbyModify({ hobbyCode }) {
 
   const [hobbyImage, setHobbyImage] = useState([])
   const [local, setLocal] = useState([{}]);
+  const hobbyCode = useLocation();
 
+  console.log()
   useEffect(() => {
     if (sessionStorage.getItem("Authorizaton")) {
       setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
     }
 
-    fetch(process.env.REACT_APP_URL+`/hobbys/2`).then(res => res.json()).then(res => setHobby(res))
+    fetch(process.env.REACT_APP_URL+`/hobbys/${hobbyCode.state.hobbyCode}`).then(res => res.json()).then(res => setHobby(res))
     fetch(process.env.REACT_APP_URL+"/category").then(res => res.json()).then(res =>setCategory(res))
     fetch(process.env.REACT_APP_URL+"/keyword").then(res => res.json()).then(res => setKeyword(res))
     fetch(process.env.REACT_APP_URL+"/local").then(res => res.json()).then(res => setLocal(res))
