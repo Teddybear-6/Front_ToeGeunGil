@@ -1,5 +1,6 @@
+
 .main{
-    margin-left: 300px;
+    margin-left: 18.75rem;
     display: "grid";
     text-align : center;
     justify-content: center;
@@ -15,35 +16,9 @@
 .paging{
 display: flex;
     justify-content: center;
-   margin-top: 10px;
-    margin-left: 180px;
+   margin-top: 0.625rem;
+    margin-left: 5.625rem;
     
 }
 
 
-
-@media all and (min-width:10px) and (max-width:1920px) {
-    .main{
-        margin-left: 300px;
-        display: "grid";
-        text-align : center;
-        justify-content: center;
-       
-    
-    }
-    
-    .pagingFrame{
-        display: block;
-        
-        
-    }
-    .paging{
-    display: flex;
-        justify-content: center;
-       margin-top: 10px;
-        margin-left: 90px;
-        
-    }
-    
-
-}

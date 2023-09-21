@@ -1,9 +1,9 @@
 .image {
-    width: 200px;
-    height: 150px;
-    margin-left: 10px;
-    border-radius: 50px;
-    border: 2px solid #8FC4B3;
+    width: 12.5rem;
+    height: 9.375rem;
+    margin-left: 0.625rem;
+    border-radius: 3.125rem;
+    border: 0.125rem solid #8FC4B3;
 }
 
 
@@ -11,52 +11,52 @@
 
 .titleframe {
     display: flex;
-    margin-left: 20px;
+    margin-left: 1.25rem;
     .title {
-        border-radius: 50px;
-        border: 2px solid #8FC4B3;
-        margin-left: 20px;
-        width: 1280px;
-        height: 58px
+        border-radius: 3.125rem;
+        border: 0.125rem solid #8FC4B3;
+        margin-left: 1.25rem;
+        width: 80rem;
+        height: 3.625rem
     }
 
     .hobbytitle {
-        font-size: 16px;
+        font-size: 1rem;
         color: #655853;
 
     }
 
     .hobbytitleText {
-        margin-left: 30px;
-        margin-top: 15px;
+        margin-left: 1.875rem;
+        margin-top: 0.938rem;
         border: none;
         resize: none;
         font-size: 1.2em;
         outline: none;
-        width: 1000px;
+        width: 62.5rem;
     }
 
 }
 
 .mainIntroFrame {
     display: flex;
-    margin-top: 20px;
+    margin-top: 1.25rem;
 }
 
 
 
 .intro {
-    margin-top: 20px;
-    border-radius: 50px;
-    border: 2px solid #8FC4B3;
-    width: 575px;
-    height: 350px;
+    margin-top: 1.25rem;
+    border-radius: 3.125rem;
+    border: 0.125rem solid #8FC4B3;
+    width: 35.938rem;
+    height: 21.875rem;
     resize: none;
-    margin-left: 20px;
+    margin-left: 1.25rem;
 }
 
 .introin {
-    margin: 30px 30px 30px 30px;
+    margin: 1.875rem 1.875rem 1.875rem 1.875rem;
     border: none;
     resize: none;
     font-size: 1.2em;
@@ -68,11 +68,11 @@
 
 .imageframe {
 
-    border-radius: 50px;
-    border: 2px solid #8FC4B3;
-    width: 575px;
-    height: 350px;
-    margin-left: 100px;
+    border-radius: 3.125rem;
+    border: 0.125rem solid #8FC4B3;
+    width: 35.938rem;
+    height: 21.875rem;
+    margin-left: 6.25rem;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -82,8 +82,8 @@
 
 
 .introTitle {
-    margin-left: 50px;
-    font-size: 16px;
+    margin-left: 3.125rem;
+    font-size: 1;
     color: #655853;
 
 }
@@ -93,21 +93,21 @@
     display: flex;
 
     .dateTitle {
-        margin-top: 30px;
+        margin-top: 1.875rem;
     }
 
     .enddateTitle {
-        margin-top: 30px;
-        margin-left: 20px;
+        margin-top: 1.875rem;
+        margin-left: 1.25rem;
     }
 
     .date {
-        margin-top: 20px;
-        border-radius: 50px;
+        margin-top: 1.25rem;
+        border-radius: 3.125rem;
         border: 2px solid #8FC4B3;
-        width: 575px;
-        height: 50px;
-        margin-left: 20px;
+        width: 35.938rem;
+        height: 3.125rem;
+        margin-left: 1.25rem;
 
     }
 }

@@ -2,17 +2,17 @@
 
 .hobbyCard {
     padding: 1rem/* 24px */;
-    margin-left: 20px;
-    margin-right: 10px;
+    margin-left: 1.25rem;
+    margin-right: 0.625rem;
     text-align: center;
-    border-radius: 50px;
+    border-radius: 3.125rem;
     display: inline-flex;
     flex-direction: column;
   
-    border: 2px solid #8FC4B3;
+    border: 0.125rem solid #8FC4B3;
  
-    width: 345px;
-    height: 365px;
+    width: 21.563rem;
+    height: 22.813rem;
     justify-content: space-between;
     box-sizing: border-box;
 
@@ -26,15 +26,15 @@
 
 
 .hobbyImage {
-    border-radius: 50px;
+    border-radius: 3.125rem;
     height: 60%;
     
 }
 
 .hobbyTitle{
-    margin-left: 10px;
+    margin-left: 0.625rem;
     color: #41A487;
-    font-size: 18px;
+    font-size: 1.125rem;
     text-align: left;
   
     font-weight: bold;
@@ -44,16 +44,16 @@
 
 
 .keywordCard{
-    border-radius: 50px;
-    width: 70px;
-    height: 30px;
+    border-radius: 3.125rem;
+    width: 4.375rem;
+    height: 1.875rem;
     display: inline-flex;
     background-color: #E9E0DD;
     flex-direction: column;
     justify-content: space-between;
     float:left;
-    margin-left: 2px;
-    margin-right: 1.5px;
+    margin-left: 0.125rem;
+    margin-right: 0.313rem;
     
 }
 
@@ -62,7 +62,7 @@
     display: flex;
     justify-content: center;
     text-align: center;
-    font-size: 14px;
+    font-size: 0.875rem;
     color: #87746B;
     line-height: 40%;    
     margin: auto;
@@ -70,9 +70,9 @@
 }
 
 .keywordUnName{
-    border-radius: 50px;
-    width: 27.5px;
-    height: 30px;
+    border-radius: 3.125rem;
+    width: 1.719rem;
+    height: 1.875rem;
     display: inline-flex;
     background-color: #E9E0DD;
     flex-direction: column;
@@ -85,18 +85,18 @@
 .hobbyPrice{
     text-align: right;
     color: #655853;
-    font-size: 12px;
+    font-size: 0.75rem;
    
     
     font-weight: bold;
     font-style: italic;
-    margin-right: 20px;
+    margin-right: 1.25rem;
 }
 
 .CategoryName{
     
     text-align: center;
-    font-size: 14px;
+    font-size: 0.875rem;
     color: #87746B;
     line-height: 40%;    
     

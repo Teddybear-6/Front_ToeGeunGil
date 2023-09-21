@@ -58,7 +58,7 @@ function App() {
             <Route element={<TutorLayout />}>
             <Route path="/tutor" element={<TutorHobbyList />} />
             <Route path='/hobbywrite'  element={<HobbyWrite />} />
-            <Route path='/hobbymodify' element={<HobbyModify />} />
+            <Route path='/modify' element={<HobbyModify />} />
            
            
             </Route>
