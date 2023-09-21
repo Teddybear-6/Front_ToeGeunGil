@@ -6,8 +6,8 @@ function ServiceNavbar(){
         <>
         {/* 사용자 */}
         <div className="service-wraper">
-        <NavLink to="/notice" className={({isActive})=> isActive?"serviceOn":"serviceOff"}>공지사항</NavLink>
-        <NavLink to="/qna" className={({isActive})=> isActive?"serviceOn":"serviceOff"}>문의하기</NavLink>
+        <NavLink to="/service/notice" className={({isActive})=> isActive?"serviceOn":"serviceOff"}>공지사항</NavLink>
+        <NavLink to="/service/qna" className={({isActive})=> isActive?"serviceOn":"serviceOff"}>문의하기</NavLink>
 
         {/* 관리자 */}
         {/* <NavLink to="/notice" className={({isActive})=> isActive?"serviceOn":"serviceOff"}>공지작성</NavLink>
