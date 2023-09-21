@@ -4,6 +4,26 @@
     padding-bottom: 150px;
 }
 
+.layout2 {
+    margin: 40px 50px 0px 50px;
+}
+
+.menuFont {
+    width: 1500px;
+    height: 26px;
+    margin-top: 34px;
+    margin-bottom: 40px;
+    color: #87746B;
+    font-style: italic;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.hrSty {
+    background-color: #87746B;
+    height: 2px;
+}
+
 .w1650h388 {
     width: 1650px;
     height: 388px;
