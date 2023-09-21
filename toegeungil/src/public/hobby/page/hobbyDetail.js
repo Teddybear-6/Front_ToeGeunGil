@@ -81,7 +81,7 @@ function HobbyDetail() {
      
     return (
         <>
-            {/* <div className="layout"> */}
+            <div className="layout">
                 <div className={detailSytle.frame2}>
                    <div className={detailSytle.details}>
                      <div>
@@ -143,7 +143,7 @@ function HobbyDetail() {
                                
                           
                            
-            {/* </div> */}
+            </div>
         </>
     )
 }
