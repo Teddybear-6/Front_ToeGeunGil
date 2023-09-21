@@ -1,4 +1,4 @@
-import SocialPosting from "../components/SocialPosting";
+import SocialWriteCard from "../components/SocialWriteCard";
 
 function SocialWrite() {
 
@@ -6,9 +6,9 @@ function SocialWrite() {
         <>
             <div className='layout'>
                 <div className="menuFont">Social 게시글 작성</div>
-                <hr className='hrSty' />
+                <hr className='hrSty'/>
                 <div className='layout2'>
-                    <SocialPosting/>
+                    <SocialWriteCard/>
                 </div>
             </div>
         </>

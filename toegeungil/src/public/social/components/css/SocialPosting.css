@@ -100,6 +100,10 @@
     margin-right: 35px;
 }
 
+.maB100 {
+    margin-bottom: 100px;
+}
+
 .textR {
     text-align: right;
 }
@@ -195,8 +199,4 @@
     justify-content: flex-start;
     flex-wrap: wrap;
     margin: 32px;
-}
-
-.rightItem {
-    float: right;
 }
