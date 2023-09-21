@@ -7,22 +7,23 @@ export const AnswerDetail = () => {
   const { answerNum } = useParams();
   const [detail, setDetail] = useState({});
   const [loading, setLoading] = useState(true);
-  const [answer, setAnswer] = useState({});
+  
 
+  //질문 상세보기 상태 
   useEffect(() => {
     setLoading(true);
     fetch(process.env.REACT_APP_URL + `/answer/${answerNum}`)
       .then((response) => response.json())
       .then((data) => {
+        console.log(data)
         setDetail(data);
         setLoading(false);
       });
   }, [answerNum]);
 
 
-
   return (
- 
+
     <div className="view-wrapper">
       {loading ? (
         "로딩 중"
@@ -30,7 +31,7 @@ export const AnswerDetail = () => {
         <>
             {/*답변글 제목 */}
           <div className="view-name">
-            <label>{detail.answerTitle}</label>
+            <label>글제목 : {detail.answerTitle}</label>
           </div>
           <div className="view-nick">
             <label>작성자 : {detail.answerNick}</label>
@@ -43,7 +44,6 @@ export const AnswerDetail = () => {
             </div>
         
           </div>
-         
         </>
       ) : ( "문의글이 없습니다." )}
     
@@ -54,11 +54,7 @@ export const AnswerDetail = () => {
             </Link>
           </div>
         
-    </div>
- 
-    
-   
-   
+    </div>   
   )
 
 

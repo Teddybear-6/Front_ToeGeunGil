@@ -19,7 +19,6 @@ export const QuestionMain = () => {
       {/* Question Admin Main페이지 */}
 
       <div className="layout">
-     
           <table className="table-wrapper">
             <thead>
               <tr>
