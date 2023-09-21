@@ -64,23 +64,23 @@ const NoticeView = () => {
                                             <label>{detail.noticeContent}</label>
                                         </div>
                                     </div>
-                                    
-                                    {/* 관리자인 경우 : 삭제, 수정 버튼 */}
-                                    {!user ? null : (user.auth[0] == 'ADMIN') ?
-                                        <div className="button-box" >
-                                            
+                                    <div className="button-box">
+                                        {/* 관리자인 경우 : 삭제, 수정 버튼 */}
+                                        {!user ? null : (user.auth[0] == 'ADMIN') ?
+                                            <div>
+                                                <Link to="/service/notice">
+                                                    <button className="button1" onClick={deleteClick}>삭제</button>
+                                                </Link>
+                                                <Link to={`/service/notice/${noticeNum}/modify`}>
+                                                    <button className="button2">수정</button>
+                                                </Link>
+                                            </div>
+                                            : null}
+                                        <div>
                                             <Link to="/service/notice">
-                                                <button className="button1" onClick={deleteClick}>삭제</button>
-                                            </Link>
-                                            <Link to={`/service/notice/${noticeNum}/modify`}>
-                                                <button className="button2">수정</button>
+                                                <button className="button3">목록으로</button>
                                             </Link>
                                         </div>
-                                        : null}
-                                    <div className="user-button-box">
-                                        <Link to="/service/notice">
-                                            <button className="button3">목록으로</button>
-                                        </Link>
                                     </div>
                                 </div>
                             </>
