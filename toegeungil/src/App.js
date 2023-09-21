@@ -73,7 +73,7 @@ function App() {
               {/* 공지사항 */}
               <Route path="/service/notice">
                 <Route index element={<NoticeMain />} />
-                <Route path='otice/:noticeNum' element={<NoticeView />} />
+                <Route path='notice/:noticeNum' element={<NoticeView />} />
                 <Route path='notice/write' element={<NoticeWrite />} />
                 <Route path='notice/:noticeNum/modify' element={<NoticeModify />} />
               </Route>
