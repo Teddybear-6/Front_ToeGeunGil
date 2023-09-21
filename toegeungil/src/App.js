@@ -11,8 +11,7 @@ import Layout from './public/layout/Layout';
 import SocialDetail from './public/social/page/SocialDetail';
 import CommunityDetail from './public/community/pages/CommunityDetail';
 import CommunityMain from './public/community/pages/CommunityMain';
-import CommunityRegist from './public/community/pages/CommunityRegist';
-
+import CommunityWrite from './public/community/pages/CommunityWrite';
 import AllHobby from "./public/hobby/page/AllHobby";
 import HobbyDetail from "./public/hobby/page/hobbyDetail";
 import HobbyWrite from './public/tutor/page/hobbyWrite';
@@ -51,7 +50,7 @@ function App() {
             {/* 커뮤니티 */}
             <Route path="/communitys" element={<CommunityMain />} />
             <Route path="/communitys/:communityNum" element={<CommunityDetail />} />
-            <Route path="/communitys" element={<CommunityRegist />} />
+            <Route path="/communitys/write" element={<CommunityWrite/>} />
             {/* 고객센터 */}
             <Route path="notice">
               <Route index element={<NoticeMain />} />

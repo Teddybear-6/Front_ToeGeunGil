@@ -4,7 +4,7 @@ function CommunityLocation({ localCode }) {
     const [localName, setLocalName] = useState('');
 
     useEffect(() => {
-        fetch(`http://localhost:8001/local/${localCode}`)
+        fetch(process.env.REACT_APP_URL+`/local/${localCode}`)
             .then((response) => response.json())
             .then((data) => {
                 setLocalName(data.localName || '');

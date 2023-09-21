@@ -9,7 +9,7 @@ const CommunityList = () => {
     const [communityList, setCommunityList] = useState([]);
 
     const getCommunityList = () => {
-        fetch('http://localhost:8001/communitys')
+        fetch(process.env.REACT_APP_URL+"/communitys")
             .then((response) => response.json())
             .then((data) => {
                 setCommunityList(data);
@@ -52,14 +52,14 @@ const CommunityList = () => {
                                     <CommunityLocation localCode={community.locationNum} />
                                 </td>
                                 <td>
-                                    <CommunityKeyword keywordCode={community.CommunityKeywordDTOList} />
+                                    <CommunityKeyword keywordCode={community.communityKeywordDTOList}/>
                                 </td>
                             </tr>
                         ))}
                 </tbody>
             </table>
-            <Link to={"/communitys"}>
-                <button className="community-regist-button">커뮤니티 글 작성</button>
+            <Link to={"/communitys/write"}>
+                <button className="community-regist-button" >커뮤니티 글 작성</button>
             </Link>
         </div>
     );

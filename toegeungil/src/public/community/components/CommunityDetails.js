@@ -11,7 +11,7 @@ const CommunityDetails = () => {
     const [userNum, setUserNum] = useState(null);
 
     const getCommunitys = () => {
-        fetch(`http://localhost:8001/communitys/${communityNum}`)
+        fetch(process.env.REACT_APP_URL+`/communitys/${communityNum}`)
             .then((response) => response.json())
             .then((data) => {
                 setCommunitys(data);

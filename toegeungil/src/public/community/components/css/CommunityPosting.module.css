@@ -1,0 +1,141 @@
+.postingbox{
+    width: 1500px;
+    height: 1095px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.w1400h50{
+    width: 1400px;
+    height: 50px;
+    display: flex;
+    margin-top: 40px;
+}
+
+.w1400h300{
+    width: 1400px;
+    height: 300px;
+    display: flex;
+    margin-top: 40px;
+}
+
+.w100h50{
+    width: 100px;
+    height: 50px;
+    margin-top: 17px;
+}
+
+.communityLabelFont{
+    color: #655853;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.communityTitleTextBox{
+    width: 1300px;
+    height: 50px;
+    border: 2px solid #8FC4B3;
+    border-radius: 50px;
+}
+
+.communityTitleFont{
+    margin-top: 10px;
+    margin-left: 30px;
+    width: 1188px;
+    height: 45px;
+    font-size: 18px;
+    color: #655853;
+    font-weight: bold;
+    background: transparent;
+    resize: none;
+    outline: none;
+    border: none;
+}
+
+.w1400h100{
+    width: 1400px;
+    height: 100px;
+    display: flex;
+    margin-top: 40px;
+}
+
+.w100h300{
+    width: 100px;
+    height: 300px;
+}
+
+.w1300h300{
+    width: 1300px;
+    height: 300px;
+    border: 2px solid #8FC4B3;
+    border-radius: 50px;
+}
+
+.communityContentFont{
+    margin-top: 10px;
+    margin-left: 30px;
+    width: 1188px;
+    height: 290px;
+    font-size: 18px;
+    color: #655853;
+    font-weight: bold;
+    background: transparent;
+    resize: none;
+    outline: none;
+    border: none;
+}
+
+.communityCategoryBox{
+    display: flex;
+}
+
+.communityCategory{
+    width: 216px;
+    height: 50px;
+    font-size: 18px;
+    color: #655853;
+    font-weight: bold;
+    margin-top: 16px;
+    accent-color: #8FC4B3;
+}
+
+.communityKeywordFont{
+    width: 155px;
+    height: 50px;
+    margin-left: 30px;
+    margin-top: 30px;
+    display: inline-block;
+    color: #655853;
+    font-size: 18px;
+    font-weight: bold;
+    accent-color: #8FC4B3;
+}
+
+.w575h50{
+    width: 575px;
+    height: 50px;
+    font-size: 18px;
+    color: #655853;
+    border: 1px solid #8FC4B3;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+.submitButton{
+    width: 150px;
+    height: 75px;
+    border-radius: 50px;
+    border: 1px solid #8FC4B3;
+    background-color: #8FC4B3;
+    color: #096249;
+    font-size: 20px;
+    float: right;
+    margin-right: 100px;
+    margin-top: 70px;
+}
+
+
+
+
+
+
