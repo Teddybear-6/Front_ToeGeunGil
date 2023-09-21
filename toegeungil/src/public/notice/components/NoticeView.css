@@ -42,32 +42,14 @@
     margin-right: 50px;
 }
 
-.user-button-box{
+.button-box{
     margin-top: 50px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-end;
-    align-items: flex-end;
 }
 
-.user-button {
-    color: #096249;
-    font-size: 20px;
-    font-weight: bold;
-    background-color: #8FC4B3;
-    border: 1px;
-    border-radius: 50px;
-    width: 120px;
-    height: 50px;
-}
-
-.admin-button-box{
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 50px;
-}
-
-.admin-button1 {
+.button1 {
     color: #096249;
     font-size: 20px;
     font-weight: bold;
@@ -79,11 +61,23 @@
     
 }
 
-.admin-button2 {
+.button2 {
     color: #096249;
     font-size: 20px;
     font-weight: bold;
-    background-color: #CCE2DB;
+    background-color: #8FC4B3;
+    border: 1px;
+    border-radius: 50px;
+    width: 120px;
+    height: 50px;
+    margin-left: 30px;
+}
+
+.button3 {
+    color: #096249;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #8FC4B3;
     border: 1px;
     border-radius: 50px;
     width: 120px;

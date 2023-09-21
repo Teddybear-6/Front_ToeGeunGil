@@ -8,7 +8,7 @@ function SocialKeyword({code}){
 
     useEffect(() => {
         console.log()
-        fetch(`http://localhost:8001/keyword/${code.keywordCode}`)
+        fetch(process.env.REACT_APP_URL+`/keyword/${code.keywordCode}`)
             .then(response => response.json())
             .then(data => setkeyword(data));
             console.log(keyword)

@@ -9,12 +9,12 @@ function SocialParticipateList({ postNum }) {
     useEffect(() => {
 
         //참여자 밑 인원수만큼 이미지 아이콘 뿌려주기
-        fetch(`http://localhost:8001/socials/participate/${postNum}`)
+        fetch(process.env.REACT_APP_URL+`/socials/participate/${postNum}`)
             .then(response => response.json())
             .then(data => setParticipate(data));
 
         //모임 정원 받아오기
-        fetch(`http://localhost:8001/socials/${postNum}`)
+        fetch(process.env.REACT_APP_URL+`/socials/${postNum}`)
             .then(response => response.json()) //json으로 받는다
             .then(data => setSocials(data));
 

@@ -4,7 +4,7 @@ function UserNicname({ userNo }) {
     const [userNic, setUserNic] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:8001/user/${userNo}`)
+        fetch(process.env.REACT_APP_URL+`/user/${userNo}`)
             .then(response => response.json())
             .then(data => setUserNic(data));
     }, [userNo]);

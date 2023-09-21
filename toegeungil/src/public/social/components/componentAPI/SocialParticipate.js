@@ -10,7 +10,7 @@ function SocialParticipate({postNum}) {
     const [userNum, setuserNum] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:8001/socials/participate/${postNum}`, {
+        fetch(process.env.REACT_APP_URL+`/socials/participate/${postNum}`, {
             method: "POST",
             headers: { //데이터 타입 지정
                 "Content-Type": "application/json; charset=utf-8"
