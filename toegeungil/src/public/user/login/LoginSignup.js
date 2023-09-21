@@ -53,7 +53,7 @@ const LoginSignup = () => {
         })
             .then(response => {
                 sessionStorage.setItem("Authorizaton", response)
-                navigate("/Main")
+                navigate("/")
             }).catch((e) => {
                 alert("아이디 비번 확인해주세요")
                 navigate("/Findpass")
@@ -122,4 +122,4 @@ const LoginSignup = () => {
 
 
 
-export default LoginSignup
+export default LoginSignup;

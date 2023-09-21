@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import jwt_decode from "jwt-decode";
 import "./hobbyWrite.css"
-import { Link } from "react-router-dom";
+import { Link , useNavigate } from "react-router-dom";
 function HobbyWrite() {
   const [showImages, setShowImages] = useState([]);
   const [user, setUser] = useState();
@@ -9,10 +9,10 @@ function HobbyWrite() {
   const [keyword, setKeyword] = useState([]);
   const [hobby, setHobby] = useState({})
   const [keywordDTOList, setKeywordDTOList] = useState([])
-
-
   const [hobbyImage, setHobbyImage] = useState([])
   const [local, setLocal] = useState([{}]);
+
+  const navigate =useNavigate();
 
   useEffect(() => {
     if (sessionStorage.getItem("Authorizaton")) {
@@ -99,6 +99,7 @@ function HobbyWrite() {
   const onClickHandler = () => {
 
     if (!(user === undefined) && !(user === null) && user.auth[0] === 'ADMIN' || user.auth[0] === 'TUTOR') {
+      if(hobby.length!==0 && hobbyImage.length !==0){
       setHobby({ ...hobby, ["tutorCode"]: user.no })
       console.log(hobby)
       const formData = new FormData()
@@ -106,22 +107,27 @@ function HobbyWrite() {
         type: 'application/json',
       });
       formData.append('hobby', blob);
+      if(hobbyImage.length !==0){
       for (let i = 0; i < hobbyImage[0].length; i++) {
         formData.append('hobbyImage', hobbyImage[0][i]);
       }
+     }
 
-
-      fetch(process.env.REACT_APP_URL+"/hobbys", {
+      fetch(process.env.REACT_APP_URL+"/hobbys",{
         method: "POST",
         body: formData,
         headers: {
           "Authorization": sessionStorage.getItem("Authorizaton")
         },
       }).then(res => res.json()).then(res=> {
-        console.log(res['value']);
+        
         alert(res['value'])
-     
+        navigate("/hobby");
       }).catch((e)=>alert(e))
+    }else{
+      alert("모든 항목을 작성해주세요")
+    }
+    
     } else {
       alert("강사만 작성할 수 있습니다.")
 
@@ -261,9 +267,7 @@ function HobbyWrite() {
           <Link to="/hobby">
             <button className="cancelBtn">취소하기</button>
           </Link>
-          <Link to="/hobby">
-            <button onClick={onClickHandler} className="createBtn">작성하기</button>
-          </Link>
+            <button className="createBtn" onClick={onClickHandler}>작성하기</button>
         </div>
 
       

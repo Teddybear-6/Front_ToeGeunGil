@@ -11,20 +11,20 @@ function TutorHobbyList(){
   useEffect(()=>{
     if (sessionStorage.getItem("Authorizaton")) {
         setTutor(jwt_decode(sessionStorage.getItem("Authorizaton")))
+        
       }
-
+    
+    
         fetch(process.env.REACT_APP_URL+`/hobbys/tutor?page=${page - 1}&size=12`,{
             method:"GET",
             headers: {
                 "Authorization": sessionStorage.getItem("Authorizaton")
               },
-        }).then(res=>res.json()).then(res=>setHobby(res)).catch((e)=>console.log(e))
-
-        fetch(process.env.REACT_APP_URL+`/hobbys/tutorlist/size/${tutor?.no}`).then(res => res.json()).then(res => setPageCount(res))
-    
-  },[page])
-  
-  console.log(pageCount)
+        }).then(res=>res.json()).then(res=>setHobby(res)).then(fetch(process.env.REACT_APP_URL+`/hobbys/tutorlist/size/${tutor?.no}`).then(res => res.json()).then(res => setPageCount(res)))
+        .catch((e)=>console.log(e))
+       
+       
+  },[page,pageCount])
   const setPage = useCallback(
     (page) => {
         setPages(page)
@@ -33,10 +33,21 @@ function TutorHobbyList(){
 
   return(
     <>
+      <div className='layout'>
     <div style={{display:"flex" , flexDirection:"row", flexWrap : "wrap"}}>
-    {!tutor ? "로그인 해주세요" : !tutor?.auth[0]==="TUTOR" ? "강사가 아닙니다." : <TutorHobbyMain hobbys={hobby}></TutorHobbyMain>}
+    {
+    !tutor ? "로그인 해주세요" : !tutor?.auth[0]==="TUTOR" ? "강사가 아닙니다." :
+    <> 
+    <TutorHobbyMain hobbys={hobby}/>
+     <button className="writeButton"> 작성하기</button> 
+      
+     </>
+    
+    }
     </div>
-    <Paging count={pageCount} setPage={setPage} page={page} />
+
+   <Paging count={pageCount} setPage={setPage} page={page} />
+    </div>
     </>
   )
 }

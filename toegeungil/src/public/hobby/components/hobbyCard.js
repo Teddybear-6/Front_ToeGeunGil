@@ -62,8 +62,7 @@ function HobbyCard(hobbys){
             <p className={CardStyle.hobbyPrice}> {hobbys.hobbys.hobbyPrice}원</p>
         </div>
         </Link>
-     
-   
+  
         </>
     )
 }

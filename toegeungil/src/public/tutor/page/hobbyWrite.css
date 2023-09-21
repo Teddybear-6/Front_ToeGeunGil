@@ -313,6 +313,7 @@
     float: right;
     margin-top: 20px;
     width: 800px;
+    justify-content: center;
 
     .createBtn{
         border-radius: 50px;
@@ -320,6 +321,13 @@
         width: 150px;
         height: 75px;
         color: #096249;
+        
+        justify-content: center;
+        align-items: center;
+        border: none;
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration-line: none;
     }
 
 
@@ -329,6 +337,119 @@
         width: 150px;
         height: 75px;
         color: #41A487;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        text-decoration-line: none;
+        font-size: 20px;
+        font-weight: bold;
         
     }
+}
+
+
+
+/*
+활성화 버튼 */
+
+.buttonOn {
+    width: 100px;
+    height: 50px;
+    border-radius: 50px;
+    color: #096249;
+    background-color: #8FC4B3;
+    border-color: #8FC4B3;
+    font-size: 20px;
+    font-weight: bold;
+ display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    text-decoration-line: none;
+}
+
+.buttonOn:hover {
+    background-color:#CCE2DB;
+    border: none;
+    transition: 0.7s;
+}
+
+.buttonOn:active {
+    background-color: #8FC4B3;
+}
+
+
+/*
+비활성화 버튼*/
+
+.buttonOff {
+    width: 150px;
+    height: 75px;
+    border-radius: 50px;
+    color: #41A487;
+    background-color: #CCE2DB;
+    border-color: #CCE2DB;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    text-decoration-line: none;
+}
+
+.buttonOff:hover {
+    background-color:#8FC4B3;
+    border: none;
+    transition: 0.7s;
+}
+
+.buttonOff:active {
+    background-color: #CCE2DB;
+}
+
+
+/*
+게시글 작성 버튼*/
+
+.writeButton {
+    width: 250px;
+    height: 75px;
+    border-radius: 50px;
+    color: #41A487;
+    background-color: white;
+    border: 2px solid #41A487;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration-line: none;
+}
+
+.writeButton:hover {
+    background-color:#CCE2DB;
+    border: 2px solid #CCE2DB;
+    transition: 0.7s;
+}
+
+.writeButton:active {
+    background-color: #8FC4B3;
+}
+
+.mar {
+    margin-left: 15px;
+}
+
+
+
+.btnframe{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-bottom: 40px;
 }

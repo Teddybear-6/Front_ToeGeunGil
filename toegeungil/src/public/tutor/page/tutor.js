@@ -8,8 +8,7 @@ function Tutor(){
 
     return(
         <div>
-      <TutorNavber>
-      </TutorNavber>
+     
       </div>
     )
 }

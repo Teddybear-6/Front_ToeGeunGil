@@ -15,14 +15,14 @@
 .paging{
 display: flex;
     justify-content: center;
-   margin-top: 1600px;
+   margin-top: 10px;
     margin-left: 180px;
     
 }
 
 
 
-@media all and (min-width:1900px) and (max-width:1920px) {
+@media all and (min-width:10px) and (max-width:1920px) {
     .main{
         margin-left: 300px;
         display: "grid";
@@ -40,7 +40,7 @@ display: flex;
     .paging{
     display: flex;
         justify-content: center;
-       margin-top: 1200px;
+       margin-top: 10px;
         margin-left: 90px;
         
     }
