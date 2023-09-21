@@ -33,7 +33,7 @@ function Header() {
                 <NavLink to="/service" className={({ isActive }) => isActive ? "headerOn navbarLine" : "headerFont navbarLine"}>고객센터</NavLink>
                 {user ? null : <NavLink to="/login" className={({ isActive }) => isActive ? "headerOn navbarLine" : "headerFont navbarLine"}>로그인</NavLink>}
                 {/* <NavLink to="/notice/qna" className={({isActive}) => isActive? "headerOn navbarLine" :"headerFont navbarLine"}>Q&A</NavLink> */}
-                {!user ? null : <button onClick={logout}>로그아웃</button> }
+                {!user ? null : <NavLink  type="button" className={"headerFont navbarLine"} onClick={logout}>로그아웃</NavLink> }
 
             </div>
         </>
