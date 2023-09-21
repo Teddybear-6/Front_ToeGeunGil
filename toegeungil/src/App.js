@@ -86,9 +86,10 @@ function App() {
                 {/* <Route path="admin" element={<AdminRouter />} /> */}
                 {/* <Route path="public/main" element={<PublicRouter />} /> */}
               </Route>
-              <Route path="answer">
+
+              <Route path="/service/answer">
                 <Route index element={<AnswerMain />} />
-                <Route path=":answerNum" element={<AnswerDetail />} />
+                <Route path="/service/answer/:answerNum" element={<AnswerDetail />} />
               </Route>
               </Route>
           </Route>

@@ -19,12 +19,7 @@ export const QuestionMain = () => {
       {/* Question Admin Main페이지 */}
 
       <div className="layout">
-        <div className="notice-wrapper">
-          <div className="customerService-banner">
-            <button className="notice-button">공지사항</button>
-            <button className="qna-button">문의하기</button>
-            <button className="report-button">신고하기</button>
-          </div>
+     
           <table className="table-wrapper">
             <thead>
               <tr>
@@ -44,7 +39,7 @@ export const QuestionMain = () => {
                       <tr key={q.questionNum}>
                         <td>{q.questionNum}</td>
                         <td>
-                          <Link to={`/qna/${q.questionNum}`} style={{textDecoration:"none", color:"#87746B"}} 
+                          <Link to={`/service/qna/${q.questionNum}`} style={{textDecoration:"none", color:"#87746B"}} 
                           className="title-link">{q.questionTitle} </Link>
                         </td>
                         <td>{q.questionStatus}</td>
@@ -57,7 +52,6 @@ export const QuestionMain = () => {
             
           </table>
         </div>
-      </div>
       
     </>
   );

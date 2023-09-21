@@ -24,11 +24,6 @@ export const AnswerDetail = () => {
   return (
  
     <div className="view-wrapper">
-      <div className="customerService-banner">
-        <button className="notice-button">공지사항</button>
-        <button className="qna-button">문의하기</button>
-        <button className="report-button">신고하기</button>
-      </div>
       {loading ? (
         "로딩 중"
       ) : detail ? (
@@ -54,7 +49,7 @@ export const AnswerDetail = () => {
     
 
             <div className="user-button-box">
-            <Link to="/answer">
+            <Link to="/service/answer">
               <button className="user-button">목록으로</button>
             </Link>
           </div>
