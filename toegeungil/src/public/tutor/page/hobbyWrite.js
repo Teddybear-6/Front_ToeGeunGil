@@ -139,6 +139,7 @@ function HobbyWrite() {
 
   return (
     <>
+          <div className='layout'>
       <div>
         <div>
           취미생성
@@ -272,7 +273,7 @@ function HobbyWrite() {
 
       
       </div>
-
+      </div>
     </>
   )
 }

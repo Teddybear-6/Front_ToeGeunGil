@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NoticeMain from "./public/notice/pages/NoticeMain";
 import NoticeView from "./public/notice/pages/NoticeView";
 import NoticeWrite from "./public/notice/pages/NoticeWrite";
+import NoticeModify from "./public/notice/pages/NoticeModify";
+import ServiceLayout from "./public/notice/layout/ServiceLayout";
 import SocialMainCard from "./public/social/components/SocialMainCard";
 import SocialParticipateList from "./public/social/components/componentAPI/SocialParticipateList";
 import SocialPosting from "./public/social/components/SocialPosting";
@@ -20,6 +22,7 @@ import ScrollToTop from './public/layout/scroll/ScrollToTop';
 import HobbyWrite from "./public/tutor/page/hobbyWrite";
 import HobbyModify from "./public/tutor/page/hobbyModify";
 import TutorHobbyList from './public/tutor/page/tutorHobbyList';
+import TutorLayout from "./public/tutor/layouts/tutorLayout";
 import LoginSignup from "./public/user/login/LoginSignup";
 import Findpass from "./public/user/findpassword/Findpass";
 import Signup from "./public/user/Signup/Signup";
@@ -50,9 +53,14 @@ function App() {
             <Route path='hobby'>
             <Route index  element={<AllHobby/>} />
             <Route path=':hobbyCode' element={<HobbyDetail />} />
-            <Route path='write' element={<HobbyWrite />} />
+            </Route>
+
+            <Route path="/tutor" element={<TutorLayout />}>
+            <Route index element={<TutorHobbyList />} />
+            <Route path='write'  element={<HobbyWrite />} />
             <Route path='modify' element={<HobbyModify />} />
-            <Route path='tutorlist' element={<TutorHobbyList />} />
+           
+           
             </Route>
             {/* 소셜 */}
             <Route path="social">
@@ -67,25 +75,31 @@ function App() {
               element={<CommunityDetail />}
             />
             <Route path="/communitys" element={<CommunityRegist />} />
+
             {/* 고객센터 */}
-            <Route path="notice">
-              <Route index element={<NoticeMain />} />
-              <Route path="/notice/:noticeNum" element={<NoticeView />} />
-              <Route path="/notice/write" element={<NoticeWrite />} />
-            </Route>
+            <Route path="/service" element={<ServiceLayout />}>
+                <Route index element={<NoticeMain />} />
+              {/* 공지사항 */}
+                <Route path="/service/notice">
+                <Route index element={<NoticeMain />} />
+                <Route path='/service/notice/:noticeNum' element={<NoticeView />} />
+                <Route path='/service/notice/write' element={<NoticeWrite />} />
+                <Route path='/service/notice/:noticeNum/modify' element={<NoticeModify />} />
+                </Route>
+                
+              <Route path="/service/qna">
+                <Route path="/service/qna" element={<QuestionMain />} />
+                <Route path=":questionNum" element={<QuestionDetail />} />
+                {/* <Route index  element={<AdminRouter />}/> */}
+                {/* <Route path="admin" element={<AdminRouter />} /> */}
+                {/* <Route path="public/main" element={<PublicRouter />} /> */}
+              </Route>
 
-            <Route path="qna">
-              <Route index element={<QuestionMain />} />
-              <Route path=":questionNum" element={<QuestionDetail />} />
-              {/* <Route index  element={<AdminRouter />}/> */}
-              {/* <Route path="admin" element={<AdminRouter />} /> */}
-              {/* <Route path="public/main" element={<PublicRouter />} /> */}
-            </Route>
-          <Route path="answer">
-              <Route index element={<AnswerMain/>}/>
-              <Route path=":answerNum" element={<AnswerDetail/>}/>
-
-          </Route>
+              <Route path="/service/answer">
+                <Route index element={<AnswerMain />} />
+                <Route path="/service/answer/:answerNum" element={<AnswerDetail />} />
+              </Route>
+              </Route>
           </Route>
         </Routes>
       </BrowserRouter>
@@ -94,3 +108,4 @@ function App() {
 }
 
 export default App;
+

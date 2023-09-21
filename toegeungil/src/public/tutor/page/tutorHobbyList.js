@@ -11,19 +11,10 @@ function TutorHobbyList(){
   useEffect(()=>{
     if (sessionStorage.getItem("Authorizaton")) {
         setTutor(jwt_decode(sessionStorage.getItem("Authorizaton")))
-        
+        api()
       }
+      
     
-    
-        fetch(process.env.REACT_APP_URL+`/hobbys/tutor?page=${page - 1}&size=12`,{
-            method:"GET",
-            headers: {
-                "Authorization": sessionStorage.getItem("Authorizaton")
-              },
-        }).then(res=>res.json()).then(res=>setHobby(res)).then(fetch(process.env.REACT_APP_URL+`/hobbys/tutorlist/size/${tutor?.no}`).then(res => res.json()).then(res => setPageCount(res)))
-        .catch((e)=>console.log(e))
-       
-       
   },[page,pageCount])
   const setPage = useCallback(
     (page) => {
@@ -31,6 +22,19 @@ function TutorHobbyList(){
     }
 )
 
+    const api = () =>{
+      
+        fetch(process.env.REACT_APP_URL+`/hobbys/tutor?page=${page - 1}&size=12`,{
+            method:"GET",
+            headers: {
+                "Authorization": sessionStorage.getItem("Authorizaton")
+              },
+        }).then(res=>res.json()).then(res=>setHobby(res)).then(
+          fetch(process.env.REACT_APP_URL+`/hobbys/tutorlist/size/${tutor?.no}`).then(res => res.json()).then(res => setPageCount(res)))
+        .catch((e)=>console.log(e))
+       
+      
+    }
   return(
     <>
       <div className='layout'>

@@ -1,42 +1,21 @@
-import {NavLink} from 'react-router-dom';
-
+import { NavLink } from "react-router-dom";
+import  "./tutorNav.css"
 
 function TutorNavber(){
-    
-    const activeStyle ={
-      
-        color : 'green' ,
-        textDecoration: 'none'
-    }
 
-    const NavBox = {
-        borderRadius: '50px',
-        width: '280px',
-        height: '1600px',
-        border: '2px solid #8FC4B3'
-    }
 
     return(
-        <div  style={NavBox}>
-            <ul>
-                <li>
-                    <NavLink to={"/write"} style={
-                        (isActive)=>
-                        isActive ? activeStyle : null
-                    }> 취미생성 </NavLink>
-                </li>
-                <li>
-                    <NavLink  style={
-                        (isActive)=>
-                        isActive ? activeStyle : null
-                    }> 취미 관리</NavLink>
-                </li>
-            </ul>
-        </div>
+        <>
+        {/* 사용자 */}
+  
+        <div className="tutorNavwraper">
+        <NavLink to={"/tutor"}  className={({isActive})=> isActive?"serviceOn":"serviceOff"}>취미 관리</NavLink>
+        <NavLink to={"/tutor/write"} className={({isActive})=> isActive ? "serviceOn":"serviceOff"}>취미 작성</NavLink>
         
+        </div>
+      
+        </>
     )
-
 }
-
 
 export default TutorNavber;
