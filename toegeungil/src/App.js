@@ -31,7 +31,6 @@ import QuestionDetail from "./public/qna/pages/QuestionDetail";
 import { AnswerMain } from "./public/qna/pages/AnswerMain";
 import AnswerDetail from "./public/qna/pages/AnswerDetail";
 
-
 function App() {
   /* 라우팅
       : 어떤 요청(URL)을 어디로 안내 및 매핑 할 것인지를 정해놓고 진행하는 것
@@ -68,18 +67,20 @@ function App() {
               element={<CommunityDetail />}
             />
             <Route path="/communitys" element={<CommunityRegist />} />
+
             {/* 고객센터 */}
             <Route path="/service" element={<ServiceLayout />}>
-            {/* <Route index element={<NoticeMain />} /> */}
+                <Route index element={<NoticeMain />} />
               {/* 공지사항 */}
-              <Route path="/service/notice">
+                <Route path="/service/notice">
                 <Route index element={<NoticeMain />} />
                 <Route path='/service/notice/:noticeNum' element={<NoticeView />} />
                 <Route path='/service/notice/write' element={<NoticeWrite />} />
                 <Route path='/service/notice/:noticeNum/modify' element={<NoticeModify />} />
-              </Route>
+                </Route>
+                
               <Route path="/service/qna">
-                <Route index element={<QuestionMain />} />
+                <Route path="/service/qna" element={<QuestionMain />} />
                 <Route path=":questionNum" element={<QuestionDetail />} />
                 {/* <Route index  element={<AdminRouter />}/> */}
                 {/* <Route path="admin" element={<AdminRouter />} /> */}
@@ -89,7 +90,7 @@ function App() {
                 <Route index element={<AnswerMain />} />
                 <Route path=":answerNum" element={<AnswerDetail />} />
               </Route>
-            </Route>
+              </Route>
           </Route>
         </Routes>
       </BrowserRouter>
@@ -98,3 +99,4 @@ function App() {
 }
 
 export default App;
+

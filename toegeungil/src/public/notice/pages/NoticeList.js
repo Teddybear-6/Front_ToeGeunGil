@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import '../components/NoticeMain.css';
-import '../components/NoticeBanner.css';
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 // import '../components/testLogin';
 
 const NoticeList = () => {
@@ -53,7 +52,7 @@ const NoticeList = () => {
                     </tbody>
                     {/* 관리자일 경우 */}
                     <div className="main-button-box">
-                        <Link to={"/notice/write"}>
+                        <Link to={"/service/notice/write"}>
                             <button className="main-button" onClick={noticeClick}>공지사항 작성</button>
                         </Link>
                     </div>
