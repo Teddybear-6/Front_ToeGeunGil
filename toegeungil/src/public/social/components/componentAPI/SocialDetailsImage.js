@@ -6,7 +6,7 @@ function SocialDetailsImage({ socialNum }) {
     const [image, setImage] = useState();
 
     useEffect(() => {
-        fetch(`http://localhost:8001/socials/img/${socialNum}`)
+        fetch(process.env.REACT_APP_URL+`/socials/img/${socialNum}`)
             .then(response => response.json())
             .then(data => setImage(data));
     }, [socialNum]);

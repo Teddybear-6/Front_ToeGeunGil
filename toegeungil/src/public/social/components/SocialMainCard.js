@@ -17,7 +17,7 @@ function SocialMainCard() {
     const [socials, setSocials] = useState([{}]);
 
     useEffect(() => {
-        fetch("http://localhost:8001/socials")
+        fetch(process.env.REACT_APP_URL+"/socials")
             .then(response => response.json())
             .then(data => setSocials(data));
     }, []);
