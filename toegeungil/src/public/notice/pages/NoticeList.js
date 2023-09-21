@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import '../components/NoticeMain.css';
 import '../components/NoticeBanner.css';
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 // import '../components/testLogin';
 
 const NoticeList = () => {
@@ -9,7 +9,7 @@ const NoticeList = () => {
 
 
     const getList = () => {
-        fetch("http://localhost:8001/notices")
+        fetch(process.env.REACT_APP_URL + `/notices`)
             .then(response => response.json())
             .then(data => setList(data))
     }
@@ -29,11 +29,6 @@ const NoticeList = () => {
     return (
         <div className='layout'>
             <div className="notice-wrapper">
-                <div className="customerService-banner">
-                    <button className="notice-button">공지사항</button>
-                    <button className="qna-button">문의하기</button>
-                    <button className="report-button">신고하기</button>
-                </div>
                 <table className="table-wrapper">
                     <thead>
                         <tr>
