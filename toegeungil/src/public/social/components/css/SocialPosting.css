@@ -200,3 +200,13 @@
     flex-wrap: wrap;
     margin: 32px;
 }
+
+.positionDiv1 {
+    position: absolute;
+    z-index: 1;
+}
+
+.positionDiv2 {
+    position: relative;
+    z-index: 2;
+}

@@ -25,6 +25,7 @@ import QuestionMain from "./public/qna/pages/QuestionMain";
 import QuestionDetail from "./public/qna/pages/QuestionDetail";
 import { AnswerMain } from "./public/qna/pages/AnswerMain";
 import AnswerDetail from "./public/qna/pages/AnswerDetail";
+import SocialModify from "./public/social/page/SocialModify";
 
 function App() {
   /* 라우팅
@@ -54,6 +55,7 @@ function App() {
               <Route index element={<SocialMain />} />
               <Route path=':socialNum' element={<SocialDetail />} />
               <Route path='write' element={<SocialWrite />} />
+              <Route path="modify" element={<SocialModify/>}/>
             </Route>
             {/* 커뮤니티 */}
             <Route path="/communitys" element={<CommunityMain />} />
