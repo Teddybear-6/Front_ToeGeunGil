@@ -57,13 +57,19 @@ export const QuestionDetail = () => {
             <textarea className="answer-box" placeholder="답변을 입력하세요">
 
             </textarea>
+            
             </div>
           
 
             <div className="user-button-box">
-            <Link to="/qna">
+            <Link to="/answer">
+             <button className="answer-button">답변글 등록</button>
+             <Link to="/qna">
               <button className="user-button">목록으로</button>
             </Link>
+            </Link>
+            
+            
           </div>
         
     </div>
