@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import '../components/NoticeView.css';
-import '../components/NoticeBanner.css';
 
 const NoticeView = () => {
     const { noticeNum } = useParams();
@@ -25,7 +24,7 @@ const NoticeView = () => {
             .then(response => {
                 if (response.ok) {
                     alert("공지사항이 삭제되었습니다")
-                    navigate("/notice");
+                    navigate("/service/notice");
                 } else {
                     throw new Error("공지사항 삭제 실패하였습니다")
                 }
@@ -59,13 +58,13 @@ const NoticeView = () => {
                                     </div>
                                     <div className="button-box" >
                                         {/* 관리자인 경우 : 삭제, 수정 버튼 */}
-                                        <Link to="/notice">
+                                        <Link to="/service/notice">
                                             <button className="button1" onClick={deleteClick}>삭제</button>
                                         </Link>
-                                        <Link to={`/notice/${noticeNum}/modify`}>
+                                        <Link to={`/service/notice/${noticeNum}/modify`}>
                                             <button className="button2">수정</button>
                                         </Link>
-                                        <Link to="/notice">
+                                        <Link to="/service/notice">
                                             <button className="button3">목록으로</button>
                                         </Link>
                                     </div>
