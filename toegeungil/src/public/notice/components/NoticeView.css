@@ -5,13 +5,12 @@
     margin: auto;
 }
 
-.view-name {
+.view-title {
     text-align: center;
     font-size: 30px;
     height: 100px;
     display: flex;
-    justify-content: flex-start;   
-    align-items: center;         
+    justify-content: start;   
     margin-top: 60px;
 }
 
@@ -46,7 +45,7 @@
     margin-top: 50px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
 .button1 {
@@ -73,6 +72,13 @@
     margin-left: 30px;
 }
 
+.user-button-box{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
 .button3 {
     color: #096249;
     font-size: 20px;
@@ -83,4 +89,5 @@
     width: 120px;
     height: 50px;
     margin-left: 30px;
+    
 }
