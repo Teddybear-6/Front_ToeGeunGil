@@ -192,7 +192,16 @@
     }
     
 
-
+    .socialDetailsParticipateN {
+        margin-top: 1.25rem;
+        margin-left: 2.5rem;
+        width: 80rem;
+        height: 1.5rem;
+        margin-bottom: 1.875rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #87746B;
+    }
 
 
 
