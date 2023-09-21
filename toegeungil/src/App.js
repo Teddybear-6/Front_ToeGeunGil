@@ -7,6 +7,10 @@ import NoticeModify from "./public/notice/pages/NoticeModify";
 import ServiceLayout from "./public/notice/layout/ServiceLayout";
 import SocialMainCard from "./public/social/components/SocialMainCard";
 import SocialParticipateList from "./public/social/components/componentAPI/SocialParticipateList";
+import CommunityDetail from './public/community/pages/CommunityDetail';
+import CommunityMain from './public/community/pages/CommunityMain';
+import CommunityRegist from './public/community/pages/CommunityRegist';
+import Mypage from './public/user/mypage/Mypage';
 import SocialPosting from "./public/social/components/SocialPosting";
 import SocialMain from "./public/social/page/SocialMain";
 import Layout from "./public/layout/Layout";
@@ -46,7 +50,8 @@ function App() {
             <Route path="findpass" element={<Findpass />} />
             <Route path="signup" element={<Signup />} />
             {/* 마이페이지 */}
-            <Route path="mypage"></Route>
+            <Route path='mypage' element={<Mypage/>}>
+            </Route>
             {/* 취미 */}
             <Route path='hobby'>
               <Route index element={<AllHobby />} />

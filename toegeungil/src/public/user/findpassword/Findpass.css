@@ -88,10 +88,16 @@
     font-size: 19px;
     font-weight:700 ;
     cursor: pointer;
+    
 
 }
 
 .gray{
     background: #EAEAEA;
     color: #676767;
+}
+
+.textsy {
+    color: white;
+    text-decoration-line: none;
 }
