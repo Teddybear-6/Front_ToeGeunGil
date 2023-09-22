@@ -60,7 +60,7 @@ function LocalList() {
                 ) : (
                     local ? (
                         <>
-                            {!user ? "관리자만 사용 가능합니다" : (user.auth[0] == 'ADMIN') ?
+                            {user && user.auth[0] === 'ADMIN' ? (
                                 <table>
                                     <thead>
                                         <tr>
@@ -86,7 +86,9 @@ function LocalList() {
                                         <button onClick={localClick}>지역 작성</button>
                                     </Link>
                                 </table>
-                                : null}
+                            ) : (
+                                <p>관리자가 아닙니다 공지사항 수정 권한이 없습니다</p>
+                            )}
                         </>
                     ) : "지역이 없습니다"
                 )

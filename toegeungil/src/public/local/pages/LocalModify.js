@@ -13,17 +13,13 @@ function LocalModify() {
             setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
         }
         if (!localCode) {
-            // 지역 코드가 정상적으로 전달되지 않았을 때 예외 처리
             alert("지역 코드가 올바르지 않습니다");
             navigate("/service/local");
             return;
         }
-
         fetch(process.env.REACT_APP_URL + `/local/${localCode}`)
             .then(response => response.json())
-            .then(data => {
-                setLocalName(data.localName);
-            })
+            .then(data => setLocalName(data.localName))
     }, [localCode])
 
     const nameChange = (e) => {
@@ -35,51 +31,54 @@ function LocalModify() {
     }
 
     const updateClick = () => {
-        fetch(process.env.REACT_APP_URL + `/local/${localCode}`, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json; charset=UTF-8",
-                "Authorization": sessionStorage.getItem("Authorizaton")
-            },
-            body: JSON.stringify({
-                "localName": localName,
-            }),
-        })
-            .then(response => {
-                if (response.ok) {
-                    alert("지역이 수정되었습니다");
-                    navigate("/service/local");
-                } else {
-                    throw new Error("지역 수정에 실패하였습니다");
-                }
+        if (user && user.auth[0] === 'ADMIN'){
+            fetch(process.env.REACT_APP_URL + `/local/${localCode}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json; charset=UTF-8"
+                },
+                body: JSON.stringify({
+                    "localName": localName,
+                }),
             })
-            .catch(error => {
-                console.error("지역 수정 중 오류 발생 :", error);
-                alert("지역 수정 중 오류가 발생하였습니다");
-            })
+                .then(response => {
+                    if (response.ok) {
+                        alert("지역이 수정되었습니다");
+                        navigate("/service/local");
+                    } else {
+                        throw new Error("지역 수정에 실패하였습니다");
+                    }
+                })
+                .catch(error => {
+                    console.error("지역 수정 중 오류 발생 :", error);
+                    alert("지역 수정 중 오류가 발생하였습니다");
+                })
+        }else{
+            alert("관리자가 아닙니다 공지사항 작성 권한이 없습니다");
+        }
+        
     }
 
     return (
         <div className='layout'>
-            {!user ? "관리자만 사용 가능합니다" : (user.auth[0] == 'ADMIN') ?
+            <h1>지역 수정</h1>
                 <div>
-                    <h1>지역 작성</h1>
                     <label>수정하는 지역명</label>
                     <input
                         type="text"
                         value={localName}
                         onChange={nameChange}
                     />
-                    <div>
-                        <Link to="/service/local">
-                            <button onClick={cancelClick}>취소</button>
-                        </Link>
-                        <Link to='/service/local'>
-                            <button onClick={updateClick}>등록</button>
-                        </Link>
-                    </div>
                 </div>
-                : null}
+                <div>
+                    <Link to="/service/local">
+                        <button onClick={cancelClick}>취소</button>
+                    </Link>
+                    <Link to='/service/local'>
+                        <button onClick={updateClick}>등록</button>
+                    </Link>
+                </div>
+                
         </div>
     )
 }

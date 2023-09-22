@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 
@@ -15,10 +15,14 @@ function LocalWrite() {
         alert("지역 작성이 취소 되었습니다")
     }
 
-    const localWriteClick = () => {
+    useEffect(() => {
         if (sessionStorage.getItem("Authorizaton")) {
             setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
         }
+    }, [])
+
+    const localWriteClick = () => {
+
         console.log(localName);
         fetch(process.env.REACT_APP_URL + `/local`,
             {
@@ -46,12 +50,19 @@ function LocalWrite() {
     return (
         <div className='layout'>
             <h1>지역 작성</h1>
-            <label>추가하는 지역명</label>
-            <input
-                type="text"
-                value={localName}
-                onChange={nameChange}
-            />
+            {user && user.auth[0] === 'ADMIN' ? (
+                <div>
+                    <label>추가하는 지역명</label>
+                    <input
+                        type="text"
+                        value={localName}
+                        onChange={nameChange}
+                    />
+                </div>
+            ) : (
+                <p>관리자가 아닙니다 공지사항 수정 권한이 없습니다</p>
+            )}
+            {!user ? null : (user.auth[0] == 'ADMIN') ?
                 <div>
                     <Link to="/service/local">
                         <button onClick={cancelChange}>취소</button>
@@ -60,6 +71,7 @@ function LocalWrite() {
                         <button onClick={localWriteClick}>등록</button>
                     </Link>
                 </div>
+                : null}
         </div>
     )
 }
