@@ -30,6 +30,7 @@ import QuestionMain from "./public/qna/pages/QuestionMain";
 import QuestionDetail from "./public/qna/pages/QuestionDetail";
 import { AnswerMain } from "./public/qna/pages/AnswerMain";
 import AnswerDetail from "./public/qna/pages/AnswerDetail";
+import LocalMain from "./public/local/pages/LocalMain";
 
 function App() {
   /* 라우팅
@@ -70,15 +71,15 @@ function App() {
 
             {/* 고객센터 */}
             <Route path="/service" element={<ServiceLayout />}>
-                <Route index element={<NoticeMain />} />
+              <Route index element={<NoticeMain />} />
               {/* 공지사항 */}
-                <Route path="/service/notice">
+              <Route path="/service/notice">
                 <Route index element={<NoticeMain />} />
                 <Route path='/service/notice/:noticeNum' element={<NoticeView />} />
                 <Route path='/service/notice/write' element={<NoticeWrite />} />
                 <Route path='/service/notice/:noticeNum/modify' element={<NoticeModify />} />
-                </Route>
-                
+              </Route>
+              {/* QnA */}
               <Route path="/service/qna">
                 <Route path="/service/qna" element={<QuestionMain />} />
                 <Route path=":questionNum" element={<QuestionDetail />} />
@@ -90,6 +91,11 @@ function App() {
                 <Route index element={<AnswerMain />} />
                 <Route path=":answerNum" element={<AnswerDetail />} />
               </Route>
+            
+            </Route>
+              {/* Local */}
+              <Route path="/local">
+                <Route path="/local" element={<LocalMain/>}/>
               </Route>
           </Route>
         </Routes>
