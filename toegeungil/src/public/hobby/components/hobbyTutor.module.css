@@ -1,13 +1,13 @@
 
-@media all and (min-width:1900px) and (max-width:9000px) {
+
 
     .tutorintro{
         display: flex;
-        margin-top: 10px;
-        border: 2px solid #8FC4B3;
-        height: 200px;
-        width: 1400px;
-        border-radius: 50px;
+        margin-top: 0.625rem;
+        border: 0.125rem solid #8FC4B3;
+        height: 12.5rem;
+        width: 87.5rem;
+        border-radius: 3.125rem;
         flex-direction: row;
         flex-wrap: wrap;
         align-content: center;
@@ -15,68 +15,31 @@
     
     }
     .introName{
-        margin: 00px 50px 50px 50px;
-        width: 1280px;
-        height: 24px;
-        font-size: 24px;
+        margin: 00px 3.125rem 3.125rem 3.125rem;
+        width: 80rem;
+        height: 1.5rem;
+        font-size: 1.5rem;
         color: #8FC4B3;
         font-weight: bold;
     }
     
     .tutor{
-    margin-left: 90px;
+    margin-left: 5.625rem;
 
-     font-size: 21px;
+     font-size: 1.313rem;
 
      color: #8FC4B3;
         font-weight: bold;
-        font-size: 18px;
+        font-size: 1.125rem;
     
     }
     
     .intorContent{
-    margin-left: 500px;
+    margin-left: 31.25rem;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1.125rem;
 
      color: #8FC4B3;
     }
 
 
-
-}
-
-
-
-
-@media all and (min-width:768px) and (max-width:1440px) { 
-
-    .tutorintro{
-        display: flex;
-        margin-top: 10px;
-        border: 2px solid #8FC4B3;
-        height: 167px;
-        width: 1022px;
-        border-radius: 50px;
-        
-    }
-    
-    
-    .tutor{
-    margin-left: 90px;
-    margin-top: 80px;
-     font-size: 21px;
-     color: #655853;
-    
-    }
-    
-    .intorContent{
-    margin-left: 500px;
-    margin-top: 80px;
-     font-size: 16px;
-     color: #655853;
-    }
-
-
-
-}

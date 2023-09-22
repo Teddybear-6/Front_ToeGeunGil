@@ -7,6 +7,10 @@ import NoticeModify from "./public/notice/pages/NoticeModify";
 import ServiceLayout from "./public/notice/layout/ServiceLayout";
 import SocialMainCard from "./public/social/components/SocialMainCard";
 import SocialParticipateList from "./public/social/components/componentAPI/SocialParticipateList";
+import CommunityDetail from './public/community/pages/CommunityDetail';
+import CommunityMain from './public/community/pages/CommunityMain';
+import CommunityRegist from './public/community/pages/CommunityRegist';
+import Mypage from './public/user/mypage/Mypage';
 import SocialPosting from "./public/social/components/SocialPosting";
 import SocialMain from "./public/social/page/SocialMain";
 import Layout from "./public/layout/Layout";
@@ -21,6 +25,9 @@ import SocialWrite from './public/social/page/SocialWrite';
 import ScrollToTop from './public/layout/scroll/ScrollToTop';
 import HobbyWrite from "./public/tutor/page/hobbyWrite";
 import HobbyModify from "./public/tutor/page/hobbyModify";
+import TutorHobbyList from './public/tutor/page/tutorHobbyList';
+import TutorLayout from "./public/tutor/layouts/tutorLayout";
+import StudentList from "./public/tutor/components/studentList";
 import LoginSignup from "./public/user/login/LoginSignup";
 import Findpass from "./public/user/findpassword/Findpass";
 import Signup from "./public/user/Signup/Signup";
@@ -48,13 +55,19 @@ function App() {
             <Route path="findpass" element={<Findpass />} />
             <Route path="signup" element={<Signup />} />
             {/* 마이페이지 */}
-            <Route path="mypage"></Route>
+            <Route path='mypage' element={<Mypage/>}>
+            </Route>
             {/* 취미 */}
             <Route path='hobby'>
-              <Route index element={<AllHobby />} />
-              <Route path=':hobbyCode' element={<HobbyDetail />} />
-              <Route path='write' element={<HobbyWrite />} />
-              <Route path='modify' element={<HobbyModify />} />
+            <Route index  element={<AllHobby/>} />
+            <Route path=':hobbyCode' element={<HobbyDetail />} />
+            </Route>
+
+            <Route element={<TutorLayout />}>
+            <Route path="/tutor" element={<TutorHobbyList />} />
+            <Route path='/hobbywrite'  element={<HobbyWrite />} />
+            <Route path='/hobbymodify' element={<HobbyModify />} />
+            <Route path="/hobbystudent" element={<StudentList/>}/>           
             </Route>
             {/* 소셜 */}
             <Route path="social">
