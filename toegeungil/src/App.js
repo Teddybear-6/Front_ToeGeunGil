@@ -5,7 +5,6 @@ import NoticeView from "./public/notice/pages/NoticeView";
 import NoticeWrite from "./public/notice/pages/NoticeWrite";
 import NoticeModify from "./public/notice/pages/NoticeModify";
 import ServiceLayout from "./public/notice/layout/ServiceLayout";
-<<<<<<< HEAD
 // import SocialMainCard from "./public/social/components/SocialMainCard";
 // import SocialParticipateList from "./public/social/components/componentAPI/SocialParticipateList";
 import CommunityDetail from './public/community/pages/CommunityDetail';
@@ -19,11 +18,8 @@ import Findpass from './public/user/findpassword/Findpass';
 import Signup from './public/user/Signup/Signup';
 import CommunityModify from './public/community/components/CommunityModify';
 
+
 import Mypage from './public/user/mypage/Mypage';
-// import SocialPosting from "./public/social/components/SocialPosting";
-=======
-import Mypage from './public/user/mypage/Mypage';
->>>>>>> 354c77da4506a678f29061ba2be923d0b33e5422
 import SocialMain from "./public/social/page/SocialMain";
 import Layout from "./public/layout/Layout";
 import SocialDetail from "./public/social/page/SocialDetail";
