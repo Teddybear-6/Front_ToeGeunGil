@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import "../components/css/Button.css"
 import "../components/css/SocialPosting.css"
 import { Link, NavLink } from "react-router-dom";
+import jwt_decode from "jwt-decode";
 
 function SocialWriteCard() {
 
@@ -53,7 +54,7 @@ function SocialWriteCard() {
 
     //input으로 바로 값 입력
     const [social, setSocial] = useState({
-        userNum: user, //유저 번호
+        userNum: '', //유저 번호
         socialName: '', //제목
         socialDate: '', //모임일시
         socialFixedNum: '', //정원
@@ -70,7 +71,6 @@ function SocialWriteCard() {
         //권한설정
         if (sessionStorage.getItem("Authorizaton")) {
             setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
-
         }
 
         //카테고리
@@ -100,6 +100,11 @@ function SocialWriteCard() {
 
     //POST 요청
     const handleSubmit = (e) => {
+
+        if(!(user === undefined) && !(user === null)) {
+            setSocial({...social, ["userNum"]:user.no})
+        }
+
         if (!window.confirm("[social] 게시글을 등록하시겠습니까?")) {
             // alert("취소(아니오)를 누르셨습니다.");
         } else {
@@ -110,12 +115,11 @@ function SocialWriteCard() {
             formData.append('social', blob);
             formData.append('image', image[0]);
 
-
             e.preventDefault(); // submit action을 안타도록 설정
             fetch(process.env.REACT_APP_URL + `/socials`, {
                 method: "POST", //메소드 지정
                 headers: { //데이터 타입 지정
-                    // "Content-Type": "application/json; charset=utf-8"
+                    "Authorization": sessionStorage.getItem("Authorizaton")
                 },
                 body: formData
                 // body: JSON.stringify(social) //실제 데이터 파싱하여 body에 저장

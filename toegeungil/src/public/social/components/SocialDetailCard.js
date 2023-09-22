@@ -164,18 +164,4 @@ function SocialDetailCard() {
     )
 }
 
-
-
-
-// const auth = (socialNum) => {
-//     if (!(user === undefined) && !(user === null) && (user.auth[0] === "USER" || user.auth[0] === "TUTOR" || user.auth[0] === "ADMIN")) {
-//         if (user.no === socials.userNum) {
-//             setSocials({ ...socials, ["userNum"]: user.no })
-//             handleSubmit(socialNum);
-//         }
-//     } else {
-//         alert("[social] 작성자가 아닙니다.");
-//     }
-// }
-
 export default SocialDetailCard;
