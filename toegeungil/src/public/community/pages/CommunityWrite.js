@@ -1,9 +1,9 @@
-import CommunityForm from "../components/CommunityPosting";
+import CommunityPosting from "../components/CommunityPosting";
 
 function CommunityWrite({ }) {
     return (
         <>
-            <CommunityForm />
+            <CommunityPosting />
         </>
     );
 }

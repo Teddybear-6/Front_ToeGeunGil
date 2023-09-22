@@ -1,184 +1,186 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import PostingStyle from './css/CommunityPosting.module.css';
+import React, { useState, useEffect } from "react";
+import PostingStyle from "./css/CommunityPosting.module.css";
+import { Link } from "react-router-dom";
 
+function CommunityPosting() {
+    const [category, setCategory] = useState([]);
+    const [keyword, setKeyword] = useState([]);
+    const [communityKeywordDTOList, setCommunityKeywordDTOList] = useState([]);
+    const [local, setLocal] = useState([]);
 
-function CommunityForm() {
-    const [category, setCategory] = useState([]); // 카테고리 목록
-    const [keyword, setKeyword] = useState([]); // 키워드 목록
-    const [location, setLocation] = useState([]);
-    const [formData, setFormData] = useState({
-        title: "",
-        content: "",
-        category: "",
-        keyword: [],
-        location: ""
+    const [community, setCommunity] = useState({
+        userNum: 3,
+        communityTitle: '',
+        communityIntro: '',
+        postWriteDate: new Date().toISOString(),
     });
+    console.log(1,community);
 
     useEffect(() => {
-
+        
+        //카테고리 
         fetch(process.env.REACT_APP_URL + "/category")
-            .then((res) => res.json())
-            .then((data) => setCategory(data));
+            .then(res => res.json())
+            .then(res => setCategory(res))
 
+        //키워드
         fetch(process.env.REACT_APP_URL + "/keyword")
-            .then((res) => res.json())
-            .then((data) => setKeyword(data));
+            .then(res => res.json())
+            .then(res => setKeyword(res))
 
+        //지역
         fetch(process.env.REACT_APP_URL + "/local")
-            .then((res) => res.json())
-            .then((data) => setLocation(data));
+            .then(res => res.json())
+            .then(res => setLocal(res))
+
     }, []);
 
-    // const FormValue = () => {
-    //     const { title, content, category, keyword, location } = formData;
+    const handleValueChange = (e) => {
+        setCommunity({
+            ...community,
+            [e.target.name]: e.target.value
+        });
+    }
 
-    //     const TitleValue
-    // }
+    const handleSubmit = (e) => {
+        const formData = new FormData();
+        const blob = new Blob([JSON.stringify(community)], {
+            type: 'application/json'
+        });
 
-    const handleInputChange = (e) => {
-        const { name, value, type, checked } = e.target;
+        formData.append('community', blob);
 
-        if (type === "checkbox") {
-            if (checked) {
-                setFormData({
-                    ...formData,
-                    keyword: [...formData.keyword, value],
-                });
-            } else {
-                setFormData({
-                    ...formData,
-                    keyword: formData.keyword.filter((keywordCode) => keywordCode !== value),
-                });
+        e.preventDefault();
+        fetch(process.env.REACT_APP_URL + `/communitys`, {
+            method: "POST",
+            headers:{
+            },
+            body: formData
+        })
+            .then(response => {
+                response.json()
+                if (response.ok) {
+                    alert("게시글 등록이 되었습니다.");
+                } else {
+                    alert("게시글 등록에 실패하였습니다.")
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                alert("에러가 발생하였습니다.");
+            })
+    };
+
+    const checkOnlyOne = (checkThis) => {
+        const checkboxes = document.getElementsByName("categoryCode")
+        for (let i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i] !== checkThis) {
+                checkboxes[i].checked = false
             }
+        }
+        setCommunity({ ...community, [checkThis.name]: checkThis.value });
+    };
+
+    const onChangeHandler = (e) => {
+        if (e.target.name !== "keywordCode") {
+            console.log(e.target.value)
+            setCommunity({ ...community, [e.target.name]: e.target.value });
         } else {
-            setFormData({
-                ...formData,
-                [name]: value,
-            });
+            communityKeywordDTOList.push({ "keywordCode": Number(e.target.value) })
+            setCommunity({ ...community, communityKeywordDTOList });
         }
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        const data = {
-            title: formData.title,
-            content: formData.content,
-            category: formData.category,
-            keyword: formData.keyword,
-            location: formData.location,
-        };
-
-        fetch(process.env.REACT_APP_URL + `/communitys`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data),
-        })
-            .then(response => response.json())
-            .then(response => console.log(response))
-    };;
+    console.log(community);
 
     return (
-        <div className={PostingStyle.postingbox}>
-            <form onSubmit={handleSubmit}>
-                <div className={PostingStyle.w1400h50}>
-                    <div className={PostingStyle.w100h50}>
-                        <label className={PostingStyle.communityLabelFont}>소통 제목</label>
+        <>
+            <div>
+                <div className={PostingStyle.postingbox}>
+                    <div className={PostingStyle.w1400h50}>
+                        <div className={PostingStyle.w100h50}>
+                            <label className={PostingStyle.communityLabelFont}>소통 제목</label>
+                        </div>
+                        <div className={PostingStyle.communityTitleTextBox}>
+                            <textarea
+                                className={PostingStyle.communityTitleFont}
+                                name="communityTitle"
+                                type="text"
+                                onChange={handleValueChange}
+                                placeholder="커뮤니티 제목을 입력해주세요."
+                            />
+                        </div>
                     </div>
-                    <div className={PostingStyle.communityTitleTextBox}>
-                        <textarea className={PostingStyle.communityTitleFont}
-                            type="text"
-                            id="title"
-                            name="title"
-                            value={formData.title}
-                            onChange={handleInputChange}
-                            required
-                        />
+                    <div className={PostingStyle.w1400h300}>
+                        <div className={PostingStyle.w100h300}>
+                            <label className={PostingStyle.communityLabelFont}>소통 내용</label>
+                        </div>
+                        <div className={PostingStyle.w1300h300}>
+                            <textarea
+                                className={PostingStyle.communityContentFont}
+                                name="communityIntro"
+                                type="text"
+                                onChange={handleValueChange}
+                                placeholder="커뮤니티 소개를 입력해주세요."
+                            />
+                        </div>
                     </div>
-                </div>
-                <div className={PostingStyle.w1400h300}>
-                    <div className={PostingStyle.w100h300}>
-                        <label className={PostingStyle.communityLabelFont}>소통 내용</label>
+                    <div className={PostingStyle.w1400h50}>
+                        <div className={PostingStyle.w100h50}>
+                            <label className={PostingStyle.communityLabelFont}>카테고리</label>
+                        </div>
+                        <div className={PostingStyle.communityCategoryBox}>
+                            {category.map((m, index) => (
+                                <label htmlFor="categoryCode">
+                                    <div className={PostingStyle.communityCategory}>
+                                        <input key={index} type="radio" name="categoryCode" value={m.categoryCode}
+                                            onChange={(e) => checkOnlyOne(e.target)} />
+                                        <div>{m.categoryName}</div>
+                                    </div>
+                                </label>
+                            ))}
+                        </div>
                     </div>
-                    <div className={PostingStyle.w1300h300}>
-                        <textarea className={PostingStyle.communityContentFont}
-                            id="content"
-                            name="content"
-                            value={formData.content}
-                            onChange={handleInputChange}
-                            required
-                        />
+                    <div className={PostingStyle.w1400h300}>
+                        <div className={PostingStyle.w100h300}>
+                            <label className={PostingStyle.communityLabelFont}>
+                                키워드 선택
+                            </label>
+                        </div>
+                        <div className={PostingStyle.w1300h300}>
+                            {keyword.map((m, index) => (
+                                <label htmlFor="keywordCode">
+                                    <div className={PostingStyle.communityKeywordFont}>
+                                        <input key={index} type="checkbox" name="keywordCode" value={m.keywordCode}
+                                            onChange={onChangeHandler} />
+                                        <div>{m.keywordName}</div>
+                                    </div>
+                                </label>
+                            ))}
+                        </div>
                     </div>
-                </div>
-                {/* 카테고리 선택 */}
-                <div className={PostingStyle.w1400h50}>
-                    <div className={PostingStyle.w100h50}>
-                        <label className={PostingStyle.communityLabelFont}>카테고리</label>
-                    </div>
-                    <div className={PostingStyle.communityCategoryBox}>
-                        {category.map((category) => (
-                            <div className={PostingStyle.communityCategory} key={category.categoryCode}>
-                                <input
-                                    type="radio"
-                                    id={`category${category.categoryCode}`}
-                                    name="category"
-                                    value={category.categoryCode}
-                                    checked={String(formData.category) === String(category.categoryCode)}
-                                    onChange={handleInputChange}
-                                />
-                                <span>{category.categoryName}</span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-                <div className={PostingStyle.w1400h300}>
-                    <div className={PostingStyle.w100h300}>
-                        <label className={PostingStyle.communityLabelFont}>키워드 선택</label>
-                    </div>
-                    <div className={PostingStyle.w1300h300}>
-                        {keyword.map((keyword) => (
-                            <div className={PostingStyle.communityKeywordFont} key={keyword.keywordCode}>
-                                <input 
-                                    type="checkbox"
-                                    name="keyword"
-                                    value={keyword.keywordCode}
-                                    checked={formData.keyword.includes(String(keyword.keywordCode))}
-                                    onChange={handleInputChange}
-                                />
-                                <span>{keyword.keywordName}</span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-                <div className={PostingStyle.w1400h50}>
-                    <div className={PostingStyle.w100h50}>
-                        <label className={PostingStyle.communityLabelFont}>지역 선택</label>
-                    </div>
-                    <div className={PostingStyle.w575h50}>
-                        <select className={PostingStyle.w575h50}
-                            name="location"
-                            value={formData.location}
-                            onChange={handleInputChange}
-                        >
-                            <option value="">지역 선택</option>
-                            {location.map((location) => (
-                                <option key={location.locationCode} value={location.locationCode}>
-                                    {location.localName}
-                                </option>
+                    <div className={PostingStyle.w1400h50}>
+                        <div className={PostingStyle.w100h50}>
+                            <label className={PostingStyle.communityLabelFont}>지역 선택</label>
+                        </div>
+                        <select className={PostingStyle.w575h50} name="localCode" id="local" onChange={onChangeHandler}>
+                            {local?.map((m, index) => (
+                                <option value={m.localCode} key={index}>{m.localName}</option>
                             ))}
                         </select>
                     </div>
+                    <div>
+                        <Link to="/communitys">
+                        <button className={PostingStyle.submitButton} type="submit"
+                            onClick={(e) => handleSubmit(e)}>등록하기</button>
+                        </Link>    
+                    </div>
                 </div>
-                <button className={PostingStyle.submitButton} type="submit">작성 완료</button>
-            </form>
-            {/* <Link to={"/communitys"}>
-                <button className="community-regist-button" >이전</button>
-            </Link> */}
-        </div>
-    );
+            </div>
+
+        </>
+    )
 }
 
-export default CommunityForm;
+export default CommunityPosting;
+

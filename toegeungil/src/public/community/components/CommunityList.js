@@ -9,15 +9,18 @@ const CommunityList = () => {
     const [communityList, setCommunityList] = useState([]);
 
     const getCommunityList = () => {
-        fetch(process.env.REACT_APP_URL+"/communitys")
+        fetch(process.env.REACT_APP_URL + "/communitys")
             .then((response) => response.json())
             .then((data) => {
                 setCommunityList(data);
             });
+            console.log(communityList);
+
     };
 
     useEffect(() => {
         getCommunityList();
+        console.log(communityList);
     }, []);
 
     const viewCommunity = (communityNum) => {
@@ -49,10 +52,12 @@ const CommunityList = () => {
                                     <UserNickName userNo={community.userNum} />
                                 </td>
                                 <td>
-                                    <CommunityLocation localCode={community.locationNum} />
+                                    <CommunityLocation localCode={community.localCode} />
                                 </td>
                                 <td>
-                                    <CommunityKeyword keywordCode={community.communityKeywordDTOList}/>
+                                    {community.communityKeywordDTOList?.map((m, index) => (
+                                        <CommunityKeyword key={index} code={m}/>
+                                    ))}
                                 </td>
                             </tr>
                         ))}

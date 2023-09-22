@@ -116,7 +116,7 @@
     height: 50px;
     font-size: 18px;
     color: #655853;
-    border: 1px solid #8FC4B3;
+    border: 2px solid #8FC4B3;
     border-radius: 50px;
     font-weight: bold;
 }
@@ -132,6 +132,21 @@
     float: right;
     margin-right: 100px;
     margin-top: 70px;
+    cursor: pointer;
+}
+
+.backButton{
+    width: 150px;
+    height: 75px;
+    border-radius: 50px;
+    border: 1px solid #8FC4B3;
+    background-color: #8FC4B3;
+    color: #096249;
+    font-size: 20px;
+    float: right;
+    margin-right: 30px;
+    margin-top: 70px;
+    cursor: pointer;
 }
 
 

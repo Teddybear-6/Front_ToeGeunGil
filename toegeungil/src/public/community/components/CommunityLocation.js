@@ -12,7 +12,7 @@ function CommunityLocation({ localCode }) {
             .catch((error) => {
                 console.log(error);
             });
-    }, []);
+    }, [localCode]);
 
     return (
         <span>{localName}</span>

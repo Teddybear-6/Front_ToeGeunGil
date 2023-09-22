@@ -35,7 +35,7 @@ const CommunityDetailsTitle = () => {
                         </div>
                         <div className={DetailsTitleStyle.keyword}></div>
                         <div className={DetailsTitleStyle.communityLocal}>
-                            {locationNum !== null && <CommunityLocation localCode={locationNum} />}
+                            {locationNum !== null && <CommunityLocation localCode={community.localCode} />}
                             {/* localNum의 값이 null이 아닐 경우에만 렌더링 되게 설정 */}
                         </div>
                         <div className={DetailsTitleStyle.communityKeyword}>

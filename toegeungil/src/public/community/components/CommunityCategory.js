@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 function CommunityCategory({ categoryCode }) {
-    const [categoryName, setCategoryName] = useState('');
+    const [categoryName, setCategoryName] = useState("");
 
     useEffect(() => {
         fetch(process.env.REACT_APP_URL+`/category/${categoryCode}`)
@@ -12,7 +12,7 @@ function CommunityCategory({ categoryCode }) {
             .catch((error) => {
                 console.log(error);
             });
-    }, []);
+    }, [categoryCode]);
 
     return (
         <span>{categoryName}</span>

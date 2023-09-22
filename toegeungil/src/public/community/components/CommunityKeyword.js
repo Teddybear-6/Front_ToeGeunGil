@@ -1,18 +1,19 @@
 import { useState, useEffect } from "react";
 
-function CommunityKeyword({ keywordCode }) {
-    const [keywordName, setKeywordName] = useState();
+function CommunityKeyword({ code }) {
+    const [keyword, setKeyword] = useState({});
 
     useEffect(() => {
-        console.log(keywordCode)
-        fetch(process.env.REACT_APP_URL+`/keyword`).then((response) => response.json()).then((data) => setKeywordName(data.keywordName || '')).catch((error) => {
-        console.log(error);
-        })
-        console.log(keywordCode)
-    }, [keywordCode]);
+        fetch(process.env.REACT_APP_URL + `/keyword/${code.keywordCode}`)
+            .then((response) => response.json())
+            .then((data) => setKeyword(data));
+            console.log(keyword)
+    }, [code]);
 
     return (
-        <span>{keywordName}</span>
+        <>
+            {keyword.keywordName}
+        </>
     )
 }
 
