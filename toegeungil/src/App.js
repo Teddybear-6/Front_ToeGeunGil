@@ -23,7 +23,8 @@ import LoginSignup from "./public/user/login/LoginSignup";
 import Findpass from "./public/user/findpassword/Findpass";
 import Signup from "./public/user/Signup/Signup";
 import Mypage from "./public/user/mypage/Mypage";
-
+import ServiceLayout from "./public/notice/layout/ServiceLayout";
+import NoticeModify from "./public/notice/pages/NoticeModify";
 // import PublicRouter from './public/qna/pages/QuestionMain';
 import QuestionMain from "./public/qna/pages/QuestionMain";
 import QuestionDetail from "./public/qna/pages/QuestionDetail";
