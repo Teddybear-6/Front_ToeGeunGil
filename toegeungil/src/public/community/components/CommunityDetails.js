@@ -19,6 +19,24 @@ const CommunityDetails = () => {
             });
     };
 
+    useEffect(() => {},[community])
+
+    const deleteApi = (communityNum) => {
+        console.log(communityNum)
+        if(window.confirm("커뮤니티글을 삭제하시겠습니까?")){
+            fetch(process.env.REACT_APP_URL + `/communitys/${communityNum}`,{
+                method: "DELETE",
+                headers:{
+
+                },
+            }).then(res => res.json()).then(res => {
+                console.log(res)
+                setCommunitys(community.filter(code => code.communityNum != communityNum));
+                alert(res['value'])
+            })
+        }
+    }
+
     useEffect(() => {
         getCommunitys();
     }, [communityNum]);
@@ -36,9 +54,12 @@ const CommunityDetails = () => {
                     </div>
                 </div>
             </div>
-                <Link to="/communitys/modify" state={{ "communitys": community }}>
-                    <button className={DetailsStyle.CommunityModifyButton}>수정</button>
-                </Link>
+            <Link to="/communitys/modify" state={{ "communitys": community }}>
+                <button className={DetailsStyle.CommunityModifyButton}>수정</button>
+            </Link>
+            <Link to="/communitys">
+            <button className={DetailsStyle.CommunityDeleteButton} onClick={() => deleteApi(community.communityNum)}>삭제</button>
+            </Link>
         </>
     )
 
