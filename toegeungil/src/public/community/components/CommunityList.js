@@ -4,20 +4,24 @@ import CommunityKeyword from "./CommunityKeyword";
 import '../components/css/CommunityMain.css';
 import { Link } from "react-router-dom";
 import UserNickName from "./UserNickName";
+import DetailsTitleStyle from "../components/css/CommunityDetailsTitle.module.css";
 
 const CommunityList = () => {
     const [communityList, setCommunityList] = useState([]);
 
     const getCommunityList = () => {
-        fetch('http://localhost:8001/communitys')
+        fetch(process.env.REACT_APP_URL + "/communitys")
             .then((response) => response.json())
             .then((data) => {
                 setCommunityList(data);
             });
+            console.log(communityList);
+
     };
 
     useEffect(() => {
         getCommunityList();
+        console.log(communityList);
     }, []);
 
     const viewCommunity = (communityNum) => {
@@ -49,17 +53,23 @@ const CommunityList = () => {
                                     <UserNickName userNo={community.userNum} />
                                 </td>
                                 <td>
-                                    <CommunityLocation localCode={community.locationNum} />
+                                    <CommunityLocation localCode={community.localCode} />
                                 </td>
                                 <td>
-                                    <CommunityKeyword keywordCode={community.CommunityKeywordDTOList} />
+                                    <div className={DetailsTitleStyle.MainKeyword}>
+                                    <div className={DetailsTitleStyle.MainKeywordDiv}>
+                                    {community.communityKeywordDTOList?.map((m, index) => (
+                                        <CommunityKeyword key={index} code={m}/>
+                                    ))}
+                                    </div>
+                                    </div>
                                 </td>
                             </tr>
                         ))}
                 </tbody>
             </table>
-            <Link to={"/communitys"}>
-                <button className="community-regist-button">커뮤니티 글 작성</button>
+            <Link to={"/communitys/write"}>
+                <button className="community-regist-button" >커뮤니티 글 작성</button>
             </Link>
         </div>
     );
