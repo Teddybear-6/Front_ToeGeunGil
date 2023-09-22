@@ -2,13 +2,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import "../component/QuestionDetail.css";
-
+import "../component/AnswerWrite.css";
+import AnswerWrite from "./AnswerWrite";
 
 export const QuestionDetail = () => {
   const { questionNum } = useParams();
   const [detail, setDetail] = useState({});
   const [loading, setLoading] = useState(true);
- 
 
   useEffect(() => {
     setLoading(true);
@@ -20,21 +20,14 @@ export const QuestionDetail = () => {
       });
   }, [questionNum]);
 
-
-
   return (
- 
     <div className="view-wrapper">
-      <div className="customerService-banner">
-        <button className="notice-button">공지사항</button>
-        <button className="qna-button" >문의하기</button>
-        <button className="report-button">신고하기</button>
-      </div>
+      
       {loading ? (
         "로딩 중"
       ) : detail ? (
         <>
-            {/*질문글 제목 */}
+          {/*질문글 제목 */}
           <div className="view-name">
             <label>{detail.questionTitle}</label>
           </div>
@@ -47,33 +40,35 @@ export const QuestionDetail = () => {
             <div className="view-text">
               <label>{detail.questionContent}</label>
             </div>
-        
           </div>
-         
         </>
-      ) : ( "문의글이 없습니다." )}
-      <div className="view-answer">
-      <label>답변</label>
-            <textarea className="answer-box" placeholder="답변을 입력하세요">
+      ) : (
+        "문의글이 없습니다."
+      )}
+      {/* <div className="view-answer">
+        <label>답변</label>
+        <textarea
+          className="answer-box"
+          placeholder="답변을 입력하세요"
+        ></textarea>
+      </div> */}
+      
+      {/*답변*/}
+      <div>
+        <AnswerWrite/>
+      </div>
 
-            </textarea>
-            </div>
-          
-
-            <div className="user-button-box">
-            <Link to="/qna">
-              <button className="user-button">목록으로</button>
-            </Link>
-          </div>
-        
+      {/* <div className="user-button-box">
+        <Link to="/service/answer/">
+          <button className="answer-button">답변글 등록</button>
+          </Link>
+          <Link to="/service/qna">
+            <button className="user-button">목록으로</button>
+          </Link>
+      
+      </div> */}
     </div>
- 
-    
-   
-   
-  )
-
-  
-}
+  );
+};
 
 export default QuestionDetail;
