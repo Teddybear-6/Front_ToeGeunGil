@@ -52,7 +52,10 @@ function TutorHobbyMain({ hobbys, setHobby , api}) {
                                 {
                                     hobby.close === "Y" ? null : <button onClick={() => close(hobby.hobbyCode)} className="buttonOn mar">마감</button>
                                 }
+                                <Link  to="/hobbystudent"  type="button" state={{ "hobbyCode": hobby.hobbyCode }} >수강생 관리</Link>
+
                             </div>
+
                         </div>
                     </>
                 ))}

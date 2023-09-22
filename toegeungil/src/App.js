@@ -23,6 +23,7 @@ import HobbyWrite from "./public/tutor/page/hobbyWrite";
 import HobbyModify from "./public/tutor/page/hobbyModify";
 import TutorHobbyList from './public/tutor/page/tutorHobbyList';
 import TutorLayout from "./public/tutor/layouts/tutorLayout";
+import StudentList from "./public/tutor/components/studentList";
 import LoginSignup from "./public/user/login/LoginSignup";
 import Findpass from "./public/user/findpassword/Findpass";
 import Signup from "./public/user/Signup/Signup";
@@ -58,9 +59,8 @@ function App() {
             <Route element={<TutorLayout />}>
             <Route path="/tutor" element={<TutorHobbyList />} />
             <Route path='/hobbywrite'  element={<HobbyWrite />} />
-            <Route path='/modify' element={<HobbyModify />} />
-           
-           
+            <Route path='/hobbymodify' element={<HobbyModify />} />
+            <Route path="/hobbystudent" element={<StudentList/>}/>           
             </Route>
             {/* 소셜 */}
             <Route path="social">
