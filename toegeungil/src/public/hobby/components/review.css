@@ -1,26 +1,26 @@
 .RreviewFrame {
-border-radius: 50px;
-margin-top: 10px;
-border: 2px solid #8FC4B3;
+border-radius: 3.125rem;
+margin-top: 0.625rem;
+border: 0.125rem solid #8FC4B3;
 height: auto;
-width: 1400px;
-border-radius: 50px;
+width: 87.5rem;
+border-radius: 3.125rem;
 
 }
 
 
 .RreviewFrameRegist{
-  border-radius: 50px;
-  margin-top: 10px;
-  border: 2px solid #8FC4B3;
-  height: 200px;
-  width: 1400px;
-  border-radius: 50px;
+  border-radius: 3.125rem;
+  margin-top: 0.625rem;
+  border: 0.125rem solid #8FC4B3;
+  height: 12.5rem;
+  width: 87.5rem;
+  border-radius: 3.125rem;
 
 }
 .reviewViewsBox{
   
-  margin-left: 50px;
+  margin-left: 3.125rem;
 
   .yellowStar {
     color: #fcc419;
@@ -28,27 +28,27 @@ border-radius: 50px;
 }
 
 .reciewAnswer{
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 100px;
-  border-radius: 50px;
-  width: 1200px;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  margin-left: 6.25rem;
+  border-radius: 3.125rem;
+  width: 75rem;
   height: auto;
-  border: 2px solid #8FC4B3;
+  border: 0.125rem solid #8FC4B3;
   display: flex;
 }
 .view{
   display: flex;
 }
 .reviewContentBox{
-  margin-top: 40px;
-  margin-left: 400px;
+  margin-top: 2.5rem;
+  margin-left: 25rem;
   text-align: right;
   float: right;
 }
 
 .NickName{
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: bold;
   color: #655853;
 }
@@ -58,7 +58,7 @@ border-radius: 50px;
   color: #655853;
 }
 .answerContentBox{
-margin-left: 60px;
+margin-left: 3.75rem;
 }
 
 .answerContent{
@@ -67,12 +67,12 @@ margin-left: 60px;
 }
 
 .reviewViews{
-  margin-top: 20px;
-  margin-left: 50px;
-  border-radius: 50px;
-  width: 1300px;
+  margin-top: 1.25rem;
+  margin-left: 3.125rem;
+  border-radius: 3.125rem;
+  width: 81.25rem;
   height: auto;
-  border: 2px solid #8FC4B3;
+  border: 0.125rem solid #8FC4B3;
   display: flex;
 }
 
@@ -80,11 +80,11 @@ margin-left: 60px;
 
 .reviewContent{
   
-margin-left: 30px;
-margin-top: 20px;
-height: 75px;
-width: 1117px;
-border-radius: 50px;
+margin-left: 1.875rem;
+margin-top: 1.25rem;
+height: 4.688rem;
+width: 69.813rem;
+border-radius: 3.125rem;
 
 
 }
@@ -92,21 +92,21 @@ border-radius: 50px;
 .Wrap {
   display: flex;
   flex-direction: column;
-  padding-top: 15px;
+  padding-top: 0.938rem;
 }
 
 .RatingText {
   color: #787878;
-  font-size: 20px;
+  font-size: 1.25;
   font-weight: 400;
   color: #655853;
 }
 
 .Stars{
   display: flex;
-  padding-top: 5px;
-  margin-left: 50px;
-  margin-top: 20px;
+  padding-top: 0.313rem;
+  margin-left: 3.125rem;
+  margin-top: 1.25rem;
 
   & svg {
     color: gray;
@@ -128,31 +128,31 @@ border-radius: 50px;
 
 
 .reviewBtn{
-    margin-top: 20px;
-    margin-right: 50px;
+    margin-top: 1.25rem;
+    margin-right: 3.125rem;
     float: right;
-    border-radius: 50px;
-    width: 150px;
-    height: 75px;
+    border-radius: 3.125rem;
+    width: 9.375rem;
+    height: 4.688rem;
     background-color: #8FC4B3;
     color: #096249;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
     border: none;
 }
 .reviewBtn:hover{
-    margin-top: 20px;
-    margin-right: 50px;
-    border-radius: 50px;
-    width: 180px;
-    height: 90px;
+    margin-top: 1.25rem;
+    margin-right: 3.125rem;
+    border-radius: 3.125rem;
+    width: 11.25rem;
+    height: 5.625rem;
     background-color: #8FC4B3;
     position: relative;
     border: none;
     display: inline-block;
-    padding: 15px 30px;
+    padding: 0.938rem 1.875re;
     font-family: "paybooc-Light", sans-serif;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.938rem 2.188rem rgba(0, 0, 0, 0.2);
     text-decoration: none;
     font-weight: 600;
     transition: 0.25s;

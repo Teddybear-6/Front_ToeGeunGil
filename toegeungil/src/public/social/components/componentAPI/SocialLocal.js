@@ -4,7 +4,7 @@ function SocialLocal({code}) {
     const [localName, setLocalName] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:8001/local/${code}`)
+        fetch(process.env.REACT_APP_URL+`/local/${code}`)
             .then(response => response.json())
             .then(data => setLocalName(data));
     },[code]);

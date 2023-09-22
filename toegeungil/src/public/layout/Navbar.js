@@ -16,7 +16,7 @@ function Navbar() {
                     <NavLink to="/social" className={({isActive})=> isActive? "navbarOn navbarLine":"navbarFont navbarLine"}>Social</NavLink>
                     <NavLink to="/communitys" className={({isActive})=> isActive? "navbarOn navbarLine":"navbarFont navbarLine"}>Community</NavLink>
                 </div>
-                {/* 검생창 */}
+                {/* 검색창 */}
                 <div className="searchBar searchFlex">
                     <input className="searchBox" type="text" />
                     <img className="searchicon" src="/search.png" type="submit" />

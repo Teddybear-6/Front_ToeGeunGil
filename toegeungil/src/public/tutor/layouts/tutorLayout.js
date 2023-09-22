@@ -2,13 +2,15 @@ import TutorNavber from "../components/tutorHobbyNav";
 import {Outlet} from "react-router-dom";
 
 
-function Layout(){
+function TutorLayout(){
     return(
         <>
-            <div style={{display:"flex"}}>
+           
             <TutorNavber/>
             <Outlet/>
-            </div>
+         
         </>
     )
 }
+
+export default TutorLayout;

@@ -1,0 +1,87 @@
+.table-wrapper {
+    width: 1200px;
+    border-spacing: 0px 30px;
+    margin-top: 60px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+th {
+    border: 2px solid #B9A49B;
+    width: 1200px;
+    height: 60px;
+    color: #87746B;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 50px;
+}
+
+td {
+    border: 2px solid #B9A49B;
+    width: 1200px;
+    height: 60px;
+    color: #87746B;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 50px;
+    /* white-space: nowrap; 텍스트 줄바꿈 방지 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+th:first-child {
+    border-radius: 50px 0 0 50px;
+    border-right: 0px;
+
+}
+
+th:nth-child(2) {
+    border-right: 0px;
+    border-left: 0px;
+    border-radius: 0 0 0 0;
+}
+
+th:last-child {
+    border-radius: 0 50px 50px 0;
+    border-left: 0px;
+}
+
+td:first-child {
+    border-radius: 50px 0 0 50px;
+    border-right: 0px;
+}
+
+td:nth-child(2) {
+    border-right: 0px;
+    border-left: 0px;
+    border-radius: 0 0 0 0;
+}
+
+td:last-child {
+    border-radius: 0 50px 50px 0;
+    border-left: 0px;
+}
+
+.table-wrapper tbody tr:hover{
+    background-color: #E9E0DD;
+}
+
+.main-button-box {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 50px;
+}
+
+.main-button {
+    border: 2px solid #41A487;
+    border-radius: 50px;
+    color: #41A487;
+    font-weight: bold;
+    font-size: 20px;
+    width: 200px;
+    height: 60px;
+}
+
