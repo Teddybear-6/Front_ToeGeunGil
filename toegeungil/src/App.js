@@ -16,7 +16,7 @@ import HobbyModify from './public/tutor/page/hobbyModify';
 import LoginSignup from './public/user/login/LoginSignup';
 import Findpass from './public/user/findpassword/Findpass';
 import Signup from './public/user/Signup/Signup';
-import CommunityModify from './public/community/components/CommunityModify';
+import CommunityModify from './public/community/pages/CommunityModify';
 
 
 import Mypage from './public/user/mypage/Mypage';
