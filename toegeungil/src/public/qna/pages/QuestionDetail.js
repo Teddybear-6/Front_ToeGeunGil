@@ -28,12 +28,16 @@ export const QuestionDetail = () => {
       ) : detail ? (
         <>
           {/*질문글 제목 */}
+          <div></div>
           <div className="view-name">
             <label>{detail.questionTitle}</label>
           </div>
           <div className="view-nick">
             <label>작성자 : {detail.questionNick}</label>
+            
           </div>
+    
+          
 
           {/*질문글 내용 */}
           <div className="view-text-box">
@@ -45,13 +49,15 @@ export const QuestionDetail = () => {
       ) : (
         "문의글이 없습니다."
       )}
-      {/* <div className="view-answer">
-        <label>답변</label>
-        <textarea
-          className="answer-box"
-          placeholder="답변을 입력하세요"
-        ></textarea>
-      </div> */}
+
+    {/*삭제,수정 버튼*/}
+     <div className="delSet-button">
+          <Link to="/service/qna/삭제url">
+            <button className="delete-button">삭제</button>
+            <button  className="update-button">수정</button>
+          </Link>
+    </div>
+    
       
       {/*답변*/}
       <div>
