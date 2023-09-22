@@ -5,32 +5,41 @@ import NoticeView from "./public/notice/pages/NoticeView";
 import NoticeWrite from "./public/notice/pages/NoticeWrite";
 import NoticeModify from "./public/notice/pages/NoticeModify";
 import ServiceLayout from "./public/notice/layout/ServiceLayout";
+// import SocialMainCard from "./public/social/components/SocialMainCard";
+// import SocialParticipateList from "./public/social/components/componentAPI/SocialParticipateList";
+import CommunityDetail from './public/community/pages/CommunityDetail';
+import CommunityMain from './public/community/pages/CommunityMain';
+import CommunityWrite from './public/community/pages/CommunityWrite';
+import AllHobby from "./public/hobby/page/AllHobby";
+import HobbyDetail from "./public/hobby/page/hobbyDetail";
+import HobbyModify from './public/tutor/page/hobbyModify';
+import LoginSignup from './public/user/login/LoginSignup';
+import Findpass from './public/user/findpassword/Findpass';
+import Signup from './public/user/Signup/Signup';
+import CommunityModify from './public/community/components/CommunityModify';
+
+
+import Mypage from './public/user/mypage/Mypage';
 import SocialMain from "./public/social/page/SocialMain";
 import Layout from "./public/layout/Layout";
 import SocialDetail from "./public/social/page/SocialDetail";
-import CommunityDetail from "./public/community/pages/CommunityDetail";
-import CommunityMain from "./public/community/pages/CommunityMain";
-import CommunityRegist from "./public/community/pages/CommunityRegist";
 
-import AllHobby from "./public/hobby/page/AllHobby";
-import HobbyDetail from "./public/hobby/page/hobbyDetail";
 import SocialWrite from './public/social/page/SocialWrite';
 import ScrollToTop from './public/layout/scroll/ScrollToTop';
 import HobbyWrite from "./public/tutor/page/hobbyWrite";
-import HobbyModify from "./public/tutor/page/hobbyModify";
 import TutorHobbyList from './public/tutor/page/tutorHobbyList';
 import TutorLayout from "./public/tutor/layouts/tutorLayout";
 import StudentList from "./public/tutor/components/studentList";
-import LoginSignup from "./public/user/login/LoginSignup";
-import Findpass from "./public/user/findpassword/Findpass";
-import Signup from "./public/user/Signup/Signup";
-import Mypage from "./public/user/mypage/Mypage";
+
 // import PublicRouter from './public/qna/pages/QuestionMain';
 import QuestionMain from "./public/qna/pages/QuestionMain";
 import QuestionDetail from "./public/qna/pages/QuestionDetail";
 import QuestionWrite from "./public/qna/pages/QuestionWrite";
 import { AnswerMain } from "./public/qna/pages/AnswerMain";
 import AnswerDetail from "./public/qna/pages/AnswerDetail";
+import LocalMain from "./public/local/pages/LocalMain";
+import LocalWrite from "./public/local/pages/LocalWrite";
+import LocalModify from "./public/local/pages/LocalModify";
 import SocialModify from "./public/social/page/SocialModify";
 import AnswerWrite from "./public/qna/pages/AnswerWrite";
 
@@ -77,18 +86,22 @@ function App() {
               path="/communitys/:communityNum"
               element={<CommunityDetail />}
             />
-            <Route path="/communitys" element={<CommunityRegist />} />
+            <Route path="/communitys/:communityNum" element={<CommunityDetail />} />
+            <Route path="/communitys/write" element={<CommunityWrite/>} />
+            <Route path='/communitys/modify' element={<CommunityModify/>}/>
+            
+
             {/* 고객센터 */}
             <Route path="/service" element={<ServiceLayout />}>
-                <Route index element={<NoticeMain />} />
+              <Route index element={<NoticeMain />} />
               {/* 공지사항 */}
-                <Route path="/service/notice">
+              <Route path="/service/notice">
                 <Route index element={<NoticeMain />} />
                 <Route path='/service/notice/:noticeNum' element={<NoticeView />} />
                 <Route path='/service/notice/write' element={<NoticeWrite />} />
                 <Route path='/service/notice/:noticeNum/modify' element={<NoticeModify />} />
-                </Route>
-                
+              </Route>
+              {/* QnA */}
               <Route path="/service/qna">
                 <Route path="/service/qna" element={<QuestionMain />} />
                 <Route path=":questionNum" element={<QuestionDetail />} />
@@ -103,7 +116,13 @@ function App() {
                 <Route path="/service/answer/:answerNum" element={<AnswerDetail />} />
                 <Route path="/service/answer/write" element={<AnswerWrite/>}/>
               </Route>
+              {/* Local */}
+              <Route path="/service/local">
+                <Route path="/service/local" element={<LocalMain />} />
+                <Route path="/service/local/write" element={<LocalWrite/>}/>
+                <Route path="/service/local/:localCode/modify" element={<LocalModify/>}/>
               </Route>
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>

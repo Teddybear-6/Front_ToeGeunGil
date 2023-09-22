@@ -13,7 +13,7 @@ const LoginSignup = () => {
 
     const [action, setAction] = useState("Login");
 
-    const [userEmail, setUserEmail] = useState("testUser2@gmail.com");
+    const [userEmail, setUserEmail] = useState("testUser12@gmail.com");
     const [userPassword, setUserPassword] = useState("jhs123");
 
     const navigate = useNavigate();

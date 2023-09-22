@@ -9,7 +9,7 @@ function TestLogin() {
     const onclickLoginHandeler = () => {
         console.log(userEmail)
         console.log(userPassword)
-        fetch(`http://localhost:8001/login`, {
+        fetch(process.env.REACT_APP_URL+`/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "applcation/json"
