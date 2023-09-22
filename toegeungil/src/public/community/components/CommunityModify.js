@@ -1,22 +1,39 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import PostingStyle from "./css/CommunityPosting.module.css";
-import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
-function CommunityPosting() {
+
+function CommunityModify() {
+
+    const location = useLocation();
+    const communityNum = location.state;
+    console.log(communityNum);
+
+
     const [category, setCategory] = useState([]);
     const [keyword, setKeyword] = useState([]);
     const [communityKeywordDTOList, setCommunityKeywordDTOList] = useState([]);
     const [local, setLocal] = useState([]);
 
     const [community, setCommunity] = useState({
+        communityNum: communityNum,
         userNum: 3,
         communityTitle: '',
         communityIntro: '',
-        postWriteDate: new Date().toISOString(),
+        postUpdateDate: new Date().toISOString(),
     });
 
+
     useEffect(() => {
-        
+
+        if (communityNum) {
+            fetch(process.env.REACT_APP_URL + `/communitys/${communityNum}`)
+                .then(response => response.json())
+                .then(data => setCommunity(data));
+            console.log("1", community);
+        }
+
+
         //카테고리 
         fetch(process.env.REACT_APP_URL + "/category")
             .then(res => res.json())
@@ -32,6 +49,8 @@ function CommunityPosting() {
             .then(res => res.json())
             .then(res => setLocal(res))
 
+        console.log("1,", community);
+
     }, []);
 
     const handleValueChange = (e) => {
@@ -41,35 +60,38 @@ function CommunityPosting() {
         });
     }
 
+    //PUT 요청
     const handleSubmit = (e) => {
         const formData = new FormData();
         const blob = new Blob([JSON.stringify(community)], {
             type: 'application/json'
         });
-
         formData.append('community', blob);
+
 
         e.preventDefault();
         fetch(process.env.REACT_APP_URL + `/communitys`, {
-            method: "POST",
-            headers:{
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json; charset=utf-8"
             },
             body: formData
         })
             .then(response => {
                 response.json()
                 if (response.ok) {
-                    alert("게시글 등록이 되었습니다.");
+                    alert("게시글이 등록되었습니다.");
                 } else {
-                    alert("게시글 등록에 실패하였습니다.")
+                    alert("게시글 등록 실패하였습니다.")
                 }
             })
             .catch(error => {
-                console.log(error);
-                alert("에러가 발생하였습니다.");
+                console.error(error);
+                alert("error");
             })
     };
 
+    //카테고리
     const checkOnlyOne = (checkThis) => {
         const checkboxes = document.getElementsByName("categoryCode")
         for (let i = 0; i < checkboxes.length; i++) {
@@ -80,17 +102,25 @@ function CommunityPosting() {
         setCommunity({ ...community, [checkThis.name]: checkThis.value });
     };
 
+    //카테고리 불러오기 (기존 값)
+    const categoryHandler = () => {
+        const checkboxes = document.getElementsByName("categoryCode")
+        for (let i = 0; i < checkboxes?.length; i++) {
+            if (checkboxes[i].value == community.categoryCode) {
+                checkboxes[i].checked = true;
+            }
+        }
+    }
+
+    //키워드
     const onChangeHandler = (e) => {
         if (e.target.name !== "keywordCode") {
-            console.log(e.target.value)
             setCommunity({ ...community, [e.target.name]: e.target.value });
         } else {
             communityKeywordDTOList.push({ "keywordCode": Number(e.target.value) })
             setCommunity({ ...community, communityKeywordDTOList });
         }
     };
-
-    console.log(community);
 
     return (
         <>
@@ -105,8 +135,8 @@ function CommunityPosting() {
                                 className={PostingStyle.communityTitleFont}
                                 name="communityTitle"
                                 type="text"
+                                value={community.communityTitle}
                                 onChange={handleValueChange}
-                                placeholder="커뮤니티 제목을 입력해주세요."
                             />
                         </div>
                     </div>
@@ -119,11 +149,12 @@ function CommunityPosting() {
                                 className={PostingStyle.communityContentFont}
                                 name="communityIntro"
                                 type="text"
+                                value={community.communityIntro}
                                 onChange={handleValueChange}
-                                placeholder="커뮤니티 소개를 입력해주세요."
                             />
                         </div>
                     </div>
+                    {categoryHandler()}
                     <div className={PostingStyle.w1400h50}>
                         <div className={PostingStyle.w100h50}>
                             <label className={PostingStyle.communityLabelFont}>카테고리</label>
@@ -162,24 +193,26 @@ function CommunityPosting() {
                         <div className={PostingStyle.w100h50}>
                             <label className={PostingStyle.communityLabelFont}>지역 선택</label>
                         </div>
-                        <select className={PostingStyle.w575h50} name="localCode" id="local" onChange={onChangeHandler}>
+                        <select className={PostingStyle.w575h50} name="localCode" id="local" value={community.localCode}
+                            onChange={onChangeHandler}>
                             {local?.map((m, index) => (
                                 <option value={m.localCode} key={index}>{m.localName}</option>
                             ))}
                         </select>
                     </div>
                     <div>
-                        <Link to="/communitys">
+                        <button className="cacelBtn">취소하기</button>
+                        {/* <Link to="/communitys"> */}
                         <button className={PostingStyle.submitButton} type="submit"
-                            onClick={(e) => handleSubmit(e)}>등록하기</button>
-                        </Link>
+                            onClick={handleSubmit}>작성하기</button>
+                        {/* </Link> */}
                     </div>
                 </div>
-            </div>
+            </div >
 
         </>
     )
 }
 
-export default CommunityPosting;
+export default CommunityModify;
 

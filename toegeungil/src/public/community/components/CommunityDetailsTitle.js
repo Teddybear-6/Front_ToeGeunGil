@@ -12,7 +12,7 @@ const CommunityDetailsTitle = () => {
     // 초기값을 null로 설정 
 
     const getCommunity = () => {
-        fetch(process.env.REACT_APP_URL+`/communitys/${communityNum}`)
+        fetch(process.env.REACT_APP_URL + `/communitys/${communityNum}`)
             .then((response) => response.json())
             .then((data) => {
                 setCommunity(data);
@@ -38,8 +38,10 @@ const CommunityDetailsTitle = () => {
                             {locationNum !== null && <CommunityLocation localCode={community.localCode} />}
                             {/* localNum의 값이 null이 아닐 경우에만 렌더링 되게 설정 */}
                         </div>
-                        <div className={DetailsTitleStyle.communityKeyword}>
-                            <CommunityKeyword keywordCode={community.communityKeywordDTOList}/>
+                        <div className={DetailsTitleStyle.communityKeywordList}>
+                            {community.communityKeywordDTOList?.map((m, index) => (
+                                <CommunityKeyword key={index} code={m} />
+                            ))}
                         </div>
                     </div>
                 </div>

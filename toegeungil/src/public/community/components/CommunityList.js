@@ -4,6 +4,7 @@ import CommunityKeyword from "./CommunityKeyword";
 import '../components/css/CommunityMain.css';
 import { Link } from "react-router-dom";
 import UserNickName from "./UserNickName";
+import DetailsTitleStyle from "../components/css/CommunityDetailsTitle.module.css";
 
 const CommunityList = () => {
     const [communityList, setCommunityList] = useState([]);
@@ -55,9 +56,13 @@ const CommunityList = () => {
                                     <CommunityLocation localCode={community.localCode} />
                                 </td>
                                 <td>
+                                    <div className={DetailsTitleStyle.MainKeyword}>
+                                    <div className={DetailsTitleStyle.MainKeywordDiv}>
                                     {community.communityKeywordDTOList?.map((m, index) => (
                                         <CommunityKeyword key={index} code={m}/>
                                     ))}
+                                    </div>
+                                    </div>
                                 </td>
                             </tr>
                         ))}

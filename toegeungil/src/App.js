@@ -19,6 +19,7 @@ import HobbyModify from './public/tutor/page/hobbyModify';
 import LoginSignup from './public/user/login/LoginSignup';
 import Findpass from './public/user/findpassword/Findpass';
 import Signup from './public/user/Signup/Signup';
+import CommunityModify from './public/community/components/CommunityModify';
 function App() {
   /* 라우팅
       : 어떤 요청(URL)을 어디로 안내 및 매핑 할 것인지를 정해놓고 진행하는 것
@@ -51,6 +52,7 @@ function App() {
             <Route path="/communitys" element={<CommunityMain />} />
             <Route path="/communitys/:communityNum" element={<CommunityDetail />} />
             <Route path="/communitys/write" element={<CommunityWrite/>} />
+            <Route path='/communitys/:communityNum/modify' element={<CommunityModify/>}/>
             {/* 고객센터 */}
             <Route path="notice">
               <Route index element={<NoticeMain />} />
