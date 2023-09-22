@@ -8,6 +8,7 @@ import SocialParticipateList from "./componentAPI/SocialParticipateList";
 import "../components/css/Button.css"
 import "../components/css/SocialPosting.css"
 import { Link, NavLink } from "react-router-dom";
+import jwt_decode from "jwt-decode";
 
 import DetailsStyle from './css/SocialDetails.module.css';
 
@@ -28,11 +29,29 @@ function SocialDetailCard() {
     const { socialNum } = useParams();
     const [socials, setSocials] = useState({});
 
+    const [user, setUser] = useState();
+
     useEffect(() => {
         fetch(process.env.REACT_APP_URL + `/socials/${socialNum}`)
             .then(response => response.json()) //json으로 받는다
             .then(data => setSocials(data));
-    }, []);
+
+        if (sessionStorage.getItem("Authorizaton")) {
+            setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
+        }
+    }, [socialNum]);
+
+    //권한 확인 후 핸들러 실행
+    // const auth = (socialNum) => {
+    //     if(!(user === undefined) && !(user === null) && (user.auth[0] === "USER" ||  user.auth[0] === "TUTOR" || user.auth[0] === "ADMIN" )){
+    //         if(user.no === socials.userNum){
+    //             setSocials({...socials, ["userNum"]:user.no})
+    //             handleSubmit(socialNum);
+    //         }
+    //     } else {
+    //         alert("[social] 작성자가 아닙니다.");
+    //     }
+    // }
 
     const handleSubmit = (socialNum) => {
         if (!window.confirm("[social] 게시글을 삭제하시겠습니까?")) {
@@ -43,11 +62,11 @@ function SocialDetailCard() {
                 method: "DELETE",
                 headers: {}
             })
-            .then(response => response.json())
-            .then(response => { //return 값에 대한 처리
-                setSocials(socials.filter(code => code.socialNum != socialNum))
-                alert(response['value'])
-            });
+                .then(response => response.json())
+                .then(response => { //return 값에 대한 처리
+                    setSocials(socials.filter(code => code.socialNum != socialNum))
+                    alert(response['value'])
+                });
             window.location.href = "/social"
         }
     }
@@ -130,13 +149,33 @@ function SocialDetailCard() {
                 </div>
                 <div className="buttonFlex marT30">
                     {/* 소셜 삭제 수정 작성자 권한 주기 */}
-                    <button type="button" className="buttonOn marR30" onClick={()=> handleSubmit(socials.socialNum)}>소셜삭제</button>
-                    <Link to="/social/modify" type="button" className="buttonOn marR30" state={{Statesocial: socials}}>소셜수정</Link>
-                    <Link to="/social" type="button" className="buttonOff">목록으로</Link>
+                    {
+                        !(!(user === undefined) && !(user === null)) ? null :
+                            !(user.no === socials.userNum) ? null :
+                                <>
+                                    <button type="button" className="buttonOn_so marR30" onClick={handleSubmit}>소셜삭제</button>
+                                    <Link to="/social/modify" type="button" className="buttonOn_so marR30" state={{ Statesocial: socials }}>소셜수정</Link>
+                                </>
+                    }
+                    <Link to="/social" type="button" className="buttonOff_so">목록으로</Link>
                 </div>
             </div>
         </>
     )
 }
+
+
+
+
+// const auth = (socialNum) => {
+//     if (!(user === undefined) && !(user === null) && (user.auth[0] === "USER" || user.auth[0] === "TUTOR" || user.auth[0] === "ADMIN")) {
+//         if (user.no === socials.userNum) {
+//             setSocials({ ...socials, ["userNum"]: user.no })
+//             handleSubmit(socialNum);
+//         }
+//     } else {
+//         alert("[social] 작성자가 아닙니다.");
+//     }
+// }
 
 export default SocialDetailCard;

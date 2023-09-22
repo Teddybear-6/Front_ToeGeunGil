@@ -43,6 +43,7 @@ function SocialWriteCard() {
 
 
     //FK
+    const [user, setUser] = useState();
     const [category, setCategory] = useState([]); //categoryCode
     const [keyword, setKeyword] = useState([]); //keywordCode
     const [keywordDTOList, setKeywordDTOList] = useState([]); //keywordDTOList
@@ -52,7 +53,7 @@ function SocialWriteCard() {
 
     //input으로 바로 값 입력
     const [social, setSocial] = useState({
-        userNum: 4, //유저 번호
+        userNum: user, //유저 번호
         socialName: '', //제목
         socialDate: '', //모임일시
         socialFixedNum: '', //정원
@@ -65,6 +66,12 @@ function SocialWriteCard() {
     });
 
     useEffect(() => {
+
+        //권한설정
+        if (sessionStorage.getItem("Authorizaton")) {
+            setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
+
+        }
 
         //카테고리
         fetch(process.env.REACT_APP_URL + "/category")
@@ -285,8 +292,8 @@ function SocialWriteCard() {
 
                 {/* 등록 버튼 */}
                 <div className="buttonFlex marT30">
-                    <Link to="/social" type="button" className="buttonOff marR30">이전으로</Link>
-                    <button to="/social" type="button" className="buttonOn" onClick={(e) => handleSubmit(e)}>등록하기</button>
+                    <Link to="/social" type="button" className="buttonOff_so marR30">이전으로</Link>
+                    <button to="/social" type="button" className="buttonOn_so" onClick={(e) => handleSubmit(e)}>등록하기</button>
                 </div>
             </div>
         </>
