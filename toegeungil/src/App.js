@@ -5,7 +5,6 @@ import NoticeView from "./public/notice/pages/NoticeView";
 import NoticeWrite from "./public/notice/pages/NoticeWrite";
 import NoticeModify from "./public/notice/pages/NoticeModify";
 import ServiceLayout from "./public/notice/layout/ServiceLayout";
-import Mypage from './public/user/mypage/Mypage';
 import SocialMain from "./public/social/page/SocialMain";
 import Layout from "./public/layout/Layout";
 import SocialDetail from "./public/social/page/SocialDetail";
@@ -25,7 +24,7 @@ import StudentList from "./public/tutor/components/studentList";
 import LoginSignup from "./public/user/login/LoginSignup";
 import Findpass from "./public/user/findpassword/Findpass";
 import Signup from "./public/user/Signup/Signup";
-
+import Mypage from "./public/user/mypage/Mypage";
 // import PublicRouter from './public/qna/pages/QuestionMain';
 import QuestionMain from "./public/qna/pages/QuestionMain";
 import QuestionDetail from "./public/qna/pages/QuestionDetail";
@@ -50,8 +49,9 @@ function App() {
             <Route path="findpass" element={<Findpass />} />
             <Route path="signup" element={<Signup />} />
             {/* 마이페이지 */}
-            <Route path='mypage' element={<Mypage/>}>
-            </Route>
+            <Route path="mypage" element={<Mypage/>}>
+              {/* <Route index element={<Mypage/>}/> */}
+              </Route>
             {/* 취미 */}
             <Route path='hobby'>
             <Route index  element={<AllHobby/>} />
@@ -78,7 +78,6 @@ function App() {
               element={<CommunityDetail />}
             />
             <Route path="/communitys" element={<CommunityRegist />} />
-
             {/* 고객센터 */}
             <Route path="/service" element={<ServiceLayout />}>
                 <Route index element={<NoticeMain />} />
@@ -113,4 +112,3 @@ function App() {
 }
 
 export default App;
-

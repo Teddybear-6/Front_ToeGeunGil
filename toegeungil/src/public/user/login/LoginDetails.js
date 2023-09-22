@@ -29,7 +29,7 @@ function getLoginDetails(){
         
         return(
             <div className="LginDetails" >
-
+                    
 
             </div>
         );
