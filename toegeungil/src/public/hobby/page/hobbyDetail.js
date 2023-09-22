@@ -151,11 +151,11 @@ function HobbyDetail() {
                 <HobbyTutor tutorIntro={detail.tutorIntro} tutorCode={detail.tutorCode}></HobbyTutor>
 
                 {
-                    detail.close == 'Y' && <HobbyReview hobbyCode={hobbyCode} />
+                    detail.close == 'Y'  && <HobbyReview hobbyCode={hobbyCode} />
                 }
                 {
 
-                    detail.close == 'Y' && <RevieWrite hobbyCode={hobbyCode} />
+                    (detail.close == 'Y' && join ) &&   <RevieWrite hobbyCode={hobbyCode} />
                 }
 
 

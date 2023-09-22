@@ -48,11 +48,11 @@ function TutorHobbyMain({ hobbys, setHobby , api}) {
                             <HobbyCard hobbys={hobby} key={index} />
                             <div className="btnframe">
                                 <Link to="/hobbymodify" type="button" className="buttonOn " state={{ "hobbyCode": hobby.hobbyCode }}>수정</Link>
-                                <button className="buttonOn mar" onClick={()=>deleteApi(hobby.hobbyCode)}>삭제</button>
+                                <button className="buttonOn" onClick={()=>deleteApi(hobby.hobbyCode)}>삭제</button>
                                 {
-                                    hobby.close === "Y" ? null : <button onClick={() => close(hobby.hobbyCode)} className="buttonOn mar">마감</button>
+                                    hobby.close === "Y" ? null : <button onClick={() => close(hobby.hobbyCode)} className="buttonOn">마감</button>
                                 }
-                                <Link  to="/hobbystudent"  type="button" state={{ "hobbyCode": hobby.hobbyCode }} >수강생 관리</Link>
+                                <Link  to="/hobbystudent" className="buttonOn"  type="button" state={{ "hobbyCode": hobby.hobbyCode }} >수강생</Link>
 
                             </div>
 

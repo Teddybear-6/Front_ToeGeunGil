@@ -4,7 +4,7 @@ import Imageset from "../components/modifyImage";
 import KeywordList from "../components/keywordList";
 import "./hobbyWrite.css"
 
-import { useLocation } from "react-router-dom"
+import { useLocation  ,Link} from "react-router-dom"
 
 
 
@@ -15,8 +15,8 @@ function HobbyModify() {
   const [category, setCategory] = useState([]);
   const [keyword, setKeyword] = useState([]);
   const [hobby, setHobby] = useState({})
-  const [keywordDTOList, setKeywordDTOList] = useState({})
-  const [urls , setUrls]= useState();
+
+  const [urls, setUrls] = useState();
 
   const [hobbyImage, setHobbyImage] = useState([])
   const [local, setLocal] = useState([{}]);
@@ -28,16 +28,16 @@ function HobbyModify() {
       setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
     }
 
-    fetch(process.env.REACT_APP_URL+`/hobbys/${hobbyCode.state.hobbyCode}`).then(res => res.json()).then(res => setHobby(res))
-    fetch(process.env.REACT_APP_URL+"/category").then(res => res.json()).then(res =>setCategory(res))
-    fetch(process.env.REACT_APP_URL+"/keyword").then(res => res.json()).then(res => setKeyword(res))
-    fetch(process.env.REACT_APP_URL+"/local").then(res => res.json()).then(res => setLocal(res))
+    fetch(process.env.REACT_APP_URL + `/hobbys/${hobbyCode.state.hobbyCode}`).then(res => res.json()).then(res => setHobby(res))
+    fetch(process.env.REACT_APP_URL + "/category").then(res => res.json()).then(res => setCategory(res))
+    fetch(process.env.REACT_APP_URL + "/keyword").then(res => res.json()).then(res => setKeyword(res))
+    fetch(process.env.REACT_APP_URL + "/local").then(res => res.json()).then(res => setLocal(res))
 
-    
-  }, [])
 
-  
-  const  categoryHandler = () => {
+  }, [hobbyCode])
+
+
+  const categoryHandler = () => {
     const checkboxes = document.getElementsByName("categoryCode")
     for (let i = 0; i < checkboxes?.length; i++) {
       if (checkboxes[i].value == hobby.categoryCode) {
@@ -45,21 +45,14 @@ function HobbyModify() {
 
       }
     }
-    
+
   }
- 
+
 
 
   const onChangeHandler = (e) => {
 
-   
-      setHobby({ ...hobby, [e.target.name]: e.target.value });
-  
-      // setKeywordDTOList({...keywordDTOList, [e.target.name]: Number(e.target.value) })
-      // setHobby({ ...hobby, keywordDTOList });
-     
-      // console.log(keywordDTOList)
-
+    setHobby({ ...hobby, [e.target.name]: e.target.value });
 
   };
 
@@ -80,7 +73,12 @@ function HobbyModify() {
   }
 
 
-
+  // const test = () => {
+  //   console.log(keywordDTOList)
+  //   setHobby({...hobby,
+  //     keywordDTOList : keywordDTOList})
+  //   console.log(hobby);
+  // }
 
 
 
@@ -88,55 +86,55 @@ function HobbyModify() {
   const onClickHandler = () => {
 
     if (!(user === undefined) && !(user === null) && user.auth[0] === 'ADMIN' || user.auth[0] === 'TUTOR') {
-      if(user.no===hobby.tutorCode){
+      if (user.no === hobby.tutorCode) {
 
-     
-      setHobby({ ...hobby, ["tutorCode"]: user.no })
-      
-      const formData = new FormData()
-      const blob = new Blob([JSON.stringify(hobby)], {
-        type: 'application/json',
-      });
-   
-      const blob1 = new Blob([JSON.stringify(urls)], {
-        type: 'application/json',
-      });
+        //  console.log(keywordDTOList)
+        setHobby({ ...hobby, ["tutorCode"]: user.no })
+        // setHobby({...hobby, keywordDTOList : keywordDTOList.map((m)=>  m.keywordCode)})
 
-      const blob3 = new Blob([JSON.stringify(keywordDTOList)], {
-        type: 'application/json',
-      });
+        console.log(hobby)
 
-      formData.append('hobby', blob);
-      formData.append('urls', blob1);
-      formData.append('keywordDTOList', blob3);
+        const formData = new FormData()
+        const blob = new Blob([JSON.stringify(hobby)], {
+          type: 'application/json',
+        });
 
-      console.log(hobbyImage)
-     
+        const blob1 = new Blob([JSON.stringify(urls)], {
+          type: 'application/json',
+        });
 
-      if(hobbyImage.length !=0 ){
-        console.log("확인")
-        for (let i = 0; i < hobbyImage[0].length; i++) {
-          formData.append('hobbyImage', hobbyImage[0][i]);
+        // const blob3 = new Blob([JSON.stringify(keywordDTOList)], {
+        //   type: 'application/json',
+        // });
+
+        formData.append('hobby', blob);
+        formData.append('urls', blob1);
+        // formData.append('keywordDTOList', blob3);
+
+        if (hobbyImage.length != 0) {
+          console.log("확인")
+          for (let i = 0; i < hobbyImage[0].length; i++) {
+            formData.append('hobbyImage', hobbyImage[0][i]);
+          }
+        } else {
+          formData.append('hobbyImage', null);
         }
-      }else{
-        formData.append('hobbyImage', null);
+
+
+        fetch(process.env.REACT_APP_URL + "/hobbys", {
+          method: "PUT",
+          body: formData,
+          headers: {
+            "Authorization": sessionStorage.getItem("Authorizaton")
+          },
+        }).then(res => res.json()).then(res => {
+          console.log(res['value']);
+          alert(res['value'])
+
+        }).catch((e) => alert(e))
+      } else {
+        alert("작성자만 수정할 수 있습니다.")
       }
-      
-
-      fetch(process.env.REACT_APP_URL+"/hobbys", {
-        method: "PUT",
-        body: formData,
-        headers: {
-          "Authorization": sessionStorage.getItem("Authorizaton")
-        },
-      }).then(res => res.json()).then(res => {
-        console.log(res['value']);
-        alert(res['value'])
-
-      }).catch((e) => alert(e))
-    }else{
-      alert("작성자만 수정할 수 있습니다.")
-    }
     } else {
       alert("강사만 작성할 수 있습니다.")
 
@@ -244,11 +242,7 @@ function HobbyModify() {
 
           <p className="categoryName">키워드</p>
           <div className="keyword">
-             
-             <KeywordList keyword={keyword} hobby={hobby} setHobby={setHobby}  hobbyKeyword={hobby.keywordDTOList} setKeywordDTOList={setKeywordDTOList} keywordDTOList={keywordDTOList} />
-
-          
-         
+            <KeywordList keyword={keyword} hobby={hobby} setHobby={setHobby} hobbyKeyword={hobby.keywordDTOList} />
           </div>
         </div>
 
@@ -266,15 +260,16 @@ function HobbyModify() {
 
 
         <div className="buttonFrame">
-          {/* <Link to="/hobby"> */}
+          <Link to="/hobby">
             <button className="cancelBtn">취소하기</button>
-          {/* </Link>
-          <Link to="/hobby"> */}
+          </Link>
+          <Link to="/hobby">
             <button onClick={onClickHandler} className="createBtn">작성하기</button>
-          {/* </Link> */}
+          </Link>
+
         </div>
       </div>
-   
+
     </>
   )
 }

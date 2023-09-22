@@ -21,7 +21,7 @@ function StudentList(){
             .then(data => setJoinuser(data)).catch(e => console.log(e))
     }
 
-     console.log(joinuser)
+    console.log(joinuser)
     return (
         <div className='layout'>
             <div className="notice-wrapper">
