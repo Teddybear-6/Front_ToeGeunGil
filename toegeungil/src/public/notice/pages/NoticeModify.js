@@ -8,7 +8,6 @@ const NoticeModify = () => {
     const [notice, setNotice] = useState({});
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
-    const [modiDate, setModiDate] = useState('');
     const [user, setUser] = useState('');
     const navigate = useNavigate();
 
@@ -22,7 +21,6 @@ const NoticeModify = () => {
                 setNotice(data);
                 setTitle(data.noticeTitle);
                 setContent(data.noticeContent);
-                setModiDate(data.noticeModiDate);
             })
     }, [noticeNum])
 
@@ -39,9 +37,6 @@ const NoticeModify = () => {
     }
 
     const updateClick = () => {
-        const currentDate = new Date();
-        const noticeModiDate = currentDate.toLocaleDateString();
-        setModiDate(noticeModiDate);
 
         fetch(process.env.REACT_APP_URL + `/notices/${noticeNum}`, {
             method: "PUT",
@@ -52,7 +47,6 @@ const NoticeModify = () => {
             body: JSON.stringify({
                 "noticeTitle": title,
                 "noticeContent": content,
-                "noticeModiDate": modiDate, // 수정일 업데이트
             }),
         })
             .then(response => {
