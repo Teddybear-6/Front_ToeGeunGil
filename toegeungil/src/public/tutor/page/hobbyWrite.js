@@ -7,7 +7,7 @@ function HobbyWrite() {
   const [user, setUser] = useState();
   const [category, setCategory] = useState([]);
   const [keyword, setKeyword] = useState([]);
-  const [hobby, setHobby] = useState({})
+  const [hobby, setHobby] = useState({"localCode": 1})
   const [keywordDTOList, setKeywordDTOList] = useState([])
   const [hobbyImage, setHobbyImage] = useState([])
   const [local, setLocal] = useState([{}]);
@@ -187,7 +187,7 @@ function HobbyWrite() {
         <div className="localframe">
           <label for="local">지역선택</label>
           <div className="local">
-            <select name="localCode" id="local" className="textAll" onChange={onChangeHandler}>
+            <select defaultValue="1" name="localCode" id="local" className="textAll" onChange={onChangeHandler}>
               {
                 local?.map((m, index) => (
                   <option value={m.localCode} key={index}>{m.localName}</option>

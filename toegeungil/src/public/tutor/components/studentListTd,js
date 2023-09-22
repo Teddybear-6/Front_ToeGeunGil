@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import SturdenCss  from  "./studentList.css"
 function StudentListTr({userNo}){
     const [user, setUser] = useState();
 
@@ -15,11 +15,13 @@ function StudentListTr({userNo}){
 
     return(
         <>
+     
         <td>{user.userNo}</td>
         <td>
             {user.nickName}
         </td>
         <td>{notice.userName}</td>
+    
         </>
     )
 }

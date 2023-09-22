@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import StudentListTr from "./studentListTd,js";
 import { useLocation } from "react-router-dom"
+
+
 function StudentList(){
     const [joinuser, setJoinuser] = useState([]);
 
@@ -25,26 +27,34 @@ function StudentList(){
     return (
         <div className='layout'>
             <div className="notice-wrapper">
+            <div className="studetn">
                 <table className="table-wrapper">
+             
                     <thead>
                         <tr>
+                       
                             <th>수강생 번호</th>
                             <th>닉네임</th>
                             <th>이름</th>
+
+
                         </tr>
                     </thead>
                     <tbody>
                         {
                            joinuser.length==0 ? "수강생이 없습니다." : joinuser.map((user) => (
+                           
                                 <tr key={user.joinNum}>   
                                    <StudentListTr userNo={user.userNo}></StudentListTr>
                                 </tr>
+                               
                             ))
                         }
                     </tbody>
              
-                  
+               
                 </table>
+                </div>
             </div >
         </div>
     )
