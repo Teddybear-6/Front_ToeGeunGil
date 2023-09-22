@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
+import jwt_decode from "jwt-decode";
 import "../components/NoticeWrite.css";
 
 const NoticeModify = () => {
@@ -8,9 +9,13 @@ const NoticeModify = () => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [modiDate, setModiDate] = useState('');
+    const [user, setUser] = useState('');
     const navigate = useNavigate();
 
     useEffect(() => {
+        if (sessionStorage.getItem("Authorizaton")) {
+            setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
+        }
         fetch(process.env.REACT_APP_URL + `/notices/${noticeNum}`)
             .then(response => response.json())
             .then(data => {
@@ -65,38 +70,40 @@ const NoticeModify = () => {
     }
     return (
         <div className='layout'>
-            <div className="wrapper" >
-                <h1 className="write-header">공지사항 작성</h1>
-                <div className="write-wrapper textarea">
-                    <div className="write-col1">
-                        <label>공지 제목</label>
-                        <div className="write-text1 textarea">
-                            <input className="text-box"
-                                type="text"
-                                defaultValue={notice.noticeTitle}
-                                onChange={handleTitleChange}
-                            />
+            {!user ? "관리자만 사용 가능합니다" : (user.auth[0] == 'ADMIN') ?
+                <div className="wrapper" >
+                    <h1 className="write-header">공지사항 작성</h1>
+                    <div className="write-wrapper textarea">
+                        <div className="write-col1">
+                            <label>공지 제목</label>
+                            <div className="write-text1 textarea">
+                                <input className="text-box"
+                                    type="text"
+                                    defaultValue={notice.noticeTitle}
+                                    onChange={handleTitleChange}
+                                />
+                            </div>
+                        </div>
+                        <div className="write-col2 flexsty">
+                            <label className="write-content">공지 내용</label>
+                            <div className="write-text2 textarea">
+                                <textarea className="text-box2"
+                                    defaultValue={notice.noticeContent}
+                                    onChange={handleContentChange}
+                                />
+                            </div>
                         </div>
                     </div>
-                    <div className="write-col2 flexsty">
-                        <label className="write-content">공지 내용</label>
-                        <div className="write-text2 textarea">
-                            <textarea className="text-box2"
-                                defaultValue={notice.noticeContent}
-                                onChange={handleContentChange}
-                            />
-                        </div>
+                    <div className="button">
+                        <Link to="/service/notice">
+                            <button className="cancel-button" onClick={cancelClick}>취소</button>
+                        </Link>
+                        <Link to="/service/notice">
+                            <button className="write-button" onClick={updateClick}>등록</button>
+                        </Link>
                     </div>
                 </div>
-                <div className="button">
-                    <Link to="/service/notice">
-                        <button className="cancel-button" onClick={cancelClick}>취소</button>
-                    </Link>
-                    <Link to="/service/notice">
-                        <button className="write-button" onClick={updateClick}>등록</button>
-                    </Link>
-                </div>
-            </div>
+                : null}
         </div>
     )
 }
