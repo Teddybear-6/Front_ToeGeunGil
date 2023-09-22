@@ -30,7 +30,7 @@ const NoticeView = () => {
         }
         fetch(process.env.REACT_APP_URL + `/notices/${noticeNum}`, {
             method: "DELETE",
-            headers:{
+            headers: {
                 "Authorization": sessionStorage.getItem("Authorizaton")
             }
         })

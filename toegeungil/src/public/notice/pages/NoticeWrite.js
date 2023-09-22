@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../components/NoticeWrite.css";
 import jwt_decode from "jwt-decode";
@@ -7,6 +7,12 @@ const NoticeWrite = () => {
     const [user, setUser] = useState('');
     const [noticeTitle, setNoticeTitle] = useState(''); // 공지 제목
     const [noticeContent, setNoticeContent] = useState(''); // 공지 내용
+
+    useEffect(() => {
+        if (sessionStorage.getItem("Authorizaton")) {
+            setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
+        }
+    }, [])
 
     const handleTitleChange = (e) => {
         setNoticeTitle(e.target.value);
@@ -23,9 +29,7 @@ const NoticeWrite = () => {
     }
 
     const writeClick = () => {
-        if (sessionStorage.getItem("Authorizaton")) {
-            setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
-        }
+
         console.log(noticeTitle);
         fetch(process.env.REACT_APP_URL + `/notices`,
             {
@@ -53,14 +57,16 @@ const NoticeWrite = () => {
 
     return (
         <div className='layout'>
-            {!user ? "관리자만 사용 가능합니다" : (user.auth[0] == 'ADMIN') ?
-                <div className="wrapper" >
-                    <h1 className="write-header">공지사항 작성</h1>
+
+            <div className="wrapper" >
+                <h1 className="write-header">공지사항 작성</h1>
+                {user && user.auth[0] === 'ADMIN' ? (
                     <div className="write-wrapper textarea">
                         <div className="write-col1">
                             <label>공지 제목</label>
                             <div className="write-text1 textarea">
-                                <input className="text-box"
+                                <input
+                                    className="text-box"
                                     type="text"
                                     value={noticeTitle}
                                     onChange={handleTitleChange}
@@ -70,13 +76,18 @@ const NoticeWrite = () => {
                         <div className="write-col2 flexsty">
                             <label className="write-content">공지 내용</label>
                             <div className="write-text2 textarea">
-                                <textarea className="text-box2"
+                                <textarea
+                                    className="text-box2"
                                     value={noticeContent}
                                     onChange={handleContentChange}
                                 />
                             </div>
                         </div>
                     </div>
+                ) : (
+                    <p>관리자가 아닙니다 공지사항 작성 권한이 없습니다</p>
+                )}
+                {!user ? null : (user.auth[0] == 'ADMIN') ?
                     <div className="button">
                         <Link to="/service/notice">
                             <button className="cancel-button" onClick={cancelClick}>취소</button>
@@ -85,8 +96,8 @@ const NoticeWrite = () => {
                             <button className="write-button" onClick={writeClick}>등록</button>
                         </Link>
                     </div>
-                </div>
-                : null}
+                    : null}
+            </div>
         </div>
     )
 }
