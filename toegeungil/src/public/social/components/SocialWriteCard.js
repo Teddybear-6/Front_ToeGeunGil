@@ -92,36 +92,41 @@ function SocialWriteCard() {
 
     //POST 요청
     const handleSubmit = (e) => {
-        const formData = new FormData();
-        const blob = new Blob([JSON.stringify(social)], {
-            type: 'application/json'
-        });
-        formData.append('social', blob);
-        formData.append('image', image[0]);
+        if (!window.confirm("[social] 게시글을 등록하시겠습니까?")) {
+            // alert("취소(아니오)를 누르셨습니다.");
+        } else {
+            const formData = new FormData();
+            const blob = new Blob([JSON.stringify(social)], {
+                type: 'application/json'
+            });
+            formData.append('social', blob);
+            formData.append('image', image[0]);
 
 
-        e.preventDefault(); // submit action을 안타도록 설정
-        fetch(process.env.REACT_APP_URL + `/socials`, {
-            method: "POST", //메소드 지정
-            headers: { //데이터 타입 지정
-                // "Content-Type": "application/json; charset=utf-8"
-            },
-            body: formData
-            // body: JSON.stringify(social) //실제 데이터 파싱하여 body에 저장
-        })
-            .then(response => { //return 값에 맞는 req 지정
-                response.json()
-                if (response.ok) {
-                    alert("[Social] 게시글이 등록되었습니다.");
-                } else {
-                    alert("게시글 등록 실패...")
-                }
+            e.preventDefault(); // submit action을 안타도록 설정
+            fetch(process.env.REACT_APP_URL + `/socials`, {
+                method: "POST", //메소드 지정
+                headers: { //데이터 타입 지정
+                    // "Content-Type": "application/json; charset=utf-8"
+                },
+                body: formData
+                // body: JSON.stringify(social) //실제 데이터 파싱하여 body에 저장
             })
-            .catch(error => {
-                console.error("[Social] 게시글 등록 중 오류 발생 : ", error);
-                alert("error");
-            })
-        // .then(response => console.log(response)) //return 값에 대한 처리
+                .then(response => { //return 값에 맞는 req 지정
+                    response.json()
+                    if (response.ok) {
+                        alert("[Social] 게시글이 등록되었습니다.");
+                    } else {
+                        alert("게시글 등록 실패...")
+                    }
+                })
+                .catch(error => {
+                    console.error("[Social] 게시글 등록 중 오류 발생 : ", error);
+                    alert("error");
+                })
+                
+            window.location.href = "/social"
+        }
     };
 
     //카테고리
@@ -280,8 +285,8 @@ function SocialWriteCard() {
 
                 {/* 등록 버튼 */}
                 <div className="buttonFlex marT30">
-                    <Link to="/social" type="submit" className="buttonOff marR30">이전으로</Link>
-                    <button to="/social" type="submit" className="buttonOn" onClick={(e) => handleSubmit(e)}>등록하기</button>
+                    <Link to="/social" type="button" className="buttonOff marR30">이전으로</Link>
+                    <button to="/social" type="button" className="buttonOn" onClick={(e) => handleSubmit(e)}>등록하기</button>
                 </div>
             </div>
         </>

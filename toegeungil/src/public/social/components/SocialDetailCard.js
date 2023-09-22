@@ -34,7 +34,24 @@ function SocialDetailCard() {
             .then(data => setSocials(data));
     }, []);
 
-    console.log(socials)
+    const handleSubmit = (socialNum) => {
+        if (!window.confirm("[social] 게시글을 삭제하시겠습니까?")) {
+            // alert("취소(아니오)를 누르셨습니다.");
+        } else {
+            alert("[social] 게시글이 삭제되었습니다.");
+            fetch(process.env.REACT_APP_URL + `/socials/${socialNum}`, {
+                method: "DELETE",
+                headers: {}
+            })
+            .then(response => response.json())
+            .then(response => { //return 값에 대한 처리
+                setSocials(socials.filter(code => code.socialNum != socialNum))
+                alert(response['value'])
+            });
+            window.location.href = "/social"
+        }
+    }
+
     return (
         <>
             <div className="maB100">
@@ -113,7 +130,7 @@ function SocialDetailCard() {
                 </div>
                 <div className="buttonFlex marT30">
                     {/* 소셜 삭제 수정 작성자 권한 주기 */}
-                    <Link to="/social" type="button" className="buttonOn marR30">소셜삭제</Link>
+                    <button type="button" className="buttonOn marR30" onClick={()=> handleSubmit(socials.socialNum)}>소셜삭제</button>
                     <Link to="/social/modify" type="button" className="buttonOn marR30" state={{Statesocial: socials}}>소셜수정</Link>
                     <Link to="/social" type="button" className="buttonOff">목록으로</Link>
                 </div>
