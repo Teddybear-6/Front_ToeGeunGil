@@ -41,18 +41,6 @@ function SocialDetailCard() {
         }
     }, [socialNum]);
 
-    //권한 확인 후 핸들러 실행
-    // const auth = (socialNum) => {
-    //     if(!(user === undefined) && !(user === null) && (user.auth[0] === "USER" ||  user.auth[0] === "TUTOR" || user.auth[0] === "ADMIN" )){
-    //         if(user.no === socials.userNum){
-    //             setSocials({...socials, ["userNum"]:user.no})
-    //             handleSubmit(socialNum);
-    //         }
-    //     } else {
-    //         alert("[social] 작성자가 아닙니다.");
-    //     }
-    // }
-
     const handleSubmit = (socialNum) => {
         if (!window.confirm("[social] 게시글을 삭제하시겠습니까?")) {
             // alert("취소(아니오)를 누르셨습니다.");

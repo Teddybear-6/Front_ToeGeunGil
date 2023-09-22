@@ -18,18 +18,6 @@ function SocialParticipateList({ postNum }) {
             .then(response => response.json()) //json으로 받는다
             .then(data => setSocials(data));
 
-        //참여하기
-        // fetch(`http://localhost:8001/socials/participate/${postNum}`, {
-        //     method: "POST",
-        //     headers: { //데이터 타입 지정
-        //         "Content-Type": "application/json; charset=utf-8"
-        //     },
-        //     body: JSON.stringify({
-        //         "userNum": userNum //유저 번호 : 회원 로그인이 필요한가?
-        //     }) //실제 데이터 파싱하여 body에 저장
-        // })
-        //     .then(response => response.json())
-
     }, [postNum]);
 
     return (
