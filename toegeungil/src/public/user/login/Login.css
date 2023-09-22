@@ -73,14 +73,16 @@
 
 .submit-container{
     display: flex;
-    gap: 30px;
-    margin: 40px auto;
+    gap:  auto;
+    margin: 40px;
+    justify-content: center
 }
+
 .submit{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 220px;
+    width: 190px;
     height: 59px;
     color: #fff;
     background: #03532e;
@@ -90,6 +92,8 @@
     cursor: pointer;
 
 }
+
+
 
 .gray{
     background: #EAEAEA;

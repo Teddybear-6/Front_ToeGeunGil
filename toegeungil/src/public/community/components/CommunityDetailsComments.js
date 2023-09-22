@@ -12,7 +12,7 @@ const CommunityDetailsComments = () => {
     const commentInputRef = useRef(null);
 
     const getComments = () => {
-        fetch(`http://localhost:8001/communitys/comments/${communityNum}`)
+        fetch(process.env.REACT_APP_URL+`/communitys/comments/${communityNum}`)
             .then((response) => response.json())
             .then((data) => {
                 setComments(data);
@@ -70,6 +70,7 @@ const CommunityDetailsComments = () => {
                 {comments.length > 0 &&
                     comments.map((comment) => (
                         <div className={CommentsStyle.CommentsBox}>
+                            <img className={CommentsStyle.CommunityParticipate} src="/participate.png" alt="participate"/>
                             <div key={comment.commentNum} className={CommentsStyle.CommentDetailsView}>
                                 <div className={CommentsStyle.CommentWriterBox}>
                                     <div className={CommentsStyle.CommentWriter}>

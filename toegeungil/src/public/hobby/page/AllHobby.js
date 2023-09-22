@@ -10,7 +10,7 @@ function AllHobby() {
     const [pageCount, setPageCount] = useState();
 
     useEffect(() => {
-        console.log(process.env.REACT_APP_URL/`hobbys?page=${page - 1}&size=12`)
+       
 
         fetch(process.env.REACT_APP_URL+`/hobbys?page=${page - 1}&size=12`).then((response) => response.json()).then((data) =>
             setHobby(data))

@@ -13,7 +13,7 @@ function HobbyDetailTitle({detail}){
     useEffect(()=>{
 
 
-        fetch(`http://localhost:8001/category/${detail.categoryCode}`).then(res=>res.json()).then(data=>{
+        fetch(process.env.REACT_APP_URL+`/category/${detail.categoryCode}`).then(res=>res.json()).then(data=>{
             setCategoryName(data)
         })
 
