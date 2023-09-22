@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import '../components/LocalMain.css';
 
 function LocalList() {
     const { localCode } = useParams();
     const [local, setLocal] = useState([]);
     const [loading, setLoading] = useState(true);
-    const navigate = useNavigate();
 
     const getLocal = () => {
         fetch(process.env.REACT_APP_URL + `/local`)
@@ -66,7 +65,7 @@ function LocalList() {
                                             <td>{local.localName}</td>
                                             <td>
                                                 <button onClick={() => deleteLocal(local.localCode)}>삭제</button>
-                                                <Link to={`/service/local/${localCode}/modify`}>
+                                                <Link to={`/service/local/${local.localCode}/modify`}>
                                                     <button>수정</button>
                                                 </Link>
                                             </td>
