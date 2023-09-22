@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
+import "../components/NoticeWrite.css";
 
 const NoticeModify = () => {
     const { noticeNum } = useParams(); // url에서 noticeNum 가져오기
@@ -40,7 +41,8 @@ const NoticeModify = () => {
         fetch(process.env.REACT_APP_URL + `/notices/${noticeNum}`, {
             method: "PUT",
             headers: {
-                "Content-Type": "application/json; charset=UTF-8"
+                "Content-Type": "application/json; charset=UTF-8",
+                "Authorization": sessionStorage.getItem("Authorizaton")
             },
             body: JSON.stringify({
                 "noticeTitle": title,
