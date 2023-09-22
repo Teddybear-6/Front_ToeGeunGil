@@ -1,11 +1,12 @@
-.wrapper {
-    width: 1600px;
+.layout {
+    width: 1100;
     margin: auto;
+    color: #655853;
     /* margin-top: 60px; */
 }
 
 
-.write-header {
+.write-header1 {
     border-bottom: 2px dotted #B9A49B;
     font-size: 30px;
     color: #655853;
@@ -13,16 +14,11 @@
     height: 100px;
     display: flex;
     align-items: center;
-    margin-top: 70px;
+    margin-top: 80px;
 }
 
 
-.write-wrapper {
-    margin-left: 50px;
-    font-size: 18px;
-    color: #655853;
-    font-weight: bold;
-}
+
 
 
 
@@ -104,11 +100,10 @@
 
 .button {
     display: flex;
-    justify-content: flex-start;
-    margin-top: 50px;
-    padding-left: 54%;
+    justify-content: flex-end;
+    margin-top: 40px;
+    
 }
-
 
 .write-button {
     color: #096249;
@@ -132,6 +127,7 @@
     width: 120px;
     height: 80px;
 }
+
 .question-button{
     display: flex;
     justify-content: flex-end;
@@ -147,7 +143,6 @@
     
     
 }
-
 
 .delSet-button{
     margin-left: 70%;
@@ -169,7 +164,6 @@
 
 }
 .update-button{
-
     margin-top: 20px;
     color: #096249;
     font-size: 20px;
