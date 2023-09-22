@@ -61,6 +61,7 @@ function SocialWriteCard() {
         localDetails: '', //지역상세
         socialIntro: '', //모임소개
         socialOther: '기타 사항 없음', //기타사항
+        localCode: 1
     });
 
     useEffect(() => {
