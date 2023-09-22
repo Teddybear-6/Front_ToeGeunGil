@@ -1,5 +1,5 @@
 import React from "react";
-import NoticeList from "../pages/NoticeList";
+import NoticeList from "../components/NoticeList";
 
 function NoticeMain({}){
     return(
