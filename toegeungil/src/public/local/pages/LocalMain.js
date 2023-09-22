@@ -1,5 +1,5 @@
 import React from "react";
-import LocalList from "./LocalList";
+import LocalList from "../components/LocalList";
 
 function LocalMain(){
 

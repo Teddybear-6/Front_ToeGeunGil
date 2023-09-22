@@ -32,6 +32,7 @@ import { AnswerMain } from "./public/qna/pages/AnswerMain";
 import AnswerDetail from "./public/qna/pages/AnswerDetail";
 import LocalMain from "./public/local/pages/LocalMain";
 import LocalWrite from "./public/local/pages/LocalWrite";
+import LocalModify from "./public/local/pages/LocalModify";
 
 function App() {
   /* 라우팅
@@ -96,6 +97,7 @@ function App() {
               <Route path="/service/local">
                 <Route path="/service/local" element={<LocalMain />} />
                 <Route path="/service/local/write" element={<LocalWrite/>}/>
+                <Route path="/service/local/:localCode/modify" element={<LocalModify/>}/>
               </Route>
             </Route>
           </Route>
