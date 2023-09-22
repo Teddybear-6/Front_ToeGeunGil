@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import '../components/NoticeMain.css';
 import { Link } from "react-router-dom";
-// import '../components/testLogin';
+import jwt_decode from "jwt-decode";
 
 const NoticeList = () => {
+    const [user, setUser] = useState('');
     const [list, setList] = useState([]);
 
 
@@ -13,11 +14,13 @@ const NoticeList = () => {
             .then(data => setList(data))
     }
 
-    useEffect(
-        () => {
-            getList();
-
-        }, [])
+    useEffect(() => {
+        // jwt 토큰 복호화 
+        if (sessionStorage.getItem("Authorizaton")) {
+            setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
+        }
+        getList();
+    }, [])
 
 
 
@@ -51,11 +54,13 @@ const NoticeList = () => {
                         }
                     </tbody>
                     {/* 관리자일 경우 */}
-                    <div className="main-button-box">
+                    { !user ? null : (user.auth[0] =='ADMIN') ?
+                        <div className="main-button-box">
                         <Link to={"/service/notice/write"}>
                             <button className="main-button" onClick={noticeClick}>공지사항 작성</button>
                         </Link>
                     </div>
+                    :null}
                 </table>
             </div >
         </div>

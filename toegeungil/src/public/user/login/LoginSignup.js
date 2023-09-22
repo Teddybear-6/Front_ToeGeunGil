@@ -49,7 +49,7 @@ const LoginSignup = () => {
         })
             .then(response => {
                 sessionStorage.setItem("Authorizaton", response)
-                navigate("/")
+                navigate("/Mypage")
             }).catch((e) => {
                 alert("아이디 비번 확인해주세요")
                 navigate("/Findpass")
@@ -93,7 +93,7 @@ const LoginSignup = () => {
                     
                     <div className={action === "Login" ? "submit gray" : "submit"} onClick={onClickHandler}>회원가입</div>
                     <div className={action === "Signup" ? "submit gray" : "submit"} onClick={loginApi}>로그인</div>
-                    <div className={action === "Logout" ? "submit gray" : "submit"} onClick={loginApi}>로그아웃</div>
+                    {/* <div className={action === "Logout" ? "submit gray" : "submit"} onClick={loginApi}>로그아웃</div> */}
 
                 </div>
             </div>
