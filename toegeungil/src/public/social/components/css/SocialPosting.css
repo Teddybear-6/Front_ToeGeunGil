@@ -100,6 +100,10 @@
     margin-right: 35px;
 }
 
+.maB100 {
+    margin-bottom: 100px;
+}
+
 .textR {
     text-align: right;
 }
@@ -197,6 +201,12 @@
     margin: 32px;
 }
 
-.rightItem {
-    float: right;
+.positionDiv1 {
+    position: absolute;
+    z-index: 1;
+}
+
+.positionDiv2 {
+    position: relative;
+    z-index: 2;
 }

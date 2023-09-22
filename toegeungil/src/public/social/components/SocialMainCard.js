@@ -6,7 +6,7 @@ import SocialMainImage from "./componentAPI/SocialMainImage";
 import MainStyle from './css/SocialMainCard.module.css';
 import DetailsStyle from './css/SocialDetails.module.css';
 import { Link } from "react-router-dom";
-import SocialDetails from "./SocialDetails";
+import SocialDetails from "./SocialDetailCard";
 
 function SocialMainCard() {
 

@@ -5,6 +5,7 @@ import NoticeView from "./public/notice/pages/NoticeView";
 import NoticeWrite from "./public/notice/pages/NoticeWrite";
 import NoticeModify from "./public/notice/pages/NoticeModify";
 import ServiceLayout from "./public/notice/layout/ServiceLayout";
+<<<<<<< HEAD
 // import SocialMainCard from "./public/social/components/SocialMainCard";
 // import SocialParticipateList from "./public/social/components/componentAPI/SocialParticipateList";
 import CommunityDetail from './public/community/pages/CommunityDetail';
@@ -20,6 +21,9 @@ import CommunityModify from './public/community/components/CommunityModify';
 
 import Mypage from './public/user/mypage/Mypage';
 // import SocialPosting from "./public/social/components/SocialPosting";
+=======
+import Mypage from './public/user/mypage/Mypage';
+>>>>>>> 354c77da4506a678f29061ba2be923d0b33e5422
 import SocialMain from "./public/social/page/SocialMain";
 import Layout from "./public/layout/Layout";
 import SocialDetail from "./public/social/page/SocialDetail";
@@ -37,6 +41,7 @@ import QuestionDetail from "./public/qna/pages/QuestionDetail";
 import QuestionWrite from "./public/qna/pages/QuestionWrite";
 import { AnswerMain } from "./public/qna/pages/AnswerMain";
 import AnswerDetail from "./public/qna/pages/AnswerDetail";
+import SocialModify from "./public/social/page/SocialModify";
 import AnswerWrite from "./public/qna/pages/AnswerWrite";
 
 function App() {
@@ -73,6 +78,7 @@ function App() {
               <Route index element={<SocialMain />} />
               <Route path=':socialNum' element={<SocialDetail />} />
               <Route path='write' element={<SocialWrite />} />
+              <Route path="modify" element={<SocialModify/>}/>
             </Route>
             {/* 커뮤니티 */}
             <Route path="/communitys" element={<CommunityMain />} />

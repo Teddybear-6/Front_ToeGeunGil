@@ -26,7 +26,7 @@ const LoginSignup = () => {
     const loginApi = () => {
 
         console.log("로그인 요청")
-        fetch(process.env.REACT_APP_URL+ "login", {
+        fetch(process.env.REACT_APP_URL+ "/login", {
             method: "POST",
             headers: {
                 "Content-Type": "applcation/json"
