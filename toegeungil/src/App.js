@@ -25,6 +25,9 @@ import SocialWrite from './public/social/page/SocialWrite';
 import ScrollToTop from './public/layout/scroll/ScrollToTop';
 import HobbyWrite from "./public/tutor/page/hobbyWrite";
 import HobbyModify from "./public/tutor/page/hobbyModify";
+import TutorHobbyList from './public/tutor/page/tutorHobbyList';
+import TutorLayout from "./public/tutor/layouts/tutorLayout";
+import StudentList from "./public/tutor/components/studentList";
 import LoginSignup from "./public/user/login/LoginSignup";
 import Findpass from "./public/user/findpassword/Findpass";
 import Signup from "./public/user/Signup/Signup";
@@ -54,10 +57,15 @@ function App() {
             </Route>
             {/* 취미 */}
             <Route path='hobby'>
-              <Route index element={<AllHobby />} />
-              <Route path=':hobbyCode' element={<HobbyDetail />} />
-              <Route path='write' element={<HobbyWrite />} />
-              <Route path='modify' element={<HobbyModify />} />
+            <Route index  element={<AllHobby/>} />
+            <Route path=':hobbyCode' element={<HobbyDetail />} />
+            </Route>
+
+            <Route element={<TutorLayout />}>
+            <Route path="/tutor" element={<TutorHobbyList />} />
+            <Route path='/hobbywrite'  element={<HobbyWrite />} />
+            <Route path='/hobbymodify' element={<HobbyModify />} />
+            <Route path="/hobbystudent" element={<StudentList/>}/>           
             </Route>
             {/* 소셜 */}
             <Route path="social">

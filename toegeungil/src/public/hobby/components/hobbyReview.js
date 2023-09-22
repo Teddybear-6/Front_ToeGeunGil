@@ -28,7 +28,7 @@ function RevieWrite ({hobbyCode}){
 
 
       const onClickHandler =()=>{
-        fetch(`http://localhost:8001/hobbys/review/${hobbyCode}`,{
+        fetch(process.env.REACT_APP_URL+`/hobbys/review/${hobbyCode}`,{
             method : "POST",
            
             body: JSON.stringify({

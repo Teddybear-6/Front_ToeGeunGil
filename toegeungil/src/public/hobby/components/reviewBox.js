@@ -41,7 +41,7 @@ function ReviewBox({review}){
     
    
    useEffect(()=>{
-     fetch(`http://localhost:8001/hobbys/review/answer/${review.reviewCode}`)
+     fetch(process.env.REACT_APP_URL+`/hobbys/review/answer/${review.reviewCode}`)
      .then(res=>res.json())
      .then(res=>setAnswer(res)).catch(e=>console.log(e))
 
