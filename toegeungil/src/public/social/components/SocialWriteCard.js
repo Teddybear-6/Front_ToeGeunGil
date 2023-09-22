@@ -116,6 +116,7 @@ function SocialWriteCard() {
                     response.json()
                     if (response.ok) {
                         alert("[Social] 게시글이 등록되었습니다.");
+                        window.location.href = "/social"
                     } else {
                         alert("게시글 등록 실패...")
                     }
@@ -124,8 +125,6 @@ function SocialWriteCard() {
                     console.error("[Social] 게시글 등록 중 오류 발생 : ", error);
                     alert("error");
                 })
-                
-            window.location.href = "/social"
         }
     };
 
