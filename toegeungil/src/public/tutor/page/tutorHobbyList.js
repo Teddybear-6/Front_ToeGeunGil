@@ -13,6 +13,7 @@ function TutorHobbyList(){
   useEffect(()=>{
     if (sessionStorage.getItem("Authorizaton")) {
         setTutor(jwt_decode(sessionStorage.getItem("Authorizaton")))
+      
         api()
       }
   },[page,pageCount])
@@ -21,7 +22,7 @@ function TutorHobbyList(){
         setPages(page)
     }
 )
-
+console.log(tutor)
     const api = () =>{
       
         fetch(process.env.REACT_APP_URL+`/hobbys/tutor?page=${page - 1}&size=12`,{

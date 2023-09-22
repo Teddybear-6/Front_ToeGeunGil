@@ -41,7 +41,6 @@ function TutorHobbyMain({ hobbys, setHobby , api}) {
 
         return (
             <>
-
                 {hobbys?.map((hobby, index) => (
                     <>
                         <div>
