@@ -31,6 +31,7 @@ import QuestionDetail from "./public/qna/pages/QuestionDetail";
 import { AnswerMain } from "./public/qna/pages/AnswerMain";
 import AnswerDetail from "./public/qna/pages/AnswerDetail";
 import LocalMain from "./public/local/pages/LocalMain";
+import LocalWrite from "./public/local/pages/LocalWrite";
 
 function App() {
   /* 라우팅
@@ -91,12 +92,12 @@ function App() {
                 <Route index element={<AnswerMain />} />
                 <Route path=":answerNum" element={<AnswerDetail />} />
               </Route>
-            
-            </Route>
               {/* Local */}
-              <Route path="/local">
-                <Route path="/local" element={<LocalMain/>}/>
+              <Route path="/service/local">
+                <Route path="/service/local" element={<LocalMain />} />
+                <Route path="/service/local/write" element={<LocalWrite/>}/>
               </Route>
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>
