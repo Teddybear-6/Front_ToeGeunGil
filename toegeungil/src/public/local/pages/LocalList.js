@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import jwt_decode from "jwt-decode";
+import { Link } from "react-router-dom";
 
 function LocalList() {
     const [user, setUser] = useState('');
@@ -42,7 +43,9 @@ function LocalList() {
                     ))
                 }
             </ul>
+            <Link to={"/service/local/write"}>
             <button onClick={localClick}>등록</button>
+            </Link>
         </div>
     )
 }
