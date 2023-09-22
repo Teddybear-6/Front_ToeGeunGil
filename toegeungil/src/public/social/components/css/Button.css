@@ -89,3 +89,17 @@
 .mar {
     margin-left: 15px;
 }
+
+.marR30 {
+    margin-right: 30px;
+}
+
+.buttonFlex {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.marT30 {
+    padding-top: 30px;
+}

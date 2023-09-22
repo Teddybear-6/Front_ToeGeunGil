@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
+import jwt_decode from "jwt-decode";
 import '../components/NoticeView.css';
 
 const NoticeView = () => {
@@ -7,8 +8,12 @@ const NoticeView = () => {
     const [detail, setDetail] = useState({});
     const [loading, setLoading] = useState(true); // 로딩 상태 관리
     const navigate = useNavigate(); //useNavigate 훅을 사용해서 페이지 이동을 제어
+    const [user, setUser] = useState('');
 
     useEffect(() => {
+        if (sessionStorage.getItem("Authorizaton")) {
+            setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
+        }
         setLoading(true);
         fetch(process.env.REACT_APP_URL + `/notices/${noticeNum}`)
             .then(response => response.json())
@@ -20,6 +25,9 @@ const NoticeView = () => {
 
     /* 관리자인 경우 삭제 */
     const deleteClick = () => {
+        if (sessionStorage.getItem("Authorizaton")) {
+            setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
+        }
         fetch(process.env.REACT_APP_URL + `/notices/${noticeNum}`, { method: "DELETE" })
             .then(response => {
                 if (response.ok) {
@@ -44,7 +52,7 @@ const NoticeView = () => {
                     ) : (
                         detail ? (
                             <>
-                                <div className="view-name">
+                                <div className="view-title">
                                     <label>{detail.noticeTitle}</label>
                                 </div>
                                 <div>
@@ -56,17 +64,23 @@ const NoticeView = () => {
                                             <label>{detail.noticeContent}</label>
                                         </div>
                                     </div>
-                                    <div className="button-box" >
+                                    <div className="button-box">
                                         {/* 관리자인 경우 : 삭제, 수정 버튼 */}
-                                        <Link to="/service/notice">
-                                            <button className="button1" onClick={deleteClick}>삭제</button>
-                                        </Link>
-                                        <Link to={`/service/notice/${noticeNum}/modify`}>
-                                            <button className="button2">수정</button>
-                                        </Link>
-                                        <Link to="/service/notice">
-                                            <button className="button3">목록으로</button>
-                                        </Link>
+                                        {!user ? null : (user.auth[0] == 'ADMIN') ?
+                                            <div>
+                                                <Link to="/service/notice">
+                                                    <button className="button1" onClick={deleteClick}>삭제</button>
+                                                </Link>
+                                                <Link to={`/service/notice/${noticeNum}/modify`}>
+                                                    <button className="button2">수정</button>
+                                                </Link>
+                                            </div>
+                                            : null}
+                                        <div>
+                                            <Link to="/service/notice">
+                                                <button className="button3">목록으로</button>
+                                            </Link>
+                                        </div>
                                     </div>
                                 </div>
                             </>

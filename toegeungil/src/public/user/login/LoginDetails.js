@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import { getLoginDetails } from "../api/LoginApi";
 import { useEffect, useState } from "react";
 import Signup from "../Signup/Signup";
+import LoginSignup from "./LoginSignup";
+import Findpass from "./Findpass";
 
 function getLoginDetails(){
 
@@ -27,7 +29,7 @@ function getLoginDetails(){
         
         return(
             <div className="LginDetails" >
-
+                    
 
             </div>
         );

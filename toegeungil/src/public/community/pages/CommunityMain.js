@@ -1,10 +1,14 @@
 import CommunityList from "../components/CommunityList";
+import layout from "../../layout/layout.css";
+
 
 
 function CommunityMain({ }) {
     return (
         <>
-            <CommunityList />
+            <div className={layout.layout}>
+                <CommunityList />
+            </div>
         </>
     );
 }
