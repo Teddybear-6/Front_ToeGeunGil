@@ -38,6 +38,45 @@ const Findpass = () => {
     }).then(res => res.json())
         .then(date => console.log(date));
 
+
+// const sendEmail=()=>{ 
+
+//     const sendEmail=document.getElementById("sendemail");
+//     sendEmail.addEventListener('click', function(){
+//         const xhr,url ='/sendEmailLogin', Data='email='+document.getElementById('email').value;
+//         xhr=doajax(url, data);
+//         xhr.onload=function(){
+//             const text;
+//             if(xhr.status==200){
+//                 if(xhr.response=='true'){
+//                     text="인증번호를 전송했습니다";
+//                     document.getElementById('confrimrandnum').disabled=false;
+//                 }else{
+//                     text="인증번호 전송에 실패했습니다"
+//                 }
+//                 alert(text);
+//             }
+//         }
+//     })
+//     const confrimrandnum=document.getElementById("confrimrandnum");
+//     confrimrandnum.addEventListener('click',function(){
+//         const xhr, url='/sendEmailLogin', Data='email='+document.getElementById('email').value 
+//         + '&randnum=' + document.getElementById('randnum').value;
+//         xhr-doajax(url, data);
+//         xhr.onload=function(){
+//             if(xhr.status==200){
+//                 if(xhr.response=='true'){
+//                     alert('임시비밀번호전송');
+//                     location.href="/auth/loginsingup";
+//                 }else{
+//                     alert("번호를 다시 확인해 주세요")
+//                 }
+//             }
+//         }
+//     })
+// }  
+
+
     return (
         <>
             <div className="container">
