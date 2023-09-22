@@ -24,8 +24,8 @@ function ServiceNavbar() {
                 {/* 관리자 */}
                 {!user ? null : (user.auth[0] == 'ADMIN') ?
                     <div className="admin-wrapper">
-                        <NavLink to="/notice" className={({ isActive }) => isActive ? "serviceOn" : "serviceOff"}>지역관리</NavLink>
-                        <NavLink to="/qna" className={({ isActive }) => isActive ? "serviceOn" : "serviceOff"}>카테고리관리</NavLink>
+                        <NavLink to="/service/local" className={({ isActive }) => isActive ? "serviceOn" : "serviceOff"}>지역관리</NavLink>
+                        <NavLink to="/service/category" className={({ isActive }) => isActive ? "serviceOn" : "serviceOff"}>카테고리관리</NavLink>
                     </div>
                     : null}
             </div>
