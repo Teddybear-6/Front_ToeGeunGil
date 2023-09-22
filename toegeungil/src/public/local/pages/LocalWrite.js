@@ -45,25 +45,21 @@ function LocalWrite() {
     }
     return (
         <div className='layout'>
-            {!user ? "관리자만 사용 가능합니다" : (user.auth[0] == 'ADMIN') ?
+            <h1>지역 작성</h1>
+            <label>추가하는 지역명</label>
+            <input
+                type="text"
+                value={localName}
+                onChange={nameChange}
+            />
                 <div>
-                    <h1>지역 작성</h1>
-                    <label>추가하는 지역명</label>
-                    <input
-                        type="text"
-                        value={localName}
-                        onChange={nameChange}
-                    />
-                    <div>
-                        <Link to="/service/local">
-                            <button onClick={cancelChange}>취소</button>
-                        </Link>
-                        <Link to='/service/local'>
-                            <button onClick={localWriteClick}>등록</button>
-                        </Link>
-                    </div>
+                    <Link to="/service/local">
+                        <button onClick={cancelChange}>취소</button>
+                    </Link>
+                    <Link to='/service/local'>
+                        <button onClick={localWriteClick}>등록</button>
+                    </Link>
                 </div>
-                : null}
         </div>
     )
 }
