@@ -35,15 +35,17 @@ import Signup from "./public/user/Signup/Signup";
 // import PublicRouter from './public/qna/pages/QuestionMain';
 import QuestionMain from "./public/qna/pages/QuestionMain";
 import QuestionDetail from "./public/qna/pages/QuestionDetail";
+import QuestionWrite from "./public/qna/pages/QuestionWrite";
 import { AnswerMain } from "./public/qna/pages/AnswerMain";
 import AnswerDetail from "./public/qna/pages/AnswerDetail";
+import AnswerWrite from "./public/qna/pages/AnswerWrite";
 
 function App() {
   /* 라우팅
       : 어떤 요청(URL)을 어디로 안내 및 매핑 할 것인지를 정해놓고 진행하는 것
       : 리액트에서는 요청에 따라 요청에 매핑되는 컴포넌트를 랜더링 한다. */
   return (
-    <>
+
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
@@ -95,6 +97,7 @@ function App() {
               <Route path="/service/qna">
                 <Route path="/service/qna" element={<QuestionMain />} />
                 <Route path=":questionNum" element={<QuestionDetail />} />
+                <Route path="/service/qna/write" element ={<QuestionWrite/>}/>
                 {/* <Route index  element={<AdminRouter />}/> */}
                 {/* <Route path="admin" element={<AdminRouter />} /> */}
                 {/* <Route path="public/main" element={<PublicRouter />} /> */}
@@ -103,12 +106,13 @@ function App() {
               <Route path="/service/answer">
                 <Route index element={<AnswerMain />} />
                 <Route path="/service/answer/:answerNum" element={<AnswerDetail />} />
+                <Route path="/service/answer/write" element={<AnswerWrite/>}/>
               </Route>
               </Route>
           </Route>
         </Routes>
       </BrowserRouter>
-    </>
+    
   );
 }
 
