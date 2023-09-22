@@ -6,6 +6,7 @@ import { Link, NavLink } from "react-router-dom";
 import DetailsStyle from '../css/SocialDetails.module.css';
 
 function SocialModifyImage({ socialNum }) {
+    //기존 등록되어 있는 이미지를 보여주기 위한 함수
     const [image, setImage] = useState();
 
     useEffect(() => {

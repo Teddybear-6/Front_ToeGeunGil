@@ -114,7 +114,7 @@ function SocialDetailCard() {
                 <div className="buttonFlex marT30">
                     {/* 소셜 삭제 수정 작성자 권한 주기 */}
                     <Link to="/social" type="button" className="buttonOn marR30">소셜삭제</Link>
-                    <Link to="/social/modify" type="button" className="buttonOn marR30" state={{socialNum: socials.socialNum}}>소셜수정</Link>
+                    <Link to="/social/modify" type="button" className="buttonOn marR30" state={{Statesocial: socials}}>소셜수정</Link>
                     <Link to="/social" type="button" className="buttonOff">목록으로</Link>
                 </div>
             </div>

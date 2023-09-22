@@ -6,14 +6,13 @@ import "./css/SocialPosting.css"
 import { Link, NavLink } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 import SocialModifyImage from "./componentAPI/SocialModifyImage";
+import SocialModifyKeyword from "./componentAPI/SocialModifyKeyword";
 
 function SocialModifyCard() {
 
     //write에서 state에 전달한 데이터 가지고 오기
-
     const location = useLocation();
-    const socialNum = location.state;
-    console.log(socialNum);
+    const getSOcial = location.state;
 
     //FK
     const [category, setCategory] = useState([]); //categoryCode
@@ -25,8 +24,8 @@ function SocialModifyCard() {
 
     //input으로 바로 값 입력
     const [social, setSocial] = useState({
-        socialNum: socialNum.socialNum,
-        userNum: 4, //유저 번호
+        socialNum: getSOcial.Statesocial.socialNum,
+        userNum: getSOcial.Statesocial.userNum, //유저 번호
         socialName: '', //제목
         socialDate: '', //모임일시
         socialFixedNum: '', //정원
@@ -38,15 +37,12 @@ function SocialModifyCard() {
     });
 
     useEffect(() => {
-
-        if (socialNum) {
+        if (getSOcial.Statesocial.socialNum) {
             //수정할 게시글
-            fetch(process.env.REACT_APP_URL + `/socials/${socialNum.socialNum}`)
+            fetch(process.env.REACT_APP_URL + `/socials/${getSOcial.Statesocial.socialNum}`)
                 .then(response => response.json()) //json으로 받는다
                 .then(data => setSocial(data));
         }
-
-
 
         //카테고리
         fetch(process.env.REACT_APP_URL + "/category")
@@ -76,12 +72,18 @@ function SocialModifyCard() {
     //PUT 요청
     const handleSubmit = (e) => {
         const formData = new FormData();
+        social.keywordDTOList = keywordDTOList.map(r => r.keywordCode);
+
         const blob = new Blob([JSON.stringify(social)], {
             type: 'application/json'
         });
         formData.append('social', blob);
-        formData.append('image', image[0]);
-
+        
+        if(image.length != 0) {
+            formData.append('image', image[0]);
+        } else {
+            formData.append('image', getSOcial.state.image)
+        }
 
         e.preventDefault(); // submit action을 안타도록 설정
         fetch(process.env.REACT_APP_URL + `/socials`, {
@@ -95,9 +97,9 @@ function SocialModifyCard() {
             .then(response => { //return 값에 맞는 req 지정
                 response.json()
                 if (response.ok) {
-                    alert("[Social] 게시글이 등록되었습니다.");
+                    alert("[Social] 게시글이 수정되었습니다.");
                 } else {
-                    alert("게시글 등록 실패...")
+                    alert("[Social] 게시글 수정 실패...")
                 }
             })
             .catch(error => {
@@ -128,15 +130,18 @@ function SocialModifyCard() {
         }
     }
 
-    //키워드
+    //카테고리, 지역 핸들러
     const onChangeHandler = (e) => {
-        if (e.target.name !== "keywordCode") {
-            setSocial({ ...social, [e.target.name]: e.target.value });
-        } else {
-            keywordDTOList.push({ "keywordCode": Number(e.target.value) })
-            setSocial({ ...social, keywordDTOList });
-        }
+        setSocial({ ...social, [e.target.name]: e.target.value });
     };
+
+    //키워드 불러오기 (기존 값)
+    // const keywordHandler = () => {
+    //     const selectBox = document.getElementsByName("keywordCode");
+    //     for (let j = 0; j < social.keywordDTOList?.length; j++) {
+    //         selectBox[social.keywordDTOList[j].keywordCode - 1].checked = true;
+    //     }
+    // };
 
     //이미지 상대경로 저장
     const handleAddImages = (event) => {
@@ -148,7 +153,6 @@ function SocialModifyCard() {
         setImage(img);
     };
 
-    console.log(showImage)
     return (
         <>
             <div>
@@ -228,19 +232,14 @@ function SocialModifyCard() {
                 </div>
 
                 {/* 키워드 선택 */}
+                {/* {keywordHandler()} */}
                 <div className="posFlex">
                     <div className="posTitle">키워드 선택</div>
                     <div className="posBoard w1300h300">
                         <div className="posFlex_key">
                             {
-                                !keyword.map ? "키워드가 없습니다." : keyword.map((m, index) => (
-                                    <label htmlFor="keywordCode">
-                                        <div className="w216h50 posFlex">
-                                            <input className="checkSy" key={index} type="checkbox" name="keywordCode" value={m.keywordCode} onChange={onChangeHandler} />
-                                            <div className="maL10 maT2">{m.keywordName}</div>
-                                        </div>
-                                    </label>
-                                ))
+                                <SocialModifyKeyword keyword={keyword} social={social} setSocial={setSocial} sicalKeyword={social.keywordDTOList}
+                                setKeywordDTOList={setKeywordDTOList} keywordDTOList={keywordDTOList} />
                             }
                         </div>
                     </div>
