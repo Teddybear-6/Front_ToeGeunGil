@@ -3,15 +3,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NoticeMain from "./public/notice/pages/NoticeMain";
 import NoticeView from "./public/notice/pages/NoticeView";
 import NoticeWrite from "./public/notice/pages/NoticeWrite";
-import NoticeModify from "./public/notice/pages/NoticeModify";
-import ServiceLayout from "./public/notice/layout/ServiceLayout";
-import SocialMainCard from "./public/social/components/SocialMainCard";
-import SocialParticipateList from "./public/social/components/componentAPI/SocialParticipateList";
-import CommunityDetail from './public/community/pages/CommunityDetail';
-import CommunityMain from './public/community/pages/CommunityMain';
-import CommunityRegist from './public/community/pages/CommunityRegist';
-import Mypage from './public/user/mypage/Mypage';
-import SocialPosting from "./public/social/components/SocialPosting";
 import SocialMain from "./public/social/page/SocialMain";
 import Layout from "./public/layout/Layout";
 import SocialDetail from "./public/social/page/SocialDetail";
@@ -28,6 +19,7 @@ import HobbyModify from "./public/tutor/page/hobbyModify";
 import LoginSignup from "./public/user/login/LoginSignup";
 import Findpass from "./public/user/findpassword/Findpass";
 import Signup from "./public/user/Signup/Signup";
+import Mypage from "./public/user/mypage/Mypage";
 
 // import PublicRouter from './public/qna/pages/QuestionMain';
 import QuestionMain from "./public/qna/pages/QuestionMain";
@@ -50,14 +42,15 @@ function App() {
             <Route path="findpass" element={<Findpass />} />
             <Route path="signup" element={<Signup />} />
             {/* 마이페이지 */}
-            <Route path='mypage' element={<Mypage/>}>
-            </Route>
+            <Route path="mypage" element={<Mypage/>}>
+              {/* <Route index element={<Mypage/>}/> */}
+              </Route>
             {/* 취미 */}
-            <Route path='hobby'>
+            <Route path="hobby">
               <Route index element={<AllHobby />} />
-              <Route path=':hobbyCode' element={<HobbyDetail />} />
-              <Route path='write' element={<HobbyWrite />} />
-              <Route path='modify' element={<HobbyModify />} />
+              <Route path=":hobbyCode" element={<HobbyDetail />} />
+              <Route path="write" element={<HobbyWrite />} />
+              <Route path="modify" element={<HobbyModify />} />
             </Route>
             {/* 소셜 */}
             <Route path="social">
@@ -72,31 +65,25 @@ function App() {
               element={<CommunityDetail />}
             />
             <Route path="/communitys" element={<CommunityRegist />} />
-
             {/* 고객센터 */}
-            <Route path="/service" element={<ServiceLayout />}>
-                <Route index element={<NoticeMain />} />
-              {/* 공지사항 */}
-                <Route path="/service/notice">
-                <Route index element={<NoticeMain />} />
-                <Route path='/service/notice/:noticeNum' element={<NoticeView />} />
-                <Route path='/service/notice/write' element={<NoticeWrite />} />
-                <Route path='/service/notice/:noticeNum/modify' element={<NoticeModify />} />
-                </Route>
-                
-              <Route path="/service/qna">
-                <Route path="/service/qna" element={<QuestionMain />} />
-                <Route path=":questionNum" element={<QuestionDetail />} />
-                {/* <Route index  element={<AdminRouter />}/> */}
-                {/* <Route path="admin" element={<AdminRouter />} /> */}
-                {/* <Route path="public/main" element={<PublicRouter />} /> */}
-              </Route>
+            <Route path="notice">
+              <Route index element={<NoticeMain />} />
+              <Route path="/notice/:noticeNum" element={<NoticeView />} />
+              <Route path="/notice/write" element={<NoticeWrite />} />
+            </Route>
 
-              <Route path="/service/answer">
-                <Route index element={<AnswerMain />} />
-                <Route path="/service/answer/:answerNum" element={<AnswerDetail />} />
-              </Route>
-              </Route>
+            <Route path="qna">
+              <Route index element={<QuestionMain />} />
+              <Route path=":questionNum" element={<QuestionDetail />} />
+              {/* <Route index  element={<AdminRouter />}/> */}
+              {/* <Route path="admin" element={<AdminRouter />} /> */}
+              {/* <Route path="public/main" element={<PublicRouter />} /> */}
+            </Route>
+          <Route path="answer">
+              <Route index element={<AnswerMain/>}/>
+              <Route path=":answerNum" element={<AnswerDetail/>}/>
+
+          </Route>
           </Route>
         </Routes>
       </BrowserRouter>
@@ -105,4 +92,3 @@ function App() {
 }
 
 export default App;
-

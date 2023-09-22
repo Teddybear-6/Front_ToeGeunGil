@@ -153,10 +153,16 @@ const Signup =()=>{
                 "userPassword": password,
                 
             }),
-        }).then(res => res.json())
-        .then(date => console.log(date));
+        }).then(res => res.text())
+        .then(date => date=="Success"? successFunction():alert("가입이 실패되었습니다."));
     }
     
+    const successFunction = ()=>{
+        alert("가입이 완료되었습니다.")
+        navigate(`/login`);
+    }
+
+
     return(
         <>
         <div className="container">
