@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import "../component/QuestionDetail.css";
+import "../component/AnswerWrite.css";
+import AnswerWrite from "./AnswerWrite";
 
 export const QuestionDetail = () => {
   const { questionNum } = useParams();
@@ -43,22 +45,28 @@ export const QuestionDetail = () => {
       ) : (
         "문의글이 없습니다."
       )}
-      <div className="view-answer">
+      {/* <div className="view-answer">
         <label>답변</label>
         <textarea
           className="answer-box"
           placeholder="답변을 입력하세요"
         ></textarea>
+      </div> */}
+      
+      {/*답변*/}
+      <div>
+        <AnswerWrite/>
       </div>
 
-      <div className="user-button-box">
+      {/* <div className="user-button-box">
         <Link to="/service/answer/">
           <button className="answer-button">답변글 등록</button>
+          </Link>
           <Link to="/service/qna">
             <button className="user-button">목록으로</button>
           </Link>
-        </Link>
-      </div>
+      
+      </div> */}
     </div>
   );
 };

@@ -16,6 +16,9 @@ import SocialWrite from './public/social/page/SocialWrite';
 import ScrollToTop from './public/layout/scroll/ScrollToTop';
 import HobbyWrite from "./public/tutor/page/hobbyWrite";
 import HobbyModify from "./public/tutor/page/hobbyModify";
+import TutorHobbyList from './public/tutor/page/tutorHobbyList';
+import TutorLayout from "./public/tutor/layouts/tutorLayout";
+import StudentList from "./public/tutor/components/studentList";
 import LoginSignup from "./public/user/login/LoginSignup";
 import Findpass from "./public/user/findpassword/Findpass";
 import Signup from "./public/user/Signup/Signup";
@@ -24,15 +27,17 @@ import Mypage from "./public/user/mypage/Mypage";
 // import PublicRouter from './public/qna/pages/QuestionMain';
 import QuestionMain from "./public/qna/pages/QuestionMain";
 import QuestionDetail from "./public/qna/pages/QuestionDetail";
+import QuestionWrite from "./public/qna/pages/QuestionWrite";
 import { AnswerMain } from "./public/qna/pages/AnswerMain";
 import AnswerDetail from "./public/qna/pages/AnswerDetail";
+import AnswerWrite from "./public/qna/pages/AnswerWrite";
 
 function App() {
   /* 라우팅
       : 어떤 요청(URL)을 어디로 안내 및 매핑 할 것인지를 정해놓고 진행하는 것
       : 리액트에서는 요청에 따라 요청에 매핑되는 컴포넌트를 랜더링 한다. */
   return (
-    <>
+
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
@@ -46,11 +51,16 @@ function App() {
               {/* <Route index element={<Mypage/>}/> */}
               </Route>
             {/* 취미 */}
-            <Route path="hobby">
-              <Route index element={<AllHobby />} />
-              <Route path=":hobbyCode" element={<HobbyDetail />} />
-              <Route path="write" element={<HobbyWrite />} />
-              <Route path="modify" element={<HobbyModify />} />
+            <Route path='hobby'>
+            <Route index  element={<AllHobby/>} />
+            <Route path=':hobbyCode' element={<HobbyDetail />} />
+            </Route>
+
+            <Route element={<TutorLayout />}>
+            <Route path="/tutor" element={<TutorHobbyList />} />
+            <Route path='/hobbywrite'  element={<HobbyWrite />} />
+            <Route path='/hobbymodify' element={<HobbyModify />} />
+            <Route path="/hobbystudent" element={<StudentList/>}/>           
             </Route>
             {/* 소셜 */}
             <Route path="social">
@@ -66,28 +76,35 @@ function App() {
             />
             <Route path="/communitys" element={<CommunityRegist />} />
             {/* 고객센터 */}
-            <Route path="notice">
-              <Route index element={<NoticeMain />} />
-              <Route path="/notice/:noticeNum" element={<NoticeView />} />
-              <Route path="/notice/write" element={<NoticeWrite />} />
-            </Route>
+            <Route path="/service" element={<ServiceLayout />}>
+                <Route index element={<NoticeMain />} />
+              {/* 공지사항 */}
+                <Route path="/service/notice">
+                <Route index element={<NoticeMain />} />
+                <Route path='/service/notice/:noticeNum' element={<NoticeView />} />
+                <Route path='/service/notice/write' element={<NoticeWrite />} />
+                <Route path='/service/notice/:noticeNum/modify' element={<NoticeModify />} />
+                </Route>
+                
+              <Route path="/service/qna">
+                <Route path="/service/qna" element={<QuestionMain />} />
+                <Route path=":questionNum" element={<QuestionDetail />} />
+                <Route path="/service/qna/write" element ={<QuestionWrite/>}/>
+                {/* <Route index  element={<AdminRouter />}/> */}
+                {/* <Route path="admin" element={<AdminRouter />} /> */}
+                {/* <Route path="public/main" element={<PublicRouter />} /> */}
+              </Route>
 
-            <Route path="qna">
-              <Route index element={<QuestionMain />} />
-              <Route path=":questionNum" element={<QuestionDetail />} />
-              {/* <Route index  element={<AdminRouter />}/> */}
-              {/* <Route path="admin" element={<AdminRouter />} /> */}
-              {/* <Route path="public/main" element={<PublicRouter />} /> */}
-            </Route>
-          <Route path="answer">
-              <Route index element={<AnswerMain/>}/>
-              <Route path=":answerNum" element={<AnswerDetail/>}/>
-
-          </Route>
+              <Route path="/service/answer">
+                <Route index element={<AnswerMain />} />
+                <Route path="/service/answer/:answerNum" element={<AnswerDetail />} />
+                <Route path="/service/answer/write" element={<AnswerWrite/>}/>
+              </Route>
+              </Route>
           </Route>
         </Routes>
       </BrowserRouter>
-    </>
+    
   );
 }
 
