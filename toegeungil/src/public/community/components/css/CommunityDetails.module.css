@@ -1,10 +1,8 @@
-
     .Details {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
-        margin-left: auto;
-        margin-right: auto;
+        margin-left: 50px;
     }
 
     .CommunityDetailsWriter {
@@ -40,3 +38,17 @@
         margin-left: 50px;
     }
 
+.CommunityModifyButton{
+    width: 150px;
+    height: 75px;
+    float: right;
+    margin-right: 200px;
+    margin-top: 50px;
+    background-color: #8FC4B3;
+    color: #096249;
+    font-size: 20px;
+    border-radius: 50px;
+    border: 0px solid #8FC4B3;
+    cursor: pointer;
+    font-weight: bold;
+}

@@ -4,12 +4,14 @@
     flex-direction: row;
     justify-content: flex-start;
     margin-top: 175px;
+    margin-left: 50px;
 }
 
 .CommentBar{
     width: 1500px;
     margin-bottom: 40px;
     border: 1px solid #E9E0DD;
+    margin-left: -40px;
 }
 
 .CommentsBox{
@@ -24,12 +26,13 @@
 .CommentDetailsView{
     display: flex;
     margin-top: 30px;
+
 }
 
 .CommentWriterBox{
     width: 193px;
     height: 50px;
-    margin-left: 50px;
+
 }
 
 .CommentWriter{
@@ -57,6 +60,7 @@
     border: 3px solid #E9E0DD;
     border-radius: 50px;
     margin-top: 100px;
+    margin-left: 50px;
 }
 
 .NewCommentInputBox{

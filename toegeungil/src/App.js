@@ -5,43 +5,31 @@ import NoticeView from "./public/notice/pages/NoticeView";
 import NoticeWrite from "./public/notice/pages/NoticeWrite";
 import NoticeModify from "./public/notice/pages/NoticeModify";
 import ServiceLayout from "./public/notice/layout/ServiceLayout";
-import SocialMainCard from "./public/social/components/SocialMainCard";
-import SocialParticipateList from "./public/social/components/componentAPI/SocialParticipateList";
+// import SocialMainCard from "./public/social/components/SocialMainCard";
+// import SocialParticipateList from "./public/social/components/componentAPI/SocialParticipateList";
 import CommunityDetail from './public/community/pages/CommunityDetail';
 import CommunityMain from './public/community/pages/CommunityMain';
-<<<<<<< HEAD
 import CommunityWrite from './public/community/pages/CommunityWrite';
 import AllHobby from "./public/hobby/page/AllHobby";
 import HobbyDetail from "./public/hobby/page/hobbyDetail";
-import HobbyWrite from './public/tutor/page/hobbyWrite';
 import HobbyModify from './public/tutor/page/hobbyModify';
 import LoginSignup from './public/user/login/LoginSignup';
 import Findpass from './public/user/findpassword/Findpass';
 import Signup from './public/user/Signup/Signup';
 import CommunityModify from './public/community/components/CommunityModify';
-=======
-import CommunityRegist from './public/community/pages/CommunityRegist';
+
 import Mypage from './public/user/mypage/Mypage';
-import SocialPosting from "./public/social/components/SocialPosting";
+// import SocialPosting from "./public/social/components/SocialPosting";
 import SocialMain from "./public/social/page/SocialMain";
 import Layout from "./public/layout/Layout";
 import SocialDetail from "./public/social/page/SocialDetail";
-import CommunityDetail from "./public/community/pages/CommunityDetail";
-import CommunityMain from "./public/community/pages/CommunityMain";
-import CommunityRegist from "./public/community/pages/CommunityRegist";
 
-import AllHobby from "./public/hobby/page/AllHobby";
-import HobbyDetail from "./public/hobby/page/hobbyDetail";
 import SocialWrite from './public/social/page/SocialWrite';
 import ScrollToTop from './public/layout/scroll/ScrollToTop';
 import HobbyWrite from "./public/tutor/page/hobbyWrite";
-import HobbyModify from "./public/tutor/page/hobbyModify";
 import TutorHobbyList from './public/tutor/page/tutorHobbyList';
 import TutorLayout from "./public/tutor/layouts/tutorLayout";
 import StudentList from "./public/tutor/components/studentList";
-import LoginSignup from "./public/user/login/LoginSignup";
-import Findpass from "./public/user/findpassword/Findpass";
-import Signup from "./public/user/Signup/Signup";
 
 // import PublicRouter from './public/qna/pages/QuestionMain';
 import QuestionMain from "./public/qna/pages/QuestionMain";
@@ -51,7 +39,6 @@ import { AnswerMain } from "./public/qna/pages/AnswerMain";
 import AnswerDetail from "./public/qna/pages/AnswerDetail";
 import AnswerWrite from "./public/qna/pages/AnswerWrite";
 
->>>>>>> 98e30389d6f962c9c6ede00675884a74fe969a78
 function App() {
   /* 라우팅
       : 어떤 요청(URL)을 어디로 안내 및 매핑 할 것인지를 정해놓고 진행하는 것
@@ -89,18 +76,11 @@ function App() {
             </Route>
             {/* 커뮤니티 */}
             <Route path="/communitys" element={<CommunityMain />} />
-<<<<<<< HEAD
             <Route path="/communitys/:communityNum" element={<CommunityDetail />} />
             <Route path="/communitys/write" element={<CommunityWrite/>} />
-            <Route path='/communitys/:communityNum/modify' element={<CommunityModify/>}/>
-=======
-            <Route
-              path="/communitys/:communityNum"
-              element={<CommunityDetail />}
-            />
-            <Route path="/communitys" element={<CommunityRegist />} />
+            <Route path='/communitys/modify' element={<CommunityModify/>}/>
+            
 
->>>>>>> 98e30389d6f962c9c6ede00675884a74fe969a78
             {/* 고객센터 */}
             <Route path="/service" element={<ServiceLayout />}>
                 <Route index element={<NoticeMain />} />

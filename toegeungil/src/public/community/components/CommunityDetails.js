@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 // import CommunityLocation from "./CommunityLocation";
 import DetailsStyle from './css/CommunityDetails.module.css';
 import UserNickName from "./UserNickName";
@@ -36,6 +36,9 @@ const CommunityDetails = () => {
                     </div>
                 </div>
             </div>
+                <Link to="/communitys/modify" state={{ "communitys": community }}>
+                    <button className={DetailsStyle.CommunityModifyButton}>수정</button>
+                </Link>
         </>
     )
 

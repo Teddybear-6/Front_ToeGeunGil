@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import PostingStyle from "./css/CommunityPosting.module.css";
 import { useLocation } from "react-router-dom";
+import CommunityKeywordList from "./CommunityKeywordList";
 
 
 function CommunityModify() {
 
     const location = useLocation();
-    const communityNum = location.state;
-    console.log(communityNum);
+    const communitys = location.state;
+    console.log(communitys);
 
 
     const [category, setCategory] = useState([]);
@@ -16,7 +17,7 @@ function CommunityModify() {
     const [local, setLocal] = useState([]);
 
     const [community, setCommunity] = useState({
-        communityNum: communityNum,
+        communityNum: communitys.communitys.communityNum,
         userNum: 3,
         communityTitle: '',
         communityIntro: '',
@@ -26,8 +27,8 @@ function CommunityModify() {
 
     useEffect(() => {
 
-        if (communityNum) {
-            fetch(process.env.REACT_APP_URL + `/communitys/${communityNum}`)
+        if (communitys.communitys.communityNum) {
+            fetch(process.env.REACT_APP_URL + `/communitys/${communitys.communitys.communityNum}`)
                 .then(response => response.json())
                 .then(data => setCommunity(data));
             console.log("1", community);
@@ -48,9 +49,6 @@ function CommunityModify() {
         fetch(process.env.REACT_APP_URL + "/local")
             .then(res => res.json())
             .then(res => setLocal(res))
-
-        console.log("1,", community);
-
     }, []);
 
     const handleValueChange = (e) => {
@@ -62,20 +60,15 @@ function CommunityModify() {
 
     //PUT 요청
     const handleSubmit = (e) => {
-        const formData = new FormData();
-        const blob = new Blob([JSON.stringify(community)], {
-            type: 'application/json'
-        });
-        formData.append('community', blob);
-
-
+        community.communityKeywordDTOList = communityKeywordDTOList.map(community => community.keywordCode);
+        
         e.preventDefault();
-        fetch(process.env.REACT_APP_URL + `/communitys`, {
+        fetch(process.env.REACT_APP_URL + `/communitys/${communitys.communitys.communityNum}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json; charset=utf-8"
             },
-            body: formData
+            body: JSON.stringify(community)
         })
             .then(response => {
                 response.json()
@@ -112,14 +105,8 @@ function CommunityModify() {
         }
     }
 
-    //키워드
     const onChangeHandler = (e) => {
-        if (e.target.name !== "keywordCode") {
-            setCommunity({ ...community, [e.target.name]: e.target.value });
-        } else {
-            communityKeywordDTOList.push({ "keywordCode": Number(e.target.value) })
-            setCommunity({ ...community, communityKeywordDTOList });
-        }
+        setCommunity({ ...community, [e.target.name]: e.target.value });
     };
 
     return (
@@ -163,7 +150,7 @@ function CommunityModify() {
                             {category.map((m, index) => (
                                 <label htmlFor="categoryCode">
                                     <div className={PostingStyle.communityCategory}>
-                                        <input key={index} type="radio" name="categoryCode" value={m.categoryCode}
+                                        <input key={index} type="checkbox" name="categoryCode" value={m.categoryCode}
                                             onChange={(e) => checkOnlyOne(e.target)} />
                                         <div>{m.categoryName}</div>
                                     </div>
@@ -178,15 +165,8 @@ function CommunityModify() {
                             </label>
                         </div>
                         <div className={PostingStyle.w1300h300}>
-                            {keyword.map((m, index) => (
-                                <label htmlFor="keywordCode">
-                                    <div className={PostingStyle.communityKeywordFont}>
-                                        <input key={index} type="checkbox" name="keywordCode" value={m.keywordCode}
-                                            onChange={onChangeHandler} />
-                                        <div>{m.keywordName}</div>
-                                    </div>
-                                </label>
-                            ))}
+                            <CommunityKeywordList keyword={keyword} community={community} setCommunity={setCommunity} communityKeyword={community.communityKeywordDTOList}
+                            setCommunityKeywordDTOList={setCommunityKeywordDTOList} communityKeywordDTOList={communityKeywordDTOList}/>
                         </div>
                     </div>
                     <div className={PostingStyle.w1400h50}>
