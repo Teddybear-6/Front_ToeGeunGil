@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import jwt_decode from "jwt-decode";
 
 function CategoryList() {
+    const [user, setUser] = useState('');
     const [category, setCategory] = useState([]);
     const [loading, setLoading] = useState(true);
 
     const getCateogry = () => {
+        if (sessionStorage.getItem("Authorizaton")) {
+            setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
+        }
         fetch(process.env.REACT_APP_URL + `/category`)
             .then(response => response.json())
             .then(data => {
@@ -17,7 +22,6 @@ function CategoryList() {
     useEffect(() => {
         getCateogry();
     }, [])
-
 
     const categoryClick = () => {
         alert("카테고리를 작성하시겠습니까?")
