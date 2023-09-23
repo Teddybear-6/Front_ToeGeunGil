@@ -36,7 +36,7 @@ function HobbyDetail() {
     
        
 
-    }, [hobbyCode])
+    }, [])
 
     const findjoin = (user) => {
         if (user) {
