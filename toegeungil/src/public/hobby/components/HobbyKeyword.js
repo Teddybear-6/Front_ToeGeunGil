@@ -6,7 +6,7 @@ function HobbyKeyword({keyword}){
 
     useEffect(()=>{
         fetch(process.env.REACT_APP_URL+`/keyword/${keyword.keywordCode}`).then(res=> res.json()).then(res=>setKeywordName(res));
-    },[])
+    },[keyword])
     return(
         <p className={CardStyle.keywordName}>{keywordName.keywordName}</p>
     )

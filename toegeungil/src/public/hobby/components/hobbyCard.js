@@ -3,14 +3,14 @@ import { useState, useEffect } from 'react';
 import CardStyle from './hobbyCard.module.css';
 import {Link} from 'react-router-dom'
 import HobbyKeyword from './HobbyKeyword';
-
+import HobbyCagegoty from './hobbyCategory';
+import createBreakpoints from '@material-ui/core/styles/createBreakpoints';
 
 
 
 function HobbyCard(hobbys){
     const[mainImage, setMainImage] = useState();
-    const[category, setCategery] = useState([]);
-    
+  
   
 
     useEffect(()=>{
@@ -18,26 +18,20 @@ function HobbyCard(hobbys){
         fetch(process.env.REACT_APP_URL+`/hobbys/mainimages/${hobbys.hobbys.hobbyCode}`).then(res => res.json())
         .then(res => setMainImage(res))
 
-        fetch(process.env.REACT_APP_URL+`/category/${hobbys.hobbys.categoryCode}`).then(res=>res.json()).then(data=>{
-            setCategery(data)
-           
-        })
+        
     }
-    
-
-    },[])
+    },[hobbys])
     
 
     const keywordArr = () =>{
-        if(hobbys){
         const newArr =[];
-        for(let index =0; index  < hobbys.hobbys.keyword?.length; index++){
+        for(let index =0; index  < hobbys.hobbys?.keyword.length; index++){
             if(index<2){
                 newArr.push( <div key={index}className={CardStyle.keywordCard}>
                     <HobbyKeyword keyword={hobbys.hobbys.keyword[index]} />
                 </div>)
             }
-        }  
+           
         return newArr;   
     }
  
@@ -54,9 +48,7 @@ function HobbyCard(hobbys){
             <p className={CardStyle.hobbyTitle}>{hobbys.hobbys.hobbyTitle}</p>
           
            <div>
-                <div className={CardStyle.keywordCard}>
-                <p className={CardStyle.keywordName}>{category.categoryName}</p>
-                </div>
+               <HobbyCagegoty category= {hobbys.hobbys?.categoryCode} />
                    
                 {keywordArr()}
                 <div className={CardStyle.keywordUnName}>
