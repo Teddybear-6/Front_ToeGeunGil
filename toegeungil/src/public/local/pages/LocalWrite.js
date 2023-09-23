@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import jwt_decode from "jwt-decode";
+import '../components/LocalModify.css';
 
 function LocalWrite() {
     const [user, setUser] = useState('');
@@ -49,30 +50,32 @@ function LocalWrite() {
     }
     return (
         <div className='layout'>
-            <h1>지역 작성</h1>
-            {user && user.auth[0] === 'ADMIN' ? (
-                <div>
-                    <label>추가하는 지역명</label>
-                    <input
-                        type="text"
-                        value={localName}
-                        onChange={nameChange}
-                    />
-                </div>
-            ) : (
-                <p>관리자가 아닙니다 공지사항 수정 권한이 없습니다</p>
-            )}
+            <div className="local-wrapper">
+                <h1 className="local-title">지역 작성</h1>
+                {user && user.auth[0] === 'ADMIN' ? (
+                    <div className="local-wrapper2">
+                        <label className="local-name">추가하는 지역명</label>
+                        <input className="local-text"
+                            type="text"
+                            value={localName}
+                            onChange={nameChange}
+                        />
+                    </div>
+                ) : (
+                    <p>관리자가 아닙니다 공지사항 수정 권한이 없습니다</p>
+                )}
+            </div>
             {!user ? null : (user.auth[0] == 'ADMIN') ?
-                <div>
+                <div className="local-button">
                     <Link to="/service/local">
-                        <button onClick={cancelChange}>취소</button>
+                        <button className="local-cancel" onClick={cancelChange}>취소</button>
                     </Link>
                     <Link to='/service/local'>
-                        <button onClick={localWriteClick}>등록</button>
+                        <button className="local-regist" onClick={localWriteClick}>등록</button>
                     </Link>
                 </div>
                 : null}
-        </div>
+        </div >
     )
 }
 

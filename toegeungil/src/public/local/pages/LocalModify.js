@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import jwt_decode from "jwt-decode";
+import '../components/LocalModify.css';
 
 function LocalModify() {
     const { localCode } = useParams();
@@ -12,11 +13,7 @@ function LocalModify() {
         if (sessionStorage.getItem("Authorizaton")) {
             setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
         }
-        if (!localCode) {
-            alert("지역 코드가 올바르지 않습니다");
-            navigate("/service/local");
-            return;
-        }
+        
         fetch(process.env.REACT_APP_URL + `/local/${localCode}`)
             .then(response => response.json())
             .then(data => setLocalName(data.localName))
@@ -31,7 +28,7 @@ function LocalModify() {
     }
 
     const updateClick = () => {
-        if (user && user.auth[0] === 'ADMIN'){
+        // if (user && user.auth[0] === 'ADMIN'){
             fetch(process.env.REACT_APP_URL + `/local/${localCode}`, {
                 method: "PUT",
                 headers: {
@@ -53,32 +50,33 @@ function LocalModify() {
                     console.error("지역 수정 중 오류 발생 :", error);
                     alert("지역 수정 중 오류가 발생하였습니다");
                 })
-        }else{
-            alert("관리자가 아닙니다 공지사항 작성 권한이 없습니다");
-        }
+        // }else{
+        //     alert("관리자가 아닙니다 공지사항 작성 권한이 없습니다");
+        // }
         
     }
 
     return (
         <div className='layout'>
-            <h1>지역 수정</h1>
-                <div>
-                    <label>수정하는 지역명</label>
-                    <input
+            <div className="local-wrapper">
+            <h1 className="local-title">지역 수정</h1>
+                <div className="local-wrapper2">
+                    <label className="local-name">수정하는 지역명</label>
+                    <input className="local-text"
                         type="text"
                         value={localName}
                         onChange={nameChange}
                     />
                 </div>
-                <div>
+                <div className="local-button">
                     <Link to="/service/local">
-                        <button onClick={cancelClick}>취소</button>
+                        <button className="local-cancel" onClick={cancelClick}>취소</button>
                     </Link>
                     <Link to='/service/local'>
-                        <button onClick={updateClick}>등록</button>
+                        <button className="local-regist" onClick={updateClick}>등록</button>
                     </Link>
                 </div>
-                
+                </div>
         </div>
     )
 }
