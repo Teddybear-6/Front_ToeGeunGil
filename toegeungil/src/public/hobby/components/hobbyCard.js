@@ -2,9 +2,8 @@
 import { useState, useEffect } from 'react';
 import CardStyle from './hobbyCard.module.css';
 import {Link} from 'react-router-dom'
-import HobbyKeyword from './HobbyKeyword';
+import HobbyCardkeyword from './hobbyCardKeyword';
 import HobbyCagegoty from './hobbyCategory';
-import createBreakpoints from '@material-ui/core/styles/createBreakpoints';
 
 
 
@@ -17,25 +16,11 @@ function HobbyCard(hobbys){
         if(hobbys.hobbys){
         fetch(process.env.REACT_APP_URL+`/hobbys/mainimages/${hobbys.hobbys.hobbyCode}`).then(res => res.json())
         .then(res => setMainImage(res))
-
-        
     }
-    },[hobbys])
     
 
-    const keywordArr = () =>{
-        const newArr =[];
-        for(let index =0; index  < hobbys.hobbys?.keyword.length; index++){
-            if(index<2){
-                newArr.push( <div key={index}className={CardStyle.keywordCard}>
-                    <HobbyKeyword keyword={hobbys.hobbys.keyword[index]} />
-                </div>)
-            }
-           
-        return newArr;   
-    }
- 
-  }
+    },[hobbys])
+    
 
     return(
         <>
@@ -50,7 +35,7 @@ function HobbyCard(hobbys){
            <div>
                <HobbyCagegoty category= {hobbys.hobbys?.categoryCode} />
                    
-                {keywordArr()}
+                <HobbyCardkeyword keyword={hobbys.hobbys?.keyword} />
                 <div className={CardStyle.keywordUnName}>
                <p className={CardStyle.keywordName}>···</p>
                </div>
