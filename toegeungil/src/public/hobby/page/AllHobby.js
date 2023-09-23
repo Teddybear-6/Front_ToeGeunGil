@@ -33,7 +33,6 @@ function AllHobby() {
 
             <div className={AllHobbyCss.paging}>
                 <Paging count={pageCount} setPage={setPage} page={page} />
-
             </div>
         </>
     )
