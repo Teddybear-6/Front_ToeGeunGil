@@ -62,7 +62,7 @@ function LocalWrite() {
                         />
                     </div>
                 ) : (
-                    <p>관리자가 아닙니다 공지사항 수정 권한이 없습니다</p>
+                    <p>관리자가 아닙니다 지역 관리 작성 권한이 없습니다</p>
                 )}
             </div>
             {!user ? null : (user.auth[0] == 'ADMIN') ?

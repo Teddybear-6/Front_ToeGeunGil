@@ -51,7 +51,7 @@ function LocalModify() {
                 alert("지역 수정 중 오류가 발생하였습니다");
             })
         }else{
-            alert("관리자가 아닙니다 공지사항 작성 권한이 없습니다");
+            alert("관리자가 아닙니다 지역 관리 수정 권한이 없습니다");
         }
 
     }
@@ -70,7 +70,7 @@ function LocalModify() {
                         />
                     </div>
                 ) : (
-                    <p>관리자가 아닙니다 공지사항 수정 권한이 없습니다</p>
+                    <p>관리자가 아닙니다 지역 관리 수정 권한이 없습니다</p>
                 )}
                 {!user ? null : (user.auth[0] == 'ADMIN') ?
                     <div className="local-button">
