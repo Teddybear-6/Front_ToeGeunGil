@@ -8,8 +8,8 @@ import SocialParticipateList from "./componentAPI/SocialParticipateList";
 import "../components/css/Button.css"
 import "../components/css/SocialPosting.css"
 import { Link, NavLink } from "react-router-dom";
-import jwt_decode from "jwt-decode";
 
+import jwt_decode from "jwt-decode";
 import DetailsStyle from './css/SocialDetails.module.css';
 
 function SocialDetailCard() {
@@ -41,20 +41,21 @@ function SocialDetailCard() {
         }
     }, [socialNum]);
 
-    const handleSubmit = (socialNum) => {
+    const clickHandler = (socialNum) => {
         if (!window.confirm("[social] 게시글을 삭제하시겠습니까?")) {
             // alert("취소(아니오)를 누르셨습니다.");
         } else {
-            alert("[social] 게시글이 삭제되었습니다.");
             fetch(process.env.REACT_APP_URL + `/socials/${socialNum}`, {
                 method: "DELETE",
-                headers: {}
-            })
-                .then(response => response.json())
+                headers: {
+                    "Authorization": sessionStorage.getItem("Authorizaton")
+                },
+            }).then(res => res.json())
                 .then(response => { //return 값에 대한 처리
                     setSocials(socials.filter(code => code.socialNum != socialNum))
-                    alert(response['value'])
+                    // alert(response['value'])
                 });
+            alert("[social] 게시글이 삭제되었습니다.");
             window.location.href = "/social"
         }
     }
@@ -141,7 +142,7 @@ function SocialDetailCard() {
                         !(!(user === undefined) && !(user === null)) ? null :
                             !(user.no === socials.userNum) ? null :
                                 <>
-                                    <button type="button" className="buttonOn_so marR30" onClick={handleSubmit}>소셜삭제</button>
+                                    <button type="button" className="buttonOn_so marR30" onClick={()=> clickHandler(socials.socialNum)}>소셜삭제</button>
                                     <Link to="/social/modify" type="button" className="buttonOn_so marR30" state={{ Statesocial: socials }}>소셜수정</Link>
                                 </>
                     }
