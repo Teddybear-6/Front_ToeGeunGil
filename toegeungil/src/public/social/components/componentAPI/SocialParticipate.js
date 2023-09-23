@@ -1,13 +1,24 @@
 import { useEffect, useState } from "react";
 import DetailsStyle from '../css/SocialDetails.module.css';
+import jwt_decode from "jwt-decode";
 
 
-function SocialParticipate() {
+function SocialParticipate({socialNum, userNum}) { //소설 번호와 회원 번호 받아오기
 
-    const [socialNum, setSocialNum] = useState(); //소셜 번호
-    const [userNum, setUserNUm] = useState(); //회원 번호
+    const [user, setUser] = useState();
+
+    const [participate, setParticipate] = useState({
+        socialNum: '', //소셜 번호
+        userNum: '', //회원 번호
+    });
 
     const participateHandler = () => {
+
+        //권한설정
+        if (sessionStorage.getItem("Authorizaton")) {
+            setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
+        }
+
         if (!user) {
             // 유저가 아닐 경우
             alert("회원만 참여가능합니다.")
@@ -44,8 +55,8 @@ function SocialParticipate() {
 
     return (
         <>
-            <button className={DetailsStyle.buttonStyle}>참여하기</button>
-            <button className={DetailsStyle.buttonStyle}>취소하긴</button>
+            <button className={DetailsStyle.buttonStyle} onClick={participateHandler} name="userNum">참여하기</button>
+            {/* <button className={DetailsStyle.buttonStyle}>취소하긴</button> */}
         </>
     )
 }
