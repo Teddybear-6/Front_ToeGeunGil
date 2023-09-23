@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import DetailsStyle from '../css/SocialDetails.module.css';
+import SocialParticipate from "./SocialParticipate";
+
 
 function SocialParticipateList({ postNum }) {
     //게시글 번호 입력하면 리스트로 참여 회원 보여줌
@@ -20,41 +22,6 @@ function SocialParticipateList({ postNum }) {
 
     }, [postNum]);
 
-    // const participateHandler = () => {
-    //     if (!user) {
-    //         // 유저가 아닐 경우
-    //         alert("회원만 참여가능합니다.")
-    //     } else if (!participate) {
-    //         // 참여 신청이 되어있지 않을 경우
-    //         if (window.confirm("참여하시겠습니까")) {
-    //             fetch(process.env.REACT_APP_URL + `/socials/participate/${postNum}`, {
-    //                 method: "POST",
-    //             })
-    //             .then(res => res.text())
-    //             .then(res => {
-    //                 alert(res)
-    //                 if (res == "참가 완료되었습니다.") {
-    //                     setParticipate(true)
-    //                 }
-    //             }).catch(r => console.log(r))
-    //         }
-    //     } else if (participate) {
-    //         if (window.confirm("참여 취소하시겠습니까")) {
-    //             fetch(process.env.REACT_APP_URL + `/socials/participate/${postNum}`, {
-    //                 method: "POST",
-    //             })
-    //             .then(res => res.text())
-    //             .then(res => {
-    //                 alert(res)
-    //                 if (res == "참가 취소 되었습니다.") {
-    //                     setParticipate(false)
-    //                 }
-                    
-    //             }).catch(r => console.log(r))
-    //         }
-    //     }
-    // }
-
     return (
         <>
             {/* 참여자 */}
@@ -72,7 +39,7 @@ function SocialParticipateList({ postNum }) {
                             }
                             {/* {Object.keys(participate[0]) <=0 ? null : "sdsd"} */}
                         </div>
-                        <button className={DetailsStyle.buttonStyle}>참여하기</button>
+                        {/* <SocialParticipate/> */}
                     </div>
                 </div>
             </div>
