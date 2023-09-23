@@ -54,31 +54,35 @@ function CategoryList() {
                 ) : (
                     category ? (
                         <>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <td>번호</td>
-                                        <td>카테고리명</td>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {category.map((category) => (
-                                        <tr key={category.categoryCode}>
-                                            <td>{category.categoryCode}</td>
-                                            <td>{category.categoryName}</td>
-                                            <td>
-                                                <button onClick={() => deleteCategory(category.categoryCode)}>삭제</button>
-                                                <Link to={`/service/category/${category.categoryCode}/modify`}>
-                                                    <button>수정</button>
-                                                </Link>
-                                            </td>
+                            {user && user.auth[0] === 'ADMIN' ? (
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <td>번호</td>
+                                            <td>카테고리명</td>
                                         </tr>
-                                    ))}
-                                </tbody>
-                                <Link to={`/service/category/write`}>
-                                    <button onClick={categoryClick}>카테고리 작성</button>
-                                </Link>
-                            </table>
+                                    </thead>
+                                    <tbody>
+                                        {category.map((category) => (
+                                            <tr key={category.categoryCode}>
+                                                <td>{category.categoryCode}</td>
+                                                <td>{category.categoryName}</td>
+                                                <td>
+                                                    <button onClick={() => deleteCategory(category.categoryCode)}>삭제</button>
+                                                    <Link to={`/service/category/${category.categoryCode}/modify`}>
+                                                        <button>수정</button>
+                                                    </Link>
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                    <Link to={`/service/category/write`}>
+                                        <button onClick={categoryClick}>카테고리 작성</button>
+                                    </Link>
+                                </table>
+                            ) : (
+                                <p>관리자가 아닙니다 카테고리 관리 권한이 없습니다</p>
+                            )}
                         </>
                     ) : "카테고리가 없습니다"
                 )
