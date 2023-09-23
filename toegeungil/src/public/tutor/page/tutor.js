@@ -1,11 +1,15 @@
 import HobbyModify from "./hobbyModify"
+import HobbyWrite from "./hobbyWrite"
+import TutorNavber from "../components/tutorHobbyNav"
 
 
 function Tutor(){
 
 
     return(
-        <HobbyModify hobbyCode={2}></HobbyModify>
+        <div>
+     
+      </div>
     )
 }
 

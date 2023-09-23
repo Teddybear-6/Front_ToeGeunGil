@@ -28,7 +28,12 @@ const NoticeView = () => {
         if (sessionStorage.getItem("Authorizaton")) {
             setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
         }
-        fetch(process.env.REACT_APP_URL + `/notices/${noticeNum}`, { method: "DELETE" })
+        fetch(process.env.REACT_APP_URL + `/notices/${noticeNum}`, {
+            method: "DELETE",
+            headers:{
+                "Authorization": sessionStorage.getItem("Authorizaton")
+            }
+        })
             .then(response => {
                 if (response.ok) {
                     alert("공지사항이 삭제되었습니다")

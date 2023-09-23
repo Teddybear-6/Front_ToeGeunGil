@@ -1,14 +1,13 @@
 import "../component/QuestionMain.css";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
-
+import "../component/AnswerWrite.css";
 
 export const AnswerMain = () => {
   const [answer, setAnswer] = useState([{}]);
 
   useEffect(() => {
-    fetch(process.env.REACT_APP_URL+`/answer/list`)
+    fetch(process.env.REACT_APP_URL + `/answer/list`)
       .then((r) => r.json())
       .then((data) => setAnswer(data));
     console.log(answer);
@@ -20,17 +19,11 @@ export const AnswerMain = () => {
 
       <div className="layout">
         <div className="notice-wrapper">
-          <div className="customerService-banner">
-            <button className="notice-button">공지사항</button>
-            <button className="qna-button">문의하기</button>
-            <button className="report-button">신고하기</button>
-          </div>
           <table className="table-wrapper">
             <thead>
               <tr>
                 <th>번호</th>
                 <th>제목</th>
-                <th>작성자</th>
                 <th>작성일</th>
               </tr>
             </thead>
@@ -43,20 +36,28 @@ export const AnswerMain = () => {
                       <tr key={a.answerNum}>
                         <td>{a.answerNum}</td>
                         <td>
-                          <Link to={`/answer/${a.answerNum}`} style={{textDecoration:"none", color:"#87746B"}} 
-                          className="title-link">{a.answerTitle} </Link>
+                          <Link
+                            to={`/service/answer/${a.answerNum}`}
+                            style={{ textDecoration: "none", color: "#87746B" }}
+                            className="title-link"
+                          >
+                            {a.answerTitle}{" "}
+                          </Link>
                         </td>
-                        <td>{a.answerNick}</td>
+                        {/* <td>{a.answerNick}</td> */}
                         <td>{a.answerDate}</td>
                       </tr>
                     );
                   })}
             </tbody>
-            
           </table>
         </div>
+        <div className="user-button-box">
+          <Link to="/service/answer/write">
+            <button className="user-button">글쓰기</button>
+          </Link>
+        </div>
       </div>
-      
     </>
   );
 };

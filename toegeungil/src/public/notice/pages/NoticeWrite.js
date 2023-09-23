@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../components/NoticeWrite.css";
+import jwt_decode from "jwt-decode";
 
 const NoticeWrite = () => {
+    const [user, setUser] = useState('');
     const [noticeTitle, setNoticeTitle] = useState(''); // 공지 제목
     const [noticeContent, setNoticeContent] = useState(''); // 공지 내용
 
@@ -21,6 +23,9 @@ const NoticeWrite = () => {
     }
 
     const writeClick = () => {
+        if (sessionStorage.getItem("Authorizaton")) {
+            setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
+        }
         console.log(noticeTitle);
         fetch(process.env.REACT_APP_URL + `/notices`,
             {
@@ -48,38 +53,40 @@ const NoticeWrite = () => {
 
     return (
         <div className='layout'>
-            <div className="wrapper" >
-                <h1 className="write-header">공지사항 작성</h1>
-                <div className="write-wrapper textarea">
-                    <div className="write-col1">
-                        <label>공지 제목</label>
-                        <div className="write-text1 textarea">
-                            <input className="text-box"
-                                type="text"
-                                value={noticeTitle}
-                                onChange={handleTitleChange}
-                            />
+            {!user ? "관리자만 사용 가능합니다" : (user.auth[0] == 'ADMIN') ?
+                <div className="wrapper" >
+                    <h1 className="write-header">공지사항 작성</h1>
+                    <div className="write-wrapper textarea">
+                        <div className="write-col1">
+                            <label>공지 제목</label>
+                            <div className="write-text1 textarea">
+                                <input className="text-box"
+                                    type="text"
+                                    value={noticeTitle}
+                                    onChange={handleTitleChange}
+                                />
+                            </div>
+                        </div>
+                        <div className="write-col2 flexsty">
+                            <label className="write-content">공지 내용</label>
+                            <div className="write-text2 textarea">
+                                <textarea className="text-box2"
+                                    value={noticeContent}
+                                    onChange={handleContentChange}
+                                />
+                            </div>
                         </div>
                     </div>
-                    <div className="write-col2 flexsty">
-                        <label className="write-content">공지 내용</label>
-                        <div className="write-text2 textarea">
-                            <textarea className="text-box2"
-                                value={noticeContent}
-                                onChange={handleContentChange}
-                            />
-                        </div>
+                    <div className="button">
+                        <Link to="/service/notice">
+                            <button className="cancel-button" onClick={cancelClick}>취소</button>
+                        </Link>
+                        <Link to="/service/notice">
+                            <button className="write-button" onClick={writeClick}>등록</button>
+                        </Link>
                     </div>
                 </div>
-                <div className="button">
-                    <Link to="/service/notice">
-                        <button className="cancel-button" onClick={cancelClick}>취소</button>
-                    </Link>
-                    <Link to="/service/notice">
-                        <button className="write-button" onClick={writeClick}>등록</button>
-                    </Link>
-                </div>
-            </div>
+                : null}
         </div>
     )
 }
