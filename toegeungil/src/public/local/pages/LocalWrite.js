@@ -54,7 +54,7 @@ function LocalWrite() {
                 <h1 className="local-title">지역 작성</h1>
                 {user && user.auth[0] === 'ADMIN' ? (
                     <div className="local-wrapper2">
-                        <label className="local-name">추가하는 지역명</label>
+                        <label className="local-name">작성하는 지역명</label>
                         <input className="local-text"
                             type="text"
                             value={localName}
@@ -64,18 +64,18 @@ function LocalWrite() {
                 ) : (
                     <p>관리자가 아닙니다 지역 관리 작성 권한이 없습니다</p>
                 )}
+                {!user ? null : (user.auth[0] == 'ADMIN') ?
+                    <div className="local-button">
+                        <Link to="/service/local">
+                            <button className="local-cancel" onClick={cancelChange}>취소</button>
+                        </Link>
+                        <Link to='/service/local'>
+                            <button className="local-regist" onClick={localWriteClick}>등록</button>
+                        </Link>
+                    </div>
+                    : null}
             </div>
-            {!user ? null : (user.auth[0] == 'ADMIN') ?
-                <div className="local-button">
-                    <Link to="/service/local">
-                        <button className="local-cancel" onClick={cancelChange}>취소</button>
-                    </Link>
-                    <Link to='/service/local'>
-                        <button className="local-regist" onClick={localWriteClick}>등록</button>
-                    </Link>
-                </div>
-                : null}
-        </div >
+        </div>
     )
 }
 
