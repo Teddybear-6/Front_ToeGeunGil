@@ -1,20 +1,23 @@
 import { useState, useEffect } from "react";
 import StudentListTr from "./studentListTd,js";
 import { useLocation } from "react-router-dom"
-
+import "./studentList.css"
 
 function StudentList(){
     const [joinuser, setJoinuser] = useState([]);
-
-    const hobbyCode = useLocation();
+    const [local, setLocal] = useState();
+    const hobby = useLocation();
     useEffect(()=>{
-
-  
-        getJoinuser(hobbyCode?.state?.hobbyCode);
-
+        getJoinuser(hobby?.state?.hobby.hobbyCode);
+        findLocal(hobby?.state?.hobby.localCode)
    
     },[])
-    // console.log(hobbyCode.state.hobbyCode)
+
+    const findLocal =(localCode)=>{
+        fetch(process.env.REACT_APP_URL +`/local/${localCode}`).then(res=>res.json()).then(res=>setLocal(res));
+    }
+
+
 
     const getJoinuser = (hobbyCode) => {
         console.log(hobbyCode)
@@ -23,8 +26,29 @@ function StudentList(){
             .then(data => setJoinuser(data)).catch(e => console.log(e))
     }
 
-    console.log(joinuser)
+    
     return (
+       <div className="layout">
+       <div className="studentListTitleframe">
+                <p className="title">{hobby?.state?.hobby.hobbyTitle}</p>
+            </div>
+
+            <div className="studentscheduleframe">
+                <div className="student magin">
+                    <p className="title">수강인원: {joinuser?.length}  명</p>
+                </div>
+                <div className="student magin">
+                    <p className="title">일정 : {hobby?.state?.hobby.data} {hobby?.state?.hobby.startTime} ~ {hobby?.state?.hobby.endTime}</p>
+                </div>
+
+            </div>
+            <div className="studentplace">
+                <p className="title">장소 : {local?.localName}  {hobby?.state?.hobby.hobbyPlace} </p>
+            </div>
+       
+       
+ 
+
         <div className='layout'>
             <div className="notice-wrapper">
             <div className="studetn">
@@ -57,6 +81,9 @@ function StudentList(){
                 </div>
             </div >
         </div>
+  
+        </div>
+
     )
 }
 
