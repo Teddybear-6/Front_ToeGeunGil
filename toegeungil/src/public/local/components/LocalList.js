@@ -74,10 +74,12 @@ function LocalList() {
                                                 <td>{local.localCode}</td>
                                                 <td>{local.localName}</td>
                                                 <td>
-                                                    <button onClick={() => deleteLocal(local.localCode)}>삭제</button>
-                                                    <Link to={`/service/local/${local.localCode}/modify`}>
-                                                        <button>수정</button>
-                                                    </Link>
+                                                    <div className="local-button-box">
+                                                        <button className="local-button1" onClick={() => deleteLocal(local.localCode)}>삭제</button>
+                                                        <Link to={`/service/local/${local.localCode}/modify`}>
+                                                            <button className="local-button1">수정</button>
+                                                        </Link>
+                                                    </div>
                                                 </td>
                                             </tr>
                                         ))}
