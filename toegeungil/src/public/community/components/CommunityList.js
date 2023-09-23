@@ -64,11 +64,9 @@ const CommunityList = () => {
                                 </td>
                                 <td>
                                     <div className={DetailsTitleStyle.MainKeyword}>
-                                    <div className={DetailsTitleStyle.MainKeywordDiv}>
                                     {community.communityKeywordDTOList?.map((m, index) => (
                                         <CommunityKeyword key={index} code={m}/>
                                     ))}
-                                    </div>
                                     </div>
                                 </td>
                             </tr>

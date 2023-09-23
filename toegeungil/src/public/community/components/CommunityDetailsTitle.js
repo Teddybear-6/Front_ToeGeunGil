@@ -39,9 +39,11 @@ const CommunityDetailsTitle = () => {
                             {/* localNum의 값이 null이 아닐 경우에만 렌더링 되게 설정 */}
                         </div>
                         <div className={DetailsTitleStyle.communityKeywordList}>
+                            <div className={DetailsTitleStyle.communityKeywordDTOList1}>
                             {community.communityKeywordDTOList?.map((m, index) => (
                                 <CommunityKeyword key={index} code={m} />
                             ))}
+                            </div>
                         </div>
                     </div>
                 </div>
