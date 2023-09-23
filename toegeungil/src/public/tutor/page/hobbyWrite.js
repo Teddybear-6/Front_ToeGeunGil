@@ -145,7 +145,7 @@ function HobbyWrite() {
         <div className="titleframe">
           <p className="hobbytitle">취미제목</p>
           <div className="title">
-            <textarea className="hobbytitleText" maxLength="150" type="text" name="hobbyTitle" onChange={onChangeHandler} />
+            <textarea className="hobbytitleText" maxLength="40" type="text" name="hobbyTitle" onChange={onChangeHandler} />
           </div>
         </div>
         <div className="mainIntroFrame">
