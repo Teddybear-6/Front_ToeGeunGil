@@ -28,7 +28,7 @@ function LocalModify() {
     }
 
     const updateClick = () => {
-        // if (user && user.auth[0] === 'ADMIN'){
+        if (user && user.auth[0] === 'ADMIN'){
         fetch(process.env.REACT_APP_URL + `/local/${localCode}`, {
             method: "PUT",
             headers: {
@@ -50,9 +50,9 @@ function LocalModify() {
                 console.error("지역 수정 중 오류 발생 :", error);
                 alert("지역 수정 중 오류가 발생하였습니다");
             })
-        // }else{
-        //     alert("관리자가 아닙니다 공지사항 작성 권한이 없습니다");
-        // }
+        }else{
+            alert("관리자가 아닙니다 공지사항 작성 권한이 없습니다");
+        }
 
     }
 
