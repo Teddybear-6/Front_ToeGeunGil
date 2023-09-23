@@ -1,80 +1,90 @@
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import CommentsStyle from './css/CommunityDetailsComments.module.css'
 import UserNickName from "./UserNickName";
-
+import jwt_decode from "jwt-decode";
 
 const CommunityDetailsComments = () => {
     const { communityNum } = useParams();
     const [comments, setComments] = useState([]);
-    const [userNum, setUserNum] = useState(null);
+    const [user, setUser] = useState();
+
     const [newComment, setNewComment] = useState("");
     const commentInputRef = useRef(null);
 
+    useEffect(() => {
+        if (sessionStorage.getItem("Authorization")) {
+            setUser(jwt_decode(sessionStorage.getItem("Authorization")))
+        }
+
+        // Fetch comments when the component mounts
+        getComments();
+    }, [communityNum]);
+
+    // Fetch comments from the server
     const getComments = () => {
-        fetch(process.env.REACT_APP_URL+`/communitys/comments/${communityNum}`)
+        fetch(process.env.REACT_APP_URL + `/communitys/comments/${communityNum}`)
             .then((response) => response.json())
             .then((data) => {
                 setComments(data);
-                setUserNum(data.userNum);
+            })
+            .catch((error) => {
+                console.error('Failed to fetch comments:', error);
             });
     };
 
-    // 댓글을 쓴 날짜와 시간 형식으로 보여주기  
     const formatDate = (dateString) => {
         if (!dateString) {
             return "";
-            // 빈값일 때 날짜 안뜨게 하기 
         }
         const options = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' };
         return new Date(dateString).toLocaleDateString(undefined, options);
     };
 
-    useEffect(() => {
-        getComments();
-    },[communityNum]);
-
     const handleComment = () => {
+        // Check if the user is logged in
+        if (!(user === undefined) && !(user === null)) {
+            const newCommentObject = {
+                userNum: user.userNum,
+                commentDetail: newComment,
+                commentWriteDate: new Date().toISOString()
+            };
 
-        const newCommentObject = {
-            userNum: userNum,
-            commentDetail: newComment,
-            commentWriteDate: new Date().toISOString()
-        };
-
-        fetch(`http://localhost:8001/communitys/comments/${communityNum}`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(newCommentObject),
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                setNewComment(""); 
-                const commentWithTime = { ...data, commentWriteDate: new Date().toLocaleString()};
-                // 서버에서 반환된 새 댓글 데이터에 시간 추가 
-                setComments([...comments, commentWithTime]);
-                // 새로운 댓글을 기존 댓글 목록에 추가  
+            fetch(process.env.REACT_APP_URL + `/communitys/comments/${communityNum}`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": sessionStorage.getItem("Authorization"),
+                },
+                body: JSON.stringify(newCommentObject),
             })
-            .catch((error) => {
-                console.error('댓글 등록에 실패하였습니다.', error);
-            })
-            window.location.reload();
+                .then((response) => response.json())
+                .then((data) => {
+                    setNewComment("");
+                    const commentWithTime = { ...data, commentWriteDate: new Date().toLocaleString() };
+                    setComments([...comments, commentWithTime]);
+                })
+                .catch((error) => {
+                    console.error('Failed to post comment:', error);
+                });
+        } else {
+            alert("로그인 후 댓글을 작성할 수 있습니다.");
+        }
     };
 
     return (
         <>
             <div className={CommentsStyle.CommentDetail}>
-                <div className={CommentsStyle.CommentBar}></div>
+                {/* Render comments here */}
                 {comments.length > 0 &&
                     comments.map((comment) => (
-                        <div className={CommentsStyle.CommentsBox}>
-                            <img className={CommentsStyle.CommunityParticipate} src="/participate.png" alt="participate"/>
-                            <div key={comment.commentNum} className={CommentsStyle.CommentDetailsView}>
+                        <div className={CommentsStyle.CommentsBox} key={comment.commentNum}>
+                            <img className={CommentsStyle.CommunityParticipate} src="/participate.png" alt="participate" />
+                            <div className={CommentsStyle.CommentDetailsView}>
                                 <div className={CommentsStyle.CommentWriterBox}>
                                     <div className={CommentsStyle.CommentWriter}>
-                                        {comment.userNum !== null && <UserNickName userNo={comment.userNum} />}</div>
+                                        {comment.userNum !== null && <UserNickName userNo={comment.userNum} />}
+                                    </div>
                                     <div className={CommentsStyle.CommentWriterDate}>
                                         {formatDate(comment.commentWriteDate)}
                                     </div>
@@ -100,7 +110,6 @@ const CommunityDetailsComments = () => {
             </div>
         </>
     )
-
 }
 
 export default CommunityDetailsComments;

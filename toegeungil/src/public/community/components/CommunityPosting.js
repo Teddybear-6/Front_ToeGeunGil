@@ -47,27 +47,33 @@ function CommunityPosting() {
     }
 
     const handleSubmit = (e) => {
-        if (!(user === undefined) && !(user === null) && user.auth[0] === 'ADMIN' || user.auth[0] === 'TUTOR') {
-
+        if (!(user === undefined) && !(user === null) && (user.auth[0] === 'ADMIN' || user.auth[0] === 'TUTOR')) {
             e.preventDefault();
             fetch(process.env.REACT_APP_URL + `/communitys`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json; charset=utf-8",
-                    "Authorization": sessionStorage.getItem("Authorizaton"),
+                    "Authorization": sessionStorage.getItem("Authorization"),
                 },
                 body: JSON.stringify(community)
             })
-                .then(response => {
-                    response.json()})
-                .catch(error => {
-                    console.log(error);
-                    alert("에러가 발생하였습니다.")
-                })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('error');
+                }
+                return response.json();
+            })
+            .then((data) => {
+            })
+            .catch((error) => {
+                console.log(error);
+                alert("에러가 발생하였습니다. 로그인 후 작성이 가능합니다.");
+            });
         } else {
-            alert("로그인 후 작성이 가능합니다.")
+            alert("로그인 후 작성이 가능합니다.");
         }
     };
+    
 
     const checkOnlyOne = (checkThis) => {
         const checkboxes = document.getElementsByName("categoryCode")
