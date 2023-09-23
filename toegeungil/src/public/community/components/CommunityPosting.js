@@ -49,20 +49,14 @@ function CommunityPosting() {
     const handleSubmit = (e) => {
         if (!(user === undefined) && !(user === null) && user.auth[0] === 'ADMIN' || user.auth[0] === 'TUTOR') {
 
-            const formData = new FormData();
-            const blob = new Blob([JSON.stringify(community)], {
-                type: 'application/json'
-            });
-
-            formData.append('community', blob);
-
             e.preventDefault();
             fetch(process.env.REACT_APP_URL + `/communitys`, {
                 method: "POST",
                 headers: {
-                    "Authorization": sessionStorage.getItem("Authorizaton")
+                    "Content-Type": "application/json; charset=utf-8",
+                    "Authorization": sessionStorage.getItem("Authorizaton"),
                 },
-                body: formData
+                body: JSON.stringify(community)
             })
                 .then(response => {
                     response.json()})
