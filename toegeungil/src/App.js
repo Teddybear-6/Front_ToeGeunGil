@@ -42,6 +42,8 @@ import LocalWrite from "./public/local/pages/LocalWrite";
 import LocalModify from "./public/local/pages/LocalModify";
 import SocialModify from "./public/social/page/SocialModify";
 import AnswerWrite from "./public/qna/pages/AnswerWrite";
+import HobbyLayout from "./public/hobby/layout/HoobyLayout";
+import CategoryHobby from "./public/hobby/page/CategoryHobby";
 import React, { useState } from "react";
 function App() {
   /* 라우팅
@@ -63,12 +65,15 @@ function App() {
               {/* <Route index element={<Mypage/>}/> */}
               </Route>
             {/* 취미 */}
-            <Route path='hobby'>
-            <Route index  element={<AllHobby/>} />
-            <Route path=':hobbyCode' element={<HobbyDetail />} />
+            <Route  element={<HobbyLayout/>}>
+            <Route path='/hobby'  element={<AllHobby/>} />
+            <Route path='hobby/:hobbyCode' element={<HobbyDetail />}/>
+            <Route path="/hobbycategory/:categoryCode"  element={<CategoryHobby/>} />
             </Route>
+           
+          
 
-            <Route element={<TutorLayout />}>
+            <Route element={<TutorLayout/>}>
             <Route path="/tutor" element={<TutorHobbyList />} />
             <Route path='/hobbywrite'  element={<HobbyWrite />} />
             <Route path='/hobbymodify' element={<HobbyModify />} />

@@ -14,6 +14,7 @@ function HobbyCard(hobbys){
   
 
     useEffect(()=>{
+        if(hobbys.hobbys){
         fetch(process.env.REACT_APP_URL+`/hobbys/mainimages/${hobbys.hobbys.hobbyCode}`).then(res => res.json())
         .then(res => setMainImage(res))
 
@@ -21,28 +22,31 @@ function HobbyCard(hobbys){
             setCategery(data)
            
         })
-
+    }
     
 
     },[])
     
 
     const keywordArr = () =>{
+        if(hobbys){
         const newArr =[];
-        for(let index =0; index  < hobbys.hobbys.keyword.length; index++){
+        for(let index =0; index  < hobbys.hobbys.keyword?.length; index++){
             if(index<2){
                 newArr.push( <div key={index}className={CardStyle.keywordCard}>
                     <HobbyKeyword keyword={hobbys.hobbys.keyword[index]} />
                 </div>)
             }
-          
+        }  
+        return newArr;   
     }
-    return newArr;
+ 
   }
 
     return(
         <>
-        <Link to={`/hobby/${hobbys.hobbys.hobbyCode}`}>
+        {!hobbys.hobbys ? "취미가 없습니다." :  
+        <Link to={`/hobby/${hobbys.hobbys?.hobbyCode}`}>
         <div className={CardStyle.hobbyCard}>
             {
         !mainImage ? null :  <img className={CardStyle.hobbyImage} src={`http://106.250.199.126:9000/image/${mainImage.path}`}/>
@@ -62,7 +66,7 @@ function HobbyCard(hobbys){
             <p className={CardStyle.hobbyPrice}> {hobbys.hobbys.hobbyPrice}원</p>
         </div>
         </Link>
-  
+}
         </>
     )
 }
