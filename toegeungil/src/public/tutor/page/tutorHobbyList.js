@@ -22,7 +22,7 @@ function TutorHobbyList(){
         setPages(page)
     }
 )
-console.log(tutor)
+
     const api = () =>{
       
         fetch(process.env.REACT_APP_URL+`/hobbys/tutor?page=${page - 1}&size=12`,{
@@ -34,7 +34,7 @@ console.log(tutor)
           fetch(process.env.REACT_APP_URL+`/hobbys/tutorlist/size/${tutor?.no}`).then(res => res.json()).then(res => setPageCount(res)))
         .catch((e)=>console.log(e))
     }
-    console.log(hobby)
+
   return(
     <>
     {!tutor ? "로그인 해주세요" : !tutor?.auth[0]==="TUTOR" ? "강사가 아닙니다." :

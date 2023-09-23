@@ -33,7 +33,7 @@ function KeywordList({ keyword, hobby, setHobby, hobbyKeyword }) {
     setHobby({ ...hobby, keywordDTOList: keywordDTOList })
   };
 
-  console.log(hobby)
+
   return (
     <>
       {/* { !keyword ? null :keywordHandler()} */}

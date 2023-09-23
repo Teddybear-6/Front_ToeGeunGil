@@ -4,7 +4,7 @@ import "./layout.css"
 import jwt_decode from "jwt-decode";
 
 
-function Header() {
+function Header({login , setLogin}) {
     const [user, setUser] = useState();
     const navigate =useNavigate();
     useEffect(() => {
@@ -14,13 +14,14 @@ function Header() {
         }
 
         console.log("확인")
-    },[])
-
+    },[login])
+console.log(login)
     const logout = () => {
         sessionStorage.removeItem("Authorizaton");
         console.log("확인")
         console.log(user)
         setUser(null);
+        setLogin(false);
         navigate("/");
     }
 
@@ -31,7 +32,7 @@ function Header() {
                 {!user ? null : (user?.auth[0] === "USER" ) ? null : <NavLink to="/tutor" className={({ isActive }) => isActive ? "headerOn navbarLine" : "headerFont navbarLine"}>강사</NavLink>}
                 <NavLink to="/mypage" className={({ isActive }) => isActive ? "headerOn navbarLine" : "headerFont navbarLine"}>마이페이지</NavLink>
                 <NavLink to="/service" className={({ isActive }) => isActive ? "headerOn navbarLine" : "headerFont navbarLine"}>고객센터</NavLink>
-                {user ? null : <NavLink to="/login" className={({ isActive }) => isActive ? "headerOn navbarLine" : "headerFont navbarLine"}>로그인</NavLink>}
+                {user ? null : <NavLink  to="/login" className={({ isActive }) => isActive ? "headerOn navbarLine" : "headerFont navbarLine"}>로그인</NavLink>}
                 {/* <NavLink to="/notice/qna" className={({isActive}) => isActive? "headerOn navbarLine" :"headerFont navbarLine"}>Q&A</NavLink> */}
                 {!user ? null : <NavLink  type="button" className={"headerFont navbarLine"} onClick={logout}>로그아웃</NavLink> }
 

@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-import SturdenCss from "./studentList.css"
 function StudentListTr({ userNo }) {
     const [user, setUser] = useState();
 
 
     useEffect(() => {
-        fetch(process.env.REACT_APP_URL + `/user/${tutorCode}`).then(res => res.json()).then(
+        fetch(process.env.REACT_APP_URL + `/user/${userNo}`).then(res => res.json()).then(
             data => setUser(data)
         )
 
@@ -16,11 +15,11 @@ function StudentListTr({ userNo }) {
     return (
         <>
             
-            <td>{user.userNo}</td>
+            <td>{user?.userNo}</td>
             <td>
-                {user.nickName}
+                {user?.nickName}
             </td>
-            <td>{notice.userName}</td>
+            <td>{user?.userName}</td>
 
         </>
     )

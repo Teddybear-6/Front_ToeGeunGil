@@ -56,13 +56,11 @@ function HobbyDetail() {
     }
 
 
-    console.log(joinuser)
 
     const onClickHandler = index => {
         setImageNum(index);
     }
 
-    console.log(detail)
 
     const joinClickHandler = () => {
         if (!user) {
@@ -102,7 +100,6 @@ function HobbyDetail() {
     }
 
 
-    console.log(detail.localCode)
     return (
         <>
             <div className="layout">

@@ -42,19 +42,20 @@ import LocalWrite from "./public/local/pages/LocalWrite";
 import LocalModify from "./public/local/pages/LocalModify";
 import SocialModify from "./public/social/page/SocialModify";
 import AnswerWrite from "./public/qna/pages/AnswerWrite";
-
+import React, { useState } from "react";
 function App() {
   /* 라우팅
       : 어떤 요청(URL)을 어디로 안내 및 매핑 할 것인지를 정해놓고 진행하는 것
       : 리액트에서는 요청에 따라 요청에 매핑되는 컴포넌트를 랜더링 한다. */
+      const [login, setLogin] = useState(false);
   return (
 
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Layout login={login} setLogin={setLogin} />}>
             {/* 로그인 */}
-            <Route path="login" element={<LoginSignup />} />
+            <Route path="login" element={<LoginSignup setLogin={setLogin} />} />
             <Route path="findpass" element={<Findpass />} />
             <Route path="signup" element={<Signup />} />
             {/* 마이페이지 */}

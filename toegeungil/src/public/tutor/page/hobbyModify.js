@@ -22,7 +22,7 @@ function HobbyModify() {
   const [local, setLocal] = useState([{}]);
   const hobbyCode = useLocation();
 
-  console.log()
+  
   useEffect(() => {
     if (sessionStorage.getItem("Authorizaton")) {
       setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
@@ -73,13 +73,6 @@ function HobbyModify() {
   }
 
 
-  // const test = () => {
-  //   console.log(keywordDTOList)
-  //   setHobby({...hobby,
-  //     keywordDTOList : keywordDTOList})
-  //   console.log(hobby);
-  // }
-
 
 
 
@@ -88,11 +81,11 @@ function HobbyModify() {
     if (!(user === undefined) && !(user === null) && user.auth[0] === 'ADMIN' || user.auth[0] === 'TUTOR') {
       if (user.no === hobby.tutorCode) {
 
-        //  console.log(keywordDTOList)
+   
         setHobby({ ...hobby, ["tutorCode"]: user.no })
         // setHobby({...hobby, keywordDTOList : keywordDTOList.map((m)=>  m.keywordCode)})
 
-        console.log(hobby)
+
 
         const formData = new FormData()
         const blob = new Blob([JSON.stringify(hobby)], {
@@ -112,7 +105,7 @@ function HobbyModify() {
         // formData.append('keywordDTOList', blob3);
 
         if (hobbyImage.length != 0) {
-          console.log("확인")
+         
           for (let i = 0; i < hobbyImage[0].length; i++) {
             formData.append('hobbyImage', hobbyImage[0][i]);
           }
@@ -128,7 +121,6 @@ function HobbyModify() {
             "Authorization": sessionStorage.getItem("Authorizaton")
           },
         }).then(res => res.json()).then(res => {
-          console.log(res['value']);
           alert(res['value'])
 
         }).catch((e) => alert(e))

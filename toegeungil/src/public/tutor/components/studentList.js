@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import StudentListTr from "./studentListTd,js";
+import StudentListTr from "./studentListTd.js";
 import { useLocation } from "react-router-dom"
 import "./studentList.css"
 
@@ -20,7 +20,6 @@ function StudentList(){
 
 
     const getJoinuser = (hobbyCode) => {
-        console.log(hobbyCode)
         fetch(process.env.REACT_APP_URL + `/hobbys/joinuser/${hobbyCode}`)
             .then(response => response.json()) //json으로 받는다
             .then(data => setJoinuser(data)).catch(e => console.log(e))

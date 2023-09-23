@@ -17,7 +17,8 @@
         border: 0.125rem solid #8FC4B3;
         margin-left: 1.25rem;
         width: 80rem;
-        height: 3.625rem
+        height: 3.75rem;
+       
     }
 
     .hobbytitle {
@@ -28,7 +29,8 @@
 
     .hobbytitleText {
         margin-left: 1.875rem;
-        margin-top: 0.938rem;
+        
+        
         border: none;
         resize: none;
         font-size: 1.2em;

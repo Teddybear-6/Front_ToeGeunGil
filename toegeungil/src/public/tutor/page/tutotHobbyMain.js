@@ -24,7 +24,7 @@ function TutorHobbyMain({ hobbys, setHobby , api}) {
     }
 
     const deleteApi = (hobbyCode) => {
-        console.log("hobbyCode = " + hobbyCode)
+     
         if (window.confirm("삭제하시겠습니까?")) {
             fetch(process.env.REACT_APP_URL + `/hobbys/${hobbyCode}`, {
                 method: "DELETE",
@@ -32,7 +32,7 @@ function TutorHobbyMain({ hobbys, setHobby , api}) {
                     "Authorization": sessionStorage.getItem("Authorizaton")
                 },
             }).then(res => res.json()).then(res=> {
-                console.log(res)
+           
                 setHobby(hobbys.filter(code => code.hobbyCode != hobbyCode));
                 alert(res['value'])
             })

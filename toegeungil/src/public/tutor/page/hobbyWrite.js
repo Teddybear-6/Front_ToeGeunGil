@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import jwt_decode from "jwt-decode";
 import "./hobbyWrite.css"
 import { Link , useNavigate } from "react-router-dom";
+
+
 function HobbyWrite() {
   const [showImages, setShowImages] = useState([]);
   const [user, setUser] = useState();
@@ -45,13 +47,7 @@ function HobbyWrite() {
 
       }
 
-      //   if (imageUrlLists.length > 4) {
-      //     imageUrlLists = imageUrlLists.slice(0, 4);
-      //     for(let i= 0; i< 4;i++){
-      //         setHobbyImage([...imageLists[i]]);
-      //     }
 
-      //   }
       setHobbyImage([...hobbyImage, imageLists])
       setShowImages(imageUrlLists);
     }
@@ -101,7 +97,7 @@ function HobbyWrite() {
     if (!(user === undefined) && !(user === null) && user.auth[0] === 'ADMIN' || user.auth[0] === 'TUTOR') {
       if(hobby.length!==0 && hobbyImage.length !==0){
       setHobby({ ...hobby, ["tutorCode"]: user.no })
-      console.log(hobby)
+
       const formData = new FormData()
       const blob = new Blob([JSON.stringify(hobby)], {
         type: 'application/json',
