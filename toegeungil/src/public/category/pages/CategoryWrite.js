@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
 import jwt_decode from "jwt-decode";
+import '../components/CategoryWrite.css';
 
 function CategoryWrite() {
     const [user, setUser] = useState('');

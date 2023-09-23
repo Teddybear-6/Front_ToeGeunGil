@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import jwt_decode from "jwt-decode";
+import '../components/CategoryWrite.css';
 
 function CategoryModify() {
     const { categoryCode } = useParams();
@@ -81,12 +82,12 @@ function CategoryModify() {
                     <p>관리자가 아닙니다 공지사항 수정 권한이 없습니다</p>
                 )}
                 {!user ? null : (user.auth[0] == 'ADMIN') ?
-                    <div>
+                    <div className="category-button">
                         <Link to="/service/category">
-                            <button onClick={categoryCancel}>취소</button>
+                            <button className="category-cancel" onClick={categoryCancel}>취소</button>
                         </Link>
                         <Link to='/service/category'>
-                            <button onClick={categoryUpdate}>등록</button>
+                            <button className="category-regist" onClick={categoryUpdate}>등록</button>
                         </Link>
                     </div>
                     : null}
