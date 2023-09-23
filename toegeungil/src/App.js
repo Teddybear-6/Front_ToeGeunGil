@@ -42,6 +42,7 @@ import LocalWrite from "./public/local/pages/LocalWrite";
 import LocalModify from "./public/local/pages/LocalModify";
 import SocialModify from "./public/social/page/SocialModify";
 import AnswerWrite from "./public/qna/pages/AnswerWrite";
+import CategoryMain from "./public/category/pages/categoryMain";
 
 function App() {
   /* 라우팅
@@ -121,6 +122,12 @@ function App() {
                 <Route path="/service/local" element={<LocalMain />} />
                 <Route path="/service/local/write" element={<LocalWrite/>}/>
                 <Route path="/service/local/:localCode/modify" element={<LocalModify/>}/>
+              </Route>
+              {/* Category */}
+              <Route path="/service/category">
+                <Route path="/service/category" element={<CategoryMain/>}/>
+                {/* <Route path="/service/category/write" element={<CategoryWrite/>}/>
+                <Route path="/service/category/:categoryCode/modify" element={<CategoryModify/>}/> */}
               </Route>
             </Route>
           </Route>
