@@ -1,5 +1,5 @@
 /* 전체 틀 */
-.service-wraper{
+.service-wrapper{
     border: 3px solid #8FC4B3;
     border-radius: 50px;
     width: 1200px;
@@ -8,9 +8,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* display: none; */
 }
 
+.admin-wrapper{
+    display: flex;
+    justify-content:center;
+}
+
+.ser-wrapper{
+    display: flex;
+    justify-content: center;
+}
 
 .serviceOn {
     text-decoration: none;

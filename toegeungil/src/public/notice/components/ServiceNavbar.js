@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import jwt_decode from "jwt-decode";
 import './ServiceNavbar.css';
 import jwt_decode from "jwt-decode";
 import { useEffect, useState } from "react";
@@ -13,7 +11,6 @@ function ServiceNavbar() {
             setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
         }
     }, [])
-
 
 
     return (
