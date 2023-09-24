@@ -27,6 +27,7 @@ const CommunityDetailsTitle = () => {
 
     return (
         <>
+        
             <div className={DetailsTitleStyle.title}>
                 <div>
                     <div className={DetailsTitleStyle.communityTitleBoard}>

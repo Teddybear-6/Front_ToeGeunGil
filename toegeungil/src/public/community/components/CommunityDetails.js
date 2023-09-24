@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-// import CommunityLocation from "./CommunityLocation";
 import DetailsStyle from './css/CommunityDetails.module.css';
 import UserNickName from "./UserNickName";
 import jwt_decode from "jwt-decode";

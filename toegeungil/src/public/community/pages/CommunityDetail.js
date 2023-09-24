@@ -1,7 +1,7 @@
 import CommunityDetailsTitle from "../components/CommunityDetailsTitle";
 import CommunityDetails from "../components/CommunityDetails";
-import CommunityDetailsComments from "../components/CommunityDetailsComments";
 import layout from "../../layout/layout.css";
+import CommunityComment from "../components/CommunityComment";
 
 
 function CommunityDetail({ }) {
@@ -10,7 +10,7 @@ function CommunityDetail({ }) {
             <div className={layout.layout}>
                 <CommunityDetailsTitle />
                 <CommunityDetails />
-                <CommunityDetailsComments />
+                <CommunityComment />
             </div>
         </>
     );
