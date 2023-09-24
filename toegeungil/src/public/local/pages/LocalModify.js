@@ -58,7 +58,7 @@ function LocalModify() {
     }
 
     return (
-        <div className='layout'>
+        <div className='toegeungillayou'>
             <div className="local-wrapper">
                 <h1 className="local-title">지역 수정</h1>
                 {user && user.auth[0] === 'ADMIN' ? (
