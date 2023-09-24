@@ -66,11 +66,16 @@ const Mypage =()=>{
         
 
             <div class="footer">
-            <p>    FORUM ABOUT
-                W3Schools is optimized for learning and training. Examples might be simplified to improve reading and learning.
-                Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full correctness
-                of all content. While using W3Schools, you agree to have read and accepted our terms of use, cookie and privacy policy.
-                Copyright 1999-2023 by Refsnes Data. All Rights Reserved. W3Schools is Powered by W3.CSS.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Volutpat odio facilisis mauris sit amet massa. 
+            Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Mi eget mauris pharetra et. Non tellus orci ac auctor augue. 
+            Elit at imperdiet dui accumsan sit. Ornare arcu dui vivamus arcu felis. Egestas integer eget aliquet nibh praesent. 
+            In hac habitasse platea dictumst quisque sagittis purus. Pulvinar elementum integer enim neque volutpat ac.
+
+            Senectus et netus et malesuada. Nunc pulvinar sapien et ligula ullamcorper malesuada proin. Neque convallis a cras semper auctor. 
+            Libero id faucibus nisl tincidunt eget. Leo a diam sollicitudin tempor id. A lacus vestibulum sed arcu non odio euismod lacinia. 
+            In tellus integer feugiat scelerisque. Feugiat in fermentum posuere urna nec tincidunt praesent.
+            Porttitor rhoncus dolor purus non enim praesent</p>
             </div> 
 
 
