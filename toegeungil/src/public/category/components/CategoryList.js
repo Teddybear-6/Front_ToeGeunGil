@@ -52,7 +52,7 @@ function CategoryList() {
     }
 
     return (
-        <div className='layout'>
+        <div className='toegeungillayou'>
             {
                 loading ? (
                     "로딩 중"

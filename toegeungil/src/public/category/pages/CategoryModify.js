@@ -67,7 +67,7 @@ function CategoryModify() {
     }
 
     return (
-        <div className='layout'>
+        <div className='toegeungillayou'>
             <div className="category-wrapper">
                 <h1 className="catagory-title">카테고리 수정</h1>
                 {user && user.auth[0] === 'ADMIN' ? (
