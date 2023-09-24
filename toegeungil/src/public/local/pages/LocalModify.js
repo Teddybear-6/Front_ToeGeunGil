@@ -32,7 +32,8 @@ function LocalModify() {
         fetch(process.env.REACT_APP_URL + `/local/${localCode}`, {
             method: "PUT",
             headers: {
-                "Content-Type": "application/json; charset=UTF-8"
+                "Content-Type": "application/json; charset=UTF-8",
+                 "Authorization": sessionStorage.getItem("Authorizaton")
             },
             body: JSON.stringify({
                 "localName": localName,
