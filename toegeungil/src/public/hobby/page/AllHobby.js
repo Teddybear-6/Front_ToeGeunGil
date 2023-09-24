@@ -27,7 +27,7 @@ function AllHobby() {
 
     return (
         <>
-            <div className='toegeungillayout'>
+            <div className='ttoegeungillayou'>
 
                 <HobbyMain hobbys={hobby}></HobbyMain>
             </div>

@@ -145,7 +145,7 @@ function App() {
             </Route>
             {/* Category */}
             <Route path="/service/category">
-              <Route path="/service/category" element={<CategoryMain />} />
+              <Route path="/service/category" element={<CategoryMain/>} />
               <Route path="/service/category/write" element={<CategoryWrite />} />
               <Route path="/service/category/:categoryCode/modify" element={<CategoryModify />} />
             </Route>
