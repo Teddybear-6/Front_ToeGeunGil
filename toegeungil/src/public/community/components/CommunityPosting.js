@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import PostingStyle from "./css/CommunityPosting.module.css";
 import { Link } from "react-router-dom";
 import jwt_decode from "jwt-decode";
+import DetailsTitleStyle from './css/CommunityDetailsTitle.module.css';
 
 function CommunityPosting() {
     const [category, setCategory] = useState([]);
@@ -57,23 +58,23 @@ function CommunityPosting() {
                 },
                 body: JSON.stringify(community)
             })
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error('error');
-                }
-                return response.json();
-            })
-            .then((data) => {
-            })
-            .catch((error) => {
-                console.log(error);
-                alert("에러가 발생하였습니다. 로그인 후 작성이 가능합니다.");
-            });
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error('error');
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+                })
+                .catch((error) => {
+                    console.log(error);
+                    alert("에러가 발생하였습니다. 로그인 후 작성이 가능합니다.");
+                });
         } else {
             alert("로그인 후 작성이 가능합니다.");
         }
     };
-    
+
 
     const checkOnlyOne = (checkThis) => {
         const checkboxes = document.getElementsByName("categoryCode")
@@ -100,9 +101,10 @@ function CommunityPosting() {
     return (
         <>
 
+            <div className={DetailsTitleStyle.CommunityBar}>Community 게시글 작성</div>
+            <div className={DetailsTitleStyle.CommunityStart}></div>
             <div>
                 {!user ? "로그인 후 작성가능합니다." :
-
                     < div className={PostingStyle.postingbox}>
                         <div className={PostingStyle.w1400h50}>
                             <div className={PostingStyle.w100h50}>

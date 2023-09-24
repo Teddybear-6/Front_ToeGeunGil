@@ -27,7 +27,8 @@ const CommunityDetailsTitle = () => {
 
     return (
         <>
-        
+            <div className={DetailsTitleStyle.CommunityBar}>Community</div>
+            <div className={DetailsTitleStyle.CommunityStart}></div>
             <div className={DetailsTitleStyle.title}>
                 <div>
                     <div className={DetailsTitleStyle.communityTitleBoard}>
@@ -41,9 +42,9 @@ const CommunityDetailsTitle = () => {
                         </div>
                         <div className={DetailsTitleStyle.communityKeywordList}>
                             <div className={DetailsTitleStyle.communityKeywordDTOList1}>
-                            {community.communityKeywordDTOList?.map((m, index) => (
-                                <CommunityKeyword key={index} code={m} />
-                            ))}
+                                {community.communityKeywordDTOList?.map((m, index) => (
+                                    <CommunityKeyword key={index} code={m} />
+                                ))}
                             </div>
                         </div>
                     </div>

@@ -3,8 +3,7 @@ import PostingStyle from "../../community/components/css/CommunityPosting.module
 import { useLocation } from "react-router-dom";
 import CommunityKeywordList from "../components/CommunityKeywordList";
 import jwt_decode from "jwt-decode";
-
-
+import DetailsTitleStyle from '../components/css/CommunityDetailsTitle.module.css';
 
 function CommunityModify() {
 
@@ -126,6 +125,8 @@ function CommunityModify() {
 
         return (
             <>
+                <div className={DetailsTitleStyle.CommunityBar}>Community</div>
+                <div className={DetailsTitleStyle.CommunityStart}></div>
                 <div>
                     <div className={PostingStyle.postingbox}>
                         <div className={PostingStyle.w1400h50}>

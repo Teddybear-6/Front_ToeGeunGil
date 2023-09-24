@@ -17,7 +17,7 @@ const CommunityList = () => {
             .then((data) => {
                 setCommunityList(data);
             });
-            console.log(communityList);
+        console.log(communityList);
 
     };
 
@@ -64,19 +64,19 @@ const CommunityList = () => {
                                 </td>
                                 <td>
                                     <div className={DetailsTitleStyle.MainKeyword}>
-                                    {community.communityKeywordDTOList?.map((m, index) => (
-                                        <CommunityKeyword key={index} code={m}/>
-                                    ))}
+                                        {community.communityKeywordDTOList?.map((m, index) => (
+                                            <CommunityKeyword key={index} code={m} />
+                                        ))}
                                     </div>
                                 </td>
                             </tr>
                         ))}
                 </tbody>
             </table>
-            {!user ? null : (!user?.auth[0] == "USER" ||  !user?.auth[0] == "TUTOR" || !user?.auth[0] == "ADMIN" ) ? "회원이 아닙니다." : 
-            <Link to={"/communitys/write"}>
-                <button className="community-regist-button" >커뮤니티 글 작성</button>
-            </Link>}
+            {!user ? null : (!user?.auth[0] == "USER" || !user?.auth[0] == "TUTOR" || !user?.auth[0] == "ADMIN") ? "회원이 아닙니다." :
+                <Link to={"/communitys/write"}>
+                    <button className="community-regist-button" >커뮤니티 글 작성</button>
+                </Link>}
         </div>
     );
 }
