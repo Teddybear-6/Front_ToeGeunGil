@@ -7,26 +7,13 @@ import NoticeModify from "./public/notice/pages/NoticeModify";
 import ServiceLayout from "./public/notice/layout/ServiceLayout";
 // import SocialMainCard from "./public/social/components/SocialMainCard";
 // import SocialParticipateList from "./public/social/components/componentAPI/SocialParticipateList";
-<<<<<<< HEAD
-import CommunityDetail from './public/community/pages/CommunityDetail';
-import CommunityMain from './public/community/pages/CommunityMain';
-import CommunityWrite from './public/community/pages/CommunityWrite';
-import AllHobby from "./public/hobby/page/AllHobby";
-import HobbyDetail from "./public/hobby/page/hobbyDetail";
-import HobbyModify from './public/tutor/page/hobbyModify';
-import LoginSignup from './public/user/login/LoginSignup';
-import Findpass from './public/user/findpassword/Findpass';
-import Signup from './public/user/Signup/Signup';
-import CommunityModify from './public/community/pages/CommunityModify';
-=======
 import CommunityDetail from "./public/community/pages/CommunityDetail";
 import CommunityMain from "./public/community/pages/CommunityMain";
 import CommunityWrite from "./public/community/pages/CommunityWrite";
 import LoginSignup from "./public/user/login/LoginSignup";
 import Findpass from "./public/user/findpassword/Findpass";
 import Signup from "./public/user/Signup/Signup";
-import CommunityModify from "./public/community/components/CommunityModify";
->>>>>>> fb0edd38a3954a65bd587b89cb8b240452a98d39
+
 
 import Mypage from "./public/user/mypage/Mypage";
 import SocialMain from "./public/social/page/SocialMain";
@@ -61,6 +48,7 @@ import CategoryMain from "./public/category/pages/categoryMain";
 import CategoryWrite from "./public/category/pages/CategoryWrite";
 import CategoryModify from "./public/category/pages/CategoryModify";
 import React, { useState } from "react";
+import CommunityModify from "./public/community/pages/CommunityModify";
 function App() {
   /* 라우팅
       : 어떤 요청(URL)을 어디로 안내 및 매핑 할 것인지를 정해놓고 진행하는 것
@@ -105,10 +93,6 @@ function App() {
           </Route>
           {/* 커뮤니티 */}
           <Route path="/communitys" element={<CommunityMain />} />
-          <Route
-            path="/communitys/:communityNum"
-            element={<CommunityDetail />}
-          />
           <Route
             path="/communitys/:communityNum"
             element={<CommunityDetail />}
