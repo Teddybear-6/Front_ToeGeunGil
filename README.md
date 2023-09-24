@@ -42,7 +42,8 @@ https://github.com/Teddybear-6/Front_ToeGeunGil
 
 
 ## 시스템 아키텍처
-![image](..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2FUsers%2Fdoimi%2FDesktop%2F%ED%87%B4%EA%B7%BC%EA%B8%B8.png)![image](%ED%87%B4%EA%B7%BC%EA%B8%B8.png)
+![image](https://github.com/Teddybear-6/Front_ToeGeunGil/assets/130436427/dfb9bf26-48fd-4c83-a5d3-191a952c56c7)
+
 
 ## API 설계
 |기능|Method|URL|
