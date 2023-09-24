@@ -54,7 +54,7 @@ function ReviewBox({review}){
             <div className="view">
              <div className="reviewViewsBox">
                 <NameCard props={review}/>
-                <p>{data}</p>
+                {/* <p>{data}</p> */}
                  {star()}
              </div>
              <div className="reviewContentBox">
@@ -63,7 +63,7 @@ function ReviewBox({review}){
              </div>
           
             {
-                answer.length==0 && <ReviewAnswer answer={answer} />
+                answer?.length==0 && <ReviewAnswer answer={answer} />
             }
         </div>
 
