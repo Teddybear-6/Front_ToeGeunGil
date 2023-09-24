@@ -1,12 +1,13 @@
 //QuestionMain에서 글 제목 클릭했을 때 content로 이동
 import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import "../component/QuestionDetail.css";
 
 export const AnswerDetail = () => {
   const { answerNum } = useParams();
   const [detail, setDetail] = useState({});
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
   
 
   //질문 상세보기 상태 
@@ -20,6 +21,28 @@ export const AnswerDetail = () => {
         setLoading(false);
       });
   }, [answerNum]);
+
+
+   //관리자인 경우 삭제
+   const deleteClick = () => {
+    fetch(process.env.REACT_APP_URL + `/answer/${answerNum}`, {
+      method: "DELETE",
+    })
+      .then((response) => {
+        if (response.ok) {
+          alert("답변이 삭제 되었습니다.");
+          navigate("/service/answer");
+        } else {
+          throw new Error("답변 삭제 실패");
+        }
+      })
+      .catch((error) => {
+        console.error("답변 삭제 중 오류 발생 : ", error);
+        alert("답변 삭제 중 오류가 발생");
+      });
+  
+    }
+
 
 
   return (
@@ -51,6 +74,9 @@ export const AnswerDetail = () => {
             <div className="user-button-box">
             <Link to="/service/answer">
               <button className="user-button">목록으로</button>
+              <Link to="/servoce/answer">
+              <button className="user-button" onClick={deleteClick}>삭제</button>
+              </Link>
             </Link>
           </div>
         

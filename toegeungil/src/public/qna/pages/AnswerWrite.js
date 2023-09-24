@@ -52,7 +52,7 @@ const AnswerWrite = () => {
     return (
         <div className='layout'>
             <div className="wrapper" >
-                <h1 className="write-header">답변 작성</h1>
+                <h1 className="write-header1">답변 작성</h1>
                 <div className="write-wrapper textarea">
                     <div className="write-col1">
                         <label>답변 제목</label>

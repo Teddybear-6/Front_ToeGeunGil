@@ -1,29 +1,28 @@
-.view-wrapper { /* 전체 */
+.notice-view-wrapper { /* 전체 */
     color: #87746B;
     font-weight: bold;
     width: 1200px;
     margin: auto;
 }
 
-.view-name {
+.notice-view-title {
     text-align: center;
     font-size: 30px;
     height: 100px;
     display: flex;
-    justify-content: flex-start;   
-    align-items: center;         
+    justify-content: start;   
     margin-top: 60px;
 }
 
-.view-date {
+.notice-view-date {
     font-size: 18px;
     width: 1200px;
     height: 50px;
     border-bottom: 3px solid #B9A49B;
-
+text-align: left;
 }
 
-.view-text-box{
+.notice-view-text-box{
     width: 1000px;
     height: 500px;
     border: 3px solid #B9A49B;
@@ -32,7 +31,7 @@
     margin-top: 40px;
 }
 
-.view-text {
+.notice-view-text {
     width: 900px;
     height: 400px;
     font-size: 16px;
@@ -40,16 +39,17 @@
     margin-bottom: 50px;
     margin-left: 50px;
     margin-right: 50px;
+    text-align: left;
 }
 
-.button-box{
+.notice-button-box{
     margin-top: 50px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
 }
 
-.button1 {
+.notice-button1 {
     color: #096249;
     font-size: 20px;
     font-weight: bold;
@@ -61,7 +61,7 @@
     
 }
 
-.button2 {
+.notice-button2 {
     color: #096249;
     font-size: 20px;
     font-weight: bold;
@@ -73,7 +73,8 @@
     margin-left: 30px;
 }
 
-.button3 {
+
+.notice-button3 {
     color: #096249;
     font-size: 20px;
     font-weight: bold;
