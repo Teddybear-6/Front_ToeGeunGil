@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import '../components/CategoryWrite.css';
@@ -24,12 +24,12 @@ function CategoryWrite() {
 
     const categoryWriteClick = () => {
         console.log(categoryName);
-        if (user && user.auth[0] === 'ADMIN') {
         fetch(process.env.REACT_APP_URL + `/category`,
             {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json; charset=UTF-8"
+                    "Content-Type": "application/json; charset=UTF-8",
+                    "Authorization": sessionStorage.getItem("Authorizaton")
                 },
                 body: JSON.stringify({
                     "categoryName": categoryName,
@@ -46,9 +46,6 @@ function CategoryWrite() {
                 console.error("카테고리 등록 중 오류 발생 : ", error);
                 alert("카테고리 등록 중 오류 발생했습니다");
             })
-        }else{
-            alert("관리자가 아닙니다 카테고리 관리 권한이 없습니다")
-        }
     }
     return (
         <div className='layout'>
