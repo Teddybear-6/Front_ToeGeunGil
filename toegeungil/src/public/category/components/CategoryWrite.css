@@ -1,0 +1,68 @@
+.category-wrapper {
+    width: 1200px;
+    height: 520px;
+    margin: auto;
+}
+
+.cateogory-title {
+    font-size: 30px;
+    color: #655853;
+    width: 1200px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    margin-top: 60px;
+    border-bottom: 3px solid #B9A49B;
+}
+
+.category-wrapper2 {
+    margin-top: 35px;
+}
+
+.category-name {
+    font-size: 24px;
+    color: #655853;
+    font-weight: bold;
+}
+
+.category-text {
+    border: 2px solid #8FC4B3;
+    border-radius: 50px;
+    font-size: 24px;
+    color: #655853;
+    text-align: center;
+    font-weight: bold;
+    margin-left: 50px;
+}
+
+/* 버튼 전체 틀 */
+.category-button {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 50px;
+}
+
+/*  등록 버튼 */
+.category-regist {
+    color: #096249;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #8FC4B3;
+    border: 1px;
+    border-radius: 50px;
+    width: 120px;
+    height: 50px;
+    margin-left: 30px;
+}
+
+/*  취소 버튼 */
+.category-cancel {
+    color: #096249;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #CCE2DB;
+    border: 1px;
+    border-radius: 50px;
+    width: 120px;
+    height: 50px;
+}
