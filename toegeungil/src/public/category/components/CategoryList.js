@@ -29,7 +29,12 @@ function CategoryList() {
 
     const deleteCategory = (categoryCode) => {
         if (window.confirm("정말로 삭제하시겠습니까?")) {
-            fetch(process.env.REACT_APP_URL + `/category/${categoryCode}`, { method: "DELETE" })
+            fetch(process.env.REACT_APP_URL + `/category/${categoryCode}`, {
+                method: "DELETE",
+                headers: {
+                    "Authorization": sessionStorage.getItem("Authorizaton")
+                }
+            })
                 .then(response => {
                     if (response.ok) {
                         alert("카테고리가 삭제되었습니다")
