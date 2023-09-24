@@ -1,54 +1,56 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 
-function KeywordList({keyword,hobby ,setHobby ,keywordDTOList , setKeywordDTOList  , hobbyKeyword}){
+function KeywordList({ keyword, hobby, setHobby, hobbyKeyword }) {
 
-
-   useEffect(()=> {
+  const [keywordDTOList, setKeywordDTOList] = useState();
+  useEffect(() => {
     keywordHandler()
-    setKeywordDTOList(hobbyKeyword)
-}, [hobbyKeyword])
+    setKeywordDTOList(hobby.keywordDTOList)
+  }, [hobbyKeyword])
 
-   const keywordHandler = () => {
+  const keywordHandler = () => {
     const selectBox = document.getElementsByName("keywordCode")
-    for (let j = 0; j < hobby.keywordDTOList?.length; j++) {
-        
-      selectBox[hobby.keywordDTOList[j].keywordCode-1].checked = true;
-
+    for (let j = 0; j < hobbyKeyword?.length; j++) {
+      selectBox[hobbyKeyword[j].keywordCode - 1].checked = true;
     }
-    
+
   }
 
-  const keywordChangeHander =(checked ,id) =>{
-    if(checked){
+  const keywordChangeHander = (checked, id) => {
 
-        setKeywordDTOList(keywordDTOList => [...keywordDTOList, {"keywordCode" : id }] )
+    if (checked) {
+      keywordDTOList.push({ "keywordCode": id })
+
+
+      // setKeywordDTOList(keywordDTOList => [...keywordDTOList, {"keywordCode" : id }] )
 
     } else {
-        setKeywordDTOList(keywordDTOList.filter(el =>  el.keywordCode !== id))
-      
-    
-  
-        
+      // setKeywordDTOList(keywordDTOList.filter(el =>  el.keywordCode !== id))
+      keywordDTOList.pop({ "keywordCode": id })
     }
+
+
+    setHobby({ ...hobby, keywordDTOList: keywordDTOList })
   };
-  
- 
-    console.log(keywordDTOList)
-   return(
-        <>
-       {/* { !keyword ? null :keywordHandler()} */}
-         {
-        !keyword.map ? "키워드가 없습니다." : keyword.map((m, index) => (
-          <label htmlFor="keywordCode"><input className="keywordCheck" key={index} 
-          type="checkbox" name="keywordCode" value={m.keywordCode} 
-          onChange={(e)=>{keywordChangeHander(e.currentTarget.checked,m.keywordCode)}}
-       
-          />{m.keywordName}</label>
-        ))
+
+
+  return (
+    <>
+      {/* { !keyword ? null :keywordHandler()} */}
+      {
+        !keyword.map ? "키워드가 없습니다." : keyword.map((m, index) => {
+          return (
+            <label htmlFor="keywordCode"><input className="keywordCheck" key={index}
+              type="checkbox" name="keywordCode" value={m.keywordCode}
+              onChange={(e) => { keywordChangeHander(e.currentTarget.checked, m.keywordCode) }}
+            />{m.keywordName}</label>
+          )
+        })
+
 
       }
-        </>
-   )
+    </>
+  )
 
 
 
