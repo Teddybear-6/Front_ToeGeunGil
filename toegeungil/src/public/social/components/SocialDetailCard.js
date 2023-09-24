@@ -8,6 +8,7 @@ import SocialParticipateList from "./componentAPI/SocialParticipateList";
 import "../components/css/Button.css"
 import "../components/css/SocialPosting.css"
 import { Link, NavLink } from "react-router-dom";
+import SocialParticipate from "./componentAPI/SocialParticipate";
 
 import jwt_decode from "jwt-decode";
 import DetailsStyle from './css/SocialDetails.module.css';
