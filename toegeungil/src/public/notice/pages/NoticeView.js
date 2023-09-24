@@ -26,77 +26,75 @@ const NoticeView = () => {
   /* 관리자인 경우 삭제 */
   const deleteClick = () => {
     if (sessionStorage.getItem("Authorizaton")) {
-      setUser(jwt_decode(sessionStorage.getItem("Authorizaton")));
+      setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
     }
     fetch(process.env.REACT_APP_URL + `/notices/${noticeNum}`, {
       method: "DELETE",
       headers: {
-        Authorization: sessionStorage.getItem("Authorizaton"),
-      },
+        "Authorization": sessionStorage.getItem("Authorizaton")
+      }
     })
-      .then((response) => {
+      .then(response => {
         if (response.ok) {
-          alert("공지사항이 삭제되었습니다");
+          alert("공지사항이 삭제되었습니다")
           navigate("/service/notice");
         } else {
-          throw new Error("공지사항 삭제 실패하였습니다");
+          throw new Error("공지사항 삭제 실패하였습니다")
         }
       })
-      .catch((error) => {
+      .catch(error => {
         console.error("공지사항 삭제 중 오류 발생 : ", error);
         alert("공지사항 삭제 중 오류가 발생하였습니다");
-      });
-  };
+      })
+  }
 
   return (
-    <>
-      <div className="layout">
-        <div className="view-wrapper">
-          {loading ? (
+    <div className='layout'>
+      <div className="notice-view-wrapper">
+        {
+          loading ? (
             "로딩 중"
-          ) : detail ? (
-            <>
-              <div className="view-title">
-                <label>{detail.noticeTitle}</label>
-              </div>
-              <div>
-                <div className="view-date">
-                  <label>{detail.noticeDate}</label>
+          ) : (
+            detail ? (
+              <>
+                <div className="notice-view-title">
+                  <label>{detail.noticeTitle}</label>
                 </div>
-                <div className="view-text-box">
-                  <div className="view-text">
-                    <label>{detail.noticeContent}</label>
+                <div>
+                  <div className="notice-view-date">
+                    <label>{detail.noticeDate}</label>
                   </div>
-                </div>
-                <div className="button-box">
-                  {/* 관리자인 경우 : 삭제, 수정 버튼 */}
-                  {!user ? null : user.auth[0] == "ADMIN" ? (
+                  <div className="notice-view-text-box">
+                    <div className="notice-view-text">
+                      <label>{detail.noticeContent}</label>
+                    </div>
+                  </div>
+                  <div className="notice-button-box">
+                    {/* 관리자인 경우 : 삭제, 수정 버튼 */}
+                    {!user ? null : (user.auth[0] == 'ADMIN') ?
+                      <div>
+                        <Link to="/service/notice">
+                          <button className="notice-button1" onClick={deleteClick}>삭제</button>
+                        </Link>
+                        <Link to={`/service/notice/${noticeNum}/modify`}>
+                          <button className="notice-button2">수정</button>
+                        </Link>
+                      </div>
+                      : null}
                     <div>
                       <Link to="/service/notice">
-                        <button className="button1" onClick={deleteClick}>
-                          삭제
-                        </button>
-                      </Link>
-                      <Link to={`/service/notice/${noticeNum}/modify`}>
-                        <button className="button2">수정</button>
+                        <button className="notice-button3">목록으로</button>
                       </Link>
                     </div>
-                  ) : null}
-                  <div>
-                    <Link to="/service/notice">
-                      <button className="button3">목록으로</button>
-                    </Link>
                   </div>
                 </div>
-              </div>
-            </>
-          ) : (
-            "공지사항이 없습니다"
-          )}
-        </div>
+              </>
+            ) : "공지사항이 없습니다"
+          )
+        }
       </div>
-    </>
-  );
-};
+    </div>
+  )
+}
 
 export default NoticeView;
