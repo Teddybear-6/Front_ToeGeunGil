@@ -49,7 +49,7 @@ function LocalWrite() {
             })
     }
     return (
-        <div className='layout'>
+        <div className='toegeungillayou'>
             <div className="local-wrapper">
                 <h1 className="local-title">지역 작성</h1>
                 {user && user.auth[0] === 'ADMIN' ? (
