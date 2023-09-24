@@ -56,7 +56,7 @@ const NoticeWrite = () => {
     }
 
     return (
-        <div className='layout'>
+        <div className='toegeungillayou'>
 
             <div className="wrapper" >
                 <h1 className="write-header">공지사항 작성</h1>

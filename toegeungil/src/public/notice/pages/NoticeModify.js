@@ -63,7 +63,7 @@ const NoticeModify = () => {
             })
     }
     return (
-        <div className='layout'>
+        <div className='toegeungillayou'>
             <div className="wrapper" >
                 <h1 className="write-header">공지사항 수정</h1>
                 {user && user.auth[0] === 'ADMIN' ? (

@@ -27,7 +27,7 @@ function NoticeMain() {
 
     return (
         <>
-            <div className="layout">
+            <div className="toegeungillayou">
                 <NoticeList list={notices}/>
                 <Paging count={pageCount} setPage={setPage} page={page} />
             </div>
