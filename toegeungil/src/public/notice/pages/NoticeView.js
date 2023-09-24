@@ -49,7 +49,7 @@ const NoticeView = () => {
   }
 
   return (
-    <div className='layout'>
+    <div className='toegeungillayou'>
       <div className="notice-view-wrapper">
         {
           loading ? (
