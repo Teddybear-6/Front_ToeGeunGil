@@ -51,7 +51,7 @@ function SocialMain() {
 
     return (
         <>
-            <div className='layout'>
+            <div className='toegeungillayout'>
                 <SocialMainCard socials={socials}/>
                 {/* 회원만 글 작성 가능 */}
                 {!user ? null : 

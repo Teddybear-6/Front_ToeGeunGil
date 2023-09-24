@@ -1,0 +1,42 @@
+.studentListTitleframe{
+    border: 0.125rem solid #8FC4B3;
+    border-radius: 3.125rem;
+    width: 59.438rem;
+    height: 3.625rem;
+    display: flex;
+    margin-left: 18.75rem;
+
+}
+
+
+.title{
+    color: #41A487;
+    font-size: 1.188rem;
+    margin-left: 1.25rem;
+}
+.studentscheduleframe{
+   display: flex;
+   justify-content: center;
+}
+
+.student{
+    border: 0.125rem solid #8FC4B3;
+    border-radius: 3.125rem;
+    width: 28.063rem;
+    height: 3.625rem ;
+    display: flex;
+}
+
+.magin{
+    margin-top: 1.875rem;
+    margin-left:   3.125rem;
+}
+.studentplace{
+    margin-top: 1.875rem;
+    border: 0.125rem solid #8FC4B3;
+    border-radius: 3.125rem;
+    width: 59.438rem;
+    margin-left: 18.75rem
+}
+
+

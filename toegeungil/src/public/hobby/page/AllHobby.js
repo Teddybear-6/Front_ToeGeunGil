@@ -24,16 +24,16 @@ function AllHobby() {
         }
     )
 
+
     return (
         <>
-            <div className='layout'>
+            <div className='toegeungillayout'>
 
                 <HobbyMain hobbys={hobby}></HobbyMain>
             </div>
 
             <div className={AllHobbyCss.paging}>
                 <Paging count={pageCount} setPage={setPage} page={page} />
-
             </div>
         </>
     )

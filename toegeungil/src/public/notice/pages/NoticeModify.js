@@ -63,10 +63,10 @@ const NoticeModify = () => {
             })
     }
     return (
-        <div className='layout'>
-            {!user ? "관리자만 사용 가능합니다" : (user.auth[0] == 'ADMIN') ?
-                <div className="wrapper" >
-                    <h1 className="write-header">공지사항 작성</h1>
+        <div className='toegeungillayou'>
+            <div className="wrapper" >
+                <h1 className="write-header">공지사항 수정</h1>
+                {user && user.auth[0] === 'ADMIN' ? (
                     <div className="write-wrapper textarea">
                         <div className="write-col1">
                             <label>공지 제목</label>
@@ -88,16 +88,20 @@ const NoticeModify = () => {
                             </div>
                         </div>
                     </div>
+                ) : (
+                    <p>관리자가 아닙니다 공지사항 수정 권한이 없습니다</p>
+                )}
+                {!user ? null : (user.auth[0] == 'ADMIN') ?
                     <div className="button">
                         <Link to="/service/notice">
-                            <button className="cancel-button" onClick={cancelClick}>취소</button>
+                            <button className="notice-cancel-button" onClick={cancelClick}>취소</button>
                         </Link>
                         <Link to="/service/notice">
-                            <button className="write-button" onClick={updateClick}>등록</button>
+                            <button className="notice-write-button" onClick={updateClick}>등록</button>
                         </Link>
                     </div>
-                </div>
-                : null}
+                    : null}
+            </div>
         </div>
     )
 }

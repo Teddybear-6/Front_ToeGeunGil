@@ -1,7 +1,7 @@
-.table-wrapper {
+.layout{
     width: 1200px;
     border-spacing: 0px 30px;
-    margin-top: 60px;
+    margin-top: 10px;
     text-align: center;
     margin-right: auto;
     margin-left: auto;
@@ -32,40 +32,9 @@ td {
 }
 
 
-th:first-child {
-    border-radius: 50px 0 0 50px;
-    border-right: 0px;
 
-}
 
-th:nth-child(2) {
-    border-right: 0px;
-    border-left: 0px;
-    border-radius: 0 0 0 0;
-}
-
-th:last-child {
-    border-radius: 0 50px 50px 0;
-    border-left: 0px;
-}
-
-td:first-child {
-    border-radius: 50px 0 0 50px;
-    border-right: 0px;
-}
-
-td:nth-child(2) {
-    border-right: 0px;
-    border-left: 0px;
-    border-radius: 0 0 0 0;
-}
-
-td:last-child {
-    border-radius: 0 50px 50px 0;
-    border-left: 0px;
-}
-
-.table-wrapper tbody tr:hover{
+layout>.table-wrapper tbody tr:hover{
     background-color: #E9E0DD;
 }
 
@@ -85,3 +54,21 @@ td:last-child {
     height: 60px;
 }
 
+
+.qnaButton{
+    margin-left: 80%;
+
+}
+.questionButton{
+    margin-top: 20px;
+    margin: 10px;
+    color: #096249;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #CCE2DB;
+    border: 1px;
+    border-right: 1px solid #096249;
+    border-radius: 50px;
+    width: 120px;
+    height: 80px;
+}
