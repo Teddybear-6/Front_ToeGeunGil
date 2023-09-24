@@ -122,6 +122,10 @@ const Signup = () => {
     // };
 
     const callSignUp = () => {
+        console.log(email)
+        console.log(nickname)
+        console.log(name)
+        console.log(password)
 
 
         fetch(process.env.REACT_APP_URL + "/user/regist", {
@@ -139,6 +143,8 @@ const Signup = () => {
         }).then(res => res.text())
             .then(date => date == "Success" ? successFunction() : alert("가입이 실패되었습니다."));
     }
+    
+
 
     const successFunction = () => {
         alert("가입이 완료되었습니다.")
@@ -148,6 +154,24 @@ const Signup = () => {
     const mailSet = (e) =>{
         setEmail(e.target.value)
     }
+
+
+    const nickNameSet = (e) =>{
+        setNickName(e.target.value)
+    }
+
+    const nameSet = (e) =>{
+        setName(e.target.value)
+    }
+
+
+    
+    const passSet = (e) =>{
+        setPassword(e.target.value)
+    }
+
+
+
 
     const findEmail = () => {
         fetch(process.env.REACT_APP_URL +"/user/findEmail",{
@@ -160,6 +184,10 @@ const Signup = () => {
         .then(date => alert(date))
     }
 
+
+    const onChangeHandler=(e) =>{
+
+    }
     return (
         <>
             <div className="container">
@@ -171,7 +199,7 @@ const Signup = () => {
             <div className="inputs">
                 <div className="input">
                     <img src={name_icon} alt="" />
-                    <input type="text" placeholder="Name" />
+                    <input type="text" placeholder="Name" onChange={nameSet} />
                 </div>
                 {/* <div className="input">
                     <img src={id_icon} alt="" />
@@ -182,7 +210,7 @@ const Signup = () => {
                 </div>  */}
                 <div className="input">
                     <img src={nickname_icon} alt="" />
-                    <input type="text" placeholder="Nickname" />
+                    <input type="text" placeholder="Nickname" onChange={nickNameSet} />
                 </div>
 
                 <div className="input">
@@ -194,7 +222,7 @@ const Signup = () => {
 
                 <div className="input">
                     <img src={password_icon} alt="" />
-                    <input type="password" placeholder="password" />
+                    <input type="password" placeholder="password"  onChange={passSet}/>
                 </div>
                 {/* <div className="input">
                         <img src={birth_icon} alt="" />
