@@ -11,8 +11,8 @@ import password_icon from '../imgs/003.png';
 
 const LoginSignup = ({setLogin}) => {
     const [action, setAction] = useState("Login");
-    const [userEmail, setUserEmail] = useState("testUser2@gmail.com");
-    const [userPassword, setUserPassword] = useState("jhs123");
+    const [userEmail, setUserEmail] = useState();
+    const [userPassword, setUserPassword] = useState();
     const navigate = useNavigate();
 
     const onClickHandler = () => {

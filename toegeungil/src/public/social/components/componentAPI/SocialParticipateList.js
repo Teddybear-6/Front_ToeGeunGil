@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import DetailsStyle from '../css/SocialDetails.module.css';
+import SocialParticipate from "./SocialParticipate";
+
 
 function SocialParticipateList({ postNum }) {
     //게시글 번호 입력하면 리스트로 참여 회원 보여줌
@@ -17,18 +19,6 @@ function SocialParticipateList({ postNum }) {
         fetch(process.env.REACT_APP_URL+`/socials/${postNum}`)
             .then(response => response.json()) //json으로 받는다
             .then(data => setSocials(data));
-
-        //참여하기
-        // fetch(`http://localhost:8001/socials/participate/${postNum}`, {
-        //     method: "POST",
-        //     headers: { //데이터 타입 지정
-        //         "Content-Type": "application/json; charset=utf-8"
-        //     },
-        //     body: JSON.stringify({
-        //         "userNum": userNum //유저 번호 : 회원 로그인이 필요한가?
-        //     }) //실제 데이터 파싱하여 body에 저장
-        // })
-        //     .then(response => response.json())
 
     }, [postNum]);
 
@@ -49,7 +39,7 @@ function SocialParticipateList({ postNum }) {
                             }
                             {/* {Object.keys(participate[0]) <=0 ? null : "sdsd"} */}
                         </div>
-                        <button className={DetailsStyle.buttonStyle}>참여하기</button>
+                        <SocialParticipate socialNum={postNum}/>
                     </div>
                 </div>
             </div>

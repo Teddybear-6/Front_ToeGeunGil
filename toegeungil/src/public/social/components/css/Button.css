@@ -1,7 +1,7 @@
 /*
 활성화 버튼 */
 
-.buttonOn {
+.buttonOn_so {
     width: 150px;
     height: 75px;
     border-radius: 50px;
@@ -17,13 +17,13 @@
     text-decoration-line: none;
 }
 
-.buttonOn:hover {
+.buttonOn_so:hover {
     background-color:#CCE2DB;
     border: none;
     transition: 0.7s;
 }
 
-.buttonOn:active {
+.buttonOn_so:active {
     background-color: #8FC4B3;
 }
 
@@ -31,7 +31,7 @@
 /*
 비활성화 버튼*/
 
-.buttonOff {
+.buttonOff_so {
     width: 150px;
     height: 75px;
     border-radius: 50px;
@@ -47,13 +47,13 @@
     text-decoration-line: none;
 }
 
-.buttonOff:hover {
+.buttonOff_so:hover {
     background-color:#8FC4B3;
     border: none;
     transition: 0.7s;
 }
 
-.buttonOff:active {
+.buttonOff_so:active {
     background-color: #CCE2DB;
 }
 
@@ -61,7 +61,7 @@
 /*
 게시글 작성 버튼*/
 
-.writeButton {
+.writeButton_so {
     width: 250px;
     height: 75px;
     border-radius: 50px;
@@ -76,13 +76,13 @@
     text-decoration-line: none;
 }
 
-.writeButton:hover {
+.writeButton_so:hover {
     background-color:#CCE2DB;
     border: 2px solid #CCE2DB;
     transition: 0.7s;
 }
 
-.writeButton:active {
+.writeButton_so:active {
     background-color: #8FC4B3;
 }
 

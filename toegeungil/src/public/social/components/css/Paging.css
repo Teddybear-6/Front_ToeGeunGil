@@ -10,45 +10,57 @@ ul {
 }
 
 ul.pagination li {
+    /* < , 1, 2, > */
     display: inline-block;
-    width: 30px;
-    height: 30px;
-    border: 1px solid #e2e2e2;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #8FC4B3;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1rem;
+    font-size: 20px;
+    margin-left: 7.5px;
+    margin-right: 7.5px;
 }
 
 ul.pagination li:first-child {
-    border-radius: 5px 0 0 5px;
+    /* << */
+    border-radius: 10px;
 }
 
 ul.pagination li:last-child {
-    border-radius: 0 5px 5px 0;
+    /* >> */
+    border-radius: 10px;
 }
 
 ul.pagination li a {
+    /* 버튼 안에 텍스트 */
     text-decoration: none;
-    color: #337ab7;
-    font-size: 1rem;
+    color: #41A487;
+    font-size: 18px;
+    font-style: normal;
 }
 
 ul.pagination li.active a {
-    color: white;
+    /* 선택된 애 텍스트 색상 */
+    color: #096249;
 }
 
 ul.pagination li.active {
-    background-color: #337ab7;
+    /* 선택된 애 배경 색상 */
+    background-color: #CCE2DB;
+    border: none;
 }
 
 ul.pagination li a:hover,
 ul.pagination li a.active {
-    color: blue;
+    /* hover시 텍스트 색상 */
+    color: #096249;
 }
 
 .page-selection {
-    width: 48px;
-    height: 30px;
-    color: #337ab7;
+    width: 40px;
+    height: 40px;
+    color: #096249;
 }

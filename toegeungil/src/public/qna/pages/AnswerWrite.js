@@ -1,15 +1,25 @@
-import React, { useState} from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../component/AnswerWrite.css";
-
+import jwt_decode from "jwt-decode";
 
 
 //답변 올리기
 const AnswerWrite = () => {
     const [answerTitle , setAnswerTitle] = useState(""); 
     const [answerContext, setAnswerContext] = useState(""); //답변글
+    const [user, setUser] = useState("");
+
+
+    useEffect(()=>{
+        if (sessionStorage.getItem("Authorizaton")) {
+            setUser(jwt_decode(sessionStorage.getItem("Authorizaton")));
+          }
+    })
     
-    
+
+
+
     const handleTitleChange = (e) => {
         setAnswerTitle(e.target.value);
     }
@@ -51,6 +61,7 @@ const AnswerWrite = () => {
     }
     return (
         <div className='layout'>
+        {user && user.auth[0] === 'ADMIN' ? 
             <div className="wrapper" >
                 <h1 className="write-header1">답변 작성</h1>
                 <div className="write-wrapper textarea">
@@ -83,6 +94,7 @@ const AnswerWrite = () => {
                     </Link>
                 </div>
             </div>
+             :null }
         </div>
     )
 }
