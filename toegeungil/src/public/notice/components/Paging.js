@@ -1,8 +1,9 @@
 import React from "react";
 import Pagination from "react-js-pagination";
-import "./Paging.css";
+import './Paging.css';
 
-const pagings = ({ page, count, setPage }) => {
+
+const Paging = ({ page, count, setPage }) => {
 
     return (
         <Pagination
@@ -18,4 +19,4 @@ const pagings = ({ page, count, setPage }) => {
 };
 
 
-export default pagings;
+export default Paging;
