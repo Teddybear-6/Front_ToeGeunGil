@@ -1,24 +1,20 @@
 import React, { useState, useEffect } from "react";
-import CommentsStyle from './css/CommunityDetailsComments.module.css';
-import UserNickName from "./UserNickName";
 import jwt_decode from "jwt-decode";
 import { useParams } from "react-router-dom";
+import CommentsStyle from './css/CommunityDetailsComments.module.css';
+import UserNickName from "./UserNickName";
 
-function CommunityDetailsComments() {
-    const { communityNum } = useParams();
-    const [comments, setComments] = useState([]);
+function CommunityComment() {
     const [user, setUser] = useState();
-    const [newComment, setNewComment] = useState("");
+    const { communityNum } = useParams();
+    const [comment, setComment] = useState({});
+    const [comments, setComments] = useState([]);
 
     useEffect(() => {
         if (sessionStorage.getItem("Authorization")) {
             setUser(jwt_decode(sessionStorage.getItem("Authorization")));
         }
 
-        getComments();
-    }, [communityNum]);
-
-    const getComments = () => {
         fetch(process.env.REACT_APP_URL + `/communitys/comments/${communityNum}`)
             .then(response => response.json())
             .then(data => {
@@ -28,6 +24,13 @@ function CommunityDetailsComments() {
             .catch(error => {
                 console.error(error);
             });
+    }, [comment]);
+
+    const onChangeComment = (e) => {
+        setComment({
+            ...comment,
+            [e.target.name]: e.target.value,
+        });
     };
 
     const formatDate = (dateString) => {
@@ -39,35 +42,44 @@ function CommunityDetailsComments() {
         return date.toLocaleString(undefined, options);
     };
 
-    const handleComment = () => {
-        if (!user) {
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if (user === undefined || user === null) {
             alert("로그인 후 댓글을 작성할 수 있습니다.");
             return;
         }
 
-        const newCommentObject = {
-            userNum: user.userNum,
-            commentDetail: newComment,
-            commentWriteDate: new Date().toISOString()
-        };
+        setComment({ ...comment, userNum: user.no });
 
+        // 댓글 등록 요청
         fetch(process.env.REACT_APP_URL + `/communitys/comments/${communityNum}`, {
             method: "POST",
             headers: {
-                "Content-Type": "application/json",
                 "Authorization": sessionStorage.getItem("Authorization"),
+                "Content-Type": "application/json; charset=utf-8",
             },
-            body: JSON.stringify(newCommentObject),
+            body: JSON.stringify(comment),
         })
-        .then(response => response.json())
-        .then(data => {
-            setNewComment("");
-            const commentWithTime = { ...data, commentWriteDate: new Date().toISOString() };
-            setComments([...comments, commentWithTime]);
-        })
-        .catch(error => {
-            console.error(error);
-        });
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error("서버 응답 오류");
+                }
+            })
+            .then(data => {
+                setComments([...comments, data]);
+                setComment({
+                    userNum: '',
+                    commentDetail: '',
+                    commentWriteDate: new Date().toISOString(),
+                });
+            })
+            .catch(error => {
+                console.error(error);
+            });
     };
 
     return (
@@ -80,7 +92,9 @@ function CommunityDetailsComments() {
                             <div className={CommentsStyle.CommentDetailsView}>
                                 <div className={CommentsStyle.CommentWriterBox}>
                                     <div className={CommentsStyle.CommentWriter}>
-                                        {comment.userNum !== null && <UserNickName userNo={comment.userNum} />}
+                                        <div className={CommentsStyle.CommentWriter}>
+                                            {comment.userNum !== null && <UserNickName userNo={comment.userNum} />}
+                                        </div>
                                     </div>
                                     <div className={CommentsStyle.CommentWriterDate}>
                                         {formatDate(comment.commentWriteDate)}
@@ -96,11 +110,13 @@ function CommunityDetailsComments() {
             <div className={CommentsStyle.NewCommentBox}>
                 <input
                     className={CommentsStyle.NewCommentInputBox}
+                    name="commentDetail"
                     placeholder="댓글을 입력하세요"
-                    value={newComment}
-                    onChange={(e) => setNewComment(e.target.value)}
+                    type="text"
+                    onChange={onChangeComment}
+                    value={comment.commentDetail}
                 />
-                <button className={CommentsStyle.NewCommentButton} onClick={handleComment}>
+                <button className={CommentsStyle.NewCommentButton} onClick={(e) => handleSubmit(e)}>
                     등록
                 </button>
             </div>
@@ -108,4 +124,4 @@ function CommunityDetailsComments() {
     );
 }
 
-export default CommunityDetailsComments;
+export default CommunityComment;

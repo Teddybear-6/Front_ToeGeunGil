@@ -25,7 +25,7 @@ const Mypage =()=>{
             </table>
             </div>
         
-            <div class="row">
+            {/* <div class="row">
             <div class="column">수강현황
                 <ul>
                 <li>HTML</li>
@@ -58,13 +58,14 @@ const Mypage =()=>{
                 <li>환불원함</li>
                 </ul>
             </div>
-            </div>
+            </div> */}
 
         
 
 
         
 
+<<<<<<< HEAD
             <div class="footer">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
             Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Volutpat odio facilisis mauris sit amet massa. 
@@ -77,6 +78,15 @@ const Mypage =()=>{
             In tellus integer feugiat scelerisque. Feugiat in fermentum posuere urna nec tincidunt praesent.
             Porttitor rhoncus dolor purus non enim praesent</p>
             </div> 
+=======
+            {/* <div class="footer">
+            <p>    FORUM ABOUT
+                W3Schools is optimized for learning and training. Examples might be simplified to improve reading and learning.
+                Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full correctness
+                of all content. While using W3Schools, you agree to have read and accepted our terms of use, cookie and privacy policy.
+                Copyright 1999-2023 by Refsnes Data. All Rights Reserved. W3Schools is Powered by W3.CSS.</p>
+            </div>  */}
+>>>>>>> c135689397ccb0b5140e0bb9e7a963671147f55e
 
 
         </>

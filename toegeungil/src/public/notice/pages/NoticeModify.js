@@ -63,7 +63,7 @@ const NoticeModify = () => {
             })
     }
     return (
-        <div className='layout'>
+        <div className='toegeungillayou'>
             <div className="wrapper" >
                 <h1 className="write-header">공지사항 수정</h1>
                 {user && user.auth[0] === 'ADMIN' ? (
@@ -94,10 +94,10 @@ const NoticeModify = () => {
                 {!user ? null : (user.auth[0] == 'ADMIN') ?
                     <div className="button">
                         <Link to="/service/notice">
-                            <button className="cancel-button" onClick={cancelClick}>취소</button>
+                            <button className="notice-cancel-button" onClick={cancelClick}>취소</button>
                         </Link>
                         <Link to="/service/notice">
-                            <button className="write-button" onClick={updateClick}>등록</button>
+                            <button className="notice-write-button" onClick={updateClick}>등록</button>
                         </Link>
                     </div>
                     : null}

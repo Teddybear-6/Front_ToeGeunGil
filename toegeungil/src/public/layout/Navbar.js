@@ -1,5 +1,5 @@
-import { NavLink ,useNavigate  } from "react-router-dom";
-import { useState} from 'react';
+import { NavLink, useNavigate } from "react-router-dom";
+import { useState } from 'react';
 import "./layout.css"
 
 function Navbar() {
@@ -7,11 +7,11 @@ function Navbar() {
     const [hobbyTitle, setHobbyTitle] = useState();
 
     const handleClick = (e) => (
-      
+
         navigate('/hobby/search', { state: hobbyTitle })
     )
 
-    const onChangeHandler = (e) =>(
+    const onChangeHandler = (e) => (
         setHobbyTitle(e.target.value)
 
     )
@@ -20,7 +20,7 @@ function Navbar() {
         if (e.key === 'Enter') {
             handleClick(e)// Enter 입력이 되면 클릭 이벤트 실행
         }
-      };
+    };
 
 
     return (
@@ -32,13 +32,13 @@ function Navbar() {
                 </NavLink>
                 {/* Navbar */}
                 <div className="navbarFlex mar50">
-                    <NavLink to="/hobby" className={({isActive})=> isActive? "navbarOn navbarLine":"navbarFont navbarLine"}>Hobby</NavLink>
-                    <NavLink to="/social" className={({isActive})=> isActive? "navbarOn navbarLine":"navbarFont navbarLine"}>Social</NavLink>
-                    <NavLink to="/communitys" className={({isActive})=> isActive? "navbarOn navbarLine":"navbarFont navbarLine"}>Community</NavLink>
+                    <NavLink to="/hobby" className={({ isActive }) => isActive ? "navbarOn navbarLine" : "navbarFont navbarLine"}>Hobby</NavLink>
+                    <NavLink to="/social" className={({ isActive }) => isActive ? "navbarOn navbarLine" : "navbarFont navbarLine"}>Social</NavLink>
+                    <NavLink to="/communitys" className={({ isActive }) => isActive ? "navbarOn navbarLine" : "navbarFont navbarLine"}>Community</NavLink>
                 </div>
                 {/* 검색창 */}
                 <div className="searchBar searchFlex">
-                    <input className="searchBox" type="text" onChange={(e)=>onChangeHandler(e)} onKeyPress={handleOnKeyPress}/>
+                    <input className="searchBox" type="text" onChange={(e) => onChangeHandler(e)} onKeyPress={handleOnKeyPress} />
                     <img className="searchicon" src="/search.png" type="submit" onClick={handleClick} />
                 </div>
             </div>
