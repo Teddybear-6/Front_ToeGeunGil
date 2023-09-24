@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import jwt_decode from "jwt-decode";
-// import '../components/LocalMain.css';
+import '../components/LocalMain.css';
 
 function LocalList() {
     const [user, setUser] = useState('');

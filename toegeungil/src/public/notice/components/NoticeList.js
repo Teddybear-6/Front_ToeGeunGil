@@ -6,12 +6,15 @@ import jwt_decode from "jwt-decode";
 const NoticeList = () => {
     const [user, setUser] = useState('');
     const [list, setList] = useState([]);
-
+    const [loading, setLoading] = useState(true);
 
     const getList = () => {
         fetch(process.env.REACT_APP_URL + `/notices`)
             .then(response => response.json())
-            .then(data => setList(data))
+            .then(data => {
+                setList(data)
+                setLoading(false)
+            })
     }
 
     useEffect(() => {
@@ -30,39 +33,47 @@ const NoticeList = () => {
 
     return (
         <div className='layout'>
-            <div className="notice-wrapper">
-                <table className="table-wrapper">
-                    <thead>
-                        <tr>
-                            <th>번호</th>
-                            <th>제목</th>
-                            <th>작성일</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            list.map((notice) => (
-                                <tr key={notice.noticeNum}>
-                                    <td>{notice.noticeNum}</td>
-                                    <td>
-                                        <Link to={`/service/notice/${notice.noticeNum}`}
-                                            style={{ textDecoration: "none", color: "#87746B" }} className="title-link">{notice.noticeTitle}</Link>
-                                    </td>
-                                    <td>{notice.noticeDate}</td>
-                                </tr>
-                            ))
-                        }
-                    </tbody>
-                    {/* 관리자일 경우 */}
-                    { !user ? null : (user.auth[0] =='ADMIN') ?
-                        <div className="main-button-box">
-                        <Link to={"/service/notice/write"}>
-                            <button className="main-button" onClick={noticeClick}>공지사항 작성</button>
-                        </Link>
-                    </div>
-                    :null}
-                </table>
-            </div >
+            {
+                loading ? (
+                    "로딩 중"
+                ) : (
+                    list ? (
+                        <div className="notice-wrapper">
+                            <table className="table-wrapper">
+                                <thead>
+                                    <tr>
+                                        <th>번호</th>
+                                        <th>제목</th>
+                                        <th>작성일</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                        list.map((notice) => (
+                                            <tr key={notice.noticeNum}>
+                                                <td>{notice.noticeNum}</td>
+                                                <td>
+                                                    <Link to={`/service/notice/${notice.noticeNum}`}
+                                                        style={{ textDecoration: "none", color: "#87746B" }} className="title-link">{notice.noticeTitle}</Link>
+                                                </td>
+                                                <td>{notice.noticeDate}</td>
+                                            </tr>
+                                        ))
+                                    }
+                                </tbody>
+                                {/* 관리자일 경우 */}
+                                {!user ? null : (user.auth[0] == 'ADMIN') ?
+                                    <div className="main-button-box">
+                                        <Link to={"/service/notice/write"}>
+                                            <button className="main-button" onClick={noticeClick}>공지사항 작성</button>
+                                        </Link>
+                                    </div>
+                                    : null}
+                            </table>
+                        </div >
+                    ) : "공지사항이 없습니다"
+                )
+            }
         </div>
     )
 }
