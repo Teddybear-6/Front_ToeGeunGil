@@ -32,8 +32,6 @@ https://github.com/Teddybear-6/Back_ToeGeunGil
 ### 퇴근길 - FRONTEND REPOSITORY
 https://github.com/Teddybear-6/Front_ToeGeunGil
 
-<br/>
-
 ## 개발 환경
 - 개발환경   
 1-1. 백 : java (springboot ,  Spring Security, JPA)   
@@ -46,7 +44,7 @@ https://github.com/Teddybear-6/Front_ToeGeunGil
 ## 시스템 아키텍처
 ![image](%ED%87%B4%EA%B7%BC%EA%B8%B8.png)
 
-## API 설계 
+## API 설계
 |기능|Method|URL|
 |:---|:---:|:---:|
 |로그인|POST|login|
