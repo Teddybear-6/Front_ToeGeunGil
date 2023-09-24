@@ -1,10 +1,14 @@
 import CommunityList from "../components/CommunityList";
+import "../../layout/layout.css";
+
 
 
 function CommunityMain({ }) {
     return (
         <>
-            <CommunityList />
+            <div className='ttoegeungillayou'>
+                <CommunityList />
+            </div>
         </>
     );
 }

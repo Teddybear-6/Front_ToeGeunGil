@@ -4,21 +4,32 @@ import CommunityKeyword from "./CommunityKeyword";
 import '../components/css/CommunityMain.css';
 import { Link } from "react-router-dom";
 import UserNickName from "./UserNickName";
+import DetailsTitleStyle from "../components/css/CommunityDetailsTitle.module.css";
+import jwt_decode from "jwt-decode"
 
 const CommunityList = () => {
     const [communityList, setCommunityList] = useState([]);
+    const [user, setUser] = useState();
 
     const getCommunityList = () => {
-        fetch('http://localhost:8001/communitys')
+        fetch(process.env.REACT_APP_URL + "/communitys")
             .then((response) => response.json())
             .then((data) => {
                 setCommunityList(data);
             });
+        console.log(communityList);
+
     };
 
     useEffect(() => {
+        if (sessionStorage.getItem("Authorizaton")) {
+            setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
+        }
+
         getCommunityList();
+        console.log(communityList);
     }, []);
+
 
     const viewCommunity = (communityNum) => {
         window.location.href = `/communitys/${communityNum}`;
@@ -49,18 +60,23 @@ const CommunityList = () => {
                                     <UserNickName userNo={community.userNum} />
                                 </td>
                                 <td>
-                                    <CommunityLocation localCode={community.locationNum} />
+                                    <CommunityLocation localCode={community.localCode} />
                                 </td>
                                 <td>
-                                    <CommunityKeyword keywordCode={community.CommunityKeywordDTOList} />
+                                    <div className={DetailsTitleStyle.MainKeyword}>
+                                        {community.communityKeywordDTOList?.map((m, index) => (
+                                            <CommunityKeyword key={index} code={m} />
+                                        ))}
+                                    </div>
                                 </td>
                             </tr>
                         ))}
                 </tbody>
             </table>
-            <Link to={"/communitys"}>
-                <button className="community-regist-button">커뮤니티 글 작성</button>
-            </Link>
+            {!user ? null : (!user?.auth[0] == "USER" || !user?.auth[0] == "TUTOR" || !user?.auth[0] == "ADMIN") ? "회원이 아닙니다." :
+                <Link to={"/communitys/write"}>
+                    <button className="community-regist-button" >커뮤니티 글 작성</button>
+                </Link>}
         </div>
     );
 }

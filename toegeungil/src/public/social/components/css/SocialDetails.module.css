@@ -163,6 +163,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-decoration-line: none;
 }
 
 .buttonStyle2 {
@@ -177,4 +178,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.marB40px {
+    margin-bottom: 40px;
 }

@@ -5,14 +5,13 @@ function UserNickName({ userNo }) {
 
     useEffect(() => {
         console.log(userNo)
-        fetch(`http://localhost:8001/user/${userNo}`).then((response) => response.json()).then((data) => setNickName(data.nickName || '')).catch((error) => {
-            console.log(error);
+        fetch(process.env.REACT_APP_URL+`/user/${userNo}`).then((response) => response.json()).then((data) => setNickName(data)).catch((error) => {
+        console.log(error);
         })
-        console.log(userNo)
     }, [userNo]);
 
     return (
-        <span>{nickName}</span>
+        <span>{nickName.nickName}</span>
     )
 
 }

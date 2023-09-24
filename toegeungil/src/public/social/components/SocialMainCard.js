@@ -6,30 +6,30 @@ import SocialMainImage from "./componentAPI/SocialMainImage";
 import MainStyle from './css/SocialMainCard.module.css';
 import DetailsStyle from './css/SocialDetails.module.css';
 import { Link } from "react-router-dom";
-import SocialDetails from "./SocialDetails";
+import SocialDetails from "./SocialDetailCard";
 
-function SocialMainCard() {
+function SocialMainCard({socials}) {
 
     /*할일
     - 키워드 뿌리기
     - 눌렀을 때 링크 이동*/
 
-    const [socials, setSocials] = useState([{}]);
+    // const [socials, setSocials] = useState([{}]);
 
-    useEffect(() => {
-        fetch("http://localhost:8001/socials")
-            .then(response => response.json())
-            .then(data => setSocials(data));
-    }, []);
+    // useEffect(() => {
+    //     fetch(process.env.REACT_APP_URL+"/socials")
+    //         .then(response => response.json())
+    //         .then(data => setSocials(data));
+    // }, []);
 
-
+    // Object?.keys(socials[0]) <= 0
 
     return (
         <>
             <div className={MainStyle.socialMainCardBoard}>
                 <div className={MainStyle.container}>
                     {
-                        (Object.keys(socials[0]) <= 0) ? null : socials.map((r, i) =>
+                        !socials ? null : socials.map((r, i) =>
                             <div key={i} className={MainStyle.socialMainCard}>
                                 <Link to={`${r.socialNum}`} className={MainStyle.socialLink}>
                                     {/* to={<SocialDetails socialNum={r.socialNum}/>} */}

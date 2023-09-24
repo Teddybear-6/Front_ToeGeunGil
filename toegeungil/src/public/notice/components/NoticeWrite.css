@@ -26,8 +26,8 @@
 }
 
 .textarea:focus {
-    outline: none;
-    line-height: normal;
+    /* outline: none;
+    line-height: normal; */
 }
 
 /* 공지 제목 전체 틀 */
@@ -59,7 +59,7 @@
     resize: none;
     font-size: 1.0em;
     outline: none;
-    width: 750px;
+    width: 930px;
     font-size: 18px;
     color: #655853;
     font-weight: bold;
@@ -103,7 +103,7 @@
     resize: none;
     font-size: 0.9em;
     outline: none;
-    width: 700px;
+    width: 930px;
     height: 350px;
 }
 
@@ -115,7 +115,7 @@
 }
 
 /* 공지 등록 버튼 */
-.write-button {
+.notice-write-button {
     color: #096249;
     font-size: 20px;
     font-weight: bold;
@@ -128,7 +128,7 @@
 }
 
 /* 공지 취소 버튼 */
-.cancel-button {
+.notice-cancel-button {
     color: #096249;
     font-size: 20px;
     font-weight: bold;

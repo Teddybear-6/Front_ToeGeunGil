@@ -6,12 +6,12 @@ function HobbyTutor({tutorIntro, tutorCode}){
 
 
     useEffect(()=>{
-        fetch(`http://localhost:8001/user/${tutorCode}`).then(res=>res.json()).then(
+        fetch(process.env.REACT_APP_URL+`/user/${tutorCode}`).then(res=>res.json()).then(
             data=>setTutor(data.userName)
         )
 
    
-    })
+    },[])
 
     return(
         <>

@@ -51,7 +51,7 @@ th:nth-child(3){
 }
 
 th:nth-child(4){
-    border-right: 0px;
+    border-right:0px;
     border-left: 0px;
     border-radius: 0 0 0 0
 }
@@ -59,6 +59,7 @@ th:nth-child(4){
 th:last-child{
     border-radius: 0 50px 50px 0;
     border-left: 0px ;
+    
 }
 
 td:first-child{
@@ -102,10 +103,10 @@ td:last-child{
     width: 250px;
     height: 75px;
     border: 2px solid #41A487;
-    margin-left: 193px;
     font-size: 20px;
     font-weight: bolder;
     margin-top: 60px;
+    margin-left: 80px;
 }
 
 

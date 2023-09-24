@@ -1,34 +1,82 @@
-@media all and (min-width:1900px) and (max-width:1920px) {
-
-    .title{
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-    }
-    
-    .communityTitleBoard{
-        width: 1400px;
-        height: 150px;
-        border: 3px solid #CCE2DB;
-        border-radius: 50px;
-    }
-
-    .communityTitleName{
-        font-size: 36px;
-        color : #655853;
-        font-weight: bold;
-        margin-left: 50px;
-        margin-top: 30px;
-    }
-    
-    .communityLocal{
-        font-size: 18px;
-        color : #655853;
-        font-weight: bold;
-        margin-right: 45px;
-        margin-top: 30px;
-        text-align: right;
-    }
-    
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: 50px;
 }
-    
+
+.communityTitleBoard {
+    width: 1400px;
+    height: 150px;
+    border: 3px solid #CCE2DB;
+    border-radius: 50px;
+}
+
+.communityTitleName {
+    font-size: 36px;
+    color: #655853;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+.communityLocal {
+    font-size: 18px;
+    color: #655853;
+    font-weight: bold;
+    margin-right: 45px;
+    margin-top: 30px;
+    text-align: right;
+}
+
+.communityKeyword {
+
+    color: #87746B;
+    display: flex;
+    border-radius: 50px;
+    width: 70px;
+    height: 30px;
+    background-color: #E9E0DD;
+    align-items: center;
+    justify-content: center;
+}
+
+.MainKeyword {
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.MainKeywordDiv {
+    width: 70px;
+    height: 30px;
+    background-color: #E9E0DD;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    margin-right: 10px;
+    font-size: 14px;
+    color: #87746B;
+}
+
+.communityKeywordDTOList1 {
+    margin-left: 50px;
+    margin-bottom: -15px;
+}
+
+.CommunityBar {
+    width: 1500px;
+    height: 100px;
+    color: #655853;
+    font-size: 30px;
+    font-weight: bold;
+    align-items: center;
+    display: flex;
+}
+
+.CommunityStart {
+    width: 1500px;
+    border: 2px solid black;
+    margin-bottom: 40px;
+}

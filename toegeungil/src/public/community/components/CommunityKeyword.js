@@ -1,18 +1,23 @@
 import { useState, useEffect } from "react";
+import DetailsTitleStyle from './css/CommunityDetailsTitle.module.css';
 
-function CommunityKeyword({ keywordCode }) {
-    const [keywordName, setKeywordName] = useState();
+
+function CommunityKeyword({ code }) {
+    const [keyword, setKeyword] = useState({});
 
     useEffect(() => {
-        console.log(keywordCode)
-        fetch(`http://localhost:8001/keyword/${keywordCode}`).then((response) => response.json()).then((data) => setKeywordName(data.keywordName || '')).catch((error) => {
-            console.log(error);
-        })
-        console.log(keywordCode)
-    }, []);
+        fetch(process.env.REACT_APP_URL + `/keyword/${code.keywordCode}`)
+            .then((response) => response.json())
+            .then((data) => setKeyword(data));
+            console.log(keyword)
+    }, [code]);
 
     return (
-        <span>{keywordName}</span>
+        <>
+        <div className={DetailsTitleStyle.MainKeywordDiv}>
+            {keyword.keywordName}
+        </div>
+        </>
     )
 }
 
