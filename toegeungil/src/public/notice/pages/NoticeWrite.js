@@ -90,10 +90,10 @@ const NoticeWrite = () => {
                 {!user ? null : (user.auth[0] == 'ADMIN') ?
                     <div className="button">
                         <Link to="/service/notice">
-                            <button className="cancel-button" onClick={cancelClick}>취소</button>
+                            <button className="notice-cancel-button" onClick={cancelClick}>취소</button>
                         </Link>
                         <Link to="/service/notice">
-                            <button className="write-button" onClick={writeClick}>등록</button>
+                            <button className="notice-write-button" onClick={writeClick}>등록</button>
                         </Link>
                     </div>
                     : null}
