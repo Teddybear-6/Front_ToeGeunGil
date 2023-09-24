@@ -52,10 +52,11 @@ export const QuestionMain = () => {
                 })}
           </tbody>
         </table>
-      
+        <div className="qnaButton">
           <Link to="/service/qna/write">
-            <button className="question-button">문의등록</button>
+            <button className="questionButton">문의등록</button>
           </Link>
+        </div>
         </div>
       
     </>

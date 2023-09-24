@@ -13,6 +13,7 @@ function TutorHobbyList(){
   useEffect(()=>{
     if (sessionStorage.getItem("Authorizaton")) {
         setTutor(jwt_decode(sessionStorage.getItem("Authorizaton")))
+      
         api()
       }
   },[page,pageCount])
@@ -33,11 +34,12 @@ function TutorHobbyList(){
           fetch(process.env.REACT_APP_URL+`/hobbys/tutorlist/size/${tutor?.no}`).then(res => res.json()).then(res => setPageCount(res)))
         .catch((e)=>console.log(e))
     }
+
   return(
     <>
     {!tutor ? "로그인 해주세요" : !tutor?.auth[0]==="TUTOR" ? "강사가 아닙니다." :
     
-      <div className='layout'>
+      <div className='toegeungillayout'>
     <div style={{display:"flex" , flexDirection:"row", flexWrap : "wrap"}}>
     <TutorHobbyMain hobbys={hobby} setHobby={setHobby} api={api}/>
     </div>

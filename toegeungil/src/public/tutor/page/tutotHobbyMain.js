@@ -24,7 +24,7 @@ function TutorHobbyMain({ hobbys, setHobby , api}) {
     }
 
     const deleteApi = (hobbyCode) => {
-        console.log("hobbyCode = " + hobbyCode)
+     
         if (window.confirm("삭제하시겠습니까?")) {
             fetch(process.env.REACT_APP_URL + `/hobbys/${hobbyCode}`, {
                 method: "DELETE",
@@ -32,7 +32,7 @@ function TutorHobbyMain({ hobbys, setHobby , api}) {
                     "Authorization": sessionStorage.getItem("Authorizaton")
                 },
             }).then(res => res.json()).then(res=> {
-                console.log(res)
+           
                 setHobby(hobbys.filter(code => code.hobbyCode != hobbyCode));
                 alert(res['value'])
             })
@@ -41,18 +41,17 @@ function TutorHobbyMain({ hobbys, setHobby , api}) {
 
         return (
             <>
-
                 {hobbys?.map((hobby, index) => (
                     <>
                         <div>
                             <HobbyCard hobbys={hobby} key={index} />
                             <div className="btnframe">
-                                <Link to="/hobbymodify" type="button" className="buttonOn " state={{ "hobbyCode": hobby.hobbyCode }}>수정</Link>
-                                <button className="buttonOn mar" onClick={()=>deleteApi(hobby.hobbyCode)}>삭제</button>
+                                <Link to="/hobbymodify" type="button" className="TutorbuttonOn " state={{ "hobbyCode": hobby.hobbyCode }}>수정</Link>
+                                <button className="TutorbuttonOn" onClick={()=>deleteApi(hobby.hobbyCode)}>삭제</button>
                                 {
-                                    hobby.close === "Y" ? null : <button onClick={() => close(hobby.hobbyCode)} className="buttonOn mar">마감</button>
+                                    hobby.close === "Y" ? null : <button onClick={() => close(hobby.hobbyCode)} className="TutorbuttonOn">마감</button>
                                 }
-                                <Link  to="/hobbystudent"  type="button" state={{ "hobbyCode": hobby.hobbyCode }} >수강생 관리</Link>
+                                <Link  to="/hobbystudent" className="TutorbuttonOn"  type="button" state={{ "hobby": hobby }} >수강생</Link>
 
                             </div>
 
