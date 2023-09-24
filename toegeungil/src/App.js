@@ -44,6 +44,7 @@ import SocialModify from "./public/social/page/SocialModify";
 import AnswerWrite from "./public/qna/pages/AnswerWrite";
 import HobbyLayout from "./public/hobby/layout/HoobyLayout";
 import CategoryHobby from "./public/hobby/page/CategoryHobby";
+import HobbySearch from "./public/hobby/page/HobbySearch";
 import React, { useState } from "react";
 function App() {
   /* 라우팅
@@ -69,6 +70,7 @@ function App() {
             <Route path='/hobby'  element={<AllHobby/>} />
             <Route path='hobby/:hobbyCode' element={<HobbyDetail />}/>
             <Route path="/hobbycategory/:categoryCode"  element={<CategoryHobby/>} />
+            <Route path="/hobby/search"  element={<HobbySearch/>} />
             </Route>
            
           
