@@ -94,30 +94,6 @@ const NoticeView = () => {
             "공지사항이 없습니다"
           )}
         </div>
-        <div>
-          <div className="view-date">
-            <label>{detail.noticeDate}</label>
-          </div>
-          <div className="view-text-box">
-            <div className="view-text">
-              <label>{detail.noticeContent}</label>
-            </div>
-          </div>
-          <div className="button-box">
-            {/* 관리자인 경우 : 삭제, 수정 버튼 */}
-            <Link to="/service/notice">
-              <button className="button1" onClick={deleteClick}>
-                삭제
-              </button>
-            </Link>
-            <Link to={`/service/notice/${noticeNum}/modify`}>
-              <button className="button2">수정</button>
-            </Link>
-            <Link to="/service/notice">
-              <button className="button3">목록으로</button>
-            </Link>
-          </div>
-        </div>
       </div>
     </>
   );
