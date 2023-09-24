@@ -28,30 +28,30 @@ function LocalModify() {
     }
 
     const updateClick = () => {
-        if (user && user.auth[0] === 'ADMIN'){
-        fetch(process.env.REACT_APP_URL + `/local/${localCode}`, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json; charset=UTF-8",
-                 "Authorization": sessionStorage.getItem("Authorizaton")
-            },
-            body: JSON.stringify({
-                "localName": localName,
-            }),
-        })
-            .then(response => {
-                if (response.ok) {
-                    alert("지역이 수정되었습니다");
-                    navigate("/service/local");
-                } else {
-                    throw new Error("지역 수정에 실패하였습니다");
-                }
+        if (user && user.auth[0] === 'ADMIN') {
+            fetch(process.env.REACT_APP_URL + `/local/${localCode}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json; charset=UTF-8",
+                    "Authorization": sessionStorage.getItem("Authorizaton")
+                },
+                body: JSON.stringify({
+                    "localName": localName,
+                }),
             })
-            .catch(error => {
-                console.error("지역 수정 중 오류 발생 :", error);
-                alert("지역 수정 중 오류가 발생하였습니다");
-            })
-        }else{
+                .then(response => {
+                    if (response.ok) {
+                        alert("지역이 수정되었습니다");
+                        navigate("/service/local");
+                    } else {
+                        throw new Error("지역 수정에 실패하였습니다");
+                    }
+                })
+                .catch(error => {
+                    console.error("지역 수정 중 오류 발생 :", error);
+                    alert("지역 수정 중 오류가 발생하였습니다");
+                })
+        } else {
             alert("관리자가 아닙니다 지역 관리 수정 권한이 없습니다");
         }
 
