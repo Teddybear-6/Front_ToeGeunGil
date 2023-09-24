@@ -102,7 +102,7 @@ function HobbyDetail() {
 
     return (
         <>
-            <div className="layout">
+            <div className="toegeungillayout">
                 <div className={detailSytle.frame2}>
                     <div className={detailSytle.details}>
                         <div>

@@ -39,7 +39,7 @@ function TutorHobbyList(){
     <>
     {!tutor ? "로그인 해주세요" : !tutor?.auth[0]==="TUTOR" ? "강사가 아닙니다." :
     
-      <div className='layout'>
+      <div className='toegeungillayout'>
     <div style={{display:"flex" , flexDirection:"row", flexWrap : "wrap"}}>
     <TutorHobbyMain hobbys={hobby} setHobby={setHobby} api={api}/>
     </div>

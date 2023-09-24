@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-<<<<<<< HEAD
 // import '../components/LocalMain.css';
-=======
->>>>>>> 5dbcd2d326b4cae1549fee625d4548db74899276
 
 function LocalList() {
     const [local, setLocal] = useState([]);

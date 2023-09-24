@@ -135,7 +135,7 @@ function HobbyWrite() {
 
   return (
     <>
-          <div className='layout'>
+          <div className='toegeungillayout'>
             { !user ? "로그인 해주세요" : !user?.auth[0]==="TUTOR" ? "강사가 아닙니다." :
       <div>
         <div>

@@ -34,7 +34,7 @@ return (
        
         { !hobby ? "등록된 취미가 없습니다." :
          <div>
-        <div className='layout'>
+        <div className='toegeungillayout'>
          <HobbyMain hobbys={hobby}></HobbyMain>
         </div>
         <div className={AllHobbyCss.paging}>

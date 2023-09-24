@@ -27,7 +27,7 @@ function StudentList(){
 
     
     return (
-       <div className="layout">
+       <div className="toegeungillayout">
        <div className="studentListTitleframe">
                 <p className="title">{hobby?.state?.hobby.hobbyTitle}</p>
             </div>

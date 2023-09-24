@@ -51,25 +51,7 @@ function App() {
       : 리액트에서는 요청에 따라 요청에 매핑되는 컴포넌트를 랜더링 한다. */
       const [login, setLogin] = useState(false);
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          {/* 로그인 */}
-          <Route path="login" element={<LoginSignup />} />
-          <Route path="findpass" element={<Findpass />} />
-          <Route path="signup" element={<Signup />} />
-          {/* 마이페이지 */}
-          <Route path="mypage" element={<Mypage />}>
-            {/* <Route index element={<Mypage/>}/> */}
-          </Route>
-          {/* 취미 */}
-          <Route path="hobby">
-            <Route index element={<AllHobby />} />
-            <Route path=":hobbyCode" element={<HobbyDetail />} />
-          </Route>
 
-<<<<<<< HEAD
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
@@ -93,9 +75,6 @@ function App() {
           
 
             <Route element={<TutorLayout/>}>
-=======
-          <Route element={<TutorLayout />}>
->>>>>>> 5dbcd2d326b4cae1549fee625d4548db74899276
             <Route path="/tutor" element={<TutorHobbyList />} />
             <Route path="/hobbywrite" element={<HobbyWrite />} />
             <Route path="/hobbymodify" element={<HobbyModify />} />
