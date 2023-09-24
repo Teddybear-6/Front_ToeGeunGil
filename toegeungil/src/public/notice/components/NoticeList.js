@@ -3,27 +3,17 @@ import '../components/NoticeMain.css';
 import { Link } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 
-const NoticeList = () => {
+const NoticeList = ({list}) => {
     const [user, setUser] = useState('');
-    const [list, setList] = useState([]);
     const [loading, setLoading] = useState(true);
-
-    const getList = () => {
-        fetch(process.env.REACT_APP_URL + `/notices`)
-            .then(response => response.json())
-            .then(data => {
-                setList(data)
-                setLoading(false)
-            })
-    }
 
     useEffect(() => {
         // jwt 토큰 복호화 
         if (sessionStorage.getItem("Authorizaton")) {
             setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
         }
-        getList();
-    }, [])
+        setLoading(false)
+    }, [list])
 
 
 
