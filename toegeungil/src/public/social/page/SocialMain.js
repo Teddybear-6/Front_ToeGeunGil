@@ -18,11 +18,11 @@ function SocialMain() {
     5.페이징 
     */
 
-    const [socials, setSocials] = useState([]);
+    const [socials, setSocials] = useState([]); //(배열:빈 값이 들어가 있기에 null 이 아니라 값을 비교?)
     const [page, setPages] = useState(1);
     const [pageCount, setPageCount] = useState();
 
-    const [user, setUser] = useState(); //권한 회원 정보
+    const [user, setUser] = useState(); //(객체:!user)권한 회원 정보
 
     useEffect(()=> {
 
@@ -52,9 +52,9 @@ function SocialMain() {
     return (
         <>
             <div className='layout'>
-                <SocialMainCard />
+                <SocialMainCard socials={socials}/>
                 {/* 회원만 글 작성 가능 */}
-                {!user ? null : (!user?.auth[0] == "USER" ||  !user?.auth[0] == "TUTOR" || !user?.auth[0] == "ADMIN" ) ? "회원이 아닙니다." : 
+                {!user ? null : 
                 <Link to="write" type='button' className='writeButton mar'>게시글 작성</Link>}
                 <Paging count={pageCount} setPage={setPage} page={page} />
             </div>
