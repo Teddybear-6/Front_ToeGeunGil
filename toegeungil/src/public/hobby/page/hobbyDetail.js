@@ -10,6 +10,7 @@ import jwt_decode from "jwt-decode";
 import RevieWrite from "../components/hobbyReview";
 import HobbyReview from "../components/HobbyReviewView";
 import JoinUser from "../components/joinuser";
+import HobbySchedule from "../components/hobbyschedule";
 function HobbyDetail() {
     const { hobbyCode } = useParams();
     const [detail, setDetail] = useState({});
@@ -17,6 +18,7 @@ function HobbyDetail() {
     const [user, setUser] = useState();
     const [join, setJoin] = useState();
     const [joinuser, setJoinuser] = useState([]);
+
   
 
 
@@ -31,8 +33,10 @@ function HobbyDetail() {
 
         
             getJoinuser(hobbyCode);
+    
+       
 
-    }, [hobbyCode])
+    }, [])
 
     const findjoin = (user) => {
         if (user) {
@@ -44,6 +48,7 @@ function HobbyDetail() {
         }
     }
 
+    
     const getJoinuser = (hobbyCode) => {
         fetch(process.env.REACT_APP_URL + `/hobbys/joinuser/${hobbyCode}`)
             .then(response => response.json()) //json으로 받는다
@@ -51,13 +56,11 @@ function HobbyDetail() {
     }
 
 
-    console.log(joinuser)
 
     const onClickHandler = index => {
         setImageNum(index);
     }
 
-    console.log(detail)
 
     const joinClickHandler = () => {
         if (!user) {
@@ -96,9 +99,10 @@ function HobbyDetail() {
 
     }
 
+
     return (
         <>
-            <div className="layout">
+            <div className="toegeungillayout">
                 <div className={detailSytle.frame2}>
                     <div className={detailSytle.details}>
                         <div>
@@ -122,15 +126,9 @@ function HobbyDetail() {
 
                         </div>
                     </div>
-                    <div className={detailSytle.schedule}>
-                        <h1 className={detailSytle.scheduleTitle}>일정</h1>
-                        <h1 className={detailSytle.scheduleContent}>일시 : {detail.date} </h1>
-                        <h1 className={detailSytle.scheduleContent}>장소 : {detail.hobbyPlace}</h1>
-                        <h1 className={detailSytle.scheduleContent}>시간 : {detail.startTime} ~ {detail.endTime}</h1>
-                        <h1 className={detailSytle.scheduleContent}>인원 : {detail.maxPersonnel}명</h1>
-                        <h1 className={detailSytle.scheduleContent}>가격 : {detail.hobbyPrice} 원</h1>
-                        {/* <button className={detailSytle.likeBtn}>찜</button> */}
-                    </div>
+                   
+                    <HobbySchedule detail={detail}/>
+
                 </div>
                 <div className={detailSytle.joinframe}>
                     <div className={detailSytle.socialDetailsParticipateN}>참가자 ( {joinuser.length} / {detail.maxPersonnel} )</div>
@@ -151,11 +149,11 @@ function HobbyDetail() {
                 <HobbyTutor tutorIntro={detail.tutorIntro} tutorCode={detail.tutorCode}></HobbyTutor>
 
                 {
-                    detail.close == 'Y' && <HobbyReview hobbyCode={hobbyCode} />
+                    detail.close == 'Y'  && <HobbyReview hobbyCode={hobbyCode} />
                 }
                 {
 
-                    detail.close == 'Y' && <RevieWrite hobbyCode={hobbyCode} />
+                    (detail.close == 'Y' && join ) &&   <RevieWrite hobbyCode={hobbyCode} />
                 }
 
 

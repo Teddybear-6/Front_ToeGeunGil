@@ -11,7 +11,7 @@ function HobbyTutor({tutorIntro, tutorCode}){
         )
 
    
-    })
+    },[])
 
     return(
         <>

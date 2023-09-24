@@ -1,7 +1,7 @@
+import layout from "../../layout/layout.css";
 import CommunityDetailsTitle from "../components/CommunityDetailsTitle";
 import CommunityDetails from "../components/CommunityDetails";
 import CommunityDetailsComments from "../components/CommunityDetailsComments";
-import layout from "../../layout/layout.css";
 
 
 function CommunityDetail({ }) {

@@ -2,12 +2,14 @@ import { useState, useEffect } from "react";
 import jwt_decode from "jwt-decode";
 import "./hobbyWrite.css"
 import { Link , useNavigate } from "react-router-dom";
+
+
 function HobbyWrite() {
   const [showImages, setShowImages] = useState([]);
   const [user, setUser] = useState();
   const [category, setCategory] = useState([]);
   const [keyword, setKeyword] = useState([]);
-  const [hobby, setHobby] = useState({})
+  const [hobby, setHobby] = useState({"localCode": 1})
   const [keywordDTOList, setKeywordDTOList] = useState([])
   const [hobbyImage, setHobbyImage] = useState([])
   const [local, setLocal] = useState([{}]);
@@ -45,13 +47,7 @@ function HobbyWrite() {
 
       }
 
-      //   if (imageUrlLists.length > 4) {
-      //     imageUrlLists = imageUrlLists.slice(0, 4);
-      //     for(let i= 0; i< 4;i++){
-      //         setHobbyImage([...imageLists[i]]);
-      //     }
 
-      //   }
       setHobbyImage([...hobbyImage, imageLists])
       setShowImages(imageUrlLists);
     }
@@ -101,7 +97,7 @@ function HobbyWrite() {
     if (!(user === undefined) && !(user === null) && user.auth[0] === 'ADMIN' || user.auth[0] === 'TUTOR') {
       if(hobby.length!==0 && hobbyImage.length !==0){
       setHobby({ ...hobby, ["tutorCode"]: user.no })
-      console.log(hobby)
+
       const formData = new FormData()
       const blob = new Blob([JSON.stringify(hobby)], {
         type: 'application/json',
@@ -139,7 +135,7 @@ function HobbyWrite() {
 
   return (
     <>
-          <div className='layout'>
+          <div className='toegeungillayout'>
             { !user ? "로그인 해주세요" : !user?.auth[0]==="TUTOR" ? "강사가 아닙니다." :
       <div>
         <div>
@@ -149,7 +145,7 @@ function HobbyWrite() {
         <div className="titleframe">
           <p className="hobbytitle">취미제목</p>
           <div className="title">
-            <textarea className="hobbytitleText" maxLength="150" type="text" name="hobbyTitle" onChange={onChangeHandler} />
+            <textarea className="hobbytitleText" maxLength="40" type="text" name="hobbyTitle" onChange={onChangeHandler} />
           </div>
         </div>
         <div className="mainIntroFrame">
@@ -187,7 +183,7 @@ function HobbyWrite() {
         <div className="localframe">
           <label for="local">지역선택</label>
           <div className="local">
-            <select name="localCode" id="local" className="textAll" onChange={onChangeHandler}>
+            <select defaultValue="1" name="localCode" id="local" className="textAll" onChange={onChangeHandler}>
               {
                 local?.map((m, index) => (
                   <option value={m.localCode} key={index}>{m.localName}</option>
