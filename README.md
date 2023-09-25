@@ -33,13 +33,8 @@ https://github.com/Teddybear-6/Back_ToeGeunGil
 ### 퇴근길 - FRONTEND REPOSITORY
 https://github.com/Teddybear-6/Front_ToeGeunGil
 
-## 개발 환경
-- 개발환경   
-  1-1. 백 : java (springboot ,  Spring Security, JPA)   
-  1-2 프론트: html. css, js(리액트)
-- DB : MYSQL
-- 개발도구 : 인텔리제이, VScode
-- 협업도구 :  피그마, 미로, 깃허브, 노션
+## 기술스택 및 개발 환경
+<img width="502" alt="기술스택" src="https://github.com/Teddybear-6/Front_ToeGeunGil/assets/130436427/c1cbd604-2176-42fb-8825-923338e1c1d7">
 
 
 ## 시스템 아키텍처
