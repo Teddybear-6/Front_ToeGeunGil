@@ -36,10 +36,8 @@ https://github.com/Teddybear-6/Front_ToeGeunGil
 ## 기술스택 및 개발 환경
 <img width="550" alt="기술스택" src="https://github.com/Teddybear-6/Front_ToeGeunGil/assets/130436427/c1cbd604-2176-42fb-8825-923338e1c1d7">
 
-
 ## 시스템 아키텍처
-<img width="550" alt="아키텍처" src="https://github.com/Teddybear-6/Front_ToeGeunGil/assets/130436427/f802ba54-2a7e-4d0e-9434-70606a7f1173">
-
+<img width="550" alt="아키텍처" src="https://github.com/Teddybear-6/Front_ToeGeunGil/assets/130436427/6815e56d-7b35-4048-9c20-ea882c8cafd0">
 
 ## API 설계
 |기능|Method|URL|
