@@ -27,6 +27,8 @@ function SocialCategory() {
 
     }, [cagegoryCode, page])
 
+    console.log("social : ", socials)
+
     const setPage = useCallback(
         (page) => {
             setPages(page)
