@@ -11,8 +11,8 @@ function CommunityComment() {
     const [comments, setComments] = useState([]);
 
     useEffect(() => {
-        if (sessionStorage.getItem("Authorization")) {
-            setUser(jwt_decode(sessionStorage.getItem("Authorization")));
+        if (sessionStorage.getItem("Authorizaton")) {
+            setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
         }
 
         fetch(process.env.REACT_APP_URL + `/communitys/comments/${communityNum}`)

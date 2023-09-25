@@ -22,8 +22,8 @@ function CommunityPosting() {
 
     useEffect(() => {
 
-        if (sessionStorage.getItem("Authorization")) {
-            setUser(jwt_decode(sessionStorage.getItem("Authorization")))
+        if (sessionStorage.getItem("Authorizaton")) {
+            setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
         }
 
         //카테고리 
