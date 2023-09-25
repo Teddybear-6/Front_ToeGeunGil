@@ -62,7 +62,7 @@ function CommunityPosting() {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json; charset=utf-8",
-                    "Authorization": sessionStorage.getItem("Authorization"),
+                    "Authorization": sessionStorage.getItem("Authorizaton")
                 },
                 body: JSON.stringify(community)
             })
