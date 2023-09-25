@@ -46,14 +46,11 @@ function CommunityComment() {
     const handleSubmit = (e) => {
         e.preventDefault();
     
-        if (user && user.userNum) {
-            setComment({ ...comment, userNum: user.userNum });
-    
             // 댓글 등록 요청
             fetch(process.env.REACT_APP_URL + `/communitys/comments/${communityNum}`, {
                 method: "POST",
                 headers: {
-                    "Authorization": sessionStorage.getItem("Authorization"),
+                    "Authorization": sessionStorage.getItem("Authorizaton"),
                     "Content-Type": "application/json; charset=utf-8",
                 },
                 body: JSON.stringify(comment),
@@ -76,7 +73,7 @@ function CommunityComment() {
                 .catch(error => {
                     console.error(error);
                 });
-        } 
+        
     };
     
 
