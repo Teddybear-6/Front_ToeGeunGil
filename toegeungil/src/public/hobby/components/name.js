@@ -5,13 +5,12 @@ const NameCard =({props}) =>{
     const [userNick , setUserNicke] = useState();
  
     useEffect(()=>{
-        console.log(props)
         if(props?.userNo){
             fetch(process.env.REACT_APP_URL+`/user/${props.userNo}`).then(res=>res.json()).then(res=>setUserNicke(res.nickName));
         }else if(props?.tutorCode){
             fetch(process.env.REACT_APP_URL+`/user/${props.tutorCode}`).then(res=>res.json()).then(res=>setUserNicke(res.userName+" 튜터"));
         }
-    })
+    },[props])
     
     return(
         <p className="NickName">{userNick} </p>

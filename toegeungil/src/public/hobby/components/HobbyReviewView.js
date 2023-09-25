@@ -14,14 +14,14 @@ function HobbyReview({hobbyCode}){
    
     
     },
-    [])
+    [hobbyCode])
 
     return(
         <>
      
 
             {
-                review?  null : review?.map((m ,index)=>(
+               review?.map((m ,index)=>(
                     <ReviewBox review={m} key={index}/>
                 ))
                 
