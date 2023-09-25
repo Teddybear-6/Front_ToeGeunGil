@@ -53,7 +53,7 @@ const CommunityDetails = () => {
                 <div className={DetailsStyle.CommunityDetailsWriter}>
                     <img className={DetailsStyle.CommunityParticipate} src="/participate.png" alt="participate" />
                     <div className={DetailsStyle.CommunityDetailsNick}>
-                        {userNum !== null && <UserNickName userNo={userNum} />}
+                    <UserNickName userNo={community.userNum} />
                     </div>
                     <div className={DetailsStyle.CommunityDetailsIntroBox}>
                         <div className={DetailsStyle.CommunityDetailsIntro}>{community.communityIntro}</div>
