@@ -82,6 +82,7 @@ function CommunityModify() {
                 response.json()
                 if (response.ok) {
                     alert("게시글이 등록되었습니다.");
+                    window.location.href = "/communitys"
                 } else {
                     alert("게시글 등록 실패하였습니다.")
                 }
@@ -192,10 +193,10 @@ function CommunityModify() {
                         </select>
                     </div>
                     <div>
-                        <Link to="/communitys">
-                            <button className={PostingStyle.submitButton} type="submit"
-                                onClick={handleSubmit}>작성</button>
-                        </Link>
+                        <button to="/communitys" type="submit"
+                            className={PostingStyle.submitButton}
+                            onClick={(e) => handleSubmit(e)}>작성
+                        </button>
                         <Link to="/communitys" type="submit">
                             <button className={PostingStyle.submitButton}>취소</button>
                         </Link>
