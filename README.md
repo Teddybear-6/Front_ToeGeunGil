@@ -34,11 +34,11 @@ https://github.com/Teddybear-6/Back_ToeGeunGil
 https://github.com/Teddybear-6/Front_ToeGeunGil
 
 ## 기술스택 및 개발 환경
-<img width="502" alt="기술스택" src="https://github.com/Teddybear-6/Front_ToeGeunGil/assets/130436427/c1cbd604-2176-42fb-8825-923338e1c1d7">
+<img width="550" alt="기술스택" src="https://github.com/Teddybear-6/Front_ToeGeunGil/assets/130436427/c1cbd604-2176-42fb-8825-923338e1c1d7">
 
 
 ## 시스템 아키텍처
-![image](https://github.com/Teddybear-6/Front_ToeGeunGil/assets/130436427/dfb9bf26-48fd-4c83-a5d3-191a952c56c7)
+<img width="550" alt="아키텍처" src="https://github.com/Teddybear-6/Front_ToeGeunGil/assets/130436427/f802ba54-2a7e-4d0e-9434-70606a7f1173">
 
 
 ## API 설계
