@@ -4,7 +4,6 @@ import CardStyle from './hobbyCard.module.css';
 
 function HobbyCagegoty({category}){
     const[categoryName, setCategery] = useState([]);
-    console.log(category)
     useEffect(()=>{
         fetch(process.env.REACT_APP_URL+`/category/${category}`).then(res=>res.json()).then(data=>{
             setCategery(data)
