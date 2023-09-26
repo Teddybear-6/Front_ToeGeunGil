@@ -34,10 +34,19 @@ https://github.com/Teddybear-6/Back_ToeGeunGil
 https://github.com/Teddybear-6/Front_ToeGeunGil
 
 ## 기술스택 및 개발 환경
-<img width="550" alt="기술스택" src="https://github.com/Teddybear-6/Front_ToeGeunGil/assets/130436427/c1cbd604-2176-42fb-8825-923338e1c1d7">
+<img width="550" alt="아키텍처" src="https://github.com/Teddybear-6/Front_ToeGeunGil/assets/130436427/1679946a-b1db-46cd-9876-62559795371b">
+
 
 ## 시스템 아키텍처
-<img width="550" alt="아키텍처" src="https://github.com/Teddybear-6/Front_ToeGeunGil/assets/130436427/6815e56d-7b35-4048-9c20-ea882c8cafd0">
+<img width="550" alt="아키텍처" src="https://github.com/Teddybear-6/Front_ToeGeunGil/assets/130436427/ba7777c8-1b30-48ef-831d-fb3d3dd8aeda">
+
+
+## Branch 관리
+프로젝트를 하면서 Git Flow 브랜치 전략을 사용했습니다
+<img width="550" alt="아키텍처" src="https://github.com/Teddybear-6/Front_ToeGeunGil/assets/130436427/895a2bb6-97f5-46f6-86cd-f63619c5e916">
+- main : 실제 배포를 위한 main 브랜치
+- develop : main 브랜치에 영향을 주지 않으면서 개발하기 위해서 사용
+- feature : develop을 개발하면서 기능 단위로 develop 서버에 영향을 주지 않기 위해서 사용
 
 ## API 설계
 |기능|Method|URL|
