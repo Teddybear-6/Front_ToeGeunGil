@@ -8,8 +8,6 @@ function HobbySchedule({detail}){
         findLocal();
     },[detail])
 
-
-    console.log(local)
     const findLocal =()=>{
         fetch(process.env.REACT_APP_URL +`/local/${detail.localCode}`).then(res=>res.json()).then(res=>setLocal(res));
     }
