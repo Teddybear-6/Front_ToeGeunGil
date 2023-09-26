@@ -18,12 +18,12 @@ function SocialCategory() {
     useEffect(() => {
 
         fetch(process.env.REACT_APP_URL + `/socials/category/${cagegoryCode}?page=${page - 1}&size=12`)
-        .then((response) => response.json())
-        .then((data) => setSocials(data))
+            .then((response) => response.json())
+            .then((data) => setSocials(data))
 
         fetch(process.env.REACT_APP_URL + `/socials/category/${cagegoryCode}/size`)
-        .then(res => res.json())
-        .then(res => setPageCount(res))
+            .then(res => res.json())
+            .then(res => setPageCount(res))
 
     }, [cagegoryCode, page])
 
@@ -38,13 +38,9 @@ function SocialCategory() {
     return (
         <>
             {!socials ? "등록된 취미가 없습니다." :
-                <div>
-                    <div className='toegeungillayout'>
-                        <SocialMainCard socials={socials}></SocialMainCard>
-                    </div>
-                    <div>
-                        <Paging count={pageCount} setPage={setPage} page={page} />
-                    </div>
+                <div className='toegeungillayout'>
+                    <SocialMainCard socials={socials}></SocialMainCard>
+                    <Paging count={pageCount} setPage={setPage} page={page} />
                 </div>
             }
         </>

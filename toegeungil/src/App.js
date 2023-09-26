@@ -89,13 +89,11 @@ function App() {
           </Route>
           {/* 소셜 */}
           <Route element={<SocialLayout />}>
-            <Route path="social">
-              <Route index element={<SocialMain />} />
-              <Route path="socialcategory/:categoryCode" element={<SocialCategory />} />
-              <Route path=':socialNum' element={<SocialDetail />} />
-              <Route path='write' element={<SocialWrite />} />
-              <Route path="modify" element={<SocialModify />} />
-            </Route>
+            <Route path="social" element={<SocialMain />} />
+            <Route path="/socialcategory/:categoryCode" element={<SocialCategory />} />
+            <Route path=':socialNum' element={<SocialDetail />} />
+            <Route path='write' element={<SocialWrite />} />
+            <Route path="modify" element={<SocialModify />} />
           </Route>
           {/* 커뮤니티 */}
           <Route path="/communitys" element={<CommunityMain />} />
