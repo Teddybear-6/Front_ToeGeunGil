@@ -69,7 +69,7 @@ function CategoryModify() {
     return (
         <div className='toegeungillayou'>
             <div className="category-wrapper">
-                <h1 className="catagory-title">카테고리 수정</h1>
+                <h1 className="cateogory-title">카테고리 수정</h1>
                 {user && user.auth[0] === 'ADMIN' ? (
                     <div className="category-wrapper2">
                         <label className="category-name">수정하는 카테고리명</label>
