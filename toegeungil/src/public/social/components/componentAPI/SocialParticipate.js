@@ -6,7 +6,7 @@ import { Link, NavLink } from "react-router-dom";
 
 function SocialParticipate({ socialNum }) { //소설 번호 받아오기
 
-    console.log("받아온 소셜 넘버 : ", socialNum); //받아온 소셜 넘버 확인
+    // console.log("받아온 소셜 넘버 : ", socialNum); //받아온 소셜 넘버 확인
 
     const [user, setUser] = useState();
     const [participate, setParticipate] = useState();
@@ -28,8 +28,8 @@ function SocialParticipate({ socialNum }) { //소설 번호 받아오기
 
     const participateHandler = () => {
 
-        console.log("나 유저: ", user)
-        console.log("참가여부 : ", participate) //undefined
+        // console.log("나 유저: ", user)
+        // console.log("참가여부 : ", participate) //undefined
 
         if (!participate) {
             if (window.confirm("[social] 참여하시겠습니까?")) {

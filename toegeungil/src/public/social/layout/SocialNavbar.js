@@ -21,7 +21,7 @@ function SocialNavbar() {
                 <NavLink to={"/social"} className={({ isActive }) => isActive ? "cateNavOn" : "cateNavOff"}>전체</NavLink>
                 {
                     cagegory?.map((m, index) => (
-                        <NavLink state={m.categoryCode} to={`social/socialcategory/${m.categoryCode}`} key={index} className={({ isActive }) => isActive ? "cateNavOn" : "cateNavOff"}>{m.categoryName}</NavLink>
+                        <NavLink state={m.categoryCode} to={`socialcategory/${m.categoryCode}`} key={index} className={({ isActive }) => isActive ? "cateNavOn" : "cateNavOff"}>{m.categoryName}</NavLink>
                     ))
                 }
                 </div>
