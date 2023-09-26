@@ -6,7 +6,7 @@ function SocialDetail() {
 
     return (
         <>
-            <div className='layout'>
+            <div className='toegeungillayout'>
                 <div className="menuFont">Social</div>
                 <hr className='hrSty' />
                 <div className='layout2'>

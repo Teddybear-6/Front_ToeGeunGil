@@ -106,7 +106,6 @@ function SocialModifyCard() {
                     }
                 })
                 .catch(error => {
-                    console.error("[Social] 게시글 등록 중 오류 발생 : ", error);
                     alert("error");
                 })
 
@@ -150,9 +149,7 @@ function SocialModifyCard() {
 
     //이미지 상대경로 저장
     const handleAddImages = (event) => {
-        console.log(event)
         const img = event.target.files;
-        console.log(img)
         const currentImageUrl = URL.createObjectURL(img[0]);
         setShowImage(currentImageUrl);
         setImage(img);
@@ -279,8 +276,8 @@ function SocialModifyCard() {
 
                 {/* 등록 버튼 */}
                 <div className="buttonFlex marT30">
-                    <Link to="/social" type="button" className="buttonOff marR30">목록으로</Link>
-                    <button to="/social" type="button" className="buttonOn" onClick={(e) => handleSubmit(e)}>수정하기</button>
+                    <Link to="/social" type="button" className="buttonOff_so marR30">목록으로</Link>
+                    <button to="/social" type="button" className="buttonOn_so" onClick={(e) => handleSubmit(e)}>수정하기</button>
                 </div>
             </div>
         </>

@@ -49,7 +49,7 @@ const NoticeView = () => {
   }
 
   return (
-    <div className='layout'>
+    <div className='toegeungillayou'>
       <div className="notice-view-wrapper">
         {
           loading ? (
@@ -66,7 +66,7 @@ const NoticeView = () => {
                   </div>
                   <div className="notice-view-text-box">
                     <div className="notice-view-text">
-                      <label>{detail.noticeContent}</label>
+                      <label style={{whiteSpace:"pre-line"}}>{detail.noticeContent}</label>
                     </div>
                   </div>
                   <div className="notice-button-box">

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import "../components/css/Button.css"
 import "../components/css/SocialPosting.css"
 import { Link, NavLink } from "react-router-dom";
+import jwt_decode from "jwt-decode";
 
 function SocialWriteCard() {
 
@@ -43,6 +44,7 @@ function SocialWriteCard() {
 
 
     //FK
+    const [user, setUser] = useState();
     const [category, setCategory] = useState([]); //categoryCode
     const [keyword, setKeyword] = useState([]); //keywordCode
     const [keywordDTOList, setKeywordDTOList] = useState([]); //keywordDTOList
@@ -52,7 +54,7 @@ function SocialWriteCard() {
 
     //input으로 바로 값 입력
     const [social, setSocial] = useState({
-        userNum: 4, //유저 번호
+        userNum: '', //유저 번호
         socialName: '', //제목
         socialDate: '', //모임일시
         socialFixedNum: '', //정원
@@ -65,6 +67,11 @@ function SocialWriteCard() {
     });
 
     useEffect(() => {
+
+        //권한설정
+        if (sessionStorage.getItem("Authorizaton")) {
+            setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
+        }
 
         //카테고리
         fetch(process.env.REACT_APP_URL + "/category")
@@ -93,6 +100,11 @@ function SocialWriteCard() {
 
     //POST 요청
     const handleSubmit = (e) => {
+
+        if(!(user === undefined) && !(user === null)) {
+            setSocial({...social, ["userNum"]:user.no})
+        }
+
         if (!window.confirm("[social] 게시글을 등록하시겠습니까?")) {
             // alert("취소(아니오)를 누르셨습니다.");
         } else {
@@ -103,12 +115,11 @@ function SocialWriteCard() {
             formData.append('social', blob);
             formData.append('image', image[0]);
 
-
             e.preventDefault(); // submit action을 안타도록 설정
             fetch(process.env.REACT_APP_URL + `/socials`, {
                 method: "POST", //메소드 지정
                 headers: { //데이터 타입 지정
-                    // "Content-Type": "application/json; charset=utf-8"
+                    "Authorization": sessionStorage.getItem("Authorizaton")
                 },
                 body: formData
                 // body: JSON.stringify(social) //실제 데이터 파싱하여 body에 저장
@@ -123,7 +134,6 @@ function SocialWriteCard() {
                     }
                 })
                 .catch(error => {
-                    console.error("[Social] 게시글 등록 중 오류 발생 : ", error);
                     alert("error");
                 })
         }
@@ -152,15 +162,12 @@ function SocialWriteCard() {
 
     //이미지 상대경로 저장
     const handleAddImages = (event) => {
-        console.log(event)
         const img = event.target.files;
-        console.log(img)
         const currentImageUrl = URL.createObjectURL(img[0]);
         setShowImage(currentImageUrl);
         setImage(img);
     };
 
-    console.log(showImage)
     return (
         <>
             <div>
@@ -285,8 +292,8 @@ function SocialWriteCard() {
 
                 {/* 등록 버튼 */}
                 <div className="buttonFlex marT30">
-                    <Link to="/social" type="button" className="buttonOff marR30">이전으로</Link>
-                    <button to="/social" type="button" className="buttonOn" onClick={(e) => handleSubmit(e)}>등록하기</button>
+                    <Link to="/social" type="button" className="buttonOff_so marR30">이전으로</Link>
+                    <button to="/social" type="button" className="buttonOn_so" onClick={(e) => handleSubmit(e)}>등록하기</button>
                 </div>
             </div>
         </>

@@ -1,22 +1,31 @@
 import React, { useState, useEffect } from "react";
 import PostingStyle from "./css/CommunityPosting.module.css";
 import { Link } from "react-router-dom";
+import jwt_decode from "jwt-decode";
+import DetailsTitleStyle from './css/CommunityDetailsTitle.module.css';
 
 function CommunityPosting() {
     const [category, setCategory] = useState([]);
     const [keyword, setKeyword] = useState([]);
     const [communityKeywordDTOList, setCommunityKeywordDTOList] = useState([]);
     const [local, setLocal] = useState([]);
+    const [user, setUser] = useState();
 
     const [community, setCommunity] = useState({
-        userNum: 3,
+        userNum: '',
         communityTitle: '',
         communityIntro: '',
         postWriteDate: new Date().toISOString(),
     });
 
+    
+
     useEffect(() => {
-        
+
+        if (sessionStorage.getItem("Authorizaton")) {
+            setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
+        }
+
         //카테고리 
         fetch(process.env.REACT_APP_URL + "/category")
             .then(res => res.json())
@@ -42,33 +51,39 @@ function CommunityPosting() {
     }
 
     const handleSubmit = (e) => {
-        const formData = new FormData();
-        const blob = new Blob([JSON.stringify(community)], {
-            type: 'application/json'
-        });
 
-        formData.append('community', blob);
+            if(!(user === undefined) && !(user === null)) {
+                setCommunity({...community, userNum:user.no})
+            }
 
-        e.preventDefault();
-        fetch(process.env.REACT_APP_URL + `/communitys`, {
-            method: "POST",
-            headers:{
-            },
-            body: formData
-        })
-            .then(response => {
-                response.json()
-                if (response.ok) {
-                    alert("게시글 등록이 되었습니다.");
-                } else {
-                    alert("게시글 등록에 실패하였습니다.")
-                }
+            e.preventDefault();
+
+            fetch(process.env.REACT_APP_URL + `/communitys`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json; charset=utf-8",
+                    "Authorization": sessionStorage.getItem("Authorizaton")
+                },
+                body: JSON.stringify(community)
             })
-            .catch(error => {
-                console.log(error);
-                alert("에러가 발생하였습니다.");
-            })
+        
+                .then(response => { 
+                    response.json()
+                    if (response.ok) {
+                        alert("게시글이 등록되었습니다.");
+                        window.location.href = "/communitys"
+                    } else {
+                        alert("게시글 등록 실패...")
+                    }
+                })
+                .catch(error => {
+                    console.error("게시글 등록 중 오류 발생 : ", error);
+                    alert("error");
+                })
+
+        
     };
+
 
     const checkOnlyOne = (checkThis) => {
         const checkboxes = document.getElementsByName("categoryCode")
@@ -94,8 +109,11 @@ function CommunityPosting() {
 
     return (
         <>
+
+            <div className={DetailsTitleStyle.CommunityBar}>Community 게시글 작성</div>
+            <div className={DetailsTitleStyle.CommunityStart}></div>
             <div>
-                <div className={PostingStyle.postingbox}>
+                < div className={PostingStyle.postingbox}>
                     <div className={PostingStyle.w1400h50}>
                         <div className={PostingStyle.w100h50}>
                             <label className={PostingStyle.communityLabelFont}>소통 제목</label>
@@ -170,13 +188,13 @@ function CommunityPosting() {
                     </div>
                     <div>
                         <Link to="/communitys">
-                        <button className={PostingStyle.submitButton} type="submit"
-                            onClick={(e) => handleSubmit(e)}>등록하기</button>
+                            <button className={PostingStyle.submitButton} type="submit"
+                                onClick={(e) => handleSubmit(e)}>등록하기</button>
                         </Link>
                     </div>
+
                 </div>
             </div>
-
         </>
     )
 }

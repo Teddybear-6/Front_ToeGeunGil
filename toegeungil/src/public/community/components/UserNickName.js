@@ -1,20 +1,19 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
-function UserNickName({ userNo }) {
-    const [nickName, setNickName] = useState('');
+function UserNickname({ userNo }) {
+    const [userNic, setUserNic] = useState({});
 
     useEffect(() => {
-        console.log(userNo)
-        fetch(process.env.REACT_APP_URL+`/user/${userNo}`).then((response) => response.json()).then((data) => setNickName(data.nickName || '')).catch((error) => {
-        console.log(error);
-        })
-        console.log(userNo)
+        fetch(process.env.REACT_APP_URL+`/user/${userNo}`)
+            .then(response => response.json())
+            .then(data => setUserNic(data));
     }, [userNo]);
 
-    return (
-        <span>{nickName}</span>
+    return(
+        <>
+            {userNic == null? "읽어오지 못함":userNic.nickName}
+        </>
     )
-
 }
 
-export default UserNickName;
+export default UserNickname;

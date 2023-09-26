@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import DetailsTitleStyle from './css/CommunityDetailsTitle.module.css';
+
 
 function CommunityKeyword({ code }) {
     const [keyword, setKeyword] = useState({});
@@ -12,7 +14,9 @@ function CommunityKeyword({ code }) {
 
     return (
         <>
+        <div className={DetailsTitleStyle.MainKeywordDiv}>
             {keyword.keywordName}
+        </div>
         </>
     )
 }
