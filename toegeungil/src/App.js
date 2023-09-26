@@ -41,7 +41,6 @@ import LocalWrite from "./public/local/pages/LocalWrite";
 import LocalModify from "./public/local/pages/LocalModify";
 import SocialModify from "./public/social/page/SocialModify";
 import AnswerWrite from "./public/qna/pages/AnswerWrite";
-import SocialParticipate from "./public/social/components/componentAPI/SocialParticipate";
 import SocialLayout from "./public/social/layout/SocialLayout";
 import SocialCategory from "./public/social/page/SocialCategory";
 import MainImg from "./public/layout/MainImg";
@@ -90,10 +89,10 @@ function App() {
           {/* 소셜 */}
           <Route element={<SocialLayout />}>
             <Route path="social" element={<SocialMain />} />
-            <Route path="/socialcategory/:categoryCode" element={<SocialCategory />} />
-            <Route path=':socialNum' element={<SocialDetail />} />
-            <Route path='write' element={<SocialWrite />} />
-            <Route path="modify" element={<SocialModify />} />
+            <Route path="socialcategory/:categoryCode" element={<SocialCategory />} />
+            <Route path='social/:socialNum' element={<SocialDetail />} />
+            <Route path='social/write' element={<SocialWrite />} />
+            <Route path="social/modify" element={<SocialModify />} />
           </Route>
           {/* 커뮤니티 */}
           <Route path="/communitys" element={<CommunityMain />} />

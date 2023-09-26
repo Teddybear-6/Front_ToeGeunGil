@@ -7,8 +7,7 @@ import SocialLocal from "./componentAPI/SocialLocal";
 import SocialParticipateList from "./componentAPI/SocialParticipateList";
 import "../components/css/Button.css"
 import "../components/css/SocialPosting.css"
-import { Link, NavLink } from "react-router-dom";
-import SocialParticipate from "./componentAPI/SocialParticipate";
+import { Link } from "react-router-dom";
 
 import jwt_decode from "jwt-decode";
 import DetailsStyle from './css/SocialDetails.module.css';
@@ -53,7 +52,7 @@ function SocialDetailCard() {
                 },
             }).then(res => res.json())
                 .then(response => { //return 값에 대한 처리
-                    setSocials(socials.filter(code => code.socialNum != socialNum))
+                    setSocials(socials.filter(code => code.socialNum !== socialNum))
                     // alert(response['value'])
                 });
             alert("[social] 게시글이 삭제되었습니다.");
