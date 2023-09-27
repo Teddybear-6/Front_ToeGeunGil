@@ -42,14 +42,12 @@ function ReviewBox({review}){
     return newArr;
   }
     
-  console.log(review)
    
    useEffect(()=>{
      fetch(process.env.REACT_APP_URL+`/hobbys/review/answer/${review?.reviewCode}`)
      .then(res=>res.json())
      .then(res=>setAnswer(res)).catch(e=>console.log(e))
 
-     console.log(answer)
    },[review])
 
     return(
