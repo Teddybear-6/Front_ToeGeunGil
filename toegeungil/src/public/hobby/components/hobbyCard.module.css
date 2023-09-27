@@ -36,7 +36,9 @@
     color: #41A487;
     font-size: 1.125rem;
     text-align: left;
-  
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     font-weight: bold;
     font-style: italic;
 }
