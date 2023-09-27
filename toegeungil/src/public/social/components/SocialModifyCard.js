@@ -99,15 +99,17 @@ function SocialModifyCard() {
             })
                 .then(response => { //return 값에 맞는 req 지정
                     response.json()
+                })
+                .then(response => { //return 값에 맞는 req 지정
                     if (response.ok) {
                         alert("[Social] 게시글이 수정되었습니다.");
                     } else {
                         alert("[Social] 게시글 수정 실패...")
                     }
                 })
-                .catch(error => {
-                    alert("error");
-                })
+                // .catch(error => {
+                //     alert("error");
+                // })
 
             window.location.href = `/social/${social.socialNum}`
         }
