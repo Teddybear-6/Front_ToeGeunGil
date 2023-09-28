@@ -99,8 +99,6 @@ function SocialModifyCard() {
             })
                 .then(response => { //return 값에 맞는 req 지정
                     response.json()
-                })
-                .then(response => { //return 값에 맞는 req 지정
                     if (response.ok) {
                         alert("[Social] 게시글이 수정되었습니다.");
                     } else {
