@@ -1,11 +1,9 @@
 import { useState, useEffect, useCallback } from "react";
-import SocialMain from "./SocialMain";
-import MainStyle from "../components/css/SocialMainCard.module.css";
+
 import { useLocation } from "react-router-dom";
 import Paging from "../components/component/Paging";
 import "../../layout/layout.css";
 import SocialMainCard from "../components/SocialMainCard";
-import { Link } from "react-router-dom";
 
 function SocialCategory() {
   const [socials, setSocials] = useState([]);
