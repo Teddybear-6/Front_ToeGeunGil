@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-function HobbyNavber() {
+const HobbyNavber = ({ localfilters, setLocalFilters }) => {
   const [cagegory, setCategory] = useState();
-  const [local, setLocal] = useState(0);
+  const [local, setLocal] = useState();
+
   useEffect(() => {
     fetch(process.env.REACT_APP_URL + `/category`)
       .then((res) => res.json())
@@ -14,33 +15,33 @@ function HobbyNavber() {
   }, []);
 
   const onChangeHandler = (e) => {
-    setLocal(e.target.value);
+    setLocalFilters(e.target.value)
   };
-  console.log(local);
+
+
   return (
     <>
-      {/* 사용자 */}
-
       <div className="tutorNavwraper">
-        <div className="cateNavText">
-          <div>
-            <label for="local">지역선택</label>
-            <div className="local">
-              <select
-                defaultValue="0"
-                name="localCode"
-                id="local"
-                className="textAll"
-                onChange={onChangeHandler}
-              >
-                {local?.map((m, index) => (
-                  <option value={m.localCode} key={index}>
-                    {m.localName}
-                  </option>
-                ))}
-              </select>
-            </div>
+        <div>
+          <label htmlFor="local">지역선택</label>
+          <div className="local">
+            <select
+              defaultValue="0"
+              name="localCode"
+              id="local"
+              className="textAll"
+              onChange={onChangeHandler}
+            >
+              <option value="0">전체</option>
+              {local?.map((m, index) => (
+                <option value={m.localCode} key={m.localCode}>
+                  {m.localName}
+                </option>
+              ))}
+            </select>
           </div>
+        </div>
+        <div className="cateNavText">
           <NavLink
             to={"/hobby"}
             className={({ isActive }) =>
@@ -51,7 +52,7 @@ function HobbyNavber() {
           </NavLink>
           {cagegory?.map((m, index) => (
             <NavLink
-              state={m.categoryCode}
+              state={[m.categoryCode, localfilters]}
               to={`/hobbycategory/${m.categoryCode}`}
               key={index}
               className={({ isActive }) =>
