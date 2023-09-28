@@ -24,6 +24,7 @@ function CategoryHobby() {
         .then((res) => res.json())
         .then((res) => setPageCount(res));
     } else {
+      // 여기에 지역 카테고리 필터 해주고  지역 셀럭터 위치 고치기 
       fetch(
         process.env.REACT_APP_URL +
         `/hobbys/category/${cagegoryCode}?page=${page - 1}&size=12`)
