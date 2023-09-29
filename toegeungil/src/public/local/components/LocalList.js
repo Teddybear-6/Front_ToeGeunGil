@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import jwt_decode from "jwt-decode";
+import '../components/LocalMain.css';
 
 function LocalList() {
     const [user, setUser] = useState('');
@@ -60,17 +61,15 @@ function LocalList() {
                     local ? (
                         <>
                             {user && user.auth[0] === 'ADMIN' ? (
-                                <div className="local-layout">
+                                <div className="local-main-layout">
+                                    <div className="local-header">
+                                        <div className="local-label">번호</div>
+                                        <div className="local-label">지역명</div>
+                                    </div>
                                     {local.map((local) => (
-                                        <div key={local.localCode} className="local-item">
-                                            <div className="local-info">
-                                                <span className="local-label">번호:</span>
-                                                <span className="local-value">{local.localCode}</span>
-                                            </div>
-                                            <div className="local-info">
-                                                <span className="local-label">지역명:</span>
-                                                <span className="local-value">{local.localName}</span>
-                                            </div>
+                                        <div key={local.localCode} className="local-main-content">
+                                            <div className="local-value">{local.localCode}</div>
+                                            <div className="local-value">{local.localName}</div>
                                             <div className="local-button-box">
                                                 <button className="local-button1" onClick={() => deleteLocal(local.localCode)}>삭제</button>
                                                 <Link to={`/service/local/${local.localCode}/modify`}>
@@ -79,7 +78,7 @@ function LocalList() {
                                             </div>
                                         </div>
                                     ))}
-                                    <div className="buttonn">
+                                    <div className="local-main-button-box">
                                     <Link to={`/service/local/write`}>
                                         <button className="local-main-button" onClick={localClick}>지역 작성</button>
                                     </Link>
