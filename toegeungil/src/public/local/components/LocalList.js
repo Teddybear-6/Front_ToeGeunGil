@@ -60,33 +60,31 @@ function LocalList() {
                     local ? (
                         <>
                             {user && user.auth[0] === 'ADMIN' ? (
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <td>번호</td>
-                                            <td>지역명</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {local.map((local) => (
-                                            <tr key={local.localCode}>
-                                                <td>{local.localCode}</td>
-                                                <td>{local.localName}</td>
-                                                <td>
-                                                    <div className="local-button-box">
-                                                        <button className="local-button1" onClick={() => deleteLocal(local.localCode)}>삭제</button>
-                                                        <Link to={`/service/local/${local.localCode}/modify`}>
-                                                            <button className="local-button1">수정</button>
-                                                        </Link>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
+                                <div className="local-layout">
+                                    {local.map((local) => (
+                                        <div key={local.localCode} className="local-item">
+                                            <div className="local-info">
+                                                <span className="local-label">번호:</span>
+                                                <span className="local-value">{local.localCode}</span>
+                                            </div>
+                                            <div className="local-info">
+                                                <span className="local-label">지역명:</span>
+                                                <span className="local-value">{local.localName}</span>
+                                            </div>
+                                            <div className="local-button-box">
+                                                <button className="local-button1" onClick={() => deleteLocal(local.localCode)}>삭제</button>
+                                                <Link to={`/service/local/${local.localCode}/modify`}>
+                                                    <button className="local-button1">수정</button>
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    ))}
+                                    <div className="buttonn">
                                     <Link to={`/service/local/write`}>
-                                        <button onClick={localClick}>지역 작성</button>
+                                        <button className="local-main-button" onClick={localClick}>지역 작성</button>
                                     </Link>
-                                </table>
+                                    </div>
+                                </div>
                             ) : (
                                 <p>관리자가 아닙니다 지역 관리 권한이 없습니다</p>
                             )}
