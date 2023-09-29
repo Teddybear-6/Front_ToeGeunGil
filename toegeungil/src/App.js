@@ -78,7 +78,7 @@ function App() {
           <Route element={<HobbyLayout localfilters={localfilters} setLocalFilters={setLocalFilters} />}>
             <Route path='/hobby' element={<AllHobby localfilters={localfilters} />} />
             <Route path='hobby/:hobbyCode' element={<HobbyDetail />} />
-            <Route path="/hobbycategory/:categoryCode" element={<CategoryHobby />} />
+            <Route path="/hobbycategory/:categoryCode" element={<CategoryHobby localfilters={localfilters} />} />
             <Route path="/hobby/search" element={<HobbySearch />} />
           </Route>
           <Route element={<TutorLayout />}>
