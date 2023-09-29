@@ -1,6 +1,6 @@
 import '../../layout/layout.css';
 import SocialDetailCard from '../components/SocialDetailCard';
-import DetailsStyle from "../components/css/SocialDetails.module.css"
+
 
 function SocialDetail() {
 

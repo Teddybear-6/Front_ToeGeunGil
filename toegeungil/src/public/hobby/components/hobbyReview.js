@@ -15,7 +15,7 @@ function RevieWrite ({hobbyCode}){
     
       useEffect(() => {
         sendReview();
-      }, [clicked]); //컨디마 컨디업
+      }, [clicked, hobbyCode]); //컨디마 컨디업
 
       const sendReview = () => {
         let score = clicked.filter(Boolean).length;

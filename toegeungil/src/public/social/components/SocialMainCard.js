@@ -31,7 +31,7 @@ function SocialMainCard({socials}) {
                     {
                         !socials ? null : socials.map((r, i) =>
                             <div key={i} className={MainStyle.socialMainCard}>
-                                <Link to={`${r.socialNum}`} className={MainStyle.socialLink}>
+                                <Link to={`/social/${r.socialNum}`} className={MainStyle.socialLink}>
                                     {/* to={<SocialDetails socialNum={r.socialNum}/>} */}
                                     {/* <p key={i}>{r.socialNum}</p> */}
                                     {/* 이미지 */}

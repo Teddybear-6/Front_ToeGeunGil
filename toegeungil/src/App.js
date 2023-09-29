@@ -41,7 +41,6 @@ import LocalWrite from "./public/local/pages/LocalWrite";
 import LocalModify from "./public/local/pages/LocalModify";
 import SocialModify from "./public/social/page/SocialModify";
 import AnswerWrite from "./public/qna/pages/AnswerWrite";
-import SocialParticipate from "./public/social/components/componentAPI/SocialParticipate";
 import SocialLayout from "./public/social/layout/SocialLayout";
 import SocialCategory from "./public/social/page/SocialCategory";
 import MainImg from "./public/layout/MainImg";
@@ -60,6 +59,7 @@ function App() {
       : 어떤 요청(URL)을 어디로 안내 및 매핑 할 것인지를 정해놓고 진행하는 것
       : 리액트에서는 요청에 따라 요청에 매핑되는 컴포넌트를 랜더링 한다. */
   const [login, setLogin] = useState(false);
+  const [localfilters, setLocalFilters] = useState();
   return (
     <BrowserRouter>
       <ScrollToTop />
@@ -75,10 +75,10 @@ function App() {
             {/* <Route index element={<Mypage/>}/> */}
           </Route>
           {/* 취미 */}
-          <Route element={<HobbyLayout />}>
-            <Route path='/hobby' element={<AllHobby />} />
+          <Route element={<HobbyLayout localfilters={localfilters} setLocalFilters={setLocalFilters} />}>
+            <Route path='/hobby' element={<AllHobby localfilters={localfilters} />} />
             <Route path='hobby/:hobbyCode' element={<HobbyDetail />} />
-            <Route path="/hobbycategory/:categoryCode" element={<CategoryHobby />} />
+            <Route path="/hobbycategory/:categoryCode" element={<CategoryHobby localfilters={localfilters} />} />
             <Route path="/hobby/search" element={<HobbySearch />} />
           </Route>
           <Route element={<TutorLayout />}>
@@ -89,13 +89,11 @@ function App() {
           </Route>
           {/* 소셜 */}
           <Route element={<SocialLayout />}>
-            <Route path="social">
-              <Route index element={<SocialMain />} />
-              <Route path="socialcategory/:categoryCode" element={<SocialCategory />} />
-              <Route path=':socialNum' element={<SocialDetail />} />
-              <Route path='write' element={<SocialWrite />} />
-              <Route path="modify" element={<SocialModify />} />
-            </Route>
+            <Route path="social" element={<SocialMain />} />
+            <Route path="socialcategory/:categoryCode" element={<SocialCategory />} />
+            <Route path='social/:socialNum' element={<SocialDetail />} />
+            <Route path='social/write' element={<SocialWrite />} />
+            <Route path="social/modify" element={<SocialModify />} />
           </Route>
           {/* 커뮤니티 */}
           <Route path="/communitys" element={<CommunityMain />} />
@@ -154,6 +152,8 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+
+
   );
 }
 

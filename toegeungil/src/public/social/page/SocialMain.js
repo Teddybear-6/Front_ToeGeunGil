@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from 'react';
-import axios from 'axios';
 import SocialMainCard from '../components/SocialMainCard';
 import '../../layout/layout.css';
 import '../components/css/Button.css';
