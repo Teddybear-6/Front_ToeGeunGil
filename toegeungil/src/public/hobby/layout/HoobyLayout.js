@@ -1,13 +1,13 @@
-import {Outlet} from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import HobbyNavber from "./HobbyNaber";
 
-function HobbyLayout(){
-    return(
+function HobbyLayout({ localfilters, setLocalFilters }) {
+    return (
         <>
-           
-            <HobbyNavber/>
-            <Outlet/>
-         
+
+            <HobbyNavber localfilters={localfilters} setLocalFilters={setLocalFilters} />
+            <Outlet />
+
         </>
     )
 }
