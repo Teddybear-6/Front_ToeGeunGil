@@ -1,45 +1,77 @@
-# 프로젝트 명 : 퇴근길 (Toe-Geun-Gil)
+### 퇴근 후 직장인들의 취미 플랫폼, 
+퇴근길 (Toe-Geun-Gil)
+=============
 
-## 퇴근길 소개
-**퇴근 후에 뭐할지 고민하는 직장인들을 타겟으로 한 취미 플랫폼 클래스 사이트**
 
-- 취미 플랫폼 클래스들을 볼 수 있는 사이트
-- 사용자의 관심 지역 및 카테고리 설정을 통한 취미 맞춤 추천
-- 취미가 비슷하거나 같은 사용자들끼리의 모임을 관심 지역 및 카테고리로 형성
+## [ 팀 소개 ]
 
-**주요 Target**
+### > Team. Teddybear-6
+
+- [강소임(Notice)](https://github.com/afdsj) <br>
+- [고민영(Social)](https://github.com/bearnyong) <br>
+- [김민지(QnA)](https://github.com/KMJs680) <br>
+- [김형통(User)](https://github.com/httt56 ) <br>
+- [이단비(Community)](https://github.com/daneeb1) <br>
+- [전지환(Hobby)](https://github.com/jjjh0508) <br>
+<br>
+
+### > 작업
+- [BACK_REPOSITORY](https://github.com/Teddybear-6/Back_ToeGeunGil) <br>
+- [FRONT_REPOSITORY](https://github.com/Teddybear-6/Front_ToeGeunGil) <br>
+
+<br><br>
+
+## [ 프로젝트 소개 ]
+### > 개요
+- 명칭 &nbsp;:&nbsp; <u>***퇴근길***</u> (Toe-Geun-Gil)
+- 개발 인원 &nbsp;:&nbsp; 6명 (Team_ Teddybear-6)
+- 개발 기간 &nbsp;:&nbsp; 2023.09.01 ~ 2023.09.24
+- 배포 사이트  &nbsp;:&nbsp; [toegeungil.shop](http://toegeungil.shop/)
+
+<br>
+
+### > 주요 기능
+- 강사가 강의하는 다양한 취미 클래스 참여
+- 취미가 비슷하거나 같은 사용자들끼리의 모임형성 및 참여
+- 취미에 대한 고민과 방법을 나눌수있는 커뮤니티 형성
+
+<br>
+
+### > Target
 - 퇴근길에 뭐할지 고민하는 직장인들
 - 여가시간에 새로운 취미생활을 원하는 직장인들
-- 직장 생활을 하는 20-50대
 - 취미가 비슷하거나 같은 사용자들끼리의 커뮤니케이션을 원하는 이들
 
-## 개요
-- 명칭 : 퇴근길
-- 개발 인원 : 6명
-- 개발 기간 : 2023.09.01~2023.09.24
+<Br><br><br>
 
-## 팀 소개
-- Teddybear-6 <br/>
-  강소임 https://github.com/afdsj <br/>
-  고민영 https://github.com/bearnyong <br/>
-  김민지 https://github.com/KMJs680 <br/>
-  김형통 https://github.com/httt56 <br/>
-  이단비 https://github.com/daneeb1 <br/>
-  전지환 https://github.com/jjjh0508 <br/>
-  
-### 퇴근길 - BACK REPOSITORY
-https://github.com/Teddybear-6/Back_ToeGeunGil
+## [ 개발 환경 및 기술 소개]
+<br>
 
-### 퇴근길 - FRONTEND REPOSITORY
-https://github.com/Teddybear-6/Front_ToeGeunGil
+### > 기술스택 및 개발 환경 <br>
+<img width="550" alt="아키텍처" src="https://github.com/Teddybear-6/Front_ToeGeunGil/assets/130436427/1679946a-b1db-46cd-9876-62559795371b">
 
-## 기술스택 및 개발 환경
-<img width="550" alt="기술스택" src="https://github.com/Teddybear-6/Front_ToeGeunGil/assets/130436427/c1cbd604-2176-42fb-8825-923338e1c1d7">
+<br>
 
-## 시스템 아키텍처
-<img width="550" alt="아키텍처" src="https://github.com/Teddybear-6/Front_ToeGeunGil/assets/130436427/6815e56d-7b35-4048-9c20-ea882c8cafd0">
+### > 시스템 아키텍처
 
-## API 설계
+<img width="550" alt="아키텍처" src="https://github.com/Teddybear-6/Front_ToeGeunGil/assets/130436427/ba7777c8-1b30-48ef-831d-fb3d3dd8aeda">
+
+<br>
+
+### > Branch 관리
+[ Git Flow ] 브랜치 전략을 사용하여 프로젝트를 진행하였습니다. 
+<img width="550" alt="아키텍처" src="https://github.com/Teddybear-6/Front_ToeGeunGil/assets/130436427/895a2bb6-97f5-46f6-86cd-f63619c5e916">
+- main : 실제 배포를 위한 main 브랜치
+- develop : main 브랜치에 영향을 주지 않으면서 개발하기 위해서 사용
+- feature : develop을 개발하면서 기능 단위로 develop 서버에 영향을 주지 않기 위해서 사용
+
+<br><br><br>
+
+## [ 스웨거 (Swagger) ]
+
+<br>
+
+### > API 설계
 |기능|Method|URL|
 |:---|:---:|:---:|
 |로그인|POST|login|
