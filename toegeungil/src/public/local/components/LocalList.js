@@ -70,7 +70,7 @@ function LocalList() {
                                         <div key={local.localCode} className="local-main-content">
                                             <div className="local-value">{local.localCode}</div>
                                             <div className="local-value">{local.localName}</div>
-                                            <div className="local-button-box">
+                                            <div className="local-button-wrapper">
                                                 <button className="local-button1" onClick={() => deleteLocal(local.localCode)}>삭제</button>
                                                 <Link to={`/service/local/${local.localCode}/modify`}>
                                                     <button className="local-button1">수정</button>
