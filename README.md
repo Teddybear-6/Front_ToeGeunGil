@@ -1,28 +1,33 @@
-### 퇴근 후 직장인들의 취미 플랫폼, 
-퇴근길 (Toe-Geun-Gil)
-=============
+# 퇴근길 (Toe-Geun-Gil)
+### &nbsp;: &nbsp;퇴근 후 직장인들의 취미 플랫폼
 
+<br>
 
-## [ 팀 소개 ]
+## 팀 소개
 
-### > Team. Teddybear-6
+### [ Team. Teddybear-6 ]
 
 - [강소임(Notice)](https://github.com/afdsj) <br>
 - [고민영(Social)](https://github.com/bearnyong) <br>
 - [김민지(QnA)](https://github.com/KMJs680) <br>
 - [김형통(User)](https://github.com/httt56 ) <br>
 - [이단비(Community)](https://github.com/daneeb1) <br>
-- [전지환(Hobby)](https://github.com/jjjh0508) <br>
+- [전지환(Hobby)](https://github.com/jjjh0508)
+
 <br>
 
-### > 작업
+### [ 작업 ]
 - [BACK_REPOSITORY](https://github.com/Teddybear-6/Back_ToeGeunGil) <br>
 - [FRONT_REPOSITORY](https://github.com/Teddybear-6/Front_ToeGeunGil) <br>
 
 <br><br>
 
-## [ 프로젝트 소개 ]
-### > 개요
+## 프로젝트 소개
+<img width="450" alt="logo" src="https://github.com/Teddybear-6/.github/assets/130436337/4c493406-29ef-4f98-90c8-5a9c9ef65f79">
+
+<br>
+
+### [ 개요 ]
 - 명칭 &nbsp;:&nbsp; <u>***퇴근길***</u> (Toe-Geun-Gil)
 - 개발 인원 &nbsp;:&nbsp; 6명 (Team_ Teddybear-6)
 - 개발 기간 &nbsp;:&nbsp; 2023.09.01 ~ 2023.09.24
@@ -30,35 +35,35 @@
 
 <br>
 
-### > 주요 기능
+### [ 주요 기능 ]
 - 강사가 강의하는 다양한 취미 클래스 참여
 - 취미가 비슷하거나 같은 사용자들끼리의 모임형성 및 참여
 - 취미에 대한 고민과 방법을 나눌수있는 커뮤니티 형성
 
 <br>
 
-### > Target
+### [ Target ]
 - 퇴근길에 뭐할지 고민하는 직장인들
 - 여가시간에 새로운 취미생활을 원하는 직장인들
 - 취미가 비슷하거나 같은 사용자들끼리의 커뮤니케이션을 원하는 이들
 
 <Br><br><br>
 
-## [ 개발 환경 및 기술 소개]
+## 개발 환경 및 기술 소개
 <br>
 
-### > 기술스택 및 개발 환경 <br>
+### [ 기술스택 및 개발 환경 ] <br>
 <img width="550" alt="아키텍처" src="https://github.com/Teddybear-6/Front_ToeGeunGil/assets/130436427/1679946a-b1db-46cd-9876-62559795371b">
 
 <br>
 
-### > 시스템 아키텍처
+### [ 시스템 아키텍처 ]
 
 <img width="550" alt="아키텍처" src="https://github.com/Teddybear-6/Front_ToeGeunGil/assets/130436427/ba7777c8-1b30-48ef-831d-fb3d3dd8aeda">
 
 <br>
 
-### > Branch 관리
+### [ Branch 관리 ]
 [ Git Flow ] 브랜치 전략을 사용하여 프로젝트를 진행하였습니다. 
 <img width="550" alt="아키텍처" src="https://github.com/Teddybear-6/Front_ToeGeunGil/assets/130436427/895a2bb6-97f5-46f6-86cd-f63619c5e916">
 - main : 실제 배포를 위한 main 브랜치
@@ -67,11 +72,11 @@
 
 <br><br><br>
 
-## [ 스웨거 (Swagger) ]
+## 스웨거 (Swagger)
 
 <br>
 
-### > API 설계
+### [ API 설계 ]
 |기능|Method|URL|
 |:---|:---:|:---:|
 |로그인|POST|login|

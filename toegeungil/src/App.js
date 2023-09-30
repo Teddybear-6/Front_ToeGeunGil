@@ -53,6 +53,7 @@ import CategoryWrite from "./public/category/pages/CategoryWrite";
 import CategoryModify from "./public/category/pages/CategoryModify";
 import React, { useState } from "react";
 import CommunityModify from "./public/community/pages/CommunityModify";
+import SocialSearch from "./public/social/page/SocialSearch";
 
 function App() {
   /* 라우팅
@@ -93,6 +94,7 @@ function App() {
             <Route path='social/:socialNum' element={<SocialDetail />} />
             <Route path='social/write' element={<SocialWrite />} />
             <Route path="social/modify" element={<SocialModify />} />
+            <Route path="social/search" element={<SocialSearch/>}/>
           </Route>
           {/* 커뮤니티 */}
           <Route path="/communitys" element={<CommunityMain />} />
