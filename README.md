@@ -20,10 +20,10 @@
 - [BACK_REPOSITORY](https://github.com/Teddybear-6/Back_ToeGeunGil) <br>
 - [FRONT_REPOSITORY](https://github.com/Teddybear-6/Front_ToeGeunGil) <br>
 
-<br><br>
+<br><br><br>
 
 ## 프로젝트 소개
-<img width="450" alt="logo" src="https://github.com/Teddybear-6/.github/assets/130436337/4c493406-29ef-4f98-90c8-5a9c9ef65f79">
+<img width="500" alt="logo" src="https://github.com/Teddybear-6/.github/assets/130436337/4c493406-29ef-4f98-90c8-5a9c9ef65f79">
 
 <br>
 
@@ -50,21 +50,18 @@
 <Br><br><br>
 
 ## 개발 환경 및 기술 소개
-<br>
-
-### [ 기술스택 및 개발 환경 ] <br>
+### [ 기술스택 및 개발 환경 ]
 <img width="550" alt="아키텍처" src="https://github.com/Teddybear-6/Front_ToeGeunGil/assets/130436427/1679946a-b1db-46cd-9876-62559795371b">
 
 <br>
 
 ### [ 시스템 아키텍처 ]
-
 <img width="550" alt="아키텍처" src="https://github.com/Teddybear-6/Front_ToeGeunGil/assets/130436427/ba7777c8-1b30-48ef-831d-fb3d3dd8aeda">
 
 <br>
 
 ### [ Branch 관리 ]
-[ Git Flow ] 브랜치 전략을 사용하여 프로젝트를 진행하였습니다. 
+[ Git Flow ] 브랜치 전략을 사용하여 프로젝트를 진행하였습니다. <br>
 <img width="550" alt="아키텍처" src="https://github.com/Teddybear-6/Front_ToeGeunGil/assets/130436427/895a2bb6-97f5-46f6-86cd-f63619c5e916">
 - main : 실제 배포를 위한 main 브랜치
 - develop : main 브랜치에 영향을 주지 않으면서 개발하기 위해서 사용
@@ -73,9 +70,6 @@
 <br><br><br>
 
 ## 스웨거 (Swagger)
-
-<br>
-
 ### [ API 설계 ]
 |기능|Method|URL|
 |:---|:---:|:---:|

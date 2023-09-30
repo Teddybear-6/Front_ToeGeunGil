@@ -60,6 +60,7 @@ function App() {
       : 어떤 요청(URL)을 어디로 안내 및 매핑 할 것인지를 정해놓고 진행하는 것
       : 리액트에서는 요청에 따라 요청에 매핑되는 컴포넌트를 랜더링 한다. */
   const [login, setLogin] = useState(false);
+  const [localfilters, setLocalFilters] = useState();
   return (
     <BrowserRouter>
       <ScrollToTop />
@@ -75,10 +76,10 @@ function App() {
             {/* <Route index element={<Mypage/>}/> */}
           </Route>
           {/* 취미 */}
-          <Route element={<HobbyLayout />}>
-            <Route path='/hobby' element={<AllHobby />} />
+          <Route element={<HobbyLayout localfilters={localfilters} setLocalFilters={setLocalFilters} />}>
+            <Route path='/hobby' element={<AllHobby localfilters={localfilters} />} />
             <Route path='hobby/:hobbyCode' element={<HobbyDetail />} />
-            <Route path="/hobbycategory/:categoryCode" element={<CategoryHobby />} />
+            <Route path="/hobbycategory/:categoryCode" element={<CategoryHobby localfilters={localfilters} />} />
             <Route path="/hobby/search" element={<HobbySearch />} />
           </Route>
           <Route element={<TutorLayout />}>
