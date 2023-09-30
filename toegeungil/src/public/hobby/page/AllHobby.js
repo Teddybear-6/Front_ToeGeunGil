@@ -15,11 +15,11 @@ function AllHobby({ localfilters }) {
         if (localfilters === "0" || localfilters === undefined || localfilters === null) {
             fetch(process.env.REACT_APP_URL + `/hobbys?page=${page - 1}&size=12`).then((response) => response.json()).then((data) =>
                 setHobby(data))
-            fetch(process.env.REACT_APP_URL + `/hobbys/size`).then(res => res.json()).then(res => setPageCount(res))
+            fetch(process.env.REACT_APP_URL + `/hobbys/size`).then(res => res.json()).then(res => setPageCount(res)).catch(e => console.log(e))
         } else {
             fetch(process.env.REACT_APP_URL + `/hobbys/local/${localfilters}?page=${page - 1}&size=12`).then((response) => response.json()).then((data) =>
-                setHobby(data))
-            fetch(process.env.REACT_APP_URL + `/hobbys/local/size/${localfilters}`).then(res => res.json()).then(res => setPageCount(res))
+                setHobby(data)).catch(e => console.log(e))
+            fetch(process.env.REACT_APP_URL + `/hobbys/local/size/${localfilters}`).then(res => res.json()).then(res => setPageCount(res)).catch(e => console.log(e))
         }
 
     }, [page, localfilters])
