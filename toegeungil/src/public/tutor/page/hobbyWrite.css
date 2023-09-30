@@ -12,13 +12,14 @@
 .titleframe {
     display: flex;
     margin-left: 1.25rem;
+
     .title {
         border-radius: 3.125rem;
         border: 0.125rem solid #8FC4B3;
         margin-left: 1.25rem;
         width: 80rem;
         height: 3.75rem;
-       
+
     }
 
     .hobbytitle {
@@ -288,6 +289,7 @@
 .tutorframe {
     display: flex;
     margin-top: 10px;
+
     .tutor {
         border-radius: 50px;
         border: 2px solid #8FC4B3;
@@ -309,21 +311,21 @@
     }
 }
 
-.buttonFrame{
+.buttonFrame {
 
     display: flex;
     float: right;
-    margin-top: 20px;
-    width: 800px;
+    margin-top: 1.25rem;
     justify-content: center;
 
-    .createBtn{
+
+    .createBtn {
         border-radius: 50px;
         background-color: #8FC4B3;
         width: 150px;
         height: 75px;
         color: #096249;
-        
+
         justify-content: center;
         align-items: center;
         border: none;
@@ -333,7 +335,7 @@
     }
 
 
-    .cancelBtn{
+    .cancelBtn {
         border-radius: 50px;
         background-color: #CCE2DB;
         width: 150px;
@@ -345,7 +347,7 @@
         text-decoration-line: none;
         font-size: 20px;
         font-weight: bold;
-        
+
     }
 }
 
@@ -363,7 +365,7 @@
     border-color: #8FC4B3;
     font-size: 20px;
     font-weight: bold;
- display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     border: none;
@@ -371,7 +373,7 @@
 }
 
 .buttonOn:hover {
-    background-color:#CCE2DB;
+    background-color: #CCE2DB;
     border: none;
     transition: 0.7s;
 }
@@ -401,7 +403,7 @@
 }
 
 .buttonOff:hover {
-    background-color:#8FC4B3;
+    background-color: #8FC4B3;
     border: none;
     transition: 0.7s;
 }
@@ -430,7 +432,7 @@
 }
 
 .writeButton:hover {
-    background-color:#CCE2DB;
+    background-color: #CCE2DB;
     border: 2px solid #CCE2DB;
     transition: 0.7s;
 }
@@ -445,7 +447,7 @@
 
 
 
-.btnframe{
+.btnframe {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
