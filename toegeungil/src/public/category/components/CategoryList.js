@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import jwt_decode from "jwt-decode";
+import '../components/CategoryMain.css';
 
 function CategoryList() {
     const [user, setUser] = useState('');
