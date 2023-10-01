@@ -10,12 +10,13 @@ function AllHobby({ localfilters }) {
     const [page, setPages] = useState(1);
     const [pageCount, setPageCount] = useState();
 
-    console.log(localfilters)
     useEffect(() => {
         if (localfilters === "0" || localfilters === undefined || localfilters === null) {
-            fetch(process.env.REACT_APP_URL + `/hobbys?page=${page - 1}&size=12`).then((response) => response.json()).then((data) =>
-                setHobby(data))
-            fetch(process.env.REACT_APP_URL + `/hobbys/size`).then(res => res.json()).then(res => setPageCount(res)).catch(e => console.log(e))
+            fetch(process.env.REACT_APP_URL + `/hobbys?page=${page - 1}&size=12`).then((response) => response.json()).then((data) => {
+                setHobby(data["value"],
+                    setPageCount(data["size"]))
+            }).catch(e => console.log(e["error"]))
+
         } else {
             fetch(process.env.REACT_APP_URL + `/hobbys/local/${localfilters}?page=${page - 1}&size=12`).then((response) => response.json()).then((data) =>
                 setHobby(data)).catch(e => console.log(e))
