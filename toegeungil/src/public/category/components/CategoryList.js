@@ -60,24 +60,26 @@ function CategoryList() {
                     category ? (
                         <>
                             {user && user.auth[0] === 'ADMIN' ? (
-                                <div className="local-main-layout">
-                                    <div className="local-header">
-                                        <div className="local-label">번호</div>
-                                        <div className="local-label">카테고리명</div>
+                                <div className="category-main-layout">
+                                    <div className="category-header">
+                                        <div className="category-label">번호</div>
+                                        <div className="category-label">카테고리명</div>
                                     </div>
                                     {category.map((category) => (
-                                            <div key={category.categoryCode}>
-                                                <div>{category.categoryCode}</div>
-                                                <div>{category.categoryName}</div>
-                                                    <button onClick={() => deleteCategory(category.categoryCode)}>삭제</button>
-                                                    <Link to={`/service/category/${category.categoryCode}/modify`}>
-                                                        <button>수정</button>
-                                                    </Link>
-                                                </div>
+                                        <div key={category.categoryCode} className="category-main-content">
+                                            <div className="category-value">{category.categoryCode}</div>
+                                            <div className="category-value">{category.categoryName}</div>
+                                            <div className="category-button-wrapper">
+                                                <button className="category-button1" onClick={() => deleteCategory(category.categoryCode)}>삭제</button>
+                                                <Link to={`/service/category/${category.categoryCode}/modify`}>
+                                                    <button className="category-button1">수정</button>
+                                                </Link>
+                                            </div>
+                                        </div>
                                     ))}
-                                    <div>
+                                    <div className="category-main-button-box">
                                         <Link to={`/service/category/write`}>
-                                            <button onClick={categoryClick}>카테고리 작성</button>
+                                            <button className="category-main-button" onClick={categoryClick}>카테고리 작성</button>
                                         </Link>
                                     </div>
                                 </div>
