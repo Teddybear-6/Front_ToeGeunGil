@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import DetailsStyle from '../css/SocialDetails.module.css';
 import jwt_decode from "jwt-decode";
 import { Link, NavLink } from "react-router-dom";
+import SocialParticipateView from "./SocialParticipateView";
 
 
 function SocialParticipate({ socialNum, socialFixedNum, socialWriter }) { //소설 번호 받아오기
 
-    console.log("fixNum : " + socialFixedNum); //최대 인원 초과시 참여 불가를 위해 
-    console.log("작성자 번호 : " + socialWriter); //작성자에게는 참여자 리스트 보이기
+    // console.log("fixNum : " + socialFixedNum); //최대 인원 초과시 참여 불가를 위해 
+    // console.log("작성자 번호 : " + socialWriter); //작성자에게는 참여자 리스트 보이기
     
     const [user, setUser] = useState();
     const [participate, setParticipate] = useState();
