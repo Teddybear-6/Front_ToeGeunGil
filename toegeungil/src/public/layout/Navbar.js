@@ -5,15 +5,14 @@ import "./layout.css"
 function Navbar() {
     const navigate = useNavigate();
     const [hobbyTitle, setHobbyTitle] = useState();
+    // const [socialName, setSocialName] = useState();
 
     const handleClick = (e) => (
-
         navigate('/hobby/search', { state: hobbyTitle })
     )
 
     const onChangeHandler = (e) => (
         setHobbyTitle(e.target.value)
-
     )
 
     const handleOnKeyPress = e => {
