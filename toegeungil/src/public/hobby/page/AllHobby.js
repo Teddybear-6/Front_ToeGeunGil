@@ -12,11 +12,7 @@ function AllHobby({ localfilters }) {
 
     useEffect(() => {
         if (localfilters === "0" || localfilters === undefined || localfilters === null) {
-            fetch(process.env.REACT_APP_URL + `/hobbys?page=${page - 1}&size=12`).then((response) => response.json()).then((data) => {
-                setHobby(data["value"],
-                    setPageCount(data["size"]))
-            }).catch(e => console.log(e["error"]))
-
+            fetch(process.env.REACT_APP_URL + `/hobbys?page=${page - 1}&size=12`).then((response) => response.json()).then((data) => { return (setHobby(data["value"]), setPageCount(data["size"])) })
         } else {
             fetch(process.env.REACT_APP_URL + `/hobbys/local/${localfilters}?page=${page - 1}&size=12`).then((response) => response.json()).then((data) =>
                 setHobby(data)).catch(e => console.log(e))
@@ -31,21 +27,21 @@ function AllHobby({ localfilters }) {
         }
     )
 
+    console.log(hobby)
 
     return (
         <>
-            {!hobby ? (
-                "등록된 취미가 없습니다."
-            ) : (
-                <>
-                    <div className="toegeungillayout">
-                        <HobbyMain hobbys={hobby}></HobbyMain>
-                    </div>
-                    <div className={AllHobbyCss.paging}>
-                        <Paging count={pageCount} setPage={setPage} page={page} />
-                    </div>
-                </>
-            )}
+            <div className="toegeungillayout">
+                {!hobby ? "등록된 취미가 없습니다." :
+                    <HobbyMain hobbys={hobby}></HobbyMain>
+                }
+
+            </div >
+            <div className={AllHobbyCss.paging}>
+                <Paging count={pageCount} setPage={setPage} page={page} />
+            </div>
+
+
         </>
     )
 }

@@ -18,10 +18,8 @@ function CategoryHobby({ localfilters }) {
         process.env.REACT_APP_URL +
         `/hobbys/category/${cagegoryCode}?page=${page - 1}&size=12`)
         .then((response) => response.json())
-        .then((data) => setHobby(data));
-      fetch(process.env.REACT_APP_URL + `/hobbys/category/size/${cagegoryCode}`)
-        .then((res) => res.json())
-        .then((res) => setPageCount(res));
+        .then((data) => { return (setHobby(data["value"]), setPageCount(data["size"])) })
+
     } else {
       // 여기에 지역 카테고리 필터 해주고  지역 셀럭터 위치 고치기 
       fetch(
@@ -44,18 +42,18 @@ function CategoryHobby({ localfilters }) {
 
   return (
     <>
-      {!hobby ? (
-        "등록된 취미가 없습니다."
-      ) : (
-        <div>
-          <div className="toegeungillayout">
+
+      <div>
+        <div className="toegeungillayout">
+          {!hobby ? "등록된 취미가 없습니다." :
             <HobbyMain hobbys={hobby}></HobbyMain>
-          </div>
-          <div className={AllHobbyCss.paging}>
-            <Paging count={pageCount} setPage={setPage} page={page} />
-          </div>
+          }
         </div>
-      )}
+        <div className={AllHobbyCss.paging}>
+          <Paging count={pageCount} setPage={setPage} page={page} />
+        </div>
+      </div>
+
     </>
   );
 }
