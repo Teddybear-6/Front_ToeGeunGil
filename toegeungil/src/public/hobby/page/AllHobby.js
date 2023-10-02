@@ -27,8 +27,6 @@ function AllHobby({ localfilters }) {
         }
     )
 
-    console.log(hobby)
-
     return (
         <>
             <div className="toegeungillayout">
