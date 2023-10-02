@@ -20,9 +20,6 @@ function HobbyCard(hobbys) {
 
 
     }, [hobbys])
-
-
-    console.log(hobbys)
     return (
         <>
             {!hobbys.hobbys ? "취미가 없습니다." :
