@@ -39,7 +39,7 @@ function SocialParticipateList({ postNum }) {
                             }
                             {/* {Object.keys(participate[0]) <=0 ? null : "sdsd"} */}
                         </div>
-                        <SocialParticipate socialNum={postNum}/>
+                        <SocialParticipate socialNum={postNum} socialFixedNum={socials.socialFixedNum} socialWriter={socials.userNum}/>
                     </div>
                 </div>
             </div>

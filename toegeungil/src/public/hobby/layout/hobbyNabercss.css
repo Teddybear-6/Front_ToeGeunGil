@@ -1,0 +1,24 @@
+.hobbyNavlocal {
+    border-radius: 3.125rem;
+    width: 15.625rem;
+    height: 3.125rem;
+    margin-left: 1.438rem;
+
+    border: 0.125rem solid #8FC4B3;
+}
+
+
+.hobbyNavlocalframe {
+    float: right;
+    margin-bottom: 0.625rem;
+    margin-right: 5rem;
+}
+
+.nabertextAll {
+    margin: 1rem 1.25rem 1rem 1.25rem;
+    border: none;
+    resize: none;
+    font-size: 1.125rem;
+    outline: none;
+    width: 12.5rem;
+}

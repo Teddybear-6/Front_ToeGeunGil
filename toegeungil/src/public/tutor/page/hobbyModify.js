@@ -258,8 +258,8 @@ function HobbyModify() {
               <Link to="/hobby">
                 <button className="cancelBtn">취소하기</button>
               </Link>
-              <Link to="/hobby">
-                <button onClick={onClickHandler} className="createBtn">작성하기</button>
+              <Link to="/tutor">
+                <button onClick={onClickHandler} className="createBtn">수정하기</button>
               </Link>
 
             </div>

@@ -105,9 +105,9 @@ function SocialModifyCard() {
                         alert("[Social] 게시글 수정 실패...")
                     }
                 })
-                .catch(error => {
-                    alert("error");
-                })
+                // .catch(error => {
+                //     alert("error");
+                // })
 
             window.location.href = `/social/${social.socialNum}`
         }

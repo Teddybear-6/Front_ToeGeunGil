@@ -1,16 +1,14 @@
-
-
 .hobbyCard {
-    padding: 1rem/* 24px */;
+    padding: 1rem;
+    /* 24px */
     margin-left: 1.25rem;
-    margin-right: 0.625rem;
     text-align: center;
     border-radius: 3.125rem;
     display: inline-flex;
     flex-direction: column;
-  
+
     border: 0.125rem solid #8FC4B3;
- 
+
     width: 21.563rem;
     height: 22.813rem;
     justify-content: space-between;
@@ -18,9 +16,9 @@
 
 
 
-   
-    
-   
+
+
+
 
 }
 
@@ -28,10 +26,10 @@
 .hobbyImage {
     border-radius: 3.125rem;
     height: 60%;
-    
+
 }
 
-.hobbyTitle{
+.hobbyTitle {
     margin-left: 0.625rem;
     color: #41A487;
     font-size: 1.125rem;
@@ -45,33 +43,33 @@
 
 
 
-.keywordCard{
+.keywordCard {
     border-radius: 3.125rem;
-    width:5rem;
+    width: 5rem;
     height: 1.875rem;
     display: inline-flex;
     background-color: #E9E0DD;
     flex-direction: column;
     justify-content: space-between;
-    float:left;
+    float: left;
     margin-left: 0.125rem;
     margin-right: 0.313rem;
-    
+
 }
 
 
-.keywordName{
+.keywordName {
     display: flex;
     justify-content: center;
     text-align: center;
     font-size: 0.875rem;
     color: #87746B;
-    line-height: 40%;    
+    line-height: 40%;
     margin: auto;
-    
+
 }
 
-.keywordUnName{
+.keywordUnName {
     border-radius: 3.125rem;
     width: 1.719rem;
     height: 1.875rem;
@@ -79,28 +77,27 @@
     background-color: #E9E0DD;
     flex-direction: column;
     margin: auto;
-   
+
 }
 
 
 
-.hobbyPrice{
+.hobbyPrice {
     text-align: right;
     color: #655853;
     font-size: 0.75rem;
-   
-    
+
+
     font-weight: bold;
     font-style: italic;
     margin-right: 1.25rem;
 }
 
-.CategoryName{
-    
+.CategoryName {
+
     text-align: center;
     font-size: 0.875rem;
     color: #87746B;
-    line-height: 40%;    
-    
-}
+    line-height: 40%;
 
+}
