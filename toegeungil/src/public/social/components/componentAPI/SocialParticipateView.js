@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 function SocialParticipateView({ postNum }) {
 
     //해당 게시글 참여자 리스트
-    const [participate, setParticipate] = useState([{}]);
+    const [participate, setParticipate] = useState([]);
 
     console.log("dfsf", participate)
 
@@ -18,8 +18,8 @@ function SocialParticipateView({ postNum }) {
     return (
         <>
             {/* {
-                participate?.map((r,i) => (
-                    <div key={i}>{r.userNum}</div>
+                participate.map((i) => (
+                    <div key={i}>{participate.userNum}</div>
                 ))
             } */}
         </>
