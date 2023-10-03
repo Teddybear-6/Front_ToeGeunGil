@@ -50,7 +50,7 @@ function CategoryHobby({ localfilters }) {
           }
         </div>
         <div className={AllHobbyCss.paging}>
-          <Paging count={pageCount} setPage={setPage} page={page} />
+          <Paging count={pageCount} setPage={setPage} page={page} cagegoryCode={cagegoryCode} />
         </div>
       </div>
 
