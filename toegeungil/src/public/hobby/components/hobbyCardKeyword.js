@@ -21,10 +21,11 @@ function HobbyCardkeyword({ keyword }) {
     }
     return newArr;
   }
-
   return (
     <>
       {keywordArr(keyword)}
+
+
 
     </>
   )

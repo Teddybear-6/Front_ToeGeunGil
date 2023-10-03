@@ -8,15 +8,9 @@ import HobbyCagegoty from './hobbyCategory';
 
 
 function HobbyCard(hobbys) {
-    const [mainImage, setMainImage] = useState();
-
 
 
     useEffect(() => {
-        if (hobbys.hobbys) {
-            fetch(process.env.REACT_APP_URL + `/hobbys/mainimages/${hobbys.hobbys.hobbyCode}`).then(res => res.json())
-                .then(res => setMainImage(res))
-        }
 
 
     }, [hobbys])
@@ -26,7 +20,7 @@ function HobbyCard(hobbys) {
                 <Link to={`/hobby/${hobbys.hobbys?.hobbyCode}`}>
                     <div className={CardStyle.hobbyCard}>
                         {
-                            !mainImage ? null : <img className={CardStyle.hobbyImage} src={`http://106.250.199.126:9000/image/${mainImage.path}`} />
+                            <img className={CardStyle.hobbyImage} src={`http://106.250.199.126:9000/image/${hobbys?.hobbys.imageIdDTO?.path}`} />
                         }
                         <p className={CardStyle.hobbyTitle}>{hobbys.hobbys.hobbyTitle}</p>
 
