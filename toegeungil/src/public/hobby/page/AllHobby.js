@@ -23,7 +23,7 @@ function AllHobby({ localfilters }) {
             setPages(page)
         }
     )
-    console.log(page)
+
     return (
         <>
             <div className="toegeungillayout">
