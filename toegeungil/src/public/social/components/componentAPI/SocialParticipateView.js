@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import SocialUser from "./SocialUser";
+import "../css/Modal.css"
 
 
 function SocialParticipateView({ socials }) {
@@ -17,9 +18,6 @@ function SocialParticipateView({ socials }) {
         }
     }, [socials]);
 
-
-
-
     return (
         <>
             {
@@ -32,8 +30,44 @@ function SocialParticipateView({ socials }) {
                     </div>
                 ))
             }
+            <Modal/>
         </>
     )
+}
+
+/*
+모달을 노출시키는 페이지 컴포넌트 */ 
+function Modal() {
+    // 모달창 노출 여부 state
+    const [modalOpen, setModalOpen] = useState(false);
+
+    // 모달창 노출
+    const showModal = () => {
+        setModalOpen(true);
+    };
+
+    return (
+        <div>
+            <button onClick={showModal}>모달 띄우기</button>
+            {modalOpen && <ModalBasic setModalOpen={setModalOpen} />}
+        </div>
+    );
+}
+
+function ModalBasic({ setModalOpen, id, title, content, writer }: PropsType) {
+    // 모달 끄기 
+    const closeModal = () => {
+        setModalOpen(false);
+    };
+
+    return (
+        <div className="container">
+            <button className="close" onClick={closeModal}>
+                X
+            </button>
+            <p>모달창입니다.</p>
+        </div>
+    );
 }
 
 export default SocialParticipateView;
