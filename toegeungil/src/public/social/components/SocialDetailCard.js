@@ -61,6 +61,7 @@ function SocialDetailCard() {
         }
     }
 
+
     return (
         <>
             <div className="maB100">
@@ -122,7 +123,10 @@ function SocialDetailCard() {
                     </div>
                 </div>
                 {/* 참여하기 */}
-                <SocialParticipateView postNum={socials.socialNum}/>
+                {
+                    socials && <SocialParticipateView socials={socials} />
+                }
+
                 <SocialParticipateList postNum={socials.socialNum} />
                 {/* 소셜 소개 */}
                 <div className={DetailsStyle.socialDetailsIntro}>
@@ -144,7 +148,7 @@ function SocialDetailCard() {
                         !(!(user === undefined) && !(user === null)) ? null :
                             !(user.no === socials.userNum) ? null :
                                 <>
-                                    <button type="button" className="buttonOn_so marR30" onClick={()=> clickHandler(socials.socialNum)}>소셜삭제</button>
+                                    <button type="button" className="buttonOn_so marR30" onClick={() => clickHandler(socials.socialNum)}>소셜삭제</button>
                                     <Link to="/social/modify" type="button" className="buttonOn_so marR30" state={{ Statesocial: socials }}>소셜수정</Link>
                                 </>
                     }
