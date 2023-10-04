@@ -11,13 +11,9 @@ function HobbySearch() {
     const title = useLocation().state
 
     useEffect(() => {
-      
+        fetch(process.env.REACT_APP_URL + `/hobbys/search?hobbytitle=${title}&page=${page - 1}&size=12`).then((response) => response.json()).then((data) => { return (setHobby(data["value"]), setPageCount(data["size"])) })
 
-        fetch(process.env.REACT_APP_URL+`/hobbys/search?hobbytitle=${title}&page=${page - 1}&size=12`).then((response) => response.json()).then((data) =>
-            setHobby(data))
-
-        fetch(process.env.REACT_APP_URL+`/hobbys/search/size?hobbytitle=${title}`).then(res => res.json()).then(res => setPageCount(res))
-    }, [page,title])
+    }, [page, title])
 
     const setPage = useCallback(
         (page) => {
@@ -29,14 +25,16 @@ function HobbySearch() {
     return (
         <>
             <div className='toegeungillayout'>
-
-                <HobbyMain hobbys={hobby}></HobbyMain>
+                {!hobby ? "검색결과가 없습니다." :
+                    <HobbyMain hobbys={hobby}></HobbyMain>
+                }
             </div>
 
             <div className={AllHobbyCss.paging}>
                 <Paging count={pageCount} setPage={setPage} page={page} />
 
             </div>
+
         </>
     )
 }

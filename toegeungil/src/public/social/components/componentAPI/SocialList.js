@@ -9,7 +9,6 @@ function SocialList() {
             fetch(process.env.REACT_APP_URL+"/socials")
                 .then(response => response.json())
                 .then(data => setSocials(data));
-            console.log(socials)
         }, []);
 
     return (

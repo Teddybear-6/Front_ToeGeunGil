@@ -25,14 +25,14 @@
 }
 
 .w1650h388 {
-    width: 1650px;
-    height: 388px;
+    width: 103.125rem;
+    height: 24.25rem;
     margin: auto;
 }
 
 .w1650h50 {
-    width: 1650px;
-    height: 50px;
+    width: 103.125rem;
+    height: 3.125rem;
     margin: auto;
 }
 
@@ -53,7 +53,7 @@
 
 .navbarLayout {
     margin-top: 67px;
-    width: 1650px;
+    width: 103.125rem;
     height: 133px;
     margin-bottom: 120px;
 }

@@ -43,7 +43,7 @@ function HobbyDetail() {
             fetch(process.env.REACT_APP_URL + `/hobbys/join/${hobbyCode}/${user?.no}`).then(res => res.json()).then(res => {
                 setJoin(res)
 
-            })
+            }).catch(e => console.log(e))
 
         }
     }
@@ -93,9 +93,6 @@ function HobbyDetail() {
             }
 
         }
-
-
-
 
     }
 

@@ -1,27 +1,24 @@
-
-
-.titleAndkeyword{
+.titleAndkeyword {
     border: 0.125rem solid #8FC4B3;
     height: 10.625rem;
     width: 50rem;
-    
- 
     border-radius: 3.125rem;
     margin-bottom: 1.875rem;
-   
+    display: block;
+
 
 }
 
 
-.hobbyTitle{
+.hobbyTitle {
     font-weight: bold;
     color: #655853;
     font-size: 2.25rem;
     margin-left: 3.125rem;
-   
+
 }
 
-.keywordCard{
+.keywordCard {
     border-radius: 3.125rem;
     width: 4.375rem;
     height: 1.875rem;
@@ -29,11 +26,18 @@
     background-color: #E9E0DD;
     flex-direction: column;
     justify-content: space-between;
-    float:left;
+    float: left;
     margin-left: 3.125rem;
 }
 
+.keywordAndDate {
+    display: flex;
+}
 
+.date {
+    float: right;
+    margin-right: 1.875rem;
+    font-weight: bold;
+    color: #655853;
 
-
-
+}
