@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import SocialUser from "./SocialUser";
 
 
 function SocialParticipateView({ socials }) {
@@ -21,11 +22,16 @@ function SocialParticipateView({ socials }) {
 
     return (
         <>
-
             {
-                participate?.map((m, i) => (
-                    <div key={i}>{m.userNum}</div>
-                ))}
+                participate?.map((r, i) => (
+                    <div key={i}>
+                        <div key={i}>{r.userNum}</div>
+                        <div key={i}>
+                            <SocialUser users={r}/>
+                        </div>
+                    </div>
+                ))
+            }
         </>
     )
 }
