@@ -3,11 +3,15 @@ import SocialUser from "./SocialUser";
 import "../css/Modal.css"
 
 
-function SocialParticipateView({ socials }) {
+function SocialParticipateView({ socials, setModalOpen }) {
 
     //해당 게시글 참여자 리스트
     const [participate, setParticipate] = useState();
 
+    // 모달 끄기 
+    const closeModal = () => {
+        setModalOpen(false);
+    };
 
     useEffect(() => {
         //참여자 밑 인원수만큼 이미지 아이콘 뿌려주기
@@ -20,24 +24,32 @@ function SocialParticipateView({ socials }) {
 
     return (
         <>
-            {
+            <div className="container">
+                <button className="close" onClick={closeModal}>
+                    X
+                </button>
+                <div className="flexSt">
+                    <div>회원명</div>
+                    <div>닉네임</div>
+                </div>
+                {
                 participate?.map((r, i) => (
                     <div key={i}>
                         <div key={i}>{r.userNum}</div>
                         <div key={i}>
-                            <SocialUser users={r}/>
+                            <SocialUser users={r} />
                         </div>
                     </div>
                 ))
             }
-            <Modal/>
+            </div>
         </>
     )
 }
 
 /*
-모달을 노출시키는 페이지 컴포넌트 */ 
-function Modal() {
+모달을 노출시키는 페이지 컴포넌트 */
+function Modal({socials}) {
     // 모달창 노출 여부 state
     const [modalOpen, setModalOpen] = useState(false);
 
@@ -49,25 +61,9 @@ function Modal() {
     return (
         <div>
             <button onClick={showModal}>모달 띄우기</button>
-            {modalOpen && <ModalBasic setModalOpen={setModalOpen} />}
+            {modalOpen && <SocialParticipateView setModalOpen={setModalOpen} socials={socials}/>}
         </div>
     );
 }
 
-function ModalBasic({ setModalOpen, id, title, content, writer }: PropsType) {
-    // 모달 끄기 
-    const closeModal = () => {
-        setModalOpen(false);
-    };
-
-    return (
-        <div className="container">
-            <button className="close" onClick={closeModal}>
-                X
-            </button>
-            <p>모달창입니다.</p>
-        </div>
-    );
-}
-
-export default SocialParticipateView;
+export default Modal;

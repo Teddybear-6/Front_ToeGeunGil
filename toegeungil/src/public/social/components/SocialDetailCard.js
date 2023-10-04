@@ -9,6 +9,7 @@ import "../components/css/Button.css"
 import "../components/css/SocialPosting.css"
 import { Link } from "react-router-dom";
 import SocialParticipateView from "./componentAPI/SocialParticipateView";
+import Modal from "./componentAPI/SocialParticipateView";
 
 import jwt_decode from "jwt-decode";
 import DetailsStyle from './css/SocialDetails.module.css';
@@ -124,9 +125,8 @@ function SocialDetailCard() {
                 </div>
                 {/* 참여하기 */}
                 {
-                    socials && <SocialParticipateView socials={socials} />
+                    socials && <Modal socials={socials} />
                 }
-
                 <SocialParticipateList postNum={socials.socialNum} />
                 {/* 소셜 소개 */}
                 <div className={DetailsStyle.socialDetailsIntro}>
