@@ -33,6 +33,8 @@ function SocialDetailCard() {
 
     const [user, setUser] = useState();
 
+    console.log("dfsdfs", socials)
+
     useEffect(() => {
         fetch(process.env.REACT_APP_URL + `/socials/${socialNum}`)
             .then(response => response.json()) //json으로 받는다
@@ -124,10 +126,7 @@ function SocialDetailCard() {
                     </div>
                 </div>
                 {/* 참여하기 */}
-                {
-                    socials && <Modal socials={socials} />
-                }
-                <SocialParticipateList postNum={socials.socialNum} />
+                <SocialParticipateList postNum={socials} />
                 {/* 소셜 소개 */}
                 <div className={DetailsStyle.socialDetailsIntro}>
                     <div className={DetailsStyle.socialDetailsOthersty}>소셜 소개</div>

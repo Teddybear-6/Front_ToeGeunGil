@@ -5,7 +5,7 @@ import { Link, NavLink } from "react-router-dom";
 import SocialParticipateView from "./SocialParticipateView";
 
 
-function SocialParticipate({ socialNum, socialFixedNum, socialWriter }) { //소설 번호 받아오기
+function SocialParticipate({ socials, socialNum, socialFixedNum, socialWriter }) { //소설 번호 받아오기
 
     // console.log("fixNum : " + socialFixedNum); //최대 인원 초과시 참여 불가를 위해 
     // console.log("작성자 번호 : " + socialWriter); //작성자에게는 참여자 리스트 보이기
@@ -62,7 +62,7 @@ function SocialParticipate({ socialNum, socialFixedNum, socialWriter }) { //소�
         <>
             {
                 !user ? <Link to="/login" className={DetailsStyle.buttonStyle}>회원전용</Link> :
-                    (user.no==socialWriter) ? <button className={DetailsStyle.buttonStyle}>참여리스트</button> :
+                    (user.no==socialWriter) ? <SocialParticipateView socials={socials} /> :
                     <>
                         {join(user)}
                         {(!participate ?

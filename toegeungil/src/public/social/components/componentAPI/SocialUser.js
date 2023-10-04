@@ -14,10 +14,12 @@ function SocialUser(users) {
     return (
         <>
             <div>
-                회원명 : {!user? null : user.userName}
+                {/* 회원명 */}
+                {!user? null : user.userName}
             </div>
             <div>
-                닉네임 : {!user? null : user.nickName}
+                {/* 닉네임 */}
+                {!user? null : user.nickName}
             </div>
         </>
     )
