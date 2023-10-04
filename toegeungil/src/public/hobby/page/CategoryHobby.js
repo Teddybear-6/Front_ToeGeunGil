@@ -21,16 +21,12 @@ function CategoryHobby({ localfilters }) {
         .then((data) => { return (setHobby(data["value"]), setPageCount(data["size"])) })
 
     } else {
-      // 여기에 지역 카테고리 필터 해주고  지역 셀럭터 위치 고치기 
+
       fetch(
         process.env.REACT_APP_URL +
         `/hobbys/loacal/${localfilters}/category/${cagegoryCode}?page=${page - 1}&size=12`)
         .then((response) => response.json())
-        .then((data) => setHobby(data));
-      fetch(process.env.REACT_APP_URL + `/hobbys/loacal/size/${localfilters}/category/${cagegoryCode}`)
-        .then((res) => res.json())
-        .then((res) => setPageCount(res));
-
+        .then((data) => { return (setHobby(data["value"]), setPageCount(data["size"])) })
 
     }
 
@@ -39,6 +35,7 @@ function CategoryHobby({ localfilters }) {
   const setPage = useCallback((page) => {
     setPages(page);
   });
+
 
   return (
     <>
