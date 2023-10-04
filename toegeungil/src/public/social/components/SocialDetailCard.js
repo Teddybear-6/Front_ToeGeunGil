@@ -33,8 +33,6 @@ function SocialDetailCard() {
 
     const [user, setUser] = useState();
 
-    console.log("dfsdfs", socials)
-
     useEffect(() => {
         fetch(process.env.REACT_APP_URL + `/socials/${socialNum}`)
             .then(response => response.json()) //json으로 받는다
