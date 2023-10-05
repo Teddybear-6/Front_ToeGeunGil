@@ -24,21 +24,22 @@ function Modal({ socials, setModalOpen }) {
 
     return (
         <>
-            <div className="container">
-                <div className="flexSt">
-                    <div className="mainText">참여자 리스트</div>
-                    <button className="close" onClick={closeModal}>
+            <div className="containerModal">
+                <div className="flexModal">
+                    <div className="mainTextModal">[ 참여자 리스트 ]</div>
+                    <button className="closeModal" onClick={closeModal}>
                         X
                     </button>
                 </div>
-                <div className="flexSt subText">
+                <div className="flexModal subTextModal">
                     <div>회원명</div>
                     <div>닉네임</div>
                 </div>
+                <hr className="hrModal"/> 
                 <div className="scrollModal">
                     {
                         participate?.map((r, i) => (
-                            <div key={i} className="flexSt conText">
+                            <div key={i} className="flexModal conTextModal">
                                 <SocialUser users={r} />
                             </div>
                         ))

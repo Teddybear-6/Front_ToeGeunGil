@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 function SocialUser(users) {
 
     const [user, setUser] = useState({});
-    console.log("Dfsdf" , users.users.userNum)
+    // console.log("Dfsdf" , users.users.userNum)
 
     useEffect(() => {
         fetch(process.env.REACT_APP_URL + `/user/${users.users.userNum}`)
