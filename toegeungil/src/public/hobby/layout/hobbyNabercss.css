@@ -3,7 +3,6 @@
     width: 15.625rem;
     height: 3.125rem;
     margin-left: 1.438rem;
-
     border: 0.125rem solid #8FC4B3;
 }
 
@@ -12,6 +11,7 @@
     float: right;
     margin-bottom: 0.625rem;
     margin-right: 5rem;
+    display: flex;
 }
 
 .nabertextAll {
@@ -21,4 +21,10 @@
     font-size: 1.125rem;
     outline: none;
     width: 12.5rem;
+}
+
+.hobbylocalLable {
+    margin-top: 10px;
+    color: #128865;
+    font-size: 20px;
 }
