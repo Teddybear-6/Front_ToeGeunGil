@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import "../components/css/SocialNavbar.css"
 
 
-function SocialNavbar() {
+function SocialNavbar({ localfilters, setLocalFilters }) {
 
     const [cagegory, setCategory] = useState();
     const [local, setLocal] = useState();
@@ -20,12 +20,31 @@ function SocialNavbar() {
             .then(res => setLocal(res));
     }, [])
 
+    const onChangeHandler = (e) => {
+        setLocalFilters(e.target.value)
+    };
+
 
     return (
         <>
             {/* 지역 Navbar */}
-            <div>
-                
+            <div className="hobbyNavlocalframe">
+                <label className="hobbylocalLable" htmlFor="local">지역</label>
+                <div className="hobbyNavlocal">
+                    <select
+                        defaultValue="0"
+                        name="localCode"
+                        id="local"
+                        className="nabertextAll"
+                        onChange={onChangeHandler}>
+                        <option value="0">전체</option>
+                        {local?.map((m, index) => (
+                            <option value={m.localCode} key={m.localCode}>
+                                {m.localName}
+                            </option>
+                        ))}
+                    </select>
+                </div>
             </div>
 
             {/* 카테고리 Navbar */}
