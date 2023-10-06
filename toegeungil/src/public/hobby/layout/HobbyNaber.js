@@ -12,6 +12,7 @@ const HobbyNavber = ({ localfilters, setLocalFilters }) => {
     fetch(process.env.REACT_APP_URL + `/local`)
       .then((res) => res.json())
       .then((res) => setLocal(res));
+    setLocalFilters(null)
   }, []);
 
   const onChangeHandler = (e) => {

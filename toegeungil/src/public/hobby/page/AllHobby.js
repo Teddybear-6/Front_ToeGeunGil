@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from 'react';
-import { useLocation } from 'react-router-dom'
 import HobbyMain from '../components/hobbyMain'
 import AllHobbyCss from './AllHobby.module.css'
 import Paging from '../components/Paging';
@@ -7,27 +6,23 @@ import '../../layout/layout.css';
 
 function AllHobby({ localfilters }) {
     const [hobby, setHobby] = useState([]);
-    const [page, setPages] = useState(1);
+    const [page, setPages] = useState();
     const [pageCount, setPageCount] = useState();
 
     useEffect(() => {
         if (localfilters === "0" || localfilters === undefined || localfilters === null) {
             fetch(process.env.REACT_APP_URL + `/hobbys?page=${page - 1}&size=12`).then((response) => response.json()).then((data) => { return (setHobby(data["value"]), setPageCount(data["size"])) })
         } else {
-            fetch(process.env.REACT_APP_URL + `/hobbys/local/${localfilters}?page=${page - 1}&size=12`).then((response) => response.json()).then((data) =>
-                setHobby(data)).catch(e => console.log(e))
-            fetch(process.env.REACT_APP_URL + `/hobbys/local/size/${localfilters}`).then(res => res.json()).then(res => setPageCount(res)).catch(e => console.log(e))
+            fetch(process.env.REACT_APP_URL + `/hobbys/local/${localfilters}?page=${page - 1}&size=12`).then((response) => response.json()).then((data) => { return (setHobby(data["value"]), setPageCount(data["size"])) })
+
         }
 
     }, [page, localfilters])
-
     const setPage = useCallback(
         (page) => {
             setPages(page)
         }
     )
-
-    console.log(hobby)
 
     return (
         <>
@@ -38,7 +33,7 @@ function AllHobby({ localfilters }) {
 
             </div >
             <div className={AllHobbyCss.paging}>
-                <Paging count={pageCount} setPage={setPage} page={page} />
+                <Paging count={pageCount} setPage={setPage} page={page} localfilters={localfilters} />
             </div>
 
 
