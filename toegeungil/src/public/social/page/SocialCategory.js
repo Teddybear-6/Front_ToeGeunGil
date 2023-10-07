@@ -45,20 +45,27 @@ function SocialCategory({ localfilters }) {
 
   }, [categoryCode, page, localfilters]);
 
-  const setPage = useCallback((page) => {
-    setPages(page);
-  });
+  const setPage = useCallback(
+    (page) => {
+      setPages(page);
+    }
+  );
+
+  const loginHandler = () => {
+    alert("[social] 회원만 작성 가능합니다.");
+    window.location.href = "/login"
+  }
 
   return (
     <>
       <div className="toegeungillayout">
         <div>
-          {!socials ? "nullllldddddlllllllllll." : (
+          {!socials ? <div>해당 게시글이 존재하지 않습니다.</div> : (
             <SocialMainCard socials={socials} />
           )}
           {/* 회원만 글 작성 가능 */}
           <div>
-            {!user ? null :
+            {!user ? <button className='writeButton mar' onClick={loginHandler}>게시글 작성</button> :
               <Link to="write" type='button' className='writeButton mar'>게시글 작성</Link>}
           </div>
           <Paging count={pageCount} setPage={setPage} page={page} categoryCode={categoryCode} />

@@ -44,7 +44,7 @@ function SocialMain({ localfilters }) {
             //지역이 설정되어 있을 경우 지역을 조회
             fetch(process.env.REACT_APP_URL + `/socials/local/${localfilters}?page=${page - 1}&size=12`)
                 .then((response) => response.json())
-                .then((data) => { return (setSocials(data["value"]), setPageCount(data["size"])) })
+                .then((data) => setSocials(data))
 
             fetch(process.env.REACT_APP_URL + `/socials/local/${localfilters}/size`)
                 .then(res => res.json())
@@ -53,24 +53,28 @@ function SocialMain({ localfilters }) {
 
     }, [page, localfilters]);
 
-
     const setPage = useCallback(
         (page) => {
             setPages(page)
         }
     )
 
+    const loginHandler = () => {
+        alert("[social] 회원만 작성 가능합니다.");
+        window.location.href = "/login"
+    }
+
     return (
         <>
             <div className='toegeungillayout'>
                 <div>
-                    {!socials ? "nullllldddddlllllllllll." : (
+                    {!socials ? <div>해당 게시글이 존재하지 않습니다.</div> : (
                         <SocialMainCard socials={socials} />
                     )}
                 </div>
                 {/* 회원만 글 작성 가능 */}
                 <div>
-                    {!user ? null :
+                    {!user ? <button className='writeButton mar' onClick={loginHandler}>게시글 작성</button> :
                         <Link to="write" type='button' className='writeButton mar'>게시글 작성</Link>}
                 </div>
                 <Paging count={pageCount} setPage={setPage} page={page} localfilters={localfilters} />
