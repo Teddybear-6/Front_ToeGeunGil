@@ -43,8 +43,12 @@ function SocialMain({ localfilters }) {
         } else {
             //지역이 설정되어 있을 경우 지역을 조회
             fetch(process.env.REACT_APP_URL + `/socials/local/${localfilters}?page=${page - 1}&size=12`)
-            .then((response) => response.json())
-            .then((data) => { return (setSocials(data["value"]), setPageCount(data["size"])) })
+                .then((response) => response.json())
+                .then((data) => { return (setSocials(data["value"]), setPageCount(data["size"])) })
+
+            fetch(process.env.REACT_APP_URL + `/socials/local/${localfilters}/size`)
+                .then(res => res.json())
+                .then(res => setPageCount(res))
         }
 
     }, [page, localfilters]);
@@ -59,10 +63,16 @@ function SocialMain({ localfilters }) {
     return (
         <>
             <div className='toegeungillayout'>
-                <SocialMainCard socials={socials} />
+                <div>
+                    {!socials ? "nullllldddddlllllllllll." : (
+                        <SocialMainCard socials={socials} />
+                    )}
+                </div>
                 {/* 회원만 글 작성 가능 */}
-                {!user ? null :
-                    <Link to="write" type='button' className='writeButton mar'>게시글 작성</Link>}
+                <div>
+                    {!user ? null :
+                        <Link to="write" type='button' className='writeButton mar'>게시글 작성</Link>}
+                </div>
                 <Paging count={pageCount} setPage={setPage} page={page} localfilters={localfilters} />
             </div>
         </>

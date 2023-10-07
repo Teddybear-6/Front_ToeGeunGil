@@ -18,6 +18,8 @@ function SocialNavbar({ localfilters, setLocalFilters }) {
         fetch(process.env.REACT_APP_URL + `/local`)
             .then(res => res.json())
             .then(res => setLocal(res));
+
+        setLocalFilters(null)
     }, [])
 
     const onChangeHandler = (e) => {
@@ -28,9 +30,8 @@ function SocialNavbar({ localfilters, setLocalFilters }) {
     return (
         <>
             {/* 지역 Navbar */}
-            <div className="hobbyNavlocalframe">
-                <label className="hobbylocalLable" htmlFor="local">지역</label>
-                <div className="hobbyNavlocal">
+                <label htmlFor="local">지역</label>
+                <div>
                     <select
                         defaultValue="0"
                         name="localCode"
@@ -45,7 +46,6 @@ function SocialNavbar({ localfilters, setLocalFilters }) {
                         ))}
                     </select>
                 </div>
-            </div>
 
             {/* 카테고리 Navbar */}
             <div className="cateNav">
