@@ -32,18 +32,22 @@ function SocialCategory({ localfilters }) {
         .then((res) => res.json())
         .then((res) => setPageCount(res));
     } else {
+            //여기서 오류 발생!!!
       //지역 필터가 있을 경우 지역필터 + 카테고리필터
       fetch(
-        process.env.REACT_APP_URL + `/socials/category/${categoryCode}/loacal/${localfilters}?page=${page - 1}&size=12`)
+        process.env.REACT_APP_URL + `/socials/category/${categoryCode}/local/${localfilters}?page=${page - 1}&size=12`)
         .then((response) => response.json())
         .then((data) => setSocials(data));
 
-      fetch(process.env.REACT_APP_URL + `/socials/category/${categoryCode}/loacal/${localfilters}/size`)
+      fetch(process.env.REACT_APP_URL + `/socials/category/${categoryCode}/local/${localfilters}/size`)
         .then((res) => res.json())
         .then((res) => setPageCount(res));
     }
 
   }, [categoryCode, page, localfilters]);
+
+  console.log(socials)
+  console.log(`/socials/category/${categoryCode}/loacal/${localfilters}/size`)
 
   const setPage = useCallback(
     (page) => {
