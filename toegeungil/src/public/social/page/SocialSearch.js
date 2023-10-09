@@ -8,13 +8,14 @@ function SocialSearch() {
     const [social, setSocial] = useState([]);
     const [page, setPages] = useState(1);
     const [pageCount, setPageCount] = useState();
-    // const socialName = useLocation().state
+    const socialName = useLocation().state
 
-    const [socialName, setSocialName] = useState(
-        useLocation.state?.socialName
-    );
+    // const [socialName, setSocialName] = useState(
+    //     useLocation.state?.socialName
+    // );
 
-    console.log("social: ", social)
+    console.log("social : ", social)
+    console.log("socialName : ", socialName)
 
     useEffect(() => {
 
@@ -36,12 +37,12 @@ function SocialSearch() {
         setPages(page)
     })
 
-    console.log("social: ", social)
-
     return (
         <>
             <div className='toegeungillayout'>
-                <SocialMainCard socials={social}></SocialMainCard>
+                {!social ? null :
+                    <SocialMainCard socials={social}></SocialMainCard>
+                }
             </div>
             <div>
                 <Paging count={pageCount} setPage={setPage} page={page} />
