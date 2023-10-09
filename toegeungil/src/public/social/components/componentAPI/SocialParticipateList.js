@@ -10,18 +10,13 @@ function SocialParticipateList({ postNum }) {
     const [participate, setParticipate] = useState([{}]);
 
     useEffect(() => {
-
         api();
-
         //모임 정원 받아오기
         fetch(process.env.REACT_APP_URL + `/socials/${postNum.socialNum}`)
             .then(response => response.json()) //json으로 받는다
             .then(data => setSocials(data));
-
     }, [postNum]);
-
     const api = () => {
-
         //참여자 밑 인원수만큼 이미지 아이콘 뿌려주기
         fetch(process.env.REACT_APP_URL + `/socials/participate/${postNum.socialNum}`)
             .then(response => response.json())
