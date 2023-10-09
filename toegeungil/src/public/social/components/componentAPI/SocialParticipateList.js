@@ -11,10 +11,7 @@ function SocialParticipateList({ postNum }) {
 
     useEffect(() => {
 
-        //참여자 밑 인원수만큼 이미지 아이콘 뿌려주기
-        fetch(process.env.REACT_APP_URL + `/socials/participate/${postNum.socialNum}`)
-            .then(response => response.json())
-            .then(data => setParticipate(data));
+        api();
 
         //모임 정원 받아오기
         fetch(process.env.REACT_APP_URL + `/socials/${postNum.socialNum}`)
@@ -23,6 +20,13 @@ function SocialParticipateList({ postNum }) {
 
     }, [postNum]);
 
+    const api = () => {
+
+        //참여자 밑 인원수만큼 이미지 아이콘 뿌려주기
+        fetch(process.env.REACT_APP_URL + `/socials/participate/${postNum.socialNum}`)
+            .then(response => response.json())
+            .then(data => setParticipate(data));
+    }
     return (
         <>
             {/* 참여자 */}
@@ -40,7 +44,7 @@ function SocialParticipateList({ postNum }) {
                             }
                             {/* {Object.keys(participate[0]) <=0 ? null : "sdsd"} */}
                         </div>
-                        <SocialParticipate socials={socials} socialNum={postNum.socialNum} socialFixedNum={socials.socialFixedNum} socialWriter={socials.userNum} participateLength={participate} />
+                        <SocialParticipate socials={socials} socialNum={postNum.socialNum} socialFixedNum={socials.socialFixedNum} socialWriter={socials.userNum} participateLength={participate} api={api}/>
                     </div>
                 </div>
             </div>

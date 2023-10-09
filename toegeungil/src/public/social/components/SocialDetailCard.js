@@ -62,7 +62,6 @@ function SocialDetailCard() {
         }
     }
 
-
     return (
         <>
             <div className="maB100">

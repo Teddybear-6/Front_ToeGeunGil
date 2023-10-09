@@ -5,7 +5,7 @@ import { Link, NavLink } from "react-router-dom";
 import SocialParticipateView from "./SocialParticipateView";
 
 
-function SocialParticipate({ socials, socialNum, socialFixedNum, socialWriter, participateLength }) { //소설 번호 받아오기
+function SocialParticipate({ socials, socialNum, socialFixedNum, socialWriter, participateLength, api }) { //소설 번호 받아오기
 
     // console.log("fixNum : " + socialFixedNum); //최대 인원 초과시 참여 불가를 위해 
     // console.log("작성자 번호 : " + socialWriter); //작성자에게는 참여자 리스트 보이기
@@ -18,7 +18,6 @@ function SocialParticipate({ socials, socialNum, socialFixedNum, socialWriter, p
         if (sessionStorage.getItem("Authorizaton")) {
             setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
         }
-
     }, [socials, participateLength]);
 
     const join = (user) => {
@@ -42,6 +41,7 @@ function SocialParticipate({ socials, socialNum, socialFixedNum, socialWriter, p
                     .then(res => {
                         alert(res) //참가 완료 알림
                         setParticipate(true)
+                        api();
                     }).catch(r => console.log(r))
             }
         } else if (participate) {
@@ -53,6 +53,7 @@ function SocialParticipate({ socials, socialNum, socialFixedNum, socialWriter, p
                     .then(res => {
                         alert(res) //참가 취소 알림
                         setParticipate(false)
+                        api();
                     }).catch(r => console.log(r))
             }
         }
