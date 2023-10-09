@@ -20,8 +20,15 @@ function SocialSearch({ socialName }) {
         //소셜 검색
         //http://localhost:8001/socials/size?socialName=%EC%97%AC%EB%A6%84
         fetch(process.env.REACT_APP_URL + `/socials/search?socialName=${socialName}&page=${page - 1}&size=12`)
-            .then((response) => response.json())
-            .then((data) => setSocial(data));
+            .then(response => {
+                if (response.status === 500) {
+                    setSocial(null)
+                } else {
+                    return response.json();
+                }
+            }).then(res => setSocial(res))
+
+
 
         //소셜 검색 size
         //http://localhost:8001/socials/search/size?socialName=%EC%97%AC%EB%A6%84
@@ -35,15 +42,13 @@ function SocialSearch({ socialName }) {
         setPages(page)
     })
 
-    console.log("social : ", social)
-    console.log(social.length)
-    console.log("socialName(검색어) : ", socialName)
+
 
     return (
         <>
             <div className='toegeungillayout'>
                 {
-                    !(social === null) ? <div>검색결과가 없습니다.</div> : (<SocialMainCard socials={social} />)
+                    !social ? <div>검색결과가 없습니다.</div> : (<SocialMainCard socials={social} />)
                 }
             </div>
             <div>
