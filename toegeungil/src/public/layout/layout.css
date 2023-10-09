@@ -155,13 +155,20 @@
     text-align: right;
 }
 
-.borderNone {
-    border: none;
-    background-color: white;
-}
-
-.borderNone:hover {
-    border: none;
+.searchBorder {
+    border: 1px solid #87746B;
+    width: 130px;
+    height: 60px;
+    text-align: center;
+    border-radius: 20px;
     background-color: white;
     color: #87746B;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.searchBorder:hover {
+    border: none;
+    background-color: #B9A49B;
+    color: white;
 }

@@ -43,11 +43,11 @@ function SocialSearch() {
     return (
         <>
             <div className='toegeungillayout'>
+                <div className="menuFont">Social - '{socialName}' 전체 결과</div>
+                <hr className='hrSty marB50' />
                 {
                     !social ? <div>검색결과가 없습니다.</div> : (<SocialMainCard socials={social} />)
                 }
-            </div>
-            <div>
                 {
                     !social ? null : <Paging count={pageCount} setPage={setPage} page={page} />
                 }

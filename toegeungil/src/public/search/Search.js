@@ -5,15 +5,20 @@ import "../layout/layout.css"
 import { useEffect, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import SocialMainCard from "../social/components/SocialMainCard";
+import HobbyMain from "../hobby/components/hobbyMain";
 
 function Search() {
 
     const searcWord = useLocation().state //검색어 가져오기
     const [social, setSocial] = useState([]);
+    const [hobby, setHobby] = useState([]);
 
     const navigate = useNavigate();
-    const handleClick = (e) => (
-        navigate('/social/search', {state: searcWord}) //검색어 넘겨주기
+    const socialClick = (e) => (
+        navigate('/search/social', { state: searcWord }) //검색어 넘겨주기
+    )
+    const hobbyClick = (e) => (
+        navigate('/hobby/search', { state: searcWord }) //검색어 넘겨주기
     )
 
     useEffect(() => {
@@ -28,24 +33,33 @@ function Search() {
                 }
             }).then(res => setSocial(res))
 
+        //취미 검색 (4개만)
+        fetch(process.env.REACT_APP_URL + `/hobbys/search?hobbytitle=${searcWord}&size=4`)
+            .then((response) => response.json())
+            .then((data) => setHobby(data["value"]))
+
     }, [searcWord]);
 
     return (
         <>
             {/* 취미 */}
             <div>
-                <div className="searchFlex mar50">
-                    <div className="menuFont">Hobby 검색 결과</div>
-                    <button className="headerFont borderNone">전체보기</button>
+                <div className="searchFlex">
+                    <div className="menuFont">Hobby - '{searcWord}' 검색 결과</div>
+                    <button className="searchBorder" onClick={hobbyClick}>전체보기</button>
                 </div>
                 <hr className='hrSty marB50' />
-                <HobbySearch />
+                <div className='toegeungillayout'>
+                    {
+                        !hobby ? <div>검색결과가 없습니다.</div> : (<HobbyMain hobbys={hobby} />)
+                    }
+                </div>
             </div>
             {/* 소셜 */}
             <div>
-                <div className="searchFlex mar50">
-                    <div className="menuFont">Social 검색 결과</div>
-                    <button className="headerFont borderNone" onClick={handleClick}>전체보기</button>
+                <div className="searchFlex">
+                    <div className="menuFont">Social - '{searcWord}' 검색 결과</div>
+                    <button className="searchBorder" onClick={socialClick}>전체보기</button>
                 </div>
                 <hr className='hrSty marB50' />
                 <div className='toegeungillayout'>

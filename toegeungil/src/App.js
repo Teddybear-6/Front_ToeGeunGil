@@ -90,14 +90,17 @@ function App() {
             <Route path="/hobbystudent" element={<StudentList />} />
           </Route>
           {/* 소셜 */}
-          <Route path="search" element={<Search/>}/>
+          <Route path="search">
+            <Route index element={<Search />} />
+            <Route path="social" element={<SocialSearch />} />
+          </Route>
           <Route element={<SocialLayout localfilters={localfilters} setLocalFilters={setLocalFilters} />}>
             <Route path="social" element={<SocialMain localfilters={localfilters} />} />
             <Route path="socialcategory/:categoryCode" element={<SocialCategory localfilters={localfilters} />} />
             <Route path='social/:socialNum' element={<SocialDetail />} />
             <Route path='social/write' element={<SocialWrite />} />
             <Route path="social/modify" element={<SocialModify />} />
-            <Route path="social/search" element={<SocialSearch/>}/>
+
           </Route>
           {/* 커뮤니티 */}
           <Route path="/communitys" element={<CommunityMain />} />
