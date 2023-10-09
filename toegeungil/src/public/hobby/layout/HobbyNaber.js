@@ -23,7 +23,7 @@ const HobbyNavber = ({ localfilters, setLocalFilters }) => {
   return (
     <>
       <div className="hobbyNavlocalframe">
-        <label htmlFor="local">지역선택</label>
+        <label className="hobbylocalLable" htmlFor="local">지역</label>
         <div className="hobbyNavlocal">
           <select
             defaultValue="0"
