@@ -70,6 +70,9 @@
 <br><br><br>
 
 ## 스웨거 (Swagger)
+### [ 스웨거 명세서 ]
+[퇴근길 스웨거 명세서 확인하기](http://toegeungil.shop:8001/swagger-ui/) <br>
+<br>
 ### [ API 설계 ]
 |기능|Method|URL|
 |:---|:---:|:---:|
