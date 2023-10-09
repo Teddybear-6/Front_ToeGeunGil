@@ -12,7 +12,6 @@ function Navbar() {
 
     const navigate = useNavigate();
     const [hobbyTitle, setHobbyTitle] = useState();
-    // const [socialName, setSocialName] = useState();
 
     const handleClick = (e) => (
         navigate('/hobby/search', { state: hobbyTitle })
@@ -28,7 +27,7 @@ function Navbar() {
         }
     };
 
-
+    console.log(categoryCode)
     return (
         <>
             <div className="navbarLayout navbarFlex">
@@ -38,8 +37,8 @@ function Navbar() {
                 </NavLink>
                 {/* Navbar */}
                 <div className="navbarFlex mar50">
-                    <NavLink to="/hobby" className={({ isActive }) => isActive ? "navbarOn navbarLine" : "navbarFont navbarLine"}>Hobby</NavLink>
-                    <NavLink to="/social" className={({ isActive }) => isActive ? "navbarOn navbarLine" : (location.pathname == `/socialcategory/${categoryCode}`)? "navbarOn navbarLine" : "navbarFont navbarLine"}>Social</NavLink>
+                    <NavLink to="/hobby" className={({ isActive }) => isActive ? "navbarOn navbarLine" : (location.pathname == `/hobbycategory/${categoryCode}`) ? "navbarOn navbarLine" : "navbarFont navbarLine"}>hobby</NavLink>
+                    <NavLink to="/social" className={({ isActive }) => isActive ? "navbarOn navbarLine" : (location.pathname == `/socialcategory/${categoryCode}`) ? "navbarOn navbarLine" : "navbarFont navbarLine"}>Social</NavLink>
                     <NavLink to="/communitys" className={({ isActive }) => isActive ? "navbarOn navbarLine" : "navbarFont navbarLine"}>Community</NavLink>
                 </div>
                 {/* 검색창 */}
