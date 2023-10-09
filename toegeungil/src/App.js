@@ -89,9 +89,9 @@ function App() {
             <Route path="/hobbystudent" element={<StudentList />} />
           </Route>
           {/* 소셜 */}
-          <Route element={<SocialLayout />}>
-            <Route path="social" element={<SocialMain />} />
-            <Route path="socialcategory/:categoryCode" element={<SocialCategory />} />
+          <Route element={<SocialLayout localfilters={localfilters} setLocalFilters={setLocalFilters} />}>
+            <Route path="social" element={<SocialMain localfilters={localfilters} />} />
+            <Route path="socialcategory/:categoryCode" element={<SocialCategory localfilters={localfilters} />} />
             <Route path='social/:socialNum' element={<SocialDetail />} />
             <Route path='social/write' element={<SocialWrite />} />
             <Route path="social/modify" element={<SocialModify />} />

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import Paging from '../components/component/Paging';
 
-function SocialMain() {
+function SocialMain({ localfilters }) {
     /*
     Social 메인 페이지
     
@@ -23,24 +23,35 @@ function SocialMain() {
 
     const [user, setUser] = useState(); //(객체:!user)권한 회원 정보
 
-    useEffect(()=> {
+    useEffect(() => {
 
         //권한설정
         if (sessionStorage.getItem("Authorizaton")) {
             setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
         }
-    
-        //paging
-        fetch(process.env.REACT_APP_URL+`/socials?page=${page - 1}&size=12`)
-        .then((response) => response.json())
-        .then((data) => setSocials(data))
 
-        fetch(process.env.REACT_APP_URL+`/socials/size`)
-        .then(res => res.json())
-        .then(res => setPageCount(res))
+        //지역이 설정되어 있지 않을 경우 소셜 전체 조회
+        if (localfilters === "0" || localfilters === undefined || localfilters === null) {
+            //paging
+            fetch(process.env.REACT_APP_URL + `/socials?page=${page - 1}&size=12`)
+                .then((response) => response.json())
+                .then((data) => setSocials(data))
 
-    }, [page]);
+            fetch(process.env.REACT_APP_URL + `/socials/size`)
+                .then(res => res.json())
+                .then(res => setPageCount(res))
+        } else {
+            //지역이 설정되어 있을 경우 지역을 조회
+            fetch(process.env.REACT_APP_URL + `/socials/local/${localfilters}?page=${page - 1}&size=12`)
+                .then((response) => response.json())
+                .then((data) => setSocials(data))
 
+            fetch(process.env.REACT_APP_URL + `/socials/local/${localfilters}/size`)
+                .then(res => res.json())
+                .then(res => setPageCount(res))
+        }
+
+    }, [page, localfilters]);
 
     const setPage = useCallback(
         (page) => {
@@ -48,14 +59,25 @@ function SocialMain() {
         }
     )
 
+    const loginHandler = () => {
+        alert("[social] 회원만 작성 가능합니다.");
+        window.location.href = "/login"
+    }
+
     return (
         <>
             <div className='toegeungillayout'>
-                <SocialMainCard socials={socials}/>
+                <div>
+                    {!socials ? <div>해당 게시글이 존재하지 않습니다.</div> : (
+                        <SocialMainCard socials={socials} />
+                    )}
+                </div>
                 {/* 회원만 글 작성 가능 */}
-                {!user ? null : 
-                <Link to="write" type='button' className='writeButton mar'>게시글 작성</Link>}
-                <Paging count={pageCount} setPage={setPage} page={page} />
+                <div>
+                    {!user ? <button className='writeButton mar' onClick={loginHandler}>게시글 작성</button> :
+                        <Link to="write" type='button' className='writeButton mar'>게시글 작성</Link>}
+                </div>
+                <Paging count={pageCount} setPage={setPage} page={page} localfilters={localfilters} />
             </div>
         </>
     );
