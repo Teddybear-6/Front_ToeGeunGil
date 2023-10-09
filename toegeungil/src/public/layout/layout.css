@@ -97,6 +97,10 @@
     margin-right: 50px;
 }
 
+.marB50 {
+    margin-bottom: 50px;
+}
+
 .searchicon {
     width: 28px;
     height: 28px;
@@ -149,4 +153,15 @@
     font-size: 18px;
     font-weight: bold;
     text-align: right;
+}
+
+.borderNone {
+    border: none;
+    background-color: white;
+}
+
+.borderNone:hover {
+    border: none;
+    background-color: white;
+    color: #87746B;
 }

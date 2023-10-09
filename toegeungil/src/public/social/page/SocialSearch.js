@@ -1,15 +1,15 @@
 import { useEffect, useState, useCallback } from "react";
-// import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import SocialMainCard from '../components/SocialMainCard';
 import Paging from '../components/component/Paging';
 
-function SocialSearch({ socialName }) {
+function SocialSearch() {
 
     const [social, setSocial] = useState([]);
     const [page, setPages] = useState(1);
     const [pageCount, setPageCount] = useState();
 
-    // const socialName = useLocation().state
+    const socialName = useLocation().state
 
     // const [socialName, setSocialName] = useState(
     //     useLocation.state?.socialName
@@ -28,8 +28,6 @@ function SocialSearch({ socialName }) {
                 }
             }).then(res => setSocial(res))
 
-
-
         //소셜 검색 size
         //http://localhost:8001/socials/search/size?socialName=%EC%97%AC%EB%A6%84
         fetch(process.env.REACT_APP_URL + `/socials/search/size?socialName=${socialName}`)
@@ -42,8 +40,6 @@ function SocialSearch({ socialName }) {
         setPages(page)
     })
 
-
-
     return (
         <>
             <div className='toegeungillayout'>
@@ -52,7 +48,9 @@ function SocialSearch({ socialName }) {
                 }
             </div>
             <div>
-                <Paging count={pageCount} setPage={setPage} page={page} />
+                {
+                    !social ? null : <Paging count={pageCount} setPage={setPage} page={page} />
+                }
             </div>
         </>
     )
