@@ -97,6 +97,10 @@
     margin-right: 50px;
 }
 
+.marB50 {
+    margin-bottom: 50px;
+}
+
 .searchicon {
     width: 28px;
     height: 28px;
@@ -149,4 +153,22 @@
     font-size: 18px;
     font-weight: bold;
     text-align: right;
+}
+
+.searchBorder {
+    border: 1px solid #87746B;
+    width: 130px;
+    height: 60px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: white;
+    color: #87746B;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.searchBorder:hover {
+    border: none;
+    background-color: #B9A49B;
+    color: white;
 }
