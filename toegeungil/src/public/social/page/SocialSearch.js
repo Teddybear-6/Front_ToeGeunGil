@@ -1,29 +1,27 @@
 import { useEffect, useState, useCallback } from "react";
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 import SocialMainCard from '../components/SocialMainCard';
 import Paging from '../components/component/Paging';
 
-function SocialSearch() {
+function SocialSearch({ socialName }) {
 
     const [social, setSocial] = useState([]);
     const [page, setPages] = useState(1);
     const [pageCount, setPageCount] = useState();
-    const socialName = useLocation().state
+
+    // const socialName = useLocation().state
 
     // const [socialName, setSocialName] = useState(
     //     useLocation.state?.socialName
     // );
 
-    console.log("social : ", social)
-    console.log("socialName : ", socialName)
-
     useEffect(() => {
 
         //소셜 검색
-        http://localhost:8001/socials/size?socialName=%EC%97%AC%EB%A6%84
+        //http://localhost:8001/socials/size?socialName=%EC%97%AC%EB%A6%84
         fetch(process.env.REACT_APP_URL + `/socials/search?socialName=${socialName}&page=${page - 1}&size=12`)
             .then((response) => response.json())
-            .then((data) => setSocial(data))
+            .then((data) => setSocial(data));
 
         //소셜 검색 size
         //http://localhost:8001/socials/search/size?socialName=%EC%97%AC%EB%A6%84
@@ -37,11 +35,15 @@ function SocialSearch() {
         setPages(page)
     })
 
+    console.log("social : ", social)
+    console.log(social.length)
+    console.log("socialName(검색어) : ", socialName)
+
     return (
         <>
             <div className='toegeungillayout'>
-                {!social ? null :
-                    <SocialMainCard socials={social}></SocialMainCard>
+                {
+                    !(social === null) ? <div>검색결과가 없습니다.</div> : (<SocialMainCard socials={social} />)
                 }
             </div>
             <div>

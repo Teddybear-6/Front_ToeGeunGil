@@ -54,6 +54,7 @@ import CategoryModify from "./public/category/pages/CategoryModify";
 import React, { useState } from "react";
 import CommunityModify from "./public/community/pages/CommunityModify";
 import SocialSearch from "./public/social/page/SocialSearch";
+import Search from "./public/search/Search";
 
 function App() {
   /* 라우팅
@@ -89,6 +90,7 @@ function App() {
             <Route path="/hobbystudent" element={<StudentList />} />
           </Route>
           {/* 소셜 */}
+          <Route path="search" element={<Search/>}/>
           <Route element={<SocialLayout localfilters={localfilters} setLocalFilters={setLocalFilters} />}>
             <Route path="social" element={<SocialMain localfilters={localfilters} />} />
             <Route path="socialcategory/:categoryCode" element={<SocialCategory localfilters={localfilters} />} />

@@ -46,8 +46,8 @@ function SocialCategory({ localfilters }) {
 
   }, [categoryCode, page, localfilters]);
 
-  console.log(socials)
-  console.log(`/socials/category/${categoryCode}/loacal/${localfilters}/size`)
+  // console.log(socials)
+  // console.log(`/socials/category/${categoryCode}/loacal/${localfilters}/size`)
 
   const setPage = useCallback(
     (page) => {

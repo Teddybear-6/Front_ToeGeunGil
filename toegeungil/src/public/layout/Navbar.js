@@ -12,13 +12,16 @@ function Navbar() {
 
     const navigate = useNavigate();
     const [hobbyTitle, setHobbyTitle] = useState();
+    const [socialName, setSocialName] = useState();
 
     const handleClick = (e) => (
-        navigate('/hobby/search', { state: hobbyTitle })
+        // navigate('/hobby/search', { state: hobbyTitle })
+        navigate('/search', {state: socialName, hobbyTitle})
     )
 
     const onChangeHandler = (e) => (
-        setHobbyTitle(e.target.value)
+        setHobbyTitle(e.target.value),
+        setSocialName(e.target.value)
     )
 
     const handleOnKeyPress = e => {
