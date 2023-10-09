@@ -43,8 +43,12 @@ function SocialMainCard({socials}) {
                                     {/* 키워드 */}
                                     <div className={MainStyle.socialMainKeyword}>
                                         <div className={DetailsStyle.flexStyle} key={i}>
+                                            {/* 키워드 뿌려주기 (index 0,1,2만 보여주고 그 이후는 (...더보기)로 보여줌) */}
                                             {r.keywordDTOList?.map((m, index) => (
-                                                    <SocialKeyword key={index} code={m} />
+                                                <>
+                                                    {index < 3 ? <SocialKeyword key={index} code={m}/> : index===3?
+                                                        <div className={MainStyle.socialMainKeyword3Up}>· · ·</div> : null}
+                                                </>
                                             ))}
                                         </div>
                                     </div>

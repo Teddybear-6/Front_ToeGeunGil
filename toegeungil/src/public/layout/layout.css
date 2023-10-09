@@ -1,5 +1,6 @@
 .toegeungillayout {
     width: 93.75rem;
+    /* width: 80%; */
     margin: auto;
     padding-bottom: 9.375rem;
 }
@@ -26,12 +27,14 @@
 
 .w1650h388 {
     width: 103.125rem;
+    /* width: 80%; */
     height: 24.25rem;
     margin: auto;
 }
 
 .w1650h50 {
     width: 103.125rem;
+    /* width: 80%; */
     height: 3.125rem;
     margin: auto;
 }
