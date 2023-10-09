@@ -27,6 +27,7 @@ function SocialParticipateList({ postNum }) {
             .then(response => response.json())
             .then(data => setParticipate(data));
     }
+
     return (
         <>
             {/* 참여자 */}
@@ -36,15 +37,18 @@ function SocialParticipateList({ postNum }) {
                     <div className={DetailsStyle.socialDetailsParticipateN}>참여자 ( {participate.length} / {socials.socialFixedNum} )</div>
                     <div className={DetailsStyle.flexStyle2}>
                         <div>
-
+                            {/* 이미지 아이콘 8개까지만 표시 */}
                             {
-                                participate.map && participate?.map((i) =>
-                                    <img key={i} className={DetailsStyle.socialDetailsParticipateImg} src="/participate.png" />
+                                participate.map && participate?.map((i, index) =>
+                                    <>
+                                        {(index < 8) ? <img className={DetailsStyle.socialDetailsParticipateImg} src="/participate.png" /> : (index == 8) ?
+                                            <img className={DetailsStyle.socialDetailsParticipateImg} src="/participatePlus.png" /> : null}
+                                    </>
                                 )
                             }
                             {/* {Object.keys(participate[0]) <=0 ? null : "sdsd"} */}
                         </div>
-                        <SocialParticipate socials={socials} socialNum={postNum.socialNum} socialFixedNum={socials.socialFixedNum} socialWriter={socials.userNum} participateLength={participate} api={api}/>
+                        <SocialParticipate socials={socials} socialNum={postNum.socialNum} socialFixedNum={socials.socialFixedNum} socialWriter={socials.userNum} participateLength={participate} api={api} />
                     </div>
                 </div>
             </div>
