@@ -77,11 +77,15 @@ function App() {
             {/* <Route index element={<Mypage/>}/> */}
           </Route>
           {/* 취미 */}
+          <Route path="search">
+            <Route index element={<Search />} />
+            <Route path="hobby" element={<HobbySearch />} />
+          </Route>
           <Route element={<HobbyLayout localfilters={localfilters} setLocalFilters={setLocalFilters} />}>
-            <Route path='/hobby' element={<AllHobby localfilters={localfilters} />} />
+            <Route path='hobby' element={<AllHobby localfilters={localfilters} />} />
             <Route path='hobby/:hobbyCode' element={<HobbyDetail />} />
-            <Route path="/hobbycategory/:categoryCode" element={<CategoryHobby localfilters={localfilters} />} />
-            <Route path="/hobby/search" element={<HobbySearch />} />
+            <Route path="hobbycategory/:categoryCode" element={<CategoryHobby localfilters={localfilters} />} />
+
           </Route>
           <Route element={<TutorLayout />}>
             <Route path="/tutor" element={<TutorHobbyList />} />
