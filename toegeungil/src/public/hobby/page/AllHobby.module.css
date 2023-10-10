@@ -1,24 +1,18 @@
-
-.main{
+.main {
     margin-left: 18.75rem;
     display: "grid";
-    text-align : center;
+    text-align: center;
     justify-content: center;
-   
+
 
 }
 
-.pagingFrame{
+.pagingFrame {
     display: block;
-    
-    
-}
-.paging{
-display: flex;
-    justify-content: center;
-   margin-top: 0.625rem;
-    margin-left: 5.625rem;
-    
-}
 
 
+}
+
+.paging {
+    margin-top: 6.25rem;
+}

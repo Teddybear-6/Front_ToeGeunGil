@@ -30,11 +30,11 @@ function AllHobby({ localfilters }) {
                 {!hobby ? "등록된 취미가 없습니다." :
                     <HobbyMain hobbys={hobby}></HobbyMain>
                 }
+                <div className={AllHobbyCss.paging}>
+                    <Paging count={pageCount} setPage={setPage} page={page} localfilters={localfilters} />
+                </div>
 
             </div >
-            <div className={AllHobbyCss.paging}>
-                <Paging count={pageCount} setPage={setPage} page={page} localfilters={localfilters} />
-            </div>
 
 
         </>
