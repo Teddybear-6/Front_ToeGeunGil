@@ -18,7 +18,7 @@ function Search() {
         navigate('/search/social', { state: searcWord }) //검색어 넘겨주기
     )
     const hobbyClick = (e) => (
-        navigate('/hobby/search', { state: searcWord }) //검색어 넘겨주기
+        navigate('/search/hobby/', { state: searcWord }) //검색어 넘겨주기
     )
 
     useEffect(() => {

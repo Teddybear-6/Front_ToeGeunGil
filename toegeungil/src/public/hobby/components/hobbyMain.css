@@ -6,4 +6,6 @@
     /*줄넘김 처리 설정*/
     justify-content: flex-start;
     /*메인축 방향 설정*/
+
+    width: 100rem;
 }
