@@ -172,9 +172,3 @@
     background-color: #B9A49B;
     color: white;
 }
-
-@media all and (max-width:1440px) {
-    html {
-        font-size: 13px;
-    }
-}

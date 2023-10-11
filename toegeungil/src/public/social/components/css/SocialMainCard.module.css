@@ -90,11 +90,23 @@
     color: white;
 }
 
-#mouseOverSocialKey:hover ~ .mainSocialKeys {
+#mouseOverSocialKey:hover~.mainSocialKeys {
     display: block;
 }
+
 .mainSocialKeys {
     display: none;
+    position: absolute;
+    width: 220px;
+    height: 110px;
+    left: 50;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background: white;
+    color: #fff;
+    border: #B9A49B solid 1px;
+    font-size: 14px;
 }
 
 .container {

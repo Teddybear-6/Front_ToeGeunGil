@@ -49,7 +49,7 @@ function SocialMainCard({ socials }) {
                                         {r.keywordDTOList?.map((m, index) => (
                                             <>
                                                 {index < 3 ? <SocialKeyword key={index} code={m} /> : index === 3 ?
-                                                    <SocialKeywordView key={index} code={m} /> : null}
+                                                    <SocialKeywordView key={index} code={m}/> : null}
                                             </>
                                         ))}
                                     </div>
