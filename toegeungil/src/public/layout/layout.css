@@ -173,8 +173,13 @@
     color: white;
 }
 
-@media all and (max-width:1440px) {
+@media all and (max-width:1400px),
+(max-width:1600px) {
     html {
-        font-size: 13px;
+        font-size: 12px;
     }
+}
+
+.toegeungilMainImg {
+    width: 100%;
 }
