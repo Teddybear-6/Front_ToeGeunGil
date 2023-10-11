@@ -1,13 +1,15 @@
 
 import { useState, useEffect } from "react";
+import jwt_decode from "jwt-decode";
 import { FaStar } from 'react-icons/fa';
 import "./review.css"
 import ReviewAnswer from "./reviewAnswer";
 import NameCard from "./name";
-const ARRAY = [0, 1, 2, 3, 4];
-function ReviewBox({ review }) {
-    const [answer, setAnswer] = useState(null);
 
+const ARRAY = [0, 1, 2, 3, 4];
+function ReviewBox({ review, api }) {
+    const [answer, setAnswer] = useState(null);
+    const [user, setUser] = useState();
 
     const formatDate = (dateString) => {
         if (!dateString) {
@@ -39,11 +41,37 @@ function ReviewBox({ review }) {
         return newArr;
     }
 
+    const deleteOnclickHandler = (reviewCode) => {
+        if (window.confirm("후기 삭제하시겠습니까")) {
+            fetch(process.env.REACT_APP_URL + `/hobbys/review/${reviewCode}`, {
+                method: "DELETE",
+                headers: {
+                    "Authorization": sessionStorage.getItem("Authorizaton")
+                }
+            }).then(res => {
+                if (res.status === 404) {
+                    alert("삭제 실패했습니다.");
+                    api();
+                } else {
+                    return res.json();
+                }
+            }).then(res => {
+                alert(res['value'])
+                api()
+            });
+
+        }
+
+    }
 
     useEffect(() => {
+        if (sessionStorage.getItem("Authorizaton")) {
+            setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
+        }
+
         fetch(process.env.REACT_APP_URL + `/hobbys/review/answer/${review?.reviewCode}`)
-            .then(res => res.json())
-            .then(res => setAnswer(res)).catch(e => console.log(e))
+
+
 
     }, [review])
 
@@ -60,6 +88,8 @@ function ReviewBox({ review }) {
                         <div className="reviewContentBox">
                             <p className="content">{review.content}</p>
                         </div>
+
+                        {!user ? null : user.no === review.userNo ? <button className="reciewDeleteBtn" onClick={() => deleteOnclickHandler(review.reviewCode)} >삭제</button> : null}
                     </div>
 
                     {

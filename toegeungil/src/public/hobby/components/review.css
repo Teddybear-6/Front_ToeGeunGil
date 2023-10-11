@@ -1,15 +1,15 @@
 .RreviewFrame {
-border-radius: 3.125rem;
-margin-top: 0.625rem;
-border: 0.125rem solid #8FC4B3;
-height: auto;
-width: 87.5rem;
-border-radius: 3.125rem;
+  border-radius: 3.125rem;
+  margin-top: 0.625rem;
+  border: 0.125rem solid #8FC4B3;
+  height: auto;
+  width: 87.5rem;
+  border-radius: 3.125rem;
 
 }
 
 
-.RreviewFrameRegist{
+.RreviewFrameRegist {
   border-radius: 3.125rem;
   margin-top: 0.625rem;
   border: 0.125rem solid #8FC4B3;
@@ -18,8 +18,9 @@ border-radius: 3.125rem;
   border-radius: 3.125rem;
 
 }
-.reviewViewsBox{
-  
+
+.reviewViewsBox {
+
   margin-left: 3.125rem;
 
   .yellowStar {
@@ -27,7 +28,7 @@ border-radius: 3.125rem;
   }
 }
 
-.reciewAnswer{
+.reciewAnswer {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
   margin-left: 6.25rem;
@@ -37,36 +38,40 @@ border-radius: 3.125rem;
   border: 0.125rem solid #8FC4B3;
   display: flex;
 }
-.view{
+
+.view {
   display: flex;
 }
-.reviewContentBox{
+
+.reviewContentBox {
   margin-top: 2.5rem;
   margin-left: 25rem;
   text-align: right;
   float: right;
 }
 
-.NickName{
+.NickName {
   font-size: 1.125rem;
   font-weight: bold;
   color: #655853;
 }
-.content{
-  
-  font-weight: bold;
-  color: #655853;
-}
-.answerContentBox{
-margin-left: 3.75rem;
-}
 
-.answerContent{
+.content {
+
   font-weight: bold;
   color: #655853;
 }
 
-.reviewViews{
+.answerContentBox {
+  margin-left: 3.75rem;
+}
+
+.answerContent {
+  font-weight: bold;
+  color: #655853;
+}
+
+.reviewViews {
   margin-top: 1.25rem;
   margin-left: 3.125rem;
   border-radius: 3.125rem;
@@ -78,13 +83,13 @@ margin-left: 3.75rem;
 
 
 
-.reviewContent{
-  
-margin-left: 1.875rem;
-margin-top: 1.25rem;
-height: 4.688rem;
-width: 69.813rem;
-border-radius: 3.125rem;
+.reviewContent {
+
+  margin-left: 1.875rem;
+  margin-top: 1.25rem;
+  height: 4.688rem;
+  width: 69.813rem;
+  border-radius: 3.125rem;
 
 
 }
@@ -102,7 +107,7 @@ border-radius: 3.125rem;
   color: #655853;
 }
 
-.Stars{
+.Stars {
   display: flex;
   padding-top: 0.313rem;
   margin-left: 3.125rem;
@@ -117,7 +122,7 @@ border-radius: 3.125rem;
     color: #fcc419;
   }
 
-  & svg:hover ~ svg {
+  & svg:hover~svg {
     color: gray;
   }
 
@@ -127,34 +132,48 @@ border-radius: 3.125rem;
 }
 
 
-.reviewBtn{
-    margin-top: 1.25rem;
-    margin-right: 3.125rem;
-    float: right;
-    border-radius: 3.125rem;
-    width: 9.375rem;
-    height: 4.688rem;
-    background-color: #8FC4B3;
-    color: #096249;
-    font-size: 1.25rem;
-    font-weight: bold;
-    border: none;
+.reviewBtn {
+  margin-top: 1.25rem;
+  margin-right: 3.125rem;
+  float: right;
+  border-radius: 3.125rem;
+  width: 9.375rem;
+  height: 4.688rem;
+  background-color: #8FC4B3;
+  color: #096249;
+  font-size: 1.25rem;
+  font-weight: bold;
+  border: none;
 }
-.reviewBtn:hover{
-    margin-top: 1.25rem;
-    margin-right: 3.125rem;
-    border-radius: 3.125rem;
-    width: 11.25rem;
-    height: 5.625rem;
-    background-color: #8FC4B3;
-    position: relative;
-    border: none;
-    display: inline-block;
-    padding: 0.938rem 1.875re;
-    font-family: "paybooc-Light", sans-serif;
-    box-shadow: 0 0.938rem 2.188rem rgba(0, 0, 0, 0.2);
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.25s;
-    font-weight: bold;
+
+.reviewBtn:hover {
+  margin-top: 1.25rem;
+  margin-right: 3.125rem;
+  border-radius: 3.125rem;
+  width: 11.25rem;
+  height: 5.625rem;
+  background-color: #8FC4B3;
+  position: relative;
+  border: none;
+  display: inline-block;
+  padding: 0.938rem 1.875re;
+  font-family: "paybooc-Light", sans-serif;
+  box-shadow: 0 0.938rem 2.188rem rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.25s;
+  font-weight: bold;
+}
+
+.reciewDeleteBtn {
+  margin-top: 2.5rem;
+  margin-right: 3.125rem;
+  border-radius: 3.125rem;
+  width: 5rem;
+  height: 3.125rem;
+  background-color: #8FC4B3;
+  color: #096249;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border: none;
 }
