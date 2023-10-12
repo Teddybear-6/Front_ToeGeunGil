@@ -43,25 +43,28 @@ function SocialMainCard({ socials }) {
                                 </Link>
                                 {/* <p><SocialCategory key={i} cateCode={r.castegoryCode}></SocialCategory></p> */}
                                 {/* 키워드 */}
-                                <div className={MainStyle.socialMainKeyword}>
-                                    <div className={DetailsStyle.flexStyle} key={i}>
-                                        {/* 키워드 뿌려주기 (index 0,1,2만 보여주고 그 이후는 (...더보기)로 보여줌) */}
-                                        {r.keywordDTOList?.map((m, index) => (
-                                            <>
-                                                {index < 3 ? <SocialKeyword key={index} code={m} /> : index === 3 ?
-                                                    <>
-                                                        <div className={MainStyle.socialMainKeyword3Up}>· · ·</div>
-                                                        <SocialKeywordView key={index} code={m} />
-                                                    </>
-                                                    :
-                                                    <>
-                                                        <div className={MainStyle.mainSocialKeysTool}>
-                                                            <SocialKeywordView key={index} code={m} />
-                                                        </div>
-                                                    </>
+                                <div>
+                                    <div className={MainStyle.socialMainKeyword}>
+                                        <div className={DetailsStyle.flexStyle} key={i}>
+                                            {/* 키워드 뿌려주기 (index 0,1,2만 보여주고 그 이후는 (...더보기)로 보여줌) */}
+                                            {r.keywordDTOList?.map((m, index) => (
+                                                <>
+                                                    {index < 3 ? <SocialKeyword key={index} code={m} /> : index === 3 ?
+                                                        <div className={MainStyle.socialMainKeyword3Up}>· · ·</div> : null
                                                     }
-                                            </>
-                                        ))}
+                                                </>
+                                            ))}
+                                        </div>
+                                    </div>
+                                    {/* hover 키워드 */}
+                                    <div key={i} className={`${MainStyle.mainSocialKeysTool}`}>
+                                        <div className={MainStyle.mainSocialKeysToolFlex}>
+                                            {r.keywordDTOList?.map((m, index) => (
+                                                <>
+                                                    {index >= 3 ? <SocialKeywordView key={index} code={m} /> : null}
+                                                </>
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
                             </div>

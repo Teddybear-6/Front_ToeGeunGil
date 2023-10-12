@@ -61,6 +61,7 @@
 }
 
 .socialMainKeyword3Up {
+    /* ... css */
     width: 70px;
     height: 30px;
     font-weight: 600;
@@ -75,38 +76,22 @@
     color: #87746B;
 }
 
-/* 키워드 */
 .mainSocialKeysTool {
-    /* display: none; */
-    /* position: absolute; */
-    width: 100px;
-    height: 110px;
-    background-color: #B9A49B;
+    display: none;
+    width: 300px;
+    height: 70px;
+    margin-left: 20px;
+    margin-top: 5px;
+    background-color: #87746B;
     border-radius: 10px;
-    /* left: 50;
-    border: #B9A49B solid 1px; */
 }
 
-.mainSocialKeys {
-    /* display: none; */
-    /* position: absolute; */
+.socialMainKeyword3Up:hover {
     width: 70px;
-    height: 30px;
-    /* left: 50; */
-    border-radius: 10px;
-    background: #41A487;
-    color: #ab4c4c;
-    /* border: #B9A49B solid 1px; */
-    font-size: 14px;
-}
-
-/* .socialMainKeyword3Up:hover ~ .mainSocialKeysTool {
-    display: block;
-    width: 150px;
     height: 30px;
     font-weight: 600;
     border-radius: 50px;
-    background-color: #B9A49B;
+    background-color: #87746B;
     border: 1px solid #B9A49B;
     text-align: center;
     display: flex;
@@ -114,7 +99,34 @@
     align-items: center;
     margin-right: 5px;
     color: white;
-} */
+}
+
+/* 기타 키워드 */
+.socialMainKeyword3Up:hover ~ .mainSocialKeysTool {
+    /* 기타 키워드 보이기 */
+    display: block;
+}
+
+.mainSocialKeysToolFlex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.mainSocialKeys {
+    width: 70px;
+    height: 30px;
+    font-weight: 600;
+    border-radius: 50px;
+    background-color: white;
+    border: 1px solid #B9A49B;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2.5px ;
+    color: #87746B;
+}
 
 .container {
     display: flex;

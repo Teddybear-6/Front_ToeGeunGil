@@ -16,9 +16,6 @@ function SocialKeywordView({ code }) {
 
     return (
         <>
-            {/* {keyword == null ? null : keyword.keywordName} */}
-            {/* ... 버튼 */}
-            {/* <div id={MainStyle.mouseOverSocialKey} className={MainStyle.socialMainKeyword3Up}>· · ·</div> */}
             {/* 마우스 hover */}
             <div className={MainStyle.mainSocialKeys}>
                 {keyword == null ? null : keyword.keywordName}
