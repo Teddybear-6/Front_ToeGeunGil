@@ -62,7 +62,6 @@ function SocialCategory({ localfilters }) {
 
   return (
     <>
-      <div className="toegeungillayout">
         <div>
           {!socials ? <div>해당 게시글이 존재하지 않습니다.</div> : (
             <SocialMainCard socials={socials} />
@@ -74,7 +73,6 @@ function SocialCategory({ localfilters }) {
           </div>
           <Paging count={pageCount} setPage={setPage} page={page} categoryCode={categoryCode} />
         </div>
-      </div>
     </>
   );
 }

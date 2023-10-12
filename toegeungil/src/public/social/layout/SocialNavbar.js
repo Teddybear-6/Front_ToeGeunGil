@@ -30,13 +30,14 @@ function SocialNavbar({ localfilters, setLocalFilters }) {
     return (
         <>
             {/* 지역 Navbar */}
-                <label htmlFor="local">지역</label>
-                <div>
+            <div className="localFlexSty">
+                <div htmlFor="local" className="localTitle">지역</div>
+                <div className="localChoiceBar">
                     <select
                         defaultValue="0"
                         name="localCode"
                         id="local"
-                        className="nabertextAll"
+                        className="localChoiceTextAll"
                         onChange={onChangeHandler}>
                         <option value="0">전체</option>
                         {local?.map((m, index) => (
@@ -46,6 +47,7 @@ function SocialNavbar({ localfilters, setLocalFilters }) {
                         ))}
                     </select>
                 </div>
+            </div>
 
             {/* 카테고리 Navbar */}
             <div className="cateNav">
