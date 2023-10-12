@@ -75,8 +75,34 @@
     color: #87746B;
 }
 
-.socialMainKeyword3Up:hover {
+/* 키워드 */
+.mainSocialKeysTool {
+    /* display: none; */
+    /* position: absolute; */
+    width: 100px;
+    height: 110px;
+    background-color: #B9A49B;
+    border-radius: 10px;
+    /* left: 50;
+    border: #B9A49B solid 1px; */
+}
+
+.mainSocialKeys {
+    /* display: none; */
+    /* position: absolute; */
     width: 70px;
+    height: 30px;
+    /* left: 50; */
+    border-radius: 10px;
+    background: #41A487;
+    color: #ab4c4c;
+    /* border: #B9A49B solid 1px; */
+    font-size: 14px;
+}
+
+/* .socialMainKeyword3Up:hover ~ .mainSocialKeysTool {
+    display: block;
+    width: 150px;
     height: 30px;
     font-weight: 600;
     border-radius: 50px;
@@ -88,26 +114,7 @@
     align-items: center;
     margin-right: 5px;
     color: white;
-}
-
-#mouseOverSocialKey:hover~.mainSocialKeys {
-    display: block;
-}
-
-.mainSocialKeys {
-    display: none;
-    position: absolute;
-    width: 220px;
-    height: 110px;
-    left: 50;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    background: white;
-    color: #fff;
-    border: #B9A49B solid 1px;
-    font-size: 14px;
-}
+} */
 
 .container {
     display: flex;
