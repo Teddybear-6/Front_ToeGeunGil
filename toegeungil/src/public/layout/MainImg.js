@@ -4,7 +4,7 @@ function MainImg() {
     return (
         <>
             <div className="toegeungillayout">
-                <img src="/mainImg.png" />
+                <img className="toegeungilMainImg" src="/mainImg.png" />
             </div>
         </>
 
