@@ -156,7 +156,7 @@
   position: relative;
   border: none;
   display: inline-block;
-  padding: 0.938rem 1.875re;
+  padding: 0.938rem 1.875rem;
   font-family: "paybooc-Light", sans-serif;
   box-shadow: 0 0.938rem 2.188rem rgba(0, 0, 0, 0.2);
   text-decoration: none;
@@ -166,8 +166,7 @@
 }
 
 .reciewDeleteBtn {
-  margin-top: 2.5rem;
-  margin-right: 3.125rem;
+  margin-bottom: 0.625rem;
   border-radius: 3.125rem;
   width: 5rem;
   height: 3.125rem;
