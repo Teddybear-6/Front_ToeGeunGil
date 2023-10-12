@@ -2,13 +2,13 @@
 활성화 버튼 */
 
 .buttonOn_so {
-    width: 150px;
-    height: 75px;
-    border-radius: 50px;
+    width: 9.375rem;
+    height: 4.688rem;
+    border-radius: 3.125rem;
     color: #096249;
     background-color: #8FC4B3;
     border-color: #8FC4B3;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
     display: flex;
     justify-content: center;
@@ -32,13 +32,13 @@
 비활성화 버튼*/
 
 .buttonOff_so {
-    width: 150px;
-    height: 75px;
-    border-radius: 50px;
+    width: 9.375rem;
+    height: 4.688rem;
+    border-radius: 3.125rem;
     color: #41A487;
     background-color: #CCE2DB;
     border-color: #CCE2DB;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
     display: flex;
     justify-content: center;
@@ -61,14 +61,14 @@
 /*
 게시글 작성 버튼*/
 
-.writeButton_so {
-    width: 250px;
-    height: 75px;
-    border-radius: 50px;
+.writeButtonSocial {
+    width: 15.625rem;
+    height: 4.688rem;
+    border-radius: 3.125rem;
     color: #41A487;
     background-color: white;
-    border: 2px solid #41A487;
-    font-size: 20px;
+    border: 0.125rem solid #41A487;
+    font-size: 1.25rem;
     font-weight: bold;
     display: flex;
     justify-content: center;
@@ -76,22 +76,22 @@
     text-decoration-line: none;
 }
 
-.writeButton_so:hover {
+.writeButtonSocial:hover {
     background-color:#CCE2DB;
-    border: 2px solid #CCE2DB;
+    border: 0.125rem solid #CCE2DB;
     transition: 0.7s;
 }
 
-.writeButton_so:active {
+.writeButtonSocial:active {
     background-color: #8FC4B3;
 }
 
 .mar {
-    margin-left: 15px;
+    margin-left: 0.938rem;
 }
 
 .marR30 {
-    margin-right: 30px;
+    margin-right: 1.875rem;
 }
 
 .buttonFlex {
@@ -101,5 +101,5 @@
 }
 
 .marT30 {
-    padding-top: 30px;
+    padding-top: 1.875rem;
 }

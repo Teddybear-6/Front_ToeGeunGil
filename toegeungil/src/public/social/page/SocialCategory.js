@@ -62,19 +62,17 @@ function SocialCategory({ localfilters }) {
 
   return (
     <>
-      <div className="toegeungillayout">
         <div>
           {!socials ? <div>해당 게시글이 존재하지 않습니다.</div> : (
             <SocialMainCard socials={socials} />
           )}
           {/* 회원만 글 작성 가능 */}
           <div>
-            {!user ? <button className='writeButton mar' onClick={loginHandler}>게시글 작성</button> :
-              <Link to="write" type='button' className='writeButton mar'>게시글 작성</Link>}
+            {!user ? <button className='writeButtonSocial mar' onClick={loginHandler}>게시글 작성</button> :
+              <Link to="write" type='button' className='writeButtonSocial mar'>게시글 작성</Link>}
           </div>
           <Paging count={pageCount} setPage={setPage} page={page} categoryCode={categoryCode} />
         </div>
-      </div>
     </>
   );
 }

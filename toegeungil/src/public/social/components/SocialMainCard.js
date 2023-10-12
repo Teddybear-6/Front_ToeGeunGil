@@ -7,8 +7,9 @@ import MainStyle from './css/SocialMainCard.module.css';
 import DetailsStyle from './css/SocialDetails.module.css';
 import { Link } from "react-router-dom";
 import SocialDetails from "./SocialDetailCard";
+import SocialKeywordView from "./componentAPI/SocialKeywordView";
 
-function SocialMainCard({socials}) {
+function SocialMainCard({ socials }) {
 
     /*할일
     - 키워드 뿌리기
@@ -39,20 +40,33 @@ function SocialMainCard({socials}) {
                                     {/* <SocialMainImage key={i} imgcode={r.fileNum} /> */}
                                     {/* 소셜 제목 */}
                                     <div className={MainStyle.socialMainTitle} key={i}>{r.socialName}</div>
-                                    {/* <p><SocialCategory key={i} cateCode={r.castegoryCode}></SocialCategory></p> */}
-                                    {/* 키워드 */}
+                                </Link>
+                                {/* <p><SocialCategory key={i} cateCode={r.castegoryCode}></SocialCategory></p> */}
+                                {/* 키워드 */}
+                                <div>
                                     <div className={MainStyle.socialMainKeyword}>
                                         <div className={DetailsStyle.flexStyle} key={i}>
                                             {/* 키워드 뿌려주기 (index 0,1,2만 보여주고 그 이후는 (...더보기)로 보여줌) */}
                                             {r.keywordDTOList?.map((m, index) => (
                                                 <>
-                                                    {index < 3 ? <SocialKeyword key={index} code={m}/> : index===3?
-                                                        <div className={MainStyle.socialMainKeyword3Up}>· · ·</div> : null}
+                                                    {index < 3 ? <SocialKeyword key={index} code={m} /> : index === 3 ?
+                                                        <div className={MainStyle.socialMainKeyword3Up}>· · ·</div> : null
+                                                    }
                                                 </>
                                             ))}
                                         </div>
                                     </div>
-                                </Link>
+                                    {/* hover 키워드 */}
+                                    <div key={i} className={`${MainStyle.mainSocialKeysTool}`}>
+                                        <div className={MainStyle.mainSocialKeysToolFlex}>
+                                            {r.keywordDTOList?.map((m, index) => (
+                                                <>
+                                                    {index >= 3 ? <SocialKeywordView key={index} code={m} /> : null}
+                                                </>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         )
                     }
