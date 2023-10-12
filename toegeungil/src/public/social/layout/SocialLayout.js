@@ -1,11 +1,13 @@
-import {Outlet} from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import SocialNavbar from "./SocialNavbar";
 
 function SocialLayout({ localfilters, setLocalFilters }) {
-    return(
+    return (
         <>
-            <SocialNavbar localfilters={localfilters} setLocalFilters={setLocalFilters}/>
-            <Outlet/>
+            <div className='toegeungillayout'>
+                <SocialNavbar localfilters={localfilters} setLocalFilters={setLocalFilters} />
+                <Outlet />
+            </div>
         </>
     )
 }

@@ -101,10 +101,12 @@ function App() {
           <Route element={<SocialLayout localfilters={localfilters} setLocalFilters={setLocalFilters} />}>
             <Route path="social" element={<SocialMain localfilters={localfilters} />} />
             <Route path="socialcategory/:categoryCode" element={<SocialCategory localfilters={localfilters} />} />
+
+          </Route>
+          <Route>
             <Route path='social/:socialNum' element={<SocialDetail />} />
             <Route path='social/write' element={<SocialWrite />} />
             <Route path="social/modify" element={<SocialModify />} />
-
           </Route>
           {/* 커뮤니티 */}
           <Route path="/communitys" element={<CommunityMain />} />

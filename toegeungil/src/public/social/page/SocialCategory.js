@@ -68,8 +68,8 @@ function SocialCategory({ localfilters }) {
           )}
           {/* 회원만 글 작성 가능 */}
           <div>
-            {!user ? <button className='writeButton mar' onClick={loginHandler}>게시글 작성</button> :
-              <Link to="write" type='button' className='writeButton mar'>게시글 작성</Link>}
+            {!user ? <button className='writeButtonSocial mar' onClick={loginHandler}>게시글 작성</button> :
+              <Link to="write" type='button' className='writeButtonSocial mar'>게시글 작성</Link>}
           </div>
           <Paging count={pageCount} setPage={setPage} page={page} categoryCode={categoryCode} />
         </div>
