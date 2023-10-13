@@ -1,0 +1,186 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* myPage */
+.userInfoSty {
+    margin-top: 3.75rem;
+    color: #87746B;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 3.125rem;
+    margin-bottom: 0.938rem;
+}
+
+.userInfoBox {
+    width: 42.188rem;
+    height: 18.75rem;
+    border: 0.188rem solid #B9A49B;
+    border-radius: 3.125rem;
+    background-color: white;
+}
+
+.myPageFlex {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.myPageImage {
+    width: 9.375rem;
+    height: 9.375rem;
+    margin-top: 4.688rem;
+    margin-left: 3.125rem;
+    margin-right: 3.125rem;
+}
+
+.myPageUserInfo {
+    color: #B9A49B;
+    font-size: 1.25rem;
+    margin: 0.625rem;
+}
+
+.myPageUserInfoText {
+    color: #87746B;
+    font-size: 1.25rem;
+    margin: 0.625rem;
+    font-weight: bold;
+}
+
+.marT40 {
+    margin-top: 4.375rem;
+}
+
+/* .userInfoButton {
+    margin-top: 0.625rem;
+    margin-left: 12.5rem;
+} */
+
+
+/* 기존 css */
+/* Create three equal columns that floats next to each other */
+.column {
+    text-align: center;
+    font-size: 1.125rem;
+    gap: 0.625rem;
+    font-weight: 500;
+    float: left;
+    margin-top: 3.125rem;
+    width: 24%;
+    padding: 1.875rem;
+    height: 18.75rem;
+    /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+
+    content: "";
+    display: table;
+    clear: both;
+
+}
+
+/* Style the footer */
+.footer {
+    background-color: #f1f1f1;
+    padding: 0.625rem;
+    text-align: center;
+}
+
+
+.mypage-main thead {
+
+    font-weight: bold;
+    color: #87746B;
+    background: #fff;
+    font-size: 1rem;
+
+
+}
+
+
+.mypage-main table {
+    border-collapse: separate;
+    border-spacing: 0rem 1.875rem;
+    width: 93.75rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.mypage-main tbody {
+    font-size: 1.125;
+    color: #B9A49B;
+    text-align: center;
+}
+
+.mypage-mainn th,
+td {
+    border: 0.125rem solid #B9A49B;
+    width: 93.75rem;
+    height: 4.375rem;
+    border-radius: 3.125rem;
+    color: #87746b;
+    font-weight: 700;
+}
+
+.mypage-main th {
+    width: 93.75rem;
+    height: 4.375rem;
+    color: #87746B;
+    font-weight: 700;
+    /* border: 3px solid #8fc4b3; */
+    font-size: 1.25rem;
+}
+
+.mypage-main th:first-child {
+    border-radius: 3.125rem 0 0 3.125rem;
+    border-right: 0rem;
+}
+
+.mypage-main th:nth-child(2) {
+    border-right: 0rem;
+    border-left: 0rem;
+    border-radius: 0 0 0 0
+}
+
+.mypage-main th:nth-child(3) {
+    border-right: 0rem;
+    border-left: 0rem;
+    border-radius: 0 0 0 0
+}
+
+
+.mypage-main th:last-child {
+    border-radius: 0 3.125rem 3.125rem 0;
+    border-left: 0rem;
+
+}
+
+.mypage-main td:first-child {
+    border-radius: 3.125rem 0 0 3.125rem;
+    border-right: 0rem;
+}
+
+.mypage-main td:nth-child(2) {
+    border-right: 0rem;
+    border-left: 0rem;
+    border-radius: 0 0 0 0;
+}
+
+.mypage-main td:nth-child(3) {
+    border-right: 0rem;
+    border-left: 0rem;
+    border-radius: 0 0 0 0;
+}
+
+
+.mypage-main td:last-child {
+    border-radius: 0 3.125rem 3.125rem 0;
+    border-left: 0rem;
+}

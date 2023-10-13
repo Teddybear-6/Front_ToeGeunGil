@@ -121,90 +121,91 @@ function CommunityModify() {
 
     return (
         <>
-            <div className={DetailsTitleStyle.CommunityBar}>Community</div>
-            <div className={DetailsTitleStyle.CommunityStart}></div>
-            <div>
-                <div className={PostingStyle.postingbox}>
-                    <div className={PostingStyle.w1400h50}>
-                        <div className={PostingStyle.w100h50}>
-                            <label className={PostingStyle.communityLabelFont}>소통 제목</label>
+            <div className="toegeungillayout">
+                <div className={DetailsTitleStyle.CommunityBar}>Community</div>
+                <div className={DetailsTitleStyle.CommunityStart}></div>
+                <div>
+                    <div className={PostingStyle.postingbox}>
+                        <div className={PostingStyle.w1400h50}>
+                            <div className={PostingStyle.w100h50}>
+                                <label className={PostingStyle.communityLabelFont}>소통 제목</label>
+                            </div>
+                            <div className={PostingStyle.communityTitleTextBox}>
+                                <textarea
+                                    className={PostingStyle.communityTitleFont}
+                                    name="communityTitle"
+                                    type="text"
+                                    value={community.communityTitle}
+                                    onChange={handleValueChange}
+                                />
+                            </div>
                         </div>
-                        <div className={PostingStyle.communityTitleTextBox}>
-                            <textarea
-                                className={PostingStyle.communityTitleFont}
-                                name="communityTitle"
-                                type="text"
-                                value={community.communityTitle}
-                                onChange={handleValueChange}
-                            />
+                        <div className={PostingStyle.w1400h300}>
+                            <div className={PostingStyle.w100h300}>
+                                <label className={PostingStyle.communityLabelFont}>소통 내용</label>
+                            </div>
+                            <div className={PostingStyle.w1300h300}>
+                                <textarea
+                                    className={PostingStyle.communityContentFont}
+                                    name="communityIntro"
+                                    type="text"
+                                    value={community.communityIntro}
+                                    onChange={handleValueChange}
+                                />
+                            </div>
                         </div>
-                    </div>
-                    <div className={PostingStyle.w1400h300}>
-                        <div className={PostingStyle.w100h300}>
-                            <label className={PostingStyle.communityLabelFont}>소통 내용</label>
+                        {categoryHandler()}
+                        <div className={PostingStyle.w1400h50}>
+                            <div className={PostingStyle.w100h50}>
+                                <label className={PostingStyle.communityLabelFont}>카테고리</label>
+                            </div>
+                            <div className={PostingStyle.communityCategoryBox}>
+                                {category.map((m, index) => (
+                                    <label htmlFor="categoryCode">
+                                        <div className={PostingStyle.communityCategory}>
+                                            <input key={index} type="checkbox" name="categoryCode" value={m.categoryCode}
+                                                onChange={(e) => checkOnlyOne(e.target)} />
+                                            <div>{m.categoryName}</div>
+                                        </div>
+                                    </label>
+                                ))}
+                            </div>
                         </div>
-                        <div className={PostingStyle.w1300h300}>
-                            <textarea
-                                className={PostingStyle.communityContentFont}
-                                name="communityIntro"
-                                type="text"
-                                value={community.communityIntro}
-                                onChange={handleValueChange}
-                            />
-                        </div>
-                    </div>
-                    {categoryHandler()}
-                    <div className={PostingStyle.w1400h50}>
-                        <div className={PostingStyle.w100h50}>
-                            <label className={PostingStyle.communityLabelFont}>카테고리</label>
-                        </div>
-                        <div className={PostingStyle.communityCategoryBox}>
-                            {category.map((m, index) => (
-                                <label htmlFor="categoryCode">
-                                    <div className={PostingStyle.communityCategory}>
-                                        <input key={index} type="checkbox" name="categoryCode" value={m.categoryCode}
-                                            onChange={(e) => checkOnlyOne(e.target)} />
-                                        <div>{m.categoryName}</div>
-                                    </div>
+                        <div className={PostingStyle.w1400h300}>
+                            <div className={PostingStyle.w100h300}>
+                                <label className={PostingStyle.communityLabelFont}>
+                                    키워드 선택
                                 </label>
-                            ))}
+                            </div>
+                            <div className={PostingStyle.w1300h300}>
+                                <CommunityKeywordList keyword={keyword} community={community} setCommunity={setCommunity} communityKeyword={community.communityKeywordDTOList}
+                                    setCommunityKeywordDTOList={setCommunityKeywordDTOList} communityKeywordDTOList={communityKeywordDTOList} />
+                            </div>
                         </div>
-                    </div>
-                    <div className={PostingStyle.w1400h300}>
-                        <div className={PostingStyle.w100h300}>
-                            <label className={PostingStyle.communityLabelFont}>
-                                키워드 선택
-                            </label>
+                        <div className={PostingStyle.w1400h50}>
+                            <div className={PostingStyle.w100h50}>
+                                <label className={PostingStyle.communityLabelFont}>지역 선택</label>
+                            </div>
+                            <select className={PostingStyle.w575h50} name="localCode" id="local" value={community.localCode}
+                                onChange={onChangeHandler}>
+                                {local?.map((m, index) => (
+                                    <option value={m.localCode} key={index}>{m.localName}</option>
+                                ))}
+                            </select>
                         </div>
-                        <div className={PostingStyle.w1300h300}>
-                            <CommunityKeywordList keyword={keyword} community={community} setCommunity={setCommunity} communityKeyword={community.communityKeywordDTOList}
-                                setCommunityKeywordDTOList={setCommunityKeywordDTOList} communityKeywordDTOList={communityKeywordDTOList} />
-                        </div>
-                    </div>
-                    <div className={PostingStyle.w1400h50}>
-                        <div className={PostingStyle.w100h50}>
-                            <label className={PostingStyle.communityLabelFont}>지역 선택</label>
-                        </div>
-                        <select className={PostingStyle.w575h50} name="localCode" id="local" value={community.localCode}
-                            onChange={onChangeHandler}>
-                            {local?.map((m, index) => (
-                                <option value={m.localCode} key={index}>{m.localName}</option>
-                            ))}
-                        </select>
-                    </div>
-                    <div>
-                        <button to="/communitys" type="submit"
-                            className={PostingStyle.submitButton}
-                            onClick={(e) => handleSubmit(e)}>작성
-                        </button>
-                        <Link to="/communitys" type="submit">
-                            <button className={PostingStyle.submitButton}>취소</button>
-                        </Link>
+                        <div>
+                            <button to="/communitys" type="submit"
+                                className={PostingStyle.submitButton}
+                                onClick={(e) => handleSubmit(e)}>작성
+                            </button>
+                            <Link to="/communitys" type="submit">
+                                <button className={PostingStyle.submitButton}>취소</button>
+                            </Link>
 
+                        </div>
                     </div>
-                </div>
-            </div >
-
+                </div >
+            </div>
         </>
     )
 

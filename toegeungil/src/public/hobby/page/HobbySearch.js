@@ -24,11 +24,13 @@ function HobbySearch() {
 
     return (
         <>
-            <div className='toegeungillayout'>
-                {!hobby ? "검색결과가 없습니다." :
-                    <HobbyMain hobbys={hobby}></HobbyMain>
-                }
-            </div>
+
+            <div className="menuFont">Hobby - '{title}' 전체 결과</div>
+            <hr className='hrSty marB50' />
+            {!hobby ? "검색결과가 없습니다." :
+                <HobbyMain hobbys={hobby}></HobbyMain>
+            }
+
 
             <div className={AllHobbyCss.paging}>
                 <Paging count={pageCount} setPage={setPage} page={page} />

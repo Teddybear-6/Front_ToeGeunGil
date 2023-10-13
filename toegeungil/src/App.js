@@ -54,6 +54,7 @@ import CategoryModify from "./public/category/pages/CategoryModify";
 import React, { useState } from "react";
 import CommunityModify from "./public/community/pages/CommunityModify";
 import SocialSearch from "./public/social/page/SocialSearch";
+import Search from "./public/search/Search";
 
 function App() {
   /* 라우팅
@@ -75,12 +76,17 @@ function App() {
           <Route path="mypage" element={<Mypage />}>
             {/* <Route index element={<Mypage/>}/> */}
           </Route>
+          {/* 검색 */}
+          <Route path="search">
+            <Route index element={<Search />} />
+            <Route path="hobby" element={<HobbySearch />} />
+            <Route path="social" element={<SocialSearch />} />
+          </Route>
           {/* 취미 */}
           <Route element={<HobbyLayout localfilters={localfilters} setLocalFilters={setLocalFilters} />}>
-            <Route path='/hobby' element={<AllHobby localfilters={localfilters} />} />
+            <Route path='hobby' element={<AllHobby localfilters={localfilters} />} />
             <Route path='hobby/:hobbyCode' element={<HobbyDetail />} />
-            <Route path="/hobbycategory/:categoryCode" element={<CategoryHobby localfilters={localfilters} />} />
-            <Route path="/hobby/search" element={<HobbySearch />} />
+            <Route path="hobbycategory/:categoryCode" element={<CategoryHobby localfilters={localfilters} />} />
           </Route>
           <Route element={<TutorLayout />}>
             <Route path="/tutor" element={<TutorHobbyList />} />
@@ -89,13 +95,14 @@ function App() {
             <Route path="/hobbystudent" element={<StudentList />} />
           </Route>
           {/* 소셜 */}
-          <Route element={<SocialLayout />}>
-            <Route path="social" element={<SocialMain />} />
-            <Route path="socialcategory/:categoryCode" element={<SocialCategory />} />
+          <Route element={<SocialLayout localfilters={localfilters} setLocalFilters={setLocalFilters} />}>
+            <Route path="social" element={<SocialMain localfilters={localfilters} />} />
+            <Route path="socialcategory/:categoryCode" element={<SocialCategory localfilters={localfilters} />} />
+          </Route>
+          <Route>
             <Route path='social/:socialNum' element={<SocialDetail />} />
             <Route path='social/write' element={<SocialWrite />} />
             <Route path="social/modify" element={<SocialModify />} />
-            <Route path="social/search" element={<SocialSearch/>}/>
           </Route>
           {/* 커뮤니티 */}
           <Route path="/communitys" element={<CommunityMain />} />

@@ -6,7 +6,7 @@ import "../../layout/layout.css";
 function CommunityMain({ }) {
     return (
         <>
-            <div className='ttoegeungillayou'>
+            <div className='toegeungillayout'>
                 <CommunityList />
             </div>
         </>

@@ -4,9 +4,10 @@ import HobbyNavber from "./HobbyNaber";
 function HobbyLayout({ localfilters, setLocalFilters }) {
     return (
         <>
-
-            <HobbyNavber localfilters={localfilters} setLocalFilters={setLocalFilters} />
-            <Outlet />
+            <div className='toegeungillayout'>
+                <HobbyNavber localfilters={localfilters} setLocalFilters={setLocalFilters} />
+                <Outlet />
+            </div>
 
         </>
     )

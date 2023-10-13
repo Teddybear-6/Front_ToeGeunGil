@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import CardStyle from './hobbyCard.module.css';
 import { Link } from 'react-router-dom'
 import HobbyCardkeyword from './hobbyCardKeyword';
@@ -24,13 +24,11 @@ function HobbyCard(hobbys) {
                         }
                         <p className={CardStyle.hobbyTitle}>{hobbys.hobbys.hobbyTitle}</p>
 
-                        <div>
+                        <div className={CardStyle.keywordhide}>
                             <HobbyCagegoty category={hobbys.hobbys?.categoryCode} />
 
                             <HobbyCardkeyword keyword={hobbys.hobbys?.keyword} />
-                            <div className={CardStyle.keywordUnName}>
-                                <p className={CardStyle.keywordName}>···</p>
-                            </div>
+
                         </div>
                         <p className={CardStyle.hobbyPrice}> {hobbys.hobbys.hobbyPrice}원</p>
                     </div>

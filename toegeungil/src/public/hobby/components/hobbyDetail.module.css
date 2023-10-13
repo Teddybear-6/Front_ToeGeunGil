@@ -1,208 +1,202 @@
+.smallImage {
+    width: 11.25rem;
+    height: 7.5rem;
+    border-radius: 3.125rem;
+    display: flex;
+}
 
-    
-    .smallImage{
-        width: 11.25rem;
-        height: 7.5rem;
-        border-radius: 3.125rem;
-        display: flex;
-    }
-    
-    .mainImage{
-        display: flex;
-        width: 36.875Rem;
-        height: 30.625Rem;
-        border-radius: 3.125rem;
-        
-    }
-    
-    
-    .mainImageDiv{
-        position: relative;
-        display:flex;
-        margin-left: 1.875rem;
-    }
-    
-    .imageLine{
-        margin-right: 3.125rem;
-        display: grid;
-    }
-    
-    
-    .schedule{
-        float:left;
-        border: 2px solid #8FC4B3;
-        border-radius: 3.125rem;
-        height: 43.75rem;
-        width: 35.625rem;
-        margin-left: 1.25rem
-        
-        
-      
-    }
-    .introName{
-        margin: 3.125rem 3.125rem 0px 3.125rem;
-        width: 80rem;
-        height: 1.5rem;
-        font-size: 1.5rem;
-        color: #8FC4B3;
-        font-weight: bold;
-    }
-    
-    .details{
-        float:left;
-       
-       
-    }
-    
-    .scheduleTitle{
-        text-align: center;
-        color: #8FC4B3;
-        font-weight: bold;
-    }
-    
-    .scheduleContent{
-       margin-left: 3.125rem;
-     
-        
+.mainImage {
+    display: flex;
+    width: 36.875Rem;
+    height: 30.625Rem;
+    border-radius: 3.125rem;
 
-        width: 29.375rem;
-        height: 1.125rem;
-        font-size: 1.125rem;
-        font-weight: bold;
-        color: #87746B;
-        margin-bottom: 1.875rem
-    }
-    
-    .frame{
-        margin-left: 12.5rem;
-        align-items: center;
-        /* min-height: 100dvh; */
-    
-        /* height: 75vh; */
-    
-       
-    }
-    
-    .likeBtn{
-        margin-right: 3.125rem;
-        float: right;
-        border-radius: 3.125rem;
-        width: 7.5rem;
-        height: 3.125rem;
-        background-color: #8FC4B3;
-        color: #096249;
-        font-size: 1.25rem;
-        font-weight: bold;
-    }
-    
-    .likeBtn:hover{
-        margin-right: 3.125rem;
-        border-radius: 53.125rem;
-        width: 8.75rem;
-        height: 3.75rem;
-        background-color: #8FC4B3;
-        position: relative;
-        border: none;
-        display: inline-block;
-        padding: 15px 30px;
-        font-family: "paybooc-Light", sans-serif;
-        box-shadow: 0 0.938rem 2.188rem rgba(0, 0, 0, 0.2);
-        text-decoration: none;
-        font-weight: 600;
-        transition: 0.25s;
-        font-weight: bold;
-    }
-    
-    
-    .joinframe{
-       margin-top: 0.625rem;
-        border: 0.125rem solid #8FC4B3;
-        height: 14.375rem;
-       width: 87.5rem;
-        border-radius: 3.125rem;
-        
-        
-    }
-    
-    .joinTitle{
-        font-size: 1.rem;
-        color: #655853;
-        margin-left: 3.125rem;
-        color: #8FC4B3;
-    }
-    
-    .joinBtn{
-        margin-right: 3.125rem;
-        float: right;
-        border-radius: 3.125rem;
-        width: 9.375rem;
-        height: 4.688rem;
-        background-color: #8FC4B3;
-        color: #096249;
-        font-size: 1.25rem;
-        font-weight: bold;
-    }
-    .joinBtn:hover{
-        margin-right: 3.125rem;
-        border-radius: 3.125rem;
-        width: 11.25rem;
-        height: 5.625rem;
-        background-color: #8FC4B3;
-        position: relative;
-        border: none;
-        display: inline-block;
-        padding: 0.938 1.875rem;
-        font-family: "paybooc-Light", sans-serif;
-        box-shadow: 0 0.938rem 2.188rem rgba(0, 0, 0, 0.2);
-        text-decoration: none;
-        font-weight: 600;
-        transition: 0.25s;
-        font-weight: bold;
-    }
-    
-    .frame2{
-        display: flex;
-    }
-    .cBtn{
-        margin-right: 3.125rem;
-        float: right;
-        border-radius: 3.125rem;
-        width: 11.875rem;
-        height: 4.688rem;
-        background-color: #8FC4B3;
-        color: #096249;
-        font-size: 1.25rem;
-        font-weight: bold;
-        disabled : disabled
-    }
-    
-    .intro{
-        margin-top: 0.625rem;
-        border: 2px solid #8FC4B3;
-        height: 28.125rem;
-        width: 87.5rem;
-        border-radius: 3.125rem;
-    }
-    
-    .introContent{
-        margin-left: 3.125rem;
-        color: #8FC4B3;
-        font-weight: bold;
-        font-size: 1.125rem;
-    }
-    
+}
 
-    .socialDetailsParticipateN {
-        margin-top: 1.25rem;
-        margin-left: 2.5rem;
-        width: 80rem;
-        height: 1.5rem;
-        margin-bottom: 1.875rem;
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #87746B;
-    }
+
+.mainImageDiv {
+    position: relative;
+    display: flex;
+    margin-left: 1.875rem;
+}
+
+.imageLine {
+    margin-right: 3.125rem;
+    display: grid;
+}
+
+
+.schedule {
+    float: left;
+    border: 2px solid #8FC4B3;
+    border-radius: 3.125rem;
+    height: 43.75rem;
+    width: 35.625rem;
+    margin-left: 1.25rem
+}
+
+.introName {
+    margin: 3.125rem 3.125rem 0px 3.125rem;
+    width: 80rem;
+    height: 1.5rem;
+    font-size: 1.5rem;
+    color: #8FC4B3;
+    font-weight: bold;
+}
+
+.details {
+    float: left;
+
+
+}
+
+.scheduleTitle {
+    text-align: center;
+    color: #8FC4B3;
+    font-weight: bold;
+}
+
+.scheduleContent {
+    margin-left: 3.125rem;
 
 
 
+    width: 29.375rem;
+    height: 1.125rem;
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #87746B;
+    margin-bottom: 1.875rem
+}
 
+.frame {
+    margin-left: 12.5rem;
+    align-items: center;
+    /* min-height: 100dvh; */
+
+    /* height: 75vh; */
+
+
+}
+
+.likeBtn {
+    margin-right: 3.125rem;
+    float: right;
+    border-radius: 3.125rem;
+    width: 7.5rem;
+    height: 3.125rem;
+    background-color: #8FC4B3;
+    color: #096249;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.likeBtn:hover {
+    margin-right: 3.125rem;
+    border-radius: 53.125rem;
+    width: 8.75rem;
+    height: 3.75rem;
+    background-color: #8FC4B3;
+    position: relative;
+    border: none;
+    display: inline-block;
+    padding: 15px 30px;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 0.938rem 2.188rem rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+    font-weight: bold;
+}
+
+
+.joinframe {
+    margin-top: 0.625rem;
+    border: 0.125rem solid #8FC4B3;
+    height: 14.375rem;
+    width: 87.5rem;
+    border-radius: 3.125rem;
+
+
+}
+
+.joinTitle {
+    font-size: 1.rem;
+    color: #655853;
+    margin-left: 3.125rem;
+    color: #8FC4B3;
+}
+
+.joinBtn {
+    margin-right: 3.125rem;
+    float: right;
+    border-radius: 3.125rem;
+    width: 9.375rem;
+    height: 4.688rem;
+    background-color: #8FC4B3;
+    color: #096249;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.joinBtn:hover {
+    margin-right: 3.125rem;
+    border-radius: 3.125rem;
+    width: 11.25rem;
+    height: 5.625rem;
+    background-color: #8FC4B3;
+    position: relative;
+    border: none;
+    display: inline-block;
+    padding: 0.938 1.875rem;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 0.938rem 2.188rem rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+    font-weight: bold;
+}
+
+.frame2 {
+    display: flex;
+}
+
+.cBtn {
+    margin-right: 3.125rem;
+    float: right;
+    border-radius: 3.125rem;
+    width: 11.875rem;
+    height: 4.688rem;
+    background-color: #8FC4B3;
+    color: #096249;
+    font-size: 1.25rem;
+    font-weight: bold;
+    disabled: disabled
+}
+
+.intro {
+    margin-top: 0.625rem;
+    border: 2px solid #8FC4B3;
+    height: 28.125rem;
+    width: 87.5rem;
+    border-radius: 3.125rem;
+}
+
+.introContent {
+    margin-left: 3.125rem;
+    color: #8FC4B3;
+    font-weight: bold;
+    font-size: 1.125rem;
+}
+
+
+.socialDetailsParticipateN {
+    margin-top: 1.25rem;
+    margin-left: 2.5rem;
+    width: 80rem;
+    height: 1.5rem;
+    margin-bottom: 1.875rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #87746B;
+}
