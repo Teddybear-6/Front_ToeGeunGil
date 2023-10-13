@@ -17,7 +17,7 @@ const CommunityList = () => {
             .then((data) => {
                 setCommunityList(data);
             });
-        console.log(communityList);
+
 
     };
 
@@ -27,7 +27,7 @@ const CommunityList = () => {
         }
 
         getCommunityList();
-        console.log(communityList);
+
     }, []);
 
 

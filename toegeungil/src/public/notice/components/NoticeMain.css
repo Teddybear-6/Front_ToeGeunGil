@@ -1,4 +1,4 @@
-.table-wrapper {
+.notice-table-wrapper {
     width: 1200px;
     border-spacing: 0px 30px;
     margin-top: 30px;
@@ -7,7 +7,7 @@
     margin-left: auto;
 }
 
-th {
+.notice-wrapper th {
     border: 2px solid #B9A49B;
     width: 1200px;
     height: 60px;
@@ -17,7 +17,7 @@ th {
     border-radius: 50px;
 }
 
-td {
+.notice-wrapper td {
     border: 2px solid #B9A49B;
     width: 1200px;
     height: 60px;
@@ -32,40 +32,40 @@ td {
 }
 
 
-th:first-child {
+.notice-wrapper th:first-child {
     border-radius: 50px 0 0 50px;
     border-right: 0px;
 
 }
 
-th:nth-child(2) {
+.notice-wrapper th:nth-child(2) {
     border-right: 0px;
     border-left: 0px;
     border-radius: 0 0 0 0;
 }
 
-th:last-child {
+.notice-wrapper th:last-child {
     border-radius: 0 50px 50px 0;
     border-left: 0px;
 }
 
-td:first-child {
+.notice-wrapper td:first-child {
     border-radius: 50px 0 0 50px;
     border-right: 0px;
 }
 
-td:nth-child(2) {
+.notice-wrapper td:nth-child(2) {
     border-right: 0px;
     border-left: 0px;
     border-radius: 0 0 0 0;
 }
 
-td:last-child {
+.notice-wrapper td:last-child {
     border-radius: 0 50px 50px 0;
     border-left: 0px;
 }
 
-.table-wrapper tbody tr:hover{
+.table-wrapper tbody tr:hover {
     background-color: #E9E0DD;
 }
 
