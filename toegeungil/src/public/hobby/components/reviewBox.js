@@ -99,7 +99,7 @@ function ReviewBox({ review, api }) {
     }
 
     const editInput = (
-        <input type="text" value={edidt} onChange={e => setEdidt(e.target.value)}></input>
+        <input className="editInput" type="text" value={edidt} onChange={e => setEdidt(e.target.value)}></input>
     )
 
     const editing = () => {
