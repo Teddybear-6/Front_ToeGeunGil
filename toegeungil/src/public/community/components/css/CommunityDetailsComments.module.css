@@ -3,91 +3,91 @@
 .CommentDetail{
     flex-direction: row;
     justify-content: flex-start;
-    margin-top: 175px;
-    margin-left: 50px;
+    margin-top: 10.938rem;
+    margin-left: 3.125rem;
 }
 
 .CommentBar{
-    width: 1500px;
-    margin-bottom: 40px;
-    border: 1px solid #E9E0DD;
-    margin-left: -40px;
+    width: 93.75rem;
+    margin-bottom: 2.5rem;
+    border: 0.063rem solid #E9E0DD;
+    margin-left: -2.5rem;
 }
 
 .CommentsBox{
-    width: 1400px;
-    height: 150px;
-    border: 3px solid #E9E0DD;
-    margin-bottom: 30px;
-    border-radius: 50px;
+    width: 87.5rem;
+    height: 9.375rem;
+    border: 0.188rem solid #E9E0DD;
+    margin-bottom: 1.875rem;
+    border-radius: 3.125rem;
     display: flex;
 }
 
 .CommentDetailsView{
     display: flex;
-    margin-top: 30px;
-    margin-left: 10px;
+    margin-top: 1.875rem;
+    margin-left: 0.625rem;
 }
 
 .CommentWriterBox{
-    width: 193px;
-    height: 50px;
+    width: 12.063rem;
+    height: 3.125rem;
 
 }
 
 .CommentWriter{
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     color: #655853;
 }
 
 .CommentWriterDate{
-    font-size: 14px;
+    font-size: 0.875rem;
     color: #655853;
 }
 
 .CommentWriterDetail{
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: bold;
     color: #655853;
-    width: 988px;
-    height: 84px;
+    width: 61.75rem;
+    height: 5.25rem;
 }
 
 .NewCommentBox{
-    width: 1400px;
-    height: 170px;
-    border: 3px solid #E9E0DD;
-    border-radius: 50px;
-    margin-top: 100px;
-    margin-left: 50px;
+    width: 87.5rem;
+    height: 10.625rem;
+    border: 0.188rem solid #E9E0DD;
+    border-radius: 3.125rem;
+    margin-top: 6.25rem;
+    margin-left: 3.125rem;
 }
 
 .NewCommentInputBox{
-    width: 1117px;
-    height: 118px;
-    border: 3px solid #E9E0DD;
-    border-radius: 50px;
-    margin-left: 50px;
-    margin-top: 26px;
-    font-size: 14px;
+    width: 69.813rem;
+    height: 7.375rem;
+    border: 0.188rem solid #E9E0DD;
+    border-radius: 3.125rem;
+    margin-left: 3.125rem;
+    margin-top: 3.125rem;
+    font-size: 0.875rem;
     color: #655853;
 }
 
 .NewCommentButton{
-    width: 150px;
-    height: 75px;
-    margin-left: 42px;
-    border-radius: 50px;
-    border: 1px solid #8FC4B3;
+    width: 9.375rem;
+    height: 4.688rem;
+    margin-left: 2.625rem;
+    border-radius: 3.125rem;
+    border: 0.063rem solid #8FC4B3;
     background-color: #8FC4B3;
     color: #096249;
     cursor: pointer;
 }
 
 .CommunityParticipate{
-    width: 80px;
-    height: 80px;
-    margin-left: 50px;
-    margin-top: 30px;
+    width: 5rem;
+    height: 5rem;
+    margin-left: 3.125rem;
+    margin-top: 1.875rem;
 }

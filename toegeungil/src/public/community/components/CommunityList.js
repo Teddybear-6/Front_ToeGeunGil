@@ -36,7 +36,7 @@ const CommunityList = () => {
     };
 
     return (
-        <div>
+        <div className="communityMain">
             <table className="community-main">
                 <thead>
                     <tr>
@@ -65,7 +65,11 @@ const CommunityList = () => {
                                 <td>
                                     <div className={DetailsTitleStyle.MainKeyword}>
                                         {community.communityKeywordDTOList?.map((m, index) => (
-                                            <CommunityKeyword key={index} code={m} />
+                                            <>
+                                                {index < 3 ? <CommunityKeyword key={index} code={m} /> : index === 3 ?
+                                                    <div className={DetailsTitleStyle.communityMainKeyword3Up}>···</div> : null
+                                                }
+                                            </>
                                         ))}
                                     </div>
                                 </td>

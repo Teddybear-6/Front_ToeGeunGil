@@ -1,93 +1,94 @@
+
 thead {
     font-weight: bold;
     color: #87746B;
     background: #fff;
-    font-size: 20px;
+    font-size: 1rem;
 }
 
 table {
     border-collapse: separate;
-    border-spacing: 0px 30px;
-    width: 1500px;
+    border-spacing: 0rem 1.875rem;
+    width: 93.75rem;
     margin-right: auto;
     margin-left: auto;
 }
 
 tbody {
-    font-size: 18px;
+    font-size: 1.125;
     color: #B9A49B;
     text-align: center;
 }
 
 th, td {
-    border: 2px solid #B9A49B;
-    width: 1500px;
-    height: 70px;
-    border-radius: 50px;
+    border: 0.125rem solid #B9A49B;
+    width: 93.75rem;
+    height: 4.375rem;
+    border-radius: 3.125rem;
 }
 
 th{
-    width: 1500px;
-    height: 70px;
+    width: 93.75rem;
+    height: 4.375rem;
     color: #87746B;
     font-weight: bold;
 }
 
 th:first-child{
-    border-radius: 50px 0 0 50px;
-    border-right: 0px;
+    border-radius: 3.125rem 0 0 3.125rem;
+    border-right: 0rem;
 }
 
 th:nth-child(2){
-    border-right: 0px;
-    border-left: 0px;
+    border-right: 0rem;
+    border-left: 0rem;
     border-radius: 0 0 0 0
 }
 
 th:nth-child(3){
-    border-right: 0px;
-    border-left: 0px;
+    border-right: 0rem;
+    border-left: 0rem;
     border-radius: 0 0 0 0
 }
 
 th:nth-child(4){
-    border-right:0px;
-    border-left: 0px;
+    border-right: 0rem;
+    border-left: 0rem;
     border-radius: 0 0 0 0
 }
 
 th:last-child{
-    border-radius: 0 50px 50px 0;
-    border-left: 0px ;
+    border-radius: 0 3.125rem 3.125rem 0;
+    border-left: 0rem ;
     
 }
 
 td:first-child{
-    border-radius: 50px 0 0 50px;
-    border-right: 0px;
+    border-radius: 3.125rem 0 0 3.125rem;
+    border-right: 0rem;
 }
 
 td:nth-child(2){
-    border-right: 0px;
-    border-left: 0px;
+    border-right: 0rem;
+    border-left: 0rem;
     border-radius: 0 0 0 0;
 }
 
 td:nth-child(3){
-    border-right: 0px;
-    border-left: 0px;
+    border-right: 0rem;
+    border-left: 0rem;
     border-radius: 0 0 0 0;
 }
 
 td:nth-child(4){
-    border-right: 0px;
-    border-left: 0px;
+    border-right: 0rem;
+    border-left: 0rem;
     border-radius: 0 0 0 0;
 }
 
 td:last-child{
-    border-radius: 0 50px 50px 0;
-    border-left: 0px ;
+    border-radius: 0 3.125rem 3.125rem 0;
+    border-left: 0rem ;
 }
 
 .community-list-row{
@@ -98,15 +99,15 @@ td:last-child{
 .community-regist-button {
     background-color: #fff;
     color: #41A487;
-    border-radius: 50px;
+    border-radius: 3.125rem;
     cursor: pointer;
-    width: 250px;
-    height: 75px;
-    border: 2px solid #41A487;
-    font-size: 20px;
+    width: 15.625rem;
+    height: 4.688rem;
+    border: 0.125rem solid #41A487;
+    font-size: 1rem;
     font-weight: bolder;
-    margin-top: 60px;
-    margin-left: 80px;
+    margin-top: 3.75rem;
+    margin-left: 5rem;
 }
 
 

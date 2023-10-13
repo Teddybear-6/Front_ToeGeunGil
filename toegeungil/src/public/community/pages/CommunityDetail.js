@@ -69,7 +69,7 @@ function CommunityDetail({ }) {
 
     return (
         <>
-            <div className='ttoegeungillayou'>
+            <div className='toegeungillayout'>
                 <CommunityDetailsTitle />
                 <CommunityDetails />
                 <CommunityComment comments={comments} setComments={setComments} comment={comment} setComment={setComment} communityNum={communityNum} handleSubmit={handleSubmit}/>
