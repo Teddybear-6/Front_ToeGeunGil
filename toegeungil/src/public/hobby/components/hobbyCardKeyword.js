@@ -1,5 +1,6 @@
 
 import HobbyKeyword from './HobbyKeyword';
+import HobbyKeywordhide from './hobbyKeywordhide';
 import { useEffect } from 'react';
 import CardStyle from './hobbyCard.module.css';
 function HobbyCardkeyword({ keyword }) {
@@ -24,9 +25,11 @@ function HobbyCardkeyword({ keyword }) {
     if (newArr?.length < keyword?.length) {
       for (let index = newArr?.length; index < keyword?.length; index++) {
 
-        newArrhide.push(<div key={index} className={CardStyle.keywordCardhide}>
-          <HobbyKeyword keyword={keyword[index]} />
-        </div>)
+        newArrhide.push(
+
+          <HobbyKeywordhide keyword={keyword[index]} />
+
+        )
 
       }
       return newArrhide;
@@ -41,10 +44,14 @@ function HobbyCardkeyword({ keyword }) {
       {keywordArr(keyword)}
       {keyword?.length >= 3 &&
         <>
-          <div className={CardStyle.keywordUnName}>
-            <p className={CardStyle.keywordName}>···</p>
+          <div className={CardStyle.keywordUnName}>· · ·
+            <div className={CardStyle.mainHobbyKeysTool}>
+              <div className={CardStyle.mainHobbyKeysToolFlex}>
+
+                {keywordArrhide(keyword)}
+              </div>
+            </div>
           </div>
-          {keywordArrhide(keyword)}
         </>
       }
 
