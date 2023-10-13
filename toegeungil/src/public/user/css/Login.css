@@ -28,6 +28,7 @@
     height: 0.375rem;
     background: #128865;
     border-radius: 0.563rem;
+    margin-top: 15px;
 }
 
 .userInputs {
@@ -59,13 +60,13 @@
     background: transparent;
     border: none;
     outline: none;
-    color: #128865;
+    color: #096249;
     font-size: 1.063rem;
     font-weight: bold;
 }
 
 .userInput input::placeholder {
-    color: #CCE2DB;
+    color: #8FC4B3;
 }
 
 .userForgotPassword {

@@ -7,6 +7,7 @@ import name_icon from '../imgs/name.png';
 import nickname_icon from '../imgs/nickname.png';
 import email_icon from '../imgs/email.png';
 
+import "../css/Login.css"
 
 const Signup = () => {
     const [action, setAction] = useState("SignUp");
@@ -136,7 +137,7 @@ const Signup = () => {
                     {/* email */}
                     <div className="userInput">
                         <img src={email_icon} alt="" />
-                        <input type="text" onChange={mailSet} placeholder="Email" />
+                        <input type="email" onChange={mailSet} placeholder="Email" />
                         {/* 이메일 중복 체크 */}
                         <button type="button" name="dbcheckId" onClick={findEmail} className="userCheckId">
                             check </button>

@@ -1,9 +1,10 @@
 /*로그인*/
 import React, { useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
-import './Login.css';
 import email_icon from '../imgs/email.png';
 import password_icon from '../imgs/pass.png';
+
+import "../css/Login.css"
 
 const LoginSignup = ({ setLogin }) => {
     const [action, setAction] = useState("Login");
