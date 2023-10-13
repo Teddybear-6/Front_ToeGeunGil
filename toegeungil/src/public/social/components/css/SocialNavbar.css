@@ -53,24 +53,26 @@
     width: 3.125rem;
     height: 1.375rem;
     color: #87746B;
-    font-size: 1rem;
-    font-weight: bold;
+    font-size: 1.375rem;
+    font-weight: 600;
     align-items: center;
+    margin-right: 10px;
+    margin-bottom: 5px;
 }
 
 .localChoiceBar {
-    width: 12.5rem;
+    width: 15.625rem;
     height: 3.125rem;
     border: 0.125rem solid #B9A49B;
     border-radius: 3.125rem;
 }
 
 .localChoiceTextAll {
-    width: 9.375rem;
-    margin: 0.938rem 1.563rem 0.938rem 1.563rem;
+    width: 12.5rem;
+    margin: 0.75rem 1.563rem 0.75rem 1.563rem;
     border: none;
     resize: none;
-    font-size: 1rem;
+    font-size: 1.375rem;
     outline: none;
     color: #87746B;
     align-items: center;
