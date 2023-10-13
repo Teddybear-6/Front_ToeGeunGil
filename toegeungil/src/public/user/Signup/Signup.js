@@ -138,7 +138,7 @@ const Signup = () => {
                         <img src={email_icon} alt="" />
                         <input type="text" onChange={mailSet} placeholder="Email" />
                         {/* 이메일 중복 체크 */}
-                        <button type="button" name="dbcheckId" onClick={findEmail} className="checkId">
+                        <button type="button" name="dbcheckId" onClick={findEmail} className="userCheckId">
                             check </button>
                     </div>
                     {/* pass */}
@@ -156,6 +156,5 @@ const Signup = () => {
         </>
     )
 };
-
 
 export default Signup;
