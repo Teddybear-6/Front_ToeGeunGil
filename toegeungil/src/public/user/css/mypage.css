@@ -19,8 +19,6 @@ body {
     padding: 1.875rem;
     height: 18.75rem;
     /* Should be removed. Only for demonstration */
-
-
 }
 
 /* Clear floats after the columns */
@@ -81,7 +79,7 @@ td {
     height: 4.375rem;
     color: #87746B;
     font-weight: 700;
-    border: 3px solid #8fc4b3;
+    /* border: 3px solid #8fc4b3; */
     font-size: 1.25rem;
 }
 
