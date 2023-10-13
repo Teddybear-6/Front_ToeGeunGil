@@ -1,13 +1,10 @@
 .community-main thead {
-
+    /* 번호 제목 작성자 지역 키워드 전체 */
     font-weight: bold;
     color: #87746B;
     background: #fff;
     font-size: 1rem;
-
-
 }
-
 
 .community-main {
     border-collapse: separate;
@@ -17,15 +14,14 @@
     margin-left: auto;
 }
 
-
 .community-main tbody {
     font-size: 1.125;
     color: #B9A49B;
     text-align: center;
 }
 
-.community-main th,
-td {
+.community-main td {
+    /* 내용 각 요소*/
     border: 0.125rem solid #B9A49B;
     width: 93.75rem;
     height: 4.375rem;
@@ -35,11 +31,12 @@ td {
 }
 
 .community-main th {
+    /* 번호, 제목, 작성자, 지역, 키워드 각 요소 */
     width: 93.75rem;
     height: 4.375rem;
     color: #87746B;
-    font-weight: 700;
-    border: 3px solid #8fc4b3;
+    font-weight: bold;
+    border: 0.188rem solid #B9A49B;
     font-size: 1.25rem;
 }
 
@@ -104,6 +101,10 @@ td {
     cursor: pointer;
 }
 
+.community-list-row:hover {
+    /* hover 효과 */
+    background-color: #E9E0DD;
+}
 
 .community-regist-button {
     background-color: #fff;

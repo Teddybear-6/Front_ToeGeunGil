@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import email_icon from '../imgs/email.png';
 import password_icon from '../imgs/pass.png';
 
-import "../css/Login.css"
+import "../css/user.css"
 
 const LoginSignup = ({ setLogin }) => {
     const [action, setAction] = useState("Login");

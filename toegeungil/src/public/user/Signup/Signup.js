@@ -7,7 +7,7 @@ import name_icon from '../imgs/name.png';
 import nickname_icon from '../imgs/nickname.png';
 import email_icon from '../imgs/email.png';
 
-import "../css/Login.css"
+import "../css/user.css"
 
 const Signup = () => {
     const [action, setAction] = useState("SignUp");

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Link, json, useNavigate } from 'react-router-dom';
 import email_icon from '../imgs/email.png';
 
-import "../css/Login.css"
+import "../css/user.css"
 
 const Findpass = () => {
 

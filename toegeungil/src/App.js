@@ -76,16 +76,17 @@ function App() {
           <Route path="mypage" element={<Mypage />}>
             {/* <Route index element={<Mypage/>}/> */}
           </Route>
-          {/* 취미 */}
+          {/* 검색 */}
           <Route path="search">
             <Route index element={<Search />} />
             <Route path="hobby" element={<HobbySearch />} />
+            <Route path="social" element={<SocialSearch />} />
           </Route>
+          {/* 취미 */}
           <Route element={<HobbyLayout localfilters={localfilters} setLocalFilters={setLocalFilters} />}>
             <Route path='hobby' element={<AllHobby localfilters={localfilters} />} />
             <Route path='hobby/:hobbyCode' element={<HobbyDetail />} />
             <Route path="hobbycategory/:categoryCode" element={<CategoryHobby localfilters={localfilters} />} />
-
           </Route>
           <Route element={<TutorLayout />}>
             <Route path="/tutor" element={<TutorHobbyList />} />
@@ -94,14 +95,9 @@ function App() {
             <Route path="/hobbystudent" element={<StudentList />} />
           </Route>
           {/* 소셜 */}
-          <Route path="search">
-            <Route index element={<Search />} />
-            <Route path="social" element={<SocialSearch />} />
-          </Route>
           <Route element={<SocialLayout localfilters={localfilters} setLocalFilters={setLocalFilters} />}>
             <Route path="social" element={<SocialMain localfilters={localfilters} />} />
             <Route path="socialcategory/:categoryCode" element={<SocialCategory localfilters={localfilters} />} />
-
           </Route>
           <Route>
             <Route path='social/:socialNum' element={<SocialDetail />} />
