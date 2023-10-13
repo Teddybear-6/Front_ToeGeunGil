@@ -16,7 +16,7 @@ export const QuestionMain = () => {
     <>
       {/* Question Admin Main페이지 */}
 
-      <div className="layout">
+      <div className="toegeungillayout">
         <table className="table-wrapper">
           <thead>
             <tr>
@@ -30,26 +30,26 @@ export const QuestionMain = () => {
 
           <tbody>
             {Object.keys(questions[0]) <= 0
-              ? console.log("dfdfdf")
+              ? null
               : questions.map((q, index) => {
-                  return (
-                    <tr key={q.questionNum}>
-                      <td>{q.questionNum}</td>
-                      <td>
-                        <Link
-                          to={`/service/qna/${q.questionNum}`}
-                          style={{ textDecoration: "none", color: "#87746B" }}
-                          className="title-link"
-                        >
-                          {q.questionTitle}{" "}
-                        </Link>
-                      </td>
-                      <td>{q.questionStatus}</td>
-                      <td>{q.questionNick}</td>
-                      <td>{q.questionDate}</td>
-                    </tr>
-                  );
-                })}
+                return (
+                  <tr key={q.questionNum}>
+                    <td>{q.questionNum}</td>
+                    <td>
+                      <Link
+                        to={`/service/qna/${q.questionNum}`}
+                        style={{ textDecoration: "none", color: "#87746B" }}
+                        className="title-link"
+                      >
+                        {q.questionTitle}{" "}
+                      </Link>
+                    </td>
+                    <td>{q.questionStatus}</td>
+                    <td>{q.questionNick}</td>
+                    <td>{q.questionDate}</td>
+                  </tr>
+                );
+              })}
           </tbody>
         </table>
         <div className="qnaButton">
@@ -57,8 +57,8 @@ export const QuestionMain = () => {
             <button className="questionButton">문의등록</button>
           </Link>
         </div>
-        </div>
-      
+      </div>
+
     </>
   );
 };

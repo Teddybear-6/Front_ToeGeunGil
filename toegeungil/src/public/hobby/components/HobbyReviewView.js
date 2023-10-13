@@ -1,36 +1,35 @@
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import ReviewBox from "./reviewBox";
 import "./review.css"
 
-function HobbyReview({hobbyCode}){
+function HobbyReview({ hobbyCode }) {
 
-    const[review , setReview] = useState([{}])
+    const [review, setReview] = useState([{}])
 
-    useEffect(()=>{
-        
-        fetch(process.env.REACT_APP_URL+`/hobbys/review/${hobbyCode}`).then(res=>res.json()).then(res => setReview(res));
-
-
-   
-    
+    useEffect(() => {
+        api();
     },
-    [hobbyCode])
+        [hobbyCode])
 
-    return(
+    const api = () => {
+        fetch(process.env.REACT_APP_URL + `/hobbys/review/${hobbyCode}`).then(res => res.json()).then(res => setReview(res));
+    }
+
+    return (
         <>
-     
+
 
             {
-               review?.map((m ,index)=>(
-                    <ReviewBox review={m} key={index}/>
+                review?.map((m, index) => (
+                    <ReviewBox review={m} key={index} api={api} />
                 ))
-                
+
             }
-            
-    
+
+
         </>
     )
-    
+
 }
 
 
