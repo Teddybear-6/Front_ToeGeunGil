@@ -80,3 +80,18 @@
     border: 0.125rem solid black;
     margin-bottom: 2.5rem;
 }
+
+.communityMainKeyword3Up {
+    /* ... css */
+    width: 2.813rem;
+    height: 1.875rem;
+    font-weight: 600;
+    border-radius: 3.125rem;
+    background-color: #E9E0DD;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.313rem;
+    color: #87746B;
+}
