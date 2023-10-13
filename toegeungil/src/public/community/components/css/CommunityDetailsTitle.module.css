@@ -2,30 +2,30 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    margin-left: 50px;
+    margin-left: 3.125rem;
 }
 
 .communityTitleBoard {
-    width: 1400px;
-    height: 150px;
-    border: 3px solid #CCE2DB;
-    border-radius: 50px;
+    width: 87.5rem;
+    height: 9.375rem;
+    border: 0.188rem solid #CCE2DB;
+    border-radius: 3.125rem;
 }
 
 .communityTitleName {
-    font-size: 36px;
+    font-size: 2.25rem;
     color: #655853;
     font-weight: bold;
-    margin-left: 50px;
-    margin-top: 30px;
+    margin-left: 3.125rem;
+    margin-top: 1.875rem;
 }
 
 .communityLocal {
-    font-size: 18px;
+    font-size: 1.125rem;
     color: #655853;
     font-weight: bold;
-    margin-right: 45px;
-    margin-top: 30px;
+    margin-right: 2.813rem;
+    margin-top: 1.875rem;
     text-align: right;
 }
 
@@ -33,9 +33,9 @@
 
     color: #87746B;
     display: flex;
-    border-radius: 50px;
-    width: 70px;
-    height: 30px;
+    border-radius: 3.125rem;
+    width: 4.375rem;
+    height: 1.875rem;
     background-color: #E9E0DD;
     align-items: center;
     justify-content: center;
@@ -47,36 +47,36 @@
 }
 
 .MainKeywordDiv {
-    width: 70px;
-    height: 30px;
+    width: 4.375rem;
+    height: 1.875rem;
     background-color: #E9E0DD;
-    border-radius: 50px;
+    border-radius: 3.125rem;
     display: flex;
     align-items: center;
     justify-content: center;
     float: left;
-    margin-right: 10px;
-    font-size: 14px;
+    margin-right: 0.625rem;
+    font-size: 0.875rem;
     color: #87746B;
 }
 
 .communityKeywordDTOList1 {
-    margin-left: 50px;
-    margin-bottom: -15px;
+    margin-left: 3.125rem;
+    margin-bottom: -0.938rem;
 }
 
 .CommunityBar {
-    width: 1500px;
-    height: 100px;
+    width: 93.75rem;
+    height: 6.25rem;
     color: #655853;
-    font-size: 30px;
+    font-size: 1.875rem;
     font-weight: bold;
     align-items: center;
     display: flex;
 }
 
 .CommunityStart {
-    width: 1500px;
-    border: 2px solid black;
-    margin-bottom: 40px;
+    width: 93.75rem;
+    border: 0.125rem solid black;
+    margin-bottom: 2.5rem;
 }
