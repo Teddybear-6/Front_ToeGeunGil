@@ -66,3 +66,96 @@ body {
     padding: 0.625rem;
     text-align: center;
 }
+
+
+.mypage-main thead {
+
+    font-weight: bold;
+    color: #87746B;
+    background: #fff;
+    font-size: 1rem;
+
+
+}
+
+
+.mypage-main table {
+    border-collapse: separate;
+    border-spacing: 0rem 1.875rem;
+    width: 93.75rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.mypage-main tbody {
+    font-size: 1.125;
+    color: #B9A49B;
+    text-align: center;
+}
+
+.mypage-mainn th,
+td {
+    border: 0.125rem solid #B9A49B;
+    width: 93.75rem;
+    height: 4.375rem;
+    border-radius: 3.125rem;
+    color: #87746b;
+    font-weight: 700;
+}
+
+.mypage-main th {
+    width: 93.75rem;
+    height: 4.375rem;
+    color: #87746B;
+    font-weight: 700;
+    border: 3px solid #8fc4b3;
+    font-size: 1.25rem;
+}
+
+.mypage-main th:first-child {
+    border-radius: 3.125rem 0 0 3.125rem;
+    border-right: 0rem;
+}
+
+.mypage-main th:nth-child(2) {
+    border-right: 0rem;
+    border-left: 0rem;
+    border-radius: 0 0 0 0
+}
+
+.mypage-main th:nth-child(3) {
+    border-right: 0rem;
+    border-left: 0rem;
+    border-radius: 0 0 0 0
+}
+
+
+.mypage-main th:last-child {
+    border-radius: 0 3.125rem 3.125rem 0;
+    border-left: 0rem;
+
+}
+
+.mypage-main td:first-child {
+    border-radius: 3.125rem 0 0 3.125rem;
+    border-right: 0rem;
+}
+
+.mypage-main td:nth-child(2) {
+    border-right: 0rem;
+    border-left: 0rem;
+    border-radius: 0 0 0 0;
+}
+
+.mypage-main td:nth-child(3) {
+    border-right: 0rem;
+    border-left: 0rem;
+    border-radius: 0 0 0 0;
+}
+
+
+.mypage-main td:last-child {
+    border-radius: 0 3.125rem 3.125rem 0;
+    border-left: 0rem;
+}

@@ -1,30 +1,30 @@
 import React, { useState } from "react";
-import {useNavigate} from 'react-router-dom';
-import './mypage.css'; 
+import { useNavigate } from 'react-router-dom';
+import './mypage.css';
 
-const Mypage =()=>{
-    const[action, setAction] = useState("Mypage");
-    return(
+const Mypage = () => {
+    const [action, setAction] = useState("Mypage");
+    return (
         <>
-        <div className="container">
-            <div className="header">
-                <div className="text">Mypage</div>
-                <div className="underline"></div>
+            <div className="container">
+                <div className="header">
+                    <div className="text">Mypage</div>
+                    <div className="underline"></div>
+                </div>
             </div>
-        </div>
-            <div>
-            <table className="community-main">
-                <thead>
-                    <tr>
-                        <th>수강현황</th>
-                        <th>나의리뷰</th>
-                        <th>수강취소현황</th>
-                        <th>문의내역</th>
-                    </tr>
-                </thead>
-            </table>
+            <div className="mypage-main">
+                <table >
+                    <thead>
+                        <tr>
+                            <th>수강현황</th>
+                            <th>나의리뷰</th>
+                            <th>수강취소현황</th>
+                            <th>문의내역</th>
+                        </tr>
+                    </thead>
+                </table>
             </div>
-        
+
             {/* <div class="row">
             <div class="column">수강현황
                 <ul>
@@ -60,10 +60,10 @@ const Mypage =()=>{
             </div>
             </div> */}
 
-        
 
 
-        
+
+
 
             {/* <div class="footer">
             <p>    FORUM ABOUT
@@ -75,7 +75,7 @@ const Mypage =()=>{
 
 
         </>
-    ) 
+    )
 }
 
 export default Mypage;
