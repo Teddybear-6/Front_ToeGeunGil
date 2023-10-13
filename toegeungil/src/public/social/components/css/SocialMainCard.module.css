@@ -102,7 +102,7 @@
 }
 
 /* 기타 키워드 */
-.socialMainKeyword3Up:hover ~ .mainSocialKeysTool {
+.socialMainKeyword3Up:hover>.mainSocialKeysTool {
     /* 기타 키워드 보이기 */
     display: block;
 }

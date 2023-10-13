@@ -50,22 +50,25 @@ function SocialMainCard({ socials }) {
                                             {r.keywordDTOList?.map((m, index) => (
                                                 <>
                                                     {index < 3 ? <SocialKeyword key={index} code={m} /> : index === 3 ?
-                                                        <div className={MainStyle.socialMainKeyword3Up}>· · ·</div> : null
+                                                        <div className={MainStyle.socialMainKeyword3Up}>· · ·
+                                                            {/* hover 키워드 */}
+                                                            <div key={i} className={`${MainStyle.mainSocialKeysTool}`}>
+                                                                <div className={MainStyle.mainSocialKeysToolFlex}>
+                                                                    {r.keywordDTOList?.map((m, index) => (
+                                                                        <>
+                                                                            {index >= 3 ? <SocialKeywordView key={index} code={m} /> : null}
+                                                                        </>
+                                                                    ))}
+                                                                </div>
+                                                            </div>
+
+                                                        </div> : null
                                                     }
                                                 </>
                                             ))}
                                         </div>
                                     </div>
-                                    {/* hover 키워드 */}
-                                    <div key={i} className={`${MainStyle.mainSocialKeysTool}`}>
-                                        <div className={MainStyle.mainSocialKeysToolFlex}>
-                                            {r.keywordDTOList?.map((m, index) => (
-                                                <>
-                                                    {index >= 3 ? <SocialKeywordView key={index} code={m} /> : null}
-                                                </>
-                                            ))}
-                                        </div>
-                                    </div>
+
                                 </div>
                             </div>
                         )
