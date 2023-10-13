@@ -52,7 +52,7 @@ function SocialMainCard({ socials }) {
                                                     {index < 3 ? <SocialKeyword key={index} code={m} /> : index === 3 ?
                                                         <div className={MainStyle.socialMainKeyword3Up}>· · ·
                                                             {/* hover 키워드 */}
-                                                            <div key={i} className={`${MainStyle.mainSocialKeysTool}`}>
+                                                            <div key={i} className={MainStyle.mainSocialKeysTool}>
                                                                 <div className={MainStyle.mainSocialKeysToolFlex}>
                                                                     {r.keywordDTOList?.map((m, index) => (
                                                                         <>
@@ -61,7 +61,6 @@ function SocialMainCard({ socials }) {
                                                                     ))}
                                                                 </div>
                                                             </div>
-
                                                         </div> : null
                                                     }
                                                 </>

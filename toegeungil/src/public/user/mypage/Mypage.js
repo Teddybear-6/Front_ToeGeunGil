@@ -9,21 +9,20 @@ const Mypage = () => {
             <div className='toegeungillayout'>
                 <div className="menuFont">Mypage</div>
                 <hr className='hrSty' />
-                <div className='layout2'>
-                    <div className="mypage-main">
-                        <table >
-                            <thead>
-                                <tr>
-                                    <th>수강현황</th>
-                                    <th>나의리뷰</th>
-                                    <th>수강취소현황</th>
-                                    <th>문의내역</th>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
+                <div className="mypage-main">
+                    <table >
+                        <thead>
+                            <tr>
+                                <th>수강현황</th>
+                                <th>나의리뷰</th>
+                                <th>수강취소현황</th>
+                                <th>문의내역</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
 
-                    {/* <div class="row">
+                {/* <div class="row">
             <div class="column">수강현황
                 <ul>
                 <li>HTML</li>
@@ -57,7 +56,6 @@ const Mypage = () => {
                 </ul>
             </div>
             </div> */}
-                </div>
             </div>
         </>
     )

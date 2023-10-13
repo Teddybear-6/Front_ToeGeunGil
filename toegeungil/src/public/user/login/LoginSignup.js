@@ -42,8 +42,8 @@ const LoginSignup = ({ setLogin }) => {
                 setLogin(true)
                 navigate("/Mypage")
             }).catch((e) => {
-                alert("아이디 비번 확인해주세요")
-                navigate("/Findpass")
+                alert("아이디 또는 비밀번호를 확인해주세요")
+                // navigate("/Findpass")
             })
             .then(response => {
 
@@ -77,7 +77,7 @@ const LoginSignup = ({ setLogin }) => {
                     </div>
                     {/* 비밀번호 찾기 */}
                     <div className="userForgotPassword" style={{ textAlign: "center" }}>
-                        Lost Password?
+                        비밀번호 찾기
                         <Link to="/findpass">
                             <button className="userForgotPasswordButton"> Click Here </button>
                         </Link>

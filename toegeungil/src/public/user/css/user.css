@@ -82,7 +82,7 @@
     /* click here */
     text-align: center;
     align-items: center;
-    color: #655853;
+    color: #87746B;
     cursor: pointer;
     background-color: white;
     margin: 0.625rem;
@@ -90,6 +90,12 @@
     height: 1.875rem;
     border: 0.063rem solid #B9A49B;
     border-radius: 0.938rem;
+}
+
+.userForgotPasswordButton:hover {
+    /* click here */
+    color: white;
+    background-color: #B9A49B;
 }
 
 .userSubmitContainer {
