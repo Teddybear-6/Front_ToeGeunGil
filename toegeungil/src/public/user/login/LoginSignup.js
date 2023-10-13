@@ -1,15 +1,12 @@
 /*로그인*/
 import React, { useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
-// import './LoginSignup.css';
-import './Login.css';
-// import Findpass from "../findpassword/Findpass";
+import email_icon from '../imgs/email.png';
+import password_icon from '../imgs/pass.png';
 
-import email_icon from '../imgs/001.png';
-// import user_icon from '../imgs/002.png'; //닉네임아이콘
-import password_icon from '../imgs/003.png';
+import "../css/user.css"
 
-const LoginSignup = ({setLogin}) => {
+const LoginSignup = ({ setLogin }) => {
     const [action, setAction] = useState("Login");
     const [userEmail, setUserEmail] = useState();
     const [userPassword, setUserPassword] = useState();
@@ -23,7 +20,7 @@ const LoginSignup = ({setLogin}) => {
     const loginApi = () => {
 
         console.log("로그인 요청")
-        fetch(process.env.REACT_APP_URL+ "/login", {
+        fetch(process.env.REACT_APP_URL + "/login", {
             method: "POST",
             headers: {
                 "Content-Type": "applcation/json"
@@ -48,56 +45,52 @@ const LoginSignup = ({setLogin}) => {
                 alert("아이디 비번 확인해주세요")
                 navigate("/Findpass")
             })
-            .then(response=> {
-                
+            .then(response => {
+
             })
     }
+
     const onClickLogoutHandler = () => {
         sessionStorage.removeItem("Authorizaton");
     }
+
     return (
         <>
-            <div className="container">
-                <div className="header">
-                    <div className="text">{action}</div>
-                    <div className="underline"></div>
+            <div className='toegeungillayout'>
+                {/* login */}
+                <div className="userContainer">
+                    <div className="userHeader">
+                        <div className="userText">{action}</div>
+                        <div className="userUnderline"></div>
+                    </div>
+                </div>
+                <div className="userInputs">
+                    {/* email 입력 */}
+                    <div className="userInput">
+                        <img src={email_icon} alt="setUserEmail" />
+                        <input type="text" placeholder="Email" name="login" onChange={e => setUserEmail(e.target.value)} />
+                    </div>
+                    {/* password 입력 */}
+                    <div className="userInput">
+                        <img src={password_icon} alt="setUserPassword" />
+                        <input type="password" placeholder="Password" name="pass" onChange={e => setUserPassword(e.target.value)} />
+                    </div>
+                    {/* 비밀번호 찾기 */}
+                    <div className="userForgotPassword" style={{ textAlign: "center" }}>
+                        Lost Password?
+                        <Link to="/findpass">
+                            <button className="userForgotPasswordButton"> Click Here </button>
+                        </Link>
+                    </div>
+                    {/* 회원가입, 로그인 */}
+                    <div className="userSubmitContainer">
+                        <div className={action === "Login" ? "userSubmit userGray" : "userSubmit"} onClick={onClickHandler}>회원가입</div>
+                        <div className={action === "Signup" ? "userSubmit userGray" : "userSubmit"} onClick={loginApi}>로그인</div>
+                    </div>
                 </div>
             </div>
-            <div className="inputs">
-                <div className="input">
-                    <img src={email_icon} alt="setUserEmail" />
-                    <input type="text" placeholder="Email" name="login" onChange={e => setUserEmail(e.target.value)} />
-                </div>
-
-                <div className="input">
-                    <img src={password_icon} alt="setUserPassword" />
-                    <input type="password" placeholder="Password" name="pass" onChange={e => setUserPassword(e.target.value)} />
-
-                </div>
-                <div className="forgot-password" style={{ textAlign: "center" }}>
-                    Lost Password?
-                    <Link to="/findpass">
-                    <button style={{ color: "#03532e", margin: "10px", width: "100px", height: "20px", cursor: "pointer" }}> Click Here </button>
-                    </Link>
-                </div>
-
-
-                <div className="submit-container">
-                    
-                    <div className={action === "Login" ? "submit gray" : "submit"} onClick={onClickHandler}>회원가입</div>
-                    <div className={action === "Signup" ? "submit gray" : "submit"} onClick={loginApi}>로그인</div>
-                    {/* <div className={action === "Logout" ? "submit gray" : "submit"} onClick={loginApi}>로그아웃</div> */}
-
-                </div>
-            </div>
-
-
         </>
     )
-
 };
-
-
-
 
 export default LoginSignup;

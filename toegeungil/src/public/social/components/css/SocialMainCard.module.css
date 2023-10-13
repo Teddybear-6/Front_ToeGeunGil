@@ -76,15 +76,17 @@
 
 .mainSocialKeysTool {
     display: none;
+    position: absolute;
     width: 18.75rem;
     height: 4.375rem;
     margin-left: 1.25rem;
     margin-top: 0.313rem;
-    background-color: #87746B;
+    background-color: #8FC4B3;
     border-radius: 0.625rem;
 }
 
 .socialMainKeyword3Up:hover {
+    /* hover시 색 진해지기 */
     width: 4.375rem;
     height: 1.875rem;
     font-weight: 600;

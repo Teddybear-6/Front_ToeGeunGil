@@ -1,0 +1,174 @@
+.userContainer {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 3.125rem;
+    width: 37.5rem;
+    background: #fff;
+    padding-bottom: 1.875rem;
+}
+
+.userHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.563rem;
+    width: 100%;
+    margin-top: 1.875rem;
+}
+
+.userText {
+    color: #128865;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.userUnderline {
+    width: 3.813rem;
+    height: 0.375rem;
+    background: #128865;
+    border-radius: 0.563rem;
+    margin-top: 0.938rem;
+}
+
+.userInputs {
+    margin-top: 3.438rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.userInput {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 30rem;
+    height: 5rem;
+    background: white;
+    border-radius: 1.25rem;
+    border: 0.125rem solid #CCE2DB;
+    color: #41A487;
+}
+
+.userInput img {
+    margin: 0rem 1.25rem;
+}
+
+.userInput input {
+    height: 3.125rem;
+    width: 25rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #096249;
+    font-size: 1.063rem;
+    font-weight: bold;
+}
+
+.userInput input::placeholder {
+    color: #8FC4B3;
+}
+
+.userForgotPassword {
+    /* Lost Password? */
+    padding-left: 0rem;
+    margin-top: 0.625rem;
+    color: #87746B;
+    font-size: 1.125rem;
+
+}
+
+.userForgotPasswordButton {
+    /* click here */
+    text-align: center;
+    align-items: center;
+    color: #655853;
+    cursor: pointer;
+    background-color: white;
+    margin: 0.625rem;
+    width: 6.25rem;
+    height: 1.25rem;
+    border: 0.063rem solid #B9A49B;
+    border-radius: 0.625rem;
+}
+
+.userSubmitContainer {
+    display: flex;
+    gap: 1.875rem;
+    margin: 2.5rem auto;
+}
+
+.userSubmit {
+    /* 활성화 버튼 */
+    width: 13.75rem;
+    height: 3.688rem;
+    border-radius: 3.125rem;
+    color: #096249;
+    background-color: #8FC4B3;
+    border-color: #8FC4B3;
+    font-size: 1.25rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    text-decoration-line: none;
+    cursor: pointer;
+}
+
+.userSubmit:hover {
+    /* 활성화 버튼 */
+    color: #096249;
+    background-color: #CCE2DB;
+    border-color: #CCE2DB;
+}
+
+.userSubmitOff {
+    /* 비활성화 버튼 */
+    width: 13.75rem;
+    height: 3.688rem;
+    border-radius: 3.125rem;
+    color: #41A487;
+    background-color: #CCE2DB;
+    border-color: #CCE2DB;
+    font-size: 1.25rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    text-decoration-line: none;
+    cursor: pointer;
+}
+
+.userSubmitOff:hover {
+    /* 비활성화 버튼 */
+    color: #096249;
+    background-color: #8FC4B3;
+    border-color: #8FC4B3;
+}
+
+.userGray {
+    background: #CCE2DB;
+    color: #41A487;
+}
+
+.userCheckId {
+    border: 0;
+    outline: none;
+    width: 7.5rem;
+    height: 1.875rem;
+    background: #8FC4B3;
+    color: #096249;
+    border-radius: 0.625rem;
+    padding: auto;
+    font-size: 0.813rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-right: 1.25rem;
+}
+
+.userCheckId:hover {
+    color: #096249;
+    background: #CCE2DB;
+}
