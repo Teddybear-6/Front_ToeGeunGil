@@ -75,7 +75,7 @@
 }
 
 .mainSocialKeysTool {
-    display: none;
+    /* display: none; */
     position: absolute;
     width: 18.75rem;
     height: 4.375rem;

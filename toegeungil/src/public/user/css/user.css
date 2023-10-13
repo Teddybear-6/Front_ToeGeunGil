@@ -86,10 +86,10 @@
     cursor: pointer;
     background-color: white;
     margin: 0.625rem;
-    width: 6.25rem;
-    height: 1.25rem;
+    width: 9.375rem;
+    height: 1.875rem;
     border: 0.063rem solid #B9A49B;
-    border-radius: 0.625rem;
+    border-radius: 0.938rem;
 }
 
 .userSubmitContainer {
