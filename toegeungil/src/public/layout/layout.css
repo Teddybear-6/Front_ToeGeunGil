@@ -52,6 +52,7 @@
     font-size: 1.125rem;
     font-weight: bold;
     text-align: right;
+    cursor: pointer;
 }
 
 .navbarLayout {
