@@ -36,7 +36,7 @@ function HobbyDetail() {
 
 
 
-    }, [])
+    }, [hobbyCode])
 
     const findjoin = (user) => {
         if (user) {
@@ -147,7 +147,7 @@ function HobbyDetail() {
                     <HobbyTutor tutorIntro={detail.tutorIntro} tutorCode={detail.tutorCode}></HobbyTutor>
 
                     {
-                        detail.close == 'Y' && <HobbyReview hobbyCode={hobbyCode} />
+                        detail.close == 'Y' && <HobbyReview hobbyCode={hobbyCode} user={user} />
                     }
                     {
 
