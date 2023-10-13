@@ -41,14 +41,12 @@ function CategoryHobby({ localfilters }) {
     <>
 
       <div>
-        <div className="toegeungillayout">
-          {!hobby ? "등록된 취미가 없습니다." :
-            <HobbyMain hobbys={hobby}></HobbyMain>
-          }
-        </div>
-        <div className={AllHobbyCss.paging}>
-          <Paging count={pageCount} setPage={setPage} page={page} cagegoryCode={cagegoryCode} />
-        </div>
+        {!hobby ? "등록된 취미가 없습니다." :
+          <HobbyMain hobbys={hobby}></HobbyMain>
+        }
+      </div>
+      <div className={AllHobbyCss.paging}>
+        <Paging count={pageCount} setPage={setPage} page={page} cagegoryCode={cagegoryCode} />
       </div>
 
     </>

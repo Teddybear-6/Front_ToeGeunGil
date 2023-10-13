@@ -9,9 +9,10 @@ export const QuestionMain = () => {
     fetch(process.env.REACT_APP_URL + `/question/list`)
       .then((r) => r.json())
       .then((data) => setQuestions(data));
-    console.log(questions);
+
   }, []);
 
+  console.log(questions);
   return (
     <>
       {/* Question Admin Main페이지 */}

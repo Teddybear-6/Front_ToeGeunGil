@@ -29,7 +29,7 @@ const NoticeList = ({ list }) => {
                 ) : (
                     list ? (
                         <div className="notice-wrapper">
-                            <table className="table-wrapper">
+                            <table className="notice-table-wrapper">
                                 <thead>
                                     <tr>
                                         <th>번호</th>

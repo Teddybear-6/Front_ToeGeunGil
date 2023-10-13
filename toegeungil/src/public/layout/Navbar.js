@@ -16,7 +16,7 @@ function Navbar() {
 
     const handleClick = (e) => (
         // navigate('/hobby/search', { state: hobbyTitle })
-        navigate('/search', {state: socialName, hobbyTitle})
+        navigate('/search', { state: socialName, hobbyTitle })
     )
 
     const onChangeHandler = (e) => (
@@ -30,7 +30,6 @@ function Navbar() {
         }
     };
 
-    console.log(categoryCode)
     return (
         <>
             <div className="navbarLayout navbarFlex">
