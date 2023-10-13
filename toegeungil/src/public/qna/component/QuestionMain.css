@@ -1,31 +1,31 @@
-.layout{
-    width: 1200px;
-    border-spacing: 0px 30px;
-    margin-top: 10px;
+.layout {
+    width: 75rem;
+    border-spacing: 0rem 1.875rem;
+    margin-top: 0.625rem;
     text-align: center;
     margin-right: auto;
     margin-left: auto;
 }
 
 th {
-    border: 2px solid #B9A49B;
-    width: 1200px;
-    height: 60px;
+    border: 0.125rem solid #B9A49B;
+    width: 75rem;
+    height: 3.75rem;
     color: #87746B;
     font-weight: bold;
-    font-size: 20px;
-    border-radius: 50px;
+    font-size: 1.25rem;
+    border-radius: 3.125rem;
 }
 
 td {
-    border: 2px solid #B9A49B;
-    width: 1200px;
-    height: 60px;
+    border: 0.125rem solid #B9A49B;
+    width: 75rem;
+    height: 3.75rem;
     color: #87746B;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1.125rem;
     text-align: center;
-    border-radius: 50px;
+    border-radius: 3.125rem;
     /* white-space: nowrap; 텍스트 줄바꿈 방지 */
     overflow: hidden;
     text-overflow: ellipsis;
@@ -34,41 +34,42 @@ td {
 
 
 
-layout>.table-wrapper tbody tr:hover{
+layout>.table-wrapper tbody tr:hover {
     background-color: #E9E0DD;
 }
 
 .main-button-box {
     display: flex;
     justify-content: flex-start;
-    margin-top: 50px;
+    margin-top: 3.125rem;
 }
 
 .main-button {
-    border: 2px solid #41A487;
-    border-radius: 50px;
+    border: 0.125rem solid #41A487;
+    border-radius: 3.125rem;
     color: #41A487;
     font-weight: bold;
-    font-size: 20px;
-    width: 200px;
-    height: 60px;
+    font-size: 1.25rem;
+    width: 12.5rem;
+    height: 3.75rem;
 }
 
 
-.qnaButton{
+.qnaButton {
     margin-left: 80%;
 
 }
-.questionButton{
-    margin-top: 20px;
-    margin: 10px;
+
+.questionButton {
+    margin-top: 1.25rem;
+    margin: 0.625rem;
     color: #096249;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
     background-color: #CCE2DB;
-    border: 1px;
-    border-right: 1px solid #096249;
-    border-radius: 50px;
-    width: 120px;
-    height: 80px;
+    border: 0.063rem;
+    border-right: 0.063rem solid #096249;
+    border-radius: 3.125rem;
+    width: 7.5rem;
+    height: 5rem;
 }
