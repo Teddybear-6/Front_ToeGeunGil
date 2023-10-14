@@ -9,6 +9,7 @@ import "../components/css/Button.css"
 import "../components/css/SocialPosting.css"
 import { Link } from "react-router-dom";
 import SocialParticipateView from "./componentAPI/SocialParticipateView";
+import Modal from "./componentAPI/SocialParticipateView";
 
 import jwt_decode from "jwt-decode";
 import DetailsStyle from './css/SocialDetails.module.css';
@@ -122,8 +123,7 @@ function SocialDetailCard() {
                     </div>
                 </div>
                 {/* 참여하기 */}
-                <SocialParticipateView postNum={socials.socialNum}/>
-                <SocialParticipateList postNum={socials.socialNum} />
+                <SocialParticipateList postNum={socials} />
                 {/* 소셜 소개 */}
                 <div className={DetailsStyle.socialDetailsIntro}>
                     <div className={DetailsStyle.socialDetailsOthersty}>소셜 소개</div>
@@ -144,7 +144,7 @@ function SocialDetailCard() {
                         !(!(user === undefined) && !(user === null)) ? null :
                             !(user.no === socials.userNum) ? null :
                                 <>
-                                    <button type="button" className="buttonOn_so marR30" onClick={()=> clickHandler(socials.socialNum)}>소셜삭제</button>
+                                    <button type="button" className="buttonOn_so marR30" onClick={() => clickHandler(socials.socialNum)}>소셜삭제</button>
                                     <Link to="/social/modify" type="button" className="buttonOn_so marR30" state={{ Statesocial: socials }}>소셜수정</Link>
                                 </>
                     }

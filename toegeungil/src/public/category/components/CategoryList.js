@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import jwt_decode from "jwt-decode";
+import '../components/CategoryMain.css';
 
 function CategoryList() {
     const [user, setUser] = useState('');
@@ -60,39 +61,38 @@ function CategoryList() {
                     category ? (
                         <>
                             {user && user.auth[0] === 'ADMIN' ? (
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <td>번호</td>
-                                            <td>카테고리명</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {category.map((category) => (
-                                            <tr key={category.categoryCode}>
-                                                <td>{category.categoryCode}</td>
-                                                <td>{category.categoryName}</td>
-                                                <td>
-                                                    <button onClick={() => deleteCategory(category.categoryCode)}>삭제</button>
-                                                    <Link to={`/service/category/${category.categoryCode}/modify`}>
-                                                        <button>수정</button>
-                                                    </Link>
-                                                </td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                    <Link to={`/service/category/write`}>
-                                        <button onClick={categoryClick}>카테고리 작성</button>
-                                    </Link>
-                                </table>
+                                <div className="category-main-layout">
+                                    <div className="category-header">
+                                        <div className="category-label">번호</div>
+                                        <div className="category-label">카테고리명</div>
+                                    </div>
+                                    {category.map((category) => (
+                                        <div key={category.categoryCode} className="category-main-content">
+                                            <div className="category-value">{category.categoryCode}</div>
+                                            <div className="category-value">{category.categoryName}</div>
+                                            <div className="category-button-wrapper">
+                                                <button className="category-button1" onClick={() => deleteCategory(category.categoryCode)}>삭제</button>
+                                                <Link to={`/service/category/${category.categoryCode}/modify`}>
+                                                    <button className="category-button1">수정</button>
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    ))}
+                                    <div className="category-main-button-box">
+                                        <Link to={`/service/category/write`}>
+                                            <button className="category-main-button" onClick={categoryClick}>카테고리 작성</button>
+                                        </Link>
+                                    </div>
+                                </div>
                             ) : (
                                 <p>관리자가 아닙니다 카테고리 관리 권한이 없습니다</p>
-                            )}
+                            )
+                            }
                         </>
                     ) : "카테고리가 없습니다"
                 )
             }
-        </div>
+        </div >
     )
 }
 

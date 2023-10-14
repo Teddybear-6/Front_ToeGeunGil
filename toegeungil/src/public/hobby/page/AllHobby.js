@@ -26,15 +26,15 @@ function AllHobby({ localfilters }) {
 
     return (
         <>
-            <div className="toegeungillayout">
-                {!hobby ? "등록된 취미가 없습니다." :
-                    <HobbyMain hobbys={hobby}></HobbyMain>
-                }
 
-            </div >
+            {!hobby ? "등록된 취미가 없습니다." :
+                <HobbyMain hobbys={hobby}></HobbyMain>
+            }
             <div className={AllHobbyCss.paging}>
                 <Paging count={pageCount} setPage={setPage} page={page} localfilters={localfilters} />
             </div>
+
+
 
 
         </>

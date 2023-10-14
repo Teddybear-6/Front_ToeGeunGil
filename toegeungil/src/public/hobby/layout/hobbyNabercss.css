@@ -1,24 +1,39 @@
 .hobbyNavlocal {
-    border-radius: 3.125rem;
     width: 15.625rem;
     height: 3.125rem;
-    margin-left: 1.438rem;
-
-    border: 0.125rem solid #8FC4B3;
+    border: 0.125rem solid #B9A49B;
+    border-radius: 3.125rem;
 }
 
 
 .hobbyNavlocalframe {
-    float: right;
-    margin-bottom: 0.625rem;
-    margin-right: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 2.188rem;
 }
 
 .nabertextAll {
-    margin: 1rem 1.25rem 1rem 1.25rem;
+    width: 12.5rem;
+    margin: 0.75rem 1.563rem 0.75rem 1.563rem;
     border: none;
     resize: none;
-    font-size: 1.125rem;
+    font-size: 1.375rem;
     outline: none;
-    width: 12.5rem;
+    color: #87746B;
+    align-items: center;
+    font-weight: bold;
+}
+
+.hobbylocalLable {
+    width: 3.125rem;
+    height: 1.375rem;
+    color: #87746B;
+    font-size: 1.375rem;
+    font-weight: 600;
+    align-items: center;
+    margin-right: 10px;
+    margin-bottom: 5px;
+
 }
