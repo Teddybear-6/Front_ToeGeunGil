@@ -9,11 +9,6 @@ import HobbyCagegoty from './hobbyCategory';
 
 function HobbyCard(hobbys) {
 
-
-    useEffect(() => {
-
-
-    }, [hobbys])
     return (
         <>
             {!hobbys.hobbys ? "취미가 없습니다." :
@@ -25,7 +20,7 @@ function HobbyCard(hobbys) {
                         <p className={CardStyle.hobbyTitle}>{hobbys.hobbys.hobbyTitle}</p>
 
                         <div className={CardStyle.keywordhide}>
-                            <HobbyCagegoty category={hobbys.hobbys?.categoryCode} />
+                            <HobbyCagegoty category={hobbys.hobbys?.categoryName} />
 
                             <HobbyCardkeyword keyword={hobbys.hobbys?.keyword} />
 

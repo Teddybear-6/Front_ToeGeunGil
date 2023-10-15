@@ -6,7 +6,7 @@ import '../../layout/layout.css';
 
 function AllHobby({ localfilters }) {
     const [hobby, setHobby] = useState([]);
-    const [page, setPages] = useState();
+    const [page, setPages] = useState(1);
     const [pageCount, setPageCount] = useState();
 
     useEffect(() => {
@@ -18,6 +18,8 @@ function AllHobby({ localfilters }) {
         }
 
     }, [page, localfilters])
+
+
     const setPage = useCallback(
         (page) => {
             setPages(page)
