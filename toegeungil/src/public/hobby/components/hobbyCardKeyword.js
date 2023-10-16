@@ -1,12 +1,10 @@
 
 import HobbyKeyword from './HobbyKeyword';
 import HobbyKeywordhide from './hobbyKeywordhide';
-import { useEffect } from 'react';
+
 import CardStyle from './hobbyCard.module.css';
 function HobbyCardkeyword({ keyword }) {
-  useEffect(() => {
 
-  }, [keyword])
   const newArr = [];
   const newArrhide = [];
   const keywordArr = (keyword) => {
