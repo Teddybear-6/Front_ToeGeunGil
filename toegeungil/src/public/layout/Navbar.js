@@ -39,7 +39,7 @@ function Navbar() {
                 </NavLink>
                 {/* Navbar */}
                 <div className="navbarFlex mar50">
-                    <NavLink to="/hobby" className={({ isActive }) => isActive ? "navbarOn navbarLine" : (location.pathname == `/hobbycategory/${categoryCode}`) ? "navbarOn navbarLine" : "navbarFont navbarLine"}>hobby</NavLink>
+                    <NavLink to="/hobby" className={({ isActive }) => isActive ? "navbarOn navbarLine" : (location.pathname == `/hobbycategory/${categoryCode}`) ? "navbarOn navbarLine" : "navbarFont navbarLine"}>Hobby</NavLink>
                     <NavLink to="/social" className={({ isActive }) => isActive ? "navbarOn navbarLine" : (location.pathname == `/socialcategory/${categoryCode}`) ? "navbarOn navbarLine" : "navbarFont navbarLine"}>Social</NavLink>
                     <NavLink to="/communitys" className={({ isActive }) => isActive ? "navbarOn navbarLine" : "navbarFont navbarLine"}>Community</NavLink>
                 </div>

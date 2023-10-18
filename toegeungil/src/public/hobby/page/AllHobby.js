@@ -4,10 +4,13 @@ import AllHobbyCss from './AllHobby.module.css'
 import Paging from '../components/Paging';
 import '../../layout/layout.css';
 
+
 function AllHobby({ localfilters }) {
     const [hobby, setHobby] = useState([]);
     const [page, setPages] = useState(1);
     const [pageCount, setPageCount] = useState();
+
+
 
     useEffect(() => {
         if (localfilters === "0" || localfilters === undefined || localfilters === null) {
