@@ -38,7 +38,7 @@ const Signup = () => {
     const [isnickname, setIsNickName] = React.useState(false);
     const [isPassword, setIsPassword] = React.useState(false);
     const [isEmail, setIsEmail] = React.useState(false);
-
+    const emailRegEx = /^[A-Za-z0-9]([-_.]?[A-Za-z0-9])*@[A-Za-z0-9]([-_.]?[A-Za-z0-9])*\.[A-Za-z]{2,3}$/;
     //input입력값에 따라 조건-> 유효성 검사
     /**ex)id값을 입력하고 -> 값저장 -> currentld value
     값을 변경->(상태값변경) setld(currentld)그리고 조건 저장
@@ -56,10 +56,6 @@ const Signup = () => {
     */
 
     const callSignUp = () => {
-        console.log(email)
-        console.log(nickname)
-        console.log(name)
-        console.log(password)
 
         fetch(process.env.REACT_APP_URL + "/user/regist", {
             method: "POST",
@@ -99,14 +95,19 @@ const Signup = () => {
     }
 
     const findEmail = () => {
-        fetch(process.env.REACT_APP_URL + "/user/findEmail", {
-            method: "POST",
-            headers: {
-                "Content-Type": "applcation/json"
-            },
-            body: email
-        }).then(res => res.text())
-            .then(date => alert(date))
+        if (emailRegEx.test(email)) {
+            fetch(process.env.REACT_APP_URL + "/user/findEmail", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "applcation/json"
+                },
+                body: email
+            }).then(res => res.text())
+                .then(date => alert(date))
+        } else {
+            alert("이메일을 입력해주세요");
+        }
+
     }
 
     const onChangeHandler = (e) => {
