@@ -12,6 +12,7 @@ function CategoryHobby({ localfilters }) {
   const cagegoryCode = useLocation().state;
 
 
+
   useEffect(() => {
     if (localfilters === "0" || localfilters === undefined || localfilters === null) {
       fetch(
