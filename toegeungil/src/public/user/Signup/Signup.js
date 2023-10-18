@@ -103,7 +103,7 @@ const Signup = () => {
                 },
                 body: email
             }).then(res => res.text())
-                .then(date => alert(date))
+                .then(date => alert(date)).catch(alert("문제가 발생했습니다."))
         } else {
             alert("이메일을 입력해주세요");
         }
