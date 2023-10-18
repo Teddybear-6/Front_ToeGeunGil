@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import CardStyle from './hobbyCard.module.css';
 import { Link } from 'react-router-dom'
 import HobbyCardkeyword from './hobbyCardKeyword';
@@ -7,32 +7,25 @@ import HobbyCagegoty from './hobbyCategory';
 
 
 
-function HobbyCard(hobbys) {
+function HobbyCard({ hobbys }) {
 
-
-    useEffect(() => {
-
-
-    }, [hobbys])
     return (
         <>
-            {!hobbys.hobbys ? "취미가 없습니다." :
-                <Link to={`/hobby/${hobbys.hobbys?.hobbyCode}`}>
+            {!hobbys ? "취미가 없습니다." :
+                <Link to={`/hobby/${hobbys?.hobbyCode}`}>
                     <div className={CardStyle.hobbyCard}>
                         {
-                            <img className={CardStyle.hobbyImage} src={`http://106.250.199.126:9000/image/${hobbys?.hobbys.imageIdDTO?.path}`} />
+                            <img className={CardStyle.hobbyImage} src={`http://106.250.199.126:9000/image/${hobbys?.imageIdDTO?.path}`} />
                         }
-                        <p className={CardStyle.hobbyTitle}>{hobbys.hobbys.hobbyTitle}</p>
+                        <p className={CardStyle.hobbyTitle}>{hobbys.hobbyTitle}</p>
 
-                        <div>
-                            <HobbyCagegoty category={hobbys.hobbys?.categoryCode} />
+                        <div className={CardStyle.keywordhide}>
+                            <HobbyCagegoty category={hobbys?.categoryName} />
 
-                            <HobbyCardkeyword keyword={hobbys.hobbys?.keyword} />
-                            <div className={CardStyle.keywordUnName}>
-                                <p className={CardStyle.keywordName}>···</p>
-                            </div>
+                            <HobbyCardkeyword keyword={hobbys?.keyword} />
+
                         </div>
-                        <p className={CardStyle.hobbyPrice}> {hobbys.hobbys.hobbyPrice}원</p>
+                        <p className={CardStyle.hobbyPrice}> {hobbys.hobbyPrice}원</p>
                     </div>
                 </Link>
             }

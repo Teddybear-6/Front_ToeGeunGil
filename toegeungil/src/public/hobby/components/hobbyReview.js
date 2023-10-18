@@ -45,6 +45,7 @@ function RevieWrite({ hobbyCode }) {
     }).then(res => {
       if (res.ok) {
         alert("후기 등록 되었습니다.")
+        window.location.replace(`/hobby/${hobbyCode}`)
       } else if (res.status == 404) {
         throw new Error("404")
       }

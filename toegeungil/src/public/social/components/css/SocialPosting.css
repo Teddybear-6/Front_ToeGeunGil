@@ -2,106 +2,105 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    margin-bottom: 40px;
+    margin-bottom: 2.5rem;
 }
 
 .posTitle { 
     /* 한 줄 제목 */
-    width: 100px;
-    height: 16px;
-    margin-top: 17px;
-    margin-bottom: 17px;
-
-    font-size: 16px;
+    width: 6.25rem;
+    height: 1rem;
+    margin-top: 1.063rem;
+    margin-bottom: 1.063rem;
+    font-size: 1rem;
     color: #655853;
     font-weight: 700;
 }
 
 .posBoard {
-    border: 2px solid #8FC4B3;
+    border: 0.125rem solid #8FC4B3;
     color: #655853;
-    border-radius: 50px;
+    border-radius: 3.125rem;
     background-color: white;
 }
 
 .posContent {
-    margin: 10px 20px 0px 20px;
+    margin: 0.625rem 1.25rem 0rem 1.25rem;
     resize: none;
     outline: none;
     border: none;
-    font-size: 17px;
+    font-size: 1.063rem;
     color: #128865;
     font-weight: 600;
 }
 
 .posContent::placeholder {
-    font-size: 16px;
+    font-size: 1rem;
     color: #8FC4B3;
     font-weight: 500;
 }
 
 .w1300h50 {
     /* 한 줄 input 박스 */
-    width: 1300px;
-    height: 50px;
+    width: 81.25rem;
+    height: 3.125rem;
 }
 
 .w1300h300 {
     /* 한 줄 input 박스 */
-    width: 1300px;
-    height: 300px;
+    width: 81.25rem;
+    height: 18.75rem;
 }
 
 .w1250h18 {
     /* 한 줄 input text*/
-    width: 1250px;
-    height: 280px;
+    width: 78.125rem;
+    height: 17.5rem;
 }
 
 .w1250h18 {
     /* 한 줄 input text*/
-    width: 1250px;
-    height: 30px;
+    width: 78.125rem;
+    height: 1.875rem;
 }
 
 .w575h50 {
     /* 반 줄 input 박스 */
-    width: 575px;
-    height: 50px;
+    width: 35.938rem;
+    height: 3.125rem;
 }
 
 .w520h18 {
     /* 반 줄 input text*/
-    width: 520px;
-    height: 30px;
+    width: 32.5rem;
+    height: 1.875rem;
 }
 
 .w575h350 {
     /* 반 줄 넓은 input 박스 */
-    width: 575px;
-    height: 350px;
+    width: 35.938rem;
+    height: 21.875rem;
 }
 
 .w575h330 {
     /* 반 줄 넓은 input 박스 */
-    width: 500px;
-    height: 300px;
+    width: 31.25rem;
+    height: 18.75rem;
 }
 
 .maL10 {
-    margin-left: 10px;
+    margin-left: 0.625rem;
 }
 
 .maR50 {
-    margin-right: 50px;
+    margin-right: 3.125rem;
 }
 
 .maR35 {
-    margin-right: 35px;
+    margin-right: 2.188rem;
 }
 
 .maB100 {
-    margin-bottom: 100px;
+    margin-bottom: 6.25rem;
 }
 
 .textR {
@@ -109,31 +108,31 @@
 }
 
 .maT2 {
-    margin-top: 2px;
+    margin-top: 0.125rem;
 }
 
 .maT14 {
-    margin-top: 14px;
+    margin-top: 0.875rem;
 }
 
 .marT30 {
-    margin-top: 30px;
+    margin-top: 1.875rem;
 }
 
 .posContent_Fix {
-    margin: 10px 0px 0px 0px;
+    margin: 0.625rem 0rem 0rem 0rem;
     resize: none;
     outline: none;
     border: none;
-    font-size: 17px;
+    font-size: 1.063rem;
     color: #128865;
     font-weight: 600;
 }
 
 .w520h18_Fix {
     /* 반 줄 input text*/
-    width: 450px;
-    height: 30px;
+    width: 28.125rem;
+    height: 1.875rem;
 }
 
 .posFlex_Fix {
@@ -144,14 +143,13 @@
 
 .w216h50 {
     /* 카테고리 선택 */
-    width: 156px;
-    height: 30px;
-    margin-top: 12px;
-    margin-bottom: 10px;
-    font-size: 17px;
-    margin-left: 20px;
-
-    font-size: 16px;
+    width: 9.75rem;
+    height: 1.875rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.625rem;
+    font-size: 1.063rem;
+    margin-left: 1.25rem;
+    font-size: 1rem;
     color: #128865;
     font-weight: 700;
 }
@@ -161,24 +159,24 @@
 }
 
 .posContent_Intro {
-    margin: 20px 30px 20px 30px;
+    margin: 1.25rem 1.875rem 1.25rem 1.875rem;
     resize: none;
     outline: none;
     border: none;
-    font-size: 17px;
+    font-size: 1.063rem;
     color: #128865;
     font-weight: 600;
 }
 
 .posContent_Intro::placeholder {
-    font-size: 16px;
+    font-size: 1rem;
     color: #8FC4B3;
     font-weight: 500;
 }
 
 .posBoard_Img {
     border: none;
-    border-radius: 50px;
+    border-radius: 3.125rem;
 }
 
 .posFlex_cate {
@@ -188,8 +186,8 @@
 }
 
 .checkSy {
-    width: 20px;
-    height: 20px;
+    width: 1.25rem;
+    height: 1.25rem;
     accent-color: #41A487;
 }
 
@@ -198,7 +196,7 @@
     flex-direction: row;
     justify-content: flex-start;
     flex-wrap: wrap;
-    margin: 32px;
+    margin: 2rem;
 }
 
 .positionDiv1 {

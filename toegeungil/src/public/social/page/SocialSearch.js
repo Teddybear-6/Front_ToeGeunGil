@@ -8,21 +8,25 @@ function SocialSearch() {
     const [social, setSocial] = useState([]);
     const [page, setPages] = useState(1);
     const [pageCount, setPageCount] = useState();
-    // const socialName = useLocation().state
 
-    const [socialName, setSocialName] = useState(
-        useLocation.state?.socialName
-    );
+    const socialName = useLocation().state
 
-    console.log("social: ", social)
+    // const [socialName, setSocialName] = useState(
+    //     useLocation.state?.socialName
+    // );
 
     useEffect(() => {
 
         //소셜 검색
-        http://localhost:8001/socials/size?socialName=%EC%97%AC%EB%A6%84
+        //http://localhost:8001/socials/size?socialName=%EC%97%AC%EB%A6%84
         fetch(process.env.REACT_APP_URL + `/socials/search?socialName=${socialName}&page=${page - 1}&size=12`)
-            .then((response) => response.json())
-            .then((data) => setSocial(data))
+            .then(response => {
+                if (response.status === 500) {
+                    setSocial(null)
+                } else {
+                    return response.json();
+                }
+            }).then(res => setSocial(res))
 
         //소셜 검색 size
         //http://localhost:8001/socials/search/size?socialName=%EC%97%AC%EB%A6%84
@@ -36,15 +40,17 @@ function SocialSearch() {
         setPages(page)
     })
 
-    console.log("social: ", social)
-
     return (
         <>
             <div className='toegeungillayout'>
-                <SocialMainCard socials={social}></SocialMainCard>
-            </div>
-            <div>
-                <Paging count={pageCount} setPage={setPage} page={page} />
+                <div className="menuFont">Social - '{socialName}' 전체 결과</div>
+                <hr className='hrSty marB50' />
+                {
+                    !social ? <div>검색결과가 없습니다.</div> : (<SocialMainCard socials={social} />)
+                }
+                {
+                    !social ? null : <Paging count={pageCount} setPage={setPage} page={page} />
+                }
             </div>
         </>
     )
