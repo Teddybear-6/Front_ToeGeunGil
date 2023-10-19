@@ -85,3 +85,10 @@ text-align: left;
     height: 50px;
     margin-left: 30px;
 }
+
+.notice-image{
+    width: 500px;
+    height: 300px;
+    margin: auto;
+    display: block;
+}

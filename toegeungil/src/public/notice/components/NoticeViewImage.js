@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "../components/NoticeView.css";
 
 function NoticeViewImage({ noticeNum }) {
     const [image, setImage] = useState();
@@ -12,7 +13,7 @@ function NoticeViewImage({ noticeNum }) {
     return (
         <>
             {
-                !image ? null : <img  src={`http://106.250.199.126:9000/image/${image.path}`} />
+                !image ? null : <img className="notice-image" src={`http://106.250.199.126:9000/image/${image.path}`} />
             }
         </>
     )
