@@ -94,7 +94,7 @@ const CommunityList = () => {
                 <Link to={"/communitys/write"}>
                     <button className="community-regist-button" >커뮤니티 글 작성</button>
                 </Link>}
-                <Paging count={pageCount} setPage={setPage} page={page} localfilters={localfilters}/>
+                <Paging count={pageCount} setPage={setPage} page={page} />
         </div>
     );
 }
