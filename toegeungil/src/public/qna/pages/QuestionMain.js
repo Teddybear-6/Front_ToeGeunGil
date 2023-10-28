@@ -1,18 +1,23 @@
 import "../component/QuestionMain.css";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import jwt_decode from "jwt-decode";
 
 export const QuestionMain = () => {
   const [questions, setQuestions] = useState([{}]);
+  const [user, setUser] = useState("");
 
   useEffect(() => {
     fetch(process.env.REACT_APP_URL + `/question/list`)
       .then((r) => r.json())
       .then((data) => setQuestions(data));
 
-  }, []);
 
-  console.log(questions);
+    if (sessionStorage.getItem("Authorizaton")) {
+      setUser(jwt_decode(sessionStorage.getItem("Authorizaton")));
+    }
+
+  }, []);
   return (
     <>
       {/* Question Admin Main페이지 */}
@@ -53,11 +58,12 @@ export const QuestionMain = () => {
               })}
           </tbody>
         </table>
-        <div className="qnaButton">
+        {!user ? null : <div className="qnaButton">
           <Link to="/service/qna/write">
             <button className="questionButton">문의등록</button>
           </Link>
-        </div>
+        </div>}
+
       </div>
 
     </>

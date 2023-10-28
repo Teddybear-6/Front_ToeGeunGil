@@ -4,25 +4,28 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import "../component/QuestionDetail.css";
 // import "../component/AnswerWrite.css";
 import AnswerWrite from "./AnswerWrite";
-
+import jwt_decode from "jwt-decode";
 
 export const QuestionDetail = () => {
   const { questionNum } = useParams();
   const [detail, setDetail] = useState({});
   const [loading, setLoading] = useState(true);
-
+  const [user, setUser] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
-    setLoading(true);
+
     fetch(process.env.REACT_APP_URL + `/question/${questionNum}`)
       .then((response) => response.json())
       .then((data) => {
         setDetail(data);
         setLoading(false);
       });
-  }, [questionNum]);
 
+    if (sessionStorage.getItem("Authorizaton")) {
+      setUser(jwt_decode(sessionStorage.getItem("Authorizaton")));
+    }
+  }, [questionNum]);
   //관리자인 경우 삭제
   const deleteClick = () => {
     fetch(process.env.REACT_APP_URL + `/question/${questionNum}`, {
@@ -40,9 +43,8 @@ export const QuestionDetail = () => {
         console.error("문의 삭제 중 오류 발생 : ", error);
         alert("문의 삭제 중 오류가 발생");
       });
-  
-    }
 
+  }
   return (
     <div className="view-wrapper">
       {loading ? (
@@ -70,14 +72,18 @@ export const QuestionDetail = () => {
       )}
 
       {/*삭제,수정 버튼*/}
-      <div className="delSet-button">
-        <Link to="/service/qna">
-          <button className="delete-button" onClick={deleteClick}>
-            삭제
-          </button>
-          <button className="update-button">수정</button>
-        </Link>
-      </div>
+      {!(!(user === undefined) && !(user === null)) ? null :
+        !(user.no == detail.userNo) ? null :
+          <div className="delSet-button">
+            <Link to="/service/qna">
+              <button className="delete-button" onClick={deleteClick}>
+                삭제
+              </button>
+              <button className="update-button">수정</button>
+            </Link>
+          </div>
+      }
+
 
       {/*답변*/}
       <div>
