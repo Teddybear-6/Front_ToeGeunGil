@@ -18,6 +18,9 @@ export const QuestionMain = () => {
     }
 
   }, []);
+
+
+  console.log(questions)
   return (
     <>
       {/* Question Admin Main페이지 */}

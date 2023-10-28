@@ -45,6 +45,8 @@ export const QuestionDetail = () => {
       });
 
   }
+
+  console.log(questionNum)
   return (
     <div className="view-wrapper">
       {loading ? (
@@ -79,6 +81,8 @@ export const QuestionDetail = () => {
               <button className="delete-button" onClick={deleteClick}>
                 삭제
               </button>
+            </Link>
+            <Link to="/service/qna/modify" state={{ "questionNum": questionNum }}>
               <button className="update-button">수정</button>
             </Link>
           </div>
