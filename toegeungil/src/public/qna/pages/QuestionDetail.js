@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import "../component/QuestionDetail.css";
 // import "../component/AnswerWrite.css";
-import AnswerWrite from "./AnswerWrite";
 import jwt_decode from "jwt-decode";
 
 export const QuestionDetail = () => {
@@ -81,6 +80,10 @@ export const QuestionDetail = () => {
         body: JSON.stringify({
           "answerTitle": answerTitle,
           "answerContent": answerContext,
+          "questionNum": questionNum,
+          "userNo": user.no,
+          "answerNick": user.nickName
+
         })
       })
       .then(response => {
@@ -168,13 +171,30 @@ export const QuestionDetail = () => {
               <Link to="/service/qna">
                 <button className="cancel-button" onClick={cancelClick}>취소</button>
               </Link>
-              <Link to="/service/answer">
+              <Link to="/service/qna">
                 <button className="write-button" onClick={writeClick}>등록</button>
               </Link>
             </div>
           </div>)
           : null
       }
+      {answer && <>
+        {/*답변글 제목 */}
+        <div className="view-name">
+          <label>답변 제목 : {answer.answerTitle}</label>
+        </div>
+        <div className="view-nick">
+          <label>작성자 : {answer.answerNick}</label>
+        </div>
+
+        {/*답변글 내용 */}
+        <div className="view-text-box">
+          <div className="view-text">
+            <label>{answer.answerContent}</label>
+          </div>
+
+        </div>
+      </>}
       <div className="user-button-box">
         <Link to="/service/qna">
           <button className="user-button">목록으로</button>

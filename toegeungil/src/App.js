@@ -40,7 +40,7 @@ import LocalMain from "./public/local/pages/LocalMain";
 import LocalWrite from "./public/local/pages/LocalWrite";
 import LocalModify from "./public/local/pages/LocalModify";
 import SocialModify from "./public/social/page/SocialModify";
-import AnswerWrite from "./public/qna/pages/AnswerWrite";
+
 import SocialLayout from "./public/social/layout/SocialLayout";
 import SocialCategory from "./public/social/page/SocialCategory";
 import MainImg from "./public/layout/MainImg";
@@ -144,7 +144,7 @@ function App() {
                 path="/service/answer/:answerNum"
                 element={<AnswerDetail />}
               />
-              <Route path="/service/answer/write" element={<AnswerWrite />} />
+
             </Route>
             {/* Local */}
             <Route path="/service/local">
