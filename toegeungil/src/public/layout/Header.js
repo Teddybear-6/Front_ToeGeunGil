@@ -12,11 +12,12 @@ function Header({ login, setLogin }) {
             setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
         }
     }, [login])
+
     const logout = () => {
         sessionStorage.removeItem("Authorizaton");
         setUser(null);
         setLogin(false);
-        navigate("/");
+
     }
 
     return (
@@ -28,7 +29,7 @@ function Header({ login, setLogin }) {
                 <NavLink to="/service" className={({ isActive }) => isActive ? "headerOn navbarLine" : "headerFont navbarLine"}>고객센터</NavLink>
                 {user ? null : <NavLink to="/login" className={({ isActive }) => isActive ? "headerOn navbarLine" : "headerFont navbarLine"}>로그인</NavLink>}
                 {/* <NavLink to="/notice/qna" className={({isActive}) => isActive? "headerOn navbarLine" :"headerFont navbarLine"}>Q&A</NavLink> */}
-                {!user ? null : <NavLink type="button" className={"headerFont navbarLine"} onClick={logout}>로그아웃</NavLink>}
+                {!user ? null : <NavLink to="/" type="button" className={"headerFont navbarLine"} onClick={logout}>로그아웃</NavLink>}
 
             </div>
         </>
