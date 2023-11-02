@@ -4,7 +4,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import "../component/QuestionDetail.css";
 
 
-export const AnswerDetail = ({ answer }) => {
+export const AnswerDetail = ({ answer, setModify, user }) => {
   const { answerNum } = useParams();
   const [detail, setDetail] = useState({});
   const [loading, setLoading] = useState(true);
@@ -35,7 +35,9 @@ export const AnswerDetail = ({ answer }) => {
 
   }
 
-
+  const modifyhandler = () => {
+    setModify(true);
+  }
 
   return (
 
@@ -54,7 +56,17 @@ export const AnswerDetail = ({ answer }) => {
         </div>
 
       </div>
+      {(user?.auth[0] === "ADMIN") &&
+        <div className="delSet-button">
+          <button className="delete-button" onClick={deleteClick}>
+            삭제
+          </button>
+          <button className="update-button" onClick={modifyhandler}>수정</button>
+
+        </div>
+      }
     </div>
+
   )
 
 }

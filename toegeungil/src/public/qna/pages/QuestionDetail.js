@@ -5,13 +5,14 @@ import "../component/QuestionDetail.css";
 // import "../component/AnswerWrite.css";
 import AnswerWrite from "./AnswerWrite";
 import AnswerDetail from "./AnswerDetail";
+import AnswerModify from "./AnswerModify";
 import jwt_decode from "jwt-decode";
 
 export const QuestionDetail = () => {
   const { questionNum } = useParams();
   const [detail, setDetail] = useState({});
   const [answer, setAnswer] = useState(null);
-
+  const [modify, setModify] = useState(false);
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState();
   const navigate = useNavigate();
@@ -103,14 +104,18 @@ export const QuestionDetail = () => {
 
       {/*답변*/}
       {
-        ((user && (answer === null)) && (user?.auth[0] === "ADMIN")) ?
+        ((user && (answer === null)) && (user?.auth[0] === "ADMIN") && (modify === false)) ?
           <AnswerWrite user={user} questionNum={questionNum} />
           : null
       }
-      {answer && <>
-        {/*답변글 제목 */}
-        <AnswerDetail answer={answer} />
-      </>}
+      {(answer && (modify === false)) &&
+        <>
+          <AnswerDetail answer={answer} setModify={setModify} user={user} />
+        </>}
+
+      {(modify === true) && <AnswerModify answer={answer} setModify={setModify} />
+
+      }
       <div className="user-button-box">
         <Link to="/service/qna">
           <button className="user-button">목록으로</button>
