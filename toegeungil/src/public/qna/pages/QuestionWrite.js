@@ -57,7 +57,7 @@ const QuestionWrite = () => {
                 <h1 className="write-header">문의사항 작성</h1>
                 <div className="write-wrapper textarea">
                     <div className="write-col1">
-                        <label>문의 제목</label>
+                        <label className="write-content">문의 제목</label>
                         <div className="write-text1 textarea">
                             <input className="text-box"
                                 type="text"
