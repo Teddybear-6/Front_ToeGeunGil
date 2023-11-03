@@ -8,18 +8,14 @@ function AnswerModify({ answer, setModify, answerApi }) {
     }, [answer, setModify])
 
     const modifyHandler = (e) => {
-        console.log(e.target.name)
-        console.log(e.target.value)
         setModifyAnswer({ ...modifyAnswer, [e.target.name]: e.target.value })
     }
 
-    console.log(modifyAnswer)
     const cancelClick = () => {
         alert("답변 수정이 취소 되었습니다.");
         setModify(false);
     }
     const writeClick = () => {
-
 
         fetch(process.env.REACT_APP_URL + `/answer/update`,
             {
