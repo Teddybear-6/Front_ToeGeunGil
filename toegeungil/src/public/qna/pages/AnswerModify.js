@@ -1,7 +1,7 @@
-import userEvent from "@testing-library/user-event";
 import React, { useEffect, useState } from "react";
 
-function AnswerModify({ answer, setModify }) {
+
+function AnswerModify({ answer, setModify, answerApi }) {
     const [modifyAnswer, setModifyAnswer] = useState(answer);
 
     useEffect(() => {
@@ -12,6 +12,8 @@ function AnswerModify({ answer, setModify }) {
         console.log(e.target.value)
         setModifyAnswer({ ...modifyAnswer, [e.target.name]: e.target.value })
     }
+
+    console.log(modifyAnswer)
     const cancelClick = () => {
         alert("답변 수정이 취소 되었습니다.");
         setModify(false);
@@ -25,13 +27,15 @@ function AnswerModify({ answer, setModify }) {
                 headers: {
                     "Content-Type": "application/json; charset=UTF-8",
                     "Authorization": sessionStorage.getItem("Authorizaton")
-                }, body: JSON.stringify({
-                    "answer": modifyAnswer
-
-                }),
+                },
+                body: JSON.stringify(
+                    modifyAnswer
+                ),
             }).then(response => {
                 if (response.ok) {
                     alert("문의사항이 수정 되었습니다.")
+                    setModify(false);
+                    answerApi();
                 } else {
                     alert("문의사항 수정에 실패했습니다.")
                 }

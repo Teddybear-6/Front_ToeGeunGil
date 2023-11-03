@@ -27,16 +27,18 @@ export const QuestionDetail = () => {
       });
 
 
-    fetch(process.env.REACT_APP_URL + `/answer/que/${questionNum}`)
-      .then((response) => response.json())
-      .then((data) => { setAnswer(data['value']) });
+    answerApi();
 
 
     if (sessionStorage.getItem("Authorizaton")) {
       setUser(jwt_decode(sessionStorage.getItem("Authorizaton")));
     }
   }, [questionNum]);
-
+  const answerApi = () => {
+    fetch(process.env.REACT_APP_URL + `/answer/que/${questionNum}`)
+      .then((response) => response.json())
+      .then((data) => { setAnswer(data['value']) });
+  }
 
   //관리자인 경우 삭제
   const deleteClick = () => {
@@ -113,7 +115,7 @@ export const QuestionDetail = () => {
           <AnswerDetail answer={answer} setModify={setModify} user={user} />
         </>}
 
-      {(modify === true) && <AnswerModify answer={answer} setModify={setModify} />
+      {(modify === true) && <AnswerModify answer={answer} setModify={setModify} answerApi={answerApi} />
 
       }
       <div className="user-button-box">
