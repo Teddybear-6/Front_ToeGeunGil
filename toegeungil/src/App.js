@@ -40,11 +40,11 @@ import LocalMain from "./public/local/pages/LocalMain";
 import LocalWrite from "./public/local/pages/LocalWrite";
 import LocalModify from "./public/local/pages/LocalModify";
 import SocialModify from "./public/social/page/SocialModify";
-import AnswerWrite from "./public/qna/pages/AnswerWrite";
+
 import SocialLayout from "./public/social/layout/SocialLayout";
 import SocialCategory from "./public/social/page/SocialCategory";
 import MainImg from "./public/layout/MainImg";
-
+import QuestionModidy from "./public/qna/pages/QuestionModify";
 import HobbyLayout from "./public/hobby/layout/HoobyLayout";
 import CategoryHobby from "./public/hobby/page/CategoryHobby";
 import HobbySearch from "./public/hobby/page/HobbySearch";
@@ -133,6 +133,7 @@ function App() {
               <Route path="/service/qna" element={<QuestionMain />} />
               <Route path=":questionNum" element={<QuestionDetail />} />
               <Route path="/service/qna/write" element={<QuestionWrite />} />
+              <Route path="/service/qna/modify" element={<QuestionModidy />} />
               {/* <Route index  element={<AdminRouter />}/> */}
               {/* <Route path="admin" element={<AdminRouter />} /> */}
               {/* <Route path="public/main" element={<PublicRouter />} /> */}
@@ -143,7 +144,7 @@ function App() {
                 path="/service/answer/:answerNum"
                 element={<AnswerDetail />}
               />
-              <Route path="/service/answer/write" element={<AnswerWrite />} />
+
             </Route>
             {/* Local */}
             <Route path="/service/local">

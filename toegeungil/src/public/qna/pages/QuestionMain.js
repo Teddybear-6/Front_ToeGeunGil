@@ -18,6 +18,9 @@ export const QuestionMain = () => {
     }
 
   }, []);
+
+
+  console.log(questions)
   return (
     <>
       {/* Question Admin Main페이지 */}
@@ -35,9 +38,9 @@ export const QuestionMain = () => {
           </thead>
 
           <tbody>
-            {Object.keys(questions[0]) <= 0
+            {(questions.length === 0) ? null : Object.keys(questions[0]) <= 0
               ? null
-              : questions.map((q, index) => {
+              : questions?.map((q, index) => {
                 return (
                   <tr key={q.questionNum}>
                     <td>{q.questionNum}</td>
@@ -50,7 +53,7 @@ export const QuestionMain = () => {
                         {q.questionTitle}{" "}
                       </Link>
                     </td>
-                    <td>{q.questionStatus}</td>
+                    <td>{q.answerStatus}</td>
                     <td>{q.questionNick}</td>
                     <td>{q.questionDate}</td>
                   </tr>
