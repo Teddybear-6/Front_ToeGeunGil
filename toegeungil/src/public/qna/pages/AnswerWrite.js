@@ -54,7 +54,7 @@ function AnswerWrite({ user, questionNum }) {
             <h1 className="write-header1">답변 작성</h1>
             <div className="write-wrapper textarea">
                 <div className="write-col1">
-                    <label>답변 제목</label>
+                    <label className="write-content">답변 제목</label>
                     <div className="write-text1 textarea">
                         <input className="text-box"
                             type="text"
