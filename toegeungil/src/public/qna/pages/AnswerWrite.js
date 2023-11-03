@@ -49,38 +49,40 @@ function AnswerWrite({ user, questionNum }) {
             })
     }
 
-    <div className="wrapper" >
-        <h1 className="write-header1">답변 작성</h1>
-        <div className="write-wrapper textarea">
-            <div className="write-col1">
-                <label>답변 제목</label>
-                <div className="write-text1 textarea">
-                    <input className="text-box"
-                        type="text"
-                        value={answerTitle}
-                        onChange={handleTitleChange}
-                    />
+    return (
+        <div className="wrapper" >
+            <h1 className="write-header1">답변 작성</h1>
+            <div className="write-wrapper textarea">
+                <div className="write-col1">
+                    <label>답변 제목</label>
+                    <div className="write-text1 textarea">
+                        <input className="text-box"
+                            type="text"
+                            value={answerTitle}
+                            onChange={handleTitleChange}
+                        />
+                    </div>
+                </div>
+                <div className="write-col2 flexsty">
+                    <label className="write-content">답변 내용</label>
+                    <div className="write-text2 textarea">
+                        <textarea className="text-box2"
+                            value={answerContext}
+                            onChange={handleContentChange}
+                        />
+                    </div>
                 </div>
             </div>
-            <div className="write-col2 flexsty">
-                <label className="write-content">답변 내용</label>
-                <div className="write-text2 textarea">
-                    <textarea className="text-box2"
-                        value={answerContext}
-                        onChange={handleContentChange}
-                    />
-                </div>
+            <div className="button">
+                <Link to="/service/qna">
+                    <button className="cancel-button" onClick={cancelClick}>취소</button>
+                </Link>
+                <Link to="/service/qna">
+                    <button className="write-button" onClick={writeClick}>등록</button>
+                </Link>
             </div>
         </div>
-        <div className="button">
-            <Link to="/service/qna">
-                <button className="cancel-button" onClick={cancelClick}>취소</button>
-            </Link>
-            <Link to="/service/qna">
-                <button className="write-button" onClick={writeClick}>등록</button>
-            </Link>
-        </div>
-    </div>
+    )
 }
 
 
