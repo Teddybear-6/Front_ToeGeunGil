@@ -110,11 +110,11 @@ export const QuestionDetail = () => {
 
       {/*답변*/}
       {
-        ((user && (answer === null)) && (user?.auth[0] === "ADMIN") && (answerModify === false)) ?
+        ((user && (answer === null)) && (user?.auth[0] === "ADMIN")) ?
           <AnswerWrite user={user} questionNum={questionNum} />
           : null
       }
-      {(answer && (answerModify === false) && (queModify == false)) &&
+      {(answer && (answerModify === false) && (queModify === false)) &&
         <>
           <AnswerDetail answer={answer} setAnswerModify={setAnswerModify} user={user} />
         </>}
@@ -126,7 +126,6 @@ export const QuestionDetail = () => {
         <Link to="/service/qna">
           <button className="user-button">목록으로</button>
         </Link>
-
       </div>
     </div>
   );
