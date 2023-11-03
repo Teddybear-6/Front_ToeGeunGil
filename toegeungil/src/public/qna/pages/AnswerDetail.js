@@ -4,7 +4,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import "../component/QuestionDetail.css";
 
 
-export const AnswerDetail = ({ answer, setModify, user }) => {
+export const AnswerDetail = ({ answer, setAnswerModify, user }) => {
   const { answerNum } = useParams();
   const [detail, setDetail] = useState({});
   const [loading, setLoading] = useState(true);
@@ -36,7 +36,7 @@ export const AnswerDetail = ({ answer, setModify, user }) => {
   }
 
   const modifyhandler = () => {
-    setModify(true);
+    setAnswerModify(true);
   }
 
   return (

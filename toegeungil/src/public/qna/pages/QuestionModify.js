@@ -3,20 +3,11 @@ import "../component/AnswerWrite.css";
 import jwt_decode from "jwt-decode";
 import { useLocation, Link } from "react-router-dom";
 
-const QuestionModidy = () => {
-    const [questionTitle, setQuestionTitle] = useState('');
-    const [detail, setDetail] = useState({});
-    const [questionContent, setQuestionContent] = useState('');
+const QuestionModidy = ({ detail, setDetail }) => {
     const [user, setUser] = useState("");
     const questionNum = useLocation().state.questionNum;
 
     useEffect(() => {
-        fetch(process.env.REACT_APP_URL + `/question/${questionNum}`)
-            .then((response) => response.json())
-            .then((data) => {
-                setDetail(data);
-            });
-
         if (sessionStorage.getItem("Authorizaton")) {
             setUser(jwt_decode(sessionStorage.getItem("Authorizaton")));
         }

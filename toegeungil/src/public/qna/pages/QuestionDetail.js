@@ -12,8 +12,9 @@ export const QuestionDetail = () => {
   const { questionNum } = useParams();
   const [detail, setDetail] = useState({});
   const [answer, setAnswer] = useState(null);
-  const [modify, setModify] = useState(false);
+  const [answerModify, setAnswerModify] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [queModify, setqueModify] = useState(false);
   const [user, setUser] = useState();
   const navigate = useNavigate();
 
@@ -26,19 +27,18 @@ export const QuestionDetail = () => {
         setLoading(false);
       });
 
+    fetch(process.env.REACT_APP_URL + `/answer/que/${questionNum}`)
+      .then((response) => response.json())
+      .then((data) => { setAnswer(data['value']) });
 
-    answerApi();
 
 
     if (sessionStorage.getItem("Authorizaton")) {
       setUser(jwt_decode(sessionStorage.getItem("Authorizaton")));
     }
+
   }, [questionNum]);
-  const answerApi = () => {
-    fetch(process.env.REACT_APP_URL + `/answer/que/${questionNum}`)
-      .then((response) => response.json())
-      .then((data) => { setAnswer(data['value']) });
-  }
+
 
   //관리자인 경우 삭제
   const deleteClick = () => {
@@ -106,16 +106,16 @@ export const QuestionDetail = () => {
 
       {/*답변*/}
       {
-        ((user && (answer === null)) && (user?.auth[0] === "ADMIN") && (modify === false)) ?
+        ((user && (answer === null)) && (user?.auth[0] === "ADMIN") && (answerModify === false)) ?
           <AnswerWrite user={user} questionNum={questionNum} />
           : null
       }
-      {(answer && (modify === false)) &&
+      {(answer && (answerModify === false)) &&
         <>
-          <AnswerDetail answer={answer} setModify={setModify} user={user} />
+          <AnswerDetail answer={answer} setAnswerModify={setAnswerModify} user={user} />
         </>}
 
-      {(modify === true) && <AnswerModify answer={answer} setModify={setModify} answerApi={answerApi} />
+      {(answerModify === true) && <AnswerModify answer={answer} setAnswerModify={setAnswerModify} setAnswer={setAnswer} />
 
       }
       <div className="user-button-box">

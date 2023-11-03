@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 
 
-function AnswerModify({ answer, setModify, answerApi }) {
+function AnswerModify({ answer, setAnswerModify, setAnswer }) {
     const [modifyAnswer, setModifyAnswer] = useState(answer);
 
     useEffect(() => {
-    }, [answer, setModify])
+    }, [answer, setAnswerModify])
 
     const modifyHandler = (e) => {
         setModifyAnswer({ ...modifyAnswer, [e.target.name]: e.target.value })
@@ -13,7 +13,7 @@ function AnswerModify({ answer, setModify, answerApi }) {
 
     const cancelClick = () => {
         alert("답변 수정이 취소 되었습니다.");
-        setModify(false);
+        setAnswerModify(false);
     }
     const writeClick = () => {
 
@@ -30,8 +30,8 @@ function AnswerModify({ answer, setModify, answerApi }) {
             }).then(response => {
                 if (response.ok) {
                     alert("문의사항이 수정 되었습니다.")
-                    setModify(false);
-                    answerApi();
+                    setAnswerModify(false);
+                    setAnswer(modifyAnswer)
                 } else {
                     alert("문의사항 수정에 실패했습니다.")
                 }
