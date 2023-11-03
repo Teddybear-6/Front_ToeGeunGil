@@ -96,7 +96,8 @@ export const QuestionDetail = () => {
                     삭제
                   </button>
                 </Link>
-                <button className="update-button" onClick={queModifyhandler}>수정</button>
+                {detail.answerStatus === "N" && <button className="update-button" onClick={queModifyhandler}>수정</button>}
+
               </div>
           }
         </>
