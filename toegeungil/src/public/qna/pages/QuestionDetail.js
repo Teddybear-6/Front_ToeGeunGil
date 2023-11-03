@@ -7,6 +7,7 @@ import AnswerWrite from "./AnswerWrite";
 import AnswerDetail from "./AnswerDetail";
 import AnswerModify from "./AnswerModify";
 import jwt_decode from "jwt-decode";
+import QuestionModidy from "./QuestionModify";
 
 export const QuestionDetail = () => {
   const { questionNum } = useParams();
@@ -14,7 +15,7 @@ export const QuestionDetail = () => {
   const [answer, setAnswer] = useState(null);
   const [answerModify, setAnswerModify] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [queModify, setqueModify] = useState(false);
+  const [queModify, setQueModify] = useState(false);
   const [user, setUser] = useState();
   const navigate = useNavigate();
 
@@ -60,13 +61,16 @@ export const QuestionDetail = () => {
 
   }
 
-
+  const queModifyhandler = () => {
+    setQueModify(true);
+  }
 
   return (
+
     <div className="view-wrapper">
       {loading ? (
         "로딩 중"
-      ) : detail ? (
+      ) : (queModify == false) ? (
         <>
           {/*질문글 제목 */}
           <div></div>
@@ -83,25 +87,24 @@ export const QuestionDetail = () => {
               <label>{detail.questionContent}</label>
             </div>
           </div>
+          {/*삭제,수정 버튼*/}
+          {((user === undefined) && (user === null) && (queModify == false)) ? null :
+            !(user?.no == detail.userNo) ? null :
+              <div className="delSet-button">
+                <Link to="/service/qna">
+                  <button className="delete-button" onClick={deleteClick}>
+                    삭제
+                  </button>
+                </Link>
+                <button className="update-button" onClick={queModifyhandler}>수정</button>
+              </div>
+          }
         </>
       ) : (
-        "문의글이 없습니다."
+        <QuestionModidy detail={detail} setDetail={setDetail} setQueModify={setQueModify} />
       )}
 
-      {/*삭제,수정 버튼*/}
-      {((user === undefined) && (user === null)) ? null :
-        !(user?.no == detail.userNo) ? null :
-          <div className="delSet-button">
-            <Link to="/service/qna">
-              <button className="delete-button" onClick={deleteClick}>
-                삭제
-              </button>
-            </Link>
-            <Link to="/service/qna/modify" state={{ "questionNum": questionNum }}>
-              <button className="update-button">수정</button>
-            </Link>
-          </div>
-      }
+
 
 
       {/*답변*/}
@@ -110,7 +113,7 @@ export const QuestionDetail = () => {
           <AnswerWrite user={user} questionNum={questionNum} />
           : null
       }
-      {(answer && (answerModify === false)) &&
+      {(answer && (answerModify === false) && (queModify == false)) &&
         <>
           <AnswerDetail answer={answer} setAnswerModify={setAnswerModify} user={user} />
         </>}
