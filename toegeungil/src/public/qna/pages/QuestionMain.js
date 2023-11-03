@@ -1,18 +1,26 @@
 import "../component/QuestionMain.css";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import jwt_decode from "jwt-decode";
 
 export const QuestionMain = () => {
   const [questions, setQuestions] = useState([{}]);
+  const [user, setUser] = useState("");
 
   useEffect(() => {
     fetch(process.env.REACT_APP_URL + `/question/list`)
       .then((r) => r.json())
       .then((data) => setQuestions(data));
 
+
+    if (sessionStorage.getItem("Authorizaton")) {
+      setUser(jwt_decode(sessionStorage.getItem("Authorizaton")));
+    }
+
   }, []);
 
-  console.log(questions);
+
+  console.log(questions)
   return (
     <>
       {/* Question Admin Main페이지 */}
@@ -30,9 +38,9 @@ export const QuestionMain = () => {
           </thead>
 
           <tbody>
-            {Object.keys(questions[0]) <= 0
+            {(questions.length === 0) ? null : Object.keys(questions[0]) <= 0
               ? null
-              : questions.map((q, index) => {
+              : questions?.map((q, index) => {
                 return (
                   <tr key={q.questionNum}>
                     <td>{q.questionNum}</td>
@@ -45,7 +53,7 @@ export const QuestionMain = () => {
                         {q.questionTitle}{" "}
                       </Link>
                     </td>
-                    <td>{q.questionStatus}</td>
+                    <td>{q.answerStatus}</td>
                     <td>{q.questionNick}</td>
                     <td>{q.questionDate}</td>
                   </tr>
@@ -53,11 +61,12 @@ export const QuestionMain = () => {
               })}
           </tbody>
         </table>
-        <div className="qnaButton">
+        {!user ? null : <div className="qnaButton">
           <Link to="/service/qna/write">
             <button className="questionButton">문의등록</button>
           </Link>
-        </div>
+        </div>}
+
       </div>
 
     </>

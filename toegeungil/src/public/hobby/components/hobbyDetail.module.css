@@ -200,3 +200,22 @@
     font-weight: bold;
     color: #87746B;
 }
+
+
+.buttonStyle {
+    border-radius: 3.125rem;
+    color: #096249;
+    background-color: #8FC4B3;
+    border-color: #8FC4B3;
+    font-size: 1.25rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration-line: none;
+    margin-right: 3.125rem;
+    float: right;
+    width: 9.375rem;
+    height: 4.688rem;
+
+}

@@ -4,7 +4,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import "../component/QuestionDetail.css";
 
 
-export const AnswerDetail = () => {
+export const AnswerDetail = ({ answer, setAnswerModify, user }) => {
   const { answerNum } = useParams();
   const [detail, setDetail] = useState({});
   const [loading, setLoading] = useState(true);
@@ -12,23 +12,12 @@ export const AnswerDetail = () => {
 
 
   //질문 상세보기 상태 
-  useEffect(() => {
-    setLoading(true);
-    fetch(process.env.REACT_APP_URL + `/answer/${answerNum}`)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data)
-        setDetail(data);
-        setLoading(false);
-      });
 
-
-  }, [answerNum]);
 
 
   //관리자인 경우 삭제
   const deleteClick = () => {
-    fetch(process.env.REACT_APP_URL + `/answer/${answerNum}`, {
+    fetch(process.env.REACT_APP_URL + `/answer/${answer.answerNum}`, {
       method: "DELETE",
     })
       .then((response) => {
@@ -46,47 +35,39 @@ export const AnswerDetail = () => {
 
   }
 
-
+  const modifyhandler = () => {
+    setAnswerModify(true);
+  }
 
   return (
 
     <div className="view-wrapper">
-      {loading ? (
-        "로딩 중"
-      ) : detail ? (
-        <>
-          {/*답변글 제목 */}
-          <div className="view-name">
-            <label>글제목 : {detail.answerTitle}</label>
-          </div>
-          <div className="view-nick">
-            <label>작성자 : {detail.answerNick}</label>
-          </div>
-
-          {/*답변글 내용 */}
-          <div className="view-text-box">
-            <div className="view-text">
-              <label>{detail.answerContent}</label>
-            </div>
-
-          </div>
-        </>
-      ) : ("문의글이 없습니다.")}
-
-
-      <div className="user-button-box">
-        <Link to="/service/answer">
-          <button className="user-button">목록으로</button>
-          <Link to="/servoce/answer">
-            <button className="user-button" onClick={deleteClick}>삭제</button>
-          </Link>
-        </Link>
+      <div className="view-name">
+        <label>답변 제목 : {answer.answerTitle}</label>
+      </div>
+      <div className="view-nick">
+        <label>작성자 : {answer.answerNick}</label>
       </div>
 
+      {/*답변글 내용 */}
+      <div className="view-text-box">
+        <div className="view-text">
+          <label>{answer.answerContent}</label>
+        </div>
+
+      </div>
+      {(user?.auth[0] === "ADMIN") &&
+        <div className="delSet-button">
+          <button className="delete-button" onClick={deleteClick}>
+            삭제
+          </button>
+          <button className="update-button" onClick={modifyhandler}>수정</button>
+
+        </div>
+      }
     </div>
+
   )
-
-
 
 }
 
