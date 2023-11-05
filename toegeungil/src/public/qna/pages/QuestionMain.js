@@ -8,10 +8,7 @@ export const QuestionMain = () => {
   const [user, setUser] = useState("");
 
   useEffect(() => {
-    fetch(process.env.REACT_APP_URL + `/question/list`)
-      .then((r) => r.json())
-      .then((data) => setQuestions(data));
-
+    QueMainApi();
 
     if (sessionStorage.getItem("Authorizaton")) {
       setUser(jwt_decode(sessionStorage.getItem("Authorizaton")));
@@ -20,7 +17,12 @@ export const QuestionMain = () => {
   }, []);
 
 
-  console.log(questions)
+  const QueMainApi = () => {
+    fetch(process.env.REACT_APP_URL + `/question/list`)
+      .then((r) => r.json())
+      .then((data) => setQuestions(data));
+
+  }
   return (
     <>
       {/* Question Admin Main페이지 */}
