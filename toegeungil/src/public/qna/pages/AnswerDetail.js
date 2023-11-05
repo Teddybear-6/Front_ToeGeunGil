@@ -23,7 +23,7 @@ export const AnswerDetail = ({ answer, setAnswerModify, user }) => {
       .then((response) => {
         if (response.ok) {
           alert("답변이 삭제 되었습니다.");
-          navigate("/service/answer");
+          navigate("/service/qna");
         } else {
           throw new Error("답변 삭제 실패");
         }
