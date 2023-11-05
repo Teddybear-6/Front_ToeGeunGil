@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import CommunityLocation from "./CommunityLocation";
 import CommunityKeyword from "./CommunityKeyword";
 import '../components/css/CommunityMain.css';
@@ -6,13 +6,11 @@ import { Link } from "react-router-dom";
 import UserNickName from "./UserNickName";
 import DetailsTitleStyle from "../components/css/CommunityDetailsTitle.module.css";
 import jwt_decode from "jwt-decode"
-import Paging from "./Paging";
 
 const CommunityList = () => {
     const [communityList, setCommunityList] = useState([]);
     const [user, setUser] = useState();
-    const [page, setPages] = useState(1);
-    const [pageCount, setPageCount] = useState();
+    
 
     const getCommunityList = () => {
         fetch(process.env.REACT_APP_URL + "/communitys")
@@ -28,25 +26,10 @@ const CommunityList = () => {
         if (sessionStorage.getItem("Authorizaton")) {
             setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
         }
-        
-        fetch(process.env.REACT_APP_URL + `/communitys?page=${page -1}&size=12`)
-        .then(response => response.json())
-        .then((data) => setCommunityList(data))
-
-        fetch(process.env.REACT_APP_URL + `/communitys/size`)
-        .then(response => response.json())
-        .then((response) => setPageCount(response))
 
         getCommunityList();
         console.log(communityList);
-    }, [page]);
-
-    const setPage = useCallback(
-        (page) => {
-            setPages(page)
-        }
-    )
-
+    }, []);
 
     const viewCommunity = (communityNum) => {
         window.location.href = `/communitys/${communityNum}`;
@@ -98,7 +81,6 @@ const CommunityList = () => {
                 <Link to={"/communitys/write"}>
                     <button className="community-regist-button" >커뮤니티 글 작성</button>
                 </Link>}
-                <Paging count={pageCount} setPage={setPage} page={page} />
         </div>
     );
 }
