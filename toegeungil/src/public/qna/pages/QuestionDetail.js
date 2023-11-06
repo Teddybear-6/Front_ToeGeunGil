@@ -91,11 +91,9 @@ export const QuestionDetail = () => {
           {((user === undefined) && (user === null) && (queModify == false)) ? null :
             !(user?.no == detail.userNo) ? null :
               <div className="delSet-button">
-                <Link to="/service/qna">
-                  <button className="delete-button" onClick={deleteClick}>
-                    삭제
-                  </button>
-                </Link>
+                <button className="delete-button" onClick={deleteClick}>
+                  삭제
+                </button>
                 {detail.answerStatus === "N" && <button className="update-button" onClick={queModifyhandler}>수정</button>}
 
               </div>

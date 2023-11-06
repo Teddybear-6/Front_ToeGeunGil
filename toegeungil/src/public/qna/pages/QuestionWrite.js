@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../component/AnswerWrite.css";
 import jwt_decode from "jwt-decode";
 
@@ -7,6 +7,7 @@ const QuestionWrite = () => {
     const [questionTitle, setQuestionTitle] = useState('');
     const [questionContent, setQuestionContent] = useState('');
     const [user, setUser] = useState("");
+    const navigate = useNavigate();
     useEffect(() => {
 
         if (sessionStorage.getItem("Authorizaton")) {
@@ -43,6 +44,7 @@ const QuestionWrite = () => {
             }).then(response => {
                 if (response.ok) {
                     alert("문의사항이 등록 되었습니다.")
+                    navigate("/service/qna");
                 } else {
                     alert("문의사항 등록에 실패했습니다.")
                 }
@@ -80,9 +82,7 @@ const QuestionWrite = () => {
                     <Link to="/service/qna">
                         <button className="cancel-button" onClick={cancelClick}>취소</button>
                     </Link>
-                    <Link to="/service/qna">
-                        <button className="write-button" onClick={writeClick}>등록</button>
-                    </Link>
+                    <button className="write-button" onClick={writeClick}>등록</button>
                 </div>
             </div>
         </div>
