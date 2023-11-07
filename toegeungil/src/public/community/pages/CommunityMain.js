@@ -2,6 +2,7 @@ import CommunityList from "../components/CommunityList";
 import "../../layout/layout.css";
 import { useCallback, useEffect, useState } from "react";
 import Paging from "../components/Paging";
+import jwtDecode from "jwt-decode";
 
 
 function CommunityMain({localfilters}) {
@@ -9,7 +10,13 @@ function CommunityMain({localfilters}) {
     const [page, setPages] = useState(1);
     const [pageCount, setPageCount] = useState();
 
+    const [user, setUser] = useState();
+
     useEffect(() => {
+        if(sessionStorage.getItem("Athorization")){
+            setUser(jwtDecode(sessionStorage.getItem("Authorization")))
+        }
+        
         if(localfilters === "0" || localfilters === undefined || localfilters === null){
             fetch(process.env.REACT_APP_URL +  `/communitys?page=${page - 1}&size=12`)
             .then((response) => response.json())
