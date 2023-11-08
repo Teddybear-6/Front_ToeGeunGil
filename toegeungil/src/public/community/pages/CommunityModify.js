@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import PostingStyle from "../../community/components/css/CommunityPosting.module.css";
 import { useLocation, Link } from "react-router-dom";
 import CommunityKeywordList from "../components/CommunityKeywordList";
-import jwt_decode from "jwt-decode";
 import DetailsTitleStyle from '../components/css/CommunityDetailsTitle.module.css';
 
 function CommunityModify() {
@@ -16,7 +15,6 @@ function CommunityModify() {
     const [keyword, setKeyword] = useState([]);
     const [communityKeywordDTOList, setCommunityKeywordDTOList] = useState([]);
     const [local, setLocal] = useState([]);
-    const [user, setUser] = useState();
 
     const [community, setCommunity] = useState({
         communityNum: communitys.communitys.communityNum,
@@ -28,10 +26,6 @@ function CommunityModify() {
 
 
     useEffect(() => {
-
-        // if (sessionStorage.getItem("Authorizaton")) {
-        //     setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
-        // }
 
         if (communitys.communitys.communityNum) {
             fetch(process.env.REACT_APP_URL + `/communitys/${communitys.communitys.communityNum}`)
