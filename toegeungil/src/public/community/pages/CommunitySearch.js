@@ -4,7 +4,7 @@ import Paging from "../components/Paging";
 
 function CommunitySearch(){
     const [community, setCommunity] = useState([]);
-    const [page, setPage] = useState(1);
+    const [page, setPages] = useState(1);
     const [pageCount, setPageCount] = useState();
 
     const communityTitle = useLocation().state
@@ -18,5 +18,20 @@ function CommunitySearch(){
                 return response.json();
             }
         }).then(res => setCommunity(res))
+
+        fetch(process.env.REACT_APP_URL + `/communitys/search/size?communityTitle=${communityTitle}`)
+        .then(res => res.json())
+        .then(res => setPageCount(res))
+    }, [page, communityTitle]);
+
+    const setPage = useCallback((page) => {
+        setPages(page)
     })
+
+    return(
+        <>
+            
+        </>
+    )
+
 }
