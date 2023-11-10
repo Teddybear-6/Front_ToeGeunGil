@@ -32,7 +32,6 @@ function CommunitySearch(){
     return(
         <>
                 <div className="menuFont">Community - '{communityTitle}' 전체 결과</div>
-                <hr className='hrSty marB50'/>
                 {
                     !community ? <div>검색결과가 없습니다.</div> : (<CommunityList community={community}/>)
                 }
