@@ -8,5 +8,12 @@ function CommunityNavbar({ localfilters, setLocalFilters }) {
         fetch(process.env.REACT_APP_URL + `/category`)
             .then(response => response.json())
             .then(response => setCategory(response));
-    })
+
+
+        fetch(process.env.REACT_APP_URL + `local`)
+            .then(response => response.json())
+            .then(response => setLocal(response));
+
+        setLocalFilters(null)
+    }, [])
 }
