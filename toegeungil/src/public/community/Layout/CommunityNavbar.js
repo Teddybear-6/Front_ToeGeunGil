@@ -16,4 +16,8 @@ function CommunityNavbar({ localfilters, setLocalFilters }) {
 
         setLocalFilters(null)
     }, [])
+
+    const onChangeHandler = (e) => {
+        setLocalFilters(e.target.value)
+    };
 }
