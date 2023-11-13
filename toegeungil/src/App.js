@@ -55,6 +55,8 @@ import React, { useState } from "react";
 import CommunityModify from "./public/community/pages/CommunityModify";
 import SocialSearch from "./public/social/page/SocialSearch";
 import Search from "./public/search/Search";
+import CommunityLayout from "./public/community/Layout/CommunityLayout";
+import CommunityCategory from "./public/community/components/CommunityCategory";
 
 function App() {
   /* 라우팅
@@ -105,7 +107,10 @@ function App() {
             <Route path="social/modify" element={<SocialModify />} />
           </Route>
           {/* 커뮤니티 */}
-          <Route path="/communitys" element={<CommunityMain />} />
+          <Route element={<CommunityLayout localfilters={localfilters} setLocalFilters={setLocalFilters}/>}>
+          <Route path="/communitys" element={<CommunityMain localfilters={localfilters} />} />
+          <Route path="communitycategory/:categoryCode" element={<CommunityCategory localfilters={localfilters}/>}/>
+          </Route>
           <Route
             path="/communitys/:communityNum"
             element={<CommunityDetail />}
