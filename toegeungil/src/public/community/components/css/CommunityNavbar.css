@@ -1,0 +1,36 @@
+.localSty{
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.188rem;
+    justify-content: flex-end;
+}
+
+.localName{
+    color: #87746B;
+    font-size: 1.375rem;
+    font-weight:600;
+    width: 3.125rem;
+    height: 1.375rem;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.localBar{
+    width: 15.625rem;
+    height: 3.125rem;
+    border: 0.125rem solid #B9A49B;
+    border-radius: 3.125rem;
+}
+
+.localBarText{
+    color: #87746B;
+    font-weight: bold;
+    font-size: 1.375;
+    border: none;
+    resize: none;
+    border-radius: 100px;
+    border-color: #87746B;
+    width: 12.5rem;
+    margin: 0.75rem 1.563rem 0.75rem 1.563rem;
+    align-items: center;
+}
