@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import '../components/css/CommunityNavbar.css'
+import { NavLink } from "react-router-dom";
 
 function CommunityNavbar({ localfilters, setLocalFilters }) {
     const [category, setCategory] = useState();
@@ -40,6 +41,17 @@ function CommunityNavbar({ localfilters, setLocalFilters }) {
                             </option>
                         ))}
                     </select>
+                </div>
+            </div>
+
+            <div className="categorySty">
+                <div className="categoryName">
+                    <NavLink to={"/communitys"} className={({ isActive }) => isActive ? "categoryOn" : "categoryOff"}>전체</NavLink>
+                    {
+                        category?.map((m,index) => (
+                            <NavLink state={m.categoryCode} to={`communityCategory/${m.categoryCode}`} key={index} className={({isActive}) => isActive ? "categoryOn" : "categoryOff"}>{m.categoryName}</NavLink>
+                        ))
+                    }
                 </div>
             </div>
         </>
