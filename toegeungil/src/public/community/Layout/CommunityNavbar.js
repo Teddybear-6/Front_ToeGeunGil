@@ -49,7 +49,7 @@ function CommunityNavbar({ localfilters, setLocalFilters }) {
                     <NavLink to={"/communitys"} className={({ isActive }) => isActive ? "categoryOn" : "categoryOff"}>전체</NavLink>
                     {
                         category?.map((m,index) => (
-                            <NavLink state={m.categoryCode} to={`communityCategory/${m.categoryCode}`} key={index} className={({isActive}) => isActive ? "categoryOn" : "categoryOff"}>{m.categoryName}</NavLink>
+                            <NavLink state={m.categoryCode} to={`communitycategory/${m.categoryCode}`} key={index} className={({isActive}) => isActive ? "categoryOn" : "categoryOff"}>{m.categoryName}</NavLink>
                         ))
                     }
                 </div>
