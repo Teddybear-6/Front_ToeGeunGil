@@ -34,3 +34,15 @@
     margin: 0.75rem 1.563rem 0.75rem 1.563rem;
     align-items: center;
 }
+
+.categorySty{
+    border: 0.188rem solid #8FC4B3;
+    border-radius: 3.125rem;
+    width: 93.75rem;
+    height: 6.25rem;
+    margin: auto;
+    margin-bottom: 3.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
