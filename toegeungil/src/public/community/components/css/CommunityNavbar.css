@@ -54,3 +54,13 @@
     justify-content: space-around;
     align-items: center;
 }
+
+.categoryOn{
+    text-decoration: none;
+    width: 12.5rem;
+    height: 1.875rem;
+    color: #128865;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
