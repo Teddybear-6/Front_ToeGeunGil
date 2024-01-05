@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
-import "./hobbyNabercss.css"
+import "../components/css/hobbyNabercss.css"
 const HobbyNavber = ({ localfilters, setLocalFilters }) => {
   const [cagegory, setCategory] = useState();
   const [local, setLocal] = useState();

@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
-import "./JoinUser.css"
-import detailSytle from "../components/hobbyDetail.module.css"
+import "./css/JoinUser.css"
+import detailSytle from "./css/hobbyDetail.module.css"
 import jwt_decode from "jwt-decode";
 import { Link } from "react-router-dom";
 

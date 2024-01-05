@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import ImageStyle from "./hobbyDetail.module.css"
+import ImageStyle from "./css/hobbyDetail.module.css"
 
 
 

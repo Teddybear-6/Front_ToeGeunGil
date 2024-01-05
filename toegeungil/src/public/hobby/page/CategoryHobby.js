@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import HobbyMain from "../components/hobbyMain";
-import AllHobbyCss from "./AllHobby.module.css";
+import AllHobbyCss from "../components/css/AllHobby.module.css";
 import Paging from "../components/Paging";
 import { useLocation } from "react-router-dom";
 import "../../layout/layout.css";

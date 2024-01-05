@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import detailSytle from "../components/hobbyDetail.module.css"
+import detailSytle from "../components/css/hobbyDetail.module.css"
 import HobbyDetailTitle from "../components/hobbyDetailTitle";
 import HobbyImages from "../components/hobbyDetailImages";
 import HobbyMainImages from "../components/hobbyDetailMainImages";

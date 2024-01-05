@@ -1,13 +1,13 @@
 /* 전체 틀 */
-.tutorNavwraper{
+.tutorNavwraper {
     border: 0.188rem solid #8FC4B3;
     border-radius: 3.125rem;
     width: 93.75rem;
     height: 6.25rem;
     margin: auto;
-    margin-bottom: 60px;
+    margin-bottom: 3.75rem;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
 }
 
