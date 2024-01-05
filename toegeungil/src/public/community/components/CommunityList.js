@@ -17,7 +17,7 @@ const CommunityList = () => {
             .then((data) => {
                 setCommunityList(data);
             });
-
+        console.log(communityList);
 
     };
 
@@ -27,7 +27,7 @@ const CommunityList = () => {
         }
 
         getCommunityList();
-
+        console.log(communityList);
     }, []);
 
 
@@ -36,7 +36,7 @@ const CommunityList = () => {
     };
 
     return (
-        <div className="communityMain">
+        <div>
             <table className="community-main">
                 <thead>
                     <tr>
@@ -65,11 +65,7 @@ const CommunityList = () => {
                                 <td>
                                     <div className={DetailsTitleStyle.MainKeyword}>
                                         {community.communityKeywordDTOList?.map((m, index) => (
-                                            <>
-                                                {index < 3 ? <CommunityKeyword key={index} code={m} /> : index === 3 ?
-                                                    <div className={DetailsTitleStyle.communityMainKeyword3Up}>···</div> : null
-                                                }
-                                            </>
+                                            <CommunityKeyword key={index} code={m} />
                                         ))}
                                     </div>
                                 </td>

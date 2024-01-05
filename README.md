@@ -6,25 +6,6 @@
 
 <br><br>
 
-## 팀 소개
-
-### [ Team. Teddybear-6 ]
-
-- [강소임(Notice)](https://github.com/afdsj) <br>
-- [고민영(Social)](https://github.com/bearnyong) <br>
-- [김민지(QnA)](https://github.com/KMJs680) <br>
-- [김형통(User)](https://github.com/httt56 ) <br>
-- [이단비(Community)](https://github.com/daneeb1) <br>
-- [전지환(Hobby)](https://github.com/jjjh0508)
-
-<br>
-
-### [ 작업 ]
-- [BACK_REPOSITORY](https://github.com/Teddybear-6/Back_ToeGeunGil) <br>
-- [FRONT_REPOSITORY](https://github.com/Teddybear-6/Front_ToeGeunGil) <br>
-
-<br><br><br>
-
 ## 프로젝트 소개
 
 <img width="500" alt="퇴근길 로고 이미지" src="https://github.com/Teddybear-6/.github/assets/130436337/4c493406-29ef-4f98-90c8-5a9c9ef65f79">
@@ -52,6 +33,25 @@
 - 취미가 비슷하거나 같은 사용자들끼리의 커뮤니케이션을 원하는 이들
 
 <Br><br><br>
+
+## 팀 소개
+
+### [ Team. Teddybear-6 ]
+
+- [강소임(Notice)](https://github.com/afdsj) <br>
+- [고민영(Social)](https://github.com/bearnyong) <br>
+- [김민지(QnA)](https://github.com/KMJs680) <br>
+- [김형통(User)](https://github.com/httt56 ) <br>
+- [이단비(Community)](https://github.com/daneeb1) <br>
+- [전지환(Hobby)](https://github.com/jjjh0508)
+
+<br>
+
+### [ 작업 ]
+- [BACK_REPOSITORY](https://github.com/Teddybear-6/Back_ToeGeunGil) <br>
+- [FRONT_REPOSITORY](https://github.com/Teddybear-6/Front_ToeGeunGil) <br>
+
+<br><br><br>
 
 ## 개발 환경 및 기술 소개
 ### [ 기술스택 및 개발 환경 ]
@@ -117,3 +117,6 @@
 |답변 등록|POST|answers|
 |답변 수정|PUT|answers/{answerID}|
 |답변 삭제|DELETE|answers/{answerID}|
+
+
+

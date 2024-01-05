@@ -7,6 +7,12 @@ const NoticeWrite = () => {
     const [user, setUser] = useState('');
     const [noticeTitle, setNoticeTitle] = useState(''); // 공지 제목
     const [noticeContent, setNoticeContent] = useState(''); // 공지 내용
+    const [image, setImage] = useState({});
+    const [showImage, setShowImage] = useState();
+    const [notice, setNotice] = useState({
+        noticeTitle,
+        noticeContent
+    });
 
     useEffect(() => {
         if (sessionStorage.getItem("Authorizaton")) {
@@ -16,31 +22,38 @@ const NoticeWrite = () => {
 
     const handleTitleChange = (e) => {
         setNoticeTitle(e.target.value);
+        setNotice({ ...notice, ["noticeTitle"]: noticeTitle })
     }
     console.log(noticeTitle);
 
     const handleContentChange = (e) => {
         setNoticeContent(e.target.value);
+        setNotice({ ...notice, ["noticeContent"]: noticeContent })
     }
     console.log(noticeContent);
+
 
     const cancelClick = () => {
         alert("공지사항 작성이 취소 되었습니다");
     }
 
     const writeClick = () => {
-
         console.log(noticeTitle);
+        const formData = new FormData();
+        const blob = new Blob([JSON.stringify(notice)], {
+            type: 'application/json'
+        });
+        formData.append('notice', blob);
+        formData.append('image', image[0]);
+        // e.preventDefault(); // submit action을 안타도록 설정
         fetch(process.env.REACT_APP_URL + `/notices`,
             {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json; charset=UTF-8"
+                    // "Content-Type": "application/json; charset=UTF-8"'
+                    "Authorization": sessionStorage.getItem("Authorizaton")
                 },
-                body: JSON.stringify({
-                    "noticeTitle": noticeTitle,
-                    "noticeContent": noticeContent,
-                }),
+                body: formData
             })
             .then(response => {
                 if (response.ok) {
@@ -55,9 +68,16 @@ const NoticeWrite = () => {
             })
     }
 
+    // 이미지 상대경로 저장
+    const handleAddImages = (event) => {
+        const img = event.target.files;
+        const currentImageUrl = URL.createObjectURL(img[0]);
+        setShowImage(currentImageUrl);
+        setImage(img);
+    };
+
     return (
         <div className='toegeungillayou'>
-
             <div className="wrapper" >
                 <h1 className="write-header">공지사항 작성</h1>
                 {user && user.auth[0] === 'ADMIN' ? (
@@ -71,6 +91,19 @@ const NoticeWrite = () => {
                                     value={noticeTitle}
                                     onChange={handleTitleChange}
                                 />
+                            </div>
+                        </div>
+                        {/* 대표사진, 모임 소개 */}
+                        <div className="posFlex">
+                            <div className="posTitle">대표 사진</div>
+                            <div className="posBoard w575h350 maR50">
+                                <label>
+                                    <div htmlFor="input-file" onChange={handleAddImages}>
+                                        <input className="posimage" type="file" id="input-file" name="image" />
+                                        <img className="posBoard_Img w575h350 maR50" src={showImage}></img>
+                                    </div>
+                                </label>
+                                {/* 사진 미리보기... */}
                             </div>
                         </div>
                         <div className="write-col2 flexsty">
