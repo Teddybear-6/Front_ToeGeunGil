@@ -1,14 +1,14 @@
 import HobbyCard from "./hobbyCard"
-import "./hobbyMain.css"
+import "./css/hobbyMain.css"
 function HobbyMain({ hobbys }) {
     return (
         <>
-            <div style={{ width: "1500px", display: "block", boxSizing: "border-box" }}>
+            <div className="hobbyMainCardBoard">
                 <div className="hobbyCardcontainer">
                     {!hobbys ? null : hobbys?.map((hobby, index) => (
-                        <div style={{ marginBottom: "20px" }}>
-                            <HobbyCard hobbys={hobby} key={index} />
-                        </div>
+
+                        <HobbyCard hobbys={hobby} key={index} />
+
                     ))}
                 </div>
             </div >

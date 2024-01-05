@@ -1,36 +1,38 @@
 .hobbyCard {
-    padding: 1rem;
-    /* 24px */
-    margin-left: 1.25rem;
-    text-align: center;
-    border-radius: 3.125rem;
-    display: inline-flex;
-    flex-direction: column;
+
     border: 0.125rem solid #8FC4B3;
     width: 21.563rem;
     height: 22.813rem;
-    justify-content: space-between;
-    box-sizing: border-box;
+    border-radius: 3.125rem;
+
+    margin-bottom: 2.5rem;
+    margin-left: 0.938rem;
+    margin-right: 0.938rem;
 
 }
 
 
 .hobbyImage {
+    width: 18.75rem;
+    height: 12.5rem;
     border-radius: 3.125rem;
-    height: 60%;
+    margin: 1.563rem 1.406rem 1.563rem 1.406rem;
 
 }
 
 .hobbyTitle {
-    margin-left: 0.625rem;
-    color: #41A487;
+    width: 18.75rem;
+    height: 1.325rem;
     font-size: 1.125rem;
-    text-align: left;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-weight: bold;
     font-style: italic;
+    font-weight: bold;
+    color: #41A487;
+    margin: 0rem 1.438rem 1.25rem 1.438rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+
 }
 
 
@@ -150,4 +152,24 @@
 .keywordUnName:hover>.mainHobbyKeysTool {
     /* 기타 키워드 보이기 */
     display: block;
+}
+
+
+.hobbyCard_Link {
+    text-decoration-line: none;
+}
+
+.cardkeyword {
+    width: 18.75rem;
+    height: 1.875rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #87746B;
+    margin: 0rem 1.438rem 0rem 1.438rem;
+}
+
+.keywordhide {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
 }

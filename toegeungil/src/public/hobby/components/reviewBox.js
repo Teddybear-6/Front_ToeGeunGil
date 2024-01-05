@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import jwt_decode from "jwt-decode";
 import { FaStar } from 'react-icons/fa';
-import "./review.css"
+import "./css/review.css"
 import ReviewAnswer from "./reviewAnswer";
 import NameCard from "./name";
 

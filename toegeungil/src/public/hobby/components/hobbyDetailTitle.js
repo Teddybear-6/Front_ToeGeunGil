@@ -1,8 +1,8 @@
 
 import { useState, useEffect } from 'react';
-import CardStyle from './hobbyCard.module.css';
+import CardStyle from './css/hobbyCard.module.css';
 import HobbyKeyword from './HobbyKeyword';
-import HobbyStyle from './HobbyDetailTitle.module.css'
+import HobbyStyle from './css/HobbyDetailTitle.module.css'
 
 function HobbyDetailTitle({ detail }) {
     const [hobby, setHobby] = useState({});
