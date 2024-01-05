@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react';
-import CardStyle from './hobbyCard.module.css';
+import CardStyle from './css/hobbyCard.module.css';
 
 
 function HobbyCagegoty({ category }) {

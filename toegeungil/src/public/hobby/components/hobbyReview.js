@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import "./review.css"
+import "./css/review.css"
 import { FaStar } from 'react-icons/fa';
 
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import ReviewBox from "./reviewBox";
-import "./review.css"
+import "./css/review.css"
 
 function HobbyReview({ hobbyCode }) {
 

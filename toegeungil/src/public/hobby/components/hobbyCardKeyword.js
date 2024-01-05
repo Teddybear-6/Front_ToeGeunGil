@@ -2,7 +2,7 @@
 import HobbyKeyword from './HobbyKeyword';
 import HobbyKeywordhide from './hobbyKeywordhide';
 
-import CardStyle from './hobbyCard.module.css';
+import CardStyle from './css/hobbyCard.module.css';
 function HobbyCardkeyword({ keyword }) {
 
   const newArr = [];
