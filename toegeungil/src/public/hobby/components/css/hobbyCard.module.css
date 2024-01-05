@@ -1,5 +1,4 @@
 .hobbyCard {
-
     border: 0.125rem solid #8FC4B3;
     width: 21.563rem;
     height: 22.813rem;
@@ -31,8 +30,6 @@
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-
-
 }
 
 
