@@ -149,7 +149,7 @@ function HobbyModify() {
             <div className="titleframe">
               <p className="hobbytitle">취미제목</p>
               <div className="title">
-                <textarea className="hobbytitleText" maxLength="150" type="text" name="hobbyTitle" value={hobby.hobbyTitle} onChange={onChangeHandler} />
+                <input className="hobbytitleText w1250h18" type="text" name="hobbyTitle" value={hobby.hobbyTitle} onChange={onChangeHandler} />
               </div>
             </div>
             <div className="mainIntroFrame">
