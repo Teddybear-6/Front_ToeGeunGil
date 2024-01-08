@@ -29,14 +29,12 @@
     }
 
     .hobbytitleText {
-        margin-left: 1.875rem;
-        margin-top: 10.625rem;
-        border: none;
+        margin: 0.625rem 1.25rem 0rem 1.25rem;
         resize: none;
-        font-size: 1.2em;
         outline: none;
-        width: 62.5rem;
-        height: 42.5rem;
+        border: none;
+        font-size: 1.063rem;
+        font-weight: 600;
     }
 
 }
@@ -195,10 +193,10 @@
 .MaxNumFrame {
     display: flex;
     margin-top: 1.25rem;
-    margin-left: 1.25rem;
+
 
     .maxNum {
-        margin-left: 1.25rem;
+        margin-left: 1.50rem;
         border-radius: 3.125rem;
         border: 2px solid #8FC4B3;
         width: 35.938rem;
@@ -211,10 +209,11 @@
         width: 35.938rem;
         height: 3.125rem;
         margin-left: 4.375rem;
+
     }
 
     .priceName {
-        margin-left: 1.25rem;
+        margin-left: 1.80rem;
     }
 
 }
