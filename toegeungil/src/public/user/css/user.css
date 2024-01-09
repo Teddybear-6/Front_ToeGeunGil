@@ -178,3 +178,36 @@
     color: #096249;
     background: #CCE2DB;
 }
+
+.userInputRadio {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 30rem;
+    height: 5rem;
+    background: white;
+    border-radius: 1.25rem;
+    border: 0.125rem solid #CCE2DB;
+    color: #41A487;
+
+}
+
+.userInputRadio img {
+    margin-left: 1.25rem;
+}
+
+.userInputRadio span {
+    margin-left: 3rem;
+}
+
+.userAuthCheck {
+    height: 2rem;
+    width: 2rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #096249;
+    font-size: 1.063rem;
+    font-weight: bold;
+    margin-left: 2rem;
+}
