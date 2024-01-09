@@ -24,7 +24,8 @@ const Signup = () => {
     const [nickname, setNickName] = React.useState("");
     const [password, setPassword] = React.useState("");
     const [email, setEmail] = React.useState("");
-
+    const [role, setrole] = React.useState("회원");
+    const [authList, setAuthList] = useState(["회원", "강사"]);
     //오류메세지 상태저장
     const [nameMessage, setNameMessage] = React.useState("");
     const [idMessage, setIdMessage] = React.useState("");
@@ -67,6 +68,7 @@ const Signup = () => {
                 "nickName": nickname,
                 "userEmail": email,
                 "userPassword": password,
+                "role": role
 
             }),
         }).then(res => res.text())
@@ -92,6 +94,10 @@ const Signup = () => {
 
     const passSet = (e) => {
         setPassword(e.target.value)
+    }
+
+    const roleSet = (e) => {
+        setrole(e.target.value)
     }
 
     const findEmail = () => {
@@ -129,6 +135,21 @@ const Signup = () => {
                     <div className="userInput">
                         <img src={name_icon} alt="" />
                         <input type="text" placeholder="Name" onChange={nameSet} />
+                    </div>
+                    <div className="userInputRadio">
+                        <img src={name_icon} alt="" />
+                        {authList.map((value, i) => (
+                            <React.Fragment key={i}>
+                                <span> {value}</span>
+                                <input className="userAuthCheck" id={value} type="radio"
+                                    value={value}
+                                    checked={role === value}
+                                    onChange={roleSet}
+                                />
+
+                            </React.Fragment>
+                        ))}
+
                     </div>
                     {/* nickname */}
                     <div className="userInput">
