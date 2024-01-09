@@ -1,31 +1,64 @@
-import React, { useState } from "react";
-import {useNavigate} from 'react-router-dom';
-import './mypage.css'; 
+import { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
+import '../css/mypage.css';
+import jwt_decode from "jwt-decode";
 
-const Mypage =()=>{
-    const[action, setAction] = useState("Mypage");
-    return(
+const Mypage = () => {
+    const [user, setUser] = useState();
+
+    useEffect(() => {
+        if (sessionStorage.getItem("Authorizaton")) {
+            setUser(jwt_decode(sessionStorage.getItem("Authorizaton")))
+        }
+    }, []);
+
+    return (
         <>
-        <div className="container">
-            <div className="header">
-                <div className="text">Mypage</div>
-                <div className="underline"></div>
-            </div>
-        </div>
-            <div>
-            <table className="community-main">
-                <thead>
-                    <tr>
-                        <th>수강현황</th>
-                        <th>나의리뷰</th>
-                        <th>수강취소현황</th>
-                        <th>문의내역</th>
-                    </tr>
-                </thead>
-            </table>
-            </div>
-        
-            {/* <div class="row">
+            <div className='toegeungillayout'>
+                <div className="menuFont">Mypage</div>
+                <hr className='hrSty' />
+                <div className='layout2'>
+                    <div className="userInfoSty">[ 회원정보 ]</div>
+                    <div className="userInfoBox myPageFlex">
+                        <div>
+                            <img className="myPageImage" src="participate.png" />
+                        </div>
+                        <div className="marT40">
+                            <div>
+                                {!(!(user === undefined) && !(user === null)) ? null :
+                                    <>
+                                        <div className="myPageFlex">
+                                            <div className="myPageUserInfo">회원명</div>
+                                            <div className="myPageUserInfoText">{user.name}</div>
+                                        </div>
+                                        <div className="myPageFlex">
+                                            <div className="myPageUserInfo">닉네임</div>
+                                            <div className="myPageUserInfoText">{user.nickName}</div>
+                                        </div>
+                                        <div className="myPageFlex">
+                                            <div className="myPageUserInfo">이메일</div>
+                                            <div className="myPageUserInfoText">{user.userId}</div>
+                                        </div>
+                                    </>
+                                }
+                            </div>
+                            {/* <button className="buttonOn_so userInfoButton">정보 수정</button> */}
+                        </div>
+                    </div>
+                </div>
+                {/* <div className="mypage-main">
+                    <table >
+                        <thead>
+                            <tr>
+                                <th>수강현황</th>
+                                <th>나의리뷰</th>
+                                <th>수강취소현황</th>
+                                <th>문의내역</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div> */}
+                {/* <div class="row">
             <div class="column">수강현황
                 <ul>
                 <li>HTML</li>
@@ -59,28 +92,9 @@ const Mypage =()=>{
                 </ul>
             </div>
             </div> */}
-
-        
-
-
-        
-
-            <div class="footer">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Volutpat odio facilisis mauris sit amet massa. 
-            Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Mi eget mauris pharetra et. Non tellus orci ac auctor augue. 
-            Elit at imperdiet dui accumsan sit. Ornare arcu dui vivamus arcu felis. Egestas integer eget aliquet nibh praesent. 
-            In hac habitasse platea dictumst quisque sagittis purus. Pulvinar elementum integer enim neque volutpat ac.
-
-            Senectus et netus et malesuada. Nunc pulvinar sapien et ligula ullamcorper malesuada proin. Neque convallis a cras semper auctor. 
-            Libero id faucibus nisl tincidunt eget. Leo a diam sollicitudin tempor id. A lacus vestibulum sed arcu non odio euismod lacinia. 
-            In tellus integer feugiat scelerisque. Feugiat in fermentum posuere urna nec tincidunt praesent.
-            Porttitor rhoncus dolor purus non enim praesent</p>
-            </div> 
-
-
+            </div>
         </>
-    ) 
+    )
 }
 
 export default Mypage;

@@ -1,21 +1,15 @@
 import { useState, useEffect } from "react";
-import ImageStyle from "./hobbyDetail.module.css"
+import ImageStyle from "./css/hobbyDetail.module.css"
 
 
 
-function HobbyImages({detail}){
-    const [images, setImages] = useState();
-   
-    useEffect(()=>{
-    
-    },[detail]);
+function HobbyImages({ detail }) {
 
-
-    return(
+    return (
         <>
-                <div>
-                    <img className={ImageStyle.smallImage} src={`http://106.250.199.126:9000/image/${detail.path}`}></img>
-                </div>
+            <div>
+                <img className={ImageStyle.smallImage} src={`http://106.250.199.126:9000/image/${detail.path}`}></img>
+            </div>
         </>
     )
 }

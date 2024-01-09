@@ -1,7 +1,7 @@
 .pagination {
     display: flex;
     justify-content: center;
-    margin-top: 15px;
+    margin-top: 0.938rem;
 }
 
 ul {
@@ -12,33 +12,33 @@ ul {
 ul.pagination li {
     /* < , 1, 2, > */
     display: inline-block;
-    width: 40px;
-    height: 40px;
-    border: 1px solid #8FC4B3;
-    border-radius: 10px;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 0.063rem solid #8FC4B3;
+    border-radius: 0.625rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
-    margin-left: 7.5px;
-    margin-right: 7.5px;
+    font-size: 1.25rem;
+    margin-left: 0.469rem;
+    margin-right: 0.469rem;
 }
 
 ul.pagination li:first-child {
     /* << */
-    border-radius: 10px;
+    border-radius: 0.625rem;
 }
 
 ul.pagination li:last-child {
     /* >> */
-    border-radius: 10px;
+    border-radius: 0.625rem;
 }
 
 ul.pagination li a {
     /* 버튼 안에 텍스트 */
     text-decoration: none;
     color: #41A487;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-style: normal;
 }
 
@@ -60,7 +60,7 @@ ul.pagination li a.active {
 }
 
 .page-selection {
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
     color: #096249;
 }

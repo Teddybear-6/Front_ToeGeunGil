@@ -11,154 +11,154 @@
 }
 
 .flexStyleKeywordAndUser {
-    width: 700px;
-    height: 30px;
+    width: 43.75rem;
+    height: 1.875rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between; /*끝과 끝*/
-    margin: 0px 50px 0px 50px;
+    margin: 0rem 3.125rem 0rem 3.125rem;
 }
 
 .socialDetailsTitleBoard {
-    width: 800px;
-    height: 150px;
-    border-radius: 50px;
+    width: 50rem;
+    height: 9.375rem;
+    border-radius: 3.125rem;
     background-color: white;
-    border: 3px solid #CCE2DB;
-    margin-bottom: 30px;
+    border: 0.188rem solid #CCE2DB;
+    margin-bottom: 1.875rem;
 }
 
 .socialDetailsTitle {
-    width: 700px;
-    height: 36px;
-    font-size: 36px;
+    width: 43.75rem;
+    height: 2.25rem;
+    font-size: 2.25rem;
     font-weight: bold;
     color: #41A487;
-    margin: 30px 0px 30px 50px;
+    margin: 1.875rem 0rem 1.875rem 3.125rem;
     text-align: start;
 }
 
 .socialDetailsWriter {
-    width: 265px;
-    height: 30px;
-    font-size: 18px;
+    width: 16.563rem;
+    height: 1.875rem;
+    font-size: 1.125rem;
     color: #87746B;
     font-weight: 600;
     text-align: right;
 }
 
 .socialDetailsImage {
-    width: 800px;
-    height: 320px;
-    border-radius: 50px;
+    width: 50rem;
+    height: 20rem;
+    border-radius: 3.125rem;
 }
 
 .socialDetailsScheduleBoard {
-    width: 570px;
-    height: 500px;
-    border-radius: 50px;
-    border: 3px solid #CCE2DB;
-    margin-left: 30px;
+    width: 35.625rem;
+    height: 31.25rem;
+    border-radius: 3.125rem;
+    border: 0.188rem solid #CCE2DB;
+    margin-left: 1.875rem;
 }
 
 .socialDetailsMargin50Layout {
-    margin: 50px 50px 50px 50px;
+    margin: 3.125rem 3.125rem 3.125rem 3.125rem;
 }
 
 .socialDetailsMargin050Layout {
-    margin: 30px 50px 50px 50px;
+    margin: 1.875rem 3.125rem 3.125rem 3.125rem;
     color: #87746B;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 500;
 }
 
 .socialDetailsOthersty {
-    margin: 50px 50px 0px 50px;
-    width: 1280px;
-    height: 24px;
-    font-size: 24px;
+    margin: 3.125rem 3.125rem 0rem 3.125rem;
+    width: 80rem;
+    height: 1.5rem;
+    font-size: 1.5rem;
     color: #8FC4B3;
     font-weight: bold;
 }
 
 .socialDetailsScheduleTitle {
-    width: 470px;
-    height: 24px;
-    font-size: 24px;
+    width: 29.375rem;
+    height: 1.5rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: #8FC4B3;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 106px;
+    margin-bottom: 6.625rem;
 }
 
 .socialDetailsScheduleContent {
-    width: 470px;
-    height: 18px;
-    font-size: 18px;
+    width: 29.375rem;
+    height: 1.125rem;
+    font-size: 1.125rem;
     font-weight: bold;
     color: #87746B;
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
 }
 
 .socialDetailsParticipate {
-    width: 1400px;
-    height: 230px;
-    border-radius: 50px;
-    border: 3px solid #E9E0DD;
-    margin-top: 30px;
+    width: 87.5rem;
+    height: 14.375rem;
+    border-radius: 3.125rem;
+    border: 0.188rem solid #E9E0DD;
+    margin-top: 1.875rem;
 }
 
 .socialDetailsIntro {
-    width: 1400px;
-    height: 450px;
-    border-radius: 50px;
-    border: 3px solid #CCE2DB;
-    margin-top: 30px;
-    font-size: 18px;
+    width: 87.5rem;
+    height: 28.125rem;
+    border-radius: 3.125rem;
+    border: 0.188rem solid #CCE2DB;
+    margin-top: 1.875rem;
+    font-size: 1.125rem;
     font-weight: 400;
     color: #655853;
 }
 
 .socialDetailsOther {
-    width: 1400px;
-    height: 200px;
-    border-radius: 50px;
-    border: 3px solid #CCE2DB;
-    margin-top: 30px;
-    font-size: 18px;
+    width: 87.5rem;
+    height: 12.5rem;
+    border-radius: 3.125rem;
+    border: 0.188rem solid #CCE2DB;
+    margin-top: 1.875rem;
+    font-size: 1.125rem;
     font-weight: 400;
     color: #655853;
 }
 
 .socialDetailsParticipateBoard {
-    margin: 40px 70px 0px 50px;
+    margin: 2.5rem 4.375rem 0rem 3.125rem;
 }
 
 .socialDetailsParticipateN {
-    width: 1280;
-    height: 24px;
-    margin-bottom: 30px;
-    font-size: 24px;
+    width: 80rem;
+    height: 1.5rem;
+    margin-bottom: 1.875rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: #87746B;
 }
 
 .socialDetailsParticipateImg {
-    width: 100px;
-    height: 100px;
-    margin-left: 20px;
+    width: 6.25rem;
+    height: 6.25rem;
+    margin-left: 1.25rem;
 }
 
 .buttonStyle {
-    width: 150px;
-    height: 75px;
-    border-radius: 50px;
+    width: 9.375rem;
+    height: 4.688rem;
+    border-radius: 3.125rem;
     color: #096249;
     background-color: #8FC4B3;
     border-color: #8FC4B3;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
     display: flex;
     justify-content: center;
@@ -167,13 +167,13 @@
 }
 
 .buttonStyle2 {
-    width: 150px;
-    height: 75px;
-    border-radius: 50px;
+    width: 9.375rem;
+    height: 4.688rem;
+    border-radius: 3.125rem;
     color: #41A487;
     background-color: #CCE2DB;
     border-color: #CCE2DB;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
     display: flex;
     justify-content: center;
@@ -181,5 +181,5 @@
 }
 
 .marB40px {
-    margin-bottom: 40px;
+    margin-bottom: 2.5rem;
 }

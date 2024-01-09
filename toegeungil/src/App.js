@@ -40,12 +40,11 @@ import LocalMain from "./public/local/pages/LocalMain";
 import LocalWrite from "./public/local/pages/LocalWrite";
 import LocalModify from "./public/local/pages/LocalModify";
 import SocialModify from "./public/social/page/SocialModify";
-import AnswerWrite from "./public/qna/pages/AnswerWrite";
-import SocialParticipate from "./public/social/components/componentAPI/SocialParticipate";
+
 import SocialLayout from "./public/social/layout/SocialLayout";
 import SocialCategory from "./public/social/page/SocialCategory";
 import MainImg from "./public/layout/MainImg";
-
+import QuestionModidy from "./public/qna/pages/QuestionModify";
 import HobbyLayout from "./public/hobby/layout/HoobyLayout";
 import CategoryHobby from "./public/hobby/page/CategoryHobby";
 import HobbySearch from "./public/hobby/page/HobbySearch";
@@ -54,12 +53,15 @@ import CategoryWrite from "./public/category/pages/CategoryWrite";
 import CategoryModify from "./public/category/pages/CategoryModify";
 import React, { useState } from "react";
 import CommunityModify from "./public/community/pages/CommunityModify";
+import SocialSearch from "./public/social/page/SocialSearch";
+import Search from "./public/search/Search";
 
 function App() {
   /* 라우팅
       : 어떤 요청(URL)을 어디로 안내 및 매핑 할 것인지를 정해놓고 진행하는 것
       : 리액트에서는 요청에 따라 요청에 매핑되는 컴포넌트를 랜더링 한다. */
   const [login, setLogin] = useState(false);
+  const [localfilters, setLocalFilters] = useState();
   return (
     <BrowserRouter>
       <ScrollToTop />
@@ -74,12 +76,17 @@ function App() {
           <Route path="mypage" element={<Mypage />}>
             {/* <Route index element={<Mypage/>}/> */}
           </Route>
+          {/* 검색 */}
+          <Route path="search">
+            <Route index element={<Search />} />
+            <Route path="hobby" element={<HobbySearch />} />
+            <Route path="social" element={<SocialSearch />} />
+          </Route>
           {/* 취미 */}
-          <Route element={<HobbyLayout />}>
-            <Route path='/hobby' element={<AllHobby />} />
+          <Route element={<HobbyLayout localfilters={localfilters} setLocalFilters={setLocalFilters} />}>
+            <Route path='hobby' element={<AllHobby localfilters={localfilters} />} />
             <Route path='hobby/:hobbyCode' element={<HobbyDetail />} />
-            <Route path="/hobbycategory/:categoryCode" element={<CategoryHobby />} />
-            <Route path="/hobby/search" element={<HobbySearch />} />
+            <Route path="hobbycategory/:categoryCode" element={<CategoryHobby localfilters={localfilters} />} />
           </Route>
           <Route element={<TutorLayout />}>
             <Route path="/tutor" element={<TutorHobbyList />} />
@@ -88,14 +95,14 @@ function App() {
             <Route path="/hobbystudent" element={<StudentList />} />
           </Route>
           {/* 소셜 */}
-          <Route element={<SocialLayout />}>
-            <Route path="social">
-              <Route index element={<SocialMain />} />
-              <Route path="socialcategory/:categoryCode" element={<SocialCategory />} />
-              <Route path=':socialNum' element={<SocialDetail />} />
-              <Route path='write' element={<SocialWrite />} />
-              <Route path="modify" element={<SocialModify />} />
-            </Route>
+          <Route element={<SocialLayout localfilters={localfilters} setLocalFilters={setLocalFilters} />}>
+            <Route path="social" element={<SocialMain localfilters={localfilters} />} />
+            <Route path="socialcategory/:categoryCode" element={<SocialCategory localfilters={localfilters} />} />
+          </Route>
+          <Route>
+            <Route path='social/:socialNum' element={<SocialDetail />} />
+            <Route path='social/write' element={<SocialWrite />} />
+            <Route path="social/modify" element={<SocialModify />} />
           </Route>
           {/* 커뮤니티 */}
           <Route path="/communitys" element={<CommunityMain />} />
@@ -126,6 +133,7 @@ function App() {
               <Route path="/service/qna" element={<QuestionMain />} />
               <Route path=":questionNum" element={<QuestionDetail />} />
               <Route path="/service/qna/write" element={<QuestionWrite />} />
+              <Route path="/service/qna/modify" element={<QuestionModidy />} />
               {/* <Route index  element={<AdminRouter />}/> */}
               {/* <Route path="admin" element={<AdminRouter />} /> */}
               {/* <Route path="public/main" element={<PublicRouter />} /> */}
@@ -136,7 +144,7 @@ function App() {
                 path="/service/answer/:answerNum"
                 element={<AnswerDetail />}
               />
-              <Route path="/service/answer/write" element={<AnswerWrite />} />
+
             </Route>
             {/* Local */}
             <Route path="/service/local">
@@ -154,6 +162,8 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+
+
   );
 }
 

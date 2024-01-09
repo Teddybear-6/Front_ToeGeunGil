@@ -6,7 +6,7 @@ import "../../layout/layout.css";
 function CommunityWrite({ }) {
     return (
         <>
-            <div className='ttoegeungillayou'>
+            <div className='toegeungillayout'>
                 <CommunityPosting />
             </div>
         </>

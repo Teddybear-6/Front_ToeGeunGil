@@ -1,20 +1,16 @@
 import { useEffect, useState } from "react";
 
-
 import MainStyle from '../css/SocialMainCard.module.css';
 
 function SocialKeyword({code}){
     const [keyword, setkeyword] = useState({});
 
     useEffect(() => {
-        console.log()
         fetch(process.env.REACT_APP_URL+`/keyword/${code.keywordCode}`)
             .then(response => response.json())
             .then(data => setkeyword(data));
-            console.log(keyword)
     },[code]);
 
-    console.log(keyword)
     return (
         <>
             <div className={MainStyle.socialMainKeywordDiv}>

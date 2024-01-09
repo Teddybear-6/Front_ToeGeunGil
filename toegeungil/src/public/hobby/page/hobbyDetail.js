@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import detailSytle from "../components/hobbyDetail.module.css"
+import detailSytle from "../components/css/hobbyDetail.module.css"
 import HobbyDetailTitle from "../components/hobbyDetailTitle";
 import HobbyImages from "../components/hobbyDetailImages";
 import HobbyMainImages from "../components/hobbyDetailMainImages";
@@ -36,14 +36,14 @@ function HobbyDetail() {
 
 
 
-    }, [])
+    }, [hobbyCode])
 
     const findjoin = (user) => {
         if (user) {
             fetch(process.env.REACT_APP_URL + `/hobbys/join/${hobbyCode}/${user?.no}`).then(res => res.json()).then(res => {
                 setJoin(res)
 
-            })
+            }).catch(e => console.log(e))
 
         }
     }
@@ -94,72 +94,69 @@ function HobbyDetail() {
 
         }
 
-
-
-
     }
 
 
     return (
         <>
-            <div className="toegeungillayout">
-                <div className="layout2">
-                    <div className={detailSytle.frame2}>
-                        <div className={detailSytle.details}>
-                            <div>
-                                <HobbyDetailTitle detail={detail}></HobbyDetailTitle>
-                            </div>
 
-                            <div className={detailSytle.mainImage}>
-                                {
-                                    !detail.imageId ? "이미지가 없습니다." : <HobbyMainImages detail={detail?.imageId[imageNum]} />
+            <div className="layout2">
+                <div className={detailSytle.frame2}>
+                    <div className={detailSytle.details}>
+                        <div>
+                            <HobbyDetailTitle detail={detail}></HobbyDetailTitle>
+                        </div>
 
-                                }
-                                <div className={detailSytle.mainImageDiv} >
+                        <div className={detailSytle.mainImage}>
+                            {
+                                !detail.imageId ? "이미지가 없습니다." : <HobbyMainImages detail={detail?.imageId[imageNum]} />
 
-                                    <div className={detailSytle.imageLine}>
-                                        {
-                                            !detail ? "이미지가 없습니다." : detail.imageId?.map((r, index) => (<div onClick={() => onClickHandler(index)}>< HobbyImages key={index} detail={r} /> </div>))
-                                        }
-                                    </div>
+                            }
+                            <div className={detailSytle.mainImageDiv} >
 
+                                <div className={detailSytle.imageLine}>
+                                    {
+                                        !detail ? "이미지가 없습니다." : detail.imageId?.map((r, index) => (<div onClick={() => onClickHandler(index)}>< HobbyImages key={index} detail={r} /> </div>))
+                                    }
                                 </div>
 
                             </div>
-                        </div>
-
-                        <HobbySchedule detail={detail} />
-
-                    </div>
-                    <div className={detailSytle.joinframe}>
-                        <div className={detailSytle.socialDetailsParticipateN}>참가자 ( {joinuser.length} / {detail.maxPersonnel} )</div>
-                        <div>
-                            {findjoin(user, hobbyCode)}
-                            <JoinUser joinuser={joinuser} detail={detail} join={join} joinClickHandler={joinClickHandler} />
 
                         </div>
-
-
                     </div>
 
-                    <div className={detailSytle.intro}>
-                        <div className={detailSytle.introName}>소셜 소개</div>
-                        <p className={detailSytle.introContent}>{detail.intro}</p>
+                    <HobbySchedule detail={detail} />
+
+                </div>
+                <div className={detailSytle.joinframe}>
+                    <div className={detailSytle.socialDetailsParticipateN}>참가자 ( {joinuser.length} / {detail.maxPersonnel} )</div>
+                    <div>
+                        {findjoin(user, hobbyCode)}
+                        <JoinUser joinuser={joinuser} detail={detail} join={join} joinClickHandler={joinClickHandler} />
+
                     </div>
-
-                    <HobbyTutor tutorIntro={detail.tutorIntro} tutorCode={detail.tutorCode}></HobbyTutor>
-
-                    {
-                        detail.close == 'Y' && <HobbyReview hobbyCode={hobbyCode} />
-                    }
-                    {
-
-                        (detail.close == 'Y' && join) && <RevieWrite hobbyCode={hobbyCode} />
-                    }
 
 
                 </div>
+
+                <div className={detailSytle.intro}>
+                    <div className={detailSytle.introName}>소셜 소개</div>
+                    <p className={detailSytle.introContent}>{detail.intro}</p>
+                </div>
+
+                <HobbyTutor tutorIntro={detail.tutorIntro} tutorCode={detail.tutorCode}></HobbyTutor>
+
+                {
+                    detail.close == 'Y' && <HobbyReview hobbyCode={hobbyCode} user={user} />
+                }
+                {
+
+                    (detail.close == 'Y' && join) && <RevieWrite hobbyCode={hobbyCode} />
+                }
+
+
             </div>
+
         </>
     )
 }

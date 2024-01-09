@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Pagination from "react-js-pagination";
 import Pagingcss from "../css/Paging.css";
 
-const Paging = ({ page, count, setPage }) => {
+const Paging = ({ page, count, setPage, localfilters, categoryCode }) => {
 
+    useEffect(() => {
+        setPage(1)
+    }, [localfilters, categoryCode]);
 
     return (
         <Pagination activePage={page}

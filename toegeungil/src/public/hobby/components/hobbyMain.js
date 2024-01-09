@@ -1,18 +1,19 @@
 import HobbyCard from "./hobbyCard"
+import "./css/hobbyMain.css"
+function HobbyMain({ hobbys }) {
+    return (
+        <>
+            <div className="hobbyMainCardBoard">
+                <div className="hobbyCardcontainer">
+                    {!hobbys ? null : hobbys?.map((hobby, index) => (
 
-function HobbyMain({hobbys}){
+                        <HobbyCard hobbys={hobby} key={index} />
 
-    return(
-        <>  
-             <div style={{display:"flex",flexWrap: "wrap"}}>
-            {hobbys?.map((hobby , index)=>(
-               <div style={{marginBottom:"20px"}}>
-                <HobbyCard hobbys={hobby} key={index}/>
+                    ))}
                 </div>
-            ))}
-             </div>
+            </div >
         </>
-        
+
     )
 }
 

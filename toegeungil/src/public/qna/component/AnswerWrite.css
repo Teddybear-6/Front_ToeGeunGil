@@ -1,20 +1,20 @@
 .layout {
-    width: 1100;
+    width: 68.75rem;
     margin: auto;
     color: #655853;
-    /* margin-top: 60px; */
+    margin-top: 3.75rem;
+
 }
 
-
 .write-header1 {
-    border-bottom: 2px dotted #B9A49B;
-    font-size: 30px;
+    border-bottom: 0.125rem dotted #B9A49B;
+    font-size: 1.875rem;
     color: #655853;
-    width: 1200px;
-    height: 100px;
+    width: 75rem;
+    height: 6.25rem;
     display: flex;
     align-items: center;
-    margin-top: 80px;
+    margin-top: 5rem;
 }
 
 
@@ -23,9 +23,10 @@
 
 
 .write-col1 {
+    font-size: 1.125rem;
     color: #655853;
-    width: 1100px;
-    height: 50px;
+    width: 68.75rem;
+    height: 3.125rem;
     display: flex;
     align-items: center;
 }
@@ -33,35 +34,35 @@
 .write-text1 {
     color: #655853;
     font-weight: bold;
-    border: 2px solid #8FC4B3;
-    border-radius: 50px;
-    width: 1000px;
-    height: 50px;
-    margin-left: 15px;
-    font-size: 1.0em;
+    border: 0.125rem solid #8FC4B3;
+    border-radius: 3.125rem;
+    width: 62.5rem;
+    height: 3.125rem;
+    margin-left: 0.938rem;
+    font-size: 1.0rem;
 }
 
 
 .text-box {
     color: #655853;
-    margin: 15px 30px 30px 15px;
+    margin: 0.938rem 1.875rem 1.875rem 0.938rem;
     border: none;
     resize: none;
-    font-size: 1.0em;
+    font-size: 1.0rem;
     outline: none;
-    width: 930px;
-    font-size: 18px;
+    width: 58.125rem;
+    font-size: 1.125rem;
     color: #655853;
     font-weight: bold;
 }
 
 
 .write-col2 {
-    font-size: 18px;
+    font-size: 1.125rem;
     color: #655853;
     font-weight: bold;
-    width: 1100px;
-    margin-top: 30px;
+    width: 68.75rem;
+    margin-top: 1.875rem;
 }
 
 .flexsty {
@@ -70,17 +71,17 @@
 
 
 .write-content {
-    margin-top: 30px;
+    margin-top: 1.875rem;
 }
 
 
 .write-text2 {
-    border: 2px solid #8FC4B3;
-    border-radius: 50px;
-    width: 1000px;
-    height: 400px;
-    margin-left: 15px;
-    margin-top: 15px;
+    border: 0.125rem solid #8FC4B3;
+    border-radius: 3.125rem;
+    width: 62.5rem;
+    height: 25rem;
+    margin-left: 0.938rem;
+    margin-top: 0.938rem;
     font-size: 0.9em;
 }
 
@@ -88,90 +89,91 @@
 .text-box2 {
     color: #655853;
     font-weight: bold;
-    margin: 30px 30px 30px 20px;
+    margin: 1.875rem 1.875rem 1.875rem 1.875rem;
     border: none;
     resize: none;
     font-size: 0.9em;
     outline: none;
-    width: 930px;
-    height: 350px;
+    width: 58.125rem;
+    height: 21.875rem;
 }
 
 
 .button {
     display: flex;
     justify-content: flex-end;
-    margin-top: 40px;
-    
+    margin-top: 2.5rem;
+
 }
 
 .write-button {
     color: #096249;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
     background-color: #8FC4B3;
-    border: 1px;
-    border-radius: 50px;
-    width: 120px;
-    height: 80px;
-    margin-left: 30px;
+    border: 0.063rem;
+    border-radius: 3.125rem;
+    width: 7.5rem;
+    height: 5rem;
+    margin-left: 1.875rem;
 }
 
 .cancel-button {
     color: #096249;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
     background-color: #CCE2DB;
-    border: 1px;
-    border-radius: 50px;
-    width: 120px;
-    height: 80px;
+    border: 0.063rem;
+    border-radius: 3.125rem;
+    width: 7.5rem;
+    height: 5rem;
 }
 
-.question-button{
+.question-button {
     display: flex;
     justify-content: flex-end;
     color: #096249;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
     background-color: #CCE2DB;
-    border: 1px;
-    border-right: 1px solid #096249;
-    border-radius: 50px;
-    width: 130px;
-    height: 80px;
-    
-    
+    border: 0.063rem;
+    border-right: 0.063rem solid #096249;
+    border-radius: 3.125rem;
+    width: 8.125rem;
+    height: 5rem;
+
+
 }
 
-.delSet-button{
+.delSet-button {
     margin-left: 70%;
 
 }
 
-.delete-button{
-    margin-top: 20px;
-    margin: 10px;
+.delete-button {
+    margin-top: 1.25rem;
+    margin: 0.625rem;
     color: #096249;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
     background-color: #CCE2DB;
-    border: 1px;
-    border-right: 1px solid #096249;
-    border-radius: 50px;
-    width: 120px;
-    height: 80px;
+    border: 0.063rem;
+    border-right: 0.063rem solid #096249;
+    border-radius: 3.125rem;
+    width: 7.5rem;
+    height: 5rem;
 
 }
-.update-button{
-    margin-top: 20px;
+
+.update-button {
+    margin-top: 1.25rem;
     color: #096249;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
     background-color: #8FC4B3;
-    border: 1px;
-    border-right: 1px solid #096249;
-    border-radius: 50px;
-    width: 120px;
-    height: 80px;
+    border: 0.063rem;
+    border-right: 0.063rem solid #096249;
+    border-radius: 3.125rem;
+    width: 7.5rem;
+    height: 5rem;
 }

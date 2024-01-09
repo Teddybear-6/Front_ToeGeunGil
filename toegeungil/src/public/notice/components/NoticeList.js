@@ -3,7 +3,7 @@ import '../components/NoticeMain.css';
 import { Link } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 
-const NoticeList = ({list}) => {
+const NoticeList = ({ list }) => {
     const [user, setUser] = useState('');
     const [loading, setLoading] = useState(true);
 
@@ -29,7 +29,7 @@ const NoticeList = ({list}) => {
                 ) : (
                     list ? (
                         <div className="notice-wrapper">
-                            <table className="table-wrapper">
+                            <table className="notice-table-wrapper">
                                 <thead>
                                     <tr>
                                         <th>번호</th>
@@ -44,7 +44,10 @@ const NoticeList = ({list}) => {
                                                 <td>{notice.noticeNum}</td>
                                                 <td>
                                                     <Link to={`/service/notice/${notice.noticeNum}`}
-                                                        style={{ textDecoration: "none", color: "#87746B" }} className="title-link">{notice.noticeTitle}</Link>
+                                                        style={{
+                                                            textDecoration: "none", color: "#87746B", overflow: "hidden", whiteSpace: "nowrap",
+                                                            textOverflow: "ellipsis", display: "block", maxWidth: "500px"
+                                                        }} className="title-link">{notice.noticeTitle}</Link>
                                                 </td>
                                                 <td>{notice.noticeDate}</td>
                                             </tr>

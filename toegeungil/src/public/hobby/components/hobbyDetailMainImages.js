@@ -1,21 +1,19 @@
 import { useState, useEffect } from "react";
-import ImageStyle from "./hobbyDetail.module.css"
+import ImageStyle from "./css/hobbyDetail.module.css"
 
 
-function HobbyMainImages({detail}){
+function HobbyMainImages({ detail }) {
     const [images, setImages] = useState();
-   
-    useEffect(()=>{
-     
-        console.log(detail)
-    },[detail]);
+
+    useEffect(() => {
+    }, [detail]);
 
 
-    return(
+    return (
         <>
-                <div>
-                    <img className={ImageStyle.mainImage} src={`http://106.250.199.126:9000/image/${detail.path}`}></img>
-                </div>
+            <div>
+                <img className={ImageStyle.mainImage} src={`http://106.250.199.126:9000/image/${detail.path}`}></img>
+            </div>
         </>
     )
 }

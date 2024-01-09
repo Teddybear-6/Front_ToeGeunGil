@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import "../components/NoticeView.css";
 import jwt_decode from "jwt-decode";
+import NoticeViewImage from "../components/NoticeViewImage";
 
 const NoticeView = () => {
   const { noticeNum } = useParams();
@@ -65,8 +66,10 @@ const NoticeView = () => {
                     <label>{detail.noticeDate}</label>
                   </div>
                   <div className="notice-view-text-box">
+                    {/* 사진 */}
+                    <NoticeViewImage noticeNum={noticeNum}/>
                     <div className="notice-view-text">
-                      <label>{detail.noticeContent}</label>
+                      <label style={{whiteSpace:"pre-line"}}>{detail.noticeContent}</label>
                     </div>
                   </div>
                   <div className="notice-button-box">

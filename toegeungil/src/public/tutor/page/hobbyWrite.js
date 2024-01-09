@@ -146,7 +146,7 @@ function HobbyWrite() {
               <div className="titleframe">
                 <p className="hobbytitle">취미제목</p>
                 <div className="title">
-                  <textarea className="hobbytitleText" maxLength="40" type="text" name="hobbyTitle" onChange={onChangeHandler} />
+                  <input className="hobbytitleText w1250h18" type="text" name="hobbyTitle" onChange={onChangeHandler} placeholder="취미 제목을 입력해 주세요." />
                 </div>
               </div>
               <div className="mainIntroFrame">
